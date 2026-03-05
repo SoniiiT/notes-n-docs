@@ -1,0 +1,413 @@
+# Hyper-V Failover Cluster – Windows Server 2022
+
+## Überblick
+
+Ein Hyper-V Failover Cluster besteht aus mehreren Windows Servern (Nodes), die gemeinsam auf einen Shared Storage zugreifen. Fällt ein Node aus, übernehmen die verbleibenden Nodes automatisch die VMs — ohne (oder mit minimalem) Downtime.
+
+```
+┌─────────────────────────────────────────────────────┐
+│                  Failover Cluster                   │
+│                                                     │
+│   ┌──────────┐    ┌──────────┐    ┌──────────┐      │
+│   │  Node 1  │    │  Node 2  │    │  Node N  │      │
+│   │ Hyper-V  │    │ Hyper-V  │    │ Hyper-V  │      │
+│   └────┬─────┘    └────┬─────┘    └────┬─────┘      │
+│        │               │               │            │
+│        └───────────────┴───────────────┘            │
+│                        │                            │
+│               ┌────────┴────────┐                   │
+│               │  Shared Storage │                   │
+│               │ (iSCSI / FC)    │                   │
+│               └─────────────────┘                   │
+└─────────────────────────────────────────────────────┘
+```
+
+---
+
+## Voraussetzungen
+
+### Software
+
+- Windows Server 2022 (Standard oder Datacenter) auf allen Nodes
+- Alle Nodes müssen **Mitglied derselben Active Directory Domain** sein
+- DNS muss für alle Nodes korrekt auflösen (Forward + Reverse)
+- Gleiche Windows Server Version + Patchstand auf allen Nodes (empfohlen)
+
+> [!WARNING]
+> Ein Failover Cluster **erfordert** eine Active Directory Domain. Workgroup-Cluster sind mit erheblichen Einschränkungen verbunden und nicht empfohlen.
+
+### Hardware
+
+| Komponente | Anforderung |
+| ---------- | ----------- |
+| CPU | 64-bit, kompatible CPU-Familien auf allen Nodes (für Live Migration) |
+| RAM | Mind. 8 GB pro Node |
+| NICs | Mind. 2 pro Node (Management + Cluster/Live Migration) |
+| Storage-Adapter | iSCSI-Initiator (Software) oder FC HBA (Hardware) |
+
+> [!TIP]
+> Für Live Migration ohne Kompatibilitätsmodus sollten alle Nodes CPUs **derselben Generation und Herstellers** (Intel oder AMD) haben.
+
+### Netzwerkplanung
+
+Für einen produktionsreifen Cluster wird eine klare NIC-Trennung empfohlen:
+
+| Netzwerk | Zweck | Empfehlung |
+| -------- | ----- | ---------- |
+| Management | RDP, Server-Verwaltung | 1 GbE / VLAN |
+| Cluster Heartbeat | Node-zu-Node Kommunikation | 1–10 GbE, dediziertes VLAN |
+| Live Migration | VM-Speicher-Transfer zwischen Nodes | 10 GbE, dediziertes VLAN |
+| Storage (iSCSI) | Zugriff auf Shared Storage | 10 GbE, dediziertes VLAN |
+
+---
+
+## Shared Storage einrichten
+
+### Option A – iSCSI
+
+#### iSCSI Initiator auf jedem Node konfigurieren
+
+```powershell
+# iSCSI Initiator Dienst starten und auf automatisch setzen
+Start-Service -Name MSiSCSI
+Set-Service -Name MSiSCSI -StartupType Automatic
+
+# iSCSI Target verbinden (IP des Storage-Systems anpassen)
+New-IscsiTargetPortal -TargetPortalAddress "192.168.10.100"
+
+# Verfügbare Targets anzeigen
+Get-IscsiTarget
+
+# Mit Target verbinden (TargetNodeAddress aus Get-IscsiTarget)
+Connect-IscsiTarget -NodeAddress "iqn.2024-01.com.storage:target01" -IsPersistent $true
+
+# Verbindung prüfen
+Get-IscsiSession
+```
+
+#### MPIO (Multipath I/O) für iSCSI Redundanz
+
+```powershell
+# MPIO Feature installieren (auf allen Nodes)
+Add-WindowsFeature -Name Multipath-IO -IncludeManagementTools
+
+# iSCSI für MPIO registrieren
+Enable-MSDSMAutomaticClaim -BusType iSCSI
+
+# MPIO Load-Balancing Policy setzen
+Set-MSDSMGlobalDefaultLoadBalancePolicy -Policy RR  # Round Robin
+
+# MPIO Pfade prüfen
+Get-MSDSMDevice | Select-Object -ExpandProperty DeviceInstanceId
+```
+
+> [!NOTE]
+> MPIO benötigt mindestens zwei separate iSCSI-Pfade (zwei NICs oder zwei Ports am Storage). Nach der Installation muss neu gestartet werden.
+
+### Option B – Fiber Channel (FC)
+
+Fiber Channel ist hardwareabhängig und erfordert FC HBAs in allen Nodes sowie einen FC Switch (oder Direct Attach).
+
+```powershell
+# FC Adapter anzeigen
+Get-InitiatorPort | Where-Object { $_.ConnectionType -eq "Fibre Channel" }
+
+# FC-Zonen müssen am FC Switch konfiguriert werden (herstellerabhängig)
+# Nach Zoning: LUNs erscheinen automatisch als Disk im Disk Management
+```
+
+> [!NOTE]
+> Das Zoning am FC Switch (z.B. Brocade, Cisco MDS) ist herstellerspezifisch und muss separat konfiguriert werden. Jeder Node benötigt Zugriff auf dieselben LUNs.
+
+#### Disks initialisieren und formatieren (gilt für iSCSI und FC)
+
+Nach dem Verbinden der Shared Storage LUNs müssen diese auf **einem** Node initialisiert werden — die anderen Nodes sehen die Disks danach automatisch.
+
+```powershell
+# Neue Disks anzeigen (Offline-Status erwartet)
+Get-Disk | Where-Object PartitionStyle -eq "RAW"
+
+# Disk online bringen, initialisieren und formatieren
+# Disk-Nummer anpassen (Get-Disk zeigt die Nummer)
+Initialize-Disk -Number 1 -PartitionStyle GPT
+New-Partition -DiskNumber 1 -UseMaximumSize -AssignDriveLetter
+Format-Volume -DriveLetter E -FileSystem NTFS -NewFileSystemLabel "Cluster-CSV-01" -Confirm:$false
+```
+
+---
+
+## Failover Clustering Feature installieren
+
+Auf **allen Nodes** ausführen:
+
+```powershell
+# Failover Clustering + Management Tools installieren
+Install-WindowsFeature -Name Failover-Clustering -IncludeManagementTools
+
+# Hyper-V Rolle sicherstellen (falls noch nicht installiert)
+Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
+
+# Neustart erforderlich
+Restart-Computer
+```
+
+---
+
+## Cluster Validierung
+
+Vor der Cluster-Erstellung muss eine Validierung durchgeführt werden. Fehler im Validierungsbericht können zu einem nicht unterstützten Cluster führen.
+
+```powershell
+# Validierungstest auf einem zukünftigen Cluster-Node ausführen
+# Alle Node-Namen als Array angeben
+Test-Cluster -Node "Node1", "Node2", "Node3"
+
+# Nur bestimmte Tests ausführen (optional, für schnellere Validierung)
+Test-Cluster -Node "Node1", "Node2" -Include "Storage", "Network"
+```
+
+> [!WARNING]
+> Der Validierungsbericht wird als HTML-Datei gespeichert. Alle **Fehler** müssen vor der Cluster-Erstellung behoben werden. **Warnungen** können je nach Umgebung akzeptiert werden.
+
+Via GUI: **Failover Cluster Manager** → `Validate Configuration` → Nodes hinzufügen → alle Tests ausführen.
+
+---
+
+## Cluster erstellen
+
+### Via PowerShell
+
+```powershell
+# Cluster erstellen
+# -Name: Cluster-Name (wird als Computerobjekt in AD angelegt)
+# -Node: alle Nodes
+# -StaticAddress: Cluster-IP (oder weglassen für DHCP)
+New-Cluster -Name "HV-Cluster-01" `
+            -Node "Node1", "Node2", "Node3" `
+            -StaticAddress "192.168.1.50"
+
+# Cluster-Status prüfen
+Get-Cluster
+Get-ClusterNode
+```
+
+### Via GUI (Failover Cluster Manager)
+
+1. **Failover Cluster Manager** öffnen
+2. `Create Cluster` → Nodes hinzufügen
+3. Cluster-Name und IP-Adresse vergeben
+4. Validierung bestätigen
+5. `Finish`
+
+---
+
+## Cluster Shared Volumes (CSV)
+
+CSV ermöglicht allen Nodes simultanen Zugriff auf dieselbe Disk — notwendig für Live Migration.
+
+```powershell
+# Disk zum Cluster hinzufügen (Disk muss bereits initialisiert sein)
+Add-ClusterDisk -InputObject (Get-Disk -Number 1)
+
+# Alle Cluster-Disks anzeigen
+Get-ClusterAvailableDisk
+Get-ClusterResource | Where-Object ResourceType -eq "Physical Disk"
+
+# Disk als CSV aktivieren
+Add-ClusterSharedVolume -Name "Cluster Disk 1"
+
+# CSVs anzeigen
+Get-ClusterSharedVolume
+
+# CSV Pfad: C:\ClusterStorage\Volume1\ (auf allen Nodes verfügbar)
+```
+
+---
+
+## Quorum konfigurieren
+
+Das Quorum bestimmt, wie viele Stimmen für einen funktionsfähigen Cluster benötigt werden. Jeder Node hat 1 Stimme, ein Witness hat ebenfalls 1 Stimme.
+
+### Empfehlung nach Node-Anzahl
+
+| Nodes | Empfohlener Quorum-Typ | Begründung |
+| ----- | ---------------------- | ---------- |
+| 2 | Node + File Share Witness oder Cloud Witness | Verhindert Split-Brain |
+| 3 | Node Majority | Toleriert 1 Node-Ausfall ohne Witness |
+| 4 | Node + Disk Witness | Gerade Anzahl → Witness für Tiebreaker |
+| 5+ | Node Majority | Toleriert automatisch mehrere Ausfälle |
+
+### Quorum-Typen
+
+#### 1. Node Majority (kein Witness)
+
+Geeignet ab 3 Nodes (ungerade Anzahl). Cluster bleibt online solange Mehrheit der Nodes erreichbar.
+
+```powershell
+Set-ClusterQuorum -NodeMajority
+```
+
+#### 2. Disk Witness
+
+Ein kleines Shared Disk (mind. 512 MB) dient als Witness. Empfohlen bei gerader Node-Anzahl mit Zugriff auf Shared Storage.
+
+```powershell
+# Witness-Disk muss im Cluster als Resource vorhanden sein
+Set-ClusterQuorum -DiskWitness "Cluster Disk Witness"
+```
+
+#### 3. File Share Witness
+
+Eine SMB-Freigabe auf einem separaten Server (z.B. DC oder NAS) dient als Witness. Ideal für 2-Node Cluster.
+
+```powershell
+# Freigabe muss existieren und der Cluster-Account braucht Schreibrechte
+Set-ClusterQuorum -FileShareWitness "\\DC01\ClusterWitness"
+```
+
+**Freigabe vorbereiten:**
+```powershell
+# Auf dem Witness-Server ausführen
+New-Item -Path "C:\ClusterWitness" -ItemType Directory
+New-SmbShare -Name "ClusterWitness" -Path "C:\ClusterWitness" -FullAccess "DOMAIN\Cluster-Name$"
+```
+
+#### 4. Cloud Witness (Azure Blob Storage)
+
+Kein lokaler Witness-Server nötig. Empfohlen wenn kein separater Server verfügbar ist oder für Multi-Site Cluster.
+
+```powershell
+# Azure Storage Account Name und Access Key benötigt
+Set-ClusterQuorum -CloudWitness `
+    -AccountName "mystorageaccount" `
+    -AccessKey "Base64EncodedAccessKey=="
+```
+
+> [!TIP]
+> Cloud Witness braucht ausgehende HTTPS-Verbindung (Port 443) zu Azure. Für reine Homelab-Umgebungen ohne Internet-Zugang ist File Share Witness die bessere Wahl.
+
+### Aktuellen Quorum anzeigen
+
+```powershell
+Get-ClusterQuorum
+Get-ClusterNode | Select-Object Name, NodeWeight, State
+```
+
+---
+
+## Hyper-V VMs als Cluster-Ressource einrichten
+
+```powershell
+# Neue Highly Available VM erstellen (direkt auf CSV-Pfad)
+New-VM -Name "VM-HA-01" `
+       -Path "C:\ClusterStorage\Volume1\VMs" `
+       -MemoryStartupBytes 4GB `
+       -Generation 2 `
+       -SwitchName "vSwitch-External" `
+       -NewVHDPath "C:\ClusterStorage\Volume1\VHDs\VM-HA-01.vhdx" `
+       -NewVHDSizeBytes 60GB
+
+# VM zum Cluster hinzufügen
+Add-ClusterVirtualMachineRole -VirtualMachine "VM-HA-01"
+
+# Bestehende VM zum Cluster hinzufügen
+Add-ClusterVirtualMachineRole -VMId (Get-VM -Name "VM-HA-01").VMId
+
+# Alle Cluster-VMs anzeigen
+Get-ClusterGroup | Where-Object GroupType -eq "VirtualMachine"
+
+# VM manuell auf anderen Node verschieben (Live Migration)
+Move-ClusterVirtualMachineRole -Name "VM-HA-01" -Node "Node2"
+```
+
+---
+
+## Live Migration konfigurieren
+
+```powershell
+# Live Migration aktivieren (auf allen Nodes)
+Enable-VMMigration
+
+# Erlaubte Netzwerke für Live Migration festlegen
+Add-VMMigrationNetwork -Subnet "192.168.20.0/24" -Priority 1
+
+# Maximale parallele Migrationen festlegen
+Set-VMHost -MaximumVirtualMachineMigrations 2
+
+# Live Migration Authentifizierungsmethode
+Set-VMHost -VirtualMachineMigrationAuthenticationType Kerberos
+
+# Live Migration testen
+Move-ClusterVirtualMachineRole -Name "VM-HA-01" -Node "Node2"
+```
+
+---
+
+## PowerShell Referenz
+
+### Cluster Status
+
+```powershell
+# Allgemeiner Cluster-Status
+Get-Cluster
+Get-ClusterNode
+Get-ClusterResource
+Get-ClusterGroup
+
+# Cluster-Events anzeigen
+Get-ClusterLog -Destination "C:\Temp\ClusterLog"
+```
+
+### Failover simulieren
+
+```powershell
+# Node in Maintenance Mode versetzen (VMs werden migriert)
+Suspend-ClusterNode -Name "Node1" -Drain
+
+# Node wieder aktivieren
+Resume-ClusterNode -Name "Node1"
+
+# Node aus Cluster entfernen (für Wartung)
+Stop-ClusterNode -Name "Node1"
+
+# Node wieder hinzufügen
+Start-ClusterNode -Name "Node1"
+```
+
+### Cluster-Netzwerke
+
+```powershell
+# Cluster-Netzwerke anzeigen
+Get-ClusterNetwork
+
+# Netzwerk-Rolle festlegen
+# 0 = None, 1 = Cluster only, 3 = Cluster + Client
+(Get-ClusterNetwork -Name "Cluster Heartbeat").Role = 1
+(Get-ClusterNetwork -Name "Management").Role = 3
+```
+
+### Troubleshooting
+
+```powershell
+# Cluster-Validierung erneut ausführen
+Test-Cluster -Node "Node1", "Node2"
+
+# Cluster-Logs generieren
+Get-ClusterLog -Destination "C:\Temp" -TimeSpan 60  # Letzte 60 Minuten
+
+# Event Log nach Cluster-Fehlern durchsuchen
+Get-WinEvent -LogName "Microsoft-Windows-FailoverClustering/Operational" |
+    Where-Object LevelDisplayName -eq "Error" |
+    Select-Object TimeCreated, Message -First 20
+
+# Cluster-Dienst neustarten (nur wenn nötig!)
+Restart-Service -Name ClusSvc
+```
+
+---
+
+## Nützliche Links
+
+- [Failover Clustering in Windows Server – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview)
+- [Hyper-V Live Migration – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/live-migration-overview)
+- [Configure and Manage Quorum – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum)
