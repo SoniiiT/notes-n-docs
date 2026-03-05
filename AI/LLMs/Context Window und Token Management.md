@@ -163,7 +163,7 @@ ChatGPT und ähnliche Interfaces kürzen automatisch alte Gesprächsteile ("Cont
 1. **Neues Gespräch starten** – für komplett neue Themen
 2. **Zusammenfassung erstellen** – das bisherige Gespräch zusammenfassen und als neuen Start verwenden
 3. **Relevanten Context extrahieren** – nur die wirklich wichtigen Teile in den neuen Prompt nehmen
-4. **RAG verwenden** – statt alles im Context zu halten, relevante Informationen zur Laufzeit abrufen
+4. **[[RAG Grundlagen|RAG]] verwenden** – statt alles im Context zu halten, relevante Informationen zur Laufzeit abrufen
 
 ---
 

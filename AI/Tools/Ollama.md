@@ -143,7 +143,7 @@ cat mein_dokument.txt | ollama run llama3.2 "Fasse diesen Text zusammen:"
 | `phi3:mini` | 3.8B | ~2.3 GB | 4 GB | Microsoft, effizient |
 | `gemma2:9b` | 9B | ~5.4 GB | 8 GB | Google, gute Qualität |
 | `qwen2.5:14b` | 14B | ~8.2 GB | 12 GB | Mehrsprachig, stark |
-| `nomic-embed-text` | – | ~274 MB | 1 GB | Embeddings für RAG |
+| `nomic-embed-text` | – | ~274 MB | 1 GB | [[Embeddings]] für [[RAG Grundlagen|RAG]] |
 
 > [!TIP]
 > Mit `ollama run <modell>:latest` wird immer die empfohlene Standard-Quantisierung geladen. Mit z.B. `:q8_0` oder `:fp16` kann explizit eine bestimmte Quantisierung gewählt werden.

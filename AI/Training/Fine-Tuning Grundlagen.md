@@ -36,7 +36,7 @@ Das Modell "lernt" dabei nicht von Grund auf neu – die im Pre-Training erworbe
 | Stil/Ton anpassen | Eingeschränkt | Sehr gut |
 
 > [!TIP]
-> **Faustregel:** Beginne immer mit Prompt Engineering. Fine-Tune nur dann, wenn:
+> **Faustregel:** Beginne immer mit [[Prompt Engineering Techniken|Prompt Engineering]]. Fine-Tune nur dann, wenn:
 > - Prompt Engineering die gewünschte Qualität nicht erreicht
 > - Du ein spezifisches Format/Stil konsistent erzwingen willst
 > - Die Inferenzkosten durch lange Prompts zu hoch werden
@@ -46,7 +46,7 @@ Das Modell "lernt" dabei nicht von Grund auf neu – die im Pre-Training erworbe
 **Fine-Tuning ist NICHT sinnvoll wenn:**
 - Das Problem mit einem 2-3 Shot Prompt gelöst werden kann
 - Nur wenige Beispiele (<100) vorhanden sind
-- Das Modell aktuelles Wissen benötigt (besser: RAG)
+- Das Modell aktuelles Wissen benötigt (besser: [[RAG Grundlagen|RAG]])
 
 ---
 
@@ -357,6 +357,9 @@ Gib eine Zahl von 1-10 und eine kurze Begründung.
 ## Verwandte Notizen
 
 - [[LoRA und QLoRA]]
+- [[RLHF und Alignment]]
+- [[Prompt Engineering Techniken]]
+- [[RAG Grundlagen]]
 - [[Datasets vorbereiten]]
 - [[Unsloth Axolotl LLaMA-Factory]]
 

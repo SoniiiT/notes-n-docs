@@ -225,7 +225,7 @@ results = vectorstore.similarity_search("Wie deploye ich die Anwendung?", k=3)
 ```
 
 - **Vorteil:** Persistiert über Sessions, skaliert unbegrenzt
-- **Nachteil:** Erfordert Embedding-Modell, Latenz bei Abfragen
+- **Nachteil:** Erfordert [[Embeddings|Embedding]]-Modell, Latenz bei Abfragen
 - **Typische Nutzung:** Wissensbasis, Dokumentationen, vergangene Interaktionen
 
 ### 3. Episodic Memory

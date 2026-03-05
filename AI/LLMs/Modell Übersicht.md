@@ -9,7 +9,7 @@ Ein Large Language Model (LLM) ist ein neuronales Netz auf Basis der Transformer
 
 **Kernbegriffe:**
 - **Parameter:** Die Gewichte des Modells – mehr Parameter bedeuten (grob) mehr Kapazität
-- **Training:** Vortraining auf rohem Text (Next-Token-Prediction), danach oft Finetuning (RLHF, RLAIF)
+- **Training:** Vortraining auf rohem Text (Next-Token-Prediction), danach oft Finetuning ([[RLHF und Alignment|RLHF]], RLAIF)
 - **Inferenz:** Das Ausführen des Modells zur Laufzeit (Antworten generieren)
 
 ---
@@ -33,7 +33,7 @@ Anthropic wurde 2021 von ehemaligen OpenAI-Mitarbeitern gegründet mit dem Fokus
 
 **Besonderheiten von Claude:**
 - **Extended Thinking:** Claude Opus 4.6 kann sichtbare Denkschritte ausführen (ähnlich wie o1/o3)
-- **Tool Use / Function Calling:** Nativ unterstützt
+- **Tool Use / [[Function Calling und Tool Use|Function Calling]]:** Nativ unterstützt
 - **Prompt Caching:** Reduziert Kosten bei wiederholten langen System-Prompts erheblich
 - **Vision:** Alle aktuellen Claude-Modelle unterstützen Bild-Input
 - **1M Token Context (Beta):** Opus 4.6 und Sonnet 4.6 unterstützen bis zu 1 Million Tokens im Beta-Modus

@@ -2,7 +2,7 @@
 
 ## Was sind Vektordatenbanken?
 
-Eine Vektordatenbank ist eine Datenbank, die speziell für das **Speichern und schnelle Durchsuchen von hochdimensionalen Vektoren** (Embeddings) optimiert ist. Während relationale Datenbanken nach exakten Werten suchen (`WHERE name = 'Max'`), sucht eine Vektordatenbank nach **semantischer Ähnlichkeit** (`Finde die 5 ähnlichsten Vektoren zu diesem Query-Vektor`).
+Eine Vektordatenbank ist eine Datenbank, die speziell für das **Speichern und schnelle Durchsuchen von hochdimensionalen Vektoren** ([[Embeddings]]) optimiert ist. Während relationale Datenbanken nach exakten Werten suchen (`WHERE name = 'Max'`), sucht eine Vektordatenbank nach **semantischer Ähnlichkeit** (`Finde die 5 ähnlichsten Vektoren zu diesem Query-Vektor`).
 
 ### Das technische Kernproblem: ANN-Suche
 

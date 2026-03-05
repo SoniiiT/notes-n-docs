@@ -47,7 +47,7 @@ Transformer Input (3 × 4096 Matrix)
 ```
 
 1. **[[Tokenization]]** — Text wird in Sub-Wörter (Tokens) zerlegt
-2. **Embedding** — Jedes Token wird zu einem hochdimensionalen Vektor (z.B. 4096 Dimensionen)
+2. **[[Embeddings|Embedding]]** — Jedes Token wird zu einem hochdimensionalen Vektor (z.B. 4096 Dimensionen)
 3. **Positional Encoding** — Position im Satz wird hinzugefügt (Transformer hat kein natürliches Sequenzverständnis)
 
 > [!NOTE]
@@ -104,7 +104,7 @@ Die **Embedding-Schicht** ist eine riesige Nachschlagetabelle: Jede Token-ID wir
 - Ähnliche Wörter bekommen automatisch ähnliche Vektoren
 
 > [!TIP]
-> Embeddings sind auch die Basis für **[[RAG Grundlagen|RAG]]** und **[[Embeddings|Vektordatenbanken]]** — dort werden Texte als Vektoren gespeichert und per Ähnlichkeitssuche abgefragt.
+> Embeddings sind auch die Basis für **[[RAG Grundlagen|RAG]]** und **[[Vektordatenbanken]]** — dort werden Texte als Vektoren gespeichert und per Ähnlichkeitssuche abgefragt.
 
 ### Positional Encoding — Wo steht das Wort?
 

@@ -1,7 +1,7 @@
 # Memory Systems
 
 > [!ABSTRACT]
-> **Memory Systems** geben AI-Agents die Fähigkeit, Informationen über Konversationen und Sessions hinweg zu speichern und abzurufen. Ohne Memory vergisst ein Agent alles nach dem Context Window. Die führenden Lösungen sind **Mem0** und **Zep**, die verschiedene Gedächtnistypen implementieren: kurzfristig, langfristig, episodisch, semantisch und prozedural.
+> **Memory Systems** geben AI-Agents die Fähigkeit, Informationen über Konversationen und Sessions hinweg zu speichern und abzurufen. Ohne Memory vergisst ein Agent alles nach dem [[Context Window und Token Management|Context Window]]. Die führenden Lösungen sind **Mem0** und **Zep**, die verschiedene Gedächtnistypen implementieren: kurzfristig, langfristig, episodisch, semantisch und prozedural.
 
 ---
 

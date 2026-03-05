@@ -248,7 +248,7 @@ Axolotl ist ein konfigurations-basiertes Training Framework für LLMs, bei dem a
 **Besonderheiten:**
 - Alles in einer YAML-Config-Datei
 - Unterstützt Alpaca, ShareGPT, JSONL und viele weitere Formate direkt
-- Integrierte Unterstützung für LoRA, QLoRA, Full FT, RLHF, DPO
+- Integrierte Unterstützung für [[LoRA und QLoRA|LoRA, QLoRA]], Full FT, [[RLHF und Alignment|RLHF]], DPO
 - Multi-GPU-Training ohne extra Konfiguration
 - Gut für reproduzierbare Experimente (Config-Datei = vollständige Dokumentation)
 

@@ -2,7 +2,7 @@
 
 ## Was ist Open WebUI?
 
-Open WebUI ist eine selbst-gehostete, ChatGPT-ähnliche Weboberfläche für lokale und externe LLMs. Es bietet eine vollständige Chat-Oberfläche im Stil von ChatGPT, unterstützt Ollama und OpenAI-kompatible APIs als Backend, und erweitert diese um Funktionen wie RAG (Retrieval-Augmented Generation), Dokument-Uploads, Tool-Calling, Bildgenerierung, Sprachausgabe und ein Benutzerverwaltungssystem.
+Open WebUI ist eine selbst-gehostete, ChatGPT-ähnliche Weboberfläche für lokale und externe LLMs. Es bietet eine vollständige Chat-Oberfläche im Stil von ChatGPT, unterstützt [[Ollama]] und OpenAI-kompatible APIs als Backend, und erweitert diese um Funktionen wie [[RAG Grundlagen|RAG]] (Retrieval-Augmented Generation), Dokument-Uploads, Tool-Calling, Bildgenerierung, Sprachausgabe und ein Benutzerverwaltungssystem.
 
 Open WebUI läuft als Docker-Container oder Node.js-Anwendung und speichert alle Daten lokal in einer SQLite-Datenbank.
 
@@ -230,7 +230,7 @@ Für Embeddings wird standardmäßig ein lokales Sentence-Transformer-Modell ver
 
 ### Werkzeuge (Tools)
 
-Open WebUI unterstützt Python-basierte Tools (ähnlich OpenAI Function Calling):
+Open WebUI unterstützt Python-basierte Tools (ähnlich OpenAI [[Function Calling und Tool Use|Function Calling]]):
 
 1. **Workspace** → **Tools** → **+ Neues Tool**
 2. Python-Funktion definieren (z.B. Websuche, Wetterdaten, Datenbankabfragen)

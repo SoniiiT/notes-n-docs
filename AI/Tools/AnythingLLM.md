@@ -2,9 +2,9 @@
 
 ## Was ist AnythingLLM?
 
-AnythingLLM ist eine All-in-One AI-Anwendung mit starkem Fokus auf RAG (Retrieval-Augmented Generation). Sie erlaubt es, eigene Dokumente, Webseiten und Datenbanken als Wissensbasis für LLM-Gespräche zu nutzen – in vollständig lokal betriebenen oder Cloud-basierten Konfigurationen.
+AnythingLLM ist eine All-in-One AI-Anwendung mit starkem Fokus auf [[RAG Grundlagen|RAG]] (Retrieval-Augmented Generation). Sie erlaubt es, eigene Dokumente, Webseiten und Datenbanken als Wissensbasis für LLM-Gespräche zu nutzen – in vollständig lokal betriebenen oder Cloud-basierten Konfigurationen.
 
-AnythingLLM unterstützt eine Vielzahl von LLM-Backends (Ollama, OpenAI, Anthropic, Azure, Groq, u.v.m.), verschiedene Embedding-Modelle und Vektor-Datenbanken, und bietet zusätzlich einen eingebauten Agenten-Modus mit Tool-Calling.
+AnythingLLM unterstützt eine Vielzahl von LLM-Backends ([[Ollama]], OpenAI, Anthropic, Azure, Groq, u.v.m.), verschiedene [[Embeddings|Embedding]]-Modelle und Vektor-Datenbanken, und bietet zusätzlich einen eingebauten Agenten-Modus mit Tool-Calling.
 
 Die Anwendung ist als Docker-Container sowie als plattformübergreifende Desktop-App (Windows, macOS, Linux) verfügbar.
 

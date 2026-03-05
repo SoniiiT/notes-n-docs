@@ -290,4 +290,5 @@ Die Entwicklung geht in Richtung **Omni-Models**, die alle Modalitäten nahtlos 
 - [[AI Bildgenerierung]] — Diffusion Models und Bild-Tools
 - [[Modell Übersicht]] — Modelle mit multimodalen Fähigkeiten
 - [[Context Window und Token Management]] — Token-Kosten pro Modalität
+- [[Embeddings]] — Embedding-Konzepte (Bild- und Text-Embeddings)
 - [[Evaluation und Benchmarks]] — Vision-Benchmarks (MMMU, VQA)

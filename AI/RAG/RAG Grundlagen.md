@@ -14,7 +14,7 @@ LLMs wie GPT-4 oder Claude haben ein fundamentales Problem: ihr Wissen ist stati
 - spezifischem Fachwissen, das nicht im Training enthalten war
 
 > [!IMPORTANT]
-> RAG löst dieses Problem nicht durch erneutes Training, sondern durch **dynamisches Nachschlagen** relevanter Informationen zur Laufzeit. Das ist deutlich effizienter und aktueller als Fine-Tuning.
+> RAG löst dieses Problem nicht durch erneutes Training, sondern durch **dynamisches Nachschlagen** relevanter Informationen zur Laufzeit. Das ist deutlich effizienter und aktueller als [[Fine-Tuning Grundlagen|Fine-Tuning]].
 
 ### Was RAG ermöglicht
 
@@ -50,8 +50,8 @@ graph LR
 
 1. **Dokumente laden** – PDFs, Word-Dateien, Webseiten, Datenbanken
 2. **Chunking** – Aufteilen in kleinere Abschnitte
-3. **Embedding** – Jeder Chunk wird in einen Vektor umgewandelt
-4. **Speichern** – Vektoren + Originaltext in Vektordatenbank
+3. **[[Embeddings|Embedding]]** – Jeder Chunk wird in einen Vektor umgewandelt
+4. **Speichern** – Vektoren + Originaltext in [[Vektordatenbanken|Vektordatenbank]]
 
 ### Phase 2: Retrieval
 
