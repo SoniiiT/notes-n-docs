@@ -53,58 +53,16 @@ Transformer Input (3 × 4096 Matrix)
 > [!NOTE]
 > Ein Token ist **nicht** gleich ein Wort. "Programmierung" könnte z.B. in ["Programm", "ierung"] zerlegt werden. Siehe [[Tokenization]] für Details.
 
-### Was sind Vektoren?
-
-Ein **Vektor** ist eine Liste von Zahlen, die einen Punkt in einem hochdimensionalen Raum beschreibt. In der AI-Welt repräsentieren Vektoren **Bedeutung als Geometrie** — ähnliche Konzepte liegen nah beieinander, unterschiedliche weit auseinander.
-
-```
-2D-Beispiel (vereinfacht):
-
-        Tier
-         ↑
-  Katze  •  • Hund
-         |
-         |        • Auto
-  ───────┼──────────→ Technik
-         |
-         |  • Computer
-```
-
-In der Realität haben LLM-Vektoren **4096+ Dimensionen** — für Menschen nicht visualisierbar, aber das Prinzip bleibt:
-
-| Wort | Vektor (vereinfacht, 5D) | Anmerkung |
-|---|---|---|
-| "König" | [0.8, 0.2, 0.9, -0.1, 0.5] | Mensch, männlich, Macht |
-| "Königin" | [0.8, 0.2, 0.9, 0.7, 0.5] | Mensch, weiblich, Macht |
-| "Mann" | [0.7, 0.1, 0.1, -0.1, 0.3] | Mensch, männlich |
-| "Frau" | [0.7, 0.1, 0.1, 0.7, 0.3] | Mensch, weiblich |
-
-Das berühmte Beispiel aus Word2Vec zeigt: Vektoren können **semantische Beziehungen** abbilden:
-
-```
-König - Mann + Frau ≈ Königin
-[0.8, 0.2, 0.9, -0.1, 0.5]
-- [0.7, 0.1, 0.1, -0.1, 0.3]   (Mann abziehen)
-+ [0.7, 0.1, 0.1,  0.7, 0.3]   (Frau addieren)
-= [0.8, 0.2, 0.9,  0.7, 0.5]   ≈ Königin!
-```
-
 ### Embedding — Token zu Vektor
 
-Die **Embedding-Schicht** ist eine riesige Nachschlagetabelle: Jede Token-ID wird einem Vektor zugeordnet.
+Die **[[Embeddings|Embedding-Schicht]]** wandelt jede Token-ID in einen hochdimensionalen Vektor um (z.B. 4096 Dimensionen). Diese Vektoren repräsentieren **Bedeutung als Geometrie** — semantisch ähnliche Wörter liegen im Vektorraum nah beieinander.
 
-| Token-ID | Token | Embedding-Vektor (4096 Dimensionen) |
-|---|---|---|
-| 15339 | "Hallo" | [0.23, -0.87, 0.51, 0.03, ...] |
-| 14957 | "Welt" | [0.12, 0.44, -0.33, 0.78, ...] |
-| 0 | "!" | [0.91, -0.05, 0.67, -0.42, ...] |
-
-- Die Tabelle hat **Vokabulargröße × Embedding-Dimensionen** Einträge (z.B. 100.000 × 4096 ≈ 400 Millionen Zahlen)
+- Die Embedding-Tabelle hat **Vokabulargröße × Embedding-Dimensionen** Einträge (z.B. 100.000 × 4096)
 - Die Werte werden **beim Training gelernt** — nicht manuell gesetzt
 - Ähnliche Wörter bekommen automatisch ähnliche Vektoren
 
 > [!TIP]
-> Embeddings sind auch die Basis für **[[RAG Grundlagen|RAG]]** und **[[Vektordatenbanken]]** — dort werden Texte als Vektoren gespeichert und per Ähnlichkeitssuche abgefragt.
+> Für eine ausführliche Erklärung von Vektoren, Ähnlichkeitsmetriken und Embedding-Modellen siehe [[Embeddings]]. Embeddings sind auch die Basis für **[[RAG Grundlagen|RAG]]** und **[[Vektordatenbanken]]**.
 
 ### Positional Encoding — Wo steht das Wort?
 
