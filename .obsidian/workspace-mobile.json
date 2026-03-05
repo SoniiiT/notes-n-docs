@@ -159,8 +159,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f68e4b256aa53cbc",
+  "active": "2df25b64c14ba21a",
   "lastOpenFiles": [
+    "Assets/Images",
+    "Assets/Diagrams",
     "Homelab/Dokumentation/IP Dokumentation.md",
     "copilot/copilot-conversations/Was_siehst_du@20260305_112251.md",
     "copilot/memory/Recent Conversations.md",
@@ -191,7 +193,6 @@
     "Untitled.md",
     "Ink/Drawing",
     "Ink/Writing",
-    "Ink",
-    "Untitled.base"
+    "Ink"
   ]
 }

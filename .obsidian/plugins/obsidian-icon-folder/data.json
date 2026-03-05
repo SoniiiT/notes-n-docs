@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "LiBrainCog",
-      "LiBrain",
-      "LiBookOpen",
-      "LiAppWindowMac",
-      "RiToolsFill"
+      "RiContactsBookUploadFill",
+      "LiBoxes",
+      "LiBookTemplate",
+      "LiShield",
+      "LiNetwork"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -54,5 +54,12 @@
   "Tools": "RiToolsFill",
   "Websites": "LiAppWindowMac",
   "Documentation": "LiBookOpen",
-  "Documentation/HowTo": "LiBrainCog"
+  "Documentation/HowTo": "LiBrainCog",
+  "Container": "LiContainer",
+  "Linux": "SiLinux",
+  "Networking": "LiNetwork",
+  "Security": "LiShield",
+  "Templates": "LiBookTemplate",
+  "Virtualization": "LiBoxes",
+  "Assets": "RiContactsBookUploadFill"
 }
