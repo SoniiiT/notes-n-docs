@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2a7436b84816b4fa",
+        "id": "25d4ec35ed084ec0",
         "type": "tabs",
         "children": [
           {
-            "id": "f68e4b256aa53cbc",
+            "id": "6e76889073b2460b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clustering/HyperV-Failover-Cluster/Hyper-V Failover Cluster.md",
+                "file": "AI/LLMs/Modell Vergleiche.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hyper-V Failover Cluster"
+              "title": "Modell Vergleiche"
             }
           }
         ]
@@ -30,19 +30,6 @@
     "id": "59be088e1ac310f1",
     "type": "mobile-drawer",
     "children": [
-      {
-        "id": "2df25b64c14ba21a",
-        "type": "leaf",
-        "state": {
-          "type": "file-explorer",
-          "state": {
-            "sortOrder": "alphabetical",
-            "autoReveal": false
-          },
-          "icon": "lucide-folder-closed",
-          "title": "Dateiexplorer"
-        }
-      },
       {
         "id": "0646f34eb56ac0db",
         "type": "leaf",
@@ -57,7 +44,7 @@
             "sortOrder": "alphabetical"
           },
           "icon": "lucide-search",
-          "title": "Search"
+          "title": "Suchen"
         }
       },
       {
@@ -84,9 +71,22 @@
           "icon": "lucide-bookmark",
           "title": "Bookmarks"
         }
+      },
+      {
+        "id": "6fa5d4d23e97212d",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "Dateiexplorer"
+        }
       }
     ],
-    "currentTab": 0
+    "currentTab": 3
   },
   "right": {
     "id": "abf1261dfb2b44df",
@@ -131,7 +131,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Clustering/HyperV-Failover-Cluster/Hyper-V Failover Cluster.md",
+            "file": "AI/LLMs/Modell Vergleiche.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -139,9 +139,19 @@
           "icon": "lucide-list",
           "title": "Gliederung"
         }
+      },
+      {
+        "id": "06db1ba41877b103",
+        "type": "leaf",
+        "state": {
+          "type": "advanced-tables-toolbar",
+          "state": {},
+          "icon": "spreadsheet",
+          "title": "Advanced Tables"
+        }
       }
     ],
-    "currentTab": 2
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -160,40 +170,42 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f68e4b256aa53cbc",
+  "active": "6e76889073b2460b",
   "lastOpenFiles": [
-    "Virtualization/HyperV/Installation Hyper-V (Windows Server 2022).md",
-    "Projekt Ideen/Projektideen.md",
+    "AI/LLMs/Lokale LLMs.md",
+    "AI/Agents/Was ist ein AI Agent.md",
+    "AI/Agents/GitHub Copilot CLI Konfiguration.md",
+    "AI/Agents/Aider Konfiguration.md",
+    "AI/Agents/AI Coding Agents Vergleich.md",
+    "Unbenannt.md",
+    "AI/Prompting/Prompt Engineering Techniken.md",
+    "AI/Prompting/Output-Formatierung steuern.md",
+    "AI/Training/Unsloth Axolotl LLaMA-Factory.md",
+    "AI/Training/Datasets vorbereiten.md",
+    "AI/RAG/Embeddings.md",
+    "AI/Tools/Ollama.md",
+    "AI/Tools/AnythingLLM.md",
+    "AI/Agents/Custom Instructions für AI Coding Agents.md",
+    "Clustering/HyperV-Failover-Cluster/Hyper-V Failover Cluster.md",
+    "AI/Prompting/System Prompts schreiben.md",
+    "AI/Prompting/Prompts für Code-Generierung.md",
+    "AI/LLMs/Modell Vergleiche.md",
+    "AI/LLMs/LLM API Provider und Router.md",
+    "AI/LLMs/Context Window und Token Management.md",
+    "AI/LLMs/Modell Übersicht.md",
+    "AI/MCP/MCP Server erstellen (Python).md",
+    "AI/MCP/MCP Server in Claude Code einbinden.md",
+    "AI/MCP/MCP Tools Resources Prompts.md",
+    "AI/MCP/Was ist MCP.md",
+    "AI/RAG/Vektordatenbanken.md",
     "Assets/Images",
     "Assets/Diagrams",
-    "Homelab/Dokumentation/IP Dokumentation.md",
-    "copilot/copilot-conversations/Was_siehst_du@20260305_112251.md",
-    "copilot/memory/Recent Conversations.md",
     "copilot/memory",
-    "copilot/copilot-conversations/Kannst_du_mir_vorschläge_machen,_was_man_hier_noch_so@20260305_112024.md",
     "copilot/copilot-conversations",
-    "copilot/copilot-custom-prompts/Clip Web Page.md",
-    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts/Remove URLs.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md",
-    "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Translate to Chinese.md",
-    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
     "copilot/copilot-custom-prompts",
     "copilot",
-    "Documentation/HowTo/Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker).md",
-    "Homelab/Dokumentation/Proxmox.md",
     "Ink/Writing/2025.8.23 - 11.26am.writing",
     "Ink/Drawing/2025.8.23 - 11.27am.drawing",
-    "Untitled.md",
     "Ink/Drawing",
     "Ink/Writing"
   ]

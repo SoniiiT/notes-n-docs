@@ -8,5 +8,7 @@
   "autoPairBrackets": true,
   "autoPairMarkdown": true,
   "smartIndentList": true,
-  "useTab": true
+  "useTab": true,
+  "defaultViewMode": "preview",
+  "showInlineTitle": true
 }
