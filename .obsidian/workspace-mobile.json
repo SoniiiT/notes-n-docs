@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Homelab/Dokumentation/IP Dokumentation.md",
+                "file": "Projekt Ideen/Projektideen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IP Dokumentation"
+              "title": "Projektideen"
             }
           }
         ]
@@ -155,16 +155,13 @@
       "obsidian-kanban:Create new board": false,
       "omnisearch:Omnisearch": false,
       "card-note:Search Notes": false,
-      "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "smart-connections:Open: Smart Chat": false,
-      "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Smart Connections: Open random connection": true,
       "obsidian-git:Open Git source control": false
     }
   },
   "active": "f68e4b256aa53cbc",
   "lastOpenFiles": [
+    "Homelab/Dokumentation/IP Dokumentation.md",
     "copilot/copilot-conversations/Was_siehst_du@20260305_112251.md",
     "copilot/memory/Recent Conversations.md",
     "copilot/memory",
@@ -189,7 +186,6 @@
     "copilot",
     "Documentation/HowTo/Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker).md",
     "Homelab/Dokumentation/Proxmox.md",
-    "Homelab/Dokumentation/IP Dokumentation.md",
     "Ink/Writing/2025.8.23 - 11.26am.writing",
     "Ink/Drawing/2025.8.23 - 11.27am.drawing",
     "Untitled.md",
