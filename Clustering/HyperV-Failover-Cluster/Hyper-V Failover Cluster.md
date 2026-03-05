@@ -75,6 +75,72 @@ Ein Hyper-V Failover Cluster benötigt **4 dedizierte Netzwerke** für den Clust
 > [!NOTE]
 > FC HBAs sind **keine** Ethernet-NICs — sie sind separate PCIe-Karten und erscheinen nicht in der Windows NIC-Liste. Bei Fiber Channel bleiben die 4 Ethernet NICs unverändert; der HBA kommt als zusätzlicher PCIe-Adapter hinzu.
 
+### Jumbo Frames (MTU 9000)
+
+Jumbo Frames müssen für Live Migration, Cluster/CSV und iSCSI konfiguriert werden. Sie reduzieren den CPU-Overhead und erhöhen den Durchsatz um bis zu **~27%**.
+
+> [!WARNING]
+> Jumbo Frames müssen **end-to-end** konsistent konfiguriert sein — auf den NICs **aller** Nodes **und** auf allen Switch-Ports, die diese Netzwerke tragen. Eine inkonsistente MTU führt zu Fragmentierung oder Verbindungsabbrüchen.
+
+| Netzwerk | Jumbo Frames | MTU |
+| -------- | ------------ | --- |
+| Live Migration | **Ja** | 9000 oder 9014 |
+| Cluster / CSV | **Ja** | 9000 oder 9014 |
+| iSCSI Storage | **Ja** | 9000 oder 9014 |
+| Management | Nein | 1500 (Standard) |
+| VM Network | Nein | 1500 (Standard) |
+
+> [!NOTE]
+> Der MTU-Wert (9000 oder 9014) hängt vom Hersteller ab. Wichtig ist, dass **alle** Geräte im Pfad denselben Wert verwenden. 9014 ist der häufigste Wert bei Intel NICs und berücksichtigt den Ethernet-Frame-Header.
+
+#### NICs konfigurieren (PowerShell)
+
+Auf **allen** Nodes ausführen — für jeden betroffenen Adapter:
+
+```powershell
+# Adapter anzeigen
+Get-NetAdapter
+
+# Jumbo Frames auf einem Adapter setzen (AdapterName anpassen)
+Set-NetAdapterAdvancedProperty -Name "LM-NIC" -RegistryKeyword "*JumboPacket" -RegistryValue 9014
+Set-NetAdapterAdvancedProperty -Name "CSV-NIC" -RegistryKeyword "*JumboPacket" -RegistryValue 9014
+Set-NetAdapterAdvancedProperty -Name "iSCSI-NIC-1" -RegistryKeyword "*JumboPacket" -RegistryValue 9014
+Set-NetAdapterAdvancedProperty -Name "iSCSI-NIC-2" -RegistryKeyword "*JumboPacket" -RegistryValue 9014
+
+# Konfiguration prüfen
+Get-NetAdapterAdvancedProperty -Name "LM-NIC" -RegistryKeyword "*JumboPacket"
+
+# MTU-Wert über NetIPInterface prüfen
+Get-NetIPInterface | Where-Object InterfaceAlias -like "*LM*" | Select-Object InterfaceAlias, NlMtu
+```
+
+#### Switch-Konfiguration
+
+Der Switch muss auf **allen Ports**, die Live Migration, CSV und iSCSI-VLANs tragen, ebenfalls auf MTU 9000/9014 konfiguriert werden. Dies ist **herstellerabhängig**:
+
+| Hersteller | Befehl (Beispiel) |
+| ---------- | ----------------- |
+| Cisco IOS | `system mtu jumbo 9000` |
+| Cisco Nexus | `policy-map type network-qos jumbo` / `mtu 9216` |
+| HPE / Aruba | `jumbo` auf dem Interface oder VLAN |
+| Mikrotik | `/interface ethernet set mtu=9000` |
+
+> [!WARNING]
+> Jumbo Frames **nicht** auf dem VM Network oder Management-Netzwerk aktivieren, es sei denn die gesamte Infrastruktur inkl. aller Client-Geräte unterstützt MTU 9000. Im Zweifel Management und VM Network auf Standard-MTU (1500) belassen.
+
+#### Jumbo Frames testen
+
+Nach der Konfiguration auf allen Nodes und am Switch testen:
+
+```powershell
+# Ping mit Jumbo-Frame-Größe zwischen zwei Nodes (IP anpassen)
+# -f = Don't Fragment, -l = Paketgröße (8972 = 9000 MTU - 28 Byte Header)
+ping -f -l 8972 192.168.20.2
+
+# Wenn der Ping erfolgreich ist, ist Jumbo Frames end-to-end korrekt konfiguriert.
+# Wenn er fehlschlägt, ist ein Gerät im Pfad nicht korrekt konfiguriert.
+```
+
 ---
 
 ## Shared Storage einrichten
