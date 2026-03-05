@@ -42,22 +42,38 @@ Ein Hyper-V Failover Cluster besteht aus mehreren Windows Servern (Nodes), die g
 | ---------- | ----------- |
 | CPU | 64-bit, kompatible CPU-Familien auf allen Nodes (für Live Migration) |
 | RAM | Mind. 8 GB pro Node |
-| NICs | Mind. 2 pro Node (Management + Cluster/Live Migration) |
-| Storage-Adapter | iSCSI-Initiator (Software) oder FC HBA (Hardware) |
+| NICs (Hyper-V) | Mind. 4 Ethernet NICs pro Node (Management, Cluster/CSV, Live Migration, VM Network) |
+| Storage-Adapter | Zusätzlich: iSCSI-Initiator (Software-NIC) oder FC HBA (Hardware, PCIe) |
 
 > [!TIP]
 > Für Live Migration ohne Kompatibilitätsmodus sollten alle Nodes CPUs **derselben Generation und Herstellers** (Intel oder AMD) haben.
 
 ### Netzwerkplanung
 
-Für einen produktionsreifen Cluster wird eine klare NIC-Trennung empfohlen:
+Ein Hyper-V Failover Cluster benötigt **4 dedizierte Netzwerke** für den Clusterbetrieb. Storage-Adapter kommen **zusätzlich** dazu und zählen nicht zu den 4 Basis-NICs.
+
+#### Hyper-V Cluster Basis-NICs (mind. 4 pro Node)
 
 | Netzwerk | Zweck | Empfehlung |
 | -------- | ----- | ---------- |
-| Management | RDP, Server-Verwaltung | 1 GbE / VLAN |
-| Cluster Heartbeat | Node-zu-Node Kommunikation | 1–10 GbE, dediziertes VLAN |
+| Management | RDP, Server-Verwaltung, WinRM, AD, DNS | 1 GbE, dediziertes VLAN |
+| Cluster / CSV | Node-zu-Node Heartbeat + CSV-Redirected-Mode Traffic | 1–10 GbE, dediziertes VLAN, nicht routbar |
 | Live Migration | VM-Speicher-Transfer zwischen Nodes | 10 GbE, dediziertes VLAN |
-| Storage (iSCSI) | Zugriff auf Shared Storage | 10 GbE, dediziertes VLAN |
+| VM Network | Externer Traffic der VMs (vSwitch External) | 10 GbE, Produktions-VLAN |
+
+> [!NOTE]
+> Cluster- und CSV-Traffic laufen über **dasselbe** Netzwerk. Ein separater CSV-NIC ist nicht erforderlich — der Cluster wählt automatisch das beste verfügbare Netzwerk für CSV-Kommunikation.
+
+#### Storage-Adapter (zusätzlich zu den 4 Basis-NICs)
+
+| Storage-Methode | Adapter | Mindestanzahl | Hinweis |
+| --------------- | ------- | ------------- | ------- |
+| iSCSI | Ethernet NIC | 2x (für MPIO) | Dediziertes, nicht routbares VLAN. Kein NIC-Teaming via Hersteller-Software |
+| Fiber Channel | FC HBA (PCIe) | 1x (direkt) oder 2x (redundant) | Direkt zum Storage oder via FC Switch. Zoning am FC Switch erforderlich |
+| FC direkt (Direct Attach) | FC HBA (PCIe) | 1x pro Node | Direkte Kabelverbindung zur Storage-Einheit, kein FC Switch nötig |
+
+> [!NOTE]
+> FC HBAs sind **keine** Ethernet-NICs — sie sind separate PCIe-Karten und erscheinen nicht in der Windows NIC-Liste. Bei Fiber Channel bleiben die 4 Ethernet NICs unverändert; der HBA kommt als zusätzlicher PCIe-Adapter hinzu.
 
 ---
 
