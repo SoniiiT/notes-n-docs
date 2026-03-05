@@ -138,19 +138,9 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
-      },
-      {
-        "id": "2c64084e94db7dfd",
-        "type": "leaf",
-        "state": {
-          "type": "smart-connections-view",
-          "state": {},
-          "icon": "smart-connections",
-          "title": "Connections"
-        }
       }
     ],
-    "currentTab": 3
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
