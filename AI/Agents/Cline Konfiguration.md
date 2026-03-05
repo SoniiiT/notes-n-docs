@@ -71,9 +71,9 @@ Cline unterstützt eine Vielzahl von LLM-Providern. Die Konfiguration erfolgt im
 
 | Provider | Modelle (Beispiele) | Bemerkung |
 |---|---|---|
-| **Anthropic** | Claude Sonnet 4, Claude Opus 4 | Empfohlen für beste Ergebnisse |
-| **OpenAI** | GPT-4.1, o3, o4-mini | Gute Alternative |
-| **Google** | Gemini 2.5 Pro/Flash | Großes Context Window |
+| **Anthropic** | Claude Sonnet 4.6, Claude Opus 4.6 | Empfohlen für beste Ergebnisse |
+| **OpenAI** | GPT-5.2, GPT-5.3 Codex | Gute Alternative |
+| **Google** | Gemini 2.5 Pro/Flash, 3.1 Pro | Großes Context Window |
 | **AWS Bedrock** | Claude via AWS | Für Enterprise-Umgebungen |
 | **Google Vertex AI** | Gemini/Claude via GCP | Google Cloud Integration |
 | **OpenRouter** | Zugang zu vielen Modellen | Meta-Provider, flexibel |

@@ -435,7 +435,7 @@ Memories werden in `~/.gemini/memory.md` oder `.gemini/memory.md` gespeichert.
 | Feature                     | Gemini CLI                | Claude Code               | GitHub Copilot CLI          |
 | --------------------------- | ------------------------- | ------------------------- | --------------------------- |
 | **Hersteller**              | Google                    | Anthropic                 | GitHub / Microsoft          |
-| **Modell**                  | Gemini 2.5 Pro            | Claude Sonnet/Opus        | GPT-4o / Claude / Gemini   |
+| **Modell**                  | Gemini 2.5 Pro            | Claude Sonnet/Opus        | GPT-5.2 / Claude 4.6 / Gemini   |
 | **Open Source**             | ✅ Ja (Apache 2.0)        | ❌ Nein (Proprietary)      | ❌ Nein (Proprietary)       |
 | **Kostenlos nutzbar**       | ✅ 1.000 Req/Tag           | ❌ Bezahlt (ab ~$20/Mo)   | ❌ Bezahlt (Copilot Sub)    |
 | **Installation**            | npm                       | npm                       | GitHub CLI Extension        |

@@ -321,7 +321,7 @@ welche neuen Features in der letzten Version enthalten sind.
 Der Agent führt dann eigenständig Websuchen durch, ruft Seiten ab und synthetisiert eine Antwort.
 
 > [!NOTE]
-> Agenten funktionieren am besten mit leistungsfähigeren Modellen wie GPT-4o, Claude Sonnet oder Llama 3.1 70B. Kleinere Modelle haben oft Probleme mit der korrekten Tool-Nutzung.
+> Agenten funktionieren am besten mit leistungsfähigeren Modellen wie GPT-5.2, Claude Sonnet 4.6 oder Llama 4 Scout. Kleinere Modelle haben oft Probleme mit der korrekten Tool-Nutzung.
 
 ---
 

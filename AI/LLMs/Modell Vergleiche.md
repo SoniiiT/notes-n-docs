@@ -1,7 +1,7 @@
 # Modell Vergleiche
 
 > [!NOTE]
-> Dieser Vergleich basiert auf dem Stand **August 2025**. LLM-Benchmarks und -Preise ändern sich häufig. Die Empfehlungen hier sind praxisorientiert und nicht rein benchmark-basiert – da Benchmarks oft nicht die reale Nutzung abbilden.
+> **Stand: März 2026.** Dieser Vergleich basiert auf dem Stand **März 2026**. LLM-Benchmarks und -Preise ändern sich häufig. Die Empfehlungen hier sind praxisorientiert und nicht rein benchmark-basiert – da Benchmarks oft nicht die reale Nutzung abbilden.
 
 ---
 
@@ -24,7 +24,7 @@ Um LLMs sinnvoll zu vergleichen, braucht es klare Kriterien. Diese sind je nach 
 
 ---
 
-## Claude vs. GPT-4o: Detaillierter Vergleich
+## Claude vs. GPT-5: Detaillierter Vergleich
 
 ### Stärken von Claude (Anthropic)
 
@@ -36,11 +36,11 @@ Aufgabe: "Antworte ausschließlich in gültigem JSON ohne Markdown-Codeblöcke.
 Schema: { 'name': string, 'score': number, 'reasons': string[] }"
 
 Claude: Gibt konsistent valides JSON zurück, auch über viele Turns
-GPT-4o: Fügt manchmal trotzdem ```json-Blöcke hinzu oder weicht vom Schema ab
+GPT-5.2: Fügt manchmal trotzdem ```json-Blöcke hinzu oder weicht vom Schema ab
 ```
 
 **Längere Dokumente und Context-Nutzung:**
-Claude nutzt den 200K-Token-Context sehr zuverlässig. Die Performance nimmt auch bei fast vollem Context weniger stark ab.
+Claude nutzt den 200K-Token-Context (1M in Beta) sehr zuverlässig. Die Performance nimmt auch bei fast vollem Context weniger stark ab.
 
 **Schreiben und Nuancierung:**
 Claude ist bekannt für präziseres, nuancierteres Schreiben. Weniger Neigung zu übertriebener Positivität ("Certainly! Great question!").
@@ -48,38 +48,38 @@ Claude ist bekannt für präziseres, nuancierteres Schreiben. Weniger Neigung zu
 **Sicherheit und Ablehnung:**
 Claude lehnt schädliche Anfragen ab, aber die Ablehnung ist präziser kalibriert – weniger False Positives bei legitimen Anfragen in Graubereichen.
 
-### Stärken von GPT-4o (OpenAI)
+### Stärken von GPT-5.2 (OpenAI)
 
 **Multimodalität:**
-GPT-4o verarbeitet Text, Bilder und Audio nativ in einem Modell. Besonders bei Audio-Verarbeitung und Echtzeit-Sprachinteraktion ist GPT-4o führend.
+GPT-5.2 verarbeitet Text, Bilder und Audio nativ in einem Modell. Besonders bei Audio-Verarbeitung und Echtzeit-Sprachinteraktion ist GPT-5.2 führend.
 
 **Breites Ökosystem:**
 OpenAI hat das größte Tooling-Ökosystem: Assistants API, Fine-Tuning, DALL-E-Integration, Code Interpreter, umfangreiche SDKs.
 
-**DALL-E und Bildgenerierung:**
-Direktintegration von Bildgenerierung in die API.
+**Großes Context Window (400K):**
+GPT-5.2 bietet mit 400K Tokens eines der größten Context Windows unter den proprietären Modellen.
 
 **Web-Browsing (ChatGPT Plus):**
 Bessere Integration von Echtzeit-Websuche in ChatGPT.
 
 ### Direkter Vergleich
 
-| Kriterium | Claude Sonnet 4.5 | GPT-4o | Vorteil |
+| Kriterium | Claude Sonnet 4.6 | GPT-5.2 | Vorteil |
 |-----------|------------------|--------|---------|
 | Instruction Following | Hervorragend | Sehr gut | Claude |
-| Code-Generierung | Sehr gut | Sehr gut | Gleich |
+| Code-Generierung | Hervorragend | Sehr gut | Claude |
 | Reasoning | Sehr gut | Sehr gut | Gleich (ohne Extended Thinking) |
-| Langer Context | Hervorragend (200K) | Gut (128K) | Claude |
-| Multimodalität | Gut (Text+Bild) | Hervorragend (Text+Bild+Audio) | GPT-4o |
+| Langer Context | Hervorragend (200K, 1M Beta) | Hervorragend (400K) | GPT-5.2 (Größe), Claude (Recall) |
+| Multimodalität | Gut (Text+Bild) | Hervorragend (Text+Bild+Audio) | GPT-5.2 |
 | Schreiben/Nuancierung | Hervorragend | Sehr gut | Claude |
 | Deutsch-Qualität | Sehr gut | Sehr gut | Gleich |
-| API-Ökosystem | Gut | Hervorragend | GPT-4o |
-| Kosten (Input) | $3/M | $5/M | Claude |
+| API-Ökosystem | Gut | Hervorragend | GPT-5.2 |
+| Kosten (Input) | $3/M | $1,75/M | GPT-5.2 |
 | Verfügbarkeit/Uptime | Sehr gut | Sehr gut | Gleich |
 | JSON/Tool Reliability | Hervorragend | Sehr gut | Claude |
 
 > [!TIP]
-> **Praxisempfehlung:** Für die meisten Produktionsanwendungen (Agents, RAG, strukturierte Extraktion) bietet Claude Sonnet 4.5 das beste Preis-Leistungs-Verhältnis. Für multimodale Anwendungen mit Audio oder intensive DALL-E-Integration ist GPT-4o besser.
+> **Praxisempfehlung:** Für die meisten Produktionsanwendungen (Agents, RAG, strukturierte Extraktion) bietet Claude Sonnet 4.6 das beste Preis-Leistungs-Verhältnis. GPT-5.2 ist preislich günstiger und bietet ein 400K Context Window. Für multimodale Anwendungen mit Audio ist GPT-5.2 besser.
 
 ---
 
@@ -95,7 +95,7 @@ Reasoning-Modelle führen vor der Antwort einen sichtbaren oder versteckten Denk
 
 **Kosten:** Reasoning-Modelle sind deutlich teurer als Standard-Modelle, da auch die Denk-Tokens berechnet werden.
 
-### Claude Extended Thinking (Opus 4.5)
+### Claude Extended Thinking (Opus 4.6)
 
 ```python
 import anthropic
@@ -103,7 +103,7 @@ import anthropic
 client = anthropic.Anthropic()
 
 response = client.messages.create(
-    model="claude-opus-4-5",
+    model="claude-opus-4-6",
     max_tokens=16000,
     thinking={
         "type": "enabled",
@@ -147,18 +147,18 @@ print(response.choices[0].message.content)
 
 ### Vergleich der Reasoning-Modelle
 
-| Kriterium | Claude Opus 4.5 (Thinking) | o1 | o3 | Gemini 2.0 (Thinking) |
+| Kriterium | Claude Opus 4.6 (Thinking) | o3 | GPT-5.3 Codex | Gemini 2.5 Pro (Thinking) |
 |-----------|---------------------------|----|----|----------------------|
-| Mathematik (AIME) | Sehr stark | Stark | State-of-the-Art | Stark |
-| Code-Reasoning | Sehr stark | Stark | Sehr stark | Gut |
-| Denkprozess sichtbar | Ja | Nein | Nein | Ja (Flash Thinking) |
-| Reasoning-Budget einstellbar | Ja (budget_tokens) | Nein (auto) | Ja (reasoning_effort) | Begrenzt |
-| Kosten | Hoch ($15/$75 Input/Output) | Sehr hoch | Sehr hoch ($10/$40) | Moderat |
-| Geschwindigkeit | Mittel | Langsam | Mittel | Mittel |
-| Context Window | 200K | 200K | 200K | 1M |
+| Mathematik (AIME) | Sehr stark | Stark | Sehr stark | Stark |
+| Code-Reasoning | Sehr stark | Sehr stark | State-of-the-Art | Gut |
+| Denkprozess sichtbar | Ja | Nein | Nein | Ja |
+| Reasoning-Budget einstellbar | Ja (budget_tokens) | Ja (reasoning_effort) | Ja (reasoning_effort) | Begrenzt |
+| Kosten | Hoch ($5/$25 Input/Output) | Sehr hoch ($10/$40) | ~$1,75/$14 | Moderat (~$1,25/$5) |
+| Geschwindigkeit | Mittel | Mittel | Mittel | Mittel |
+| Context Window | 200K (1M Beta) | 200K | 400K | 1M |
 
 > [!WARNING]
-> Reasoning-Modelle sind für die meisten alltäglichen Aufgaben **überdimensioniert**. Nur einsetzen bei wirklich komplexen Problemen: Olympiade-Mathematik, komplexe Beweise, sehr schwieriges Code-Debugging. Für normale Programmierung ist Claude Sonnet 4.5 oder GPT-4o besser geeignet (schneller und günstiger).
+> Reasoning-Modelle sind für die meisten alltäglichen Aufgaben **überdimensioniert**. Nur einsetzen bei wirklich komplexen Problemen: Olympiade-Mathematik, komplexe Beweise, sehr schwieriges Code-Debugging. Für normale Programmierung ist Claude Sonnet 4.6 oder GPT-5.2 besser geeignet (schneller und günstiger).
 
 ---
 
@@ -170,11 +170,13 @@ SWE-Bench misst die Fähigkeit, echte GitHub-Issues zu lösen – ein praxisnahe
 
 | Modell | SWE-Bench Score (ca.) | Stärke |
 |--------|----------------------|--------|
-| Claude Opus 4.5 | ~70%+ | Architektur, komplexe Refactorings |
-| GPT-4o | ~48% | Breite Sprachunterstützung |
+| Claude Opus 4.6 | ~75%+ | Architektur, komplexe Refactorings |
+| GPT-5.3 Codex | ~75% | Spezialisiert auf Code-Aufgaben |
+| Claude Sonnet 4.6 | ~72% | Beste Balance Qualität/Kosten |
 | o3 | ~72% | Logische Code-Probleme |
-| Gemini 2.0 Pro | ~55% | Google-Stack-Integration |
-| Qwen2.5-Coder 32B | ~45% | Open-Weight-Spitze |
+| Gemini 2.5 Pro | ~65% | Google-Stack-Integration |
+| DeepSeek V3.2 | ~55% | Open-Weight, sehr günstig |
+| Llama 4 Maverick | ~50% | Open-Weight, großer Context |
 
 ### Praktische Code-Fähigkeiten
 
@@ -182,17 +184,17 @@ SWE-Bench misst die Fähigkeit, echte GitHub-Issues zu lösen – ein praxisnahe
 ```
 Aufgabe: "Schreibe eine Python-Klasse für einen LRU-Cache mit Thread-Sicherheit"
 
-Top-Performer: Claude Sonnet 4.5, GPT-4o, Codestral
+Top-Performer: Claude Sonnet 4.6, GPT-5.3 Codex, DeepSeek V3.2
 → Alle produzieren funktionierenden Code
-→ Claude und GPT-4o tendieren zu besserem Docstring/Typ-Annotation-Stil
-→ Codestral (Mistral) oft knapperer, idiomatischerer Code
+→ Claude und GPT-5.3 tendieren zu besserem Docstring/Typ-Annotation-Stil
+→ DeepSeek V3.2 oft knapperer, idiomatischerer Code bei extrem niedrigen Kosten
 ```
 
 **Code-Debugging:**
 ```
 Aufgabe: "Finde den Fehler in diesem 200-Zeilen Python-Script mit Off-by-One-Error"
 
-Top-Performer: Claude Opus 4.5 (Extended Thinking), o3
+Top-Performer: Claude Opus 4.6 (Extended Thinking), GPT-5.3 Codex
 → Extended Thinking hilft bei subtilen Bugs
 → Claude erklärt den Fehler besonders präzise
 ```
@@ -201,22 +203,23 @@ Top-Performer: Claude Opus 4.5 (Extended Thinking), o3
 ```
 Aufgabe: "Verstehe diese 3.000-Zeilen-Codebase und füge eine neue Feature hinzu"
 
-Top-Performer: Claude (großer Context, gutes File-Tracking)
-→ Claude Sonnet/Opus 4.5 behalten den Überblick über große Codebases
-→ Konsistentere Variablennamen und Architektur über Dateien hinweg
+Top-Performer: Claude (großer Context, gutes File-Tracking), GPT-5.2/5.3 (400K Context)
+→ Claude Sonnet/Opus 4.6 behalten den Überblick über große Codebases
+→ GPT-5.2 kann mit 400K Context noch größere Codebases in einem Prompt verarbeiten
+→ Llama 4 Scout bietet mit 10M Context theoretisch den größten Überblick
 ```
 
 **Empfehlungen nach Code-Aufgabe:**
 
 | Aufgabe | Empfohlenes Modell | Begründung |
 |---------|-------------------|-----------|
-| Neuen Code schreiben | Claude Sonnet 4.5 oder GPT-4o | Beste Balance |
-| Debugging (einfach) | Claude Haiku 4.5 oder GPT-4o-mini | Schnell und günstig |
-| Debugging (komplex) | Claude Opus 4.5 mit Extended Thinking | Sichtbares Reasoning |
-| Code-Review | Claude Sonnet 4.5 | Präzises Instruction Following |
-| Speziell für Code | Codestral (Mistral) | Code-spezialisiert, 80+ Sprachen |
-| Lokal, Code-Focus | Qwen2.5-Coder 32B | Beste Open-Weight-Option |
-| Erklärungen schreiben | Claude Sonnet 4.5 | Besonders klare Erklärungen |
+| Neuen Code schreiben | Claude Sonnet 4.6 oder GPT-5.3 Codex | Beste Balance |
+| Debugging (einfach) | Claude Haiku 4.5 oder DeepSeek V3.2 | Schnell und günstig |
+| Debugging (komplex) | Claude Opus 4.6 mit Extended Thinking | Sichtbares Reasoning |
+| Code-Review | Claude Sonnet 4.6 | Präzises Instruction Following |
+| Speziell für Code | GPT-5.3 Codex | Code-spezialisiert |
+| Lokal, Code-Focus | DeepSeek V3.2 oder Llama 4 Maverick | Beste Open-Weight-Optionen |
+| Erklärungen schreiben | Claude Sonnet 4.6 | Besonders klare Erklärungen |
 
 ---
 
@@ -235,23 +238,28 @@ Context-Struktur:
 
 | Modell | Context-Größe | "Needle in a Haystack" | Empfehlung für |
 |--------|--------------|----------------------|----------------|
-| Claude Sonnet/Opus 4.5 | 200K | Sehr zuverlässig bis ~150K | Codebase-Analyse, lange Reports |
-| GPT-4o | 128K | Gut bis ~100K | Mittellange Dokumente |
-| Gemini 1.5 Pro | 1M | Gut, leichte Degradation bei 500K+ | Sehr lange Dokumente, Bücher |
-| Gemini 2.0 Pro | 2M | Noch in Erprobung | Experimentelle Nutzung |
-| Llama 3.1 70B | 128K | Mittel (Context-Recall schwächer) | Wenn lokal nötig |
+| Claude Sonnet/Opus 4.6 | 200K (1M Beta) | Sehr zuverlässig bis ~150K | Codebase-Analyse, lange Reports |
+| GPT-5.2/5.3 | 400K | Sehr gut bis ~300K | Große Codebases, lange Dokumente |
+| Gemini 2.5 Pro | 1M | Gut, leichte Degradation bei 500K+ | Sehr lange Dokumente, Bücher |
+| Gemini 3.1 Pro | 1M | In Erprobung (Preview) | Experimentelle Nutzung |
+| Llama 4 Scout | 10M | Noch in Erprobung | Extrem große Kontexte |
+| Llama 4 Maverick | 1M | Gut bis ~500K | Wenn lokal/Open-Weight nötig |
+| DeepSeek V3.2 | 128-164K | Mittel (Context-Recall schwächer) | Günstige Analyse mittlerer Dokumente |
 
 > [!IMPORTANT]
-> Ein Context Window von 1M Tokens klingt beeindruckend, aber Qualität und Kosten sind entscheidend. **Für zuverlässige Analyse langer Dokumente ist Claude mit 200K Context oft besser als Gemini mit 1M**, weil die Recall-Qualität höher ist. Gemini 1.5 Pro ist sinnvoll, wenn das Dokument wirklich >200K Tokens hat.
+> Ein Context Window von 10M Tokens (Llama 4 Scout) klingt beeindruckend, aber Qualität und Kosten sind entscheidend. **Für zuverlässige Analyse langer Dokumente ist Claude mit 200K Context oft besser als Modelle mit größerem Context**, weil die Recall-Qualität höher ist. GPT-5.2 bietet mit 400K einen guten Mittelweg. Gemini 2.5 Pro ist sinnvoll, wenn das Dokument wirklich >400K Tokens hat.
 
 **Praktische Grenzen für zuverlässige Nutzung:**
 
 | Modell | Theoretisches Max | Zuverlässiges Praktik-Limit |
 |--------|-----------------|----------------------------|
-| Claude 4.5 | 200K | ~150K |
-| GPT-4o | 128K | ~80K |
-| Gemini 1.5 Pro | 1M | ~300-400K |
-| Gemini 2.0 Pro | 2M | ~500K (experimentell) |
+| Claude 4.6 | 200K (1M Beta) | ~150K |
+| GPT-5.2/5.3 | 400K | ~300K |
+| Gemini 2.5 Pro | 1M | ~400-500K |
+| Gemini 3.1 Pro | 1M | TBD (Preview) |
+| Llama 4 Scout | 10M | ~1-2M (experimentell) |
+| DeepSeek V3.2 | 128-164K | ~80-100K |
+| Mistral Large 3 | 256K | ~150K |
 
 ---
 
@@ -271,12 +279,12 @@ Deutsch ist durch folgende Eigenschaften anspruchsvoller als Englisch:
 
 | Modell | Grammatik | Stil | Nuancen | Gesamt |
 |--------|-----------|------|---------|--------|
-| Claude Sonnet/Opus 4.5 | Hervorragend | Sehr gut | Sehr gut | ★★★★★ |
-| GPT-4o | Hervorragend | Sehr gut | Gut | ★★★★★ |
-| Gemini 1.5 Pro | Sehr gut | Gut | Gut | ★★★★ |
-| Mistral Large | Sehr gut | Gut | Gut | ★★★★ |
-| Llama 3.1 70B | Gut | Gut | Mittel | ★★★ |
-| Llama 3.1 8B | Mittel | Mittel | Begrenzt | ★★ |
+| Claude Sonnet/Opus 4.6 | Hervorragend | Sehr gut | Sehr gut | ★★★★★ |
+| GPT-5.2 | Hervorragend | Sehr gut | Gut | ★★★★★ |
+| Gemini 2.5 Pro | Sehr gut | Gut | Gut | ★★★★ |
+| Mistral Large 3 | Sehr gut | Gut | Gut | ★★★★ |
+| Llama 4 Maverick | Gut | Gut | Gut | ★★★★ |
+| DeepSeek V3.2 | Gut | Gut | Mittel | ★★★ |
 
 **Deutsch-spezifische Stärken:**
 
@@ -284,14 +292,14 @@ Deutsch ist durch folgende Eigenschaften anspruchsvoller als Englisch:
 Aufgabe: "Schreibe einen formellen Brief auf Deutsch, der eine Kündigung
 des Mietvertrags nach deutschem Recht korrekt formuliert"
 
-Claude Sonnet 4.5:
+Claude Sonnet 4.6:
 → Korrekte Anrede, rechtlich präzise Formulierungen, korrekter Konjunktiv
 → Kennt deutschrechtliche Spezifika (Kündigungsfristen, Schriftform)
 
-GPT-4o:
+GPT-5.2:
 → Ebenfalls sehr gut, manchmal etwas "amerikanischer" Stil
 
-Llama 3.1 8B:
+DeepSeek V3.2:
 → Grammatisch korrekt, aber weniger nuanciert, manchmal falsche Formalitätsstufe
 ```
 
@@ -299,41 +307,41 @@ Llama 3.1 8B:
 
 | Anwendungsfall | Empfehlung | Begründung |
 |----------------|-----------|-----------|
-| Professionelle Texte (Briefe, Reports) | Claude Sonnet 4.5 | Höchste Stilqualität |
-| Kundensupport (Chatbot) | Claude Haiku 4.5 oder GPT-4o-mini | Schnell, günstig, gute Qualität |
-| Rechtliche/behördliche Texte | Claude Sonnet 4.5 | Präzisere Formulierungen |
-| Technische Dokumentation | Claude Sonnet 4.5 oder GPT-4o | Gleich stark |
-| Lokale Verarbeitung, Datenschutz | Mistral Large (API) oder Mistral Nemo (lokal) | Beste europäische Alternative |
-| Kreatives Schreiben | Claude Sonnet/Opus 4.5 | Stilistisch stärkster |
+| Professionelle Texte (Briefe, Reports) | Claude Sonnet 4.6 | Höchste Stilqualität |
+| Kundensupport (Chatbot) | Claude Haiku 4.5 oder DeepSeek V3.2 | Schnell, günstig, gute Qualität |
+| Rechtliche/behördliche Texte | Claude Sonnet 4.6 | Präzisere Formulierungen |
+| Technische Dokumentation | Claude Sonnet 4.6 oder GPT-5.2 | Gleich stark |
+| Lokale Verarbeitung, Datenschutz | Mistral Large 3 (API, EU) oder Llama 4 (lokal) | Beste europäische Alternative |
+| Kreatives Schreiben | Claude Sonnet/Opus 4.6 | Stilistisch stärkster |
 | Einfache Klassifizierung | Beliebiges Modell | Alle ausreichend |
 
 > [!NOTE]
-> **Mistral AI** (französisches Unternehmen) bietet einen **EU-Datenschutz-Vorteil**: Server in Europa, DSGVO-konformer Vertrag einfacher zu erhalten als bei US-Unternehmen. Für sensible deutsche/europäische Daten eine wichtige Alternative.
+> **Mistral AI** (französisches Unternehmen) bietet einen **EU-Datenschutz-Vorteil**: Server in Europa, DSGVO-konformer Vertrag einfacher zu erhalten als bei US-Unternehmen. Für sensible deutsche/europäische Daten eine wichtige Alternative. **Llama 4** (Meta) und **DeepSeek** (China) sind als Open-Weight-Modelle ebenfalls lokal betreibbar.
 
 ---
 
-## Kostenvergleich (Stand: August 2025)
+## Kostenvergleich (Stand: März 2026)
 
 ### Preise pro Million Tokens (USD)
 
 | Modell | Anbieter | Input ($/M) | Output ($/M) | Cache Read ($/M) | Gesamt (50/50) |
 |--------|---------|-------------|-------------|-----------------|---------------|
-| Claude Opus 4.5 | Anthropic | $15,00 | $75,00 | $1,50 | $45,00 |
-| Claude Sonnet 4.5 | Anthropic | $3,00 | $15,00 | $0,30 | $9,00 |
-| Claude Haiku 4.5 | Anthropic | $0,25 | $1,25 | $0,03 | $0,75 |
-| GPT-4o | OpenAI | $5,00 | $15,00 | $1,25 | $10,00 |
-| GPT-4o-mini | OpenAI | $0,15 | $0,60 | $0,075 | $0,375 |
-| o1 | OpenAI | $15,00 | $60,00 | - | $37,50 |
+| Claude Opus 4.6 | Anthropic | $5,00 | $25,00 | $0,50 | $15,00 |
+| Claude Sonnet 4.6 | Anthropic | $3,00 | $15,00 | $0,30 | $9,00 |
+| Claude Haiku 4.5 | Anthropic | $0,80 | $4,00 | $0,08 | $2,40 |
+| GPT-5.2 | OpenAI | $1,75 | $14,00 | - | $7,875 |
+| GPT-5.3 Codex | OpenAI | ~$1,75 | ~$14,00 | - | ~$7,875 |
 | o3 | OpenAI | $10,00 | $40,00 | - | $25,00 |
-| o3-mini | OpenAI | $1,10 | $4,40 | $0,55 | $2,75 |
-| Gemini 1.5 Pro | Google | $3,50 | $10,50 | $0,875 | $7,00 |
-| Gemini 1.5 Flash | Google | $0,075 | $0,30 | $0,019 | $0,1875 |
-| Gemini 2.0 Pro | Google | $3,50 | $10,50 | - | $7,00 |
-| Gemini 2.0 Flash | Google | $0,10 | $0,40 | $0,025 | $0,25 |
-| Mistral Large | Mistral | $3,00 | $9,00 | - | $6,00 |
-| Mistral Small | Mistral | $0,20 | $0,60 | - | $0,40 |
-| Mistral Nemo 12B | Mistral | $0,15 | $0,15 | - | $0,15 |
-| Codestral | Mistral | $1,00 | $3,00 | - | $2,00 |
+| Gemini 2.5 Pro | Google | $1,25 | $5,00 | $0,31 | $3,125 |
+| Gemini 2.5 Flash | Google | $0,15 | $0,60 | $0,04 | $0,375 |
+| Gemini 3.1 Pro | Google | TBD | TBD | - | TBD (Preview) |
+| Mistral Large 3 | Mistral | $2,00 | $6,00 | - | $4,00 |
+| DeepSeek V3.2 | DeepSeek | $0,25 | $0,38 | - | $0,315 |
+| DeepSeek R1 | DeepSeek | $0,70 | $2,50 | - | $1,60 |
+| Llama 4 Scout | Meta (Open) | Kostenlos* | Kostenlos* | - | Self-Host / Provider |
+| Llama 4 Maverick | Meta (Open) | Kostenlos* | Kostenlos* | - | Self-Host / Provider |
+
+\* Open-Weight-Modelle: Kostenlos zum Selbsthosten, oder über Provider wie Together AI, Fireworks AI etc. zu variablen Preisen.
 
 > [!NOTE]
 > "Gesamt (50/50)" ist die theoretische Durchschnittskosten wenn 50% Input und 50% Output. In der Praxis überwiegen oft die Input-Tokens (besonders bei langen Dokumenten oder Gesprächsverläufen).
@@ -346,11 +354,11 @@ Annahmen: 300 Input-Tokens, 200 Output-Tokens pro Nachricht
 
 Modell            | Kosten/Tag | Kosten/Monat
 ------------------|------------|-------------
-Claude Haiku 4.5  | $0,33      | ~$10,00
-GPT-4o-mini       | $0,21      | ~$6,30
-Gemini 2.0 Flash  | $0,38      | ~$11,40
-Claude Sonnet 4.5 | $3,90      | ~$117,00
-GPT-4o            | $4,50      | ~$135,00
+DeepSeek V3.2     | $0,15      | ~$4,50
+Gemini 2.5 Flash  | $0,17      | ~$5,10
+Claude Haiku 4.5  | $1,04      | ~$31,20
+GPT-5.2           | $3,33      | ~$99,75
+Claude Sonnet 4.6 | $3,90      | ~$117,00
 ```
 
 **Szenario 2: Dokumenten-Analyse (100 Reports/Tag, je 50K Tokens)**
@@ -359,15 +367,16 @@ Annahmen: 50.000 Input-Tokens, 1.000 Output-Tokens pro Analyse
 
 Modell             | Kosten/Tag | Kosten/Monat
 -------------------|------------|-------------
-Gemini 1.5 Flash   | $0,405     | ~$12,15
-Gemini 2.0 Flash   | $0,54      | ~$16,20
-Claude Haiku 4.5   | $1,375     | ~$41,25
-Claude Sonnet 4.5  | $16,50     | ~$495
-Gemini 1.5 Pro     | $18,55     | ~$556,50
+DeepSeek V3.2      | $1,29      | ~$38,70
+Gemini 2.5 Flash   | $0,81      | ~$24,30
+Gemini 2.5 Pro     | $6,75      | ~$202,50
+Claude Haiku 4.5   | $4,40      | ~$132,00
+Claude Sonnet 4.6  | $16,50     | ~$495
+GPT-5.2            | $10,15     | ~$304,50
 ```
 
 > [!TIP]
-> Für tokenintensive Anwendungen (lange Dokumente) ist **Gemini 1.5 Flash** oder **Gemini 2.0 Flash** oft die günstigste Option – besonders durch den 1M Token Context und die sehr niedrigen Input-Preise.
+> Für tokenintensive Anwendungen (lange Dokumente) ist **Gemini 2.5 Flash** oft die günstigste Option bei guter Qualität. **DeepSeek V3.2** ist das günstigste Major-Modell insgesamt. Für absolute Kostenkontrolle: Llama 4 Scout/Maverick selbst hosten.
 
 ---
 
@@ -377,56 +386,56 @@ Gemini 1.5 Pro     | $18,55     | ~$556,50
 
 ```
 Brauche ich das Beste, Kosten egal?
-    → Claude Opus 4.5 (mit Extended Thinking für Reasoning)
+    → Claude Opus 4.6 (mit Extended Thinking für Reasoning)
 
 Beste Balance Qualität/Kosten für Produktion?
-    → Claude Sonnet 4.5
+    → Claude Sonnet 4.6
 
 Günstigste Option mit guter Qualität?
-    → Claude Haiku 4.5 oder GPT-4o-mini oder Gemini 2.0 Flash
+    → DeepSeek V3.2, Gemini 2.5 Flash oder Claude Haiku 4.5
 
 Langer Context (>200K Tokens)?
-    → Gemini 1.5 Pro oder Gemini 2.0 Pro
+    → GPT-5.2 (400K), Gemini 2.5 Pro (1M) oder Llama 4 Scout (10M)
 
 Komplexes Reasoning / Mathematik?
-    → Claude Opus 4.5 (Thinking) oder o3
+    → Claude Opus 4.6 (Thinking) oder o3
 
 Datenschutz (Daten lokal halten)?
-    → Llama 3.1 70B (lokal) oder Mistral Large (EU-Server)
+    → Llama 4 Maverick (lokal) oder Mistral Large 3 (EU-Server)
 
 Speziell Code?
-    → Claude Sonnet 4.5 oder Codestral (Mistral)
+    → Claude Sonnet 4.6 oder GPT-5.3 Codex
 
 Multimodal (Audio + Bild)?
-    → GPT-4o
+    → GPT-5.2
 
 Günstigste Option für Massenverarbeitung?
-    → Gemini 1.5/2.0 Flash
+    → DeepSeek V3.2 oder Gemini 2.5 Flash
 
 Open-Weight für fine-tuning?
-    → Llama 3.1 70B oder Mistral Nemo 12B
+    → Llama 4 Maverick oder DeepSeek V3.2
 ```
 
 ### Detaillierte Empfehlungsmatrix
 
 | Anwendungsfall | Primärempfehlung | Alternative | Kostengünstige Option |
 |----------------|-----------------|-------------|----------------------|
-| Allgemeiner Assistent | Claude Sonnet 4.5 | GPT-4o | Claude Haiku 4.5 |
-| Code-Assistent (IDE) | Claude Sonnet 4.5 | GPT-4o | Codestral |
-| Code-Assistent (lokal) | Qwen2.5-Coder 32B | Llama 3.1 8B | Phi-3.5 Mini |
-| Dokumenten-Analyse (kurz, <50K) | Claude Sonnet 4.5 | GPT-4o | Claude Haiku 4.5 |
-| Dokumenten-Analyse (lang, >200K) | Gemini 1.5 Pro | Gemini 2.0 Pro | Gemini 1.5 Flash |
-| Kundenservice-Chatbot | Claude Haiku 4.5 | GPT-4o-mini | Gemini 2.0 Flash |
-| Komplexes Reasoning | Claude Opus 4.5 (Thinking) | o3 | o3-mini |
-| Übersetzung (DE/EN) | Claude Sonnet 4.5 | GPT-4o | DeepL + LLM-Nachbearbeitung |
-| Zusammenfassungen | Claude Haiku 4.5 | GPT-4o-mini | Gemini 1.5 Flash |
-| RAG-System | Claude Sonnet 4.5 | GPT-4o | Claude Haiku 4.5 |
-| Datenextraktion (JSON) | Claude Sonnet 4.5 | GPT-4o | Claude Haiku 4.5 |
-| Lokale, sensible Daten | Llama 3.1 70B | Mistral Large (EU) | Llama 3.1 8B |
-| Kreatives Schreiben | Claude Opus 4.5 | GPT-4o | Claude Sonnet 4.5 |
-| Bildanalyse | GPT-4o | Claude Sonnet 4.5 | Gemini 2.0 Flash |
-| Multimodale Anwendung | GPT-4o | Gemini 2.0 Pro | Gemini 2.0 Flash |
-| Agentic Workflows | Claude Sonnet 4.5 | GPT-4o | Claude Haiku 4.5 |
+| Allgemeiner Assistent | Claude Sonnet 4.6 | GPT-5.2 | Claude Haiku 4.5 |
+| Code-Assistent (IDE) | Claude Sonnet 4.6 | GPT-5.3 Codex | DeepSeek V3.2 |
+| Code-Assistent (lokal) | Llama 4 Maverick | DeepSeek V3.2 | Llama 4 Scout |
+| Dokumenten-Analyse (kurz, <50K) | Claude Sonnet 4.6 | GPT-5.2 | Claude Haiku 4.5 |
+| Dokumenten-Analyse (lang, >200K) | Gemini 2.5 Pro | GPT-5.2 (400K) | Gemini 2.5 Flash |
+| Kundenservice-Chatbot | Claude Haiku 4.5 | DeepSeek V3.2 | Gemini 2.5 Flash |
+| Komplexes Reasoning | Claude Opus 4.6 (Thinking) | o3 | DeepSeek R1 |
+| Übersetzung (DE/EN) | Claude Sonnet 4.6 | GPT-5.2 | DeepL + LLM-Nachbearbeitung |
+| Zusammenfassungen | Claude Haiku 4.5 | DeepSeek V3.2 | Gemini 2.5 Flash |
+| RAG-System | Claude Sonnet 4.6 | GPT-5.2 | Claude Haiku 4.5 |
+| Datenextraktion (JSON) | Claude Sonnet 4.6 | GPT-5.2 | Claude Haiku 4.5 |
+| Lokale, sensible Daten | Llama 4 Maverick | Mistral Large 3 (EU) | DeepSeek V3.2 (self-host) |
+| Kreatives Schreiben | Claude Opus 4.6 | Claude Sonnet 4.6 | GPT-5.2 |
+| Bildanalyse | GPT-5.2 | Claude Sonnet 4.6 | Gemini 2.5 Flash |
+| Multimodale Anwendung | GPT-5.2 | Gemini 2.5 Pro | Gemini 2.5 Flash |
+| Agentic Workflows | Claude Sonnet 4.6 | GPT-5.3 Codex | Claude Haiku 4.5 |
 
 ---
 
@@ -452,7 +461,7 @@ def evaluate_response(
     question: str,
     model_a_response: str,
     model_b_response: str,
-    judge_model: str = "claude-opus-4-5"
+    judge_model: str = "claude-opus-4-6"
 ) -> dict:
     """Nutzt ein starkes LLM als objektiven Bewerter."""
 

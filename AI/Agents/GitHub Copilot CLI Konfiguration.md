@@ -150,9 +150,9 @@ Copilot CLI nutzt standardmäßig **Claude Sonnet 4.5** als Basis-Modell.
 
 | Modell | Typ | Stärken |
 |---|---|---|
-| Claude Sonnet 4.5 | Standard (Default) | Ausgewogen, schnell, gute Code-Qualität |
-| Claude Sonnet 4 | Standard | Solide Alternative, etwas anders gewichtet |
-| GPT-5 | Standard | OpenAI-Modell, gut für bestimmte Aufgaben |
+| Claude Sonnet 4.6 | Standard (Default) | Ausgewogen, schnell, gute Code-Qualität |
+| Claude Opus 4.6 | Premium | Höchste Qualität, komplexe Aufgaben |
+| GPT-5.2 | Standard | OpenAI-Modell, 400K Context |
 | Weitere Modelle | Variabel | Über `/model` einsehbar |
 
 ### Modell wechseln

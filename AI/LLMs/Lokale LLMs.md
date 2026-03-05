@@ -3,6 +3,8 @@
 > [!NOTE]
 > Lokale LLMs laufen vollständig auf der eigenen Hardware – kein Internet, kein API-Key, keine Datenweitergabe. Diese Notiz gibt einen Überblick über Tools, Hardware und Modell-Empfehlungen. Ausführliche Installationsanleitungen für die einzelnen Tools befinden sich unter `AI/Tools/`.
 
+**Stand: März 2026**
+
 ---
 
 ## Warum lokale LLMs?
@@ -30,7 +32,7 @@ Mit lokalen LLMs verlassen diese Daten das eigene Netzwerk nie.
 **Beispielrechnung:**
 - Claude Sonnet 4.5: $3 / 1M Input-Tokens
 - 1.000 tägliche Anfragen × 500 Tokens = 500.000 Tokens/Tag = $1,50/Tag = $45/Monat
-- Eine RTX 4090 (ca. 1.500€) läuft Llama 3.1 70B lokal → Break-Even nach ~33 Monaten
+- Eine RTX 4090 (ca. 1.500€) läuft Llama 4 Scout lokal (MoE, Q4) → Break-Even nach ~33 Monaten
 - Aber: Qualität ist bei Cloud-Modellen aktuell noch deutlich besser
 
 ### Offline-Fähigkeit
@@ -42,7 +44,7 @@ Lokale LLMs funktionieren ohne Internetverbindung:
 - Garantierte Verfügbarkeit für kritische Anwendungen
 
 > [!WARNING]
-> Lokale LLMs sind (Stand 2025) in der Qualität hinter den Top-Cloud-Modellen. Ein lokales Llama 3.1 70B erreicht auf den meisten Benchmarks annähernd GPT-4-Niveau. Für kritische Aufgaben (komplexes Reasoning, Coding) können Cloud-APIs dennoch überlegen sein.
+> Lokale LLMs sind (Stand März 2026) in der Qualität hinter den Top-Cloud-Modellen, aber der Abstand schrumpft rapide. Modelle wie Llama 4 Scout (MoE 109B/17B aktiv), DeepSeek V3.2 und Mistral Small 3.2 erreichen auf vielen Benchmarks GPT-4-Niveau oder darüber. Für kritische Aufgaben (komplexes Reasoning, Coding) können Cloud-APIs dennoch überlegen sein.
 
 ---
 
@@ -68,15 +70,22 @@ Beispiel: 7B-Modell mit Q4 ≈ 4-5 GB VRAM
 
 | Modell | VRAM (fp16) | VRAM (Q4) | VRAM (Q8) | Passende GPUs |
 |--------|------------|----------|----------|---------------|
-| Phi-3.5 Mini 3.8B | ~7,5 GB | ~3 GB | ~4,5 GB | GTX 1660 Ti, RTX 3060 (8GB) |
+| Phi-4 3.8B | ~7,5 GB | ~3 GB | ~4,5 GB | GTX 1660 Ti, RTX 3060 (8GB) |
 | Llama 3.2 3B | ~6 GB | ~2,5 GB | ~3,5 GB | Jede moderne GPU mit 4+ GB |
 | Llama 3.1 8B | ~16 GB | ~5,5 GB | ~9 GB | RTX 3080 (10GB), RTX 4070 |
+| Mistral Small 3.2 24B | ~48 GB | ~16 GB | ~26 GB | RTX 4090 (24GB) bei Q4 |
+| Codestral 25.01 22B | ~44 GB | ~15 GB | ~24 GB | RTX 4090 (24GB) bei Q4 |
 | Mistral Nemo 12B | ~24 GB | ~8 GB | ~13 GB | RTX 3090/4090 (24GB) bei Q4 |
 | Gemma2 9B | ~18 GB | ~6,5 GB | ~10 GB | RTX 3090 bei Q8, RTX 4070 bei Q4 |
-| Llama 3.1 70B | ~140 GB | ~48 GB | ~75 GB | 2x RTX 3090 bei Q4, A100 80GB |
+| Llama 4 Scout 109B (MoE, 17B aktiv) | ~30 GB* | ~12 GB* | ~20 GB* | RTX 4090 bei Q4 (MoE: nur aktive Parameter) |
+| DeepSeek V3.2 (MoE) | ~80 GB* | ~28 GB* | ~45 GB* | 2x RTX 4090 bei Q4 |
+| DeepSeek R1 (MoE) | ~80 GB* | ~28 GB* | ~45 GB* | 2x RTX 4090 bei Q4 |
 | Llama 3.3 70B | ~140 GB | ~48 GB | ~75 GB | 2x RTX 4090 bei Q4 |
 | Qwen2.5 72B | ~144 GB | ~50 GB | ~78 GB | 2-3x RTX 4090 bei Q4 |
+| Llama 4 Maverick 400B (MoE, 17B aktiv) | ~60 GB* | ~24 GB* | ~40 GB* | RTX 4090 bei Q4, H100 |
 | Llama 3.1 405B | ~810 GB | ~280 GB | ~430 GB | 8x A100 80GB (fp16) |
+
+> \* MoE-Modelle (Mixture of Experts) laden nur die aktiven Parameter pro Token. VRAM-Angaben beziehen sich auf die tatsächlich benötigten aktiven Parameter, nicht die Gesamtparameterzahl.
 
 ### GPU-Empfehlungen nach Budget
 
@@ -85,12 +94,12 @@ Beispiel: 7B-Modell mit Q4 ≈ 4-5 GB VRAM
 | ~300€ | RTX 3060 12GB | 12 GB | Bis 8B-Modelle (Q4/Q5) |
 | ~500€ | RTX 4060 Ti 16GB | 16 GB | 8B-Modelle (fp16), 13B (Q4) |
 | ~800€ | RTX 4070 Ti Super | 16 GB | 8B (fp16), 13B (Q4) – schneller |
-| ~1.500€ | RTX 4090 | 24 GB | 13B (fp16), 70B (Q4 mit Offloading) |
-| ~2.500€ | 2x RTX 3090 | 48 GB | 70B-Modelle (Q4/Q5) |
-| ~10.000€ | A100 80GB | 80 GB | 70B (fp16), kleine 405B-Varianten |
+| ~1.500€ | RTX 4090 | 24 GB | Llama 4 Scout (Q4), Mistral Small 3.2, 70B (Q4 mit Offloading) |
+| ~2.500€ | 2x RTX 3090 | 48 GB | 70B-Modelle (Q4/Q5), Llama 4 Maverick (Q4) |
+| ~10.000€ | A100 80GB / H100 | 80 GB | 70B (fp16), Llama 4 Scout/Maverick, DeepSeek V3.2 |
 
 > [!TIP]
-> Für den Einstieg ist ein **Llama 3.1 8B mit Q5-Quantisierung** auf einer RTX 4060 (8GB) oder ähnlichen GPU ein hervorragender Start. Gutes Qualitäts-/Kosten-Verhältnis, ~15-30 Tokens/Sekunde Generierungsgeschwindigkeit.
+> Für den Einstieg ist ein **Llama 3.1 8B mit Q5-Quantisierung** auf einer RTX 4060 (8GB) oder ähnlichen GPU ein hervorragender Start. Alternativ bieten MoE-Modelle wie **Llama 4 Scout** überraschend starke Leistung auf Consumer-Hardware – Q4-quantisiert passt es auf eine RTX 4090.
 
 ### RAM (System-RAM)
 
@@ -163,6 +172,15 @@ Q2_K Llama 3.1 8B:
 ollama pull llama3.1:8b
 ollama run llama3.1:8b "Erkläre mir Quantisierung in einfachen Worten"
 
+# Neue Modelle (Stand März 2026)
+ollama run llama4:scout       # Llama 4 Scout – MoE 109B/17B aktiv, 10M Context
+ollama run llama4:maverick    # Llama 4 Maverick – MoE 400B/17B aktiv, 1M Context (24GB+ VRAM)
+ollama run deepseek-v3.2      # DeepSeek V3.2 – extrem leistungsstark, 128K Context
+ollama run deepseek-r1        # DeepSeek R1 – Reasoning-Modell
+ollama run mistral-small3.2   # Mistral Small 3.2 (24B), 262K Context
+ollama run codestral          # Codestral 25.01 (22B), Code-Spezialist, 256K Context
+ollama run phi4               # Phi-4 – Microsofts kleines Modell
+
 # Als Server starten (OpenAI-API-kompatibel auf Port 11434)
 ollama serve
 
@@ -170,7 +188,7 @@ ollama serve
 ollama list
 
 # Modell-Informationen
-ollama show llama3.1:8b
+ollama show llama4:scout
 ```
 
 **API-Nutzung:**
@@ -281,32 +299,39 @@ cmake -B build -DGGML_CUDA=ON && cmake --build build  # Mit CUDA-Unterstützung
 |--------|----------|---------|-----------|
 | Llama 3.2 1B | ~1 GB | Extrem schnell, minimal | Sehr begrenzte Fähigkeiten |
 | Llama 3.2 3B | ~2 GB | Gut für einfache Tasks | Kein komplexes Reasoning |
-| Phi-3.5 Mini 3.8B | ~2,5 GB | Beste Qualität in dieser Klasse | Kurzer Context bei kleiner GPU |
+| Phi-4 3.8B | ~2,5 GB | Microsofts bestes kleines Modell, starkes Reasoning | Kurzer Context bei kleiner GPU |
 | Gemma2 2B | ~1,5 GB | Gut für Klassifizierung | Limitierte Generierung |
 
-**Empfehlung:** Phi-3.5 Mini – trotz 3.8B Parameter hat es durch optimiertes Training erstaunlich gute Qualität.
+**Empfehlung:** Phi-4 – trotz 3.8B Parameter hat es durch optimiertes Training erstaunlich gute Qualität.
 
-### 7B-13B: Sweet Spot für die meisten Nutzer
+### 7B-24B: Sweet Spot für die meisten Nutzer
 
 | Modell | VRAM (Q4) | Stärken | Schwächen |
 |--------|----------|---------|-----------|
 | Llama 3.1 8B | ~5,5 GB | Sehr gute Balance, 128K Context | Kein Mittelding zu 70B |
+| Mistral Small 3.2 24B | ~16 GB | 262K Context, effizient, stark in Reasoning | Braucht RTX 4090 für Q4 |
+| Codestral 25.01 22B | ~15 GB | Code-Spezialist, 256K Context, 80+ Sprachen | Nur für Code-Aufgaben optimiert |
 | Mistral Nemo 12B | ~8 GB | Apache 2.0, stark in Reasoning | Etwas mehr VRAM |
 | Gemma2 9B | ~6,5 GB | Sehr gute Performance für Größe | Kürzerer Context (8K) |
 | Qwen2.5 7B | ~5 GB | Gute Mehrsprachigkeit, starker Code | Weniger Community-Support |
 
-**Empfehlung:** **Mistral Nemo 12B** (Apache 2.0, 128K Context, stark in Reasoning) oder **Llama 3.1 8B** (breite Community, viele Fine-Tunes verfügbar).
+**Empfehlung:** **Mistral Small 3.2 24B** (262K Context, sehr effizient, starkes Reasoning) wenn eine RTX 4090 vorhanden ist, sonst **Llama 3.1 8B** (breite Community, viele Fine-Tunes verfügbar). Für Code-Aufgaben: **Codestral 25.01**.
 
-### 70B+: Höchste lokale Qualität
+### 70B+ / MoE: Höchste lokale Qualität
 
 | Modell | VRAM (Q4) | Stärken | Anforderungen |
 |--------|----------|---------|--------------|
-| Llama 3.1 70B | ~48 GB | GPT-3.5-Niveau, 128K Context | 2x RTX 3090 oder A100 |
-| Llama 3.3 70B | ~48 GB | Verbesserte Version | Gleiche Hardware |
-| Qwen2.5 72B | ~50 GB | Sehr stark in Code und Mehrsprachigkeit | Etwas mehr VRAM nötig |
+| Llama 4 Scout 109B (MoE) | ~12 GB* | 10M Context (!), MoE 17B aktiv, GPT-4-Niveau | RTX 4090, oder H100 für fp16 |
+| Llama 4 Maverick 400B (MoE) | ~24 GB* | 1M Context, MoE 17B aktiv, extrem stark | 24GB+ VRAM, H100 empfohlen |
+| DeepSeek V3.2 (MoE) | ~28 GB* | Extrem leistungsstark, 128K Context | 2x RTX 4090 bei Q4 |
+| DeepSeek R1 (MoE) | ~28 GB* | Reasoning-Spezialist, Chain-of-Thought | 2x RTX 4090 bei Q4 |
+| Llama 3.3 70B | ~48 GB | Verbesserte Version, 128K Context | 2x RTX 4090 bei Q4 |
+| Qwen2.5 72B | ~50 GB | Sehr stark in Code und Mehrsprachigkeit | 2-3x RTX 4090 bei Q4 |
+
+> \* MoE-Architektur: VRAM bezieht sich auf aktive Parameter. Llama 4 Scout hat 109B Gesamtparameter, aber nur 17B sind pro Token aktiv – dadurch läuft es auf deutlich weniger Hardware als ein traditionelles 70B-Modell.
 
 > [!TIP]
-> Für 70B-Modelle auf Consumer-Hardware: Mit **llama.cpp** und `--n-gpu-layers` kann ein Teil auf der GPU und der Rest auf der CPU ausgeführt werden. Das ist langsamer, aber macht 70B-Modelle mit einer RTX 4090 + 64 GB RAM möglich (~3-5 Tokens/Sekunde).
+> **Llama 4 Scout** ist der neue Sweet Spot für hohe Qualität auf Consumer-Hardware: Dank MoE-Architektur passt es quantisiert auf eine einzelne RTX 4090 und bietet dabei 10M Token Context und GPT-4-Niveau-Qualität. Für maximale Qualität ohne Cloud: **DeepSeek V3.2** auf 2x RTX 4090.
 
 ---
 
@@ -378,22 +403,25 @@ ollama pull llama3.1:8b  # Ollama kümmert sich um Download und Format
 | **Setup-Aufwand** | Mittel-Hoch | Minimal (API-Key) |
 | **Updates** | Manuell | Automatisch durch Anbieter |
 | **Anpassung (Finetuning)** | Vollständig möglich | Begrenzt (nur über offizielle Services) |
-| **Context Window** | 8K-128K (je nach Modell/Tool) | Bis 2M Tokens (Gemini) |
+| **Context Window** | 8K-10M (je nach Modell/Tool) | Bis 2M Tokens (Gemini) |
 
 ### Empfohlene Hybrid-Strategie
 
 ```
 Aufgabe mit sensiblen Daten?
-    → Lokales LLM (Llama 3.1 8B oder 70B)
+    → Lokales LLM (Llama 4 Scout, DeepSeek V3.2 oder Llama 3.1 8B)
 
 Aufgabe erfordert höchste Qualität?
-    → Claude Sonnet 4.5 / GPT-4o
+    → Claude Sonnet 4.6 / GPT-5.2
 
 Hohe Anfragevolumen (>10.000 Anfragen/Tag)?
     → Kosten vergleichen: Lokal vs. Cloud
 
 Entwicklung/Prototyping?
     → Cloud-API (kein Hardware-Setup nötig)
+
+Code-Aufgaben lokal?
+    → Codestral 25.01 oder DeepSeek V3.2
 
 Produktionssystem, hohe Qualitätsanforderungen?
     → Cloud-API mit Datenschutz-Vertrag (DPA)

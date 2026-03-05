@@ -536,12 +536,12 @@ commit-prompt: "Schreibe eine kurze, deutsche Commit-Nachricht."
 
 | Provider | Env-Variable | Beispiel-Modell |
 |---|---|---|
-| OpenAI | `OPENAI_API_KEY` | `gpt-4o`, `gpt-4o-mini`, `o1`, `o3-mini` |
-| Anthropic | `ANTHROPIC_API_KEY` | `claude-sonnet-4-20250514`, `claude-haiku-4-20250514` |
-| Google Gemini | `GEMINI_API_KEY` | `gemini/gemini-2.5-pro` |
-| DeepSeek | `DEEPSEEK_API_KEY` | `deepseek/deepseek-chat` |
-| Ollama (lokal) | – | `ollama/llama3.1`, `ollama/codellama` |
-| OpenRouter | `OPENROUTER_API_KEY` | `openrouter/anthropic/claude-sonnet-4-20250514` |
+| OpenAI | `OPENAI_API_KEY` | `gpt-5.2`, `gpt-5.1-codex`, `gpt-5.3-codex` |
+| Anthropic | `ANTHROPIC_API_KEY` | `claude-sonnet-4.6`, `claude-opus-4.6` |
+| Google Gemini | `GEMINI_API_KEY` | `gemini/gemini-2.5-pro`, `gemini/gemini-3.1-pro` |
+| DeepSeek | `DEEPSEEK_API_KEY` | `deepseek/deepseek-chat`, `deepseek/deepseek-r1` |
+| Ollama (lokal) | – | `ollama/llama4:scout`, `ollama/deepseek-v3.2` |
+| OpenRouter | `OPENROUTER_API_KEY` | `openrouter/anthropic/claude-sonnet-4.6` |
 | Azure OpenAI | `AZURE_API_KEY` | Konfigurationsabhängig |
 | AWS Bedrock | AWS-Credentials | `bedrock/anthropic.claude-sonnet-4-20250514-v2:0` |
 

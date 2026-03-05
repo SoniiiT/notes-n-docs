@@ -1,5 +1,7 @@
 # Context Window und Token Management
 
+> **Stand: März 2026**
+
 > [!NOTE]
 > Das Verstehen von Tokens und Context Windows ist grundlegend für die effiziente und kostengünstige Nutzung von LLMs. Falsch dimensionierte Prompts können die Kosten verfünffachen und die Qualität verschlechtern.
 
@@ -98,8 +100,8 @@ Dies ist besonders wichtig für die **Kostenberechnung**, da die meisten Anbiete
 
 | Typ | Definition | Typischer Preis |
 |-----|-----------|----------------|
-| **Input Tokens** | Alles, was das Modell liest: System-Prompt, History, Nutzernachricht, Dokumente | Günstiger (z.B. $3/M bei Claude Sonnet) |
-| **Output Tokens** | Das, was das Modell generiert (die Antwort) | Teurer (z.B. $15/M bei Claude Sonnet) |
+| **Input Tokens** | Alles, was das Modell liest: System-Prompt, History, Nutzernachricht, Dokumente | Günstiger (z.B. $3/M bei Claude Sonnet 4.6) |
+| **Output Tokens** | Das, was das Modell generiert (die Antwort) | Teurer (z.B. $15/M bei Claude Sonnet 4.6) |
 | **Cache-Read Tokens** | Input-Tokens, die aus dem Prompt-Cache gelesen werden | Sehr günstig (z.B. $0,30/M bei Anthropic) |
 | **Cache-Write Tokens** | Input-Tokens, die in den Cache geschrieben werden | Leicht teurer als normale Input-Tokens |
 
@@ -112,22 +114,23 @@ Dies ist besonders wichtig für die **Kostenberechnung**, da die meisten Anbiete
 
 | Modell | Context Window | Max. Output Tokens | Besonderheit |
 |--------|---------------|-------------------|-------------|
-| Claude Opus 4.5 | 200.000 | 32.000 | Sehr langer, zuverlässiger Context |
-| Claude Sonnet 4.5 | 200.000 | 16.000 | Gute Context-Nutzung |
+| Claude Opus 4.6 | 200.000 (1M Beta) | 32.000 | 1M Beta-Context verfügbar |
+| Claude Sonnet 4.6 | 200.000 (1M Beta) | 16.000 | 1M Beta-Context verfügbar |
 | Claude Haiku 4.5 | 200.000 | 8.192 | Schnell auch bei vollem Context |
-| GPT-4o | 128.000 | 16.384 | Stabiler 128K Context |
-| GPT-4o-mini | 128.000 | 16.384 | Günstig für lange Dokumente |
+| GPT-5.2 | 400.000 | 32.768 | Großer stabiler Context |
+| GPT-5.3 | 400.000 | 32.768 | Neuestes OpenAI-Flaggschiff |
 | o1 | 200.000 | 100.000 | Lange Reasoning-Chains |
 | o3 | 200.000 | 100.000 | Erweiterte Reasoning-Ausgaben |
-| Gemini 1.5 Pro | 1.000.000 | 8.192 | Größtes stabiles Context Window |
-| Gemini 1.5 Flash | 1.000.000 | 8.192 | Günstig bei langen Contexten |
-| Gemini 2.0 Pro | 2.000.000 | 8.192 | Experimentell: 2M Tokens |
-| Llama 3.1 (alle) | 128.000 | ~4.096 | Abhängig von Implementierung |
-| Mistral Large | 128.000 | ~4.096 | Solider Context |
-| Phi-3.5 Mini | 128.000 | ~4.096 | Langer Context für kleines Modell |
+| Gemini 2.5 Pro | 1.000.000 | 8.192 | Stabiles 1M Context Window |
+| Gemini 3.1 Pro | 1.000.000 | 8.192 | Neueste Gemini-Generation |
+| Llama 4 Scout | 10.000.000 | ~4.096 | Branchenrekord: 10M Tokens! |
+| Llama 4 Maverick | 1.000.000 | ~4.096 | 1M Context, Open Source |
+| DeepSeek V3.2 | 128.000–164.000 | ~8.192 | Starker Open-Source-Konkurrent |
+| Mistral Large 3 | 256.000 | ~4.096 | Erweiterter Context |
+| Mistral Small 3.2 | 262.000 | ~4.096 | Kompaktes Modell, großer Context |
 
 > [!NOTE]
-> Ein großes Context Window bedeutet nicht automatisch gute Context-Nutzung. Das **"Lost in the Middle"**-Problem beschreibt, dass Modelle Informationen in der Mitte sehr langer Prompts schlechter abrufen als am Anfang oder Ende. Claude und Gemini sind hier besonders gut optimiert.
+> Ein großes Context Window bedeutet nicht automatisch gute Context-Nutzung. Das **"Lost in the Middle"**-Problem beschreibt, dass Modelle Informationen in der Mitte sehr langer Prompts schlechter abrufen als am Anfang oder Ende. Claude und Gemini sind hier besonders gut optimiert. Llama 4 Scout hält mit 10M Tokens den aktuellen Branchenrekord beim Context Window.
 
 ---
 
@@ -274,19 +277,19 @@ Kosten = (Input_Tokens / 1.000.000 × Preis_Input)
        + (Output_Tokens / 1.000.000 × Preis_Output)
 ```
 
-### Preise (Stand August 2025, in USD pro Million Tokens)
+### Preise (Stand März 2026, in USD pro Million Tokens)
 
 | Modell | Input | Output | Cache Read | Cache Write |
 |--------|-------|--------|-----------|------------|
-| Claude Opus 4.5 | $15,00 | $75,00 | $1,50 | $18,75 |
-| Claude Sonnet 4.5 | $3,00 | $15,00 | $0,30 | $3,75 |
+| Claude Opus 4.6 | $15,00 | $75,00 | $1,50 | $18,75 |
+| Claude Sonnet 4.6 | $3,00 | $15,00 | $0,30 | $3,75 |
 | Claude Haiku 4.5 | $0,25 | $1,25 | $0,03 | $0,30 |
-| GPT-4o | $5,00 | $15,00 | $1,25 | - |
-| GPT-4o-mini | $0,15 | $0,60 | $0,075 | - |
+| GPT-5.2 | $5,00 | $15,00 | $1,25 | - |
+| GPT-5.3 | $10,00 | $30,00 | $2,50 | - |
 | o3 | $10,00 | $40,00 | - | - |
-| Gemini 1.5 Pro | $3,50 | $10,50 | $0,875 | - |
-| Gemini 1.5 Flash | $0,075 | $0,30 | $0,019 | - |
-| Gemini 2.0 Flash | $0,10 | $0,40 | $0,025 | - |
+| Gemini 2.5 Pro | $3,50 | $10,50 | $0,875 | - |
+| Gemini 3.1 Pro | $3,50 | $10,50 | $0,875 | - |
+| DeepSeek V3.2 | $0,27 | $1,10 | $0,07 | - |
 
 ### Praktisches Rechenbeispiel
 
@@ -316,7 +319,7 @@ def calculate_llm_cost(
         "total_usd": round(total, 6)
     }
 
-# Beispiel: 1000 Anfragen mit Claude Sonnet 4.5
+# Beispiel: 1000 Anfragen mit Claude Sonnet 4.6
 # Je 500 Input-Tokens, 200 Output-Tokens
 kosten = calculate_llm_cost(
     input_tokens=500 * 1000,      # 500.000 Input-Tokens

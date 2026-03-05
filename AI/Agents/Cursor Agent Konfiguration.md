@@ -317,11 +317,11 @@ Cursor unterstützt verschiedene AI-Modelle, die je nach Aufgabe gewählt werden
 
 | Modell | Anbieter | Stärke |
 |---|---|---|
-| **Claude Sonnet 4** | Anthropic | Gute Balance aus Speed und Qualität |
-| **Claude Opus 4** | Anthropic | Höchste Qualität, langsamer |
-| **GPT-4o** | OpenAI | Schnell, gut für einfache Aufgaben |
-| **GPT-5** | OpenAI | Neuestes OpenAI-Modell |
-| **Gemini 2.5 Pro** | Google | Großes Context Window |
+| **Claude Sonnet 4.6** | Anthropic | Gute Balance aus Speed und Qualität |
+| **Claude Opus 4.6** | Anthropic | Höchste Qualität, langsamer |
+| **GPT-5.2** | OpenAI | Flaggschiff, 400K Context |
+| **GPT-5.3 Codex** | OpenAI | Neuestes OpenAI-Modell, Code-Fokus |
+| **Gemini 2.5 Pro** | Google | Großes Context Window (1M) |
 | **cursor-small** | Cursor | Optimiert für Tab/Autocomplete |
 
 ### Modellwahl
@@ -331,7 +331,7 @@ Cursor unterstützt verschiedene AI-Modelle, die je nach Aufgabe gewählt werden
 - **Agent**: Modell über das Dropdown im Composer auswählbar
 
 > [!TIP]
-> Für komplexe Agent-Aufgaben (Architektur, Refactoring) eignet sich **Claude Opus 4** oder **Claude Sonnet 4**. Für schnelle Fragen im Chat reicht **GPT-4o** oder **Claude Sonnet**.
+> Für komplexe Agent-Aufgaben (Architektur, Refactoring) eignet sich **Claude Opus 4.6** oder **Claude Sonnet 4.6**. Für schnelle Fragen im Chat reicht **GPT-5.2** oder **Claude Sonnet 4.6**.
 
 ### Eigene API Keys
 

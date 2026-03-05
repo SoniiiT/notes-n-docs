@@ -1,7 +1,7 @@
 # Modell Übersicht – Large Language Models
 
 > [!NOTE]
-> Diese Übersicht spiegelt den Stand von **August 2025** wider. Das LLM-Feld entwickelt sich sehr schnell – Modelle, Preise und Fähigkeiten ändern sich regelmäßig.
+> Diese Übersicht spiegelt den Stand von **März 2026** wider. Das LLM-Feld entwickelt sich sehr schnell – Modelle, Preise und Fähigkeiten ändern sich regelmäßig.
 
 ## Was ist ein Large Language Model?
 
@@ -22,20 +22,21 @@ Anthropic wurde 2021 von ehemaligen OpenAI-Mitarbeitern gegründet mit dem Fokus
 
 **Constitutional AI (CAI):** Anthropics eigener Ansatz, Modelle durch selbst-generiertes Feedback sicherer zu machen.
 
-| Modell | Stärken | Einsatzgebiete |
-|--------|---------|----------------|
-| **Claude Opus 4.5** | Höchste Intelligenz, Extended Thinking, komplexes Reasoning | Forschung, komplexe Analysen, schwierige Code-Aufgaben |
-| **Claude Sonnet 4.5** | Ausgewogenes Kosten-Leistungs-Verhältnis, sehr schnell | Produktionsanwendungen, Agenten, allgemeine Aufgaben |
-| **Claude Haiku 4.5** | Schnellstes Claude-Modell, günstig | Echtzeitanwendungen, einfache Klassifizierung, Chatbots |
+| Modell | Context Window | Preis (Input/Output) | Stärken | Einsatzgebiete |
+|--------|---------------|---------------------|---------|----------------|
+| **Claude Opus 4.6** | 1M (Beta) / 200K | $5 / $25 pro 1M Tokens | Höchste Intelligenz, Extended Thinking, 128K max Output | Forschung, komplexe Analysen, schwierige Code-Aufgaben |
+| **Claude Sonnet 4.6** | 1M (Beta) / 200K | $3 / $15 pro 1M Tokens | 98% der Opus-Qualität, ausgewogenes Kosten-Leistungs-Verhältnis | Produktionsanwendungen, Agenten, allgemeine Aufgaben |
+| **Claude Haiku 4.5** | 200K | Günstigstes Claude-Modell | Schnellstes Claude-Modell (kein 4.6-Update bisher) | Echtzeitanwendungen, einfache Klassifizierung, Chatbots |
 
 > [!TIP]
-> Claude Sonnet 4.5 ist für die meisten produktiven Anwendungsfälle die beste Wahl – es bietet ~80% der Opus-Qualität zu einem Bruchteil der Kosten.
+> Claude Sonnet 4.6 ist für die meisten produktiven Anwendungsfälle die beste Wahl – es bietet 98% der Opus-Qualität zu einem Bruchteil der Kosten.
 
 **Besonderheiten von Claude:**
-- **Extended Thinking:** Claude Opus 4.5 kann sichtbare Denkschritte ausführen (ähnlich wie o1/o3)
+- **Extended Thinking:** Claude Opus 4.6 kann sichtbare Denkschritte ausführen (ähnlich wie o1/o3)
 - **Tool Use / Function Calling:** Nativ unterstützt
 - **Prompt Caching:** Reduziert Kosten bei wiederholten langen System-Prompts erheblich
 - **Vision:** Alle aktuellen Claude-Modelle unterstützen Bild-Input
+- **1M Token Context (Beta):** Opus 4.6 und Sonnet 4.6 unterstützen bis zu 1 Million Tokens im Beta-Modus
 
 ---
 
@@ -43,30 +44,21 @@ Anthropic wurde 2021 von ehemaligen OpenAI-Mitarbeitern gegründet mit dem Fokus
 
 OpenAI ist der bekannteste LLM-Anbieter und betreibt ChatGPT sowie die API.
 
-#### GPT-4o Familie
+#### GPT-5.x Familie
 
-| Modell | Beschreibung | Stärken |
-|--------|-------------|---------|
-| **GPT-4o** | Multimodales Flaggschiff-Modell | Text, Bild, Audio; sehr breite Fähigkeiten |
-| **GPT-4o-mini** | Kleines, günstiges GPT-4-Modell | Schnell, günstig, gut für einfache Tasks |
+| Modell | Beschreibung | Preis (Input/Output) | Stärken |
+|--------|-------------|---------------------|---------|
+| **GPT-5.3 Codex** | Neuestes Modell (März 2026), Real-Time-Coding-Fokus | TBD | Echtzeit-Code-Generierung und -Analyse |
+| **GPT-5.2** | Aktuelles Flaggschiff, 400K Context | $1,75 / $14 pro 1M Tokens | Drei Varianten: Instant / Thinking / Pro |
+| **GPT-5.1** | Wird schrittweise eingestellt (Sunset) | – | Noch verfügbar, Migration empfohlen |
 
-**GPT-4o** steht für "omni" – das Modell verarbeitet Text, Bilder und Audio nativ.
+> [!WARNING]
+> GPT-5 wird aktuell eingestellt (Retired). GPT-4o, o1 und o3 sind abgekündigt und nur noch als Legacy verfügbar. Neue Projekte sollten auf GPT-5.2+ setzen.
 
-#### Reasoning-Modelle: o1 und o3
-
-Diese Modelle unterscheiden sich grundlegend von klassischen LLMs: Sie führen einen internen **Chain-of-Thought**-Prozess durch, bevor sie antworten. Das macht sie langsamer und teurer, aber deutlich besser bei:
-- Mathematik und Logik
-- Komplexem Code-Debugging
-- Mehrstufigen Planungsaufgaben
-
-| Modell | Besonderheit |
-|--------|-------------|
-| **o1** | Reasoning-Modell, erstes seiner Klasse von OpenAI |
-| **o3** | Signifikant stärker als o1, State-of-the-Art auf vielen Benchmarks |
-| **o3-mini** | Günstigere Reasoning-Variante |
-
-> [!IMPORTANT]
-> Bei o1/o3 zahlt man auch für die "Thinking Tokens" – die versteckten Denkschritte. Das kann teuer werden. Nur einsetzen wenn nötig.
+**GPT-5.2 Varianten:**
+- **Instant:** Schnellste Antwort, keine Denkschritte
+- **Thinking:** Chain-of-Thought Reasoning (vergleichbar mit ehemaligem o3)
+- **Pro:** Höchste Qualität, längere Denkzeit, teurer
 
 ---
 
@@ -74,12 +66,14 @@ Diese Modelle unterscheiden sich grundlegend von klassischen LLMs: Sie führen e
 
 Google hat seine KI-Strategie rund um die **Gemini**-Familie neu ausgerichtet (Nachfolger von PaLM 2 / Bard).
 
-| Modell | Context Window | Stärken |
-|--------|---------------|---------|
-| **Gemini 1.5 Pro** | 1 Mio. Tokens (experimentell: 2 Mio.) | Sehr langer Context, Multimodal, Video-Verständnis |
-| **Gemini 1.5 Flash** | 1 Mio. Tokens | Schnell und günstig, für Produktion geeignet |
-| **Gemini 2.0 Pro** | 2 Mio. Tokens | Stärkstes Gemini-Modell, Multimodal |
-| **Gemini 2.0 Flash** | 1 Mio. Tokens | Schnell, günstig, sehr gute Allroundleistung |
+| Modell | Context Window | Status | Stärken |
+|--------|---------------|--------|---------|
+| **Gemini 3.1 Pro** | TBD | Neuestes Modell (Feb 2026) | Fortgeschrittenes Reasoning, State-of-the-Art |
+| **Gemini 3 Pro Preview** | TBD | Wird durch 3.1 ersetzt | Erste Generation 3 |
+| **Gemini 2.5 Pro** | 1 Mio. Tokens | Stabil, empfohlener Fallback | Sehr langer Context, zuverlässig |
+| **Gemini 2.5 Flash** | 1 Mio. Tokens | Aktiv | Schnell und günstig für Produktion |
+| **Gemini 2.5 Flash-Lite** | 1 Mio. Tokens | Aktiv | Budget-Option, extrem kosteneffizient |
+| **Gemini 2.0 Flash** | 1 Mio. Tokens | Wird abgekündigt (Juni 2026) | Noch nutzbar, Migration empfohlen |
 
 **Besonderheiten:**
 - Native Integration in Google Workspace (Docs, Sheets, Gmail)
@@ -87,18 +81,28 @@ Google hat seine KI-Strategie rund um die **Gemini**-Familie neu ausgerichtet (N
 - Multimodal von Haus aus: Text, Bild, Audio, Video, Code
 
 > [!NOTE]
-> Gemini 1.5 Pro mit 1 Million Token Context ist ideal für sehr lange Dokumente wie gesamte Codebases oder Bücher. In der Praxis nimmt die Recall-Qualität bei sehr vollem Context aber ab ("lost in the middle"-Problem).
+> Gemini 2.5 Pro mit 1 Million Token Context bleibt der empfohlene Fallback für sehr lange Dokumente wie gesamte Codebases oder Bücher. Gemini 3.1 Pro bietet verbessertes Reasoning. Gemini 2.0 Flash wird im Juni 2026 abgekündigt – rechtzeitig auf 2.5 Flash migrieren.
 
 ---
 
-### Meta – Llama 3.x (Open-Weight)
+### Meta – Llama 4 & 3.x (Open-Weight)
 
 Metas **Llama**-Familie ist die wichtigste Open-Weight-LLM-Serie. "Open-Weight" bedeutet: Die Modellgewichte werden öffentlich zur Verfügung gestellt, aber das Training-Setup und die Daten nicht vollständig.
+
+#### Llama 4 (aktuell)
+
+| Modell | Architektur | Context Window | Besonderheit |
+|--------|-------------|---------------|-------------|
+| **Llama 4 Scout** | MoE 109B / 17B aktiv | 10M Tokens (!) | Multimodal, läuft auf einzelner H100 |
+| **Llama 4 Maverick** | MoE 400B / 17B aktiv | 1M Tokens | Übertrifft GPT-4o, multimodal |
+| **Llama 4 Behemoth** | 2T Parameter | TBD | Limitierte Beta, größtes Open-Weight-Modell |
+
+#### Llama 3.x (weiterhin verfügbar)
 
 | Modell | Parameter | Besonderheit |
 |--------|-----------|-------------|
 | **Llama 3.1 8B** | 8 Milliarden | Sehr effizient, gut für lokale Nutzung |
-| **Llama 3.1 70B** | 70 Milliarden | Beste Open-Weight-Qualität für diese Größe |
+| **Llama 3.1 70B** | 70 Milliarden | Bewährte Open-Weight-Qualität |
 | **Llama 3.1 405B** | 405 Milliarden | Konkurriert mit GPT-4o |
 | **Llama 3.2 1B/3B** | 1-3 Milliarden | Für Edge-Devices und mobile Nutzung |
 | **Llama 3.2 11B/90B** | 11-90 Milliarden | Vision-Modelle (Text + Bild) |
@@ -107,7 +111,7 @@ Metas **Llama**-Familie ist die wichtigste Open-Weight-LLM-Serie. "Open-Weight" 
 **Lizenz:** Llama-Modelle haben eine eigene Meta-Lizenz (kein reines Open Source). Kommerzielle Nutzung ist erlaubt, aber mit Einschränkungen (z.B. für Unternehmen über 700 Mio. monatliche aktive Nutzer gelten Sonderbedingungen).
 
 > [!TIP]
-> Llama 3.1 70B ist der Sweet Spot für lokale Nutzung: Sehr gute Qualität, läuft mit Quantisierung auf 2× RTX 3090/4090 oder einer GPU mit 48GB+ VRAM (z.B. A6000).
+> Llama 4 Scout ist ein Durchbruch: 10 Millionen Token Context bei nur 17B aktiven Parametern dank MoE-Architektur – läuft auf einer einzelnen H100. Für lokale Nutzung mit moderaterem VRAM-Bedarf bleibt Llama 3.1 70B weiterhin der Sweet Spot.
 
 ---
 
@@ -115,19 +119,38 @@ Metas **Llama**-Familie ist die wichtigste Open-Weight-LLM-Serie. "Open-Weight" 
 
 Mistral AI ist ein französisches KI-Startup, das für sehr effiziente Modelle bekannt ist. Sie veröffentlichen sowohl Open-Weight als auch proprietäre Modelle.
 
-| Modell | Typ | Stärken |
-|--------|-----|---------|
-| **Mistral Large** | Proprietär | Flagship-Modell, Multilingual, starkes Reasoning |
-| **Mistral Small** | Proprietär | Günstiger, gute Balance |
-| **Mistral Nemo** | Open-Weight (Apache 2.0) | 12B Parameter, sehr gute Effizienz, echtes Open Source |
-| **Codestral** | Proprietär | Speziell für Code, unterstützt 80+ Programmiersprachen |
-| **Mixtral 8x7B** | Open-Weight | Mixture-of-Experts-Architektur, sehr effizient |
-| **Mixtral 8x22B** | Open-Weight | Größeres MoE-Modell |
+| Modell | Typ | Context Window | Stärken |
+|--------|-----|---------------|---------|
+| **Mistral Large 3** | Proprietär | 256K Tokens | 675B Parameter, Flagship-Modell, Multilingual, starkes Reasoning |
+| **Mistral Medium 3** | Proprietär | 131K Tokens | Gute Balance aus Qualität und Kosten |
+| **Mistral Small 3.2** | Open-Weight | 262K Tokens | 24B Parameter, edge-freundlich, sehr effizient |
+| **Codestral 25.01** | Proprietär | 256K Tokens | 22B Parameter, Code-spezialisiert, 80+ Sprachen |
+| **Devstral** | Open-Weight | – | Entwickler-fokussiertes Modell |
+| **Magistral** | Proprietär | – | Reasoning-optimiertes Modell |
 
-**Mixture of Experts (MoE):** Mixtral-Modelle aktivieren bei jeder Inferenz nur einen Teil der Parameter – dadurch sind sie schneller als ihr Parametercount vermuten lässt.
+**Mixture of Experts (MoE):** Einige Mistral-Modelle nutzen MoE-Architektur und aktivieren bei jeder Inferenz nur einen Teil der Parameter – dadurch sind sie schneller als ihr Parametercount vermuten lässt.
 
 > [!NOTE]
-> Mistral Nemo (Apache 2.0 Lizenz) ist eine hervorragende Wahl für kommerzielle Open-Source-Projekte – keine Lizenzeinschränkungen.
+> Mistral Small 3.2 (24B) ist eine hervorragende Wahl für Edge-Deployment und lokale Nutzung – 262K Context bei nur 24B Parametern. Codestral 25.01 ist der Code-Spezialist mit Unterstützung für 80+ Programmiersprachen.
+
+---
+
+### DeepSeek – DeepSeek V3 & R1
+
+**DeepSeek** ist ein chinesisches KI-Labor, das sich mit extrem kosteneffizienten Modellen als ernstzunehmender Konkurrent etabliert hat. Die Modelle bieten Top-Qualität zu einem Bruchteil der üblichen Preise.
+
+| Modell | Context Window | Preis (Input/Output) | Stärken |
+|--------|---------------|---------------------|---------|
+| **DeepSeek V3.2** | 128K-164K Tokens | $0,25 / $0,38 pro 1M Tokens | Extrem günstig, sehr gute Allround-Qualität |
+| **DeepSeek R1** | 128K Tokens | $0,70 / $2,50 pro 1M Tokens | Reasoning-Modell, Chain-of-Thought, Open-Weight |
+
+**Besonderheiten:**
+- **Preisbrecher:** DeepSeek V3.2 kostet einen Bruchteil vergleichbarer Modelle (~10× günstiger als GPT-5.2)
+- **Open-Weight:** DeepSeek R1 ist Open-Weight und kann lokal betrieben werden
+- **Reasoning:** R1 bietet sichtbare Denkschritte ähnlich wie o3 / Claude Extended Thinking
+
+> [!TIP]
+> DeepSeek V3.2 ist die beste Budget-Option für Produktionsanwendungen: $0,25 / $0,38 pro 1M Tokens bei konkurrenzfähiger Qualität. Ideal wenn Kosten eine Rolle spielen.
 
 ---
 
@@ -188,26 +211,26 @@ Die **Qwen**-Familie von Alibaba ist besonders stark im asiatischen Sprachraum u
 
 | Modell | Anbieter | Typ | Context Window | Besonderheit | Lizenz |
 |--------|---------|-----|----------------|-------------|--------|
-| Claude Opus 4.5 | Anthropic | Proprietär | 200K Tokens | Extended Thinking, höchste Qualität | Proprietär |
-| Claude Sonnet 4.5 | Anthropic | Proprietär | 200K Tokens | Beste Balance Qualität/Kosten | Proprietär |
+| Claude Opus 4.6 | Anthropic | Proprietär | 1M (Beta) / 200K | Extended Thinking, höchste Qualität, 128K max Output | Proprietär |
+| Claude Sonnet 4.6 | Anthropic | Proprietär | 1M (Beta) / 200K | 98% Opus-Qualität, beste Balance | Proprietär |
 | Claude Haiku 4.5 | Anthropic | Proprietär | 200K Tokens | Schnellstes Claude-Modell | Proprietär |
-| GPT-4o | OpenAI | Proprietär | 128K Tokens | Multimodal (Text/Bild/Audio) | Proprietär |
-| GPT-4o-mini | OpenAI | Proprietär | 128K Tokens | Günstige GPT-4-Qualität | Proprietär |
-| o1 | OpenAI | Proprietär | 200K Tokens | Reasoning-Modell | Proprietär |
-| o3 | OpenAI | Proprietär | 200K Tokens | Stärkstes Reasoning | Proprietär |
-| Gemini 1.5 Pro | Google | Proprietär | 1M Tokens | Längster stabiler Context | Proprietär |
-| Gemini 1.5 Flash | Google | Proprietär | 1M Tokens | Schnell und günstig | Proprietär |
-| Gemini 2.0 Pro | Google | Proprietär | 2M Tokens | Stärkstes Gemini | Proprietär |
-| Gemini 2.0 Flash | Google | Proprietär | 1M Tokens | Beste Allround-Flash-Option | Proprietär |
-| Llama 3.1 8B | Meta | Open-Weight | 128K Tokens | Effizient, lokal nutzbar | Meta Llama 3 |
-| Llama 3.1 70B | Meta | Open-Weight | 128K Tokens | Beste Open-Weight-Balance | Meta Llama 3 |
+| GPT-5.3 Codex | OpenAI | Proprietär | TBD | Neuestes Modell, Real-Time-Coding | Proprietär |
+| GPT-5.2 | OpenAI | Proprietär | 400K Tokens | Flaggschiff, 3 Varianten (Instant/Thinking/Pro) | Proprietär |
+| GPT-5.1 | OpenAI | Proprietär | – | Wird eingestellt (Sunset) | Proprietär |
+| Gemini 3.1 Pro | Google | Proprietär | TBD | Neuestes Gemini, Advanced Reasoning | Proprietär |
+| Gemini 2.5 Pro | Google | Proprietär | 1M Tokens | Stabil, empfohlener Fallback | Proprietär |
+| Gemini 2.5 Flash | Google | Proprietär | 1M Tokens | Schnell und günstig | Proprietär |
+| Gemini 2.5 Flash-Lite | Google | Proprietär | 1M Tokens | Budget-Option | Proprietär |
+| DeepSeek V3.2 | DeepSeek | Proprietär | 128-164K Tokens | Extrem günstig ($0,25/$0,38 pro 1M) | Proprietär |
+| DeepSeek R1 | DeepSeek | Open-Weight | 128K Tokens | Reasoning, sehr günstig | MIT |
+| Llama 4 Scout | Meta | Open-Weight | 10M Tokens | MoE 109B/17B aktiv, multimodal, 1× H100 | Meta Llama |
+| Llama 4 Maverick | Meta | Open-Weight | 1M Tokens | MoE 400B/17B aktiv, übertrifft GPT-4o | Meta Llama |
+| Llama 4 Behemoth | Meta | Open-Weight | TBD | 2T Parameter, limitierte Beta | Meta Llama |
+| Llama 3.1 70B | Meta | Open-Weight | 128K Tokens | Bewährte Open-Weight-Balance | Meta Llama 3 |
 | Llama 3.1 405B | Meta | Open-Weight | 128K Tokens | GPT-4o-Niveau, Open-Weight | Meta Llama 3 |
-| Llama 3.2 3B | Meta | Open-Weight | 128K Tokens | Für Edge/Mobile | Meta Llama 3 |
-| Llama 3.3 70B | Meta | Open-Weight | 128K Tokens | Verbessertes 70B | Meta Llama 3 |
-| Mistral Large | Mistral | Proprietär | 128K Tokens | Multilingual, starkes Reasoning | Proprietär |
-| Mistral Nemo 12B | Mistral | Open-Weight | 128K Tokens | Echtes Open Source (Apache 2.0) | Apache 2.0 |
-| Codestral | Mistral | Proprietär | 32K Tokens | Code-spezialisiert, 80+ Sprachen | Proprietär |
-| Mixtral 8x7B | Mistral | Open-Weight | 32K Tokens | MoE-Architektur, effizient | Apache 2.0 |
+| Mistral Large 3 | Mistral | Proprietär | 256K Tokens | 675B, Multilingual, starkes Reasoning | Proprietär |
+| Mistral Small 3.2 | Mistral | Open-Weight | 262K Tokens | 24B, edge-freundlich | Apache 2.0 |
+| Codestral 25.01 | Mistral | Proprietär | 256K Tokens | 22B, Code-spezialisiert, 80+ Sprachen | Proprietär |
 | Phi-3.5 Mini | Microsoft | Open-Weight | 128K Tokens | Kleinste Modelle mit hoher Qualität | MIT |
 | Phi-3.5 MoE | Microsoft | Open-Weight | 128K Tokens | MoE, ~6,6B aktive Parameter | MIT |
 | Qwen2.5 72B | Alibaba | Open-Weight | 128K Tokens | Starke Mehrsprachigkeit | Qwen License |
@@ -237,7 +260,7 @@ Die Modellgewichte sind nicht öffentlich zugänglich. Der Zugriff erfolgt aussc
 - Keine Anpassung (Finetuning nur über offizielle APIs/Services)
 - Ausfall des Anbieters = Ausfall des eigenen Dienstes
 
-**Beispiele:** Claude, GPT-4o, Gemini Pro
+**Beispiele:** Claude, GPT-5.2, Gemini Pro, DeepSeek V3.2
 
 ### Open-Weight Modelle
 
@@ -256,7 +279,7 @@ Die Modellgewichte werden zum Download bereitgestellt. Der Begriff "Open Source"
 - Selbst-Hosting erfordert DevOps-Kompetenz
 - Sicherheit und Updates müssen selbst verwaltet werden
 
-**Beispiele:** Llama 3.x, Mistral Nemo, Phi-3.5, Gemma2
+**Beispiele:** Llama 4 Scout/Maverick, Llama 3.x, Mistral Small 3.2, DeepSeek R1, Phi-3.5, Gemma2
 
 > [!WARNING]
 > "Open-Weight" ist nicht dasselbe wie "Open Source". Bei echtem Open Source sind Trainingsdata, Code und Gewichte frei verfügbar. Bei Open-Weight-Modellen wie Llama sind nur die Gewichte frei – aber Trainingsdaten und vollständiger Code sind nicht öffentlich. Nur wenige Modelle (z.B. Mistral Nemo, Phi-3.5 mit MIT-Lizenz) sind wirklich für alle kommerziellen Zwecke unbeschränkt nutzbar.

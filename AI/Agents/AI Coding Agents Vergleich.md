@@ -36,10 +36,10 @@ Die wichtigsten Trends 2025:
 
 | Agent | Typ | Kosten | Modelle | Custom Instructions | MCP | Sandbox | Multi-Agent | Offline/Lokal | Best für |
 |---|---|---|---|---|---|---|---|---|---|
-| **[[Claude Code Konfiguration und Hooks\|Claude Code]]** | CLI (Commercial) | API-basiert (pay-per-use) | Claude Sonnet 4, Claude Opus | `CLAUDE.md` | ✅ | ✅ | ✅ | ❌ | Komplexe Refactorings, Code-Qualität |
+| **[[Claude Code Konfiguration und Hooks\|Claude Code]]** | CLI (Commercial) | API-basiert (pay-per-use) | Claude Sonnet 4.6, Claude Opus 4.6 | `CLAUDE.md` | ✅ | ✅ | ✅ | ❌ | Komplexe Refactorings, Code-Qualität |
 | **[[GitHub Copilot CLI Konfiguration\|Copilot CLI]]** | CLI (Commercial) | Subscription ($10–39/Monat) | Claude, GPT, Gemini (multi) | `copilot-instructions.md` | ✅ | ✅ | ✅ | ❌ | GitHub-Workflows, Team-Projekte |
 | **[[Gemini CLI Konfiguration\|Gemini CLI]]** | CLI (Commercial) | Freemium (1K Req/Tag frei) | Gemini 2.5 Pro | `GEMINI.md` | ✅ | ✅ (Docker) | ❌ | ❌ | Multimodal, große Codebases |
-| **[[OpenAI Codex CLI Konfiguration\|Codex CLI]]** | CLI (Commercial) | API-basiert / ChatGPT Plus | GPT-4, GPT-4 Turbo | `AGENTS.md` | ✅ | ✅ | ✅ | ❌ | OpenAI-Ökosystem, schnelle Iteration |
+| **[[OpenAI Codex CLI Konfiguration\|Codex CLI]]** | CLI (Commercial) | API-basiert / ChatGPT Plus | GPT-5.2, GPT-5.3 Codex | `AGENTS.md` | ✅ | ✅ | ✅ | ❌ | OpenAI-Ökosystem, schnelle Iteration |
 | **[[OpenCode Konfiguration\|OpenCode]]** | CLI (OSS) | Kostenlos (BYOK) | 75+ Provider, Ollama | `AGENTS.md` | ✅ | ❌ | ✅ | ✅ (Ollama) | Vendor-neutral, Privacy |
 | **[[Aider Konfiguration\|Aider]]** | CLI (OSS) | Kostenlos (BYOK) | OpenAI, Anthropic, Ollama | `.aider.conf.yml` | ❌ | ❌ | ❌ | ✅ (Ollama) | Git-native Workflows, Quick Fixes |
 | **[[Goose Konfiguration\|Goose]]** | CLI (OSS) | Kostenlos (BYOK) | OpenAI, Anthropic, Google, lokal | `goose-hints` | ✅ (nativ) | ❌ | ❌ | ✅ | Performance, MCP-Extensions |

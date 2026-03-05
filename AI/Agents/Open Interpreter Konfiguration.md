@@ -322,7 +322,7 @@ interpreter --os
 - **Anwendungssteuerung** – Programme öffnen, zwischen Fenstern wechseln
 
 > [!NOTE]
-> Computer Use erfordert ein Vision-fähiges Modell (z.B. GPT-4o oder Claude mit Vision). Die Genauigkeit hängt stark von der Bildschirmauflösung und dem Modell ab.
+> Computer Use erfordert ein Vision-fähiges Modell (z.B. GPT-5.2 oder Claude Sonnet 4.6 mit Vision). Die Genauigkeit hängt stark von der Bildschirmauflösung und dem Modell ab.
 
 ---
 

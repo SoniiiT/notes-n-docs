@@ -45,7 +45,7 @@ Das "Gehirn" des Agenten. Zuständig für:
 - Interpretation von Tool-Ergebnissen
 - Generierung der finalen Antwort
 
-Gängige LLMs: GPT-4o, Claude 3.5/3.7 Sonnet, Gemini 1.5 Pro, Llama 3.1
+Gängige LLMs: GPT-5.2, Claude Sonnet 4.6, Gemini 2.5 Pro, Llama 4 Scout
 
 ### 2. Tools
 Schnittstellen zur Außenwelt. Beispiele:
@@ -161,7 +161,7 @@ Tools werden üblicherweise als JSON-Schema definiert und dem LLM als verfügbar
 {
   "tool": "web_search",
   "parameters": {
-    "query": "Claude 3.5 Sonnet release date",
+    "query": "Claude Sonnet 4.6 release date",
     "num_results": 3
   }
 }
@@ -173,7 +173,7 @@ Tools werden üblicherweise als JSON-Schema definiert und dem LLM als verfügbar
 {
   "tool_result": "web_search",
   "content": [
-    {"title": "Anthropic Blog", "url": "...", "snippet": "Claude 3.5 Sonnet was released on..."}
+    {"title": "Anthropic Blog", "url": "...", "snippet": "Claude Sonnet 4.6 was released on..."}
   ]
 }
 ```

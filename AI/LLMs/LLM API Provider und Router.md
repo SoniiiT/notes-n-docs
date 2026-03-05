@@ -1,5 +1,7 @@
 # LLM API Provider und Router
 
+> **Stand: März 2026**
+
 > [!NOTE]
 > LLM API Provider sind die **Backend-Dienste**, die Zugang zu Sprachmodellen über eine API bereitstellen. Sie sind nicht die Tools oder Agents selbst, sondern die Infrastruktur, an die sich [[AI Coding Agents Vergleich|Coding Agents]], Apps und Entwickler-Tools anbinden. Diese Notiz erklärt das gesamte Ökosystem: Direkte Provider, Inference-Dienste, Router und lokale Lösungen.
 
@@ -37,7 +39,7 @@ Es gibt vier grundlegend verschiedene Arten, wie man an LLM-Inferenz kommt:
 
 | Kategorie | Beschreibung | Beispiele | Eigene Modelle? |
 |-----------|-------------|-----------|-----------------|
-| **Direkte Provider** | Betreiben eigene proprietäre Modelle | Anthropic, OpenAI, Google, xAI, Mistral | ✅ Ja |
+| **Direkte Provider** | Betreiben eigene proprietäre Modelle | Anthropic, OpenAI, Google, DeepSeek, xAI, Mistral | ✅ Ja |
 | **Inference Provider** | Hosten Open-Source-Modelle auf eigener Infrastruktur | Together AI, Groq, DeepInfra, Fireworks | ❌ Nein (Open-Source) |
 | **Router/Aggregatoren** | Leiten Anfragen an verschiedene Provider weiter | OpenRouter | ❌ Nein (Vermittler) |
 | **Lokal** | Modelle laufen auf eigener Hardware | Ollama, LM Studio, vLLM | ❌ Nein (Open-Source) |
@@ -117,10 +119,10 @@ export OPENROUTER_BASE_URL="https://openrouter.ai/api/v1"
 
 ```bash
 # Direkt als Argument
-aider --model openrouter/anthropic/claude-sonnet-4
+aider --model openrouter/anthropic/claude-sonnet-4.6
 
 # Oder in ~/.aider.conf.yml
-model: openrouter/anthropic/claude-sonnet-4
+model: openrouter/anthropic/claude-sonnet-4.6
 ```
 
 **OpenCode:**
@@ -147,7 +149,7 @@ curl https://openrouter.ai/api/v1/chat/completions \
   -H "Authorization: Bearer $OPENROUTER_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "anthropic/claude-sonnet-4",
+    "model": "anthropic/claude-sonnet-4.6",
     "messages": [
       {"role": "user", "content": "Erkläre Kubernetes in 3 Sätzen."}
     ]
@@ -166,7 +168,7 @@ Direkte Provider betreiben **eigene proprietäre Modelle** auf eigener Infrastru
 |------------|------|
 | **Base URL** | `https://api.anthropic.com/v1` |
 | **API-Key Variable** | `ANTHROPIC_API_KEY` |
-| **Modelle** | Claude Opus 4.5, Sonnet 4.5, Haiku 4.5 |
+| **Modelle** | Claude Opus 4.6, Sonnet 4.6, Haiku 4.5 |
 | **Pricing** | Pay-per-Token |
 | **Besonderheiten** | Extended Thinking, Prompt Caching, 200K Context |
 
@@ -176,7 +178,7 @@ Direkte Provider betreiben **eigene proprietäre Modelle** auf eigener Infrastru
 ```bash
 export ANTHROPIC_API_KEY="sk-ant-..."
 # Aider
-aider --model claude-sonnet-4
+aider --model claude-sonnet-4.6
 # Claude Code (nutzt automatisch ANTHROPIC_API_KEY)
 claude
 ```
@@ -189,7 +191,7 @@ Siehe auch: [[Modell Übersicht#Anthropic – Claude]]
 |------------|------|
 | **Base URL** | `https://api.openai.com/v1` |
 | **API-Key Variable** | `OPENAI_API_KEY` |
-| **Modelle** | GPT-4o, GPT-4o-mini, o1, o3, o4-mini |
+| **Modelle** | GPT-5.2 (Flaggschiff), GPT-5.1, o3, o4-mini (GPT-5.3 im Rollout) |
 | **Pricing** | Pay-per-Token + optionale Subscription Tiers |
 | **Besonderheiten** | Function Calling, Vision, Audio, DALL-E, Codex |
 
@@ -201,7 +203,7 @@ OpenAI bietet auch **Subscription-Stufen** an:
 
 ```bash
 export OPENAI_API_KEY="sk-..."
-aider --model gpt-4o
+aider --model gpt-5.2
 ```
 
 Siehe auch: [[Modell Übersicht#OpenAI – GPT & Reasoning-Modelle]]
@@ -212,7 +214,7 @@ Siehe auch: [[Modell Übersicht#OpenAI – GPT & Reasoning-Modelle]]
 |------------|------|
 | **Base URL** | `https://generativelanguage.googleapis.com/v1beta` |
 | **API-Key Variable** | `GEMINI_API_KEY` |
-| **Modelle** | Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.0 Flash |
+| **Modelle** | Gemini 3.1 Pro (neuestes), Gemini 2.5 Pro, Gemini 2.5 Flash |
 | **Pricing** | Free Tier verfügbar, danach Pay-per-Token |
 | **Besonderheiten** | 1M+ Context Window, multimodal, kostenloser Einstieg |
 
@@ -253,9 +255,9 @@ Siehe auch: [[Modell Übersicht#Google DeepMind – Gemini]]
 |------------|------|
 | **Base URL** | `https://api.deepseek.com/v1` |
 | **API-Key Variable** | `DEEPSEEK_API_KEY` |
-| **Modelle** | DeepSeek R1, DeepSeek V3 |
-| **Pricing** | Extrem günstig ($0.14/1M Input, $2.19/1M Output für R1) |
-| **Besonderheiten** | Open-Source-Modelle, Chain-of-Thought Reasoning |
+| **Modelle** | DeepSeek V3.2 (Flaggschiff), DeepSeek R1 |
+| **Pricing** | Extrem günstig ($0.25/1M Input, $0.38/1M Output für V3.2) |
+| **Besonderheiten** | Open-Source-Modelle, Chain-of-Thought Reasoning, Major Player im LLM-Markt |
 
 > [!WARNING]
 > DeepSeek ist ein **chinesischer Anbieter**. Für sensible oder unternehmenskritische Daten sollte man abwägen, ob die direkte API genutzt wird, oder ob man DeepSeek-Modelle lieber über westliche Inference Provider (Together AI, Groq) oder [[Lokale LLMs|lokal]] betreibt.
@@ -293,8 +295,8 @@ aider --model together_ai/meta-llama/Llama-3.1-405B-Instruct-Turbo
 | Eigenschaft | Wert |
 |------------|------|
 | **Base URL** | `https://api.groq.com/openai/v1` |
-| **Modelle** | Llama 3.x, Mixtral, Gemma, DeepSeek R1 |
-| **Pricing** | Ab $0.05/1M Tokens (Llama 3.1 8B), $0.59/1M (Llama 3.3 70B) |
+| **Modelle** | Llama 4 Scout/Maverick, Llama 3.x, Mixtral, Gemma, DeepSeek R1 |
+| **Pricing** | Ab $0.05/1M Tokens (Llama 3.1 8B), $0.59/1M (Llama 3.3 70B), Llama 4 Scout ab ~$0.10 |
 | **Geschwindigkeit** | **275+ Tokens/Sekunde** (schnellster Provider) |
 | **Free Tier** | Ja, mit Rate Limits |
 | **Best für** | Geschwindigkeit, interaktive Nutzung |
@@ -384,12 +386,12 @@ Siehe auch: [[Lokale LLMs]] und [[Context Window und Token Management]]
 
 | Provider | Typ | Modelle | Preis (1M Input) | Geschwindigkeit | Free Tier | BYOK | Best für |
 |----------|-----|---------|-------------------|-----------------|-----------|------|----------|
-| **Anthropic** | Direkt | Claude-Familie | $3.00 (Sonnet 4) | ~90 tok/s | ❌ | — | Coding, Analyse |
-| **OpenAI** | Direkt | GPT, o-Serie | $2.50 (GPT-4o) | ~100 tok/s | Limitiert | — | Allround, Ecosystem |
-| **Google** | Direkt | Gemini-Familie | $1.25 (2.5 Pro) | ~150 tok/s | ✅ Großzügig | — | Langer Context, Einstieg |
+| **Anthropic** | Direkt | Claude 4.6-Familie | $3.00 (Sonnet 4.6), $5.00 (Opus 4.6) | ~90 tok/s | ❌ | — | Coding, Analyse |
+| **OpenAI** | Direkt | GPT-5.x, o-Serie | $1.75 (GPT-5.2) | ~100 tok/s | Limitiert | — | Allround, Ecosystem |
+| **Google** | Direkt | Gemini-Familie | ~$1.25 (2.5 Pro) | ~150 tok/s | ✅ Großzügig | — | Langer Context, Einstieg |
 | **xAI** | Direkt | Grok | $2.00 (Grok 3) | ~80 tok/s | ❌ | — | Echtzeit-Wissen |
 | **Mistral** | Direkt | Mistral/Codestral | $2.00 (Large) | ~100 tok/s | ✅ Klein | — | EU-Compliance |
-| **DeepSeek** | Direkt | R1, V3 | $0.14 (R1) | ~50 tok/s | ✅ | — | Budget-Reasoning |
+| **DeepSeek** | Direkt | V3.2, R1 | $0.25 (V3.2) | ~50 tok/s | ✅ | — | Budget, Major Player |
 | **OpenRouter** | Router | 300+ (alle) | Durchgereicht | Vom Provider | ✅ Free Models | ✅ | Flexibilität, Vergleich |
 | **Together AI** | Inference | 200+ OS | $0.10–7.00 | ~134 tok/s | $5 Start | ❌ | Modellvielfalt |
 | **Groq** | Inference | ~20 OS | $0.05–0.99 | **275 tok/s** | ✅ | ❌ | Speed, Iteration |
@@ -401,7 +403,7 @@ Siehe auch: [[Lokale LLMs]] und [[Context Window und Token Management]]
 | **vLLM** | Lokal | Alle HF | Kostenlos (HW) | HW-abhängig | ✅ | — | Produktion, Multi-GPU |
 
 > [!NOTE]
-> Preise Stand Mitte 2025. Preise ändern sich regelmäßig – tendenziell werden sie günstiger. Aktuelle Preise immer auf der jeweiligen Provider-Website prüfen.
+> Preise Stand März 2026. Preise ändern sich regelmäßig – tendenziell werden sie günstiger. Aktuelle Preise immer auf der jeweiligen Provider-Website prüfen.
 
 ---
 
@@ -414,17 +416,17 @@ Siehe auch: [[Lokale LLMs]] und [[Context Window und Token Management]]
 ```bash
 # Direkte Provider
 export ANTHROPIC_API_KEY="sk-ant-..."
-aider --model claude-sonnet-4
+aider --model claude-sonnet-4.6
 
 export OPENAI_API_KEY="sk-..."
-aider --model gpt-4o
+aider --model gpt-5.2
 
 export GEMINI_API_KEY="AI..."
 aider --model gemini/gemini-2.5-pro
 
 # OpenRouter
 export OPENROUTER_API_KEY="sk-or-v1-..."
-aider --model openrouter/anthropic/claude-sonnet-4
+aider --model openrouter/anthropic/claude-sonnet-4.6
 aider --model openrouter/google/gemini-2.5-pro
 aider --model openrouter/meta-llama/llama-3.1-405b-instruct
 
@@ -488,10 +490,10 @@ editor-model: openrouter/deepseek/deepseek-chat-v3
 ┌────────────────────┐     ┌─────────────────────┐     ┌──────────────────┐
 │  Entwicklung       │     │  Review/Test         │     │  Produktion      │
 │  ────────────────  │     │  ─────────────────── │     │  ──────────────  │
-│  Groq / DeepInfra  │     │  Claude Sonnet /     │     │  Claude Opus /   │
-│  (schnell, billig) │────▶│  GPT-4o              │────▶│  GPT-4o          │
+│  Groq / DeepInfra  │     │  Claude Sonnet 4.6 / │     │  Claude Opus 4.6/│
+│  (schnell, billig) │────▶│  GPT-5.2             │────▶│  GPT-5.2         │
 │  $0.05-0.55/1M     │     │  (gute Qualität)     │     │  (beste Qualität)│
-│                    │     │  $2.50-3.00/1M       │     │  $15.00/1M       │
+│                    │     │  $1.75-3.00/1M       │     │  $5.00-15.00/1M  │
 └────────────────────┘     └─────────────────────┘     └──────────────────┘
 ```
 
@@ -503,7 +505,7 @@ editor-model: openrouter/deepseek/deepseek-chat-v3
 # ~/.aider.conf.yml
 weak-model: groq/llama-3.3-70b-versatile      # Günstig für einfache Edits
 editor-model: openrouter/deepseek/deepseek-chat-v3  # Mittel für Editor-Aufgaben
-model: anthropic/claude-sonnet-4               # Premium für komplexe Fragen
+model: anthropic/claude-sonnet-4.6              # Premium für komplexe Fragen
 ```
 
 **2. Anthropic Prompt Caching:** Anthropic cached automatisch lange System-Prompts. Bei Coding Agents, die große Codebasen im Context halten, reduziert das die Kosten um bis zu **90%** für den gecachten Teil.
@@ -514,12 +516,12 @@ model: anthropic/claude-sonnet-4               # Premium für komplexe Fragen
 
 | Provider/Modell | Kosten |
 |-----------------|--------|
-| Groq Llama 3.3 70B | ~$0.07 |
+| Groq Llama 4 Scout | ~$0.05 |
 | DeepInfra Llama 405B | ~$0.07 |
 | DeepSeek R1 (direkt) | ~$0.06 |
-| Claude Sonnet 4 | ~$0.60 |
-| GPT-4o | ~$0.45 |
-| Claude Opus 4.5 | ~$3.00 |
+| Claude Sonnet 4.6 | ~$0.60 |
+| GPT-5.2 | ~$0.45 |
+| Claude Opus 4.6 | ~$1.00 |
 
 > [!IMPORTANT]
 > Der Preisunterschied zwischen Open-Source-Modellen bei Inference Providern und proprietären Flaggschiffen kann **Faktor 10-50** betragen. Für Experimente und Iteration lohnt sich der Einsatz günstigerer Modelle fast immer.
@@ -562,7 +564,7 @@ Brauche ich maximale Privatsphäre?
     │       │       ├── Bestes Coding-Modell?
     │       │       │   └── Anthropic (Claude)
     │       │       ├── Bestes Allround-Modell?
-    │       │       │   └── OpenAI (GPT-4o)
+    │       │       │   └── OpenAI (GPT-5.2)
     │       │       └── Größter Context?
     │       │           └── Google (Gemini)
     │       └── Enterprise / Compliance nötig?
