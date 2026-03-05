@@ -1,0 +1,410 @@
+# Lokale LLMs
+
+> [!NOTE]
+> Lokale LLMs laufen vollständig auf der eigenen Hardware – kein Internet, kein API-Key, keine Datenweitergabe. Diese Notiz gibt einen Überblick über Tools, Hardware und Modell-Empfehlungen. Ausführliche Installationsanleitungen für die einzelnen Tools befinden sich unter `AI/Tools/`.
+
+---
+
+## Warum lokale LLMs?
+
+### Datenschutz und Compliance
+
+Der stärkste Grund für lokale LLMs ist **volle Datenkontrolle**. Bei Cloud-APIs werden alle Eingaben an externe Server gesendet – auch sensible Informationen wie:
+
+- Interne Firmendaten und Strategiepapiere
+- Quellcode mit proprietärer Logik
+- Persönliche Daten (DSGVO-relevant)
+- Medizinische oder rechtliche Informationen
+- Zugangsdaten oder API-Keys in Code-Prompts
+
+Mit lokalen LLMs verlassen diese Daten das eigene Netzwerk nie.
+
+### Kostenstruktur
+
+| Ansatz | Kosten-Modell | Break-Even |
+|--------|--------------|-----------|
+| Cloud-API | Pay-per-Token, laufende Kosten | - |
+| Lokal (GPU-Kauf) | Einmalige Hardware, dann ~0 | Bei hoher Nutzung: 3-12 Monate |
+| Lokal (vorhandene Hardware) | Praktisch kostenlos | Sofort |
+
+**Beispielrechnung:**
+- Claude Sonnet 4.5: $3 / 1M Input-Tokens
+- 1.000 tägliche Anfragen × 500 Tokens = 500.000 Tokens/Tag = $1,50/Tag = $45/Monat
+- Eine RTX 4090 (ca. 1.500€) läuft Llama 3.1 70B lokal → Break-Even nach ~33 Monaten
+- Aber: Qualität ist bei Cloud-Modellen aktuell noch deutlich besser
+
+### Offline-Fähigkeit
+
+Lokale LLMs funktionieren ohne Internetverbindung:
+- Air-gapped Environments (Sicherheitskritische Systeme)
+- Reisen mit schlechter Konnektivität
+- Keine API-Ausfälle, kein Rate-Limiting
+- Garantierte Verfügbarkeit für kritische Anwendungen
+
+> [!WARNING]
+> Lokale LLMs sind (Stand 2025) in der Qualität hinter den Top-Cloud-Modellen. Ein lokales Llama 3.1 70B erreicht auf den meisten Benchmarks annähernd GPT-4-Niveau. Für kritische Aufgaben (komplexes Reasoning, Coding) können Cloud-APIs dennoch überlegen sein.
+
+---
+
+## Hardware-Anforderungen
+
+### Die entscheidende Ressource: VRAM
+
+Das wichtigste für lokale LLMs ist der **VRAM (Video RAM) der GPU**. Ein Modell muss vollständig in den VRAM passen, um GPU-beschleunigt zu laufen. Passt es nicht rein, fällt die Ausführung auf die CPU zurück – was 10-50x langsamer ist.
+
+**Faustformel (fp16/bf16, ohne Quantisierung):**
+```
+VRAM (GB) ≈ Modellparameter (Milliarden) × 2
+Beispiel: 7B-Modell ≈ 14 GB VRAM
+```
+
+**Mit Q4-Quantisierung (~60% Reduktion):**
+```
+VRAM (GB) ≈ Modellparameter (Milliarden) × 0,7
+Beispiel: 7B-Modell mit Q4 ≈ 4-5 GB VRAM
+```
+
+### VRAM-Tabelle: Modelle und passende GPUs
+
+| Modell | VRAM (fp16) | VRAM (Q4) | VRAM (Q8) | Passende GPUs |
+|--------|------------|----------|----------|---------------|
+| Phi-3.5 Mini 3.8B | ~7,5 GB | ~3 GB | ~4,5 GB | GTX 1660 Ti, RTX 3060 (8GB) |
+| Llama 3.2 3B | ~6 GB | ~2,5 GB | ~3,5 GB | Jede moderne GPU mit 4+ GB |
+| Llama 3.1 8B | ~16 GB | ~5,5 GB | ~9 GB | RTX 3080 (10GB), RTX 4070 |
+| Mistral Nemo 12B | ~24 GB | ~8 GB | ~13 GB | RTX 3090/4090 (24GB) bei Q4 |
+| Gemma2 9B | ~18 GB | ~6,5 GB | ~10 GB | RTX 3090 bei Q8, RTX 4070 bei Q4 |
+| Llama 3.1 70B | ~140 GB | ~48 GB | ~75 GB | 2x RTX 3090 bei Q4, A100 80GB |
+| Llama 3.3 70B | ~140 GB | ~48 GB | ~75 GB | 2x RTX 4090 bei Q4 |
+| Qwen2.5 72B | ~144 GB | ~50 GB | ~78 GB | 2-3x RTX 4090 bei Q4 |
+| Llama 3.1 405B | ~810 GB | ~280 GB | ~430 GB | 8x A100 80GB (fp16) |
+
+### GPU-Empfehlungen nach Budget
+
+| Budget | GPU | VRAM | Empfohlene Modelle |
+|--------|-----|------|-------------------|
+| ~300€ | RTX 3060 12GB | 12 GB | Bis 8B-Modelle (Q4/Q5) |
+| ~500€ | RTX 4060 Ti 16GB | 16 GB | 8B-Modelle (fp16), 13B (Q4) |
+| ~800€ | RTX 4070 Ti Super | 16 GB | 8B (fp16), 13B (Q4) – schneller |
+| ~1.500€ | RTX 4090 | 24 GB | 13B (fp16), 70B (Q4 mit Offloading) |
+| ~2.500€ | 2x RTX 3090 | 48 GB | 70B-Modelle (Q4/Q5) |
+| ~10.000€ | A100 80GB | 80 GB | 70B (fp16), kleine 405B-Varianten |
+
+> [!TIP]
+> Für den Einstieg ist ein **Llama 3.1 8B mit Q5-Quantisierung** auf einer RTX 4060 (8GB) oder ähnlichen GPU ein hervorragender Start. Gutes Qualitäts-/Kosten-Verhältnis, ~15-30 Tokens/Sekunde Generierungsgeschwindigkeit.
+
+### RAM (System-RAM)
+
+Neben VRAM ist auch System-RAM wichtig, besonders wenn Modell-Teile auf die CPU ausgelagert werden:
+
+| Szenario | Benötigter RAM |
+|----------|---------------|
+| Modell passt komplett in VRAM | 16 GB reichen |
+| Teilweises CPU-Offloading | 32 GB empfohlen |
+| Großes Modell (70B+) mit Offloading | 64-128 GB |
+
+---
+
+## Quantisierung: Q4, Q5, Q8 erklärt
+
+### Was ist Quantisierung?
+
+Quantisierung reduziert die **Präzision** der Modellgewichte. Statt 16-Bit-Gleitkommazahlen (fp16) werden die Gewichte auf 4-8 Bit komprimiert. Das reduziert:
+- **VRAM-Bedarf** drastisch
+- **Ladezeit** des Modells
+- **Inferenz-Geschwindigkeit** verbessert sich oft
+
+**Dafür wird etwas Qualität eingebüßt.**
+
+### Quantisierungs-Stufen im Vergleich
+
+| Format | Bits/Gewicht | VRAM vs. fp16 | Qualitätsverlust | Empfehlung |
+|--------|-------------|---------------|-----------------|-----------|
+| fp32 | 32 Bit | 200% | Keine (Referenz) | Nur für Training |
+| fp16 / bf16 | 16 Bit | 100% (Baseline) | Minimal | Wenn VRAM reicht |
+| Q8_0 | 8 Bit | ~50% | Sehr gering (~1%) | Wenn VRAM verfügbar |
+| Q6_K | 6 Bit | ~37% | Gering (~2%) | Guter Kompromiss |
+| Q5_K_M | 5 Bit | ~31% | Moderat (~3%) | Empfohlen für 70B |
+| Q4_K_M | 4 Bit | ~25% | Merklich (~5-8%) | Standard-Empfehlung |
+| Q3_K_M | 3 Bit | ~19% | Deutlich (~10-15%) | Nur wenn nötig |
+| Q2_K | 2 Bit | ~12% | Stark (~20-30%) | Notlösung |
+
+**Die `_K_M` / `_K_S` Suffixe** (z.B. Q4_K_M): "K" bedeutet k-quantization (wichtige Schichten werden weniger quantisiert), "M" = Medium (Balance), "S" = Small (stärkere Kompression).
+
+> [!TIP]
+> **Empfehlung für die meisten Anwender:** Nutze **Q4_K_M** wenn VRAM knapp ist, **Q5_K_M** wenn etwas mehr VRAM verfügbar ist. Der Qualitätsunterschied zwischen Q4_K_M und Q8 ist für die meisten Aufgaben kaum wahrnehmbar.
+
+### Quantisierungs-Auswirkung auf die Praxis
+
+```
+Aufgabe: "Erkläre Rekursion in Python"
+
+fp16 Llama 3.1 8B:
+→ Klare, präzise Erklärung mit korrektem Beispielcode
+
+Q4_K_M Llama 3.1 8B:
+→ Ebenfalls korrekte Erklärung, minimal weniger eloquent
+→ Code-Qualität vergleichbar
+
+Q2_K Llama 3.1 8B:
+→ Sichtbarer Qualitätsverlust, manche Erklärungen ungenau
+→ Für produktiven Einsatz nicht empfohlen
+```
+
+---
+
+## Lokale LLM-Tools
+
+### Ollama
+
+**Ollama** ist das meistgenutzte Tool für lokale LLMs. Es bietet eine einfache CLI und eine OpenAI-kompatible API.
+
+```bash
+# Schnellstart (nach Installation)
+ollama pull llama3.1:8b
+ollama run llama3.1:8b "Erkläre mir Quantisierung in einfachen Worten"
+
+# Als Server starten (OpenAI-API-kompatibel auf Port 11434)
+ollama serve
+
+# Verfügbare Modelle auflisten
+ollama list
+
+# Modell-Informationen
+ollama show llama3.1:8b
+```
+
+**API-Nutzung:**
+```python
+# Ollama ist OpenAI-API-kompatibel
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://localhost:11434/v1",
+    api_key="ollama"  # Beliebiger String
+)
+
+response = client.chat.completions.create(
+    model="llama3.1:8b",
+    messages=[{"role": "user", "content": "Hallo!"}]
+)
+print(response.choices[0].message.content)
+```
+
+Ausführliche Installationsanleitung: [[../Tools/Ollama]]
+
+---
+
+### LM Studio
+
+**LM Studio** ist eine Desktop-Applikation (Windows, macOS, Linux) für das Herunterladen und Ausführen von LLMs mit grafischer Benutzeroberfläche.
+
+**Features:**
+- Integrierter Modell-Browser (Hugging Face-Integration)
+- Chat-Interface direkt in der App
+- Lokaler API-Server (OpenAI-kompatibel)
+- Modell-Vergleiche nebeneinander
+- GPU/CPU-Auslastungsanzeige
+- Einfaches Wechseln zwischen Modellen
+
+**Typischer Workflow:**
+1. LM Studio öffnen
+2. Im "Discover"-Tab nach Modell suchen (z.B. "llama 3.1")
+3. GGUF-Variante mit passendem Q-Level auswählen
+4. Herunterladen
+5. In "Chat" oder als "Local Server" starten
+
+> [!NOTE]
+> LM Studio ist ideal für **Einsteiger und visuelle Nutzer**. Kein Terminal nötig, alles per GUI bedienbar. Für Automatisierung und Scripting ist Ollama flexibler.
+
+---
+
+### Jan.ai
+
+**Jan.ai** ist eine Open-Source-Alternative zu LM Studio (MIT-Lizenz).
+
+**Unterschiede zu LM Studio:**
+- Vollständig Open Source (GitHub: `janhq/jan`)
+- Mehr Kontrolle und Anpassungsmöglichkeiten
+- Extensions-System (erweiterbar)
+- Etwas weniger poliertes UI als LM Studio
+- Plattformübergreifend (Windows, macOS, Linux)
+
+```bash
+# Jan.ai API (ebenfalls OpenAI-kompatibel)
+curl http://localhost:1337/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "llama3.1-8b-instruct",
+    "messages": [{"role": "user", "content": "Hallo Jan!"}]
+  }'
+```
+
+---
+
+### llama.cpp
+
+**llama.cpp** ist die C++-Implementierung für das Ausführen von LLaMA-Modellen (und viele andere). Es ist die **Grundlage für Ollama, LM Studio und Jan.ai**.
+
+**Warum direkt nutzen?**
+- Maximale Kontrolle über alle Parameter
+- Minimaler Overhead (keine zusätzliche Abstraktionsschicht)
+- Scripting und Integration in eigene Tools
+- Beste Performance auf spezifischer Hardware (Metal auf Apple Silicon, CUDA, Vulkan)
+
+```bash
+# Kompilieren
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
+cmake -B build -DGGML_CUDA=ON && cmake --build build  # Mit CUDA-Unterstützung
+
+# Modell ausführen
+./build/bin/llama-cli -m models/llama-3.1-8b-q4_k_m.gguf \
+  -p "Erkläre mir Rekursion" \
+  -n 512 \
+  --temp 0.7 \
+  --ctx-size 8192
+
+# Als Server starten
+./build/bin/llama-server -m models/llama-3.1-8b-q4_k_m.gguf \
+  --port 8080 \
+  --ctx-size 8192 \
+  --n-gpu-layers 35  # Anzahl Layer auf GPU
+```
+
+---
+
+## Empfohlene Modelle nach Größe
+
+### 1B-4B: Kleinste Modelle (Edge/Mobile)
+
+| Modell | VRAM (Q4) | Stärken | Schwächen |
+|--------|----------|---------|-----------|
+| Llama 3.2 1B | ~1 GB | Extrem schnell, minimal | Sehr begrenzte Fähigkeiten |
+| Llama 3.2 3B | ~2 GB | Gut für einfache Tasks | Kein komplexes Reasoning |
+| Phi-3.5 Mini 3.8B | ~2,5 GB | Beste Qualität in dieser Klasse | Kurzer Context bei kleiner GPU |
+| Gemma2 2B | ~1,5 GB | Gut für Klassifizierung | Limitierte Generierung |
+
+**Empfehlung:** Phi-3.5 Mini – trotz 3.8B Parameter hat es durch optimiertes Training erstaunlich gute Qualität.
+
+### 7B-13B: Sweet Spot für die meisten Nutzer
+
+| Modell | VRAM (Q4) | Stärken | Schwächen |
+|--------|----------|---------|-----------|
+| Llama 3.1 8B | ~5,5 GB | Sehr gute Balance, 128K Context | Kein Mittelding zu 70B |
+| Mistral Nemo 12B | ~8 GB | Apache 2.0, stark in Reasoning | Etwas mehr VRAM |
+| Gemma2 9B | ~6,5 GB | Sehr gute Performance für Größe | Kürzerer Context (8K) |
+| Qwen2.5 7B | ~5 GB | Gute Mehrsprachigkeit, starker Code | Weniger Community-Support |
+
+**Empfehlung:** **Mistral Nemo 12B** (Apache 2.0, 128K Context, stark in Reasoning) oder **Llama 3.1 8B** (breite Community, viele Fine-Tunes verfügbar).
+
+### 70B+: Höchste lokale Qualität
+
+| Modell | VRAM (Q4) | Stärken | Anforderungen |
+|--------|----------|---------|--------------|
+| Llama 3.1 70B | ~48 GB | GPT-3.5-Niveau, 128K Context | 2x RTX 3090 oder A100 |
+| Llama 3.3 70B | ~48 GB | Verbesserte Version | Gleiche Hardware |
+| Qwen2.5 72B | ~50 GB | Sehr stark in Code und Mehrsprachigkeit | Etwas mehr VRAM nötig |
+
+> [!TIP]
+> Für 70B-Modelle auf Consumer-Hardware: Mit **llama.cpp** und `--n-gpu-layers` kann ein Teil auf der GPU und der Rest auf der CPU ausgeführt werden. Das ist langsamer, aber macht 70B-Modelle mit einer RTX 4090 + 64 GB RAM möglich (~3-5 Tokens/Sekunde).
+
+---
+
+## GGUF-Format
+
+### Was ist GGUF?
+
+**GGUF** (GGML Unified Format) ist das Standard-Dateiformat für quantisierte Modelle, die mit llama.cpp (und kompatiblen Tools wie Ollama, LM Studio) ausgeführt werden können.
+
+- Nachfolger von GGML
+- Enthält Modellgewichte + Metadaten in einer einzigen Datei
+- Optimiert für schnelles Laden und effiziente Inferenz
+- Plattformübergreifend kompatibel
+
+**Dateiname-Konvention:**
+```
+llama-3.1-8b-instruct.Q4_K_M.gguf
+├── Modellname: llama-3.1-8b-instruct
+├── Quantisierung: Q4_K_M
+└── Format: .gguf
+```
+
+### Wo findet man GGUF-Modelle?
+
+**Hugging Face** ist die primäre Quelle. Besonders empfehlenswert:
+
+- **TheBloke** (der bekannteste GGUF-Ersteller, hunderte Modelle): `huggingface.co/TheBloke`
+- **bartowski** (modernere Quantisierungen, oft aktueller): `huggingface.co/bartowski`
+- **Offizielle Repos** (z.B. `meta-llama`, `mistralai`, `microsoft`)
+
+```bash
+# GGUF-Modell von Hugging Face herunterladen
+# Option 1: Direkt mit wget/curl
+wget https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+
+# Option 2: Mit huggingface_hub (Python)
+pip install huggingface_hub
+
+python3 -c "
+from huggingface_hub import hf_hub_download
+hf_hub_download(
+    repo_id='bartowski/Meta-Llama-3.1-8B-Instruct-GGUF',
+    filename='Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf',
+    local_dir='./models'
+)
+"
+
+# Option 3: Über Ollama (automatisch)
+ollama pull llama3.1:8b  # Ollama kümmert sich um Download und Format
+```
+
+> [!NOTE]
+> Beim Herunterladen auf Hugging Face immer die **Modell-Karte** (Model Card) lesen! Dort stehen wichtige Infos zu: Lizenz, Trainingsdetails, empfohlene Parameter (Temperature, System-Prompt), bekannte Einschränkungen.
+
+---
+
+## Vergleich: Lokale LLMs vs. Cloud-APIs
+
+| Kriterium | Lokal | Cloud-API |
+|-----------|-------|-----------|
+| **Qualität** | Gut (7B-13B), sehr gut (70B+) | Hervorragend (Top-Modelle) |
+| **Datenschutz** | Vollständig (Daten bleiben lokal) | Abhängig von Anbieter/AGB |
+| **Kosten (einmalig)** | Hardware (0-10.000€+) | Keine |
+| **Kosten (laufend)** | Stromkosten (~50-200W) | Pay-per-Token |
+| **Latenz** | Niedrig (lokal, keine Netzwerklatenz) | Variiert (50-500ms + Generierung) |
+| **Geschwindigkeit** | Mittel (10-50 T/s auf Consumer-GPU) | Hoch (100+ T/s bei großen APIs) |
+| **Verfügbarkeit** | 24/7, offline | Abhängig von API-Verfügbarkeit |
+| **Skalierbarkeit** | Durch Hardware begrenzt | Praktisch unbegrenzt |
+| **Setup-Aufwand** | Mittel-Hoch | Minimal (API-Key) |
+| **Updates** | Manuell | Automatisch durch Anbieter |
+| **Anpassung (Finetuning)** | Vollständig möglich | Begrenzt (nur über offizielle Services) |
+| **Context Window** | 8K-128K (je nach Modell/Tool) | Bis 2M Tokens (Gemini) |
+
+### Empfohlene Hybrid-Strategie
+
+```
+Aufgabe mit sensiblen Daten?
+    → Lokales LLM (Llama 3.1 8B oder 70B)
+
+Aufgabe erfordert höchste Qualität?
+    → Claude Sonnet 4.5 / GPT-4o
+
+Hohe Anfragevolumen (>10.000 Anfragen/Tag)?
+    → Kosten vergleichen: Lokal vs. Cloud
+
+Entwicklung/Prototyping?
+    → Cloud-API (kein Hardware-Setup nötig)
+
+Produktionssystem, hohe Qualitätsanforderungen?
+    → Cloud-API mit Datenschutz-Vertrag (DPA)
+```
+
+---
+
+## Verwandte Notizen
+
+- [[Modell Übersicht]]
+- [[Context Window und Token Management]]
+- [[Modell Vergleiche]]
+- [[../Tools/Ollama]]
+- [[../Tools/LM Studio]]
