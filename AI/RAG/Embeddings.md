@@ -15,6 +15,56 @@ Der Abstand zwischen zwei Vektoren im mehrdimensionalen Raum entspricht dem **se
 - Clustering (gruppiere ähnliche Texte)
 - Klassifikation (ordne Texte Kategorien zu)
 
+### Bedeutung als Geometrie
+
+In der Realität haben Embedding-Vektoren **768–3072 Dimensionen** — für Menschen nicht visualisierbar. Das Prinzip lässt sich aber auf 2D herunterbrechen:
+
+```
+        Tier
+         ↑
+  Katze  •  • Hund
+         |
+         |        • Auto
+  ───────┼──────────→ Technik
+         |
+         |  • Computer
+```
+
+Semantisch verwandte Begriffe (Katze, Hund) liegen nah beieinander, unverwandte (Katze, Computer) weit auseinander. In höheren Dimensionen funktioniert das gleiche Prinzip — nur mit deutlich feineren Unterscheidungen.
+
+**Ähnlichkeit als Zahl** — Cosine Similarity zwischen Wort-Paaren:
+
+| Wort-Paar | Cosine Similarity | Interpretation |
+|---|---|---|
+| "Katze" ↔ "Hund" | 0.92 | Sehr ähnlich (beides Haustiere) |
+| "Katze" ↔ "Tiger" | 0.85 | Ähnlich (beides Katzenartige) |
+| "Katze" ↔ "Auto" | 0.15 | Kaum Zusammenhang |
+| "König" ↔ "Königin" | 0.89 | Ähnlich (gleiche Rolle, anderes Geschlecht) |
+
+### Vektor-Arithmetik
+
+Embedding-Vektoren können **semantische Beziehungen** durch Arithmetik abbilden. Das berühmte Beispiel aus Word2Vec:
+
+```
+König - Mann + Frau ≈ Königin
+```
+
+| Wort | Vektor (vereinfacht, 5D) | Kodierte Merkmale |
+|---|---|---|
+| "König" | [0.8, 0.2, 0.9, -0.1, 0.5] | Mensch, männlich, Macht |
+| "Königin" | [0.8, 0.2, 0.9, 0.7, 0.5] | Mensch, weiblich, Macht |
+| "Mann" | [0.7, 0.1, 0.1, -0.1, 0.3] | Mensch, männlich |
+| "Frau" | [0.7, 0.1, 0.1, 0.7, 0.3] | Mensch, weiblich |
+
+```
+  [0.8, 0.2, 0.9, -0.1, 0.5]   (König)
+- [0.7, 0.1, 0.1, -0.1, 0.3]   (Mann abziehen)
++ [0.7, 0.1, 0.1,  0.7, 0.3]   (Frau addieren)
+= [0.8, 0.2, 0.9,  0.7, 0.5]   ≈ Königin
+```
+
+Das zeigt: Embeddings kodieren keine Wörter, sondern **Konzepte und deren Beziehungen**.
+
 > [!IMPORTANT]
 > Embeddings sind **keine Magie** – sie sind komprimierte statistische Repräsentationen, die aus riesigen Textmengen gelernt wurden. Sie verstehen keine Bedeutung im menschlichen Sinne, aber sie kodieren statistische Zusammenhänge zwischen Wörtern und Konzepten extrem gut.
 
