@@ -694,7 +694,7 @@ Dies öffnet ein Web-Interface, das die gleiche Funktionalität wie das Terminal
 ## Weiterführende Links
 
 - [[Custom Instructions für AI Coding Agents]] – Best Practices für CONVENTIONS.md und AGENTS.md
-- [[CLAUDE.md schreiben]] – CLAUDE.md als Alternative/Ergänzung zu CONVENTIONS.md
+- [[Custom Instructions für AI Coding Agents]] – CLAUDE.md als Alternative/Ergänzung zu CONVENTIONS.md
 - [[Claude Code Konfiguration und Hooks]] – Claude Code Konfiguration zum Vergleich
 - [[OpenAI Codex CLI Konfiguration]] – Codex CLI Konfiguration zum Vergleich
 - [[GitHub Copilot CLI Konfiguration]] – Copilot CLI Konfiguration zum Vergleich

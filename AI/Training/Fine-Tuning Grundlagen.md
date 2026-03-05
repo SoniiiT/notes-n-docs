@@ -359,3 +359,7 @@ Gib eine Zahl von 1-10 und eine kurze Begründung.
 - [[LoRA und QLoRA]]
 - [[Datasets vorbereiten]]
 - [[Unsloth Axolotl LLaMA-Factory]]
+
+### Externe Ressourcen
+
+- [Hugging Face](https://huggingface.co) — Modelle, Datasets und Trainings-Infrastruktur

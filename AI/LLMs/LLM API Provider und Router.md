@@ -11,13 +11,12 @@
 
 Wenn ein [[Was ist ein AI Agent|AI Agent]] wie [[Aider Konfiguration|Aider]], [[Cline Konfiguration|Cline]] oder [[Claude Code Konfiguration und Hooks|Claude Code]] eine Antwort generiert, passiert im Hintergrund Folgendes:
 
-```
-┌─────────────┐     HTTP/REST      ┌──────────────────┐     Inferenz     ┌───────────┐
-│  Coding     │ ──────────────────▶│  API Provider    │ ───────────────▶│  LLM      │
-│  Agent      │    API Request     │  (z.B. OpenAI,   │   GPU-Cluster   │  Modell   │
-│  (Aider,    │◀────────────────── │   OpenRouter,    │◀─────────────── │  (GPT,    │
-│   Cline)    │    API Response    │   Groq)          │   Tokens        │   Claude) │
-└─────────────┘                    └──────────────────┘                 └───────────┘
+```mermaid
+graph LR
+    Agent["🤖 Coding Agent<br/>Aider, Cline"] -->|"HTTP/REST API Request"| Provider["☁️ API Provider<br/>OpenAI, OpenRouter, Groq"]
+    Provider -->|"Inferenz<br/>GPU-Cluster"| LLM["🧠 LLM Modell<br/>GPT, Claude"]
+    LLM -->|Tokens| Provider
+    Provider -->|API Response| Agent
 ```
 
 **Der Agent selbst führt kein Modell aus.** Er sendet einen Prompt an eine API und bekommt eine Antwort zurück. Welchen Provider man wählt, bestimmt:
@@ -44,25 +43,12 @@ Es gibt vier grundlegend verschiedene Arten, wie man an LLM-Inferenz kommt:
 | **Router/Aggregatoren** | Leiten Anfragen an verschiedene Provider weiter | OpenRouter | ❌ Nein (Vermittler) |
 | **Lokal** | Modelle laufen auf eigener Hardware | Ollama, LM Studio, vLLM | ❌ Nein (Open-Source) |
 
-```
-                    ┌─────────────────────────────────┐
-                    │      Direkte Provider           │
-                    │  (Anthropic, OpenAI, Google)     │
-                    │  → Eigene Modelle, eigene GPUs   │
-                    └────────────────┬────────────────┘
-                                     │
-        ┌────────────────────────────┼────────────────────────────┐
-        │                            │                            │
-        ▼                            ▼                            ▼
-┌───────────────┐         ┌──────────────────┐         ┌──────────────────┐
-│  Inference    │         │  Router          │         │  Lokal           │
-│  Provider     │         │  (OpenRouter)    │         │  (Ollama,        │
-│  (Groq,       │         │  → Einheitliche  │         │   LM Studio)     │
-│   Together)   │         │    API zu allen   │         │  → Eigene HW     │
-│  → OS-Modelle │         │    Providern     │         │  → Kostenlos     │
-│    auf eigener│         └──────────────────┘         └──────────────────┘
-│    Hardware   │
-└───────────────┘
+```mermaid
+graph TB
+    Direct["☁️ Direkte Provider<br/>Anthropic, OpenAI, Google<br/>Eigene Modelle, eigene GPUs"]
+    Direct --> Inference["⚡ Inference Provider<br/>Groq, Together AI<br/>OS-Modelle auf eigener HW"]
+    Direct --> Router["🔀 Router<br/>OpenRouter<br/>Einheitliche API zu allen Providern"]
+    Direct --> Local["🏠 Lokal<br/>Ollama, LM Studio<br/>Eigene Hardware, kostenlos"]
 ```
 
 ---
@@ -652,3 +638,7 @@ export OPENAI_BASE_URL="http://localhost:11434/v1"
 - [[Aider Konfiguration]] — Aider Setup und Provider-Konfiguration
 - [[OpenCode Konfiguration]] — OpenCode Setup
 - [[Cline Konfiguration]] — Cline Setup und Provider-Auswahl
+
+### Externe Ressourcen
+
+- [OpenRouter](https://openrouter.ai) — Universeller LLM API Router

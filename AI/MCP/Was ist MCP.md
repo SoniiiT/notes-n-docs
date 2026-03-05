@@ -11,16 +11,22 @@ Vor MCP musste jede KI-Anwendung für jedes externe Tool eine eigene, maßgeschn
 - **M** externe Tools/Dienste (GitHub, Datenbanken, Dateisystem, APIs, ...)
 - Ergebnis: **N×M** individuelle Integrationen nötig
 
+```mermaid
+graph LR
+    subgraph "❌ Ohne MCP"
+        CD1[Claude Desktop] -->|proprietär| GH1[GitHub-Integration]
+        CD2[Claude Desktop] -->|proprietär| SL1[Slack-Integration]
+        CU1[Cursor] -->|andere Impl.| GH2[GitHub-Integration]
+        CU2[Cursor] -->|andere Impl.| SL2[Slack-Integration]
+    end
 ```
-Ohne MCP:
-Claude Desktop ──→ GitHub-Integration (proprietär)
-Claude Desktop ──→ Slack-Integration (proprietär)
-Cursor         ──→ GitHub-Integration (andere Implementierung)
-Cursor         ──→ Slack-Integration (andere Implementierung)
 
-Mit MCP:
-Claude Desktop ──→ MCP-Client ──→ GitHub-MCP-Server
-Cursor         ──→ MCP-Client ──→ GitHub-MCP-Server (gleicher Server!)
+```mermaid
+graph LR
+    subgraph "✅ Mit MCP"
+        CD[Claude Desktop] --> MC1[MCP-Client] --> GH[GitHub-MCP-Server]
+        CU[Cursor] --> MC2[MCP-Client] --> GH
+    end
 ```
 
 MCP reduziert das Problem auf **N+M**: Jede KI-Anwendung implementiert einmal den MCP-Client, jedes Tool implementiert einmal den MCP-Server.
@@ -31,23 +37,15 @@ MCP reduziert das Problem auf **N+M**: Jede KI-Anwendung implementiert einmal de
 
 MCP definiert drei klar getrennte Rollen:
 
-```
-┌─────────────────────────────────────────────────┐
-│                   MCP Host                       │
-│  (z.B. Claude Desktop, Claude Code, eigene App)  │
-│                                                  │
-│  ┌──────────────┐    ┌──────────────┐            │
-│  │  MCP Client  │    │  MCP Client  │            │
-│  │  (1:1 mit    │    │  (1:1 mit    │            │
-│  │   Server A)  │    │   Server B)  │            │
-│  └──────┬───────┘    └──────┬───────┘            │
-└─────────┼────────────────────┼───────────────────┘
-          │ MCP Protocol       │ MCP Protocol
-          ▼                    ▼
-   ┌──────────────┐    ┌──────────────┐
-   │  MCP Server  │    │  MCP Server  │
-   │  (Filesystem)│    │  (GitHub)    │
-   └──────────────┘    └──────────────┘
+```mermaid
+graph TB
+    subgraph Host["🖥️ MCP Host (Claude Desktop, Claude Code, eigene App)"]
+        ClientA["MCP Client A"]
+        ClientB["MCP Client B"]
+    end
+
+    ClientA -->|MCP Protocol| ServerA["MCP Server<br/>Filesystem"]
+    ClientB -->|MCP Protocol| ServerB["MCP Server<br/>GitHub"]
 ```
 
 | Rolle | Beschreibung | Beispiele |
@@ -69,15 +67,16 @@ MCP unterstützt zwei Transport-Mechanismen:
 
 Verwendet für **lokale Prozesse**. Der Host startet den Server-Prozess direkt und kommuniziert über stdin/stdout.
 
-```
-Host-Prozess
-    │
-    ├── startet als Kindprozess
-    ▼
-Server-Prozess
-    │
-    ├── stdin  ◄── JSON-RPC Nachrichten vom Host
-    └── stdout ──► JSON-RPC Antworten an Host
+```mermaid
+sequenceDiagram
+    participant H as Host-Prozess
+    participant S as Server-Prozess
+
+    H->>S: startet als Kindprozess
+    H->>S: stdin (JSON-RPC Request)
+    S->>H: stdout (JSON-RPC Response)
+    H->>S: stdin (JSON-RPC Request)
+    S->>H: stdout (JSON-RPC Response)
 ```
 
 - Vorteile: Einfach, sicher (kein Netzwerk), geringe Latenz
@@ -88,13 +87,14 @@ Server-Prozess
 
 Seit der MCP-Spezifikation vom 2025-03-26 ist **Streamable HTTP** der empfohlene Transport für **remote Server** oder **mehrere gleichzeitige Verbindungen**. Es ersetzt den älteren SSE-Transport durch einen einzigen Endpunkt (`/mcp`).
 
-```
-Host                          Remote Server
-  │                               │
-  ├── POST /mcp ─────────────────► │ (sendet JSON-RPC Request)
-  │   ◄──────── response ────────── │ (JSON oder SSE-Stream)
-  │                               │
-  │   ◄──────── SSE events ──────── │ (optionaler Server-Push)
+```mermaid
+sequenceDiagram
+    participant H as Host
+    participant S as Remote Server
+
+    H->>S: POST /mcp (JSON-RPC Request)
+    S-->>H: Response (JSON oder SSE-Stream)
+    S-->>H: SSE Events (optionaler Server-Push)
 ```
 
 - **Ein Endpunkt** (`/mcp`) statt zwei separate Endpunkte (`/sse` + `/messages`)
@@ -234,6 +234,7 @@ Anthropic und die Community stellen eine wachsende Zahl von MCP-Servern bereit:
 
 > [!TIP]
 > Eine vollständige Liste aller verfügbaren MCP-Server findet sich unter: https://github.com/modelcontextprotocol/servers
+> Weitere Verzeichnisse: [Awesome MCP Servers](https://mcpservers.org) | [Smithery](https://smithery.ai)
 
 ---
 

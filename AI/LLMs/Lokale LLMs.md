@@ -436,3 +436,8 @@ Produktionssystem, hohe Qualitätsanforderungen?
 - [[Modell Vergleiche]]
 - [[Ollama]]
 - [[Open WebUI]]
+
+### Externe Ressourcen
+
+- [Ollama](https://ollama.com) — Download und Dokumentation
+- [Hugging Face](https://huggingface.co) — Modelle und GGUF-Downloads

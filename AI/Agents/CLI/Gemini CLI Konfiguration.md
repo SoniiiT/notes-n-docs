@@ -437,7 +437,8 @@ Memories werden in `~/.gemini/memory.md` oder `.gemini/memory.md` gespeichert.
 | **Hersteller**              | Google                    | Anthropic                 | GitHub / Microsoft          |
 | **Modell**                  | Gemini 2.5 Pro            | Claude Sonnet/Opus        | GPT-5.2 / Claude 4.6 / Gemini   |
 | **Open Source**             | ✅ Ja (Apache 2.0)        | ❌ Nein (Proprietary)      | ❌ Nein (Proprietary)       |
-| **Kostenlos nutzbar**       | ✅ 1.000 Req/Tag           | ❌ Bezahlt (ab ~$20/Mo)   | ❌ Bezahlt (Copilot Sub)    |
+| **Kostenlos nutzbar**       | ✅ 1.000 Req/Tag           | ✅ Subscription (Pro $20/Mo, Max $100/Mo) | ✅ Subscription (Pro $10/Mo, Pro+ $39/Mo) |
+| **Subscription-Pläne**      | Plus (€7,99/Mo), Pro (€21,99/Mo), Ultra (€274,99/Mo) | Pro ($20/Mo), Max ($100/Mo) | Pro ($10/Mo), Pro+ ($39/Mo)  |
 | **Installation**            | npm                       | npm                       | GitHub CLI Extension        |
 | **Custom Instructions**     | GEMINI.md + AGENTS.md     | CLAUDE.md + AGENTS.md     | copilot-instructions.md    |
 | **MCP Support**             | ✅ Ja                      | ✅ Ja                      | ✅ Ja                       |

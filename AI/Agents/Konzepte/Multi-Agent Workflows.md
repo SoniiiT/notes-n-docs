@@ -922,5 +922,5 @@ result = app.invoke({
 ## Verwandte Notizen
 
 - [[Was ist ein AI Agent]]
-- [[CLAUDE.md schreiben]]
+- [[Custom Instructions für AI Coding Agents]]
 - [[Claude Code Konfiguration und Hooks]]

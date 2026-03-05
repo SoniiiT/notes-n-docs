@@ -482,3 +482,7 @@ print(response)
 - [[Fine-Tuning Grundlagen]]
 - [[Datasets vorbereiten]]
 - [[Unsloth Axolotl LLaMA-Factory]]
+
+### Externe Ressourcen
+
+- [Hugging Face](https://huggingface.co) — Modelle, Adapter und PEFT-Bibliothek

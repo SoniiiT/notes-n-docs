@@ -13,20 +13,21 @@ Tools sind **ausführbare Funktionen**, die ein LLM aufrufen kann, um eine Aktio
 
 Das LLM entscheidet **selbst**, wann es ein Tool aufruft, basierend auf dem Kontext des Gesprächs und den Tool-Beschreibungen.
 
-```
-User: "Lies die Datei /home/user/config.yaml"
-  │
-  ▼
-LLM: analysiert Kontext, wählt Tool "datei_lesen"
-  │
-  ▼
-MCP Client: sendet tools/call an MCP Server
-  │
-  ▼
-MCP Server: führt Tool aus, gibt TextContent zurück
-  │
-  ▼
-LLM: integriert Ergebnis in Antwort an User
+```mermaid
+sequenceDiagram
+    actor User
+    participant LLM
+    participant Client as MCP Client
+    participant Server as MCP Server
+
+    User->>LLM: "Lies die Datei /home/user/config.yaml"
+    LLM->>LLM: Analysiert Kontext, wählt Tool "datei_lesen"
+    LLM->>Client: Tool-Aufruf
+    Client->>Server: tools/call
+    Server->>Server: Führt Tool aus
+    Server-->>Client: TextContent (Dateiinhalt)
+    Client-->>LLM: Ergebnis
+    LLM-->>User: Integriert Ergebnis in Antwort
 ```
 
 ### Tool-Definition (name, description, inputSchema)

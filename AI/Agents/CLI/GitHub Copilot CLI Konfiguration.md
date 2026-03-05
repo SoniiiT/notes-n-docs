@@ -677,7 +677,7 @@ Copilot CLI kann auf bestimmte Verzeichnisse beschränkt werden:
 | **Standard-Modell** | Claude Sonnet 4.5 | Claude Sonnet 4.6 |
 | **Modellauswahl** | Multi-Anbieter (Claude, GPT, Gemini) | Nur Claude-Modelle |
 | **Installation** | curl, brew, npm, winget | npm (`@anthropic-ai/claude-code`) |
-| **Authentifizierung** | GitHub OAuth / PAT | Anthropic API Key / Max Plan |
+| **Authentifizierung** | GitHub OAuth / PAT | Anthropic API Key / Pro oder Max Subscription |
 | **MCP Support** | Ja + Built-in GitHub MCP | Ja, über `settings.json` |
 | **LSP Support** | Ja, konfigurierbar | Nein (eigene Code-Analyse) |
 | **Custom Instructions** | Mehrere Formate + `CLAUDE.md` | `CLAUDE.md` |
@@ -687,7 +687,7 @@ Copilot CLI kann auf bestimmte Verzeichnisse beschränkt werden:
 | **Web-Suche** | Ja (`/research`) | Nicht nativ |
 | **Session-Sharing** | `/share` (Markdown/Gist) | Nicht nativ |
 | **Reasoning-Anzeige** | `Ctrl+T` toggle | Extended Thinking (automatisch) |
-| **Preismodell** | GitHub Copilot Lizenz | Anthropic API / Max Subscription |
+| **Preismodell** | GitHub Copilot Lizenz (Pro $10/Mo, Pro+ $39/Mo) | Anthropic Subscription (Pro $20/Mo, Max $100/Mo) oder API |
 
 ### Wann welches Tool?
 
@@ -813,5 +813,5 @@ Wenn du von Claude Code zu Copilot CLI wechseln möchtest:
 - [[Claude Code Konfiguration und Hooks]] – Detaillierte Claude Code Konfiguration
 - [[Was ist MCP]] – Grundlagen des Model Context Protocol
 - [[MCP Server in Claude Code einbinden]] – MCP-Server Konfiguration (auch für Copilot relevant)
-- [[CLAUDE.md schreiben]] – Best Practices für Instruktionsdateien
+- [[Custom Instructions für AI Coding Agents]] – Best Practices für Instruktionsdateien
 - [[Multi-Agent Workflows]] – Parallele Agent-Ausführung

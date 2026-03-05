@@ -32,18 +32,18 @@ LLMs wie GPT-4 oder Claude haben ein fundamentales Problem: ihr Wissen ist stati
 
 RAG besteht aus **drei** Hauptphasen: **Indexing** (einmalig/periodisch), **Retrieval** und **Generation** (zur Laufzeit bei jeder Anfrage).
 
+```mermaid
+graph LR
+    subgraph "📥 INDEXING PHASE (offline)"
+        D[Dokumente] --> C[Chunking] --> E[Embedding] --> V[(Vektordatenbank)]
+    end
 ```
-┌─────────────────────────────────────────────────────────────┐
-│  INDEXING PHASE (offline)                                   │
-│                                                             │
-│  Dokumente → Chunking → Embedding → Vektordatenbank         │
-└─────────────────────────────────────────────────────────────┘
 
-┌─────────────────────────────────────────────────────────────┐
-│  QUERY PHASE (online, pro Anfrage)                          │
-│                                                             │
-│  Query → Embedding → Retrieval → Reranking → LLM → Antwort │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    subgraph "🔍 QUERY PHASE (online, pro Anfrage)"
+        Q[Query] --> QE[Embedding] --> R[Retrieval] --> RR[Reranking] --> LLM[LLM] --> A[Antwort]
+    end
 ```
 
 ### Phase 1: Indexing

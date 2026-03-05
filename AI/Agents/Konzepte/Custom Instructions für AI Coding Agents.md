@@ -293,6 +293,114 @@ Copilot liest dann alle Instruction-Dateien aus den angegebenen Verzeichnissen z
 
 ---
 
+## Claude Code: CLAUDE.md Praxis-Guide
+
+Die `CLAUDE.md` ist das mächtigste Instruction-Format im Ökosystem — dank hierarchischem Laden und Subdirectory-Support. Dieser Abschnitt zeigt, wie man sie optimal strukturiert.
+
+### Empfohlene Struktur
+
+````markdown
+# [Projektname]
+
+## Projektübersicht
+[1-3 Sätze: Was macht dieses Projekt, welches Problem löst es]
+
+## Technologie-Stack
+[Liste aller relevanten Technologien mit Versionen]
+
+## Projektstruktur
+[Verzeichnisbaum der wichtigsten Verzeichnisse]
+
+## Entwicklungsumgebung
+[Setup-Befehle, wichtige Make-Targets]
+
+## Konventionen und Standards
+[Code-Style, Naming, Architektur-Prinzipien]
+
+## Häufige Aufgaben
+[Wiederkehrende Tasks als ausführbare Snippets]
+
+## Verbotene Aktionen
+[Was Claude NICHT tun darf – mit Begründung]
+````
+
+### Was sollte rein / Was nicht?
+
+| ✅ Sollte rein | ❌ Sollte NICHT rein |
+|---|---|
+| Stack mit Versionen (Node.js 20, TypeScript 5.4) | API-Keys, Tokens, Passwörter |
+| Projekt-spezifische Konventionen | Generische Best Practices (kennt Claude bereits) |
+| Verbotene Aktionen mit Begründung | Komplette Dokumentationen (zu viel Rauschen) |
+| Häufige Aufgaben als Bash-Snippets | Veraltete Informationen |
+| Fallstricke und Known Bugs | Mehr als ~500 Zeilen (lieber aufteilen) |
+
+### Vollständiges Beispiel: DevOps-Projekt
+
+````markdown
+# infra-platform – Infrastructure Management Service
+
+## Projektübersicht
+infra-platform ist das zentrale Infrastruktur-Verwaltungssystem für alle
+Cloud-Ressourcen. Es orchestriert Terraform-Deployments, verwaltet
+Kubernetes-Cluster via ArgoCD und stellt ein Self-Service-Portal bereit.
+
+## Technologie-Stack
+- **Sprache:** Python 3.12 + FastAPI 0.111
+- **IaC:** Terraform 1.8.x (AWS + GCP)
+- **Container:** Docker + Kubernetes 1.29
+- **GitOps:** ArgoCD 2.10
+- **Tests:** pytest 8.x + moto (AWS Mocking)
+- **Linting:** ruff + mypy (strict)
+
+## Projektstruktur
+```
+infra-platform/
+├── api/                    # FastAPI Application
+│   ├── routers/            # Route-Handler nach Domäne
+│   ├── services/           # Business Logic
+│   └── models/             # Pydantic Models
+├── terraform/
+│   ├── modules/            # Wiederverwendbare TF-Module
+│   └── environments/       # dev/, staging/, prod/
+├── k8s/
+│   ├── base/               # Kustomize Base Configs
+│   └── overlays/           # Umgebungs-spezifische Overrides
+└── tests/
+    ├── unit/
+    └── integration/
+```
+
+## Wichtige Befehle
+```bash
+make dev-setup          # Virtualenv + Dependencies
+make test               # Unit + Integration Tests
+make lint               # ruff + mypy
+make tf-plan ENV=dev    # Terraform Plan
+```
+
+## Code-Konventionen
+- Type hints Pflicht (mypy strict), Pydantic v2 für Datenmodelle
+- Repository Pattern für alle DB-Zugriffe
+- Strukturiertes Logging mit `structlog`, nie `print()`
+- Conventional Commits: feat:, fix:, chore:, infra:
+
+## VERBOTENE AKTIONEN
+- NIEMALS `terraform apply` direkt auf prod – immer CI/CD
+- NIEMALS AWS-Credentials in Code oder Logs
+- NIEMALS `kubectl delete` auf Prod ohne Backup
+- NIEMALS Dependencies direkt hinzufügen – immer `make lock`
+
+## Bekannte Fallstricke
+- `terraform/modules/eks/` hat Known Bug mit IAM Roles bei Node Groups
+  → Workaround: `lifecycle { ignore_changes = [node_groups] }`
+- pytest-asyncio muss exakt 0.23.x sein – höhere Versionen brechen Tests
+````
+
+> [!TIP]
+> **Optimal: 100–300 Zeilen.** Unterverzeichnis-CLAUDE.md für modul-spezifische Details nutzen. Regelmäßig aktualisieren — veraltete Infos verwirren mehr als sie helfen.
+
+---
+
 ## Praktisches Beispiel: Multi-Agent-kompatibles Setup
 
 Das folgende Setup funktioniert mit **allen gängigen AI Coding Agents gleichzeitig**:
@@ -483,7 +591,7 @@ und bei jeder Anfrage berücksichtigt.
 
 ## Verwandte Notizen
 
-- [[CLAUDE.md schreiben]]
+- [[Skills]] — Modulare, wiederverwendbare Wissenspakete für AI Agents
 - [[Claude Code Konfiguration und Hooks]]
 - [[Was ist ein AI Agent]]
 - [[Multi-Agent Workflows]]

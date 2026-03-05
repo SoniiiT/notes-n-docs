@@ -28,10 +28,10 @@ OpenAI Codex CLI ist ein Open-Source, terminal-basierter KI-Coding-Agent von Ope
 | Node.js | Version 18+ (20+ empfohlen) |
 | Betriebssystem | macOS, Linux |
 | Windows | Nur über WSL2 (experimentell) |
-| Account | ChatGPT Plus/Pro/Team/Business/Enterprise oder API Key |
+| Account | ChatGPT Plus ($20/Mo), Pro ($200/Mo), Business ($30/user/Mo) oder API Key |
 
 > [!IMPORTANT]
-> Codex CLI benötigt entweder einen aktiven ChatGPT-Plan (Plus, Pro, Team, Business oder Enterprise) für die OAuth-Authentifizierung oder einen OpenAI API Key. Ohne eines von beiden kann Codex CLI nicht genutzt werden.
+> Codex CLI benötigt entweder einen aktiven ChatGPT-Plan (Plus $20/Mo, Pro $200/Mo oder Business $30/user/Mo) für die OAuth-Authentifizierung oder einen OpenAI API Key. Ohne eines von beiden kann Codex CLI nicht genutzt werden.
 
 ### Node.js installieren
 

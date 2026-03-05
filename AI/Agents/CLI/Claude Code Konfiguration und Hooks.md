@@ -974,6 +974,7 @@ cat ~/.claude/mcp-logs/*.log 2>/dev/null || echo "Keine MCP-Logs gefunden"
 
 ## Verwandte Notizen
 
+- [[Skills]] — Skills-System für wiederverwendbare Workflows
 - [[Was ist ein AI Agent]]
-- [[CLAUDE.md schreiben]]
+- [[Custom Instructions für AI Coding Agents]]
 - [[Multi-Agent Workflows]]

@@ -435,5 +435,5 @@ result = crew.kickoff()
 ## Verwandte Notizen
 
 - [[Multi-Agent Workflows]]
-- [[CLAUDE.md schreiben]]
+- [[Custom Instructions für AI Coding Agents]]
 - [[Claude Code Konfiguration und Hooks]]
