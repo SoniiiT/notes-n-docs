@@ -696,6 +696,54 @@ claude mcp remove mein-server
 
 ---
 
+## MCP Server in GitHub Copilot CLI einbinden
+
+GitHub Copilot CLI (das Terminal-basierte Copilot-Tool) unterstützt ebenfalls MCP-Server und bietet dabei einen etwas anderen Ansatz als Claude Code.
+
+### Eingebauter GitHub MCP Server
+
+> [!IMPORTANT]
+> GitHub Copilot CLI bringt den **GitHub MCP Server bereits integriert** mit. GitHub-Operationen wie Issues, Pull Requests, Commits, Code Search und Actions sind sofort verfügbar – ohne manuelle Konfiguration oder API-Token-Setup.
+
+Das bedeutet: Für typische GitHub-Workflows (Issues lesen, PRs erstellen, Code suchen) ist **kein zusätzlicher MCP-Server nötig**. Die Tools stehen direkt nach dem Start zur Verfügung.
+
+### Custom MCP Server hinzufügen
+
+Zusätzliche MCP-Server werden über den `/mcp` Slash-Befehl verwaltet:
+
+```
+/mcp                      # MCP-Konfiguration öffnen und verwalten
+```
+
+Der `/mcp`-Befehl bietet eine interaktive Oberfläche zum:
+- Hinzufügen neuer MCP-Server
+- Anzeigen konfigurierter Server und deren Status
+- Entfernen bestehender Server
+
+Die Konfiguration wird über die CLI-Oberfläche vorgenommen, statt JSON-Dateien manuell zu bearbeiten.
+
+### Vergleich: Claude Code vs. GitHub Copilot CLI
+
+| Aspekt | Claude Code | GitHub Copilot CLI |
+|--------|-------------|-------------------|
+| **Konfigurationsmethode** | JSON-Dateien (`settings.json`) | `/mcp` Slash-Befehl (interaktiv) |
+| **GitHub-Integration** | Manuell per MCP-Server + Token | Eingebaut, kein Setup nötig |
+| **Custom Server** | JSON-Einträge in `settings.json` | Über `/mcp` Befehl |
+| **Konfigurationsebenen** | Global + Projekt-spezifisch | Über CLI verwaltet |
+| **CLI-Verwaltung** | `claude mcp add/remove/list` | `/mcp` im Chat |
+
+> [!TIP]
+> Wer primär mit GitHub-Repositories arbeitet, profitiert bei Copilot CLI vom eingebauten GitHub MCP Server – es entfällt das Erstellen eines Personal Access Tokens und die manuelle Server-Konfiguration. Für andere Datenquellen (Datenbanken, Dateisysteme, Web-Suche) müssen Custom MCP Server eingebunden werden, ähnlich wie bei Claude Code.
+
+### Wann welches Tool?
+
+- **GitHub Copilot CLI:** Ideal wenn der Fokus auf GitHub-Workflows liegt und der eingebaute GitHub MCP Server ausreicht.
+- **Claude Code:** Flexibler bei der MCP-Konfiguration durch direkte JSON-Bearbeitung und mehrstufige Konfigurationsebenen (global/projekt-spezifisch).
+
+Beide Tools unterstützen das gleiche MCP-Protokoll – ein einmal entwickelter MCP-Server funktioniert mit beiden Hosts.
+
+---
+
 ## Verwandte Notizen
 
 - [[Was ist MCP]]
