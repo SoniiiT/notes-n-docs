@@ -64,6 +64,9 @@ Ein Hyper-V Failover Cluster benötigt **4 dedizierte Netzwerke** für den Clust
 > [!NOTE]
 > Cluster- und CSV-Traffic laufen über **dasselbe** Netzwerk. Ein separater CSV-NIC ist nicht erforderlich — der Cluster wählt automatisch das beste verfügbare Netzwerk für CSV-Kommunikation.
 
+> [!IMPORTANT]
+> **Live Migration und Cluster/CSV müssen jeweils in einem eigenen, dedizierten VLAN liegen.** Beide Netzwerke erzeugen hohen Traffic der andere Verbindungen saturieren kann — Live Migration während einer Migration, CSV im Redirected-Mode. Teilen sie sich ein VLAN mit anderen Netzwerken (z.B. Management), können Heartbeat-Pakete verzögert werden, was dazu führt dass der Cluster einen Node als ausgefallen markiert und VMs unnötig failovern. Die VLANs sollten außerdem **nicht routbar** sein — kein Default-Gateway, keine DNS-Registrierung.
+
 #### Storage-Adapter (zusätzlich zu den 4 Basis-NICs)
 
 | Storage-Methode | Adapter | Mindestanzahl | Hinweis |
