@@ -392,7 +392,7 @@ Statt das gesamte Dokument in den Context zu laden, werden nur die **relevantest
 Nutzer-Frage → Embedding → Vektorsuche → Top-K Chunks → LLM Context
 ```
 
-Mehr dazu: [[RAG/Grundlagen]]
+Mehr dazu: [[RAG Grundlagen]]
 
 ---
 
@@ -450,5 +450,5 @@ Komprimiert (ca. 25 Tokens):
 - [[Modell Übersicht]]
 - [[Lokale LLMs]]
 - [[Modell Vergleiche]]
-- [[RAG/Grundlagen]]
-- [[Prompting/Grundlagen]]
+- [[RAG Grundlagen]]
+- [[Prompt Engineering Techniken]]

@@ -302,5 +302,5 @@ Die Modellgewichte werden zum Download bereitgestellt. Der Begriff "Open Source"
 - [[Context Window und Token Management]]
 - [[Lokale LLMs]]
 - [[Modell Vergleiche]]
-- [[Prompting/Grundlagen]]
-- [[Agents/Überblick]]
+- [[Prompt Engineering Techniken]]
+- [[Was ist ein AI Agent]]

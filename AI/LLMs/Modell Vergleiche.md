@@ -488,5 +488,5 @@ Antworte im JSON-Format: {{"winner": "A" oder "B" oder "Tie", "reasoning": "..."
 - [[Modell Übersicht]]
 - [[Context Window und Token Management]]
 - [[Lokale LLMs]]
-- [[Prompting/Grundlagen]]
-- [[Agents/Überblick]]
+- [[Prompt Engineering Techniken]]
+- [[Was ist ein AI Agent]]

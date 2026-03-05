@@ -208,7 +208,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
-Ausführliche Installationsanleitung: [[../Tools/Ollama]]
+Ausführliche Installationsanleitung: [[Ollama]]
 
 ---
 
@@ -434,5 +434,5 @@ Produktionssystem, hohe Qualitätsanforderungen?
 - [[Modell Übersicht]]
 - [[Context Window und Token Management]]
 - [[Modell Vergleiche]]
-- [[../Tools/Ollama]]
-- [[../Tools/LM Studio]]
+- [[Ollama]]
+- [[Open WebUI]]
