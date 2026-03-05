@@ -1,0 +1,250 @@
+{
+  "main": {
+    "id": "2c0bf2a893586382",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b7be6e01117eb56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8c52cd801b927e91",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentation/HowTo/Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d4678b83c64f98cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "f75eedcff439341d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "295360d35b52eb5d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "543e3d67dc9b2c0a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "76200ac8d16261ce",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "ffec74760c2306b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "fca8828be88fb469",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6f6b6f0780718dba",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Homelab/Dokumentation/IP Dokumentation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for IP Dokumentation"
+            }
+          },
+          {
+            "id": "721a7f9b6bfabc39",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Kubernets/Kubernetes Installation/CentOS Stream 9/Installation K8s HA/Installation LoadBalancer.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Installation LoadBalancer"
+            }
+          },
+          {
+            "id": "50c6f4579f307cdc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3af80bb89892d40c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Documentation/HowTo/Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker)"
+            }
+          },
+          {
+            "id": "84f2faf3935570de",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-view"
+            }
+          },
+          {
+            "id": "5835e6aeaafb45a0",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 395,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false,
+      "card-note:Search Notes": false,
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "smart-connections:Open: Smart Chat": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Smart Connections: Open random connection": true
+    }
+  },
+  "active": "8c52cd801b927e91",
+  "lastOpenFiles": [
+    "Homelab/Dokumentation/IP Dokumentation.md",
+    "Documentation/HowTo/Nextcloud MariaDB 12 to 10.6 Downgrade per Dump Restore (Docker).md",
+    "Documentation/HowTo",
+    "Documentation",
+    "Homelab/Dokumentation/Proxmox.md",
+    "Ink/Drawing/2025.8.23 - 11.27am.drawing",
+    "Ink/Drawing",
+    "Untitled.md",
+    "Ink/Writing/2025.8.23 - 11.26am.writing",
+    "Ink/Writing",
+    "Ink",
+    "Untitled.base",
+    "Projekt Ideen/Projektideen.md",
+    "Projekt Ideen",
+    "Excalidraw/Drawing 2025-05-24 22.59.54.excalidraw.md",
+    "Kubernets/Kubernetes Installation/CentOS Stream 9/Installation K8s HA/Installation LoadBalancer.md",
+    "Homelab/Dokumentation/Switch Port Dokumentation.md",
+    "Kubernets/Kubernetes Installation/CentOS Stream 9/Installation K8s HA",
+    "Kubernets/Kubernetes Installation/CentOS Stream 9/Installation Kubernets HA.md",
+    "icons8-server-64.png",
+    "Hyper-V_Logo.png",
+    "docker-logo-blue.svg",
+    "ubuntu-icon.svg",
+    "Docker/Docker Installation/Ubuntu 24.04/Installation Docker Standalone.md",
+    "Docker/Docker Installation/Installation Docker Standalone.md",
+    "Docker/Docker Installation/Ubuntu 24.04/Installation Docker Swarm.md",
+    "Docker/Docker Installation/Ubuntu 24.04/Installation Docker Swarm HA.md",
+    "Docker/Docker Installation/Ubutntu 24.04.md",
+    "Diagram.svg",
+    "Projekte/IHK Projekt/Untitled Diagram.svg",
+    "Projekte/IHK Projekt/Untitled Diagram.svg",
+    "icons8-server-64_0.png",
+    "Untitled Diagram 1.svg",
+    "Projekte/IHK Projekt/Drawing 2025-05-24 19.05.26.excalidraw.md",
+    "ai.md",
+    "Clippings/Bla.md",
+    "Clippings/5 STAGES of ARCH Ricing.md",
+    "Hurensoihn.md",
+    "sad.md",
+    "Test.md",
+    "Minecraft-Datapacks/Ordner Struktur Aufbau.md",
+    "Clippings/MONTAGEM TOMADA (Slowed).md",
+    "create a link.md",
+    "Welcome.md"
+  ]
+}
