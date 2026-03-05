@@ -165,7 +165,7 @@ Begrenzt die **maximale Anzahl generierter Tokens** in der Antwort:
 | Modell | Max Output Tokens |
 |---|---|
 | GPT-4o | 16.384 |
-| Claude Sonnet 4 | 16.000 (Standard), 64.000 (Extended) |
+| Claude Sonnet 4 | 64.000 |
 | Gemini Pro | 8.192 |
 
 > [!IMPORTANT]

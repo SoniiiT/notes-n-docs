@@ -142,7 +142,8 @@ print(transcript.text)
 ### Gemini Audio
 
 Gemini kann Audio direkt im Context Window verarbeiten:
-- Bis zu **9,5 Stunden Audio** in einem Prompt (2M Token Context)
+- **Gemini 1.5 Flash:** Bis zu **9,5 Stunden Audio** (1M Token Context)
+- **Gemini 1.5 Pro:** Bis zu **19 Stunden Audio** (2M Token Context)
 - Unterstützt Transkription, Zusammenfassung, Analyse
 - Mehrere Audio-Dateien gleichzeitig vergleichen
 

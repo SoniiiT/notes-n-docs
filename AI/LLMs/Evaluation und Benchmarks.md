@@ -27,7 +27,7 @@ Der bekannteste akademische Benchmark — 57 Fachgebiete von Astronomie bis Jura
 
 | Aspekt | Details |
 |---|---|
-| **Fragen** | ~14.000 Multiple-Choice (4 Optionen) |
+| **Fragen** | ~15.900 Multiple-Choice (4 Optionen) |
 | **Fächer** | 57 (STEM, Humanities, Social Sciences, Other) |
 | **Format** | Zero-Shot oder Few-Shot |
 | **Menschliche Leistung** | ~90% (Experten) |
@@ -158,18 +158,18 @@ graph LR
 | **Website** | chat.lmsys.org |
 | **Kategorien** | Overall, Coding, Math, Hard Prompts, Vision |
 
-**Top-Modelle (2025, Overall Elo):**
+**Top-Modelle (März 2026, Overall Elo):**
 
 | Rang | Modell | Elo (ca.) |
 |---|---|---|
-| 1 | Gemini 2.5 Pro | ~1370 |
-| 2 | GPT-4.5 | ~1360 |
-| 3 | Claude Sonnet 4 | ~1350 |
-| 4 | Grok 3 | ~1340 |
-| 5 | DeepSeek R1 | ~1330 |
+| 1 | Claude Opus 4.6 | ~1505 |
+| 2 | Gemini 3.1 Pro | ~1500 |
+| 3 | Grok 4.20 | ~1493 |
+| 4 | GPT-5.2 | ~1480 |
+| 5 | Claude Opus 4.5 | ~1470 |
 
-> [!NOTE]
-> Die Arena ist der einzige Benchmark, der **nicht durch Overfitting manipuliert** werden kann, da er auf echten Nutzerfragen basiert.
+> [!WARNING]
+> Elo-Rankings ändern sich **ständig** mit neuen Modell-Releases. Die aktuellen Rankings findest du unter [chat.lmsys.org](https://chat.lmsys.org).
 
 ---
 

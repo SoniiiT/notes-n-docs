@@ -130,7 +130,7 @@ API-Provider berechnen pro Token (Input + Output):
 |---|---|---|---|
 | OpenAI | GPT-4o | $2.50/1M Tokens | $10.00/1M Tokens |
 | Anthropic | Claude Sonnet 4 | $3.00/1M Tokens | $15.00/1M Tokens |
-| Google | Gemini Pro | $1.25/1M Tokens | $5.00/1M Tokens |
+| Google | Gemini 2.5 Pro | $1.25/1M Tokens | $10.00/1M Tokens |
 
 ### Sprache beeinflusst Kosten
 
