@@ -488,3 +488,4 @@ apps/
 - [[Cluster Upgrades und Backups]] — GitOps als Recovery-Schicht
 - [[ConfigMaps und Secrets]] — Secret-Management in GitOps
 - [[Monitoring und Logging]] — Monitoring des GitOps-Sync-Status
+- [[Multi-Stage Builds]] — Optimierte Docker Images für CI/CD-Pipelines

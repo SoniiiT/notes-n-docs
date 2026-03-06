@@ -342,3 +342,4 @@ spec:
 - [[Services]]
 - [[ConfigMaps und Secrets]]
 - [[Labels Selektoren und Annotations]]
+- [[Docker Registries]] — Container-Images werden aus Docker Registries gezogen

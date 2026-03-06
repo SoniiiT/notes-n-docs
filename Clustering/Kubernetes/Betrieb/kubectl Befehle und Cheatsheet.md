@@ -308,3 +308,4 @@ alias kdf='kubectl delete -f'
 - [[Pods]]
 - [[Deployments und ReplicaSets]]
 - [[Troubleshooting]]
+- [[Docker CLI Cheatsheet]] — Docker-CLI-Pendant zu kubectl

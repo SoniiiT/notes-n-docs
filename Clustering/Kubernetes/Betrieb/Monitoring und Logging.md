@@ -631,3 +631,4 @@ Der kube-prometheus-stack bringt zahlreiche vorkonfigurierte Alerts mit:
 - [[Troubleshooting]] — Metriken und Logs als Debugging-Tool
 - [[Longhorn]] — Persistenter Storage für Prometheus/Loki
 - [[Ingress und IngressRoutes]] — Grafana über IngressRoute erreichbar machen
+- [[Docker Monitoring und Logging]] — Docker-Level Monitoring und Logging

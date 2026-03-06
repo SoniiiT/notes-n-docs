@@ -17,6 +17,7 @@ Grundlagen, Modelle und technische Konzepte.
 | Thema | Notiz |
 |-------|-------|
 | Funktionsweise | [[Wie funktionieren LLMs]] |
+| LLM Grundlagen | [[LLM Grundlagen]] |
 | Modellübersicht | [[Modell Übersicht]] |
 | Modellvergleiche | [[Modell Vergleiche]] |
 | Context & Tokens | [[Context Window und Token Management]] |
@@ -70,6 +71,7 @@ Coding Agents, Konfigurationen und Konzepte.
 | Cursor | [[Cursor Agent Konfiguration]] |
 | Kiro | [[Kiro Konfiguration]] |
 | Tabnine | [[Tabnine Konfiguration]] |
+| VS Code + Copilot | [[VSCode Konfiguration]] |
 | Windsurf | [[Windsurf Konfiguration]] |
 
 ---
@@ -79,6 +81,7 @@ Coding Agents, Konfigurationen und Konzepte.
 Protokolle und Server-Entwicklung.
 
 - [[Was ist MCP]] — Einführung in das Model Context Protocol
+- [[MCP Grundlagen]] — Praktischer Einstieg und Ökosystem
 - [[MCP Tools Resources Prompts]] — Tools, Resources und Prompts im Detail
 - [[MCP Server erstellen (Python)]] — Eigenen MCP Server bauen
 - [[MCP Server in Claude Code einbinden]] — MCP in Claude Code nutzen
@@ -91,6 +94,7 @@ Protokolle und Server-Entwicklung.
 
 Prompt Engineering und Output-Steuerung.
 
+- [[Prompting Grundlagen]] — Was ist ein Prompt, wie baut man gute Prompts
 - [[Prompt Engineering Techniken]] — Techniken und Best Practices
 - [[System Prompts schreiben]] — Effektive System Prompts
 - [[Prompts für Code-Generierung]] — Code-spezifische Prompts
@@ -134,4 +138,11 @@ Modelle trainieren und anpassen.
 - [[RLHF und Alignment]] — Reinforcement Learning from Human Feedback
 - [[Unsloth Axolotl LLaMA-Factory]] — Training-Frameworks im Vergleich
 
+---
 
+## 🏥 Betrieb & Troubleshooting
+
+Best Practices und Fehlerbehebung.
+
+- [[AI Best Practices]] — Modellwahl, Prompting, Kosten, Agent-Design, Sicherheit
+- [[AI Troubleshooting]] — LLM-API-Fehler, Agent-Debugging, MCP, Ollama/GPU, Kosten

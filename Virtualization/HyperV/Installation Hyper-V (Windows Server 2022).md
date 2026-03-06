@@ -4,6 +4,65 @@ tags: [virtualization, hyper-v, installation, windows-server]
 
 # Installation Hyper-V – Windows Server 2022
 
+## Was ist Hyper-V?
+
+Hyper-V ist Microsofts **Typ-1-Hypervisor** (Bare-Metal-Hypervisor) — er läuft direkt auf der Hardware, nicht innerhalb eines Betriebssystems. Das unterscheidet ihn fundamental von Typ-2-Hypervisoren (z.B. VirtualBox, VMware Workstation), die als Anwendung im Host-OS laufen.
+
+Microsoft veröffentlichte Hyper-V erstmals mit **Windows Server 2008** als vollständige Neuentwicklung. Hyper-V nutzt **Hardware-Virtualisierungserweiterungen** der CPU (Intel VT-x / AMD-V) und ist seit Windows 8 auch als Client-Feature in Windows 10/11 Pro/Enterprise verfügbar.
+
+### Hypervisor-Architektur
+
+Hyper-V gliedert den Host in eine strikte Schichtenarchitektur:
+
+| Schicht | Bezeichnung | Beschreibung |
+|--------|-------------|-------------|
+| **Ring -1** | Hypervisor | Schmale Software-Schicht direkt auf Hardware — steuert CPU-Virtualisierung, Speicher-Isolation |
+| **Ring 0 (privilegiert)** | Parent Partition | Der Host selbst — läuft mit direktem Hardware-Zugriff, stellt Ressourcen bereit |
+| **Ring 0 (eingeschränkt)** | Child Partitions | Virtuelle Maschinen — kein direkter Hardware-Zugriff, alles läuft über den Hypervisor |
+
+### Hyper-V Editionen
+
+| Edition | Kosten | Einsatz |
+|---------|--------|---------|
+| **Hyper-V-Rolle** (Windows Server Standard/Datacenter) | Teil der Windows Server-Lizenz | Produktionsumgebungen |
+| **Hyper-V Server** (kostenlos, bis 2019) | Kostenlos | Dedizierte Virtualisierungs-Hosts |
+| **Client Hyper-V** (Windows 10/11 Pro/Enterprise) | Teil der Windows-Lizenz | Entwicklung, Test |
+
+> [!NOTE] Hyper-V Server Ende
+> **Hyper-V Server 2019** war das letzte kostenlose Release. Ab Windows Server 2022 gibt es keine eigenständige kostenlose Hyper-V Server Edition mehr.
+
+### Kernkonzepte
+
+| Konzept | Beschreibung |
+|---------|-------------|
+| **Virtueller Switch (vSwitch)** | Software-Switch im Hypervisor — verbindet VMs untereinander und mit physischen NICs |
+| **VHDX** | Virtuelles Festplattenformat (bis 64 TB, dynamisch oder fest) — Nachfolger von VHD |
+| **VM-Generationen** | Gen 1 (BIOS, IDE, Legacy) vs. Gen 2 (UEFI, SCSI, Secure Boot, nur 64-bit) |
+| **Integration Services** | Treiber und Dienste in der VM für optimale Performance statt emulierter Hardware |
+| **Checkpoints** | Point-in-Time-Zustand einer VM — für Tests, kein Backup-Ersatz |
+| **Hyper-V Replica** | Asynchrone VM-Replikation auf zweiten Host (DR-Lösung) |
+| **Nested Virtualization** | Hyper-V in einer Hyper-V-VM ausführen — für Lab-Umgebungen und Container |
+
+### VM-Generationen im Vergleich
+
+| Merkmal | Generation 1 | Generation 2 |
+|---------|-------------|-------------|
+| **Firmware** | BIOS | UEFI |
+| **Boot-Controller** | IDE | SCSI |
+| **Secure Boot** | Nicht unterstützt | Unterstützt |
+| **Gastbetriebssystem** | Windows (32+64-bit), Linux | Windows (nur 64-bit), Linux |
+| **Empfehlung** | Nur für Legacy-OS | Standard für alle neuen VMs |
+
+### Netzwerk-Switchtypen
+
+| Switch-Typ | Konnektivität | Einsatz |
+|-----------|--------------|---------|
+| **Extern** | VMs ↔ physisches Netzwerk ↔ Host | Produktions-VMs mit Netzwerkzugriff |
+| **Intern** | VMs ↔ Host (kein externes Netzwerk) | NAT, Verwaltung, isolierte Testumgebungen |
+| **Privat** | VMs ↔ VMs (kein Host-Zugriff) | Vollständig isolierte Netzwerke zwischen VMs |
+
+---
+
 ## Voraussetzungen
 
 ### Hardware-Anforderungen

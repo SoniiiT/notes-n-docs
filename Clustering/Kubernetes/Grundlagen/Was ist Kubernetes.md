@@ -198,3 +198,4 @@ Kubernetes steht im Zentrum eines riesigen Ökosystems. Wichtige Projekte aus de
 - [[Kubernetes Architektur]]
 - [[Kubernetes vs Docker und Docker Swarm]]
 - [[Kubernetes Distributionen]]
+- [[Was ist Docker]] — Docker als Container-Runtime-Grundlage für Kubernetes

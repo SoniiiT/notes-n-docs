@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiWindows",
       "RiContactsBookUploadFill",
       "LiBoxes",
       "LiBookTemplate",
-      "LiShield",
-      "LiNetwork"
+      "LiShield"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -47,7 +47,6 @@
   "Inbox": "LiInbox",
   "Ink": "LiPencil",
   "Kubernets": "SiKubernetes",
-  "Projekt Ideen": "LiLightbulb",
   "Projekte": "SiGitbook",
   "Systems": "SiDwavesystems",
   "Tools": "RiToolsFill",
@@ -59,5 +58,6 @@
   "Networking": "LiNetwork",
   "Security": "LiShield",
   "Virtualization": "LiBoxes",
-  "Assets": "RiContactsBookUploadFill"
+  "Assets": "RiContactsBookUploadFill",
+  "Windows Server": "SiWindows"
 }

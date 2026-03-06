@@ -321,3 +321,4 @@ spec:
 - [[DaemonSets StatefulSets und Jobs]]
 - [[Labels Selektoren und Annotations]]
 - [[kubectl Befehle und Cheatsheet]]
+- [[Docker Registries]] — Image-Quellen für Container in Deployments

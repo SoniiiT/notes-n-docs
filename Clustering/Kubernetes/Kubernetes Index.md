@@ -112,9 +112,12 @@ Tägliche Arbeit mit dem Cluster.
 | Cluster Upgrades & Backups | [[Cluster Upgrades und Backups]] |
 | GitOps (ArgoCD & Flux) | [[GitOps]] |
 | Troubleshooting | [[Troubleshooting]] |
+| Best Practices | [[Best Practices]] |
+| Praktische Beispiele | [[Praktische Beispiele]] |
 
 ---
 
 ## Verwandte Notizen
 
 - [[Was ist Kubernetes]]
+- [[Docker Index]] — Container-Grundlagen

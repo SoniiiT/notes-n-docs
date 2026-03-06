@@ -322,3 +322,4 @@ kubectl describe pvc app-data
 - [[Longhorn]]
 - [[DaemonSets StatefulSets und Jobs]]
 - [[ConfigMaps und Secrets]]
+- [[Docker Volumes und Storage]] — Docker-Volume-Grundlagen, auf denen K8s aufbaut

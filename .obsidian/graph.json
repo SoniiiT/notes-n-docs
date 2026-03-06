@@ -11,21 +11,14 @@
       "query": "path:Clustering/Kubernetes  ",
       "color": {
         "a": 1,
-        "rgb": 1725439
-      }
-    },
-    {
-      "query": "path:AI  ",
-      "color": {
-        "a": 1,
-        "rgb": 14725458
+        "rgb": 1741055
       }
     },
     {
       "query": "path:Applications  ",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 12451640
       }
     },
     {
@@ -39,28 +32,28 @@
       "query": "path:Clustering/Docker-Swarm  ",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 4128446
       }
     },
     {
       "query": "path:Clustering/Proxmox-Cluster  ",
       "color": {
         "a": 1,
-        "rgb": 5419488
+        "rgb": 16750884
       }
     },
     {
       "query": "path:Clustering/VMware-vSphere-Cluster  ",
       "color": {
         "a": 1,
-        "rgb": 5395168
+        "rgb": 5111552
       }
     },
     {
       "query": "path:Clustering/HyperV-Failover-Cluster  ",
       "color": {
         "a": 1,
-        "rgb": 11621088
+        "rgb": 22015
       }
     },
     {
@@ -78,51 +71,65 @@
       }
     },
     {
-      "query": "path:Container/LXC-LXD  ",
-      "color": {
-        "a": 1,
-        "rgb": 14725458
-      }
-    },
-    {
       "query": "path:Networking  ",
       "color": {
         "a": 1,
-        "rgb": 11657298
+        "rgb": 4636250
       }
     },
     {
       "query": "path:\"Projekt Ideen\"  ",
       "color": {
         "a": 1,
-        "rgb": 5431378
+        "rgb": 16704927
       }
     },
     {
       "query": "path:Security  ",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 9384959
       }
     },
     {
       "query": "path:Virtualization  ",
       "color": {
         "a": 1,
-        "rgb": 5419488
+        "rgb": 16711782
+      }
+    },
+    {
+      "query": "path:Container/LXC-LXD  ",
+      "color": {
+        "a": 1,
+        "rgb": 14403840
+      }
+    },
+    {
+      "query": "path:AI  ",
+      "color": {
+        "a": 1,
+        "rgb": 13927935
+      }
+    },
+    {
+      "query": "path:\"Windows Server\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 3074047
       }
     }
   ],
   "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": -1.4,
+  "textFadeMultiplier": -0.1,
   "nodeSizeMultiplier": 1.01875,
   "lineSizeMultiplier": 1.45260416666667,
   "collapse-forces": true,
-  "centerStrength": 0.4375,
-  "repelStrength": 13.2291666666667,
-  "linkStrength": 0.765625,
+  "centerStrength": 0.309688581314879,
+  "repelStrength": 7.30103806228374,
+  "linkStrength": 0.901384083044983,
   "linkDistance": 30,
-  "scale": 0.7453147958034659,
+  "scale": 0.5359795996225809,
   "close": true
 }

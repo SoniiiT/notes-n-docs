@@ -4,6 +4,58 @@ tags: [clustering, hyper-v, failover-cluster, windows-server]
 
 # Hyper-V Failover Cluster – Windows Server 2022
 
+## Was ist Hyper-V Failover Clustering?
+
+Hyper-V Failover Clustering kombiniert **Hyper-V** (Virtualisierung) mit **Windows Server Failover Clustering (WSFC)** zu einer hochverfügbaren Virtualisierungsplattform. Fällt ein Cluster-Node aus, übernehmen die verbleibenden Nodes automatisch dessen virtuelle Maschinen — ohne manuelle Eingriffe.
+
+> [!NOTE] Hyper-V-Grundlagen
+> Diese Dokumentation behandelt ausschließlich den Failover-Aspekt. Die Hyper-V-Technologie selbst (Hypervisor-Architektur, VM-Generationen, vSwitch, VHDX) ist in [[Installation Hyper-V (Windows Server 2022)]] dokumentiert.
+
+### Migrationsarten im Vergleich
+
+Hyper-V Failover Clustering unterscheidet drei Arten der VM-Verlagerung zwischen Nodes:
+
+| Migrationsart | Auslöser | Downtime | Datenverlust | Beschreibung |
+|--------------|---------|---------|-------------|-------------|
+| **Live Migration** | Geplant (manuell) | ~0 Sekunden | Kein | Laufende VM wird im Betrieb auf anderen Node verschoben — RAM-Inhalt wird übertragen |
+| **Quick Migration** | Geplant (manuell) | Sekunden | Kein | VM wird gespeichert (Hibernate), verschoben, wieder gestartet |
+| **Failover** | Ungeplant (Node-Ausfall) | 30–120 Sekunden | Möglich (seit letztem Checkpoint) | Automatischer Neustart der VM auf einem anderen Node |
+
+### Cluster Shared Volumes (CSV)
+
+Damit mehrere Nodes gleichzeitig auf dieselben VMs zugreifen können, verwendet der Cluster **Cluster Shared Volumes**:
+
+| Eigenschaft | Beschreibung |
+|-------------|-------------|
+| **Gleichzeitiger Zugriff** | Alle Nodes können dieselbe VHDX/VHD gleichzeitig lesen — kein exklusiver Lock |
+| **Dateisystem** | NTFS oder ReFS unter einem gemeinsamen Namensraum (`C:\ClusterStorage\`) |
+| **Redirected Mode** | Wenn ein Node keinen direkten Storage-Zugriff hat, wird I/O über das Cluster-Netzwerk zum Koordinator-Node geleitet |
+| **Storage-Typen** | iSCSI, Fibre Channel, SMB 3.0 (Scale-Out File Server), Storage Spaces Direct |
+
+### Failover-Mechanismus
+
+Der Cluster-Dienst überwacht alle Nodes über **Heartbeat-Pakete** im Cluster-Netzwerk:
+
+1. Node antwortet nicht mehr auf Heartbeat-Anfragen
+2. Cluster-Quorum entscheidet: Ist der Node ausgefallen oder nur das Netzwerk?
+3. Bei bestätigtem Ausfall: WSFC startet die auf dem ausgefallenen Node laufenden VMs auf verbleibenden Nodes neu
+4. VM-Start dauert typischerweise 30–120 Sekunden (Neustart, kein Suspend)
+
+> [!IMPORTANT] Quorum ist entscheidend
+> Das Quorum verhindert ein **Split-Brain-Szenario** — zwei Cluster-Hälften, die beide glauben, der alleinige Cluster zu sein, und beide auf denselben Storage schreiben. Empfohlen: **Cloud Witness** (Azure Storage Blob) oder **Disk Witness** (kleine dedizierte LUN).
+
+### Hochverfügbarkeits-Konzepte
+
+| Konzept | Beschreibung |
+|---------|-------------|
+| **RTO** (Recovery Time Objective) | Typisch 30–120 s beim ungeplanten Failover; ~0 s bei Live Migration |
+| **Preferred Owner** | VM läuft bevorzugt auf einem bestimmten Node (wird nach Failover zurückverschoben) |
+| **Anti-Affinity** | Zwei VMs laufen bewusst auf verschiedenen Nodes — verhindert dass beide vom selben Ausfall betroffen sind |
+| **Drain on Shutdown** | Beim sauberen Herunterfahren eines Nodes werden VMs automatisch live migriert |
+| **Node Fairness** | Windows Server 2016+ verteilt VMs automatisch gleichmäßig auf alle Nodes |
+
+---
+
 ## Überblick
 
 Ein Hyper-V Failover Cluster besteht aus mehreren Windows Servern (Nodes), die gemeinsam auf einen Shared Storage zugreifen. Fällt ein Node aus, übernehmen die verbleibenden Nodes automatisch die VMs — ohne (oder mit minimalem) Downtime.

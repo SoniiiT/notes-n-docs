@@ -393,3 +393,4 @@ PSA deckt die häufigsten Sicherheitsanforderungen ab. Für komplexere Policies 
 - [[Pods]] — Security Context im Pod-Manifest
 - [[CRDs und Operators]] — OPA Gatekeeper und Kyverno nutzen CRDs
 - [[Kubernetes Architektur]] — Admission Controller im API Server
+- [[Docker Security und Hardening]] — Container-Hardening als Grundlage für Pod Security
