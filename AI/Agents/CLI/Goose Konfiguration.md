@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, goose, konfiguration]
+---
+
 # Goose — AI Coding Agent von Block
 
 ## Überblick
@@ -392,3 +396,12 @@ In einer Goose-Session kann man den Agenten bitten, sich projektspezifische Konv
 
 > [!abstract] Zusammenfassung
 > Goose ist ein leistungsstarker, in Rust geschriebener AI-Coding-Agent von Block mit nativer MCP-Unterstützung, Multi-Provider-Flexibilität und modularem Extensions-System. Die Kombination aus Enterprise-Backing, Rust-Performance und Profil-System macht Goose zu einer exzellenten Wahl für Entwickler, die einen schnellen und flexiblen Terminal-Agenten suchen.
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[Skills]] — Fähigkeiten und Skill-Systeme von AI Agents

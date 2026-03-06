@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, lokal, self-hosting]
+---
+
 # Lokale LLMs
 
 > [!NOTE]

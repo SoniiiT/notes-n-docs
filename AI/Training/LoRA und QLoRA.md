@@ -1,3 +1,7 @@
+---
+tags: [ai, training, lora, qlora]
+---
+
 # LoRA und QLoRA
 
 > [!NOTE]

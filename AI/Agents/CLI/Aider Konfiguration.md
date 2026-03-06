@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, aider, konfiguration]
+---
+
 # Aider Konfiguration
 
 ## Was ist Aider?

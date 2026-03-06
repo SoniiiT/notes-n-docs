@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, ollama, self-hosting]
+---
+
 # Ollama
 
 ## Was ist Ollama?
@@ -515,3 +519,13 @@ sudo ufw allow 11434/tcp
 
 > [!IMPORTANT]
 > Ollama-Modelle werden unter `~/.ollama/models` gespeichert. Bei mehreren großen Modellen kann dies schnell viel Speicherplatz belegen. Mit `OLLAMA_MODELS` kann ein anderes Verzeichnis (z.B. auf einer separaten Festplatte) angegeben werden.
+
+---
+
+## Verwandte Notizen
+
+- [[Lokale LLMs]] — Übersicht und Vergleich lokal betriebener Sprachmodelle
+- [[Open WebUI]] — Chat-Oberfläche, die Ollama als Backend nutzt
+- [[AnythingLLM]] — RAG-fokussierte Anwendung mit Ollama-Integration
+- [[Fine-Tuning Grundlagen]] — Grundlagen zum Anpassen und Trainieren von Modellen
+- [[Modell Übersicht]] — Vergleich verfügbarer LLM-Architekturen und Modelle

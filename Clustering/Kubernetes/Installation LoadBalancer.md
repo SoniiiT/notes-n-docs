@@ -1,3 +1,7 @@
+---
+tags: [clustering, kubernetes, loadbalancer, installation, centos, high-availability]
+---
+
 # Zusammenfassung
 
 Ein LoadBalancer für Kubernetes sorgt für die Instandhaltung des Clusters. Sollte ein Controlplane ausfallen, dann für durch den LoadBalancer der Traffic auf die anderen Controlplane Nodes weitergeleitet. Hier ist es möglich mehrere LoadBalancer einzurichten, um diesen auch vor Ausfällen zu schützen. Die minimale Konfiguration wäre hierbei 2, jedoch empfohlen wären 3+ LoadBalancer, damit bei einem größeren Ausfall weiterhin das Cluster eine Verbindung aufbauen kann.
@@ -293,3 +297,4 @@ sudo systemctl status keepalived
 ```
 
 Sollte im Status Fehler vorhanden sein, sollte man die Konfigurationsdatei überprüfen. Sollte hier der Backupslave als Status stehen. Ist es nicht so schlimm, da das Cluster noch nicht existiert.
+

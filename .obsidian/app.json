@@ -10,5 +10,6 @@
   "smartIndentList": true,
   "useTab": true,
   "defaultViewMode": "preview",
-  "showInlineTitle": true
+  "showInlineTitle": true,
+  "readableLineLength": false
 }

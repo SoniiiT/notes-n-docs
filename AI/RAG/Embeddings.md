@@ -1,3 +1,7 @@
+---
+tags: [ai, rag, embeddings]
+---
+
 # Embeddings
 
 ## Was sind Embeddings?
@@ -605,3 +609,13 @@ embedding = np.array(embed_query_cached(query))  # Zweiter Aufruf: aus Cache
 - [[RAG Grundlagen]] – Wie Embeddings in RAG eingesetzt werden
 - [[Vektordatenbanken]] – Embeddings speichern und suchen
 - [[LangChain und LlamaIndex]] – Embeddings in Frameworks verwenden
+
+---
+
+## Verwandte Notizen
+
+- [[Vektordatenbanken]] — Speicherung und Suche von Embedding-Vektoren
+- [[RAG Grundlagen]] — Einsatz von Embeddings in der RAG-Architektur
+- [[Tokenization]] — Tokenisierung als Vorstufe zum Embedding-Prozess
+- [[Wie funktionieren LLMs]] — Rolle von Embeddings in großen Sprachmodellen
+- [[LangChain und LlamaIndex]] — Framework-Integration von Embedding-Modellen

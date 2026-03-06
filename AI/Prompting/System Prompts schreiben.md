@@ -1,3 +1,7 @@
+---
+tags: [ai, prompting, system-prompts]
+---
+
 # System Prompts schreiben
 
 ## Was ist ein System Prompt?
@@ -371,3 +375,12 @@ Bevor ein System Prompt in Produktion geht, prüfe folgende Punkte:
 
 > [!NOTE]
 > System Prompts sind lebende Dokumente. Halte sie in einer Versionskontrolle und dokumentiere Änderungen mit dem Grund der Änderung.
+
+---
+
+## Verwandte Notizen
+
+- [[Prompt Engineering Techniken]] — Techniken wie Few-Shot und CoT, die innerhalb von System Prompts eingesetzt werden
+- [[Output-Formatierung steuern]] — Ausgabeformate im System Prompt definieren und durchsetzen
+- [[Custom Instructions für AI Coding Agents]] — Spezialform von System Prompts für KI-Coding-Assistenten
+- [[Guardrails und AI Safety]] — Sicherheitsregeln und Einschränkungen in System Prompts verankern

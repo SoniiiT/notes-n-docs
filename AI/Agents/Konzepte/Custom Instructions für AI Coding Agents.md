@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, konzept, custom-instructions]
+---
+
 # Custom Instructions für AI Coding Agents
 
 ## Einleitung

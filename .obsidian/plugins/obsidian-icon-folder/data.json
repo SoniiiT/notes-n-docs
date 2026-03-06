@@ -44,7 +44,6 @@
   "Bilder": "LiImages",
   "Clustering": "LiServerCrash",
   "Docker": "SiDocker",
-  "Homelab": "LiServer",
   "Inbox": "LiInbox",
   "Ink": "LiPencil",
   "Kubernets": "SiKubernetes",
@@ -59,7 +58,6 @@
   "Linux": "SiLinux",
   "Networking": "LiNetwork",
   "Security": "LiShield",
-  "Templates": "LiBookTemplate",
   "Virtualization": "LiBoxes",
   "Assets": "RiContactsBookUploadFill"
 }

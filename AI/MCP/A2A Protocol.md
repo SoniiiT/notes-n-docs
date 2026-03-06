@@ -1,3 +1,7 @@
+---
+tags: [ai, mcp, a2a, protokoll]
+---
+
 # A2A Protocol (Agent-to-Agent)
 
 > [!ABSTRACT]

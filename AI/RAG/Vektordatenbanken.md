@@ -1,3 +1,7 @@
+---
+tags: [ai, rag, vektordatenbank]
+---
+
 # Vektordatenbanken
 
 ## Was sind Vektordatenbanken?
@@ -596,3 +600,12 @@ Millionen von Vektoren / Enterprise-Scale?
 - [[RAG Grundlagen]] – RAG-Architektur und Retrieval-Methoden
 - [[Embeddings]] – Embedding-Modelle und deren Dimensionen
 - [[LangChain und LlamaIndex]] – Integration in RAG-Frameworks
+
+---
+
+## Verwandte Notizen
+
+- [[Embeddings]] — Vektoreinbettungen als Grundlage für Vektordatenbanken
+- [[RAG Grundlagen]] — Einsatz von Vektordatenbanken in der RAG-Architektur
+- [[LangChain und LlamaIndex]] — Framework-Integration von ChromaDB, Qdrant und pgvector
+- [[Lokale LLMs]] — Lokale Modelle in Kombination mit lokalen Vektordatenbanken

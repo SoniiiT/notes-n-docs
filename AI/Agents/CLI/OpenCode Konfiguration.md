@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, opencode, konfiguration]
+---
+
 # OpenCode — AI Coding Agent für das Terminal
 
 ## Was ist OpenCode?
@@ -521,3 +525,12 @@ OpenCode speichert alle Konversationen **lokal persistent**. Sie können nach ei
 
 > [!quote] Fazit
 > OpenCode war ein wegweisendes Projekt, das gezeigt hat, wie ein **offener, provider-agnostischer AI Coding Agent** im Terminal aussehen kann. Trotz der Archivierung bleibt es eine wertvolle Referenz — und sein Nachfolger Crush führt die Vision weiter.
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[LLM API Provider und Router]] — Überblick über LLM-Anbieter und API-Router

@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, cline, konfiguration]
+---
+
 # Cline Konfiguration
 
 > [!info] Überblick
@@ -451,3 +455,12 @@ Für größere Aufgaben zuerst im **Plan Mode** arbeiten, dann Plan reviewen, da
 ---
 
 *Zuletzt aktualisiert: Juli 2025*
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[MCP Tools Resources Prompts]] — Detaillierte Erklärung der MCP-Komponenten Tools, Resources und Prompts

@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, konzept, vergleich]
+---
+
 # AI Coding Agents Vergleich (2026)
 
 > [!NOTE] Über dieses Dokument

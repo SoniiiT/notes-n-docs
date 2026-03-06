@@ -6,7 +6,7 @@
   "rowHeight": 250,
   "autoLink": false,
   "arrowTo": "end",
-  "query": "string",
+  "query": "",
   "useRegex": false,
   "matchCase": false,
   "showSearchDetail": false,

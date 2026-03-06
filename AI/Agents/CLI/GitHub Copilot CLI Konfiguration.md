@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, github-copilot, konfiguration]
+---
+
 # GitHub Copilot CLI Konfiguration
 
 ## Was ist GitHub Copilot CLI?
@@ -815,3 +819,12 @@ Wenn du von Claude Code zu Copilot CLI wechseln möchtest:
 - [[MCP Server in Claude Code einbinden]] – MCP-Server Konfiguration (auch für Copilot relevant)
 - [[Custom Instructions für AI Coding Agents]] – Best Practices für Instruktionsdateien
 - [[Multi-Agent Workflows]] – Parallele Agent-Ausführung
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[Skills]] — Fähigkeiten und Skill-Systeme von AI Agents

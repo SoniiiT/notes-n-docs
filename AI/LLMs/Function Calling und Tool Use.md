@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, function-calling, tool-use]
+---
+
 # Function Calling und Tool Use
 
 > [!ABSTRACT]

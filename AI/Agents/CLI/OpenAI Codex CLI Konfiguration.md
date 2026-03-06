@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, openai-codex, konfiguration]
+---
+
 # OpenAI Codex CLI Konfiguration
 
 ## Was ist OpenAI Codex CLI?

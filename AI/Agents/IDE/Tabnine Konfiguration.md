@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, tabnine, konfiguration]
+---
+
 # Tabnine Konfiguration
 
 > [!ABSTRACT]

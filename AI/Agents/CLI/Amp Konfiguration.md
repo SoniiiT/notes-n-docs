@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, amp, konfiguration]
+---
+
 # Amp Konfiguration
 
 > [!ABSTRACT]

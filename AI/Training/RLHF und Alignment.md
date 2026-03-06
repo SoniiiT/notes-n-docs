@@ -1,3 +1,7 @@
+---
+tags: [ai, training, rlhf, alignment]
+---
+
 # RLHF und Alignment
 
 > [!ABSTRACT]

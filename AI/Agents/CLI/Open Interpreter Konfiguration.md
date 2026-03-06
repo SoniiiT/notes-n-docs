@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, open-interpreter, konfiguration]
+---
+
 # Open Interpreter Konfiguration
 
 ## Was ist Open Interpreter?
@@ -455,3 +459,12 @@ interpreter.messages = []
 
 > [!IMPORTANT]
 > Open Interpreter ist ein **mächtiges Werkzeug**, das bei verantwortungsvollem Einsatz enorm produktiv ist. Behandle es wie einen Junior-Entwickler mit Root-Zugang: Prüfe den Code, bevor du ihn ausführen lässt, und nutze Sicherheitsmechanismen konsequent.
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Sandboxing und Code Execution]] — Sicherheitsmechanismen für Code-Ausführung durch AI Agents
+- [[Function Calling und Tool Use]] — Wie LLMs externe Tools und Funktionen aufrufen

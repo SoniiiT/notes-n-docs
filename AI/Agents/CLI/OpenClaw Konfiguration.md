@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, openclaw, konfiguration]
+---
+
 # OpenClaw Konfiguration
 
 ## Was ist OpenClaw?
@@ -748,3 +752,12 @@ openclaw skills create mein-skill
 
 > [!ABSTRACT] Zusammenfassung
 > OpenClaw ist ein mächtiges, selbst gehostetes AI-Agent-Framework mit Multi-Channel-Support und Plugin-System. Die Stärken liegen in der Flexibilität und dem Local-First-Ansatz. Die größte Schwäche ist das inhärente Sicherheitsrisiko durch den vollen Shell-Zugriff. Ein sorgfältiges Setup mit Isolation, Berechtigungseinschränkungen und regelmäßigen Updates ist **zwingend erforderlich**.
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[Multi-Agent Workflows]] — Orchestrierung und Koordination mehrerer AI Agents

@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, memory, konzept]
+---
+
 # Memory Systems
 
 > [!ABSTRACT]

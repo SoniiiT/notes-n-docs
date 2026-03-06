@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, multimodal]
+---
+
 # Multimodalität
 
 > [!ABSTRACT]
@@ -265,7 +269,7 @@ Einige **[[AI Coding Agents Vergleich|AI Coding Agents]]** nutzen multimodale F�
 |---|---|---|
 | **[[Claude Code Konfiguration und Hooks\|Claude Code]]** | ✅ (über API) | Screenshots analysieren, UI beschreiben |
 | **[[GitHub Copilot CLI Konfiguration\|Copilot]]** | ✅ (VS Code) | Design-to-Code, UI-Mockups umsetzen |
-| **[[Cursor Konfiguration\|Cursor]]** | ✅ | Screenshots → Code |
+| **[[Cursor Agent Konfiguration\|Cursor]]** | ✅ | Screenshots → Code |
 | **[[Gemini CLI Konfiguration\|Gemini CLI]]** | ✅ | Bild-Analyse im Terminal |
 
 ---

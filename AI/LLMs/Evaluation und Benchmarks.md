@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, evaluation, benchmarks]
+---
+
 # Evaluation und Benchmarks
 
 > [!ABSTRACT]

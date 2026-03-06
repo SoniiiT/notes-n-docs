@@ -1,3 +1,7 @@
+---
+tags: [ai, rag, langchain, llamaindex, framework]
+---
+
 # LangChain und LlamaIndex
 
 ---
@@ -738,3 +742,13 @@ if __name__ == "__main__":
 - [[RAG Grundlagen]] – RAG-Architektur und Grundprinzipien
 - [[Embeddings]] – Embedding-Modelle für LangChain und LlamaIndex
 - [[Vektordatenbanken]] – ChromaDB, Qdrant und pgvector-Integration
+
+---
+
+## Verwandte Notizen
+
+- [[RAG Grundlagen]] — Architektur und Prinzipien hinter RAG-Pipelines
+- [[Embeddings]] — Embedding-Modelle für Vektorisierung in RAG
+- [[Vektordatenbanken]] — Vektorspeicher für LangChain und LlamaIndex
+- [[Agent Frameworks]] — Agentenarchitekturen als Erweiterung der Frameworks
+- [[Function Calling und Tool Use]] — Werkzeugnutzung durch LLMs in Agenten-Pipelines

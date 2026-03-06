@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, konzept, multi-agent]
+---
+
 # Multi-Agent Workflows
 
 ## Warum Multi-Agent?

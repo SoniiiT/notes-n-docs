@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, observability, monitoring]
+---
+
 # AI Observability
 
 > [!ABSTRACT]

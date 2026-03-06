@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, claude-code, konfiguration]
+---
+
 # Claude Code Konfiguration und Hooks
 
 ## settings.json – Übersicht und Speicherort

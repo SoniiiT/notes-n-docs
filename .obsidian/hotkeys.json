@@ -2,9 +2,9 @@
   "omnisearch:show-modal": [
     {
       "modifiers": [
-        "Alt"
+        "Mod"
       ],
-      "key": " "
+      "key": "X"
     }
   ]
 }

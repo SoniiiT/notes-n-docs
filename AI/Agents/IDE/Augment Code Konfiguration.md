@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, augment-code, konfiguration]
+---
+
 # Augment Code Konfiguration
 
 > [!ABSTRACT]

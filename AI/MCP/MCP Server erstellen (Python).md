@@ -1,3 +1,7 @@
+---
+tags: [ai, mcp, python, tutorial]
+---
+
 # MCP Server erstellen (Python)
 
 > [!IMPORTANT]

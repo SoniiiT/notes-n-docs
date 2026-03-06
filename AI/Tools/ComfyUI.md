@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, comfyui, bildgenerierung]
+---
+
 # ComfyUI
 
 ## Was ist ComfyUI?
@@ -486,3 +490,11 @@ for dir in custom_nodes/*/; do
   git -C "$dir" pull 2>/dev/null || true
 done
 ```
+
+---
+
+## Verwandte Notizen
+
+- [[AI Bildgenerierung]] — Übersicht über KI-gestützte Bildgenerierung und Diffusionsmodelle
+- [[Lokale LLMs]] — Lokal betriebene Sprachmodelle als Ergänzung zu Bildgenerierung
+- [[Ollama]] — Lokaler LLM-Runner für Text-Modelle neben ComfyUI

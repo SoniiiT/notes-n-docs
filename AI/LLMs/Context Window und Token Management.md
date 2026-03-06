@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, context-window, token-management]
+---
+
 # Context Window und Token Management
 
 > **Stand: März 2026**

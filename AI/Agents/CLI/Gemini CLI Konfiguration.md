@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, gemini-cli, konfiguration]
+---
+
 # Gemini CLI — Konfiguration und Nutzung
 
 > [!NOTE] Übersicht
@@ -554,3 +558,12 @@ rm ~/.gemini/memory.md
 - [[Custom Instructions für AI Coding Agents]]
 - [[Claude Code Konfiguration und Hooks]]
 - [[GitHub Copilot CLI Konfiguration]]
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[Skills]] — Fähigkeiten und Skill-Systeme von AI Agents

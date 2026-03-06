@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, continue, konfiguration]
+---
+
 # Continue Konfiguration
 
 > [!ABSTRACT]

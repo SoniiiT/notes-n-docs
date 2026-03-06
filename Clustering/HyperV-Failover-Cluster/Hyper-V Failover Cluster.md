@@ -1,3 +1,7 @@
+---
+tags: [clustering, hyper-v, failover-cluster, windows-server]
+---
+
 # Hyper-V Failover Cluster – Windows Server 2022
 
 ## Überblick
@@ -496,3 +500,9 @@ Restart-Service -Name ClusSvc
 - [Failover Clustering in Windows Server – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/failover-clustering/failover-clustering-overview)
 - [Hyper-V Live Migration – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/manage/live-migration-overview)
 - [Configure and Manage Quorum – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/failover-clustering/manage-cluster-quorum)
+
+---
+
+## Verwandte Notizen
+
+- [[Installation Hyper-V (Windows Server 2022)]] — Hyper-V Rolle installieren und konfigurieren

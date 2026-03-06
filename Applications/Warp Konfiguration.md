@@ -1,3 +1,7 @@
+---
+tags: [applications, warp, terminal, konfiguration]
+---
+
 # Warp Konfiguration
 
 > [!ABSTRACT]

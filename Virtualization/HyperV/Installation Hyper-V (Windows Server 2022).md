@@ -1,3 +1,7 @@
+---
+tags: [virtualization, hyper-v, installation, windows-server]
+---
+
 # Installation Hyper-V – Windows Server 2022
 
 ## Voraussetzungen
@@ -197,3 +201,9 @@ Get-VHD -Path "D:\Hyper-V\VHDs\VM-Name.vhdx"
 
 - [Hyper-V on Windows Server 2022 – Microsoft Docs](https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
 - [Hyper-V PowerShell Module Reference](https://learn.microsoft.com/en-us/powershell/module/hyper-v/)
+
+---
+
+## Verwandte Notizen
+
+- [[Hyper-V Failover Cluster]] — Hochverfügbarkeit mit Hyper-V Failover Clustering

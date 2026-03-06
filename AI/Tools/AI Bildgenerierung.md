@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, bildgenerierung]
+---
+
 # AI Bildgenerierung
 
 > [!ABSTRACT]

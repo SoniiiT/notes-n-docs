@@ -1,3 +1,7 @@
+---
+tags: [ai, rag, konzept]
+---
+
 # RAG Grundlagen
 
 ## Was ist RAG?
@@ -399,3 +403,13 @@ Retrieval Score > Threshold → Nur lokale Dokumente
 - [[Embeddings]] – Embedding-Modelle im Detail
 - [[Vektordatenbanken]] – ChromaDB, Qdrant, pgvector
 - [[LangChain und LlamaIndex]] – RAG-Frameworks
+
+---
+
+## Verwandte Notizen
+
+- [[Embeddings]] — Grundlagen der Vektoreinbettungen für RAG
+- [[Vektordatenbanken]] — Speicherlösungen für Embedding-Vektoren
+- [[LangChain und LlamaIndex]] — Frameworks zur Umsetzung von RAG-Pipelines
+- [[Wie funktionieren LLMs]] — Funktionsweise der Sprachmodelle im Generierungsschritt
+- [[Context Window und Token Management]] — Kontextfenster-Verwaltung bei der Prompt-Konstruktion

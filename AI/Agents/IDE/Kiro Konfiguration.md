@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, kiro, konfiguration]
+---
+
 # Kiro Konfiguration
 
 > [!ABSTRACT]

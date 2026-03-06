@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, modell-übersicht]
+---
+
 # Modell Übersicht – Large Language Models
 
 > [!NOTE]

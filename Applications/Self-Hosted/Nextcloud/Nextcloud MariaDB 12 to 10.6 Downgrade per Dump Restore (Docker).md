@@ -1,3 +1,7 @@
+---
+tags: [applications, nextcloud, mariadb, docker, self-hosted]
+---
+
 > **Wichtige Hinweise**
 > - Mach das nur in einem Wartungsfenster.
 > - Erstelle vor dem Start **Backups** von:
@@ -290,3 +294,9 @@ Für **jede** produktive Instanz:
 10. **Alte MariaDB-12-Instanz erst nach erfolgreichen Tests abschalten/entfernen**
     - Container stoppen
     - Daten-Volume erst nach zusätzlicher Backup-Kontrolle löschen
+
+---
+
+## Verwandte Notizen
+
+- [[Installation Docker Standalone]] — Docker-Installation als Grundlage für den Container-Betrieb

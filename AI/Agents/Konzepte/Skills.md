@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, konzept, skills]
+---
+
 # Skills für AI Coding Agents
 
 > [!ABSTRACT]

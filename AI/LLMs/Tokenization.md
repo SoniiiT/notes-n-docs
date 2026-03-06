@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, tokenization]
+---
+
 # Tokenization
 
 > [!ABSTRACT]

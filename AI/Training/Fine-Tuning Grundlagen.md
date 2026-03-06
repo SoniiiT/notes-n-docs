@@ -1,3 +1,7 @@
+---
+tags: [ai, training, fine-tuning, konzept]
+---
+
 # Fine-Tuning Grundlagen
 
 > [!NOTE]

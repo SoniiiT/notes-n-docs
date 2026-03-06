@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, open-webui, self-hosting]
+---
+
 # Open WebUI
 
 ## Was ist Open WebUI?
@@ -388,3 +392,12 @@ docker run --rm \
 
 > [!WARNING]
 > Open WebUI befindet sich in aktiver Entwicklung. Beim Update auf eine neue Major-Version können sich Breaking Changes bei der Datenbankstruktur ergeben. Backup vor jedem Update ist daher dringend empfohlen.
+
+---
+
+## Verwandte Notizen
+
+- [[Ollama]] — Lokaler LLM-Runner, primäres Backend für Open WebUI
+- [[AnythingLLM]] — Alternative mit stärkerem Fokus auf RAG und Dokumenten-Chat
+- [[Lokale LLMs]] — Übersicht und Vergleich lokal betriebener Sprachmodelle
+- [[RAG Grundlagen]] — Konzepte und Architektur von Retrieval-Augmented Generation

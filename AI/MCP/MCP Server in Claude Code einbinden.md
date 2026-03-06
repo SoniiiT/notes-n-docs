@@ -1,3 +1,7 @@
+---
+tags: [ai, mcp, claude-code, tutorial]
+---
+
 # MCP Server in Claude Code einbinden
 
 > [!IMPORTANT]

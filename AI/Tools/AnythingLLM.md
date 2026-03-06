@@ -1,3 +1,7 @@
+---
+tags: [ai, tools, anythingllm, self-hosting]
+---
+
 # AnythingLLM
 
 ## Was ist AnythingLLM?
@@ -465,3 +469,13 @@ docker stop anythingllm && docker rm anythingllm
 
 > [!IMPORTANT]
 > Das Storage-Verzeichnis enthält die SQLite-Datenbank (`anythingllm.db`) mit allen Workspaces, Chats und Einstellungen sowie den `documents/`-Ordner mit allen hochgeladenen Dateien und deren Vektoren. Dieses Verzeichnis ist das einzige, was für ein vollständiges Backup benötigt wird.
+
+---
+
+## Verwandte Notizen
+
+- [[Open WebUI]] — Alternative Chat-Oberfläche für lokale und externe LLMs
+- [[Ollama]] — Lokaler LLM-Runner, häufig als Backend für AnythingLLM genutzt
+- [[RAG Grundlagen]] — Konzepte und Architektur von Retrieval-Augmented Generation
+- [[Embeddings]] — Vektorisierung von Texten für die semantische Suche
+- [[Lokale LLMs]] — Übersicht und Vergleich lokal betriebener Sprachmodelle

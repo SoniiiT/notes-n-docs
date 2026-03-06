@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, modell-vergleich]
+---
+
 # Modell Vergleiche
 
 > [!NOTE]

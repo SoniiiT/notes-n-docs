@@ -1,3 +1,7 @@
+---
+tags: [ai, mcp, tools, resources, prompts]
+---
+
 # MCP Tools, Resources und Prompts
 
 > [!IMPORTANT]

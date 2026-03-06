@@ -1,3 +1,7 @@
+---
+tags: [ai, mcp, konzept]
+---
+
 # Was ist das Model Context Protocol (MCP)?
 
 > [!IMPORTANT]

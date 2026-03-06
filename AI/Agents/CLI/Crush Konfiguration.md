@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, crush, konfiguration]
+---
+
 # Crush Konfiguration
 
 > [!ABSTRACT]

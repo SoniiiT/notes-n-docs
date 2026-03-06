@@ -1,3 +1,7 @@
+---
+tags: [ai, prompting, output-formatierung]
+---
+
 # Output-Formatierung steuern
 
 ## Warum Output-Formatierung wichtig ist
@@ -406,3 +410,12 @@ Spalten: [Spalte1] | [Spalte2] | [Spalte3]"
 
 > [!NOTE]
 > Teste Formatierungsanweisungen immer mit Edge Cases: Was passiert, wenn die Anfrage unvollständige Daten enthält? Hält das Modell das Format auch bei kurzen/langen Eingaben ein? Passt die Ausgabe zum Schema auch wenn keine passenden Daten gefunden werden?
+
+---
+
+## Verwandte Notizen
+
+- [[Structured Output]] — API-basierte Methoden zur Erzwingung strukturierter Ausgaben (JSON Mode, Tool Use)
+- [[Prompt Engineering Techniken]] — Grundlegende Techniken wie Few-Shot und Chain-of-Thought, die mit Formatierungsanweisungen kombiniert werden
+- [[System Prompts schreiben]] — Formatierungsregeln im System Prompt verankern für konsistente Ausgaben
+- [[Sampling-Parameter]] — Temperature und Top-P beeinflussen die Variabilität der Ausgabeformatierung

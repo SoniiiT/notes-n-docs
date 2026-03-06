@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, structured-output]
+---
+
 # Structured Output
 
 > [!ABSTRACT]

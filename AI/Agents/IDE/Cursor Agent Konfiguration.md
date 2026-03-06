@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, cursor, konfiguration]
+---
+
 # Cursor AI — Agent Konfiguration und Dokumentation
 
 ## Was ist Cursor?
@@ -558,3 +562,12 @@ data/
 
 > [!NOTE]
 > Diese Dokumentation bezieht sich auf den Stand von Cursor im Jahr 2025. Da Cursor aktiv weiterentwickelt wird, können sich Features und Konfigurationsoptionen ändern. Die offizielle Dokumentation unter [docs.cursor.com](https://docs.cursor.com) ist immer die aktuellste Quelle.
+
+---
+
+## Verwandte Notizen
+
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich aller AI Coding Agents
+- [[Was ist ein AI Agent]] — Grundlagen und Definition von AI Agents
+- [[Custom Instructions für AI Coding Agents]] — Best Practices für Instruktionsdateien und Konfiguration
+- [[Skills]] — Fähigkeiten und Skill-Systeme von AI Agents

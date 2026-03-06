@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, konzept]
+---
+
 # Wie funktionieren LLMs
 
 > [!ABSTRACT]

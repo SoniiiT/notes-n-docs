@@ -1,3 +1,7 @@
+---
+tags: [ai, prompting, code-generierung]
+---
+
 # Prompts für Code-Generierung
 
 ## Best Practices für Code-Prompts
@@ -600,3 +604,12 @@ Bevor du einen Code-Prompt absendest:
 - [ ] Grenzfälle und unerwartete Eingaben erwähnt?
 - [ ] Code-Style und Konventionen angegeben (PEP 8, Type Hints, Docstrings)?
 - [ ] Ist die Aufgabe klein genug für eine gute Antwort? (ggf. aufteilen)
+
+---
+
+## Verwandte Notizen
+
+- [[Prompt Engineering Techniken]] — Allgemeine Techniken wie Few-Shot und Chain-of-Thought, die in Code-Prompts einfließen
+- [[System Prompts schreiben]] — System Prompts für Code-Assistenten mit Stil- und Qualitätsvorgaben erstellen
+- [[Custom Instructions für AI Coding Agents]] — Dauerhafte Coding-Konventionen für KI-Agenten hinterlegen
+- [[AI Coding Agents Vergleich]] — Übersicht und Vergleich von KI-Coding-Tools wie Copilot, Cursor und Aider

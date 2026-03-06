@@ -1,3 +1,7 @@
+---
+tags: [ai, prompting, prompt-engineering]
+---
+
 # Prompt Engineering Techniken
 
 ## Überblick
@@ -362,3 +366,12 @@ Frage: Eine Datenbank nutzt 75% von 512 GB Storage. Wie viel GB sind noch frei?
 
 > [!NOTE]
 > Bei der Kombination von Techniken gilt: Teste immer die Wirkung jedes zusätzlichen Elements einzeln. Manchmal verschlechtert eine hinzugefügte Technik das Ergebnis, weil sie den Prompt zu komplex macht.
+
+---
+
+## Verwandte Notizen
+
+- [[System Prompts schreiben]] — System Prompts als Rahmen für alle Prompt-Techniken definieren
+- [[Output-Formatierung steuern]] — Ausgabeformate wie JSON, XML und Markdown gezielt anfordern
+- [[Prompts für Code-Generierung]] — Prompt-Techniken speziell für die Code-Erzeugung anwenden
+- [[Custom Instructions für AI Coding Agents]] — Permanente Anweisungen für KI-Coding-Assistenten konfigurieren

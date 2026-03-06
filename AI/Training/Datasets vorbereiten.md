@@ -1,3 +1,7 @@
+---
+tags: [ai, training, datasets]
+---
+
 # Datasets vorbereiten
 
 > [!IMPORTANT]

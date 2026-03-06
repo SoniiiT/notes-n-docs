@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, cli, amazon-q, konfiguration]
+---
+
 # Amazon Q Developer CLI Konfiguration
 
 > [!ABSTRACT]

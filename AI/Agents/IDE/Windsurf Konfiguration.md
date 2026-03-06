@@ -1,3 +1,7 @@
+---
+tags: [ai, agents, ide, windsurf, konfiguration]
+---
+
 # Windsurf Konfiguration
 
 > [!ABSTRACT]

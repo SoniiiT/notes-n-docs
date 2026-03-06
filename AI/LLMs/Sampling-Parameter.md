@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, sampling, parameter]
+---
+
 # Sampling-Parameter
 
 > [!ABSTRACT]

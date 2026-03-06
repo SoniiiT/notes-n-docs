@@ -1,3 +1,7 @@
+---
+tags: [ai, llm, api-provider, router]
+---
+
 # LLM API Provider und Router
 
 > **Stand: März 2026**
