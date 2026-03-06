@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4b7be6e01117eb56",
+        "id": "285c42e9bc01feab",
         "type": "tabs",
         "children": [
           {
-            "id": "8c52cd801b927e91",
+            "id": "fbf25cd17ea88f05",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Agents/CLI/OpenClaw Konfiguration.md",
+                "file": "Projekt Ideen/Projektideen.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OpenClaw Konfiguration"
+              "title": "Projektideen"
             }
           }
         ]
@@ -44,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Dateiexplorer"
+              "title": "Files"
             }
           },
           {
@@ -88,6 +88,21 @@
         "id": "fca8828be88fb469",
         "type": "tabs",
         "children": [
+          {
+            "id": "3af80bb89892d40c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Projekt Ideen/Projektideen.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Gliederung von Projektideen"
+            }
+          },
           {
             "id": "6f6b6f0780718dba",
             "type": "leaf",
@@ -137,21 +152,6 @@
             }
           },
           {
-            "id": "3af80bb89892d40c",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "AI/LLMs/Wie funktionieren LLMs.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of Wie funktionieren LLMs"
-            }
-          },
-          {
             "id": "84f2faf3935570de",
             "type": "leaf",
             "state": {
@@ -161,8 +161,7 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,13 +170,13 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Schnellauswahl öffnen": false,
-      "graph:Graph-Ansicht öffnen": false,
-      "canvas:Neuen Canvas erstellen": false,
-      "daily-notes:Heutige Notiz öffnen": false,
-      "templates:Vorlage einfügen": false,
-      "command-palette:Befehlspalette öffnen": false,
-      "bases:Neue Base erstellen": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-kanban:Create new board": false,
       "omnisearch:Omnisearch": false,
@@ -186,44 +185,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8c52cd801b927e91",
+  "active": "fbf25cd17ea88f05",
   "lastOpenFiles": [
-    "AI/AI Index.md",
-    "AI/Agents/IDE/Cursor Agent Konfiguration.md",
-    "AI/LLMs/Multimodalität.md",
-    "Cursor Konfiguration.md",
-    "Virtualization/HyperV/Installation Hyper-V (Windows Server 2022).md",
+    "Projekt Ideen/Projektumsetzung.md",
+    "Projekt Ideen/Projektideen.md",
+    "[[Projektumsetzung.md",
+    "().md",
+    "Applications/Tools/Warp Konfiguration.md",
+    "Applications/Tools",
     "Container/Docker/Installation Docker Standalone.md",
-    "Clustering/Kubernetes/Installation LoadBalancer.md",
+    "Clustering/Kubernetes/Installation/Kubeadm Multi-Master Cluster.md",
+    "Clustering/Kubernetes/Installation/KubeVIP und High Availability.md",
+    "Clustering/Kubernetes/Kubernetes Index.md",
+    "Clustering/Kubernetes/Konzepte/Services.md",
+    "Clustering/Kubernetes/Konzepte/Service Mesh.md",
+    "Clustering/Kubernetes/Konzepte/RBAC.md",
+    "Clustering/Kubernetes/Konzepte/Pods.md",
+    "Clustering/Kubernetes/Konzepte/Pod Security Standards.md",
+    "Clustering/Kubernetes/Konzepte/Persistent Volumes und Storage Classes.md",
+    "Clustering/Kubernetes/Konzepte/Namespaces.md",
+    "Clustering/Kubernetes/Konzepte/Labels Selektoren und Annotations.md",
+    "Clustering/Kubernetes/Konzepte/Kubernetes Netzwerk.md",
+    "Clustering/Kubernetes/Konzepte/Ingress und IngressRoutes.md",
+    "Clustering/Kubernetes/Konzepte/Gateway API.md",
+    "Clustering/Kubernetes/Konzepte/Deployments und ReplicaSets.md",
+    "Clustering/Kubernetes/Konzepte/DaemonSets StatefulSets und Jobs.md",
+    "Clustering/Kubernetes/Konzepte/CRDs und Operators.md",
+    "Clustering/Kubernetes/Konzepte/ConfigMaps und Secrets.md",
+    "Clustering/Kubernetes/Komponenten/Traefik Ingress Controller.md",
+    "Clustering/Kubernetes/Komponenten/Portainer.md",
     "Clustering/Kubernetes/Helm",
     "Clustering/Kubernetes",
-    "Clustering/Docker-Swarm/Installation Docker Swarm.md",
-    "Clustering/Docker-Swarm/Installation Docker Swarm HA.md",
     "Clustering/Docker-Swarm",
-    "Homelab/Dokumentation/Switch Port Dokumentation.md",
-    "Homelab/Dokumentation/IP Dokumentation.md",
-    "Homelab/Dokumentation/Proxmox.md",
-    "Home.md",
-    "Container/Kubernetes/Installation/CentOS Stream 9/Installation K8s HA/Installation LoadBalancer.md",
-    "AI/RAG/Embeddings.md",
-    "AI/LLMs/Wie funktionieren LLMs.md",
-    "AI/LLMs/Function Calling und Tool Use.md",
-    "AI/LLMs/Context Window und Token Management.md",
-    "Applications/Warp Konfiguration.md",
-    "AI/LLMs/Tokenization.md",
-    "AI/LLMs/Modell Vergleiche.md",
-    "AI/LLMs/LLM API Provider und Router.md",
-    "AI/LLMs/Modell Übersicht.md",
-    "AI/LLMs/Sampling-Parameter.md",
-    "AI/MCP/Was ist MCP.md",
-    "AI/Tools/AI Bildgenerierung.md",
     "AI/Agents/Konzepte",
     "AI/Agents/IDE",
     "AI/Agents/CLI",
     "Untitled.base",
     "Documentation/HowTo",
     "Documentation",
-    "Ink/Drawing/2025.8.23 - 11.27am.drawing",
     "icons8-server-64.png",
     "Hyper-V_Logo.png",
     "docker-logo-blue.svg",
