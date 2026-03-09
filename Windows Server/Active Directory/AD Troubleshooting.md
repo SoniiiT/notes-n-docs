@@ -12,16 +12,16 @@ aliases: ["AD Troubleshooting", "Active Directory Fehler", "DC Diagnose"]
 
 ## Diagnosewerkzeuge im Überblick
 
-| Tool | Funktion |
-|------|----------|
-| `dcdiag` | DC-Gesundheitscheck (alle Tests) |
-| `repadmin` | Replikationsstatus und -diagnose |
-| `nltest` | Netlogon-Tests, DC-Suche, Trust |
-| `klist` | Kerberos-Tickets anzeigen/löschen |
-| `nslookup` | DNS-Auflösung testen |
-| `netdom` | Domain-Diagnose, FSMO-Rollen |
-| `Get-WinEvent` | Windows Event Log durchsuchen |
-| `Get-ADReplicationFailure` | PowerShell: Replikationsfehler |
+| Tool                       | Funktion                          |
+| -------------------------- | --------------------------------- |
+| `dcdiag`                   | DC-Gesundheitscheck (alle Tests)  |
+| `repadmin`                 | Replikationsstatus und -diagnose  |
+| `nltest`                   | Netlogon-Tests, DC-Suche, Trust   |
+| `klist`                    | Kerberos-Tickets anzeigen/löschen |
+| `nslookup`                 | DNS-Auflösung testen              |
+| `netdom`                   | Domain-Diagnose, FSMO-Rollen      |
+| `Get-WinEvent`             | Windows Event Log durchsuchen     |
+| `Get-ADReplicationFailure` | PowerShell: Replikationsfehler    |
 
 ---
 
