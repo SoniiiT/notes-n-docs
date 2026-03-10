@@ -31,6 +31,57 @@ Teams Premium ist ein **Add-on-Abonnement** für Microsoft Teams, das über die 
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Teams Premium-Lizenz zuweisen
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Abrechnung → Lizenzen**
+3. Klicke auf **Teams Premium** in der Lizenzliste
+4. Klicke auf **Lizenzen zuweisen**, suche die gewünschten Benutzer
+5. Klicke auf **Zuweisen**
+
+### Custom Meeting Templates erstellen
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Besprechungen → Besprechungsvorlagen**
+3. Klicke auf **+ Vorlage hinzufügen**
+4. Konfiguriere:
+   - **Name und Beschreibung:** Sichtbar für Benutzer beim Meeting-Erstellen
+   - **Lobby-Bypass:** Vordefinieren und optional sperren (Benutzer kann nicht ändern)
+   - **Aufzeichnung:** Automatisch starten, Wasserzeichen aktivieren
+   - **Sensitivity Label:** Optional ein Purview-Label verknüpfen
+5. Für jede Einstellung: **Gesperrt** aktivieren verhindert, dass Organisatoren die Einstellung ändern können
+6. Klicke auf **Speichern**
+
+### Custom Meeting Branding konfigurieren
+
+1. Navigiere zu **Besprechungen → Meeting-Anpassung**
+2. Klicke auf **+ Design hinzufügen**
+3. Konfiguriere:
+   - **Logo:** Unternehmenslogo hochladen (wird in der Meeting-Lobby angezeigt)
+   - **Hintergrundbild:** Benutzerdefiniertes Lobby-Hintergrundbild hochladen
+   - **Theme-Farben:** Primäre und sekundäre Akzentfarben festlegen
+4. Klicke auf **Vorschau** um das Design zu überprüfen
+5. Klicke auf **Speichern**
+
+### Wasserzeichen in Meeting Policies aktivieren
+
+1. Navigiere zu **Besprechungen → Besprechungsrichtlinien**
+2. Wähle die Policy der Premium-Benutzer aus → **Bearbeiten**
+3. Unter **Inhaltsfreigabe:**
+   - **Wasserzeichen für Kameravideo:** Aktivieren
+   - **Wasserzeichen für freigegebene Inhalte:** Aktivieren
+4. Klicke auf **Speichern**
+
+> [!TIP]
+> Mit **Besprechungsvorlagenrichtlinien** (**Besprechungen → Besprechungsvorlagenrichtlinien**) kannst du steuern, welche Vorlagen welchen Benutzern zur Verfügung stehen — z.B. eine spezielle „Vorstandssitzung"-Vorlage nur für Führungskräfte sichtbar machen.
+
+> [!NOTE]
+> **Intelligent Recap** wird automatisch für alle Benutzer mit gültiger Teams Premium- oder Microsoft 365 Copilot-Lizenz aktiviert. Im Teams Admin Center ist keine zusätzliche Konfiguration erforderlich — das Feature erscheint nach dem Meeting automatisch im Recap-Tab des Kalenders.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | Preis (ca.) | Enthält |

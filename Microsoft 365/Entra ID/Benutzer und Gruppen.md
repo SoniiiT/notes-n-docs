@@ -45,6 +45,56 @@ graph TD
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Benutzer und Gruppen konfigurieren
+
+#### Neuen Benutzer erstellen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Benutzer → Alle Benutzer**
+3. Klicke auf **+ Neuer Benutzer → Benutzer erstellen**
+4. Konfiguriere:
+   - **Anzeigename:** Vor- und Nachname
+   - **Benutzerprinzipalname (UPN):** `vorname.nachname@firma.de`
+   - **Kennwort:** Automatisch generiert oder manuell gesetzt
+   - **Eigenschaften:** Abteilung, Titel, Manager, Telefonnummer
+5. Klicke auf **Erstellen**
+
+#### Gastbenutzer einladen (B2B)
+
+1. Navigiere zu **Identität → Benutzer → Alle Benutzer**
+2. Klicke auf **+ Neuer Benutzer → Externen Benutzer einladen**
+3. Konfiguriere:
+   - **E-Mail-Adresse:** Externe E-Mail des Gastbenutzers
+   - **Anzeigename:** Name des Gastes
+   - **Nachricht:** Optionale Einladungsnachricht
+4. Klicke auf **Einladen**
+
+#### Gruppe erstellen
+
+1. Navigiere zu **Identität → Gruppen → Alle Gruppen**
+2. Klicke auf **+ Neue Gruppe**
+3. Konfiguriere:
+   - **Gruppentyp:** Microsoft 365 oder Sicherheit
+   - **Gruppenname:** Aussagekräftiger Name
+   - **Mitgliedschaftstyp:** Zugewiesen
+4. Klicke auf **Erstellen**
+
+#### Dynamische Gruppe erstellen
+
+1. Navigiere zu **Identität → Gruppen → Alle Gruppen**
+2. Klicke auf **+ Neue Gruppe**
+3. Setze **Mitgliedschaftstyp** auf **Dynamischer Benutzer**
+4. Klicke auf **Dynamische Abfrage hinzufügen**
+5. Erstelle eine Regel, z. B. `department -eq "IT"`
+6. Klicke auf **Speichern** und anschließend auf **Erstellen**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Benutzer** bzw. **Gruppen**
+
+---
+
 ## Benutzer erstellen
 
 ### Einzelnen Benutzer im Portal erstellen

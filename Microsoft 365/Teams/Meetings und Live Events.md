@@ -69,6 +69,46 @@ Für jedes Meeting können spezifische Einstellungen gesetzt werden (Organisator
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Besprechungsrichtlinien konfigurieren
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Besprechungen → Besprechungsrichtlinien**
+3. Klicke auf **+ Hinzufügen** um eine neue Richtlinie zu erstellen (oder wähle eine bestehende Policy zum Bearbeiten)
+4. Konfiguriere:
+   - **Audio & Video:** IP-Audio und IP-Video aktivieren/deaktivieren, Netzmodus (Cloud/P2P)
+   - **Aufzeichnung und Transkription:** Cloud-Aufzeichnung erlauben, automatischen Aufzeichnungsstart aktivieren, Ablaufzeit in Tagen (Standard: 60), Transkription aktivieren
+   - **Inhaltsfreigabe:** Bildschirmfreigabe-Modus (Gesamter Bildschirm / Einzelne App / Deaktiviert), Whiteboard, PowerPoint Live
+   - **Meeting Join und Lobby:** Anonyme Teilnahme, externe Teilnehmer, Lobby-Bypass-Regel
+5. Klicke auf **Speichern**
+6. Policy zuweisen: **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Richtlinien bearbeiten** → Meeting Policy auswählen
+
+### Live-Ereignisrichtlinien konfigurieren
+
+1. Navigiere zu **Besprechungen → Live-Ereignisrichtlinien**
+2. Klicke auf **+ Hinzufügen** oder bearbeite die globale Richtlinie (Global)
+3. Konfiguriere:
+   - **Live-Events planen:** Aktivieren oder deaktivieren für Benutzer
+   - **Transkription für Teilnehmer:** Aktivieren oder deaktivieren
+   - **Aufzeichnung:** Immer aufzeichnen / Nie aufzeichnen / Organisator entscheidet
+4. Klicke auf **Speichern**
+5. Policy zuweisen: **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Richtlinien bearbeiten**
+
+### Town Hall-Einstellungen anpassen
+
+1. Navigiere zu **Besprechungen → Besprechungsrichtlinien** → Policy auswählen → **Bearbeiten**
+2. Unter **Meeting Join und Lobby** die Einstellungen für große Events konfigurieren
+3. Town Hall-spezifische Features (RTMP-Out, Live-Übersetzung) werden direkt beim Erstellen eines Town Hall-Meetings im Teams-Kalender konfiguriert
+
+> [!TIP]
+> Die **Aufzeichnungs-Ablaufzeit** ist unter **Besprechungen → Besprechungsrichtlinien** → Policy bearbeiten → **Aufzeichnung und Transkription → Aufzeichnung ablaufen lassen** konfigurierbar (1–99.999 Tage). So werden OneDrive/SharePoint automatisch von alten Aufzeichnungen bereinigt.
+
+> [!NOTE]
+> Teams Live Events wurden zum 30. September 2024 eingestellt. Verwende stattdessen **Town Halls** — diese werden über den Teams-Kalender erstellt und durch die allgemeinen Besprechungsrichtlinien gesteuert. Bestehende Live-Events-Richtlinien können für verbleibende Übergangszeiträume weiter genutzt werden.
+
+---
+
 ## Meeting Policies (Admin-Steuerung)
 
 Admins steuern Meeting-Verhalten über **Meeting Policies** im Teams Admin Center.

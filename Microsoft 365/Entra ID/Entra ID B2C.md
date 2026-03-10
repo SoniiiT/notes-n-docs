@@ -46,6 +46,61 @@ graph TD
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Entra ID B2C konfigurieren
+
+#### B2C-Tenant erstellen
+
+1. Öffne das **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Klicke auf **+ Ressource erstellen** und suche nach **Microsoft Entra ID B2C**
+3. Klicke auf **Erstellen**
+4. Wähle **Neuen Azure AD B2C-Tenant erstellen**
+5. Konfiguriere:
+   - **Organisationsname:** z. B. `Firma B2C`
+   - **Anfänglicher Domainname:** z. B. `firmab2c.onmicrosoft.com`
+   - **Land/Region:** Deutschland
+   - **Abonnement:** Azure-Subscription für Abrechnung auswählen
+   - **Ressourcengruppe:** Vorhandene auswählen oder neue erstellen
+6. Klicke auf **Überprüfen + Erstellen** und dann auf **Erstellen**
+
+#### User Flows erstellen
+
+1. Wechsle in den **B2C-Tenant** (Verzeichnis wechseln im Azure Portal)
+2. Suche nach **Azure AD B2C** und öffne den Dienst
+3. Navigiere zu **Benutzerflows** und klicke auf **+ Neuer Benutzerflow**
+4. Wähle den Flow-Typ (z. B. **Registrierung und Anmeldung**)
+5. Wähle die Version **Empfohlen**
+6. Konfiguriere:
+   - **Name:** z. B. `B2C_1_SignUpSignIn`
+   - **Identitätsanbieter:** E-Mail-Registrierung aktivieren
+   - **Benutzerattribute:** Gewünschte Attribute (Vorname, Nachname etc.) auswählen
+7. Klicke auf **Erstellen**
+
+#### Identitätsanbieter konfigurieren
+
+1. Navigiere zu **Identitätsanbieter**
+2. Klicke auf den gewünschten Anbieter (z. B. **Google**, **Facebook**)
+3. Konfiguriere:
+   - **Client-ID:** App-ID vom jeweiligen Anbieter
+   - **Geheimnis des Clients:** App-Secret vom jeweiligen Anbieter
+4. Klicke auf **Speichern**
+5. Füge den Anbieter im gewünschten User Flow unter **Identitätsanbieter** hinzu
+
+#### App-Registrierung im B2C-Tenant
+
+1. Navigiere zu **App-Registrierungen** und klicke auf **+ Neue Registrierung**
+2. Konfiguriere:
+   - **Name:** Anwendungsname
+   - **Unterstützte Kontotypen:** Konten in einem beliebigen Identitätsanbieter
+   - **Umleitungs-URI:** z. B. `https://jwt.ms` für Tests
+3. Klicke auf **Registrieren**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Azure AD B2C** (nach Wechsel in den B2C-Tenant)
+
+---
+
 ## B2C-Tenant erstellen
 
 Ein B2C-Tenant ist ein separater Azure-Tenant (nicht der Unternehmens-Tenant):

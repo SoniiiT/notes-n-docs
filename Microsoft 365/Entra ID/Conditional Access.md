@@ -44,6 +44,53 @@ graph TD
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Conditional Access-Richtlinie konfigurieren
+
+#### Neue CA-Richtlinie erstellen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Schutz → Bedingter Zugriff**
+3. Klicke auf **+ Neue Richtlinie**
+4. Vergib einen aussagekräftigen **Namen** (z. B. `CA001 – MFA für alle Benutzer`)
+
+#### Zuweisungen konfigurieren
+
+5. Klicke auf **Benutzer**:
+   - Wähle **Alle Benutzer** oder spezifische Gruppen
+   - Schließe unter **Ausschließen** Break-Glass-Konten aus
+6. Klicke auf **Zielressourcen**:
+   - Wähle **Cloud-Apps** und selektiere die gewünschten Anwendungen
+7. Klicke auf **Bedingungen** um Plattform, Standort, Gerätestatus etc. zu konfigurieren
+
+#### Zugriffssteuerungen konfigurieren
+
+8. Klicke auf **Gewähren**:
+   - Wähle **Zugriff gewähren**
+   - Aktiviere **Multi-Faktor-Authentifizierung erforderlich**
+9. Klicke auf **Sitzung** für Sign-in-Frequency oder App-enforced Restrictions
+
+#### Richtlinie im Report-Only Modus aktivieren
+
+10. Setze den Schalter zunächst auf **Nur Bericht** (Report-only), um Auswirkungen zu analysieren
+11. Klicke auf **Erstellen**
+12. Prüfe die Auswirkungen unter **Schutz → Bedingter Zugriff → Einblicke und Berichte**
+
+#### What-If Tool verwenden
+
+1. Navigiere zu **Schutz → Bedingter Zugriff → What-If**
+2. Konfiguriere:
+   - **Benutzer:** Benutzer oder Gruppe auswählen
+   - **Cloud-Apps:** Betroffene Anwendung auswählen
+   - **Bedingungen:** IP, Plattform, Gerätezustand simulieren
+3. Klicke auf **What-If** um zu sehen, welche Richtlinien greifen würden
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Sicherheit → Bedingter Zugriff**
+
+---
+
 ## Policy-Struktur
 
 Jede CA-Richtlinie besteht aus **Zuweisungen** (Bedingungen) und **Zugriffssteuerungen**:

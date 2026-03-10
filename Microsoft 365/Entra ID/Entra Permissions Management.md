@@ -69,6 +69,50 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Entra Permissions Management konfigurieren
+
+#### Entra Permissions Management öffnen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Berechtigungsverwaltung** (Permissions Management) im linken Menü
+   - Alternativ: Öffne direkt [https://pm.microsoft.com](https://pm.microsoft.com)
+3. Falls noch nicht aktiviert: Klicke auf **Aktivieren** und folge dem Onboarding-Assistenten
+
+#### Cloud-Umgebung onboarden
+
+1. Navigiere im Permissions Management-Portal zu **Data Collectors**
+2. Wähle die gewünschte Cloud-Umgebung:
+   - **Azure:** Klicke auf **Azure** → **Subscription hinzufügen** → Azure-Subscription-ID eingeben und Berechtigungen erteilen
+   - **AWS:** Klicke auf **AWS** → **Account hinzufügen** → AWS Account-ID und IAM-Rolle konfigurieren
+   - **GCP:** Klicke auf **GCP** → **Projekt hinzufügen** → GCP-Projekt-ID und Service Account einrichten
+3. Folge dem Onboarding-Assistenten und erteile die erforderlichen Leseberechtigungen
+4. Klicke auf **Erstellen** — die Discovery startet automatisch (kann bis zu 24 Stunden dauern)
+
+#### Permission Creep Index (PCI) Dashboard anzeigen
+
+1. Navigiere im Portal zu **Berechtigungen → Permission Creep Index**
+2. Wähle die gewünschte Cloud-Umgebung (Azure/AWS/GCP)
+3. Analysiere das Dashboard:
+   - **Hoher PCI (70–100):** Identitäten mit kritisch überdimensionierten Berechtigungen
+   - **Mittlerer PCI (34–69):** Handlungsbedarf empfohlen
+   - **Niedriger PCI (0–33):** Akzeptables Berechtigungsniveau
+4. Klicke auf einzelne Identitäten für Detailansicht
+
+#### Risikohafte Identitäten anzeigen und Right-Sizing anwenden
+
+1. Klicke in der PCI-Ansicht auf eine Identität mit hohem PCI
+2. Prüfe unter **Erteilte Berechtigungen** vs. **Genutzte Berechtigungen** die Differenz
+3. Klicke auf **Bereinigen** oder **Rechte anpassen**
+4. Wähle **Right-Size-Berechtigungen** — Entra Permissions Management schlägt eine minimale Rollenempfehlung vor
+5. Klicke auf **Anwenden** um die Änderungen direkt umzusetzen
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Berechtigungsverwaltung** (Permissions Management)
+
+---
+
 ## Discovery
 
 Entra Permissions Management entdeckt alle Berechtigungen im Multi-Cloud-Portfolio:

@@ -46,6 +46,54 @@ graph TD
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### App-Berechtigungsrichtlinien konfigurieren
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Apps → App-Berechtigungsrichtlinien**
+3. Klicke auf **+ Hinzufügen** um eine neue Richtlinie zu erstellen
+4. Konfiguriere für jede App-Kategorie:
+   - **Microsoft-Apps:** Alle zulassen / Bestimmte Apps erlauben oder blockieren / Alle blockieren
+   - **Drittanbieter-Apps:** Alle zulassen / Bestimmte Apps erlauben oder blockieren / Alle blockieren
+   - **Benutzerdefinierte Apps:** Alle zulassen / Bestimmte Apps erlauben oder blockieren / Alle blockieren
+5. Klicke auf **Speichern**
+6. Policy zuweisen: **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Richtlinien bearbeiten**
+
+### App-Setuprichtlinien konfigurieren (angeheftete Apps)
+
+1. Navigiere zu **Apps → App-Setuprichtlinien**
+2. Klicke auf **+ Hinzufügen**
+3. Konfiguriere:
+   - **Benutzerdefiniertes Pinning:** Ob Benutzer Apps in der Seitenleiste selbst anheften dürfen
+   - **Apps hochladen:** Sideloading von benutzerdefinierten Apps erlauben oder verbieten
+   - **Angeheftete Apps:** Reihenfolge der Standard-Apps in der linken Seitenleiste per Drag & Drop festlegen
+4. Klicke auf **Speichern**
+5. Policy zuweisen: **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Richtlinien bearbeiten**
+
+### Apps org-weit blockieren oder zulassen
+
+1. Navigiere zu **Apps → Apps verwalten**
+2. Suche nach der gewünschten App (Suchfeld oben rechts)
+3. Klicke auf den App-Namen → **Zulassen** oder **Blockieren**
+4. Alternativ: Mehrere Apps über die Kontrollkästchen auswählen → **Zulassen** oder **Blockieren** (Bulk-Aktion)
+
+### Benutzerdefinierte App in den Unternehmens-App-Katalog hochladen
+
+1. Navigiere zu **Apps → Apps verwalten**
+2. Klicke auf **+ Hochladen** → **Benutzerdefinierte App hochladen**
+3. Wähle das App-Paket (`.zip`-Datei mit `manifest.json`) aus
+4. Die App erscheint im Unternehmens-App-Katalog und ist nur für die eigene Organisation sichtbar
+5. Berechtigungs- und Setuprichtlinien steuern, wer die App nutzen oder anheften kann
+
+> [!NOTE]
+> Die **org-weite Blockierung** einer App unter **Apps → Apps verwalten** hat Vorrang vor allen Berechtigungsrichtlinien. Eine dort blockierte App kann von keinem Benutzer installiert werden — unabhängig von der zugewiesenen Policy.
+
+> [!TIP]
+> Unter **Apps → Apps verwalten** kann der **Zertifizierungsstatus** jeder App eingesehen werden (Publisher Attestation / Microsoft 365 Certified). Dies hilft bei der Risikoklassifizierung vor dem Freigeben von Drittanbieter-Apps.
+
+---
+
 ## App-Governance im Teams Admin Center
 
 **Teams Admin Center → Apps**

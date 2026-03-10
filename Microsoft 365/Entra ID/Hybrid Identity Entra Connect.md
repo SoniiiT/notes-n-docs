@@ -113,6 +113,57 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Entra Connect konfigurieren und überwachen
+
+#### Entra Connect installieren
+
+1. Lade den **Microsoft Entra Connect**-Installer herunter: [aka.ms/AADConnect](https://aka.ms/AADConnect)
+2. Führe `AzureADConnect.msi` auf dem dedizierten Server als **Administrator** aus
+3. Akzeptiere die Lizenzbedingungen und klicke auf **Fortfahren**
+4. Wähle **Express-Einstellungen** für eine Standardkonfiguration (empfohlen für einfache Szenarien):
+   - **PHS (Password Hash Sync)** wird automatisch konfiguriert
+   - Gib Entra ID-Anmeldeinformationen (**Globaler Administrator**) ein
+   - Gib On-Premises-AD-Anmeldeinformationen (**Enterprise Admin**) ein
+5. Klicke auf **Installieren** — der erste Sync startet automatisch nach der Installation
+
+#### Sync-Status überwachen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Hybrid management → Microsoft Entra Connect**
+3. Prüfe:
+   - **Sync-Status:** Letzter Sync-Zeitstempel
+   - **Entra Connect Health:** Warnungen und Fehler
+4. Klicke auf **Entra Connect Health** für detaillierte Monitoring-Ansichten:
+   - **Sync-Dienste:** Status der Sync-Engines
+   - **AD DS-Verbindungsdienste:** Status der AD-Verbindungen
+   - **AD FS-Dienste:** Status der ADFS-Server (falls vorhanden)
+
+#### Manuelle Synchronisierung anstoßen
+
+1. Navigiere zu **Identität → Hybrid management → Microsoft Entra Connect → Connect Sync**
+2. Klicke auf **Problembehebung** für Diagnosewerkzeuge
+3. Für eine sofortige manuelle Synchronisierung: Verwende die PowerShell auf dem Connect-Server (`Start-ADSyncSyncCycle -PolicyType Delta`)
+
+> [!NOTE]
+> Eine manuelle Synchronisierung direkt über die UI ist im Entra Admin Center nicht möglich — dies erfordert PowerShell auf dem Entra Connect-Server. Das Portal zeigt nur den Status und bietet Diagnosetools an.
+
+#### Sync-Fehler anzeigen
+
+1. Navigiere zu **Identität → Hybrid management → Microsoft Entra Connect → Entra Connect Health**
+2. Klicke auf **Sync-Dienste → [Dienst auswählen]**
+3. Wähle den Tab **Fehler** für eine Übersicht aller Synchronisierungsfehler
+4. Klicke auf einen Fehler für Details:
+   - **Fehlertyp:** AttributeValueMustBeUnique, DataMismatch etc.
+   - **Betroffenes Objekt:** DN des fehlgeschlagenen Objekts
+   - **Empfohlene Aktion:** Direkt im Portal angezeigt
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Microsoft Entra Connect**
+
+---
+
 ## Installation von Entra Connect
 
 ### Systemvoraussetzungen

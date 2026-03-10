@@ -87,6 +87,64 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Identity Protection konfigurieren
+
+#### Identity Protection Dashboard öffnen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Schutz → Identity Protection**
+3. Das Dashboard zeigt:
+   - **Neue riskante Benutzer:** Benutzer mit erkannten Risiken
+   - **Neue riskante Anmeldungen:** Anmeldungen mit Risikoerkennung
+   - **Risikoerkennungen:** Übersicht aller Erkennungstypen
+
+#### Risikobasierte CA-Richtlinie konfigurieren (empfohlen)
+
+1. Navigiere zu **Schutz → Bedingter Zugriff → + Neue Richtlinie**
+2. Vergib einen Namen, z. B. `CA – Anmelde-Risiko hoch → MFA`
+3. Konfiguriere unter **Zuweisungen → Benutzer:** Alle Benutzer (Break-Glass ausschließen)
+4. Konfiguriere unter **Zielressourcen:** Alle Cloud-Apps
+5. Konfiguriere unter **Bedingungen → Anmelde-Risiko:**
+   - Aktiviere **Konfigurieren**
+   - Wähle **Hoch** und **Mittel**
+6. Konfiguriere unter **Zugriffssteuerungen → Gewähren:**
+   - **Zugriff gewähren** → **Multi-Faktor-Authentifizierung erforderlich**
+7. Setze den Status auf **Aktiviert** und klicke auf **Erstellen**
+
+#### Riskante Benutzer anzeigen und verwalten
+
+1. Navigiere zu **Schutz → Identity Protection → Riskante Benutzer**
+2. Filtere nach **Risikostufe:** Hoch / Mittel / Niedrig
+3. Klicke auf einen Benutzer für Details:
+   - **Erkannte Risiken:** Welche Anomalien wurden erkannt
+   - **Anmeldeverlauf:** Verdächtige Anmeldungen
+4. Ergreife Maßnahmen:
+   - **Benutzer sperren:** Klicke auf **Benutzer sperren**
+   - **Kennwortreset erzwingen:** Klicke auf **Benutzerkennwort zurücksetzen**
+
+#### Risiko als False Positive markieren
+
+1. Navigiere zu **Schutz → Identity Protection → Riskante Benutzer**
+2. Wähle den betreffenden Benutzer aus (Checkbox aktivieren)
+3. Klicke in der oberen Leiste auf **Risiko verwerfen**
+4. Bestätige die Aktion — das Benutzerrisiko wird auf **Keine** zurückgesetzt
+
+#### Benutzerrisikorichtlinie direkt konfigurieren (Legacy)
+
+1. Navigiere zu **Schutz → Identity Protection → Benutzerrisikorichtlinie**
+2. Konfiguriere:
+   - **Zuweisungen:** Alle Benutzer oder spezifische Gruppen
+   - **Benutzerrisiko:** Schwellenwert (Hoch / Mittel und Hoch)
+   - **Steuerelemente:** Zugriff blockieren oder Kennwortänderung erzwingen
+3. Setze **Richtlinie erzwingen** auf **Ein** und klicke auf **Speichern**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Sicherheit → Identity Protection**
+
+---
+
 ## Risikobasierte Richtlinien
 
 ### Konfiguration über Conditional Access (Empfohlen)

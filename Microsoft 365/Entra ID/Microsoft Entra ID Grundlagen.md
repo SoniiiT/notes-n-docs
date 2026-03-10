@@ -259,6 +259,70 @@ https://graph.microsoft.com/v1.0/
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Entra ID über das Admin Center verwalten
+
+#### Entra Admin Center öffnen und Überblick erhalten
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Die Startseite zeigt einen **Tenant-Überblick** mit:
+   - Aktive Benutzer, Gruppen, Anwendungen
+   - Sicherheitswarnungen und Empfehlungen
+   - Lizenzstatus
+3. Navigiere zu **Verwaltung → Übersicht** für detaillierte Tenant-Informationen:
+   - **Tenant-ID**, primäre Domain, Verzeichnis-Typ
+   - Abonnement- und Lizenzübersicht
+
+#### Benutzer verwalten
+
+1. Navigiere zu **Identität → Benutzer → Alle Benutzer**
+2. Nutze **Filter** und **Suche** um gezielt Benutzer zu finden
+3. Klicke auf einen Benutzer für die Detailansicht:
+   - **Eigenschaften:** UPN, Anzeigename, Abteilung, Titel
+   - **Zugewiesene Rollen:** Administrative Rollen
+   - **Gruppen:** Gruppenmitgliedschaften
+   - **Lizenzen:** Zugewiesene Lizenzen
+   - **Anmeldungen:** Anmeldeaktivität
+4. Klicke auf **Bearbeiten** um Eigenschaften zu ändern
+
+#### Gruppen verwalten
+
+1. Navigiere zu **Identität → Gruppen → Alle Gruppen**
+2. Nutze **+ Neue Gruppe** um Gruppen anzulegen
+3. Klicke auf eine Gruppe für die Detailansicht:
+   - **Mitglieder:** Mitglieder hinzufügen/entfernen
+   - **Besitzer:** Gruppenbesitzer festlegen
+   - **Dynamische Abfrageregel:** Für dynamische Gruppen anpassen
+
+#### Anwendungen verwalten
+
+1. Navigiere zu **Anwendungen → Unternehmensanwendungen** für zugewiesene/Gallery-Apps:
+   - Benutzer und Gruppen zuweisen
+   - SSO konfigurieren (SAML/OIDC)
+   - Provisioning konfigurieren
+2. Navigiere zu **Anwendungen → App-Registrierungen** für eigene Anwendungen:
+   - Neue App registrieren
+   - Zertifikate und Geheimnisse verwalten
+   - API-Berechtigungen konfigurieren
+
+#### Audit-Logs und Sign-in-Logs ansehen
+
+1. Navigiere zu **Identität → Überwachung und Integrität → Überwachungsprotokolle**
+2. Filtere nach:
+   - **Datum/Uhrzeit:** Zeitraum einschränken
+   - **Dienst:** z. B. Benutzeradministration, Anwendungsverwaltung
+   - **Aktivität:** z. B. „Benutzer hinzufügen", „Richtlinie aktualisieren"
+   - **Initiiert von:** Wer hat die Aktion ausgeführt
+3. Navigiere zu **Identität → Überwachung und Integrität → Anmeldeprotokolle** für Anmeldeaktivitäten:
+   - Filtere nach Benutzer, Anwendung, Status (Erfolg/Fehler)
+   - Klicke auf eine Anmeldung für Details (CA-Richtlinien, MFA-Methode, IP-Adresse)
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID** — alle Funktionen sind auch dort verfügbar, jedoch ist das Entra Admin Center die empfohlene und modernere Oberfläche
+
+---
+
 ## Verwaltung über PowerShell und CLI
 
 ```powershell

@@ -116,6 +116,42 @@ Teams Phone Mobile wird von **Microsoft-zertifizierten Mobilfunk-Operatoren** be
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Mobilfunk-Carrier (Operator) autorisieren
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Sprachanruf → Operators**
+3. Suche deinen Mobilfunk-Carrier in der Liste der verfügbaren Operatoren (z.B. Deutsche Telekom, Vodafone, o2)
+4. Klicke auf den Carrier → **Operator hinzufügen**
+5. Stimme den Nutzungsbedingungen zu und wähle die gewünschten Länder und Nummerntypen
+6. Der Carrier erscheint unter **Meine Operatoren** und ist nun für die Nummernzuweisung verfügbar
+
+### Mobilfunknummer einem Benutzer zuweisen
+
+1. Navigiere zu **Benutzer → Benutzer verwalten**
+2. Suche und klicke auf den gewünschten Benutzer
+3. Wechsle zum Tab **Konto**
+4. Klicke unter **Allgemeine Informationen → Telefonnummern** auf **Bearbeiten**
+5. Wähle die vom Carrier bereitgestellte Mobilfunknummer aus dem Dropdown
+6. Klicke auf **Übernehmen**
+
+### Teams Phone Mobile-Lizenz zuweisen
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Benutzer → Aktive Benutzer**
+3. Klicke auf den gewünschten Benutzer → **Lizenzen und Apps**
+4. Aktiviere das Kontrollkästchen für **Teams Phone Mobile** (Add-on)
+5. Klicke auf **Änderungen speichern**
+
+> [!NOTE]
+> Die eigentliche **SIM-Karte und Nummernbestellung** erfolgt direkt im **Carrier-Portal** des jeweiligen Mobilfunkanbieters — nicht im Teams Admin Center. Microsoft Teams Admin Center verwaltet nur die Autorisierung des Carriers und die Zuweisung der vom Carrier bereits bereitgestellten Nummern.
+
+> [!TIP]
+> Anrufqualität und Verbindungsstatus von Teams Phone Mobile-Benutzern kannst du unter **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Anrufqualität** überwachen. Hier siehst du Anrufverlauf, Paketverlustwerte und den Netzwerktyp je Anruf.
+
+---
+
 ## Einrichtung und Konfiguration
 
 ### Einrichtungsschritte (Admin)

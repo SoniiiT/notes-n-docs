@@ -51,6 +51,58 @@ graph TD
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Global Secure Access konfigurieren
+
+#### Global Secure Access aktivieren
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Global Secure Access → Erste Schritte**
+3. Klicke auf **Aktivieren** um Global Secure Access für den Tenant zu aktivieren
+4. Bestätige die Aktivierung — dies kann einige Minuten dauern
+
+#### Private Network Connector installieren
+
+1. Navigiere zu **Global Secure Access → Verbinden → Connectors**
+2. Klicke auf **Neuen Connector herunterladen**
+3. Führe den Installer auf einem Windows Server im internen Netzwerk aus (mindestens Windows Server 2019)
+4. Authentifiziere dich während der Installation mit einem Entra ID-Administratorkonto
+5. Nach erfolgreicher Installation erscheint der Connector als **Aktiv** in der Connector-Liste
+6. Optional: Weise den Connector einer **Connector-Gruppe** zu
+
+#### Quick Access konfigurieren (Private Access)
+
+1. Navigiere zu **Global Secure Access → Anwendungen → Quick Access**
+2. Klicke auf **Quick Access konfigurieren**
+3. Füge private Ressourcen hinzu:
+   - **FQDNs:** z. B. `intranet.firma.local`
+   - **IP-Adressen/Bereiche:** z. B. `192.168.10.0/24`
+   - **Ports:** z. B. `443`, `3389`
+4. Weise eine **Connector-Gruppe** zu
+5. Klicke auf **Speichern**
+
+#### Internet Access konfigurieren
+
+1. Navigiere zu **Global Secure Access → Internetdatenverkehrprofile**
+2. Klicke auf **Profil erstellen** oder aktiviere das **Standardprofil**
+3. Konfiguriere Filterrichtlinien (Web Content Filtering):
+   - Navigiere zu **Global Secure Access → Schutz → Webinhaltsfilterung**
+   - Erstelle Filterrichtlinien für Kategorien oder spezifische URLs
+4. Verknüpfe das Profil mit einer CA-Richtlinie über **Global Secure Access Signale**
+
+#### GSA-Client herunterladen und verteilen
+
+1. Navigiere zu **Global Secure Access → Verbinden → Client-Download**
+2. Lade den GSA-Client für die gewünschte Plattform herunter (Windows, macOS, Android, iOS)
+3. Verteile den Client über **Intune** oder andere MDM-Lösungen an Endgeräte
+4. Nach Installation verbindet sich der Client automatisch mit den konfigurierten Profilen
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Global Secure Access**
+
+---
+
 ## Microsoft Entra Private Access (ZTNA)
 
 ### Was ist ZTNA?

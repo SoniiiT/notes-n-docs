@@ -80,6 +80,50 @@ graph TD
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Cloud Sync konfigurieren
+
+#### Provisioning-Agent herunterladen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Hybrid management → Microsoft Entra Connect → Cloud Sync**
+3. Klicke auf den Tab **Agents**
+4. Klicke auf **Neuen Agent herunterladen**
+5. Führe den heruntergeladenen Installer (`AADConnectProvisioningAgentSetup.exe`) auf dem On-Premises-Server aus
+6. Authentifiziere dich während der Installation mit einem **Globalen Administrator**-Konto
+
+#### Cloud Sync konfigurieren (nach Agent-Installation)
+
+1. Navigiere zurück zu **Identität → Hybrid management → Microsoft Entra Connect → Cloud Sync**
+2. Klicke auf **+ Neue Konfiguration**
+3. Wähle den gewünschten **AD-Forest** aus der Dropdown-Liste
+4. Klicke auf **Erstellen**
+5. Konfiguriere:
+   - **Bereich:** Alle Benutzer oder spezifische OUs/Gruppen
+   - **Attribut-Mapping:** Klicke auf **Attributzuordnungen** → Standardzuordnungen anpassen oder ergänzen
+6. Klicke auf **Speichern**
+
+#### Attribut-Mapping im Portal anpassen
+
+1. Öffne die Cloud Sync-Konfiguration
+2. Klicke auf **Attributzuordnungen**
+3. Klicke auf **+ Zuordnung hinzufügen** um neue Mappings zu erstellen
+4. Konfiguriere Quell- und Ziel-Attribut sowie den Transformationstyp
+5. Klicke auf **Speichern**
+
+#### Provisioning on Demand testen
+
+1. Navigiere zu **Identität → Hybrid management → Microsoft Entra Connect → Cloud Sync**
+2. Klicke auf **On-Demand-Bereitstellung**
+3. Gib den **Distinguished Name (DN)** eines Testobjekts (Benutzer oder Gruppe) ein
+4. Klicke auf **Bereitstellen** und überprüfe das Ergebnis
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Microsoft Entra Connect → Cloud Sync**
+
+---
+
 ## Provisioning-Agent installieren
 
 ### Schritt 1: Agent herunterladen

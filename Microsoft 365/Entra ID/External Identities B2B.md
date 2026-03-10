@@ -51,6 +51,60 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### External Identities (B2B) konfigurieren
+
+#### Gastbenutzer einladen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Benutzer → Alle Benutzer**
+3. Klicke auf **+ Neuer Benutzer → Externen Benutzer einladen**
+4. Konfiguriere:
+   - **E-Mail-Adresse:** Externe E-Mail-Adresse des Gastbenutzers
+   - **Anzeigename:** Name des Gastes
+   - **Nachricht:** Optionale persönliche Einladungsnachricht
+   - **Gruppen:** Direkte Gruppenzuweisung möglich
+5. Klicke auf **Einladen** — der Gast erhält eine E-Mail mit dem Einladungslink
+
+#### Einstellungen für externe Zusammenarbeit konfigurieren
+
+1. Navigiere zu **Externe Identitäten → Einstellungen für externe Zusammenarbeit**
+2. Konfiguriere:
+   - **Gastbenutzer-Zugriffsberechtigungen:** Eingeschränkter Zugriff / Gleicher Zugriff
+   - **Einladungseinstellungen:** Wer darf Gäste einladen (Admins, Mitglieder, alle)
+   - **Externe Zusammenarbeit:** Einladungen auf bestimmte Domains erlauben/blockieren
+3. Klicke auf **Speichern**
+
+#### Mandantenübergreifende Zugriffseinstellungen (Cross-Tenant Access)
+
+1. Navigiere zu **Externe Identitäten → Mandantenübergreifende Zugriffseinstellungen**
+2. Wähle den Tab **Organisationseinstellungen**
+3. Klicke auf **+ Organisation hinzufügen** und gebe die Tenant-ID oder Domain ein
+4. Konfiguriere für den jeweiligen Tenant:
+   - **Eingehend (Inbound):** Welche Benutzer des Fremd-Tenants dürfen zugreifen
+   - **Ausgehend (Outbound):** Welche eigenen Benutzer dürfen auf Fremd-Tenant zugreifen
+   - **Trust-Einstellungen:** MFA und Gerätezustand des Fremd-Tenants vertrauen
+5. Klicke auf **Speichern**
+
+#### Access Package erstellen (Entitlement Management)
+
+1. Navigiere zu **Identitätsverwaltung → Berechtigungsverwaltung → Access Packages**
+2. Klicke auf **+ Neues Access Package**
+3. Konfiguriere:
+   - **Name:** z. B. `Externe Partner – Projektressourcen`
+   - **Katalog:** Vorhandenen Katalog auswählen oder neuen erstellen
+4. Füge unter **Ressourcenrollen** Gruppen, Apps und SharePoint-Websites hinzu
+5. Definiere unter **Anforderungen** die Anfragerichtlinie:
+   - Wähle **Benutzer, die sich nicht in Ihrem Verzeichnis befinden** für externe Benutzer
+   - Konfiguriere Genehmigungsworkflow und Ablaufzeit
+6. Klicke auf **Erstellen**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Externe Identitäten** bzw. **Identity Governance → Entitlement Management**
+
+---
+
 ## B2B-Einladungsprozess (Redemption Flow)
 
 ```mermaid

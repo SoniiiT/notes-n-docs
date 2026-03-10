@@ -121,6 +121,46 @@ Der **Microsoft Surface Hub** (Surface Hub 2S, Surface Hub 3) ist ein eigenstän
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Teams Rooms-Geräte verwalten
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Geräte → Teams Rooms unter Windows** (oder **Teams Rooms unter Android**)
+3. Hier siehst du alle registrierten MTR-Geräte mit Status (Online/Offline), App-Version und letzter Aktivität
+4. Klicke auf einen Raum um Details einzusehen:
+   - **Übersicht:** Gerätezustand, Hardware-Status, installierte App-Version
+   - **Aktivität:** Meeting-Verlauf und Nutzungsdaten der letzten 30 Tage
+   - **Diagnose:** Verbindungs- und Audio/Video-Tests direkt aus dem Admin Center starten
+5. Aktionen pro Gerät (oben rechts oder per Kontextmenü):
+   - **Neustart:** Remote-Neustart des MTR-Systems auslösen
+   - **Einstellungen:** Konfiguration pushen (Theme, Anmeldeeinstellungen)
+   - **Tags:** Raum mit Tags versehen für bessere Filterung und Gruppenoperationen
+   - **Diagnose:** Automatische Netzwerk- und Medientests starten
+
+### Mehrere Geräte gleichzeitig verwalten
+
+1. Navigiere zu **Geräte → Teams Rooms unter Windows** (oder Android)
+2. Aktiviere die Kontrollkästchen mehrerer Räume
+3. Wähle eine Bulk-Aktion: **Neustart**, **Tags hinzufügen** oder **Update** anstoßen
+
+### Raum-Lizenz zuweisen
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Benutzer → Aktive Benutzer**
+3. Suche das Raumkonto (z.B. `konferenzraum-a@contoso.com`)
+4. Klicke auf das Raumkonto → **Lizenzen und Apps**
+5. Wähle **Teams Rooms Basic** (kostenlos, max. 25 Räume pro Tenant) oder **Teams Rooms Pro**
+6. Klicke auf **Änderungen speichern**
+
+> [!TIP]
+> Für erweiterte Raumverwaltung mit automatischen Updates, Health-Score, Incident-Erkennung und Update-Ringen steht das **Teams Rooms Pro Management Portal** unter [portal.rooms.microsoft.com](https://portal.rooms.microsoft.com) zur Verfügung — erfordert Teams Rooms Pro-Lizenz pro Raum.
+
+> [!NOTE]
+> Das **Raumkonto** (Exchange Online-Ressourcenpostfach) muss vorab per PowerShell oder im **Exchange Admin Center** erstellt und konfiguriert werden (`Set-CalendarProcessing -AutomateProcessing AutoAccept`). Das Teams Admin Center erkennt das Gerät erst nach der ersten erfolgreichen Anmeldung des MTR-Systems mit dem Raumkonto.
+
+---
+
 ## Teams Rooms Lizenzierung
 
 Teams Rooms benötigt ein **Raumkonto** und eine **Lizenz**:

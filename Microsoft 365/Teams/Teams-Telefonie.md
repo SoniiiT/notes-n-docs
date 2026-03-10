@@ -68,6 +68,63 @@ graph TD
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Rufnummern verwalten
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Sprachanruf → Rufnummern**
+3. Neue Nummern bestellen (Calling Plan): Klicke auf **+ Hinzufügen**:
+   - **Land/Region**, **Nummerntyp** (Benutzer oder Dienst/Ressourcenkonto) und **Ort** auswählen
+   - Gewünschte Anzahl eingeben und auf **Weiter** klicken
+   - Bestätigen und **Bestellung aufgeben**
+4. Bestehende Nummer einem Benutzer zuweisen: Nummer in der Liste auswählen → **Bearbeiten** → Benutzer oder Dienst zuordnen → **Speichern**
+
+### Auto Attendant (Automatische Telefonzentrale) einrichten
+
+1. Navigiere zu **Sprachanruf → Automatische Telefonzentralen**
+2. Klicke auf **+ Hinzufügen**
+3. Konfiguriere Schritt für Schritt:
+   - **Allgemeines:** Name, Sprache, Operator-Weiterleitung und Zeitzone festlegen
+   - **Anruffluss:** Begrüßungsnachricht (Text-to-Speech oder Audiodatei) und Menüoptionen definieren (DTMF-Tasten 0–9 mit Weiterleitungszielen: Benutzer, Warteschlange, andere Auto Attendants)
+   - **Anruffluss außerhalb der Geschäftszeiten:** Separates Menü und Weiterleitung konfigurieren
+   - **Feiertagsanruffluss:** Feiertage hinzufügen und Weiterleitungsregeln festlegen
+   - **Ressourcenkonto:** Ein Ressourcenkonto mit zugewiesener Nummer verknüpfen
+4. Klicke auf **Senden**
+
+### Call Queue (Anrufwarteschlange) einrichten
+
+1. Navigiere zu **Sprachanruf → Anrufwarteschlangen**
+2. Klicke auf **+ Hinzufügen**
+3. Konfiguriere:
+   - **Allgemeines:** Name der Warteschlange und Ressourcenkonto verknüpfen
+   - **Agenten:** Benutzer oder eine Gruppe/Team als Agenten hinzufügen
+   - **Routing-Methode:** Attendant (alle gleichzeitig) / Serial / Round Robin / Longest Idle
+   - **Warteschlangen-Einstellungen:** Wartemusik (Standard oder eigene Audiodatei), maximale Wartedauer, Warteschlangenkapazität
+   - **Überlauf-Aktion:** Was passiert bei Überlauf (Weiterleitung, Voicemail, Trennung)
+   - **Timeout-Aktion:** Was passiert nach Ablauf der maximalen Wartezeit
+4. Klicke auf **Senden**
+
+### Operator Connect einrichten
+
+1. Navigiere zu **Sprachanruf → Operators**
+2. Wähle einen zertifizierten Carrier aus der Liste (z.B. Telekom, Vodafone, o2, Colt)
+3. Klicke auf **Operator hinzufügen** und stimme den Nutzungsbedingungen zu
+4. Der Carrier-Account wird verknüpft — Nummernbestellung erfolgt im Carrier-Portal
+5. Bereitgestellte Nummern erscheinen unter **Sprachanruf → Rufnummern** und können Benutzern zugewiesen werden
+
+### Notfall-Standorte konfigurieren
+
+1. Navigiere zu **Sprachanruf → Notfall-Standorte**
+2. Klicke auf **+ Standort hinzufügen**
+3. Gib die vollständige Adresse ein (Microsoft validiert die Adresse für Emergency Calling)
+4. Verknüpfe anschließend Rufnummern mit dem Notfall-Standort unter **Sprachanruf → Rufnummern**
+
+> [!TIP]
+> Für **Direct Routing** ist die SBC-Registrierung und Konfiguration der Voice Routes ausschließlich per PowerShell möglich — das Teams Admin Center bietet hierfür keine vollständige UI. Die SBC-Übersicht kann jedoch unter **Sprachanruf → Direktes Routing** eingesehen werden.
+
+---
+
 ## Calling Plans
 
 Microsoft übernimmt die Rolle des Telefonanbieters. Alle Nummern und Minutenpakete werden direkt von Microsoft bezogen.

@@ -150,6 +150,59 @@ sequenceDiagram
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Entra Verified ID einrichten (UI)
+
+#### Verified ID öffnen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Überprüfung → Übersicht** (Verified ID)
+3. Das Dashboard zeigt den Einrichtungsstatus und ausgestellte Anmeldeinformationstypen
+
+#### Organisation einrichten
+
+1. Navigiere zu **Überprüfung → Erste Schritte**
+2. Klicke auf **Organisation einrichten**
+3. Schritt 1 – **Azure Key Vault verknüpfen:**
+   - Wähle das Azure-Abonnement und den vorhandenen Key Vault aus
+   - Falls kein Key Vault vorhanden: Klicke auf **Neu erstellen**
+   - Klicke auf **Weiter**
+4. Schritt 2 – **Organisation registrieren:**
+   - Gib den **Organisationsnamen** ein
+   - Gib die **vertrauenswürdige Domain** ein (z. B. `firma.de`)
+   - Lade die **did-configuration.json** herunter und hoste sie unter `https://firma.de/.well-known/did-configuration.json`
+   - Klicke auf **Domäne bestätigen**
+5. Klicke auf **Speichern**
+
+#### Anmeldeinformationstyp erstellen
+
+1. Navigiere zu **Überprüfung → Anmeldeinformationstypen**
+2. Klicke auf **+ Anmeldeinformationstyp hinzufügen**
+3. Konfiguriere:
+   - **Name:** z. B. `MitarbeiterAusweis`
+   - **Anzeigename:** Für Benutzer sichtbarer Name
+   - **Beschreibung:** Zweck des Anmeldeinformationstyps
+4. Füge das **JSON-Schema** für die Ansprüche (Claims) ein:
+   - Definiere Attribute wie `vorname`, `nachname`, `abteilung`, `gültigBis`
+5. Klicke auf **Erstellen**
+
+#### Ausstellung konfigurieren
+
+1. Navigiere zu **Überprüfung → Anmeldeinformationstypen → [Typ auswählen]**
+2. Klicke auf **Ausstellen konfigurieren**
+3. Konfiguriere:
+   - **Ausstellungs-URL:** Endpunkt der eigenen Ausstellungs-App
+   - **Pin erforderlich:** Optional für erhöhte Sicherheit
+   - **Authentifizierung:** ID Token Hint oder Self-Attested
+4. Klicke auf **Speichern**
+5. Teste die Ausstellung mit der **Microsoft Authenticator**-App und dem angezeigten QR-Code
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Verified ID** — der Einrichtungsprozess ist identisch, jedoch ist das Entra Admin Center unter **Überprüfung** die primäre Anlaufstelle
+
+---
+
 ## Entra Verified ID einrichten
 
 ### Voraussetzungen

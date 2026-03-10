@@ -48,6 +48,50 @@ graph TD
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Governance-Grundeinstellungen konfigurieren
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Teams → Teams-Einstellungen** für org-weite Konfiguration:
+   - **E-Mail-Integration:** Kanal-E-Mail-Adressen aktivieren oder deaktivieren
+   - **Dateien:** Drittanbieter-Speicher erlauben (z.B. Dropbox, Box)
+   - **Geräte:** Surface Hub und Ressourcen-Konten-E-Mail-Adresse konfigurieren
+3. Navigiere zu **Teams → Teams-Richtlinien** → **+ Hinzufügen** um festzulegen, ob Benutzer private oder geteilte Kanäle erstellen dürfen
+4. Klicke auf **Speichern**
+
+### Meeting Policies konfigurieren
+
+1. Navigiere zu **Besprechungen → Besprechungsrichtlinien**
+2. Klicke auf **+ Hinzufügen** um eine neue Richtlinie zu erstellen (oder bestehende bearbeiten)
+3. Konfiguriere:
+   - **Audio & Video:** IP-Audio, IP-Video und Netzwerkmodus
+   - **Aufzeichnung und Transkription:** Cloud-Aufzeichnung, automatischer Start, Ablaufzeit in Tagen, Transkription
+   - **Meeting Join und Lobby:** Anonyme Teilnahme, Lobby-Bypass-Einstellung
+   - **Inhaltsfreigabe:** Bildschirmfreigabe-Modus, Whiteboard, PowerPoint Live
+4. Klicke auf **Speichern**
+5. Policy zuweisen: **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Richtlinien** → **Bearbeiten**
+
+### Messaging Policies konfigurieren
+
+1. Navigiere zu **Nachrichten → Nachrichtenrichtlinien**
+2. Klicke auf **+ Hinzufügen**
+3. Konfiguriere:
+   - **Giphy:** Inhaltsbewertung (Streng / Moderat / Keine Einschränkung)
+   - **Nachrichten bearbeiten/löschen:** Aktivieren oder deaktivieren
+   - **Sprachnachrichten:** Senden und Empfangen erlauben oder verbieten
+   - **Priority-Benachrichtigungen:** Dringende Nachrichten aktivieren
+4. Klicke auf **Speichern**
+5. Policy zuweisen: **Benutzer → Benutzer verwalten** → Benutzer auswählen → **Richtlinien** → **Bearbeiten**
+
+> [!NOTE]
+> Die **Einschränkung der Teams-Erstellung** auf eine Sicherheitsgruppe ist im Teams Admin Center nicht möglich — sie wird im **Microsoft Entra Admin Center → Gruppen → Allgemein** (über `GroupCreationAllowedGroupId`) per PowerShell konfiguriert. Die **Naming Policy** wird ebenfalls im Entra Admin Center unter **Gruppen → Benennungsrichtlinie** festgelegt.
+
+> [!TIP]
+> Für großflächige Policy-Rollouts nutze **Gruppenrichtlinienzuweisungen**: **Benutzer → Gruppenrichtlinienzuweisung** — Policies direkt einer Entra-ID-Sicherheitsgruppe zuweisen statt einzelnen Benutzern. Dies spart Zeit und reduziert Verwaltungsaufwand erheblich.
+
+---
+
 ## Teams-Lifecycle-Management
 
 ### Phase 1 — Erstellung

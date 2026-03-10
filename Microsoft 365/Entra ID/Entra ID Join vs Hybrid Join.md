@@ -72,6 +72,51 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Geräte und Join-Typen konfigurieren
+
+#### Gerätestatus einsehen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Geräte → Alle Geräte**
+3. Prüfe in der Tabelle die Spalten:
+   - **Join-Typ:** Entra Registered / Entra Joined / Hybrid Entra Joined
+   - **Konform:** Intune-Compliance-Status
+   - **Aktivität:** Letzte Anmeldung
+4. Klicke auf ein Gerät für Details (BitLocker-Schlüssel, Eigenschaften, Owner)
+
+#### Entra ID Join manuell initiieren (Windows-Einstellungen)
+
+1. Öffne auf dem Windows-Gerät **Einstellungen → Konten → Auf Geschäfts- oder Schulkonto zugreifen**
+2. Klicke auf **Verbinden**
+3. Klicke auf **Dieses Gerät mit Azure Active Directory verknüpfen**
+4. Melde dich mit den Unternehmens-Anmeldeinformationen an
+5. Bestätige die Tenant-Informationen und klicke auf **Verknüpfen**
+
+#### Hybrid Join konfigurieren (via Entra Connect)
+
+1. Öffne den **Microsoft Entra Connect**-Assistenten auf dem Connect-Server
+2. Wähle **Gerätoptionen konfigurieren**
+3. Wähle **Hybrid Azure AD-Einbindung konfigurieren**
+4. Wähle die AD-Forests und das Betriebssystem der Geräte (Windows aktuell / Windows kompatibel)
+5. Schließe den Assistenten ab — die Synchronisierung beginnt beim nächsten Sync-Zyklus
+
+#### Geräteeinstellungen konfigurieren
+
+1. Navigiere zu **Identität → Geräte → Geräteeinstellungen**
+2. Konfiguriere:
+   - **Benutzer können Geräte in Microsoft Entra ID einbinden:** Alle / Ausgewählte / Keine
+   - **Benutzer können Azure AD verbundene Geräte verwalten:** Ja / Nein
+   - **Maximale Anzahl von Geräten pro Benutzer:** Limit setzen
+   - **Enterprise State Roaming:** Aktivieren/Deaktivieren
+3. Klicke auf **Speichern**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Geräte → Alle Geräte** bzw. **Geräteeinstellungen**
+
+---
+
 ## Entra Registered (BYOD)
 
 Für persönliche Geräte – minimale Unternehmenskontrolle:

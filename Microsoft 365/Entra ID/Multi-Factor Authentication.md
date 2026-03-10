@@ -93,6 +93,67 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Multi-Factor Authentication konfigurieren
+
+#### Authentifizierungsmethoden konfigurieren
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Schutz → Authentifizierungsmethoden → Richtlinien**
+3. Die Übersicht zeigt alle verfügbaren Authentifizierungsmethoden
+4. Klicke auf eine Methode (z. B. **Microsoft Authenticator**) um sie zu konfigurieren:
+   - **Aktivieren:** Ja / Nein
+   - **Zielgruppe:** Alle Benutzer oder spezifische Gruppen
+5. Klicke auf **Speichern**
+
+#### Microsoft Authenticator aktivieren
+
+1. Navigiere zu **Schutz → Authentifizierungsmethoden → Richtlinien → Microsoft Authenticator**
+2. Setze **Aktivieren** auf **Ja**
+3. Konfiguriere:
+   - **Authentifizierungsmodus:** Alle / Passwortlos / Push (MFA)
+   - **Zielgruppe:** Alle Benutzer oder ausgewählte Gruppen
+   - **Zusätzliche Einstellungen:** Number Matching, App-Kontext anzeigen (empfohlen: beide aktiviert)
+4. Klicke auf **Speichern**
+
+#### FIDO2-Sicherheitsschlüssel aktivieren
+
+1. Navigiere zu **Schutz → Authentifizierungsmethoden → Richtlinien → FIDO2-Sicherheitsschlüssel**
+2. Setze **Aktivieren** auf **Ja**
+3. Konfiguriere:
+   - **Selbstregistrierung erlauben:** Ja
+   - **AAGUIDs einschränken:** Optional für spezifische Key-Hersteller
+4. Klicke auf **Speichern**
+
+#### Self-Service-Kennwortrücksetzung (SSPR) konfigurieren
+
+1. Navigiere zu **Schutz → Kennwortzurücksetzung → Eigenschaften**
+2. Aktiviere SSPR für:
+   - **Keine** / **Ausgewählt** (spezifische Gruppe) / **Alle**
+3. Klicke auf **Speichern**
+4. Konfiguriere unter **Authentifizierungsmethoden:** Anzahl der benötigten Methoden und verfügbare Methoden
+5. Konfiguriere unter **Registrierung:** Registrierung bei Anmeldung erzwingen
+
+#### MFA-Methoden für Benutzer zurücksetzen
+
+1. Navigiere zu **Identität → Benutzer → Alle Benutzer → [Benutzer auswählen]**
+2. Klicke auf **Authentifizierungsmethoden** im linken Menü
+3. Vorhandene Methoden entfernen: Klicke auf die drei Punkte (**…**) neben der Methode → **Löschen**
+4. Neue Methode hinzufügen: Klicke auf **+ Authentifizierungsmethode hinzufügen** und wähle den Typ
+
+#### Security Defaults aktivieren/deaktivieren
+
+1. Navigiere zu **Identität → Übersicht**
+2. Klicke auf **Sicherheitsstandards verwalten** im rechten Bereich
+3. Setze **Sicherheitsstandards aktivieren** auf **Ja** oder **Nein**
+4. Klicke auf **Speichern**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Sicherheit → Authentifizierungsmethoden**
+
+---
+
 ## FIDO2-Sicherheitsschlüssel
 
 FIDO2-Keys (z. B. YubiKey, Feitian) sind die sicherste MFA-Methode:

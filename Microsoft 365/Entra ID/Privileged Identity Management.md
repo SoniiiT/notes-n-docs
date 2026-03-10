@@ -60,6 +60,79 @@ graph TD
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Privileged Identity Management konfigurieren
+
+#### PIM öffnen
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identitätsverwaltung → Privileged Identity Management**
+3. Das PIM-Dashboard zeigt:
+   - **Meine Rollen:** Eigene berechtigte und aktive Zuweisungen
+   - **Aufgaben:** Ausstehende Genehmigungsanfragen
+   - **Entra ID-Rollen / Azure-Ressourcen-Rollen:** Verwaltungsbereich
+
+#### Rolle als Eligible zuweisen
+
+1. Navigiere zu **Identitätsverwaltung → Privileged Identity Management → Entra ID-Rollen → Zuweisungen**
+2. Klicke auf **+ Zuweisungen hinzufügen**
+3. Konfiguriere:
+   - **Rolle auswählen:** z. B. `Globaler Administrator`, `User Administrator`
+   - **Bereich:** Verzeichnis
+4. Klicke auf **Weiter**
+5. Wähle unter **Mitglieder** den Benutzer oder die Gruppe aus
+6. Wähle **Berechtigt** (Eligible) als Zuweisungstyp
+7. Setze optional eine **Ablaufzeit** für die Zuweisung
+8. Klicke auf **Zuweisen**
+
+#### Rolleneinstellungen konfigurieren
+
+1. Navigiere zu **Identitätsverwaltung → PIM → Entra ID-Rollen → Einstellungen**
+2. Wähle die zu konfigurierende Rolle (z. B. `Globaler Administrator`)
+3. Klicke auf **Bearbeiten**
+4. Konfiguriere unter **Aktivierung:**
+   - **Maximale Aktivierungsdauer:** z. B. 4 Stunden
+   - **Aktivierungsgrund erforderlich:** Ja/Nein
+   - **Aktivierungsticket erforderlich:** Ja/Nein
+   - **MFA bei Aktivierung erforderlich:** Ja (empfohlen)
+   - **Genehmigung erforderlich:** Ja → Genehmiger auswählen
+5. Konfiguriere unter **Zuweisung:**
+   - **Permanente berechtigte Zuweisung erlauben:** Ja/Nein
+   - **Ablauf nach:** z. B. 365 Tagen
+6. Klicke auf **Aktualisieren**
+
+#### Rolle aktivieren (Benutzer-Sicht)
+
+1. Navigiere zu **Identitätsverwaltung → Privileged Identity Management → Meine Rollen**
+2. Klicke auf den Tab **Berechtigte Zuweisungen**
+3. Klicke bei der gewünschten Rolle auf **Aktivieren**
+4. Konfiguriere:
+   - **Dauer:** Aktivierungszeitraum (max. konfiguriertes Maximum)
+   - **Grund:** Geschäftlicher Grund für die Aktivierung
+5. Schließe ggf. die **MFA-Abfrage** ab
+6. Klicke auf **Aktivieren** — die Rolle ist nach kurzer Zeit aktiv
+
+#### Access Review erstellen
+
+1. Navigiere zu **Identitätsverwaltung → Access Reviews → + Neue Zugriffsüberprüfung**
+2. Konfiguriere:
+   - **Name:** z. B. `Vierteljährliche PIM-Rollenüberprüfung`
+   - **Überprüfungstyp:** Teams + Gruppen / Anwendungen / Azure AD-Rollen
+   - **Bereich:** Privilegierte Rollen auswählen
+   - **Prüfer:** Vorgesetzte / Ausgewählte Prüfer / Mitglieder selbst
+   - **Dauer:** z. B. 14 Tage
+   - **Wiederholung:** Vierteljährlich
+3. Konfiguriere unter **Einstellungen:**
+   - **Wenn Prüfer nicht reagieren:** Zugriff entfernen (empfohlen)
+   - **Ergebnisse automatisch anwenden:** Aktivieren
+4. Klicke auf **Erstellen**
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → Identity Governance → Privileged Identity Management**
+
+---
+
 ## PIM einrichten
 
 ### Schritt 1: PIM-Berechtigungen konfigurieren

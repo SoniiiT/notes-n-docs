@@ -59,6 +59,71 @@ EOP ist in **allen** Microsoft 365-Plänen enthalten und bietet:
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Anti-Spam-Richtlinie konfigurieren
+
+1. Öffne das **Microsoft Defender-Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **E-Mail und Zusammenarbeit → Richtlinien und Regeln → Bedrohungsrichtlinien**
+3. Klicke auf **Antispamrichtlinien**
+4. Bearbeite die **Standard-Richtlinie** oder klicke auf **+ Erstellen** für eine neue Richtlinie
+5. Konfiguriere die Einstellungen:
+   - **Name und Beschreibung:** Richtlinie benennen
+   - **Schwellenwert für Massen-E-Mails:** Wert zwischen 1 (streng) und 9 (locker) wählen (Empfehlung: 6)
+   - **Spam:** Aktion wählen (Junk-E-Mail-Ordner / Quarantäne)
+   - **Nachricht mit hoher Spam-Wahrscheinlichkeit:** Aktion wählen (empfohlen: Quarantäne)
+6. Unter **Zugelassene und blockierte Absender und Domänen** Ausnahmen konfigurieren
+7. Benutzer/Gruppen/Domänen zuweisen
+8. Klicke auf **Speichern**
+
+> [!TIP]
+> Alternativ erreichbar über: **Exchange Admin Center → Nachrichtenfluss → Regeln** für benutzerdefinierte Blockierungsregeln. Für erweiterte Schutzrichtlinien immer das Defender-Portal verwenden.
+
+### Anti-Phishing-Richtlinie konfigurieren
+
+1. Öffne [security.microsoft.com](https://security.microsoft.com) → **Bedrohungsrichtlinien → Antiphishingrichtlinien**
+2. Bearbeite die **Office365 AntiPhish Default** oder klicke **+ Erstellen**
+3. Konfiguriere den Imitationsschutz:
+   - **Zu schützende Benutzer:** VIP-Benutzer (CEO, CFO, etc.) hinzufügen
+   - **Zu schützende Domänen:** Unternehmensdomänen ergänzen
+   - **Postfachintelligenz:** aktivieren
+4. Aktionen bei Erkennung festlegen:
+   - **Wenn E-Mail als imitierter Benutzer erkannt wird:** Nachricht in Quarantäne verschieben
+   - **Wenn E-Mail als imitierte Domäne erkannt wird:** Nachricht in Quarantäne verschieben
+5. **Sicherheitstipps** aktivieren
+6. Klicke auf **Speichern**
+
+### Safe Links konfigurieren (MDO Plan 1/2)
+
+1. Öffne [security.microsoft.com](https://security.microsoft.com) → **Bedrohungsrichtlinien → Sichere Links**
+2. Klicke auf **+ Erstellen**
+3. Aktiviere:
+   - **URLs in E-Mails umschreiben und überprüfen:** ein
+   - **Echtzeit-URL-Überprüfung auf verdächtige Links:** ein
+   - **URLs in Microsoft Teams überprüfen:** ein
+   - **Benutzer darf nicht auf original-URL klicken:** aktivieren (empfohlen)
+4. Richtlinie Empfängern zuweisen und **Speichern**
+
+### Safe Attachments konfigurieren (MDO Plan 1/2)
+
+1. Öffne [security.microsoft.com](https://security.microsoft.com) → **Bedrohungsrichtlinien → Sichere Anhänge**
+2. Klicke auf **+ Erstellen**
+3. Wähle Aktion:
+   - **Dynamische Zustellung:** Empfohlen — E-Mail sofort, Anhang nach Analyse
+   - **Blockieren:** E-Mail wird zurückgehalten bis Analyse abgeschlossen
+4. Richtlinie Empfängern zuweisen und **Speichern**
+
+### Quarantäne verwalten
+
+1. Öffne [security.microsoft.com](https://security.microsoft.com) → **Überprüfen → Quarantäne**
+2. Nachrichten filtern nach Typ (Spam, Phishing, Malware)
+3. Nachricht auswählen → **Freigeben** oder **Löschen**
+
+> [!NOTE]
+> Anti-Spam- und Anti-Phishing-Richtlinien werden seit 2022 ausschließlich im **Microsoft Defender-Portal** (security.microsoft.com) verwaltet — nicht mehr im klassischen EAC. Das EAC leitet für diese Funktionen automatisch weiter.
+
+---
+
 ## Spam Confidence Level (SCL)
 
 Der SCL (Spam Confidence Level) ist ein Wert von -1 bis 9, der die Spam-Wahrscheinlichkeit einer E-Mail angibt.

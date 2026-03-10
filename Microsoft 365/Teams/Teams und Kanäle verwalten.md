@@ -55,6 +55,63 @@ Vordefinierte Vorlagen (Auswahl):
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Teams erstellen
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Teams → Teams verwalten**
+3. Klicke auf **+ Hinzufügen**
+4. Konfiguriere:
+   - **Name:** Teamname (unter Berücksichtigung der Naming Policy)
+   - **Beschreibung:** Kurze Beschreibung des Zwecks
+   - **Datenschutz:** Privat (nur eingeladene Mitglieder) oder Öffentlich (jeder im Tenant kann beitreten)
+   - **Vorlage:** Optional eine Team-Vorlage für vordefinierte Kanäle und Apps auswählen
+5. Klicke auf **Übernehmen**
+
+### Vorhandenes Team bearbeiten und Mitglieder verwalten
+
+1. Navigiere zu **Teams → Teams verwalten**
+2. Klicke auf den **Teamnamen** in der Liste
+3. Auf dem Tab **Mitglieder:**
+   - Mitglieder hinzufügen: **+ Mitglieder hinzufügen** → Benutzer suchen und Rolle wählen
+   - Rolle ändern: Mitglied in der Liste anklicken → Rolle auf **Besitzer** oder **Mitglied** setzen
+   - Mitglied entfernen: Mitglied markieren → **Entfernen**
+4. Auf dem Tab **Einstellungen:**
+   - **Team-Bild** hochladen
+   - **Mitgliederberechtigungen** konfigurieren (Kanäle erstellen, Apps hinzufügen, etc.)
+   - **Gastberechtigungen** für dieses spezifische Team anpassen
+5. Klicke auf **Aktualisieren**
+
+### Team archivieren oder löschen
+
+1. Navigiere zu **Teams → Teams verwalten**
+2. Aktiviere das Kontrollkästchen neben dem Team
+3. Klicke auf **Archivieren** (schreibgeschützt, alle Daten bleiben erhalten) oder **Löschen** (30 Tage Papierkorb)
+4. Gelöschte Teams wiederherstellen: **Filter → Gelöscht** → Team auswählen → **Wiederherstellen**
+
+### Gastzugang konfigurieren
+
+1. Navigiere zu **Org-weite Einstellungen → Gastzugang**
+2. Aktiviere **Gastzugang in Microsoft Teams zulassen**
+3. Konfiguriere Gast-Berechtigungen für Anrufe, Meetings und Messaging
+4. Klicke auf **Speichern**
+
+### Externen Zugriff (Federation) konfigurieren
+
+1. Navigiere zu **Org-weite Einstellungen → Externer Zugriff**
+2. Wähle die Einstellung für externe Domänen:
+   - **Alle externen Domänen zulassen** (Standard)
+   - **Nur bestimmte Domänen zulassen** → Domänen einzeln hinzufügen
+   - **Alle externen Domänen blockieren**
+3. Aktiviere bei Bedarf **Teams Connect (Shared Channels / B2B Direct Connect)**
+4. Klicke auf **Speichern**
+
+> [!TIP]
+> Verwaiste Teams (Orphaned Teams ohne Besitzer) findest du im Teams Admin Center unter **Teams → Teams verwalten** mit dem Filter **Keine Besitzer**. Als Admin kannst du dich selbst als Besitzer hinzufügen und das Team anschließend reaktivieren, archivieren oder an einen neuen Besitzer übergeben.
+
+---
+
 ## Mitglieder und Rollen
 
 Jedes Team verfügt über drei Rollen mit unterschiedlichen Berechtigungen:

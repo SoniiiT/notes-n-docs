@@ -181,6 +181,46 @@ graph TD
 
 ---
 
+## Via Teams Admin Center (UI)
+
+### Gastzugang konfigurieren
+
+1. Öffne das **Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Org-weite Einstellungen → Gastzugang**
+3. Aktiviere **Gastzugang in Microsoft Teams zulassen**
+4. Konfiguriere die Berechtigungen für Gäste:
+   - **Anruf:** Private Anrufe erlauben
+   - **Besprechung:** IP-Video und Bildschirmfreigabe-Modus
+   - **Messaging:** Nachrichten bearbeiten/löschen, Giphy, Memes, Sticker
+5. Klicke auf **Speichern**
+
+> [!WARNING]
+> Gastzugang muss an **drei Stellen** aktiviert werden: (1) Teams Admin Center → Org-weite Einstellungen → Gastzugang, (2) Microsoft 365 Admin Center → Einstellungen → Org-Einstellungen → Microsoft 365-Gruppen → Gruppen-Gastmitgliedschaft, (3) Microsoft Entra Admin Center → Externe Identitäten → Externe Zusammenarbeit → Einladungseinstellungen. Alle drei Schalter müssen aktiv sein.
+
+### Externen Zugriff (Federation) konfigurieren
+
+1. Navigiere zu **Org-weite Einstellungen → Externer Zugriff**
+2. Wähle die gewünschte Einstellung:
+   - **Alle externen Domänen zulassen** (Standard)
+   - **Nur bestimmte externe Domänen zulassen** → Domäne hinzufügen (Whitelist)
+   - **Alle externen Domänen blockieren** (kein externer Chat oder Anrufe)
+3. Für **Teams Connect (Shared Channels / B2B Direct Connect):** Aktiviere **Teams Connect konfigurieren**
+4. Klicke auf **Speichern**
+
+### Neue Teams-Client-Version steuern
+
+1. Navigiere zu **Teams → Teams-Updaterichtlinien**
+2. Wähle eine bestehende Richtlinie oder klicke auf **+ Hinzufügen**
+3. Konfiguriere:
+   - **App-Update-Kanal:** Vorschau / Aktuell / Standard
+   - **Neuen Teams-Client verwenden:** Aktivieren oder deaktivieren
+4. Klicke auf **Speichern** und weise die Policy unter **Benutzer → Benutzer verwalten** zu
+
+> [!TIP]
+> Unter **Org-weite Einstellungen → Teams-Einstellungen** findest du weitere grundlegende Konfigurationen wie E-Mail-Integration für Kanäle, erlaubte Dateispeicher-Dienste und die Org-Diagramm-Anzeige in Benutzerprofilen.
+
+---
+
 ## Gastbenutzer vs. External Access
 
 ### Gastbenutzer (Guest Access)

@@ -60,6 +60,67 @@ graph LR
 
 ---
 
+## Via Microsoft Entra Admin Center (UI)
+
+### Single Sign-On konfigurieren
+
+#### App-Registrierung erstellen (eigene Anwendungen)
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Anwendungen → App-Registrierungen**
+3. Klicke auf **+ Neue Registrierung**
+4. Konfiguriere:
+   - **Name:** Anwendungsname
+   - **Unterstützte Kontotypen:** Nur dieser Tenant / Mehrere Tenants / Persönliche Microsoft-Konten
+   - **Umleitungs-URI:** Plattform auswählen (Web/SPA/Mobile) und URI eingeben
+5. Klicke auf **Registrieren**
+
+#### Enterprise App für SAML SSO konfigurieren
+
+1. Navigiere zu **Anwendungen → Unternehmensanwendungen**
+2. Klicke auf **+ Neue Anwendung**
+3. Suche die Anwendung im **Azure AD-Anwendungsgalerie** oder wähle **Eigene Anwendung erstellen**
+4. Wähle **Nicht-Galerie-Anwendung integrieren** und klicke auf **Erstellen**
+5. Navigiere zur App und klicke auf **Einmaliges Anmelden → SAML**
+6. Konfiguriere unter **Grundlegende SAML-Konfiguration:**
+   - **Bezeichner (Entitäts-ID):** z. B. `https://app.firma.de/saml`
+   - **Antwort-URL (Assertion Consumer Service URL):** z. B. `https://app.firma.de/saml/acs`
+   - **Anmelde-URL:** z. B. `https://app.firma.de/login`
+7. Klicke auf **Speichern**
+8. Lade unter **SAML-Signaturzertifikat** das **Verbundmetadaten-XML** herunter und importiere es in die Zielanwendung
+
+#### OIDC App-Registrierung konfigurieren
+
+1. Navigiere zu **Anwendungen → App-Registrierungen → [App auswählen]**
+2. Klicke auf **Authentifizierung**
+3. Klicke auf **+ Plattform hinzufügen** und wähle die Plattform (Web, SPA, Mobile)
+4. Konfiguriere:
+   - **Umleitungs-URIs:** z. B. `https://app.firma.de/auth/callback`
+   - **Impliziter Grant:** Access Tokens / ID Tokens (nur für Legacy-Apps)
+5. Klicke auf **Konfigurieren** und dann auf **Speichern**
+
+#### API-Berechtigungen konfigurieren
+
+1. Navigiere zu **Anwendungen → App-Registrierungen → [App auswählen] → API-Berechtigungen**
+2. Klicke auf **+ Berechtigung hinzufügen**
+3. Wähle die API:
+   - **Microsoft Graph** für Microsoft-APIs
+   - **Meine APIs** für eigene registrierte APIs
+4. Wähle **Delegierte Berechtigungen** (Benutzer-Kontext) oder **Anwendungsberechtigungen** (Daemon/Service)
+5. Wähle die benötigten Berechtigungen (z. B. `User.Read`, `Mail.Read`) und klicke auf **Berechtigungen hinzufügen**
+
+#### Admin Consent erteilen
+
+1. Navigiere zu **Anwendungen → App-Registrierungen → [App auswählen] → API-Berechtigungen**
+2. Klicke auf **Administratorzustimmung für [Tenant] erteilen**
+3. Bestätige die Anfrage im erscheinenden Dialog
+4. Alle konfigurierten Berechtigungen erhalten den Status **Erteilt für [Tenant]** (grünes Häkchen)
+
+> [!TIP]
+> Alternativ: **Azure Portal → Microsoft Entra ID → App-Registrierungen** bzw. **Unternehmensanwendungen**
+
+---
+
 ## SAML 2.0
 
 SAML (Security Assertion Markup Language) ist das am weitesten verbreitete Enterprise-SSO-Protokoll.

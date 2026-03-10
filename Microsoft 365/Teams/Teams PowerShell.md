@@ -18,6 +18,22 @@ aliases:
 
 ---
 
+## Via Teams Admin Center (UI)
+
+> [!NOTE] TAC-Dokumentation in den Fachartikeln
+> Diese Seite dokumentiert ausschließlich die **PowerShell-Verwaltung** von Microsoft Teams über das MicrosoftTeams-Modul und die Microsoft Graph API. Die Verwaltung über das **Teams Admin Center** ([admin.teams.microsoft.com](https://admin.teams.microsoft.com)) ist in den jeweiligen Fachartikeln mit Schritt-für-Schritt-Anleitungen dokumentiert:
+>
+> - [[Teams und Kanäle verwalten]] — Teams erstellen, archivieren, wiederherstellen, Mitglieder und Rollen verwalten
+> - [[Governance und Policies]] — Meeting-, Messaging- und App-Policies erstellen und zuweisen
+> - [[Teams-Telefonie]] — Rufnummern, Auto Attendant, Call Queues, Operator Connect, Notfallstandorte
+> - [[Meetings und Live Events]] — Besprechungsrichtlinien und Live-Ereignisrichtlinien konfigurieren
+> - [[Teams Apps und Bots]] — App-Berechtigungs- und App-Setuprichtlinien verwalten
+> - [[Teams Rooms]] — MTR-Geräte überwachen, Lizenzen zuweisen, Remote-Verwaltung
+> - [[Teams Premium]] — Premium-Features, Custom Templates und Meeting Branding konfigurieren
+> - [[Teams Phone Mobile]] — Operator Connect Mobile (Carrier autorisieren, Nummern zuweisen)
+
+---
+
 ## Modul-Installation und Verbindung
 
 ### Installation
