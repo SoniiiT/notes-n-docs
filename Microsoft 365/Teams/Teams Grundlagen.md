@@ -35,16 +35,16 @@ Teams ist kein monolithischer Dienst, sondern ein Orchestrator über mehrere Mic
 
 ```mermaid
 graph TD
-    TC[Teams Client\nDesktop / Web / Mobile] --> TS[Teams Service\nAzure]
-    TS --> AAD[Azure AD / Entra ID\nIdentität und Auth]
-    TS --> SPO[SharePoint Online\nDateispeicherung]
-    TS --> EXO[Exchange Online\nKalender und Compliance]
-    TS --> SKYPE[Azure Media Services\nAudio und Video]
-    TS --> PURVIEW[Microsoft Purview\nCompliance und eDiscovery]
+    TC[Teams Client Desktop / Web / Mobile] --> TS[Teams Service Azure]
+    TS --> AAD[Azure AD / Entra ID Identität und Auth]
+    TS --> SPO[SharePoint Online Dateispeicherung]
+    TS --> EXO[Exchange Online Kalender und Compliance]
+    TS --> SKYPE[Azure Media Services Audio und Video]
+    TS --> PURVIEW[Microsoft Purview Compliance und eDiscovery]
     SPO --> CHAN[Kanal-Dateibibliothek]
-    SPO --> ODB[OneDrive for Business\nChat-Dateien]
-    EXO --> MBX[Benutzer-Mailbox\nMeeting-Einladungen]
-    EXO --> HOLD[Compliance-Store\nChat-Archivierung]
+    SPO --> ODB[OneDrive for Business Chat-Dateien]
+    EXO --> MBX[Benutzer-Mailbox Meeting-Einladungen]
+    EXO --> HOLD[Compliance-Store Chat-Archivierung]
 ```
 
 ### Komponentenübersicht
@@ -91,12 +91,12 @@ Kanäle strukturieren die Kommunikation innerhalb eines Teams. Jede Unterhaltung
 
 ```mermaid
 graph LR
-    T[Team] --> SC[Standard-Kanal\nAlle Mitglieder]
-    T --> PC[Privater Kanal\nTeilmenge der Mitglieder]
-    T --> SHC[Geteilter Kanal\nInterne und externe Nutzer]
+    T[Team] --> SC[Standard-Kanal Alle Mitglieder]
+    T --> PC[Privater Kanal Teilmenge der Mitglieder]
+    T --> SHC[Geteilter Kanal Interne und externe Nutzer]
     SC --> SPT[Team-SharePoint-Site]
-    PC --> PCS[Eigene SharePoint-Site\nSeparate Berechtigungen]
-    SHC --> SHCS[Eigene SharePoint-Site\nB2B Direct Connect]
+    PC --> PCS[Eigene SharePoint-Site Separate Berechtigungen]
+    SHC --> SHCS[Eigene SharePoint-Site B2B Direct Connect]
 ```
 
 | Kanal-Typ | Sichtbarkeit | SharePoint-Site | Externe Nutzer | Limit pro Team |
@@ -155,10 +155,10 @@ Jedes Team basiert auf einer **Microsoft 365-Gruppe** (früher: Office 365-Grupp
 graph TD
     M365G[Microsoft 365-Gruppe] --> TEAMS[Microsoft Teams]
     M365G --> SPO2[SharePoint-Team-Site]
-    M365G --> EXO2[Gemeinsames Postfach\nExchange]
+    M365G --> EXO2[Gemeinsames Postfach Exchange]
     M365G --> PLAN[Microsoft Planner]
     M365G --> ONE[OneNote-Notizbuch]
-    M365G --> STREAM[Stream\nAufzeichnungen]
+    M365G --> STREAM[Stream Aufzeichnungen]
 ```
 
 > [!WARNING] Gruppen-Löschung

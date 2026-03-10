@@ -49,14 +49,14 @@ Blob Storage (Binary Large Object) ist ein **Objektspeicher** für unstrukturier
 
 ```mermaid
 graph TD
-    A[Storage Account\nmyaccount] --> B[Container\nbilder]
-    A --> C[Container\nbackups]
-    A --> D[Container\nlogs]
-    B --> E[blob\nfoto1.jpg]
-    B --> F[blob\nfoto2.jpg]
-    C --> G[blob\nbackup-2024-01-01.tar]
-    D --> H[blob\napp-2024-01.log]
-    D --> I[blob\napp-2024-02.log]
+    A[Storage Account myaccount] --> B[Container bilder]
+    A --> C[Container backups]
+    A --> D[Container logs]
+    B --> E[blob foto1.jpg]
+    B --> F[blob foto2.jpg]
+    C --> G[blob backup-2024-01-01.tar]
+    D --> H[blob app-2024-01.log]
+    D --> I[blob app-2024-02.log]
 ```
 
 **URL-Schema:**

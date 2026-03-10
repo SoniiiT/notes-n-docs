@@ -24,12 +24,12 @@ Microsoft Teams ist eine **erweiterbare Plattform**. Apps können folgende Typen
 
 ```mermaid
 graph TD
-    APPS[Teams Apps] --> TABS[Tabs\nWebinhalte als Registerkarte]
-    APPS --> BOTS[Bots\nKI-gestützte Agenten]
-    APPS --> ME[Messaging Extensions\nAktionen im Texteingabefeld]
-    APPS --> CONN[Connectors\nEingehende Benachrichtigungen]
-    APPS --> MEET[Meeting Extensions\nIn-Meeting-Panel und Tabs]
-    APPS --> ACT[Activity Feed Extensions\nBenachrichtigungen im Feed]
+    APPS[Teams Apps] --> TABS[Tabs Webinhalte als Registerkarte]
+    APPS --> BOTS[Bots KI-gestützte Agenten]
+    APPS --> ME[Messaging Extensions Aktionen im Texteingabefeld]
+    APPS --> CONN[Connectors Eingehende Benachrichtigungen]
+    APPS --> MEET[Meeting Extensions In-Meeting-Panel und Tabs]
+    APPS --> ACT[Activity Feed Extensions Benachrichtigungen im Feed]
 ```
 
 ### App-Typen im Detail
@@ -277,11 +277,11 @@ Teams Toolkit → Neues Projekt → Vorlage wählen:
 
 ```mermaid
 graph TD
-    EVAL[App-Evaluierung\nSicherheits- und Datenschutzprüfung] --> APPROVE[Genehmigung\ndurch IT und Datenschutz]
-    APPROVE --> CATALOG[Veröffentlichung im\nUnternehmens-App-Katalog]
-    CATALOG --> POLICY[App-Berechtigungsrichtlinie\nberechtigte Benutzer festlegen]
-    POLICY --> SETUP[App-Setup-Richtlinie\nangeheftete Apps konfigurieren]
-    SETUP --> MONITOR[Monitoring\nApp-Nutzungsberichte]
+    EVAL[App-Evaluierung Sicherheits- und Datenschutzprüfung] --> APPROVE[Genehmigung durch IT und Datenschutz]
+    APPROVE --> CATALOG[Veröffentlichung im Unternehmens-App-Katalog]
+    CATALOG --> POLICY[App-Berechtigungsrichtlinie berechtigte Benutzer festlegen]
+    POLICY --> SETUP[App-Setup-Richtlinie angeheftete Apps konfigurieren]
+    SETUP --> MONITOR[Monitoring App-Nutzungsberichte]
 ```
 
 ### App-Governance Checkliste

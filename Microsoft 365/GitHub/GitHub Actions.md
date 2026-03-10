@@ -30,15 +30,15 @@ GitHub Actions ist eine vollständig in GitHub integrierte Plattform für Contin
 ```mermaid
 flowchart TD
     A([Event auslösen]) --> B[Workflow wird gestartet]
-    B --> C{Jobs parallel\noder sequenziell?}
-    C -->|parallel| D[Job A\nz.B. lint]
-    C -->|parallel| E[Job B\nz.B. test]
-    C -->|needs: lint| F[Job C\nz.B. build]
+    B --> C{Jobs parallel oder sequenziell?}
+    C -->|parallel| D[Job A z.B. lint]
+    C -->|parallel| E[Job B z.B. test]
+    C -->|needs: lint| F[Job C z.B. build]
     D --> F
     E --> F
-    F --> G{Environment\nvorhanden?}
-    G -->|ja| H[Approval Gate\nRequired Reviewer]
-    H --> I[Job D\nz.B. deploy]
+    F --> G{Environment vorhanden?}
+    G -->|ja| H[Approval Gate Required Reviewer]
+    H --> I[Job D z.B. deploy]
     G -->|nein| I
     I --> J([Deployment abgeschlossen])
 

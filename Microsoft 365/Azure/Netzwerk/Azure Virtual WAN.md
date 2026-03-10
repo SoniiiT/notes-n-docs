@@ -29,16 +29,16 @@ Azure Virtual WAN ist ein **verwalteter Netzwerkdienst** der ein globales Wide A
 
 ```mermaid
 graph TD
-    VWAN[Azure Virtual WAN] --> HUB_WE[Managed Hub\nWest Europe]
-    VWAN --> HUB_EUS[Managed Hub\nEast US]
+    VWAN[Azure Virtual WAN] --> HUB_WE[Managed Hub West Europe]
+    VWAN --> HUB_EUS[Managed Hub East US]
     
-    HUB_WE --> SPOKE1[Spoke VNet 1\n10 1 0 0/16]
-    HUB_WE --> SPOKE2[Spoke VNet 2\n10 2 0 0/16]
-    HUB_WE --> BRANCH1[Branch\nSite-to-Site VPN]
-    HUB_WE --> ER1[ExpressRoute\nCircuit]
+    HUB_WE --> SPOKE1[Spoke VNet 1 10 1 0 0/16]
+    HUB_WE --> SPOKE2[Spoke VNet 2 10 2 0 0/16]
+    HUB_WE --> BRANCH1[Branch Site-to-Site VPN]
+    HUB_WE --> ER1[ExpressRoute Circuit]
     
-    HUB_EUS --> SPOKE3[Spoke VNet 3\n10 3 0 0/16]
-    HUB_EUS --> BRANCH2[Branch USA\nVPN]
+    HUB_EUS --> SPOKE3[Spoke VNet 3 10 3 0 0/16]
+    HUB_EUS --> BRANCH2[Branch USA VPN]
 ```
 
 **Kernunterschiede zu klassischem Hub-and-Spoke:**
@@ -72,12 +72,12 @@ Ein **vWAN Hub** ist ein von Microsoft verwaltetes virtuelles Netzwerk (~mind. /
 
 ```mermaid
 graph TD
-    HUB[vWAN Hub\nWesteurope\nMicrosoft-verwaltet] --> VPN_GW[Site-to-Site\nVPN Gateway\nInklusive]
-    HUB --> ER_GW[ExpressRoute\nGateway\nOptional]
-    HUB --> P2S_GW[Point-to-Site\nGateway\nOptional]
-    HUB --> FW[Azure Firewall\nSecured Hub\nOptional]
-    HUB --> SPOKE1[VNet-Verbindung\nSpoke 1]
-    HUB --> SPOKE2[VNet-Verbindung\nSpoke 2]
+    HUB[vWAN Hub Westeurope Microsoft-verwaltet] --> VPN_GW[Site-to-Site VPN Gateway Inklusive]
+    HUB --> ER_GW[ExpressRoute Gateway Optional]
+    HUB --> P2S_GW[Point-to-Site Gateway Optional]
+    HUB --> FW[Azure Firewall Secured Hub Optional]
+    HUB --> SPOKE1[VNet-Verbindung Spoke 1]
+    HUB --> SPOKE2[VNet-Verbindung Spoke 2]
 ```
 
 ```powershell
@@ -168,13 +168,13 @@ vWAN verwendet **Route Tables** für Traffic-Steuerung:
 
 ```mermaid
 graph TD
-    RT_DEFAULT[defaultRouteTable\nAlle Spokes + Branches\npropagieren hierher] --> SPOKE1[Spoke 1]
+    RT_DEFAULT[defaultRouteTable Alle Spokes + Branches propagieren hierher] --> SPOKE1[Spoke 1]
     RT_DEFAULT --> SPOKE2[Spoke 2]
     RT_DEFAULT --> BRANCH[Branch Site]
     
-    RT_ISOLATED[noneRouteTable\nKeine Propagation] --> SPOKE3[Isolated Spoke\nkein Transitrouting]
+    RT_ISOLATED[noneRouteTable Keine Propagation] --> SPOKE3[Isolated Spoke kein Transitrouting]
     
-    RT_CUSTOM[customRouteTable\nSpezifische Routen] --> SPOKE4[Spezial-Spoke]
+    RT_CUSTOM[customRouteTable Spezifische Routen] --> SPOKE4[Spezial-Spoke]
 ```
 
 ### Custom Route Tables (Mikrosegmentierung)
@@ -207,8 +207,8 @@ Azure Firewall direkt im vWAN Hub integrieren:
 
 ```mermaid
 graph LR
-    SPOKE1[Spoke 1] -->|Traffic| SECHUBB[Secured Hub\nAzure Firewall\nim Hub]
-    BRANCH[Branch\nVPN] -->|Traffic| SECHUBB
+    SPOKE1[Spoke 1] -->|Traffic| SECHUBB[Secured Hub Azure Firewall im Hub]
+    BRANCH[Branch VPN] -->|Traffic| SECHUBB
     SECHUBB -->|Gefiltert| SPOKE2[Spoke 2]
     SECHUBB -->|Gefiltert| INT[Internet]
 ```
@@ -317,9 +317,9 @@ az network vhub get-effective-routes \
 
 ```mermaid
 graph LR
-    PHASE1[Phase 1\nParallel vWAN\naufbauen] --> PHASE2[Phase 2\nSpoke VNets\nmigieren]
-    PHASE2 --> PHASE3[Phase 3\nBranch-Verbindungen\nmigrieren]
-    PHASE3 --> PHASE4[Phase 4\nAlten Hub\nlöschen]
+    PHASE1[Phase 1 Parallel vWAN aufbauen] --> PHASE2[Phase 2 Spoke VNets migieren]
+    PHASE2 --> PHASE3[Phase 3 Branch-Verbindungen migrieren]
+    PHASE3 --> PHASE4[Phase 4 Alten Hub löschen]
 ```
 
 1. **Neues vWAN + Hub** in derselben Region erstellen

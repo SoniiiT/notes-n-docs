@@ -29,11 +29,11 @@ Azure Monitor ist kein einzelnes Tool, sondern eine **Plattform** aus mehreren i
 
 ```mermaid
 graph TD
-    Sources["Datenquellen\nAzure, On-Prem, Multi-Cloud"]
-    Collect["Sammlung\nAMA, SDK, API, Diagnostics"]
-    Store["Speicher\nMetriken-DB\nLog Analytics Workspace"]
-    Analyze["Analyse\nMetrics Explorer\nLog Analytics KQL\nApplication Insights"]
-    Respond["Reaktion\nAlerts\nAutoscale\nWorkbooks\nDashboards"]
+    Sources["Datenquellen Azure, On-Prem, Multi-Cloud"]
+    Collect["Sammlung AMA, SDK, API, Diagnostics"]
+    Store["Speicher Metriken-DB Log Analytics Workspace"]
+    Analyze["Analyse Metrics Explorer Log Analytics KQL Application Insights"]
+    Respond["Reaktion Alerts Autoscale Workbooks Dashboards"]
 
     Sources --> Collect
     Collect --> Store
@@ -136,14 +136,14 @@ Alle Log-Daten landen im **Log Analytics Workspace (LAW)**.
 
 ```mermaid
 graph LR
-    VM["Azure VM\nWindows/Linux"]
+    VM["Azure VM Windows/Linux"]
     AppSvc["App Service"]
     AKS["AKS Cluster"]
-    OnPrem["On-Prem Server\n(via Arc)"]
-    AMA["Azure Monitor Agent\nAMA"]
-    SDK["App Insights SDK\nAuto-Instrumentation"]
-    LAW["Log Analytics\nWorkspace"]
-    KQL["KQL-Abfragen\nAlerts\nWorkbooks"]
+    OnPrem["On-Prem Server (via Arc)"]
+    AMA["Azure Monitor Agent AMA"]
+    SDK["App Insights SDK Auto-Instrumentation"]
+    LAW["Log Analytics Workspace"]
+    KQL["KQL-Abfragen Alerts Workbooks"]
 
     VM --> AMA
     AKS --> AMA
@@ -309,10 +309,10 @@ Unterschied zu statischen Dashboards:
 ```mermaid
 graph LR
     Workbook["Azure Workbook"]
-    Param["Parameter\nSubscription\nZeitbereich\nVM-Name"]
-    KQL["KQL-Abfrage\nMetriken-Query"]
-    Chart["Chart / Tabelle\nText / Links"]
-    User["Benutzer\nInteraktiv"]
+    Param["Parameter Subscription Zeitbereich VM-Name"]
+    KQL["KQL-Abfrage Metriken-Query"]
+    Chart["Chart / Tabelle Text / Links"]
+    User["Benutzer Interaktiv"]
 
     Param --> Workbook
     KQL --> Workbook
@@ -357,9 +357,9 @@ graph LR
 ```mermaid
 graph TD
     Cost["Azure Monitor Kosten"]
-    Free["Kostenlos\nPlattform-Metriken\nBasic Alerts\nAMA Agent"]
-    Charged["Kostenpflichtig\nLog Ingest\nRetention > 30 Tage\nCustom Metrics\nLog Alerts"]
-    Optimize["Optimierung\nCommitment Tiers\nDCR-Transformation\nBasic Logs Tier\nData Capping"]
+    Free["Kostenlos Plattform-Metriken Basic Alerts AMA Agent"]
+    Charged["Kostenpflichtig Log Ingest Retention > 30 Tage Custom Metrics Log Alerts"]
+    Optimize["Optimierung Commitment Tiers DCR-Transformation Basic Logs Tier Data Capping"]
 
     Cost --> Free
     Cost --> Charged
@@ -375,12 +375,12 @@ graph TD
 
 ```mermaid
 graph TD
-    Tier1["Azure Ressourcen\nVMs, App Services, AKS\nKey Vault, SQL, Storage"]
-    Tier2["Diagnose & Agent\nAMA Agent\nDiagnoseeinstellungen\nSDK Auto-Instrumentation"]
-    Tier3["Sammlung & Routing\nData Collection Rules\nEvent Hub Streaming"]
-    Tier4["Speicher\nLog Analytics Workspace\nMetriken-Datenbank\nStorage Account Archiv"]
-    Tier5["Analyse\nKQL Abfragen\nMetrics Explorer\nApp Insights"]
-    Tier6["Reaktion\nAlerts + Action Groups\nWorkbooks\nAzure Dashboards\nPower BI"]
+    Tier1["Azure Ressourcen VMs, App Services, AKS Key Vault, SQL, Storage"]
+    Tier2["Diagnose & Agent AMA Agent Diagnoseeinstellungen SDK Auto-Instrumentation"]
+    Tier3["Sammlung & Routing Data Collection Rules Event Hub Streaming"]
+    Tier4["Speicher Log Analytics Workspace Metriken-Datenbank Storage Account Archiv"]
+    Tier5["Analyse KQL Abfragen Metrics Explorer App Insights"]
+    Tier6["Reaktion Alerts + Action Groups Workbooks Azure Dashboards Power BI"]
 
     Tier1 --> Tier2
     Tier2 --> Tier3

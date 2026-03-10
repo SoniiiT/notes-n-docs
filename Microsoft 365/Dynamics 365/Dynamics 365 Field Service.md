@@ -26,12 +26,12 @@ aliases:
 
 ```mermaid
 graph LR
-    REQ[Service\nAnfrage] -->|Erstellt| WO[Work Order\noffen]
-    WO -->|Geplant| SC[Scheduled\neingeplant]
-    SC -->|Unterwegs| TRV[Techniker\nunterwegs]
-    TRV -->|Vor Ort| IP[In Progress\nBearbeitung]
+    REQ[Service Anfrage] -->|Erstellt| WO[Work Order offen]
+    WO -->|Geplant| SC[Scheduled eingeplant]
+    SC -->|Unterwegs| TRV[Techniker unterwegs]
+    TRV -->|Vor Ort| IP[In Progress Bearbeitung]
     IP -->|Fertig| COMP[Completed]
-    COMP -->|Abgerechnet| POST[Posted\nabgeschlossen]
+    COMP -->|Abgerechnet| POST[Posted abgeschlossen]
 ```
 
 ### Work Order-Komponenten
@@ -82,11 +82,11 @@ Service Agreements generieren automatisch Work Orders nach Zeitplan:
 
 ```mermaid
 graph TD
-    AGR[Service Agreement\nJährlicher Wartungsvertrag] --> BS[Booking Setup\n4x/Jahr, Montags]
-    BS -->|Automatisch generiert| WO1[Work Order\nQ1-Wartung Jan]
-    BS -->|Automatisch generiert| WO2[Work Order\nQ2-Wartung Apr]
-    BS -->|Automatisch generiert| WO3[Work Order\nQ3-Wartung Jul]
-    BS -->|Automatisch generiert| WO4[Work Order\nQ4-Wartung Okt]
+    AGR[Service Agreement Jährlicher Wartungsvertrag] --> BS[Booking Setup 4x/Jahr, Montags]
+    BS -->|Automatisch generiert| WO1[Work Order Q1-Wartung Jan]
+    BS -->|Automatisch generiert| WO2[Work Order Q2-Wartung Apr]
+    BS -->|Automatisch generiert| WO3[Work Order Q3-Wartung Jul]
+    BS -->|Automatisch generiert| WO4[Work Order Q4-Wartung Okt]
 ```
 
 ---
@@ -99,12 +99,12 @@ RSO ist die KI-gestützte automatische Terminplanung, die Techniker-Einsätze op
 
 ```mermaid
 graph TD
-    WO[Offene\nWork Orders] --> RSO[RSO Engine\nOptimierung]
-    RES[Verfügbare\nRessourcen] --> RSO
-    CONS[Constraints\nFähigkeiten, Gebiet, Zeit] --> RSO
-    RSO --> PLAN[Optimierter\nEinsatzplan]
-    PLAN --> NOT[Techniker\nBenachrichtigung]
-    PLAN --> BOOK[Buchungen\nim Kalender]
+    WO[Offene Work Orders] --> RSO[RSO Engine Optimierung]
+    RES[Verfügbare Ressourcen] --> RSO
+    CONS[Constraints Fähigkeiten, Gebiet, Zeit] --> RSO
+    RSO --> PLAN[Optimierter Einsatzplan]
+    PLAN --> NOT[Techniker Benachrichtigung]
+    PLAN --> BOOK[Buchungen im Kalender]
 ```
 
 ### Optimierungsziele
@@ -137,11 +137,11 @@ Connected Field Service verbindet physische Geräte über Azure IoT Hub mit Dyna
 
 ```mermaid
 graph LR
-    DEV[IoT-Gerät\nSensor] -->|Telemetriedaten| HUB[Azure IoT Hub]
+    DEV[IoT-Gerät Sensor] -->|Telemetriedaten| HUB[Azure IoT Hub]
     HUB -->|Anomalie-Erkennung| STR[Azure Stream Analytics]
-    STR -->|Schwellenwert überschritten| ALT[IoT Alert\nin D365]
-    ALT -->|Automatisch| WO[Work Order\nautomatisch erstellt]
-    WO --> RSO2[RSO-Planung\nTechniker zuweisen]
+    STR -->|Schwellenwert überschritten| ALT[IoT Alert in D365]
+    ALT -->|Automatisch| WO[Work Order automatisch erstellt]
+    WO --> RSO2[RSO-Planung Techniker zuweisen]
 ```
 
 ### IoT-Alert-Konfiguration
@@ -214,7 +214,7 @@ Die Field Service Mobile App ist für iOS und Android verfügbar.
 
 ```mermaid
 graph LR
-    APP[Mobile App\nTechniker] -->|Online: Sync| D365[D365 Field\nService Cloud]
+    APP[Mobile App Techniker] -->|Online: Sync| D365[D365 Field Service Cloud]
     APP -->|Offline: Lokal speichern| LOC[Lokaler Speicher]
     LOC -->|Verbindung wieder da| D365
 ```

@@ -110,7 +110,7 @@ Das ältere Modell — direkt auf Key Vault konfiguriert:
 
 ```mermaid
 graph LR
-    SP[Service Principal\nManaged Identity\nUser] -->|Access Policy| KV[Key Vault]
+    SP[Service Principal Managed Identity User] -->|Access Policy| KV[Key Vault]
     KV -->|Secrets: Get, List| SP
 ```
 
@@ -124,7 +124,7 @@ graph LR
 
 ```mermaid
 graph LR
-    SP[Security Principal] -->|Role Assignment| SCOPE[Scope\nKV oder einzelnes Objekt]
+    SP[Security Principal] -->|Role Assignment| SCOPE[Scope KV oder einzelnes Objekt]
     SCOPE -->|Berechtigung| KV[Key Vault]
 ```
 
@@ -198,10 +198,10 @@ Undo-AzKeyVaultSecretRemoval `
 
 ```mermaid
 graph TD
-    INT[Internet] -->|Blockiert| FW{Key Vault\nFirewall}
-    TRUSTED[Trusted IPs\nCIDR-Ranges] -->|Erlaubt| FW
-    VNET[Erlaubte VNets\nService Endpoints] -->|Erlaubt| FW
-    MS[Azure Trusted Services\nARM, Backup, etc] -->|Bypass| FW
+    INT[Internet] -->|Blockiert| FW{Key Vault Firewall}
+    TRUSTED[Trusted IPs CIDR-Ranges] -->|Erlaubt| FW
+    VNET[Erlaubte VNets Service Endpoints] -->|Erlaubt| FW
+    MS[Azure Trusted Services ARM, Backup, etc] -->|Bypass| FW
     FW -->|Zugriff| KV[Key Vault]
 ```
 
@@ -330,8 +330,8 @@ Azure-Dienste können ihre Daten mit eigenen Keys in Key Vault verschlüsseln:
 
 ```mermaid
 graph LR
-    DATA[Azure Storage\nSQL Database\netc] -->|Verschlüsselt mit| DEK[Data Encryption Key\nDEK]
-    DEK -->|Wrapped mit| CMK[Customer Managed Key\nim Key Vault]
+    DATA[Azure Storage SQL Database etc] -->|Verschlüsselt mit| DEK[Data Encryption Key DEK]
+    DEK -->|Wrapped mit| CMK[Customer Managed Key im Key Vault]
     CMK -->|Kontrolliert von| CUSTOMER[Kunde]
 ```
 

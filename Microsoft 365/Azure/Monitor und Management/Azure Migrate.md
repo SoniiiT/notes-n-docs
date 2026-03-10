@@ -28,16 +28,16 @@ Azure Migrate ist ein **kostenloses, portalbasiertes Service** für die geplante
 
 ```mermaid
 graph TD
-    A[Azure Migrate Hub] --> B[Discovery\nund Assessment]
+    A[Azure Migrate Hub] --> B[Discovery und Assessment]
     A --> C[Server Migration]
     A --> D[Database Migration]
     A --> E[App Migration]
     A --> F[Data Migration]
-    B --> G[Azure Migrate\nAppliance]
-    C --> H[ASR-basierte\nVM-Migration]
-    D --> I[Database Migration\nService DMS]
-    E --> J[App Service Migration\nAssistant]
-    F --> K[AzCopy\nData Box\nImport/Export]
+    B --> G[Azure Migrate Appliance]
+    C --> H[ASR-basierte VM-Migration]
+    D --> I[Database Migration Service DMS]
+    E --> J[App Service Migration Assistant]
+    F --> K[AzCopy Data Box Import/Export]
 ```
 
 ---
@@ -83,14 +83,14 @@ Die **Azure Migrate Appliance** ist eine leichtgewichtige On-Premises-VM, die au
 
 ```mermaid
 graph LR
-    A[Azure Migrate\nAppliance] --> B[VM-Metadaten]
+    A[Azure Migrate Appliance] --> B[VM-Metadaten]
     A --> C[Performance-Daten]
     A --> D[Software-Inventory]
     A --> E[Abhängigkeits-Analyse]
     B --> F[CPU, RAM, Disk, OS, IP-Adressen]
-    C --> G[CPU-Auslastung\nRAM-Nutzung\nDisk-IOPS\nNetzwerk]
-    D --> H[Installierte Apps\nFeatures, Rollen]
-    E --> I[TCP-Verbindungen\nzwischen VMs]
+    C --> G[CPU-Auslastung RAM-Nutzung Disk-IOPS Netzwerk]
+    D --> H[Installierte Apps Features, Rollen]
+    E --> I[TCP-Verbindungen zwischen VMs]
 ```
 
 ### Appliance einrichten (VMware)
@@ -132,7 +132,7 @@ Get-Service -Name "GuestConfigurationExtension" |
 
 ```mermaid
 graph LR
-    A[Assessment\nErgebnis] --> B[Azure-Bereitschaft]
+    A[Assessment Ergebnis] --> B[Azure-Bereitschaft]
     A --> C[Empfohlene VM-Größe]
     A --> D[Monatliche Kostenschätzung]
     B --> E[Ready for Azure]
@@ -179,12 +179,12 @@ az migrate assessment list \
 
 ```mermaid
 graph TD
-    A[vCenter Server] --> B[Azure Migrate\nAppliance]
-    B --> C[vSAN / VMFS\nDisk-Snapshot-API]
-    C --> D[Replikation via\nHTTPS Port 443]
-    D --> E[Azure Migrate\nService]
-    E --> F[Azure Storage\nTemporärer Staging]
-    F --> G[Ziel-VM\nManaged Disks]
+    A[vCenter Server] --> B[Azure Migrate Appliance]
+    B --> C[vSAN / VMFS Disk-Snapshot-API]
+    C --> D[Replikation via HTTPS Port 443]
+    D --> E[Azure Migrate Service]
+    E --> F[Azure Storage Temporärer Staging]
+    F --> G[Ziel-VM Managed Disks]
 ```
 
 ### Migration starten (PowerShell)
@@ -242,10 +242,10 @@ Der **Azure Database Migration Service** migriert Datenbanken mit minimalem Down
 
 ```mermaid
 graph LR
-    A[Online Migration] --> B[Minimaler Downtime\nContinuous Sync]
-    B --> C[Cutover: Kurze\nAbschneidephase]
-    D[Offline Migration] --> E[Kompletter Stopp\nder Quell-DB]
-    E --> F[Backup/Restore\noder Bulk Import]
+    A[Online Migration] --> B[Minimaler Downtime Continuous Sync]
+    B --> C[Cutover: Kurze Abschneidephase]
+    D[Offline Migration] --> E[Kompletter Stopp der Quell-DB]
+    E --> F[Backup/Restore oder Bulk Import]
 ```
 
 ### DMS-Migration starten
@@ -283,12 +283,12 @@ Der **App Service Migration Assistant** analysiert bestehende IIS Web-Apps und m
 
 ```mermaid
 graph LR
-    A[IIS Web App\nOn-Premises] --> B[Migration Assistant\nTool]
+    A[IIS Web App On-Premises] --> B[Migration Assistant Tool]
     B --> C[Readiness Assessment]
     C --> D{Bereit?}
-    D -- Ja --> E[Azure App Service\nDeployment]
-    D -- Bedingt --> F[Manuelle Anpassungen\ndann Migration]
-    D -- Nein --> G[Re-Architecting\nerforderlich]
+    D -- Ja --> E[Azure App Service Deployment]
+    D -- Bedingt --> F[Manuelle Anpassungen dann Migration]
+    D -- Nein --> G[Re-Architecting erforderlich]
 ```
 
 ---
@@ -333,10 +333,10 @@ Wave Planning strukturiert die Migration in **Phasen (Waves)**:
 
 ```mermaid
 graph LR
-    A[Discovery\nund Assessment] --> B[Wave 1\nEntwicklung/Test]
-    B --> C[Wave 2\nNon-kritische\nProduktion]
-    C --> D[Wave 3\nKritische\nProduktion]
-    D --> E[Wave 4\nLegacy/Komplexe\nWorkloads]
+    A[Discovery und Assessment] --> B[Wave 1 Entwicklung/Test]
+    B --> C[Wave 2 Non-kritische Produktion]
+    C --> D[Wave 3 Kritische Produktion]
+    D --> E[Wave 4 Legacy/Komplexe Workloads]
 ```
 
 | Wave | Inhalt | Risiko | Zeitraum |
@@ -370,9 +370,9 @@ Azure Migrate enthält spezielle Tools für **Azure Virtual Desktop (AVD)**-Migr
 
 ```mermaid
 graph LR
-    A[On-Prem RDS\nFarm] --> B[Azure Migrate:\nAVD Assessment]
-    B --> C[AVD-Instanz\nAzure]
-    B --> D[Kosten-Kalkulation\nMulti-Session vs Single-Session]
+    A[On-Prem RDS Farm] --> B[Azure Migrate: AVD Assessment]
+    B --> C[AVD-Instanz Azure]
+    B --> D[Kosten-Kalkulation Multi-Session vs Single-Session]
 ```
 
 ---

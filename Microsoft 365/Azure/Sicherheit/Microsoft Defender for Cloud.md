@@ -33,18 +33,18 @@ Der Dienst lässt sich ohne Agent-Installation für grundlegende CSPM-Funktionen
 ```mermaid
 graph TD
     subgraph MDfC["Microsoft Defender for Cloud"]
-        CSPM["CSPM\nCloud Security\nPosture Management"]
-        CWP["CWP\nCloud Workload\nProtection"]
+        CSPM["CSPM Cloud Security Posture Management"]
+        CWP["CWP Cloud Workload Protection"]
     end
 
     CSPM --> SS["Secure Score"]
-    CSPM --> RC["Regulatory\nCompliance"]
-    CSPM --> REC["Empfehlungen\nund Fixes"]
-    CSPM --> APA["Attack Path\nAnalysis"]
+    CSPM --> RC["Regulatory Compliance"]
+    CSPM --> REC["Empfehlungen und Fixes"]
+    CSPM --> APA["Attack Path Analysis"]
 
-    CWP --> PLANS["Defender-Pläne\npro Workload"]
-    PLANS --> AL["Security Alerts\nund Incidents"]
-    AL --> SENT["Microsoft\nSentinel"]
+    CWP --> PLANS["Defender-Pläne pro Workload"]
+    PLANS --> AL["Security Alerts und Incidents"]
+    AL --> SENT["Microsoft Sentinel"]
 
     subgraph CLOUDS["Multi-Cloud"]
         AZ["Azure"]
@@ -164,16 +164,16 @@ Visualisiert realistische Angriffspfade durch die Cloud-Umgebung — z. B. von e
 
 ```mermaid
 graph LR
-    INT["Internet\noffentlich erreichbar"]
-    VM["VM mit\noffenen Ports"]
-    MSI["Managed Identity\nmit hohen Rechten"]
-    KV["Key Vault\nProduktionsgeheimnisse"]
-    DB["Azure SQL\nProduktionsdatenbank"]
+    INT["Internet offentlich erreichbar"]
+    VM["VM mit offenen Ports"]
+    MSI["Managed Identity mit hohen Rechten"]
+    KV["Key Vault Produktionsgeheimnisse"]
+    DB["Azure SQL Produktionsdatenbank"]
 
-    INT -->|"RDP/SSH\noffen"| VM
-    VM -->|"MSI-Token\nmissbraucht"| MSI
-    MSI -->|"Vollzugriff\nauf Vault"| KV
-    KV -->|"DB-Connection\nString"| DB
+    INT -->|"RDP/SSH offen"| VM
+    VM -->|"MSI-Token missbraucht"| MSI
+    MSI -->|"Vollzugriff auf Vault"| KV
+    KV -->|"DB-Connection String"| DB
 ```
 
 > [!DANGER] Kritische Angriffspfade
@@ -308,17 +308,17 @@ Microsoft Defender for Cloud und Sentinel sind komplementäre Dienste — MDfC e
 
 ```mermaid
 graph LR
-    MDfC["Defender for Cloud\nSecurity Alerts"]
-    SENT["Microsoft Sentinel\nSIEM und SOAR"]
-    LAW["Log Analytics\nWorkspace"]
-    PLAY["Playbooks\nLogic Apps"]
-    SOC["Security Operations\nTeam"]
+    MDfC["Defender for Cloud Security Alerts"]
+    SENT["Microsoft Sentinel SIEM und SOAR"]
+    LAW["Log Analytics Workspace"]
+    PLAY["Playbooks Logic Apps"]
+    SOC["Security Operations Team"]
 
-    MDfC -->|"Alerts per\nData Connector"| SENT
-    MDfC -->|"Rohdaten per\nDiagnose-Setting"| LAW
+    MDfC -->|"Alerts per Data Connector"| SENT
+    MDfC -->|"Rohdaten per Diagnose-Setting"| LAW
     SENT --> LAW
-    SENT -->|"Automatische\nReaktion"| PLAY
-    PLAY -->|"Ticket oder Mail\nTeams-Nachricht"| SOC
+    SENT -->|"Automatische Reaktion"| PLAY
+    PLAY -->|"Ticket oder Mail Teams-Nachricht"| SOC
 ```
 
 ### Verbindung einrichten
@@ -395,11 +395,11 @@ sequenceDiagram
     participant NSG as Network Security Group
     participant VM as Virtuelle Maschine
 
-    ADM->>MDfC: JIT-Zugriff anfordern\n(Port, IP, Zeitfenster)
+    ADM->>MDfC: JIT-Zugriff anfordern (Port, IP, Zeitfenster)
     MDfC->>MDfC: RBAC-Berechtigung pruefen
-    MDfC->>NSG: Temporaere Allow-Regel\nhinzufuegen (TTL 1-24h)
-    ADM->>VM: Verbindung aufbauen\n(RDP oder SSH)
-    MDfC->>NSG: Regel automatisch\nentfernen nach TTL
+    MDfC->>NSG: Temporaere Allow-Regel hinzufuegen (TTL 1-24h)
+    ADM->>VM: Verbindung aufbauen (RDP oder SSH)
+    MDfC->>NSG: Regel automatisch entfernen nach TTL
 ```
 
 ### JIT per PowerShell aktivieren
@@ -494,20 +494,20 @@ ConfigurationChange
 
 ```mermaid
 graph TD
-    FREE["Free CSPM\nkostenlos"]
-    PCSPM["Defender CSPM Premium\nca 0,007 USD pro Ressource/h"]
-    SRV["Defender for Servers\nP1 ca 5 USD\nP2 ca 15 USD\npro Server/Monat"]
-    CNT["Defender for Containers\nca 7 USD\npro vCore/Monat"]
-    SQL["Defender for SQL\nca 15 USD\npro Server/Monat"]
-    ST["Defender for Storage\nca 10 USD\npro Storage Account/Monat"]
-    OTHER["Weitere Plaene\nKey Vault, ARM, DNS\nApp Service, APIs"]
+    FREE["Free CSPM kostenlos"]
+    PCSPM["Defender CSPM Premium ca 0,007 USD pro Ressource/h"]
+    SRV["Defender for Servers P1 ca 5 USD P2 ca 15 USD pro Server/Monat"]
+    CNT["Defender for Containers ca 7 USD pro vCore/Monat"]
+    SQL["Defender for SQL ca 15 USD pro Server/Monat"]
+    ST["Defender for Storage ca 10 USD pro Storage Account/Monat"]
+    OTHER["Weitere Plaene Key Vault, ARM, DNS App Service, APIs"]
 
     FREE -->|"Upgrade moeglich"| PCSPM
-    FREE -->|"unabhaengig\nzubuchbar"| SRV
-    FREE -->|"unabhaengig\nzubuchbar"| CNT
-    FREE -->|"unabhaengig\nzubuchbar"| SQL
-    FREE -->|"unabhaengig\nzubuchbar"| ST
-    FREE -->|"unabhaengig\nzubuchbar"| OTHER
+    FREE -->|"unabhaengig zubuchbar"| SRV
+    FREE -->|"unabhaengig zubuchbar"| CNT
+    FREE -->|"unabhaengig zubuchbar"| SQL
+    FREE -->|"unabhaengig zubuchbar"| ST
+    FREE -->|"unabhaengig zubuchbar"| OTHER
 ```
 
 > [!TIP] Kosten optimieren

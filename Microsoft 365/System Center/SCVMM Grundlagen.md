@@ -46,16 +46,16 @@ SCVMM bietet eine zentrale Management-Oberfläche für Hyper-V-basierte Virtuali
 
 ```mermaid
 graph TD
-    VMMS[VMM Server\nHauptverwaltung] --> VMMDB[(VMM Datenbank\nSQL Server)]
-    VMMS --> LIB[VMM Library\nVHDs Templates ISOs Scripts]
-    VMMS --> HG1[Host Group Berlin\nHyper-V Hosts]
-    VMMS --> HG2[Host Group München\nHyper-V Hosts]
-    HG1 --> H1[Hyper-V Host 1\nCluster Node]
-    HG1 --> H2[Hyper-V Host 2\nCluster Node]
-    HG2 --> H3[Hyper-V Host 3\nStandalone]
+    VMMS[VMM Server Hauptverwaltung] --> VMMDB[(VMM Datenbank SQL Server)]
+    VMMS --> LIB[VMM Library VHDs Templates ISOs Scripts]
+    VMMS --> HG1[Host Group Berlin Hyper-V Hosts]
+    VMMS --> HG2[Host Group München Hyper-V Hosts]
+    HG1 --> H1[Hyper-V Host 1 Cluster Node]
+    HG1 --> H2[Hyper-V Host 2 Cluster Node]
+    HG2 --> H3[Hyper-V Host 3 Standalone]
     H1 --> VM1[VM-Prod-01]
     H1 --> VM2[VM-Prod-02]
-    VMMS --> PC[Private Cloud\naus Host Groups]
+    VMMS --> PC[Private Cloud aus Host Groups]
 
     style VMMS fill:#0078D4,color:#fff
     style LIB fill:#f5f5f5
@@ -114,7 +114,7 @@ Eine Private Cloud kapselt Ressourcen für eine bestimmte Benutzergruppe oder Ab
 
 ```mermaid
 graph LR
-    ADMIN[VMM Admin] -->|erstellt| PC[Private Cloud\nHR Department]
+    ADMIN[VMM Admin] -->|erstellt| PC[Private Cloud HR Department]
     PC -->|Ressourcen aus| HG[Host Group Produktion]
     PC -->|Netzwerk| VN[VM Network HR]
     PC -->|Storage| SC[Storage Gold]
@@ -174,11 +174,11 @@ New-SCVirtualMachine `
 
 ```mermaid
 graph TD
-    PHY[Physisches Netzwerk\nVLAN 10 Produktion] --> LN[Logical Network\nProduktion-LN]
-    LN --> NS[Network Site Berlin\nSubnetz 10.0.10.0 24]
-    NS --> IP[IP Pool\n10.0.10.100-200]
-    LN --> VMN[VM Network\nProduktion-VMs]
-    VMN --> VNIC[VM NIC\nVerbunden mit VM Network]
+    PHY[Physisches Netzwerk VLAN 10 Produktion] --> LN[Logical Network Produktion-LN]
+    LN --> NS[Network Site Berlin Subnetz 10.0.10.0 24]
+    NS --> IP[IP Pool 10.0.10.100-200]
+    LN --> VMN[VM Network Produktion-VMs]
+    VMN --> VNIC[VM NIC Verbunden mit VM Network]
 
     style PHY fill:#f0f0f0
     style VMN fill:#00BCF2,color:#fff
@@ -247,12 +247,12 @@ Ab SCVMM 2022 Update Rollup 1 können VMM-verwaltete Ressourcen über Azure Arc 
 
 ```mermaid
 flowchart LR
-    ARC[Azure Arc\nResource Bridge] --> VMMS[VMM Server]
-    VMMS --> HOSTS[Hyper-V Hosts\nund VMs]
-    ARC --> AZURE[Azure Portal\nArc-enabled VMs]
-    AZURE --> POLICY[Azure Policy\nauf VMM-VMs]
-    AZURE --> MONITOR[Azure Monitor\nfür VMM-VMs]
-    AZURE --> DEFV[Defender for Servers\nauf VMM-VMs]
+    ARC[Azure Arc Resource Bridge] --> VMMS[VMM Server]
+    VMMS --> HOSTS[Hyper-V Hosts und VMs]
+    ARC --> AZURE[Azure Portal Arc-enabled VMs]
+    AZURE --> POLICY[Azure Policy auf VMM-VMs]
+    AZURE --> MONITOR[Azure Monitor für VMM-VMs]
+    AZURE --> DEFV[Defender for Servers auf VMM-VMs]
 
     style AZURE fill:#0078D4,color:#fff
     style ARC fill:#00BCF2,color:#fff

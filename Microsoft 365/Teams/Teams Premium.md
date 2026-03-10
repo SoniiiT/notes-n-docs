@@ -62,13 +62,13 @@ Intelligent Recap ist das **Kernfeature von Teams Premium** — eine KI-gestütz
 
 ```mermaid
 graph TD
-    MEETING[Teams-Meeting\nmit Aufzeichnung] --> RECAP[Intelligent Recap]
-    RECAP --> SUMMARY[KI-Meeting-Zusammenfassung\nWichtigste Punkte]
-    RECAP --> ACTIONS[Action Items\nAufgaben mit Zuweisung]
-    RECAP --> CHAPTERS[Meeting-Kapitel\nThematische Abschnitte]
-    RECAP --> TIMELINE[Sprechertimeline\nFarbcodiert]
-    RECAP --> MENTIONS[Meine Erwähnungen\nSchnellnavigation]
-    RECAP --> NOTES[Meeting-Notizen\nKI-generiert]
+    MEETING[Teams-Meeting mit Aufzeichnung] --> RECAP[Intelligent Recap]
+    RECAP --> SUMMARY[KI-Meeting-Zusammenfassung Wichtigste Punkte]
+    RECAP --> ACTIONS[Action Items Aufgaben mit Zuweisung]
+    RECAP --> CHAPTERS[Meeting-Kapitel Thematische Abschnitte]
+    RECAP --> TIMELINE[Sprechertimeline Farbcodiert]
+    RECAP --> MENTIONS[Meine Erwähnungen Schnellnavigation]
+    RECAP --> NOTES[Meeting-Notizen KI-generiert]
 ```
 
 | Feature | Beschreibung |

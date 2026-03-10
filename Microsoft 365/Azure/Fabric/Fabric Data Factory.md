@@ -30,18 +30,18 @@ Fabric Data Factory ist eine der sechs Erfahrungen in Microsoft Fabric und deckt
 ```mermaid
 graph TD
     FDF[Fabric Data Factory]
-    FDF --> PL[Pipelines\nOrchestration + Copy]
-    FDF --> DFG2[Dataflows Gen2\nNo-Code ETL]
+    FDF --> PL[Pipelines Orchestration + Copy]
+    FDF --> DFG2[Dataflows Gen2 No-Code ETL]
     
-    PL --> CA[Copy Activity\n150+ Konnektoren]
-    PL --> NA[Notebook Activity\nPySpark ausführen]
-    PL --> DFA[Dataflow Activity\nDataflow Gen2 starten]
-    PL --> SPA[Stored Proc Activity\nWarehouse SP ausführen]
-    PL --> WA[Web Activity\nHTTP REST APIs]
-    PL --> META[Get Metadata\nDatei-/Tabellen-Infos]
+    PL --> CA[Copy Activity 150+ Konnektoren]
+    PL --> NA[Notebook Activity PySpark ausführen]
+    PL --> DFA[Dataflow Activity Dataflow Gen2 starten]
+    PL --> SPA[Stored Proc Activity Warehouse SP ausführen]
+    PL --> WA[Web Activity HTTP REST APIs]
+    PL --> META[Get Metadata Datei-/Tabellen-Infos]
     
-    DFG2 --> PQ[Power Query\nTransformationen]
-    DFG2 --> DST[Datenziel\nLakehouse Warehouse]
+    DFG2 --> PQ[Power Query Transformationen]
+    DFG2 --> DST[Datenziel Lakehouse Warehouse]
     
     style FDF fill:#0078d4,color:#fff
 ```
@@ -77,12 +77,12 @@ Fabric Pipelines sind der Code-orientierte Weg zur Datenorchestrierung. Sie sind
 
 ```mermaid
 graph LR
-    GM[Get Metadata\nDatei vorhanden?] --> IF{If Condition\nexistiert?}
-    IF -->|Ja| CP[Copy Activity\nCSV in Bronze LH]
-    IF -->|Nein| FAIL[Fail Activity\nFehler ausgeben]
-    CP --> NB[Notebook Activity\nBronze zu Silber]
-    NB --> SP[Stored Procedure\nGold-Tabelle aktualisieren]
-    SP --> WEB[Web Activity\nTeams-Benachrichtigung]
+    GM[Get Metadata Datei vorhanden?] --> IF{If Condition existiert?}
+    IF -->|Ja| CP[Copy Activity CSV in Bronze LH]
+    IF -->|Nein| FAIL[Fail Activity Fehler ausgeben]
+    CP --> NB[Notebook Activity Bronze zu Silber]
+    NB --> SP[Stored Procedure Gold-Tabelle aktualisieren]
+    SP --> WEB[Web Activity Teams-Benachrichtigung]
     
     style GM fill:#e6f3ff
     style CP fill:#e6f3ff
@@ -231,11 +231,11 @@ Pipelines unterstützen **Parameter** und **Variablen** für flexible, wiederver
 ```mermaid
 graph TD
     SCHED[Pipeline Scheduling]
-    SCHED --> MAN[Manuell\nEinmaliges Ausführen]
-    SCHED --> TRIG[Zeitplan-Trigger\nCron-Ausdruck]
-    SCHED --> EVEN[Event-basiert\nDatei landet in Lakehouse]
-    SCHED --> PIPE[Pipeline-Kette\nPipeline A → Pipeline B]
-    SCHED --> API[REST API\nProgrammatisch auslösen]
+    SCHED --> MAN[Manuell Einmaliges Ausführen]
+    SCHED --> TRIG[Zeitplan-Trigger Cron-Ausdruck]
+    SCHED --> EVEN[Event-basiert Datei landet in Lakehouse]
+    SCHED --> PIPE[Pipeline-Kette Pipeline A → Pipeline B]
+    SCHED --> API[REST API Programmatisch auslösen]
 ```
 
 **Zeitplan-Trigger konfigurieren:**
@@ -269,8 +269,8 @@ Für Daten aus lokalen Netzwerken gibt es zwei Optionen:
 
 ```mermaid
 graph LR
-    ONPREM[On-Premises\nDatenbank Server] <-->|Tunnel| GW[On-Premises\nData Gateway]
-    GW <-->|HTTPS| FABRIC[Fabric Cloud\nDataflow / Pipeline]
+    ONPREM[On-Premises Datenbank Server] <-->|Tunnel| GW[On-Premises Data Gateway]
+    GW <-->|HTTPS| FABRIC[Fabric Cloud Dataflow / Pipeline]
     
     style GW fill:#ffcc00
 ```
@@ -284,8 +284,8 @@ graph LR
 
 ```mermaid
 graph LR
-    ONPREM2[On-Premises\nDatenbank] <-->|SHIR Agent| SHIR[Self-Hosted IR\nLokal installiert]
-    SHIR <-->|HTTPS ausgehend| FABRIC2[Fabric Pipelines\nCopy Activity]
+    ONPREM2[On-Premises Datenbank] <-->|SHIR Agent| SHIR[Self-Hosted IR Lokal installiert]
+    SHIR <-->|HTTPS ausgehend| FABRIC2[Fabric Pipelines Copy Activity]
     
     style SHIR fill:#ff9933,color:#fff
 ```
@@ -318,10 +318,10 @@ graph LR
 ```mermaid
 graph TD
     ADF_PL[ADF Pipelines] -->|Manuell nachbauen| FAB_PL[Fabric Pipelines]
-    ADF_DF[ADF Mapping\nData Flows] -->|Umbauen auf| FAB_NB[Fabric Notebooks\nPySpark]
+    ADF_DF[ADF Mapping Data Flows] -->|Umbauen auf| FAB_NB[Fabric Notebooks PySpark]
     ADF_DF -->|Oder| FAB_DFG2[Dataflow Gen2]
-    ADF_LIR[Linked Services\nIR] -->|Ersetzen durch| FAB_CONN[Fabric Connections]
-    ADF_DS[ADF Datasets] -->|Ersetzen durch| FAB_ITEM[Fabric Items\nLakehouse Warehouse]
+    ADF_LIR[Linked Services IR] -->|Ersetzen durch| FAB_CONN[Fabric Connections]
+    ADF_DS[ADF Datasets] -->|Ersetzen durch| FAB_ITEM[Fabric Items Lakehouse Warehouse]
 ```
 
 > [!TIP]
@@ -333,7 +333,7 @@ graph TD
 
 ```mermaid
 graph LR
-    DEV[Dev Workspace] -->|Git Push| REPO[Azure DevOps\noder GitHub Repo]
+    DEV[Dev Workspace] -->|Git Push| REPO[Azure DevOps oder GitHub Repo]
     REPO -->|PR + Merge| STAGE[Staging Workspace]
     STAGE -->|Deployment Pipeline| PROD[Prod Workspace]
     

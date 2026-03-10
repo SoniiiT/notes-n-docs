@@ -16,10 +16,10 @@ Service Bus ist der **Enterprise-Messaging-Dienst** in Azure – konzipiert für
 
 ```mermaid
 flowchart LR
-    P[Producer\nApplication] --> Q[Service Bus\nQueue/Topic]
+    P[Producer Application] --> Q[Service Bus Queue/Topic]
     Q --> C1[Consumer 1]
     Q --> C2[Consumer 2]
-    Q --> DLQ[Dead Letter\nQueue]
+    Q --> DLQ[Dead Letter Queue]
 ```
 
 **Typische Anwendungsfälle:**
@@ -38,7 +38,7 @@ flowchart LR
 ```mermaid
 flowchart LR
     S[Sender] --> Q[(Queue)]
-    Q --> R[Empfänger\nReceiver]
+    Q --> R[Empfänger Receiver]
 ```
 
 - **FIFO** – Nachrichten werden in Reihenfolge zugestellt (wenn Sessions aktiviert)
@@ -51,9 +51,9 @@ flowchart LR
 ```mermaid
 flowchart LR
     P[Publisher] --> T[Topic]
-    T --> S1[Subscription 1\nFilter: Typ=Order]
-    T --> S2[Subscription 2\nFilter: Region=DE]
-    T --> S3[Subscription 3\nAlles]
+    T --> S1[Subscription 1 Filter: Typ=Order]
+    T --> S2[Subscription 2 Filter: Region=DE]
+    T --> S3[Subscription 3 Alles]
     S1 --> C1[Consumer 1]
     S2 --> C2[Consumer 2]
     S3 --> C3[Consumer 3]
@@ -163,11 +163,11 @@ Sessions ermöglichen **geordnete FIFO-Verarbeitung** für zusammengehörige Nac
 
 ```mermaid
 flowchart LR
-    P[Producer] --> Q[Queue\nSessions aktiviert]
-    Q --> S1[Session A\nNachrichten 1,2,3]
-    Q --> S2[Session B\nNachrichten 4,5,6]
-    S1 --> C1[Consumer 1\nverarbeitet A exklusiv]
-    S2 --> C2[Consumer 2\nverarbeitet B exklusiv]
+    P[Producer] --> Q[Queue Sessions aktiviert]
+    Q --> S1[Session A Nachrichten 1,2,3]
+    Q --> S2[Session B Nachrichten 4,5,6]
+    S1 --> C1[Consumer 1 verarbeitet A exklusiv]
+    S2 --> C2[Consumer 2 verarbeitet B exklusiv]
 ```
 
 - **Session Key** = `SessionId` der Nachricht (z. B. `OrderId`, `CustomerId`)

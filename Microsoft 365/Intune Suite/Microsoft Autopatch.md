@@ -33,13 +33,13 @@ Traditionelles Patch Management erfordert erheblichen manuellen Aufwand:
 
 ```mermaid
 graph LR
-    MICROSOFT[Microsoft\nPatch-Orchestrierung] -->|Automatisch| RING_TEST[Test Ring\n1% der Geräte]
-    RING_TEST -->|nach 7 Tagen ohne Probleme| RING_FIRST[First Ring\n9% der Geräte]
-    RING_FIRST -->|nach 14 Tagen| RING_FAST[Fast Ring\n40% der Geräte]
-    RING_FAST -->|nach 21 Tagen| RING_BROAD[Broad Ring\n50% der Geräte]
+    MICROSOFT[Microsoft Patch-Orchestrierung] -->|Automatisch| RING_TEST[Test Ring 1% der Geräte]
+    RING_TEST -->|nach 7 Tagen ohne Probleme| RING_FIRST[First Ring 9% der Geräte]
+    RING_FIRST -->|nach 14 Tagen| RING_FAST[Fast Ring 40% der Geräte]
+    RING_FAST -->|nach 21 Tagen| RING_BROAD[Broad Ring 50% der Geräte]
     
-    MICROSOFT -->|Monitoring| MONITOR[Autopatch\nGesundheits-Monitoring]
-    MONITOR -->|Probleme erkannt| PAUSE[Automatische Pause\nbei kritischen Problemen]
+    MICROSOFT -->|Monitoring| MONITOR[Autopatch Gesundheits-Monitoring]
+    MONITOR -->|Probleme erkannt| PAUSE[Automatische Pause bei kritischen Problemen]
 ```
 
 ---
@@ -245,10 +245,10 @@ Autopatch überwacht die Update-Gesundheit aktiv:
 
 ```mermaid
 graph TD
-    DEPLOY[Update rollt aus auf Test Ring] --> MONITOR[Autopatch Monitoring\nFehlerrate prüfen]
+    DEPLOY[Update rollt aus auf Test Ring] --> MONITOR[Autopatch Monitoring Fehlerrate prüfen]
     MONITOR -->|Fehlerrate < 5%| CONTINUE[Weiter zu First Ring]
-    MONITOR -->|Fehlerrate > 5%| PAUSE[Automatischer Stopp\nRing pausiert]
-    PAUSE --> ALERT[Alert an Admin\nMicrosoft-Untersuchung]
+    MONITOR -->|Fehlerrate > 5%| PAUSE[Automatischer Stopp Ring pausiert]
+    PAUSE --> ALERT[Alert an Admin Microsoft-Untersuchung]
     ALERT -->|Problem behoben| RESUME[Admin setzt fort]
     PAUSE -->|Microsoft Aktion| ROLLBACK[Patch-Rollback optional]
 ```

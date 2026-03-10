@@ -28,12 +28,12 @@ Das klassische Problem in Windows-Umgebungen: Viele Anwendungen benötigen admin
 
 ```mermaid
 graph TD
-    USER[Standard-User\nkein lokaler Admin] -->|startet Anwendung| EPM_CLIENT[EPM Client\nauf dem Gerät]
-    EPM_CLIENT -->|prüft Elevation Rules| POLICY[EPM Policy\nin Intune]
-    POLICY -->|Automatic| AUTO[Automatisch erhöht\nkeine Benutzerinteraktion]
-    POLICY -->|User Confirmed| CONFIRM[Benutzer bestätigt\nDialog erscheint]
-    POLICY -->|Support Approved| APPROVAL[Genehmigung\ndurch IT nötig]
-    AUTO --> PROC[Prozess läuft\nmit Admin-Rechten]
+    USER[Standard-User kein lokaler Admin] -->|startet Anwendung| EPM_CLIENT[EPM Client auf dem Gerät]
+    EPM_CLIENT -->|prüft Elevation Rules| POLICY[EPM Policy in Intune]
+    POLICY -->|Automatic| AUTO[Automatisch erhöht keine Benutzerinteraktion]
+    POLICY -->|User Confirmed| CONFIRM[Benutzer bestätigt Dialog erscheint]
+    POLICY -->|Support Approved| APPROVAL[Genehmigung durch IT nötig]
+    AUTO --> PROC[Prozess läuft mit Admin-Rechten]
     CONFIRM --> PROC
     APPROVAL --> PROC
 ```

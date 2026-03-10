@@ -38,14 +38,14 @@ SCOM überwacht IT-Infrastruktur durch Agenten, die auf überwachten Systemen la
 
 ```mermaid
 graph TD
-    MS[Management Server\nHauptverwaltung] --> DB[(Operations Datenbank\nSQL Server)]
-    MS --> DW[(Data Warehouse\nSQL Server Reporting)]
-    GW[Gateway Server\nFirewall DMZ] --> MS
-    AGENT1[SCOM Agent\nDirekt-verbunden] --> MS
-    AGENT2[SCOM Agent\nüber Gateway] --> GW
-    RSP[Reporting Server\nSSRS] --> DW
-    WEB[Web Console\nHTML5] --> MS
-    PS[Operations Manager Shell\nPowerShell] --> MS
+    MS[Management Server Hauptverwaltung] --> DB[(Operations Datenbank SQL Server)]
+    MS --> DW[(Data Warehouse SQL Server Reporting)]
+    GW[Gateway Server Firewall DMZ] --> MS
+    AGENT1[SCOM Agent Direkt-verbunden] --> MS
+    AGENT2[SCOM Agent über Gateway] --> GW
+    RSP[Reporting Server SSRS] --> DW
+    WEB[Web Console HTML5] --> MS
+    PS[Operations Manager Shell PowerShell] --> MS
 
     style MS fill:#0078D4,color:#fff
     style DB fill:#f0f0f0
@@ -210,7 +210,7 @@ Gateway Server ermöglichen Monitoring über Firewall-Grenzen und in nicht-vertr
 
 ```mermaid
 graph LR
-    MS[Management Server\nHauptnetz] -->|Port 5723| GW[Gateway Server\nDMZ]
+    MS[Management Server Hauptnetz] -->|Port 5723| GW[Gateway Server DMZ]
     GW -->|Port 5723| A1[Agent DMZ Server 1]
     GW -->|Port 5723| A2[Agent DMZ Server 2]
     GW -->|Port 5723| A3[Agent Externe Domain]

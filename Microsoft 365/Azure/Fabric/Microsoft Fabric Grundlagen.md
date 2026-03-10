@@ -33,13 +33,13 @@ Microsoft Fabric wurde im Mai 2023 auf der Build-Konferenz angekündigt und ist 
 **Positionierung:**
 ```mermaid
 graph TD
-    FABRIC[Microsoft Fabric\nUnified Analytics Platform]
-    FABRIC --> DE[Data Engineering\nNotebooks, Spark]
-    FABRIC --> DF[Data Factory\nPipelines, Dataflows]
-    FABRIC --> DS[Data Science\nML, Experimente]
-    FABRIC --> DW[Data Warehouse\nT-SQL]
-    FABRIC --> RTI[Real-Time Intelligence\nKQL, Eventstreams]
-    FABRIC --> PBI[Power BI\nReports, Dashboards]
+    FABRIC[Microsoft Fabric Unified Analytics Platform]
+    FABRIC --> DE[Data Engineering Notebooks, Spark]
+    FABRIC --> DF[Data Factory Pipelines, Dataflows]
+    FABRIC --> DS[Data Science ML, Experimente]
+    FABRIC --> DW[Data Warehouse T-SQL]
+    FABRIC --> RTI[Real-Time Intelligence KQL, Eventstreams]
+    FABRIC --> PBI[Power BI Reports, Dashboards]
     
     style FABRIC fill:#0078d4,color:#fff
     style DE fill:#e6f3ff
@@ -82,7 +82,7 @@ Fabric gliedert sich in sechs spezialisierte Erfahrungen, die alle auf derselben
 
 ```mermaid
 graph LR
-    OL[OneLake\n1x pro Tenant]
+    OL[OneLake 1x pro Tenant]
     WS1[Workspace A] --> OL
     WS2[Workspace B] --> OL
     WS3[Workspace C] --> OL
@@ -172,13 +172,13 @@ New-FabricWorkspace -DisplayName "Analytics-Produktion" -CapacityId "<Kapazität
 ```mermaid
 graph TD
     LIZ[Fabric-Lizenzierung]
-    LIZ --> CAP[Kapazitäts-basiert\nF-SKUs]
-    LIZ --> PBI[Power BI Premium\nP-SKUs - Legacy]
-    LIZ --> PPU[Power BI Premium\nPer User - PPU]
-    LIZ --> TRIAL[Trial-Kapazität\n60 Tage kostenlos]
+    LIZ --> CAP[Kapazitäts-basiert F-SKUs]
+    LIZ --> PBI[Power BI Premium P-SKUs - Legacy]
+    LIZ --> PPU[Power BI Premium Per User - PPU]
+    LIZ --> TRIAL[Trial-Kapazität 60 Tage kostenlos]
     
     CAP --> F2[F2 bis F2048]
-    PBI --> MIGR[Migration zu F-SKUs\nempfohlen]
+    PBI --> MIGR[Migration zu F-SKUs empfohlen]
     PPU --> USER[10 USD/User/Monat]
 ```
 

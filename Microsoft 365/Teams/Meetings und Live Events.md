@@ -23,11 +23,11 @@ aliases:
 
 ```mermaid
 graph TD
-    MEET[Teams-Veranstaltungen] --> PM[Privates Meeting\nKalender-Einladung]
-    MEET --> CM[Kanal-Meeting\nIn einem Team-Kanal]
-    MEET --> MN[Meet Now\nSofort-Meeting]
-    MEET --> WEB[Webinar\nMit Registrierung]
-    MEET --> TH[Town Hall\nGroßes strukturiertes Event]
+    MEET[Teams-Veranstaltungen] --> PM[Privates Meeting Kalender-Einladung]
+    MEET --> CM[Kanal-Meeting In einem Team-Kanal]
+    MEET --> MN[Meet Now Sofort-Meeting]
+    MEET --> WEB[Webinar Mit Registrierung]
+    MEET --> TH[Town Hall Großes strukturiertes Event]
     PM --> ODB[Aufzeichnung in OneDrive]
     CM --> SPO[Aufzeichnung in SharePoint]
     WEB --> ODB2[Aufzeichnung in OneDrive]

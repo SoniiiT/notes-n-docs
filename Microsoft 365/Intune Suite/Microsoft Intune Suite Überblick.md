@@ -27,16 +27,16 @@ Die **Microsoft Intune Suite** (ab März 2023 verfügbar) bündelt premium Add-o
 
 ```mermaid
 graph TD
-    SUITE[Microsoft Intune Suite\n10 USD pro User pro Monat] --> EPM[Endpoint Privilege\nManagement EPM]
-    SUITE --> CPKI[Microsoft\nCloud PKI]
-    SUITE --> TUNNEL[Microsoft Tunnel\nfor MAM]
+    SUITE[Microsoft Intune Suite 10 USD pro User pro Monat] --> EPM[Endpoint Privilege Management EPM]
+    SUITE --> CPKI[Microsoft Cloud PKI]
+    SUITE --> TUNNEL[Microsoft Tunnel for MAM]
     SUITE --> REMHELP[Remote Help]
-    SUITE --> ANALYTICS[Advanced Endpoint\nAnalytics]
-    SUITE --> EAM[Enterprise App\nManagement]
-    SUITE --> FIRMWARE[Firmware\nOver-the-Air]
-    SUITE --> SPECIALTY[Specialty Device\nManagement]
+    SUITE --> ANALYTICS[Advanced Endpoint Analytics]
+    SUITE --> EAM[Enterprise App Management]
+    SUITE --> FIRMWARE[Firmware Over-the-Air]
+    SUITE --> SPECIALTY[Specialty Device Management]
     
-    BASE[Intune Plan 1\n8 USD pro User pro Monat\nVoraussetzung] -->|Add-on| SUITE
+    BASE[Intune Plan 1 8 USD pro User pro Monat Voraussetzung] -->|Add-on| SUITE
 ```
 
 ---
@@ -129,12 +129,12 @@ M365 E3 ($36/User/Monat) enthält Intune Plan 1 → + $10 Suite = $46/User/Monat
 
 ```mermaid
 graph TD
-    M365[Microsoft 365 Lizenz\nE3 / E5 / Business Premium\noder eigenständige Pläne] --> INTUNE_P1[Intune Plan 1\n8 USD/User/Monat\noder in M365 enthalten]
-    INTUNE_P1 -->|Add-on| SUITE[Intune Suite\n10 USD/User/Monat]
+    M365[Microsoft 365 Lizenz E3 / E5 / Business Premium oder eigenständige Pläne] --> INTUNE_P1[Intune Plan 1 8 USD/User/Monat oder in M365 enthalten]
+    INTUNE_P1 -->|Add-on| SUITE[Intune Suite 10 USD/User/Monat]
     
-    SUITE --> ENTRA[Entra ID\nP1 oder P2\nfür CA und PIM]
-    SUITE --> WIN[Windows 10/11\nfür EPM und Remote Help]
-    SUITE --> LINUX[Linux Server\nfür Microsoft Tunnel]
+    SUITE --> ENTRA[Entra ID P1 oder P2 für CA und PIM]
+    SUITE --> WIN[Windows 10/11 für EPM und Remote Help]
+    SUITE --> LINUX[Linux Server für Microsoft Tunnel]
 ```
 
 **Checkliste Voraussetzungen:**
@@ -265,12 +265,12 @@ Für eine erfolgreiche Intune Suite Einführung empfohlene Reihenfolge:
 
 ```mermaid
 graph LR
-    STEP1[1 Lizenzen kaufen\nund zuweisen] --> STEP2[2 Advanced Analytics\naktivieren und Baseline\nerstellen]
-    STEP2 --> STEP3[3 EPM in Audit Mode\nfür 30 Tage]
-    STEP3 --> STEP4[4 Cloud PKI aufsetzen\nund Zertifikat-Profile\ndeployen]
-    STEP4 --> STEP5[5 EPM Regeln\nbasierend auf Audit-Daten\nerstellen]
-    STEP5 --> STEP6[6 Remote Help\ndeployen und IT-Team\nschulen]
-    STEP6 --> STEP7[7 Tunnel for MAM\nfür BYOD konfigurieren]
+    STEP1[1 Lizenzen kaufen und zuweisen] --> STEP2[2 Advanced Analytics aktivieren und Baseline erstellen]
+    STEP2 --> STEP3[3 EPM in Audit Mode für 30 Tage]
+    STEP3 --> STEP4[4 Cloud PKI aufsetzen und Zertifikat-Profile deployen]
+    STEP4 --> STEP5[5 EPM Regeln basierend auf Audit-Daten erstellen]
+    STEP5 --> STEP6[6 Remote Help deployen und IT-Team schulen]
+    STEP6 --> STEP7[7 Tunnel for MAM für BYOD konfigurieren]
 ```
 
 ### Phase 1: Sichtbarkeit (Woche 1-2)
@@ -296,13 +296,13 @@ Die Intune Suite ergänzt die Microsoft-Sicherheitsarchitektur auf Endpoint-Eben
 
 ```mermaid
 graph TD
-    SUITE[Intune Suite\nEndpoint Layer] --> EPM_SEC[EPM\nPrivilege Control]
-    SUITE --> PKI_SEC[Cloud PKI\nZertifikats-Authentifizierung]
-    SUITE --> TUNNEL_SEC[Tunnel for MAM\nZero-Trust Netzwerkzugriff]
+    SUITE[Intune Suite Endpoint Layer] --> EPM_SEC[EPM Privilege Control]
+    SUITE --> PKI_SEC[Cloud PKI Zertifikats-Authentifizierung]
+    SUITE --> TUNNEL_SEC[Tunnel for MAM Zero-Trust Netzwerkzugriff]
     
-    MDE[Microsoft Defender\nfor Endpoint] -->|Geräte-Signale| CA[Conditional Access\nEntra ID]
+    MDE[Microsoft Defender for Endpoint] -->|Geräte-Signale| CA[Conditional Access Entra ID]
     SUITE -->|Compliance-Signale| CA
-    CA -->|Zugriffsentscheidung| RESOURCES[M365 Apps\nAzure-Ressourcen\nOn-Prem Apps]
+    CA -->|Zugriffsentscheidung| RESOURCES[M365 Apps Azure-Ressourcen On-Prem Apps]
 ```
 
 ### Zero Trust mit Intune Suite

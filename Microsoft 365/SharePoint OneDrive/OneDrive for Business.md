@@ -49,10 +49,10 @@ personal/<UPN>/
 ```mermaid
 graph TD
     A[Microsoft 365 Tenant] --> B[SharePoint Online]
-    B --> C[MySite Host\n tenant-my sharepoint com]
-    C --> D[ODB Site User 1\n personal/user1_contoso_com]
-    C --> E[ODB Site User 2\n personal/user2_contoso_com]
-    C --> F[ODB Site User N\n ...]
+    B --> C[MySite Host  tenant-my sharepoint com]
+    C --> D[ODB Site User 1  personal/user1_contoso_com]
+    C --> E[ODB Site User 2  personal/user2_contoso_com]
+    C --> F[ODB Site User N  ...]
     D --> G[Dokumentenbibliothek]
     D --> H[Papierkorb]
     D --> I[Versionsverlauf]
@@ -159,14 +159,14 @@ HKCU\SOFTWARE\Microsoft\OneDrive
 flowchart TD
     A[Sync-Problem erkannt] --> B{Fehlernummer bekannt?}
     B -->|Ja| C{Fehlercode}
-    B -->|Nein| D[Logs prüfen\n %localappdata%\Microsoft\OneDrive\logs]
+    B -->|Nein| D[Logs prüfen  %localappdata%\Microsoft\OneDrive\logs]
     C -->|0x8004de40| E[Netzwerk und Proxy prüfen]
     C -->|0x80070005| F[NTFS-Berechtigungen prüfen]
     C -->|0x8004def7| G[Lizenz im M365 Admin Center prüfen]
     C -->|Sonstiger Code| D
     D --> H[Sync Client zurücksetzen]
     H --> I[Erneut anmelden]
-    E --> J[Proxy-Ausnahmen für\n *.sharepoint.com ergänzen]
+    E --> J[Proxy-Ausnahmen für  *.sharepoint.com ergänzen]
 ```
 
 ---
@@ -286,10 +286,10 @@ Neben der persönlichen ODB-Bibliothek können Benutzer auch **SharePoint-Teambi
 
 ```mermaid
 graph LR
-    A[Sync Client] --> B[Persönliche ODB\n OneDrive - Contoso]
-    A --> C[Team A Bibliothek\n SharePoint - Contoso]
-    A --> D[Team B Bibliothek\n SharePoint - Contoso]
-    B --> E[Lokales Dateisystem\nC:\Users\Max\]
+    A[Sync Client] --> B[Persönliche ODB  OneDrive - Contoso]
+    A --> C[Team A Bibliothek  SharePoint - Contoso]
+    A --> D[Team B Bibliothek  SharePoint - Contoso]
+    B --> E[Lokales Dateisystem C:\Users\Max\]
     C --> E
     D --> E
 ```
@@ -368,8 +368,8 @@ Gelöschte Dateien landen im **Erster-Stufen-Papierkorb** des Benutzers (93 Tage
 
 ```mermaid
 flowchart LR
-    A[Datei gelöscht] --> B[Papierkorb\ndes Benutzers\n93 Tage]
-    B -->|Benutzer leert Papierkorb\noder 93 Tage überschritten| C[Websitesammlungs-\nPapierkorb\n93 Tage]
+    A[Datei gelöscht] --> B[Papierkorb des Benutzers 93 Tage]
+    B -->|Benutzer leert Papierkorb oder 93 Tage überschritten| C[Websitesammlungs- Papierkorb 93 Tage]
     C -->|186 Tage überschritten| D[Dauerhaft gelöscht]
     B -->|Benutzer stellt wieder her| E[Wiederhergestellt]
     C -->|Admin stellt wieder her| E
@@ -544,11 +544,11 @@ Für **Google Drive**, **Box**, **Dropbox** und andere Cloud-zu-Cloud-Migratione
 ```mermaid
 flowchart TD
     A[Migrationsquelle] --> B{Quellentyp}
-    B -->|Dateiserver SMB| C[SPMT\nSharePoint Migration Tool]
+    B -->|Dateiserver SMB| C[SPMT SharePoint Migration Tool]
     B -->|SharePoint On-Prem| C
-    B -->|Google Drive\nBox\nDropbox| D[Migration Manager\nehem Mover]
-    B -->|OneDrive Consumer| E[OneDrive Transfer\nim M365 Admin Center]
-    C --> F[OneDrive for Business\nZielbibliothek]
+    B -->|Google Drive Box Dropbox| D[Migration Manager ehem Mover]
+    B -->|OneDrive Consumer| E[OneDrive Transfer im M365 Admin Center]
+    C --> F[OneDrive for Business Zielbibliothek]
     D --> F
     E --> F
 ```

@@ -33,12 +33,12 @@ Traditionelle Entwickler-Workstations haben mehrere Probleme:
 
 ```mermaid
 graph TD
-    DEV_CENTER[Dev Center\nzentrale Verwaltung] --> PROJECT1[Projekt: Frontend-Team\nCustom Image mit VS Code, Node.js]
-    DEV_CENTER --> PROJECT2[Projekt: Backend-Team\nCustom Image mit VS, SQL Server]
-    DEV_CENTER --> PROJECT3[Projekt: Data Science\nCustom Image mit Python, Jupyter]
+    DEV_CENTER[Dev Center zentrale Verwaltung] --> PROJECT1[Projekt: Frontend-Team Custom Image mit VS Code, Node.js]
+    DEV_CENTER --> PROJECT2[Projekt: Backend-Team Custom Image mit VS, SQL Server]
+    DEV_CENTER --> PROJECT3[Projekt: Data Science Custom Image mit Python, Jupyter]
     
-    PROJECT1 --> POOL1[Dev Box Pool\n16 vCPU, 64 GB RAM\nAzure Network Connection]
-    PROJECT2 --> POOL2[Dev Box Pool\n32 vCPU, 128 GB RAM\nMicrosoft-hosted Network]
+    PROJECT1 --> POOL1[Dev Box Pool 16 vCPU, 64 GB RAM Azure Network Connection]
+    PROJECT2 --> POOL2[Dev Box Pool 32 vCPU, 128 GB RAM Microsoft-hosted Network]
     
     POOL1 --> DB1[Dev Box: Max Müller]
     POOL1 --> DB2[Dev Box: Anna Schmidt]
@@ -347,10 +347,10 @@ Da Dev Boxes automatisch Intune-enrolled sind, gelten alle Sicherheitsfeatures:
 
 ```mermaid
 graph LR
-    CREATE[Dev Box erstellen\nüber Self-Service Portal] --> ACTIVE[Aktive Dev Box\nEntwickler arbeitet]
-    ACTIVE -->|Auto-Stop 18:00| HIBERNATE[Hibernation\nnur Speicherkosten]
+    CREATE[Dev Box erstellen über Self-Service Portal] --> ACTIVE[Aktive Dev Box Entwickler arbeitet]
+    ACTIVE -->|Auto-Stop 18:00| HIBERNATE[Hibernation nur Speicherkosten]
     HIBERNATE -->|Entwickler startet neu| ACTIVE
-    ACTIVE -->|Projekt abgeschlossen| DELETE[Dev Box löschen\noder Pool entfernen]
+    ACTIVE -->|Projekt abgeschlossen| DELETE[Dev Box löschen oder Pool entfernen]
     DELETE -->|Nächstes Projekt| CREATE
 ```
 

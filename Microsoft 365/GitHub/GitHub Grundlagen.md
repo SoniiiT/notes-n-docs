@@ -198,15 +198,15 @@ Use /api/v2/users instead."
 
 ```mermaid
 flowchart TD
-    Branch["Feature Branch\nerstellen"] --> Code["Code\nschreiben"]
-    Code --> Push["Branch pushen\ngit push"]
-    Push --> CreatePR["Pull Request\nerstellen"]
-    CreatePR --> Review{"Code\nReview"}
+    Branch["Feature Branch erstellen"] --> Code["Code schreiben"]
+    Code --> Push["Branch pushen git push"]
+    Push --> CreatePR["Pull Request erstellen"]
+    CreatePR --> Review{"Code Review"}
     Review -->|"Request Changes"| Code
-    Review -->|"Approve"| MergeStrategy{"Merge\nStrategie"}
-    MergeStrategy -->|"Merge Commit"| Main1["main branch\n(Merge Commit)"]
-    MergeStrategy -->|"Squash and Merge"| Main2["main branch\n(ein Commit)"]
-    MergeStrategy -->|"Rebase and Merge"| Main3["main branch\n(lineare History)"]
+    Review -->|"Approve"| MergeStrategy{"Merge Strategie"}
+    MergeStrategy -->|"Merge Commit"| Main1["main branch (Merge Commit)"]
+    MergeStrategy -->|"Squash and Merge"| Main2["main branch (ein Commit)"]
+    MergeStrategy -->|"Rebase and Merge"| Main3["main branch (lineare History)"]
 ```
 
 ### Draft Pull Requests
@@ -475,15 +475,15 @@ GitHub Desktop ist der offizielle GUI-Client für Git/GitHub:
 
 ```mermaid
 flowchart TD
-    Fork["Repository forken\n(GitHub UI: Fork Button)"]
-    Clone["Fork klonen\ngit clone fork-url"]
-    Upstream["Upstream hinzufügen\ngit remote add upstream original-url"]
-    Branch["Feature Branch\ngit checkout -b fix/typo"]
-    Code["Änderungen machen\n& committen"]
-    Sync["Upstream synchronisieren\ngit fetch upstream"]
-    Rebase["Rebase auf upstream/main\ngit rebase upstream/main"]
-    Push["Branch pushen\ngit push origin fix/typo"]
-    PR["Pull Request\nan Original-Repo"]
+    Fork["Repository forken (GitHub UI: Fork Button)"]
+    Clone["Fork klonen git clone fork-url"]
+    Upstream["Upstream hinzufügen git remote add upstream original-url"]
+    Branch["Feature Branch git checkout -b fix/typo"]
+    Code["Änderungen machen & committen"]
+    Sync["Upstream synchronisieren git fetch upstream"]
+    Rebase["Rebase auf upstream/main git rebase upstream/main"]
+    Push["Branch pushen git push origin fix/typo"]
+    PR["Pull Request an Original-Repo"]
 
     Fork --> Clone
     Clone --> Upstream

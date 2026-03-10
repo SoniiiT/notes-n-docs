@@ -22,9 +22,9 @@ Azure Logic Apps ist eine **Low-Code/No-Code-Integrationsplattform**, die auf de
 
 ```mermaid
 flowchart LR
-    T[Trigger\nRecurrence/HTTP/Event] --> A1[Action 1\nDaten lesen]
-    A1 --> A2[Action 2\nTransformieren]
-    A2 --> A3[Action 3\nAusgabe senden]
+    T[Trigger Recurrence/HTTP/Event] --> A1[Action 1 Daten lesen]
+    A1 --> A2[Action 2 Transformieren]
+    A2 --> A3[Action 3 Ausgabe senden]
     A3 --> E[Ende]
 ```
 
@@ -89,7 +89,7 @@ flowchart LR
 
 ```mermaid
 mindmap
-  root((Logic Apps\nKonnektoren))
+  root((Logic Apps Konnektoren))
     Microsoft
       Office 365
       SharePoint
@@ -163,7 +163,7 @@ Schleife, die läuft bis eine Bedingung erfüllt ist (max. 5.000 Iterationen ode
 
 ```mermaid
 flowchart TD
-    S[Start Until-Loop] --> C{Bedingung\nerfüllt?}
+    S[Start Until-Loop] --> C{Bedingung erfüllt?}
     C -- Ja --> E[Ende]
     C -- Nein --> A[Action ausführen]
     A --> C
@@ -220,8 +220,8 @@ flowchart TD
     Scope[Scope: Hauptverarbeitung] --> A1[Action 1]
     A1 --> A2[Action 2]
     A2 --> A3[Action 3]
-    Scope -- bei Fehler --> EH[Error Handler\nScope Failed]
-    EH --> N[Benachrichtigung\nsenden]
+    Scope -- bei Fehler --> EH[Error Handler Scope Failed]
+    EH --> N[Benachrichtigung senden]
 ```
 
 > [!IMPORTANT]
@@ -247,10 +247,10 @@ Das Enterprise Integration Pack (EIP) ermöglicht **B2B-Messaging** nach Industr
 
 ```mermaid
 flowchart LR
-    P[Partner\nsendet AS2] --> R[Logic App\nAS2 Decode]
-    R --> V[XML\nValidierung]
-    V --> T[XSLT\nTransformation]
-    T --> B[Backend\nSystem SAP/DB]
+    P[Partner sendet AS2] --> R[Logic App AS2 Decode]
+    R --> V[XML Validierung]
+    V --> T[XSLT Transformation]
+    T --> B[Backend System SAP/DB]
 ```
 
 ---
@@ -294,9 +294,9 @@ az logicapp workflow list \
 
 ```mermaid
 flowchart LR
-    LA[Logic Apps\nStandard] --> VNet[Azure VNet\nSubnet Delegation]
-    VNet --> PE[Private Endpoints\nStorage/SB/SQL]
-    VNet --> OnP[On-Premises\nvia VPN/ExpressRoute]
+    LA[Logic Apps Standard] --> VNet[Azure VNet Subnet Delegation]
+    VNet --> PE[Private Endpoints Storage/SB/SQL]
+    VNet --> OnP[On-Premises via VPN/ExpressRoute]
 ```
 
 ---

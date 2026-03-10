@@ -39,19 +39,19 @@ aliases:
 
 ```mermaid
 graph TD
-    DPM[DPM Server\nHauptverwaltung] --> SP[Storage Pool\nReFS-Volumes Modern Backup Storage]
-    DPM --> MSSQL[(DPM Datenbank\nSQL Server)]
-    DPM --> TAPE[Tape Library\nLangzeitarchiv optional]
-    DPM --> AZURE[Azure Recovery Services Vault\nCloud-Backup]
+    DPM[DPM Server Hauptverwaltung] --> SP[Storage Pool ReFS-Volumes Modern Backup Storage]
+    DPM --> MSSQL[(DPM Datenbank SQL Server)]
+    DPM --> TAPE[Tape Library Langzeitarchiv optional]
+    DPM --> AZURE[Azure Recovery Services Vault Cloud-Backup]
 
-    PG1[Schutzgruppe\nHyper-V VMs] --> DPM
-    PG2[Schutzgruppe\nSQL Server] --> DPM
-    PG3[Schutzgruppe\nFiles und Folders] --> DPM
+    PG1[Schutzgruppe Hyper-V VMs] --> DPM
+    PG2[Schutzgruppe SQL Server] --> DPM
+    PG3[Schutzgruppe Files und Folders] --> DPM
 
-    AG1[DPM Agent\nHyper-V Host 1] --> PG1
-    AG2[DPM Agent\nHyper-V Host 2] --> PG1
-    AG3[DPM Agent\nSQL Server] --> PG2
-    AG4[DPM Agent\nFile Server] --> PG3
+    AG1[DPM Agent Hyper-V Host 1] --> PG1
+    AG2[DPM Agent Hyper-V Host 2] --> PG1
+    AG3[DPM Agent SQL Server] --> PG2
+    AG4[DPM Agent File Server] --> PG3
 
     style DPM fill:#0078D4,color:#fff
     style AZURE fill:#00BCF2,color:#fff
@@ -112,11 +112,11 @@ Schutzgruppen gruppieren Datenquellen mit identischen Backup-Anforderungen:
 
 ```mermaid
 graph LR
-    SUN[Sonntag\nExpress Full Backup] --> MON[Montag\nSynchronisation\nalle 15 Min]
-    MON --> TUE[Dienstag\nSynchronisation\nalle 15 Min]
-    TUE --> WED[Mittwoch\nSynchronisation\nalle 15 Min]
-    WED --> SAT[Samstag\nSynchronisation\nalle 15 Min]
-    SAT --> SUN2[Sonntag\nnächster Express Full]
+    SUN[Sonntag Express Full Backup] --> MON[Montag Synchronisation alle 15 Min]
+    MON --> TUE[Dienstag Synchronisation alle 15 Min]
+    TUE --> WED[Mittwoch Synchronisation alle 15 Min]
+    WED --> SAT[Samstag Synchronisation alle 15 Min]
+    SAT --> SUN2[Sonntag nächster Express Full]
 
     style SUN fill:#0078D4,color:#fff
     style SUN2 fill:#0078D4,color:#fff
@@ -140,7 +140,7 @@ graph LR
 ```mermaid
 graph LR
     ONPREM[On-Premises Daten] -->|DPM Agent| DPM[DPM Server]
-    DPM -->|Online Backup| VAULT[Recovery Services Vault\nAzure]
+    DPM -->|Online Backup| VAULT[Recovery Services Vault Azure]
     ONPREM -->|MARS Agent direkt| VAULT
     AZUREVM[Azure VM] -->|VM Extension| VAULT
     SQL[SQL in Azure VM] -->|Azure Backup Extension| VAULT

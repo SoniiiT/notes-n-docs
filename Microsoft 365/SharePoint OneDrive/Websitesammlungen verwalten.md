@@ -279,10 +279,10 @@ Hub Sites verbinden thematisch verwandte Websitesammlungen und ermöglichen geme
 
 ```mermaid
 graph TD
-    Hub["Hub Site\nUnternehmens-Intranet"] --> A["Assoziierte Site\nHR-Portal"]
-    Hub --> B["Assoziierte Site\nIT-Helpdesk"]
-    Hub --> C["Assoziierte Site\nProjektteam Alpha"]
-    Hub --> D["Assoziierte Site\nKommunikation"]
+    Hub["Hub Site Unternehmens-Intranet"] --> A["Assoziierte Site HR-Portal"]
+    Hub --> B["Assoziierte Site IT-Helpdesk"]
+    Hub --> C["Assoziierte Site Projektteam Alpha"]
+    Hub --> D["Assoziierte Site Kommunikation"]
 ```
 
 ```powershell
@@ -319,11 +319,11 @@ Get-SPOHubSite
 graph LR
     Create["Site erstellen"] --> Active["Aktive Site"]
     Active --> Delete["Site löschen"]
-    Delete --> Bin["Papierkorb\n93 Tage"]
+    Delete --> Bin["Papierkorb 93 Tage"]
     Bin --> Restore["Wiederherstellen"]
     Restore --> Active
     Bin --> Purge["Endgültig löschen"]
-    Active --> Archive["Archivieren\nread-only"]
+    Active --> Archive["Archivieren read-only"]
 ```
 
 ### Sites löschen und wiederherstellen

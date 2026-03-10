@@ -39,16 +39,16 @@ Orchestrator ermöglicht die Automatisierung von IT-Prozessen ohne Programmierun
 
 ```mermaid
 graph TD
-    RBD[Runbook Designer\nWindows GUI-Client] -->|Publish| MS[Management Server\nZentrale Verwaltung]
-    MS --> DB[(Orchestrator DB\nSQL Server)]
-    MS --> RBS1[Runbook Server 1\nAusführungsumgebung]
-    MS --> RBS2[Runbook Server 2\nRedundanz]
-    RBS1 --> RB1[Runbook\nVM-Provisioning]
-    RBS1 --> RB2[Runbook\nIncident Response]
-    RBS2 --> RB3[Runbook\nUser Onboarding]
-    OC[Orchestration Console\nWeb-basiert] --> MS
-    WS[Web Service\nREST API] --> MS
-    RUN[Runbook Control\nTrigger und Monitoring] --> WS
+    RBD[Runbook Designer Windows GUI-Client] -->|Publish| MS[Management Server Zentrale Verwaltung]
+    MS --> DB[(Orchestrator DB SQL Server)]
+    MS --> RBS1[Runbook Server 1 Ausführungsumgebung]
+    MS --> RBS2[Runbook Server 2 Redundanz]
+    RBS1 --> RB1[Runbook VM-Provisioning]
+    RBS1 --> RB2[Runbook Incident Response]
+    RBS2 --> RB3[Runbook User Onboarding]
+    OC[Orchestration Console Web-basiert] --> MS
+    WS[Web Service REST API] --> MS
+    RUN[Runbook Control Trigger und Monitoring] --> WS
 
     style MS fill:#0078D4,color:#fff
     style RBS1 fill:#00BCF2,color:#fff
@@ -85,12 +85,12 @@ Ein Runbook ist ein grafischer Workflow aus **Activities** (Aktionen) verbunden 
 
 ```mermaid
 flowchart LR
-    START[Initialize Data\nVM-Name Parameter empfangen] --> CHECK[Check VM Exists\nWMI Query]
-    CHECK -->|VM existiert nicht| CREATE[Create VM\nSCVMM Activity]
-    CREATE --> DOMAIN[Join Domain\nAD Activity]
-    DOMAIN --> TICKET[Update ServiceNow\nWeb Service Activity]
-    TICKET --> NOTIFY[Send Email\nExchange Activity]
-    CHECK -->|VM existiert| FAIL[Send Error Email\nExchange Activity]
+    START[Initialize Data VM-Name Parameter empfangen] --> CHECK[Check VM Exists WMI Query]
+    CHECK -->|VM existiert nicht| CREATE[Create VM SCVMM Activity]
+    CREATE --> DOMAIN[Join Domain AD Activity]
+    DOMAIN --> TICKET[Update ServiceNow Web Service Activity]
+    TICKET --> NOTIFY[Send Email Exchange Activity]
+    CHECK -->|VM existiert| FAIL[Send Error Email Exchange Activity]
 
     style START fill:#0078D4,color:#fff
     style NOTIFY fill:#107C10,color:#fff

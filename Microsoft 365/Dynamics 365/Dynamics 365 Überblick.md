@@ -180,9 +180,9 @@ Jede Dynamics 365-Instanz läuft in einer **Umgebung** (Environment) im Power Pl
 
 ```mermaid
 graph LR
-    DEV[Developer\nUmgebung] -->|Lösung exportieren| UAT[Sandbox / UAT\nUmgebung]
-    UAT -->|Lösung exportieren| PROD[Production\nUmgebung]
-    PROD -->|Kopie erstellen| SAN[Sandbox\nzum Testen]
+    DEV[Developer Umgebung] -->|Lösung exportieren| UAT[Sandbox / UAT Umgebung]
+    UAT -->|Lösung exportieren| PROD[Production Umgebung]
+    PROD -->|Kopie erstellen| SAN[Sandbox zum Testen]
 ```
 
 ---
@@ -224,7 +224,7 @@ Microsoft Copilot ist in alle Dynamics 365-Apps eingebettet und nutzt generative
 
 ```mermaid
 graph TD
-    COP[Microsoft Copilot\nin D365] --> AZ[Azure OpenAI Service]
+    COP[Microsoft Copilot in D365] --> AZ[Azure OpenAI Service]
     COP --> DV2[Dataverse Daten]
     COP --> M365[Microsoft 365 Graph]
     AZ --> GPT[GPT-4 / Azure AI]

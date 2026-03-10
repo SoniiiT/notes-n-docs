@@ -37,15 +37,15 @@ Eine **Resource Group** ist ein Container in Azure, der:
 
 ```mermaid
 graph TD
-    SUB[Subscription] --> RG1[rg-webapp-prod\nWest Europe]
-    SUB --> RG2[rg-database-prod\nWest Europe]
-    SUB --> RG3[rg-networking\nWest Europe]
-    RG1 --> VM[Virtual Machine\nWest Europe]
-    RG1 --> AS[App Service\nWest Europe]
-    RG2 --> SQL[SQL Database\nWest Europe]
-    RG2 --> REDIS[Redis Cache\nNorth Europe - andere Region möglich]
-    RG3 --> VNET[Virtual Network\nWest Europe]
-    RG3 --> FW[Azure Firewall\nWest Europe]
+    SUB[Subscription] --> RG1[rg-webapp-prod West Europe]
+    SUB --> RG2[rg-database-prod West Europe]
+    SUB --> RG3[rg-networking West Europe]
+    RG1 --> VM[Virtual Machine West Europe]
+    RG1 --> AS[App Service West Europe]
+    RG2 --> SQL[SQL Database West Europe]
+    RG2 --> REDIS[Redis Cache North Europe - andere Region möglich]
+    RG3 --> VNET[Virtual Network West Europe]
+    RG3 --> FW[Azure Firewall West Europe]
 ```
 
 ---

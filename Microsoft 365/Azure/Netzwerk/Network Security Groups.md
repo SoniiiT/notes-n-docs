@@ -32,11 +32,11 @@ Eine **NSG** ist eine Sammlung von Sicherheitsregeln, die eingehenden und ausgeh
 
 ```mermaid
 graph LR
-    INT[Internet] -->|Traffic| NSG_SUB[NSG auf Subnet\nErste Prüfung Inbound]
-    NSG_SUB -->|Erlaubt| NSG_NIC[NSG auf NIC\nZweite Prüfung Inbound]
+    INT[Internet] -->|Traffic| NSG_SUB[NSG auf Subnet Erste Prüfung Inbound]
+    NSG_SUB -->|Erlaubt| NSG_NIC[NSG auf NIC Zweite Prüfung Inbound]
     NSG_NIC -->|Erlaubt| VM[Virtual Machine]
-    VM -->|Ausgehend| NSG_NIC2[NSG auf NIC\nErste Prüfung Outbound]
-    NSG_NIC2 -->|Erlaubt| NSG_SUB2[NSG auf Subnet\nZweite Prüfung Outbound]
+    VM -->|Ausgehend| NSG_NIC2[NSG auf NIC Erste Prüfung Outbound]
+    NSG_NIC2 -->|Erlaubt| NSG_SUB2[NSG auf Subnet Zweite Prüfung Outbound]
     NSG_SUB2 -->|Erlaubt| EXT[Externes Ziel]
 ```
 
@@ -124,8 +124,8 @@ Die **Verarbeitungsreihenfolge** unterscheidet sich je nach Richtung:
 
 ```mermaid
 graph LR
-    EXT[Extern] -->|1. Eingehend| SUB_IN[Subnet NSG\nInbound] -->|2.| NIC_IN[NIC NSG\nInbound] --> VM[VM]
-    VM -->|1. Ausgehend| NIC_OUT[NIC NSG\nOutbound] -->|2.| SUB_OUT[Subnet NSG\nOutbound] --> EXT2[Extern]
+    EXT[Extern] -->|1. Eingehend| SUB_IN[Subnet NSG Inbound] -->|2.| NIC_IN[NIC NSG Inbound] --> VM[VM]
+    VM -->|1. Ausgehend| NIC_OUT[NIC NSG Outbound] -->|2.| SUB_OUT[Subnet NSG Outbound] --> EXT2[Extern]
 ```
 
 **Best Practice:** NSG auf **Subnet-Ebene** zuweisen (nicht auf NIC-Ebene), außer wenn unterschiedliche Regeln für einzelne VMs im gleichen Subnet benötigt werden.
@@ -144,8 +144,8 @@ ASGs ermöglichen **logische Gruppierung** von VMs ohne IP-Adressen in Regeln:
 
 ```mermaid
 graph LR
-    WEB[WebServer VMs\nASG: asg-webservers] -->|Allow 1433| DB[DB VMs\nASG: asg-dbservers]
-    APP[AppServer VMs\nASG: asg-appservers] -->|Allow 1433| DB
+    WEB[WebServer VMs ASG: asg-webservers] -->|Allow 1433| DB[DB VMs ASG: asg-dbservers]
+    APP[AppServer VMs ASG: asg-appservers] -->|Allow 1433| DB
 ```
 
 ```powershell
@@ -184,9 +184,9 @@ NSG Flow Logs zeichnen **alle Netzwerkverbindungen** auf die durch die NSG flie�
 
 ```mermaid
 graph LR
-    VM[VM Traffic] --> NSG[NSG] --> STORAGE[Storage Account\nFlow Log Blobs]
-    STORAGE --> LA[Log Analytics\nWorkspace]
-    LA --> TA[Traffic Analytics\nVisualisierung]
+    VM[VM Traffic] --> NSG[NSG] --> STORAGE[Storage Account Flow Log Blobs]
+    STORAGE --> LA[Log Analytics Workspace]
+    LA --> TA[Traffic Analytics Visualisierung]
 ```
 
 **Flow Log v2 Format** (JSON pro Flow):
@@ -326,14 +326,14 @@ $rules = @(
 
 ```mermaid
 graph TD
-    ERR[VM nicht erreichbar] --> CHK1{NSG-Regel\nvorhanden?}
+    ERR[VM nicht erreichbar] --> CHK1{NSG-Regel vorhanden?}
     CHK1 -->|Nein| FIX1[Regel erstellen]
-    CHK1 -->|Ja| CHK2{Richtige Priorität\nkein Deny davor?}
+    CHK1 -->|Ja| CHK2{Richtige Priorität kein Deny davor?}
     CHK2 -->|Nein| FIX2[Priorität anpassen]
-    CHK2 -->|Ja| CHK3{Quelle/Ziel\nkorrekt?}
-    CHK3 -->|Nein| FIX3[Service Tag oder\nIP korrigieren]
-    CHK3 -->|Ja| CHK4{VM läuft?\nOS-Firewall?}
-    CHK4 -->|OS-Firewall| FIX4[Windows Firewall\niptables prüfen]
+    CHK2 -->|Ja| CHK3{Quelle/Ziel korrekt?}
+    CHK3 -->|Nein| FIX3[Service Tag oder IP korrigieren]
+    CHK3 -->|Ja| CHK4{VM läuft? OS-Firewall?}
+    CHK4 -->|OS-Firewall| FIX4[Windows Firewall iptables prüfen]
 ```
 
 **IP Flow Verify** (schnellste Diagnose):

@@ -45,15 +45,15 @@ Azure IoT Edge verschiebt Cloud-Intelligenz an den Netzwerkrand (Edge). Anstatt 
 
 ```mermaid
 graph TD
-    Cloud["Azure Cloud"] --> IotHub["IoT Hub\nDeployment & Monitoring"]
+    Cloud["Azure Cloud"] --> IotHub["IoT Hub Deployment & Monitoring"]
     IotHub <-->|"MQTT / AMQP / HTTPS"| EdgeRuntime
 
     subgraph EdgeDevice["IoT Edge Gerät (Linux / Windows)"]
         EdgeRuntime["IoT Edge Runtime"]
-        EdgeAgent["edgeAgent\nModul-Verwaltung"]
-        EdgeHub["edgeHub\nNachrichtenrouting"]
-        CustomMod["Custom Module\n(Business Logic)"]
-        StreamMod["Stream Analytics\nModul"]
+        EdgeAgent["edgeAgent Modul-Verwaltung"]
+        EdgeHub["edgeHub Nachrichtenrouting"]
+        CustomMod["Custom Module (Business Logic)"]
+        StreamMod["Stream Analytics Modul"]
     end
 
     EdgeRuntime --> EdgeAgent
@@ -197,11 +197,11 @@ Das Deployment Manifest ist ein JSON-Dokument, das vollständig beschreibt, welc
 
 ```mermaid
 flowchart LR
-    Dev["Entwicklung\n(VS Code + IoT Edge Extension)"]
-    Build["Container Build\n(Dockerfile)"]
-    Registry["Container Registry\n(Azure Container Registry)"]
-    Deploy["Deployment Manifest\n(IoT Hub)"]
-    Device["Edge Gerät\n(Modul läuft)"]
+    Dev["Entwicklung (VS Code + IoT Edge Extension)"]
+    Build["Container Build (Dockerfile)"]
+    Registry["Container Registry (Azure Container Registry)"]
+    Deploy["Deployment Manifest (IoT Hub)"]
+    Device["Edge Gerät (Modul läuft)"]
 
     Dev --> Build
     Build --> Registry
@@ -465,12 +465,12 @@ Nested Edge ermöglicht hierarchische Gerätestopologien nach dem ISA-95 Industr
 
 ```mermaid
 graph TD
-    L5["L5 Enterprise\nAzure Cloud / IoT Hub"]
-    L4["L4 Site\nTop-Level Edge Gateway"]
-    L3a["L3 Edge\nProduktionslinie A"]
-    L3b["L3 Edge\nProduktionslinie B"]
-    L2a["L2 Feldebene\nSensoren / Aktoren A"]
-    L2b["L2 Feldebene\nSensoren / Aktoren B"]
+    L5["L5 Enterprise Azure Cloud / IoT Hub"]
+    L4["L4 Site Top-Level Edge Gateway"]
+    L3a["L3 Edge Produktionslinie A"]
+    L3b["L3 Edge Produktionslinie B"]
+    L2a["L2 Feldebene Sensoren / Aktoren A"]
+    L2b["L2 Feldebene Sensoren / Aktoren B"]
 
     L5 <-->|"Internet / WAN"| L4
     L4 <-->|"OT-Netzwerk"| L3a

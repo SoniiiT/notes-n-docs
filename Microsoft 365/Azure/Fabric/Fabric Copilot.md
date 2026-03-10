@@ -28,13 +28,13 @@ Fabric Copilot ist kein einzelnes Produkt, sondern eine **KI-Schicht**, die in a
 
 ```mermaid
 graph TD
-    A[Fabric Copilot\nAzure OpenAI Backend] --> B[Notebooks\nCode-Generierung]
-    A --> C[Power BI\nReport & DAX]
-    A --> D[Data Warehouse\nSQL-Generierung]
-    A --> E[Data Factory\nPipeline-Assistent]
-    A --> F[Real-Time Intelligence\nKQL-Generierung]
-    A --> G[Data Science\nML-Unterstützung]
-    A --> H[Fabric Unified\nData Catalog]
+    A[Fabric Copilot Azure OpenAI Backend] --> B[Notebooks Code-Generierung]
+    A --> C[Power BI Report & DAX]
+    A --> D[Data Warehouse SQL-Generierung]
+    A --> E[Data Factory Pipeline-Assistent]
+    A --> F[Real-Time Intelligence KQL-Generierung]
+    A --> G[Data Science ML-Unterstützung]
+    A --> H[Fabric Unified Data Catalog]
 ```
 
 ### Copilot-Verfügbarkeit (Stand 2024/2025)
@@ -61,13 +61,13 @@ graph TD
 
 ```mermaid
 graph LR
-    A{Voraussetzungen\ngeprüft?} -->|F64+ Capacity| B[OK]
+    A{Voraussetzungen geprüft?} -->|F64+ Capacity| B[OK]
     A -->|Admin-Aktivierung| C[OK]
-    A -->|Tenant-Region\nunterstützt| D[OK]
+    A -->|Tenant-Region unterstützt| D[OK]
     B --> E[Copilot verfügbar]
     C --> E
     D --> E
-    A -->|Fehlt eine Bedingung| F[Copilot nicht verfügbar\nFehlermeldung im UI]
+    A -->|Fehlt eine Bedingung| F[Copilot nicht verfügbar Fehlermeldung im UI]
 ```
 
 ### Unterstützte Regionen (Copilot)
@@ -168,12 +168,12 @@ sequenceDiagram
     participant SM as Semantic Model
     participant R as Power BI Report
 
-    U->>C: "Erstelle einen Umsatzbericht\nmit Trend nach Monat und Region"
-    C->>SM: Semantic Model analysieren\n(Tabellen, Measures, Felder)
+    U->>C: "Erstelle einen Umsatzbericht mit Trend nach Monat und Region"
+    C->>SM: Semantic Model analysieren (Tabellen, Measures, Felder)
     SM-->>C: Schema und Measures
-    C->>R: Report-Seiten generieren\n(Visuals, Filter, Layout)
-    R-->>U: Fertiger Report\nzur Überprüfung
-    U->>C: "Füge eine Seite für\nTop-10-Kunden hinzu"
+    C->>R: Report-Seiten generieren (Visuals, Filter, Layout)
+    R-->>U: Fertiger Report zur Überprüfung
+    U->>C: "Füge eine Seite für Top-10-Kunden hinzu"
     C->>R: Neue Seite hinzufügen
 ```
 
@@ -284,10 +284,10 @@ Data Factory Copilot unterstützt beim Erstellen von Pipelines und Dataflows:
 
 ```mermaid
 graph LR
-    A[Benutzer-Prompt\nnatürliche Sprache] --> B[Data Factory Copilot]
-    B --> C[Pipeline-Aktivitäten\ngenerieren]
-    B --> D[Dataflow-Transformationen\nvorschlagen]
-    B --> E[Fehlerbehebung\nbei Pipeline-Fehlern]
+    A[Benutzer-Prompt natürliche Sprache] --> B[Data Factory Copilot]
+    B --> C[Pipeline-Aktivitäten generieren]
+    B --> D[Dataflow-Transformationen vorschlagen]
+    B --> E[Fehlerbehebung bei Pipeline-Fehlern]
     C --> F[Copy-Aktivität]
     C --> G[Notebook-Aktivität]
     C --> H[Stored Procedure]
@@ -342,14 +342,14 @@ AppRequests
 ```mermaid
 sequenceDiagram
     participant U as Benutzer (Tenant A)
-    participant F as Fabric Service\n(Microsoft-Cloud)
-    participant AO as Azure OpenAI\n(Compliance-Grenze)
+    participant F as Fabric Service (Microsoft-Cloud)
+    participant AO as Azure OpenAI (Compliance-Grenze)
 
-    U->>F: Copilot-Prompt\n(mit Kontext: Schema, Code)
-    F->>AO: Anonymisierter Prompt\n+ Kontext
+    U->>F: Copilot-Prompt (mit Kontext: Schema, Code)
+    F->>AO: Anonymisierter Prompt + Kontext
     AO-->>F: Generierte Antwort
     F-->>U: Code / Text / Vorschlag
-    Note over F,AO: Alles innerhalb Microsoft-Cloud\nKein Internet-Routing
+    Note over F,AO: Alles innerhalb Microsoft-Cloud Kein Internet-Routing
 ```
 
 ---

@@ -28,11 +28,11 @@ Fabric Notebooks sind direkt im Fabric-Workspace verfügbar — kein separates S
 
 ```mermaid
 graph TD
-    A[Fabric Notebook\nJupyter-basiert] --> B{Spark Pool}
-    B --> C[Starter Pool\nAuto-Start, klein]
-    B --> D[Custom Pool\nKonfigurierbar, groß]
-    A --> E[Lakehouse Attachment\nStandard-Dateisystem]
-    E --> F[OneLake\nDelta-Parquet]
+    A[Fabric Notebook Jupyter-basiert] --> B{Spark Pool}
+    B --> C[Starter Pool Auto-Start, klein]
+    B --> D[Custom Pool Konfigurierbar, groß]
+    A --> E[Lakehouse Attachment Standard-Dateisystem]
+    E --> F[OneLake Delta-Parquet]
     A --> G[Unterstützte Sprachen]
     G --> H[PySpark]
     G --> I[Scala]
@@ -229,10 +229,10 @@ sequenceDiagram
     participant L as Lakehouse
     participant SM as Semantic Model
 
-    P->>N: Notebook-Aktivität aufrufen\n(mit Parametern)
-    N->>L: Daten transformieren\nDelta-Tabellen schreiben
+    P->>N: Notebook-Aktivität aufrufen (mit Parametern)
+    N->>L: Daten transformieren Delta-Tabellen schreiben
     N-->>P: Erfolg / Fehler
-    P->>SM: Semantic Model\nRefresh auslösen
+    P->>SM: Semantic Model Refresh auslösen
     SM-->>P: Refresh abgeschlossen
 ```
 
@@ -376,8 +376,8 @@ Fabric Environments ermöglichen es, **Python-Libraries und Spark-Konfiguratione
 
 ```mermaid
 graph LR
-    A[Fabric Environment] --> B[Python Libraries\npip install]
-    A --> C[Spark-Konfigurationen\nSpark Properties]
+    A[Fabric Environment] --> B[Python Libraries pip install]
+    A --> C[Spark-Konfigurationen Spark Properties]
     A --> D[Notebook 1]
     A --> E[Notebook 2]
     A --> F[Spark Job Definition]
@@ -430,7 +430,7 @@ Eine **Spark Job Definition** ermöglicht es, Spark-Jobs (Python-Scripts, JAR-Da
 
 ```mermaid
 graph LR
-    A[Python Script\noder JAR] --> B[Spark Job Definition\nin Fabric Workspace]
+    A[Python Script oder JAR] --> B[Spark Job Definition in Fabric Workspace]
     B --> C{Ausführung}
     C --> D[Manuell]
     C --> E[Pipeline-Aktivität]
@@ -458,8 +458,8 @@ graph TD
     A[Fabric Monitoring Hub] --> B[Aktive Spark-Sessions]
     A --> C[Abgeschlossene Jobs]
     A --> D[Fehler & Warnungen]
-    A --> E[Ressourcenverbrauch\nCU-Sekunden]
-    A --> F[Notebook-Runs\nHistorie]
+    A --> E[Ressourcenverbrauch CU-Sekunden]
+    A --> F[Notebook-Runs Historie]
     A --> G[Pipeline-Runs]
 ```
 

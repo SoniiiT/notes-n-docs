@@ -302,11 +302,11 @@ graph TD
     DATA[Datenbankdienste]
     HCI[Azure Stack HCI]
 
-    AGENT[Connected Machine\nAgent installieren]
-    K8S_CMD[az connectedk8s\nconnect ausführen]
-    SQL_AUTO[Automatisch erkannt\nüber Arc Server Agent]
-    DATA_CTRL[Arc Data Controller\nauf Kubernetes deployen]
-    HCI_REG[HCI-Registrierung\nim Azure Portal]
+    AGENT[Connected Machine Agent installieren]
+    K8S_CMD[az connectedk8s connect ausführen]
+    SQL_AUTO[Automatisch erkannt über Arc Server Agent]
+    DATA_CTRL[Arc Data Controller auf Kubernetes deployen]
+    HCI_REG[HCI-Registrierung im Azure Portal]
 
     START --> SERVER
     START --> K8S
@@ -375,11 +375,11 @@ Arc-Ressourcen erben das Azure-Sicherheitsmodell vollständig:
 ```mermaid
 graph TD
     RESOURCE[Arc-Ressource]
-    IDENTITY[Managed Identity\nautomatisch von Arc erstellt]
-    ENTRA[Microsoft Entra ID\nAuthentifizierung]
-    RBAC[Azure RBAC\nAutorisierung]
-    POLICY[Azure Policy\nCompliance]
-    DEFENDER[Defender for Cloud\nBedrohungsschutz]
+    IDENTITY[Managed Identity automatisch von Arc erstellt]
+    ENTRA[Microsoft Entra ID Authentifizierung]
+    RBAC[Azure RBAC Autorisierung]
+    POLICY[Azure Policy Compliance]
+    DEFENDER[Defender for Cloud Bedrohungsschutz]
 
     RESOURCE --> IDENTITY
     IDENTITY --> ENTRA

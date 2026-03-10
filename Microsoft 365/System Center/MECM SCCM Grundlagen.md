@@ -41,11 +41,11 @@ Configuration Manager hat eine lange Entwicklungsgeschichte mit mehrfachen Umben
 
 ```mermaid
 graph TD
-    CAS[Central Administration Site\nOptional ab 150k Clients] --> PS1[Primary Site Berlin\nbis 150k Clients]
-    CAS --> PS2[Primary Site München\nbis 150k Clients]
-    PS1 --> SS1[Secondary Site Hamburg\nRemote-Standort WAN]
-    PS1 --> SS2[Secondary Site Frankfurt\nRemote-Standort WAN]
-    PS2 --> SS3[Secondary Site Wien\nRemote-Standort WAN]
+    CAS[Central Administration Site Optional ab 150k Clients] --> PS1[Primary Site Berlin bis 150k Clients]
+    CAS --> PS2[Primary Site München bis 150k Clients]
+    PS1 --> SS1[Secondary Site Hamburg Remote-Standort WAN]
+    PS1 --> SS2[Secondary Site Frankfurt Remote-Standort WAN]
+    PS2 --> SS3[Secondary Site Wien Remote-Standort WAN]
 
     style CAS fill:#0078D4,color:#fff
     style PS1 fill:#00BCF2,color:#fff

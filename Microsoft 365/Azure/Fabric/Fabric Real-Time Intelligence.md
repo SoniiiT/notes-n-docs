@@ -29,22 +29,22 @@ Fabric RTI ermöglicht die **Erfassung, Analyse und Reaktion auf Streaming-Daten
 
 ```mermaid
 graph LR
-    SRC1[Event Hubs\nIoT Hub] -->|Ingest| ES[Eventstream\nFabric]
-    SRC2[Kafka\nConfluen] -->|Ingest| ES
-    SRC3[Custom App\nSDK] -->|Ingest| ES
+    SRC1[Event Hubs IoT Hub] -->|Ingest| ES[Eventstream Fabric]
+    SRC2[Kafka Confluen] -->|Ingest| ES
+    SRC3[Custom App SDK] -->|Ingest| ES
     SRC4[Azure IoT Hub] -->|Ingest| ES
     
-    ES -->|Rohdaten| LH[Lakehouse\nBronze]
-    ES -->|Bereinigt| KQL[KQL Datenbank\nEventhouse]
-    ES -->|Filter| ES2[Weiterer\nEventstream]
+    ES -->|Rohdaten| LH[Lakehouse Bronze]
+    ES -->|Bereinigt| KQL[KQL Datenbank Eventhouse]
+    ES -->|Filter| ES2[Weiterer Eventstream]
     
-    KQL --> RTD[Real-Time Dashboard\nauto-refresh]
-    KQL --> PBI[Power BI Report\nKQL-basiert]
-    KQL --> ACT[Activator\nAlerts und Aktionen]
+    KQL --> RTD[Real-Time Dashboard auto-refresh]
+    KQL --> PBI[Power BI Report KQL-basiert]
+    KQL --> ACT[Activator Alerts und Aktionen]
     
-    ACT --> TEAMS[Microsoft Teams\nNachricht]
-    ACT --> PA[Power Automate\nFlow starten]
-    ACT --> EMAIL[E-Mail\nAlert]
+    ACT --> TEAMS[Microsoft Teams Nachricht]
+    ACT --> PA[Power Automate Flow starten]
+    ACT --> EMAIL[E-Mail Alert]
     
     style ES fill:#0078d4,color:#fff
     style KQL fill:#e6f3ff
@@ -94,9 +94,9 @@ Eventstreams unterstützen **visuelle Transformationen** (kein Code erforderlich
 
 ```mermaid
 graph LR
-    SRC[Quelle\nEvent Hub] --> FILT[Filter\nnur relevante Events]
-    FILT --> AGG[Aggregat\nFenster-Aggregation]
-    AGG --> UNION[Union\nmehrere Streams]
+    SRC[Quelle Event Hub] --> FILT[Filter nur relevante Events]
+    FILT --> AGG[Aggregat Fenster-Aggregation]
+    AGG --> UNION[Union mehrere Streams]
     UNION --> ZIEL1[KQL Datenbank]
     UNION --> ZIEL2[Lakehouse]
 ```
@@ -121,15 +121,15 @@ Ein **Eventhouse** ist ein Fabric-Item, das eine oder mehrere **KQL-Datenbanken*
 
 ```mermaid
 graph TD
-    EH[Eventhouse\nContainer]
-    EH --> KDB1[KQL Datenbank 1\nIoT Sensoren]
-    EH --> KDB2[KQL Datenbank 2\nAnwendungslogs]
-    EH --> KDB3[KQL Datenbank 3\nFinanzdaten]
+    EH[Eventhouse Container]
+    EH --> KDB1[KQL Datenbank 1 IoT Sensoren]
+    EH --> KDB2[KQL Datenbank 2 Anwendungslogs]
+    EH --> KDB3[KQL Datenbank 3 Finanzdaten]
     
-    KDB1 --> TAB1[Tabellen\nRaw-Daten + Derived]
-    KDB1 --> MAT[Materialized Views\nAggregationen]
-    KDB1 --> UPD[Update Policies\nauto-Transformationen]
-    KDB1 --> SC[Shortcuts zu\nOneLake]
+    KDB1 --> TAB1[Tabellen Raw-Daten + Derived]
+    KDB1 --> MAT[Materialized Views Aggregationen]
+    KDB1 --> UPD[Update Policies auto-Transformationen]
+    KDB1 --> SC[Shortcuts zu OneLake]
 ```
 
 **KQL-Datenbank Eigenschaften:**
@@ -290,11 +290,11 @@ SensorDaten
 
 ```mermaid
 graph TD
-    ACT[Activator Item\nFabric]
-    ACT --> OBJ[Objekte\nz B Sensor Maschine]
-    OBJ --> PROP[Eigenschaften\nz B Temperatur Status]
-    PROP --> RULE[Regeln\nWenn Temp mehr als 90 Grad]
-    RULE --> ACTION[Aktionen\nTeams E-Mail Power Automate]
+    ACT[Activator Item Fabric]
+    ACT --> OBJ[Objekte z B Sensor Maschine]
+    OBJ --> PROP[Eigenschaften z B Temperatur Status]
+    PROP --> RULE[Regeln Wenn Temp mehr als 90 Grad]
+    RULE --> ACTION[Aktionen Teams E-Mail Power Automate]
 ```
 
 | Begriff | Beschreibung | Beispiel |
@@ -327,22 +327,22 @@ graph TD
 
 ```mermaid
 graph TD
-    IOT[IoT-Geräte\nSensoren Maschinen] -->|MQTT HTTP| IOTH[Azure IoT Hub]
+    IOT[IoT-Geräte Sensoren Maschinen] -->|MQTT HTTP| IOTH[Azure IoT Hub]
     IOTH -->|Eventstream| ES[Fabric Eventstream]
     
-    ES -->|Rohdaten| LH[Bronze Lakehouse\nalle Events]
-    ES -->|Filter bereinigt| KQL[KQL Datenbank\nim Eventhouse]
-    ES -->|Kritische Events| ACT[Activator\nAlerts]
+    ES -->|Rohdaten| LH[Bronze Lakehouse alle Events]
+    ES -->|Filter bereinigt| KQL[KQL Datenbank im Eventhouse]
+    ES -->|Kritische Events| ACT[Activator Alerts]
     
-    KQL --> RTD[Real-Time Dashboard\nauto-refresh 1min]
-    KQL --> PBI[Power BI Report\nhistorische Analyse]
-    KQL --> ML[Notebooks\nML auf Zeitreihendaten]
+    KQL --> RTD[Real-Time Dashboard auto-refresh 1min]
+    KQL --> PBI[Power BI Report historische Analyse]
+    KQL --> ML[Notebooks ML auf Zeitreihendaten]
     
-    ACT -->|Temp über 90 Grad| TEAMS[Teams Alert\nWartungsteam]
-    ACT -->|Maschinenausfall| PA[Power Automate\nTicket erstellen]
+    ACT -->|Temp über 90 Grad| TEAMS[Teams Alert Wartungsteam]
+    ACT -->|Maschinenausfall| PA[Power Automate Ticket erstellen]
     
-    LH -->|Batch täglich| SI[Silver Lakehouse\nbereinigte Daten]
-    SI --> DW[Fabric Warehouse\nAggregierte Berichte]
+    LH -->|Batch täglich| SI[Silver Lakehouse bereinigte Daten]
+    SI --> DW[Fabric Warehouse Aggregierte Berichte]
     
     style IOT fill:#6c757d,color:#fff
     style ES fill:#0078d4,color:#fff

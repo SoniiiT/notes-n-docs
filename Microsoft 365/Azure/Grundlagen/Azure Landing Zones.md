@@ -44,11 +44,11 @@ Das **Cloud Adoption Framework** ist Microsofts strukturierter Leitfaden für Cl
 
 ```mermaid
 graph LR
-    STRAT[Strategy\nWarum in die Cloud?] --> PLAN[Plan\nWelche Workloads?]
-    PLAN --> READY[Ready\nLanding Zone aufbauen]
-    READY --> ADOPT[Adopt\nMigrate oder Innovate]
-    ADOPT --> GOVERN[Govern\nGovernance etablieren]
-    GOVERN --> MANAGE[Manage\nBetrieb optimieren]
+    STRAT[Strategy Warum in die Cloud?] --> PLAN[Plan Welche Workloads?]
+    PLAN --> READY[Ready Landing Zone aufbauen]
+    READY --> ADOPT[Adopt Migrate oder Innovate]
+    ADOPT --> GOVERN[Govern Governance etablieren]
+    GOVERN --> MANAGE[Manage Betrieb optimieren]
     MANAGE -->|Kontinuierlich| GOVERN
 ```
 
@@ -69,16 +69,16 @@ Die Standard-ALZ-Hierarchie nach Microsoft:
 
 ```mermaid
 graph TD
-    ROOT[Tenant Root Group] --> INTER[Intermediate Root MG\nz B Contoso]
+    ROOT[Tenant Root Group] --> INTER[Intermediate Root MG z B Contoso]
     INTER --> PLATFORM[MG Platform]
     INTER --> LZ[MG Landing Zones]
     INTER --> SANDBOX[MG Sandbox]
     INTER --> DECOMM[MG Decommissioned]
-    PLATFORM --> MGMT[Sub Management\nLog Analytics Monitoring]
-    PLATFORM --> CONN[Sub Connectivity\nHub VNet Firewall DNS]
-    PLATFORM --> IDENT[Sub Identity\nDomain Services]
-    LZ --> CORP[MG Corp\nVerbundene Workloads]
-    LZ --> ONLINE[MG Online\nInternet-facing Workloads]
+    PLATFORM --> MGMT[Sub Management Log Analytics Monitoring]
+    PLATFORM --> CONN[Sub Connectivity Hub VNet Firewall DNS]
+    PLATFORM --> IDENT[Sub Identity Domain Services]
+    LZ --> CORP[MG Corp Verbundene Workloads]
+    LZ --> ONLINE[MG Online Internet-facing Workloads]
     CORP --> CORP1[Sub Corp App1 Prod]
     CORP --> CORP2[Sub Corp App1 Dev]
     ONLINE --> ON1[Sub Online WebApp Prod]
@@ -146,11 +146,11 @@ Das **Hub-and-Spoke**-Modell ist die Standard-Netzwerktopologie für ALZ:
 
 ```mermaid
 graph TD
-    HUB[Hub VNet\nConnectivity Sub\nAzure Firewall] --> SPOKE1[Spoke VNet\nCorp App1 Prod]
-    HUB --> SPOKE2[Spoke VNet\nCorp App2 Prod]
-    HUB --> SPOKE3[Spoke VNet\nOnline WebApp Prod]
-    HUB --> GW[VPN Gateway\nExpressRoute]
-    GW --> ONPREM[On-Premises\nRechenzentrum]
+    HUB[Hub VNet Connectivity Sub Azure Firewall] --> SPOKE1[Spoke VNet Corp App1 Prod]
+    HUB --> SPOKE2[Spoke VNet Corp App2 Prod]
+    HUB --> SPOKE3[Spoke VNet Online WebApp Prod]
+    HUB --> GW[VPN Gateway ExpressRoute]
+    GW --> ONPREM[On-Premises Rechenzentrum]
     SPOKE1 <-->|VNet Peering| HUB
     SPOKE2 <-->|VNet Peering| HUB
     SPOKE3 <-->|VNet Peering| HUB

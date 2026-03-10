@@ -29,9 +29,9 @@ Azure Bastion ist ein **PaaS-basierter Bastion Host**:
 
 ```mermaid
 graph LR
-    USER[Administrator\nBrowser oder\nnativer RDP/SSH Client] -->|HTTPS 443| PORTAL[Azure Portal\nBastion Service]
-    PORTAL -->|RDP/SSH via\nPrivatem Netzwerk| BASTION[Azure Bastion\nAzureBastionSubnet]
-    BASTION -->|RDP 3389\nSSH 22| VM[Azure VM\nKeine Public IP]
+    USER[Administrator Browser oder nativer RDP/SSH Client] -->|HTTPS 443| PORTAL[Azure Portal Bastion Service]
+    PORTAL -->|RDP/SSH via Privatem Netzwerk| BASTION[Azure Bastion AzureBastionSubnet]
+    BASTION -->|RDP 3389 SSH 22| VM[Azure VM Keine Public IP]
 ```
 
 **Vorteile:**
@@ -66,9 +66,9 @@ Das Subnet für Bastion muss spezifische Anforderungen erfüllen:
 
 ```mermaid
 graph TD
-    VNET[VNet] --> BASTION_SNET[AzureBastionSubnet\nMuss exakt so heißen\nMinimal /26]
-    VNET --> OTHER_SNET[Andere Subnets\nVMs etc]
-    BASTION_SNET --> BASTION[Azure Bastion\nInstanz]
+    VNET[VNet] --> BASTION_SNET[AzureBastionSubnet Muss exakt so heißen Minimal /26]
+    VNET --> OTHER_SNET[Andere Subnets VMs etc]
+    BASTION_SNET --> BASTION[Azure Bastion Instanz]
     BASTION --> OTHER_SNET
 ```
 

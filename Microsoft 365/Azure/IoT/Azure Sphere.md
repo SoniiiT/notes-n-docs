@@ -18,9 +18,9 @@ Azure Sphere adressiert das fundamentale Problem der IoT-Sicherheit: Die meisten
 
 ```mermaid
 graph TD
-    HW["Zertifizierte Hardware\nMT3620 MediaTek MCU\nHardware-Root-of-Trust\nPlutonsicherheits-Subsystem"]
-    OS["Sicheres Betriebssystem\nLinux-basiert\nVerified Boot\nApplication Firewall\nError Reporting"]
-    AS3["Azure Sphere\nSecurity Service AS3\nAutomatische OS-Updates\nCertificate Rotation\nCrash Reporting\nTelemetrie"]
+    HW["Zertifizierte Hardware MT3620 MediaTek MCU Hardware-Root-of-Trust Plutonsicherheits-Subsystem"]
+    OS["Sicheres Betriebssystem Linux-basiert Verified Boot Application Firewall Error Reporting"]
+    AS3["Azure Sphere Security Service AS3 Automatische OS-Updates Certificate Rotation Crash Reporting Telemetrie"]
     HW --> OS
     OS --> AS3
     AS3 -->|Automatische Updates| OS
@@ -71,10 +71,10 @@ Das Guardian Module ist eine spezielle Azure Sphere-Konfiguration, um **bestehen
 
 ```mermaid
 graph LR
-    Legacy["Legacy-Geraet\nkein Sphere\nkein sicheres OS\nkein Cloud-Update"]
-    GM["Guardian Module\nAzure Sphere MCU\nSichere Cloud-Verbindung\nFirewall-Proxy"]
-    Cloud["Azure\nIoT Hub/Central\nAS3"]
-    Legacy -->|Serielle Verbindung\nSPI / UART / I2C| GM
+    Legacy["Legacy-Geraet kein Sphere kein sicheres OS kein Cloud-Update"]
+    GM["Guardian Module Azure Sphere MCU Sichere Cloud-Verbindung Firewall-Proxy"]
+    Cloud["Azure IoT Hub/Central AS3"]
+    Legacy -->|Serielle Verbindung SPI / UART / I2C| GM
     GM -->|TLS / mTLS| Cloud
 ```
 
@@ -101,12 +101,12 @@ Das Azure Sphere OS ist ein von Microsoft stark gehärtetes Linux-basiertes Betr
 
 ```mermaid
 graph TD
-    App["High-Level Application\nLinux Userspace\nC / C++\nAzure Sphere Libraries"]
-    RTApp1["Real-Time App Core 1\nbaremet / FreeRTOS\nC / Assembler"]
-    RTApp2["Real-Time App Core 2\nbaremet / FreeRTOS\nC / Assembler"]
-    Kernel["Linux Kernel\ngehärtet von Microsoft\nApplication Firewall\nSystem Calls eingeschränkt"]
-    Security["Pluton Security\nSubsystem\nkein App-Zugriff"]
-    HW["MT3620 Hardware\nWi-Fi, GPIO, SPI, etc."]
+    App["High-Level Application Linux Userspace C / C++ Azure Sphere Libraries"]
+    RTApp1["Real-Time App Core 1 baremet / FreeRTOS C / Assembler"]
+    RTApp2["Real-Time App Core 2 baremet / FreeRTOS C / Assembler"]
+    Kernel["Linux Kernel gehärtet von Microsoft Application Firewall System Calls eingeschränkt"]
+    Security["Pluton Security Subsystem kein App-Zugriff"]
+    HW["MT3620 Hardware Wi-Fi, GPIO, SPI, etc."]
     App -->|System Calls| Kernel
     RTApp1 <-->|Mailbox Inter-Core| App
     RTApp2 <-->|Mailbox Inter-Core| App
@@ -561,14 +561,14 @@ Sphere eignet sich fuer Assets, die unbeaufsichtigt im Feld betrieben werden:
 
 ```mermaid
 graph TD
-    HW["Azure Sphere Geraet\nMT3620 Hardware\nHigh-Level App\nReal-Time App"]
-    AS3["AS3\nAzure Sphere\nSecurity Service\nOS-Updates\nZertifikate"]
-    DPS["Device Provisioning\nService DPS"]
-    IH["Azure IoT Hub\nGeraeteverwaltung\nTelemetry-Ingest"]
-    IC["Azure IoT Central\nNo-Code Dashboard\nAnalytics"]
-    AF["Azure Functions\nEvent-Verarbeitung"]
-    SA["Stream Analytics\nEchtzeit-Analyse"]
-    PBI["Power BI\nVisualisierung"]
+    HW["Azure Sphere Geraet MT3620 Hardware High-Level App Real-Time App"]
+    AS3["AS3 Azure Sphere Security Service OS-Updates Zertifikate"]
+    DPS["Device Provisioning Service DPS"]
+    IH["Azure IoT Hub Geraeteverwaltung Telemetry-Ingest"]
+    IC["Azure IoT Central No-Code Dashboard Analytics"]
+    AF["Azure Functions Event-Verarbeitung"]
+    SA["Stream Analytics Echtzeit-Analyse"]
+    PBI["Power BI Visualisierung"]
     HW -->|mTLS via Wi-Fi| AS3
     HW -->|Auto-Provisioning| DPS
     DPS -->|Zuweisen| IH

@@ -399,11 +399,11 @@ Für produktive Umgebungen empfohlener Stack:
 
 ```mermaid
 graph LR
-    PVE["🖥️ Proxmox VE\n(Metric Export)"]
-    INFLUX["📊 InfluxDB v2\n(Metriken speichern)"]
-    GRAFANA["📈 Grafana\n(Visualisierung)"]
-    GOTIFY["🔔 Gotify\n(Push Alerts)"]
-    SMTP["📧 SMTP\n(E-Mail Alerts)"]
+    PVE["🖥️ Proxmox VE (Metric Export)"]
+    INFLUX["📊 InfluxDB v2 (Metriken speichern)"]
+    GRAFANA["📈 Grafana (Visualisierung)"]
+    GOTIFY["🔔 Gotify (Push Alerts)"]
+    SMTP["📧 SMTP (E-Mail Alerts)"]
 
     PVE -->|"Metriken alle 5s"| INFLUX
     PVE -->|"Backup/Fehler Events"| GOTIFY

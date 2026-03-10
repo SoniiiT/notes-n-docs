@@ -26,10 +26,10 @@ aliases:
 
 ```mermaid
 graph LR
-    CR[Case\nerstellt] -->|Routing| QU[Queue\neingereiht]
-    QU -->|Zugewiesen| AG[Agent\nübernimmt]
+    CR[Case erstellt] -->|Routing| QU[Queue eingereiht]
+    QU -->|Zugewiesen| AG[Agent übernimmt]
     AG -->|Bearbeitung| IP[In Progress]
-    IP -->|Eskalation| ES[Eskaliert\nan Senior/Manager]
+    IP -->|Eskalation| ES[Eskaliert an Senior/Manager]
     IP -->|Gelöst| RE[Resolved]
     RE -->|Bestätigt| CL[Closed]
     CL -->|Wiedereröffnet| AG
@@ -66,12 +66,12 @@ Unified Routing nutzt KI für die automatische Weiterleitung:
 
 ```mermaid
 graph TD
-    EIN[Eingehender\nKontakt] --> CL[Klassifizierung\nKI-Modell]
-    CL --> PRIO[Priorität\nermitteln]
-    CL --> SKILL[Benötigte Skills\nermitteln]
-    PRIO --> MAT[Matching\nAgent + Queue]
+    EIN[Eingehender Kontakt] --> CL[Klassifizierung KI-Modell]
+    CL --> PRIO[Priorität ermitteln]
+    CL --> SKILL[Benötigte Skills ermitteln]
+    PRIO --> MAT[Matching Agent + Queue]
     SKILL --> MAT
-    MAT --> AGE[Zuweisung\nan Agent]
+    MAT --> AGE[Zuweisung an Agent]
 ```
 
 **Routing-Regeln basieren auf:**
@@ -150,10 +150,10 @@ Omnichannel ermöglicht einheitliche Kundenkommunikation über alle Kanäle in e
 
 ```mermaid
 graph TD
-    CSW[Customer Service\nWorkspace] --> OMNI[Omnichannel-Seitenleiste\nAktive Konversationen]
-    CSW --> CASE[Case-Formular\nDetails und Aktionen]
-    CSW --> KB[Knowledge Base\nSuchleiste]
-    CSW --> COP[Copilot-Seitenleiste\nKI-Vorschläge]
+    CSW[Customer Service Workspace] --> OMNI[Omnichannel-Seitenleiste Aktive Konversationen]
+    CSW --> CASE[Case-Formular Details und Aktionen]
+    CSW --> KB[Knowledge Base Suchleiste]
+    CSW --> COP[Copilot-Seitenleiste KI-Vorschläge]
     OMNI --> CHAT[Chat-Konversation]
     OMNI --> VOICE[Voice-Anruf]
     OMNI --> EMAIL[E-Mail-Thread]
@@ -184,10 +184,10 @@ graph TD
 
 ```mermaid
 graph LR
-    DR[Draft\nEntwurf] -->|Review| RE[Review\nGenehmigung]
-    RE -->|Genehmigt| PU[Published\nVeröffentlicht]
+    DR[Draft Entwurf] -->|Review| RE[Review Genehmigung]
+    RE -->|Genehmigt| PU[Published Veröffentlicht]
     PU -->|Update nötig| DR
-    PU -->|Veraltet| EX[Expired\nArchiviert]
+    PU -->|Veraltet| EX[Expired Archiviert]
 ```
 
 ### Knowledge-Konfiguration

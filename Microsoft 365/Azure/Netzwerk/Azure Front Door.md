@@ -31,7 +31,7 @@ graph LR
     USER1[User Europa] -->|Anycast| POP1[PoP Amsterdam]
     USER2[User USA] -->|Anycast| POP2[PoP New York]
     USER3[User Asien] -->|Anycast| POP3[PoP Singapur]
-    POP1 & POP2 & POP3 -->|Microsofts\nGlobales Backbone| ORIGIN1[Origin West Europe]
+    POP1 & POP2 & POP3 -->|Microsofts Globales Backbone| ORIGIN1[Origin West Europe]
     POP1 & POP2 & POP3 --> ORIGIN2[Origin East US]
 ```
 
@@ -68,8 +68,8 @@ Traffic geht zum **geografisch nächstgelegenen** gesunden Origin:
 
 ```mermaid
 graph LR
-    USER[User\nEuropa] -->|Niedrigste\nLatenz| WE[Origin\nWest Europe\nLatenz: 15ms]
-    USER -.->|Höhere\nLatenz| EUS[Origin\nEast US\nLatenz: 120ms]
+    USER[User Europa] -->|Niedrigste Latenz| WE[Origin West Europe Latenz: 15ms]
+    USER -.->|Höhere Latenz| EUS[Origin East US Latenz: 120ms]
 ```
 
 ### Priority (Active/Passive Failover)
@@ -116,9 +116,9 @@ $originGroup.SessionAffinityUseProxyAddress = $false
 graph TD
     AFD[Azure Front Door] --> OG1[Origin Group - Primary]
     AFD --> OG2[Origin Group - Fallback]
-    OG1 --> O1[Origin 1\napp.azurewebsites.net]
-    OG1 --> O2[Origin 2\napp-slot.azurewebsites.net]
-    OG2 --> O3[Origin 3\nFailover Region]
+    OG1 --> O1[Origin 1 app.azurewebsites.net]
+    OG1 --> O2[Origin 2 app-slot.azurewebsites.net]
+    OG2 --> O3[Origin 3 Failover Region]
 ```
 
 **Origin-Typen:**
@@ -153,7 +153,7 @@ resource originGroup 'Microsoft.Cdn/profiles/originGroups@2023-05-01' = {
 
 ```mermaid
 graph LR
-    USER[User] -->|Request| EDGE[Front Door Edge\nPoP]
+    USER[User] -->|Request| EDGE[Front Door Edge PoP]
     EDGE -->|Cache HIT| USER
     EDGE -->|Cache MISS| ORIGIN[Origin Backend]
     ORIGIN -->|Response + Cache| EDGE
@@ -200,7 +200,7 @@ Globaler WAF-Schutz für alle Origins:
 
 ```mermaid
 graph LR
-    USER[User Request] --> FD_WAF{Front Door WAF\nGlobal Edge}
+    USER[User Request] --> FD_WAF{Front Door WAF Global Edge}
     FD_WAF -->|Block| DROP[403 Forbidden]
     FD_WAF -->|Allow| ORIGIN[Backend Origin]
 ```
@@ -245,8 +245,8 @@ Backend ohne öffentliche IP — AFD verbindet sich über Private Link:
 
 ```mermaid
 graph LR
-    EDGE[Front Door Edge] -->|Private Link| PE[Private Endpoint\nim Backend VNet]
-    PE -->|Privat| APP[App Service\nkeine Public IP nötig]
+    EDGE[Front Door Edge] -->|Private Link| PE[Private Endpoint im Backend VNet]
+    PE -->|Privat| APP[App Service keine Public IP nötig]
 ```
 
 ```bicep

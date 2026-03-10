@@ -16,14 +16,14 @@ Event Grid ist der **zentrale Event-Router** in Azure – konzipiert für **Push
 
 ```mermaid
 flowchart LR
-    SRC1[Azure Blob Storage\nResource Events] --> EG[Event Grid]
-    SRC2[Custom Topic\nEigene Events] --> EG
-    SRC3[Azure Resource Manager\nDeploy Events] --> EG
+    SRC1[Azure Blob Storage Resource Events] --> EG[Event Grid]
+    SRC2[Custom Topic Eigene Events] --> EG
+    SRC3[Azure Resource Manager Deploy Events] --> EG
     EG --> H1[Azure Functions]
     EG --> H2[Logic Apps]
     EG --> H3[Event Hubs]
     EG --> H4[Service Bus]
-    EG --> H5[Webhook\nExternes System]
+    EG --> H5[Webhook Externes System]
 ```
 
 **Kernprinzipien:**
@@ -39,10 +39,10 @@ flowchart LR
 ```mermaid
 flowchart TD
     subgraph Reaktive Architektur
-        E[Ereignis tritt auf\nBlob hochgeladen] --> EG[Event Grid\nRouting]
-        EG --> F1[Function A\nBild verkleinern]
-        EG --> F2[Function B\nMetadaten extrahieren]
-        EG --> F3[Logic App\nBenachrichtigung senden]
+        E[Ereignis tritt auf Blob hochgeladen] --> EG[Event Grid Routing]
+        EG --> F1[Function A Bild verkleinern]
+        EG --> F2[Function B Metadaten extrahieren]
+        EG --> F3[Logic App Benachrichtigung senden]
     end
 ```
 
@@ -293,9 +293,9 @@ Im **Premium-Tier** können Custom Topics und Domains mit **Private Endpoints** 
 
 ```mermaid
 flowchart LR
-    APP[App in VNet] --> PE[Private Endpoint\nEvent Grid Topic]
-    PE --> EG[Event Grid\nkeine öffentliche IP]
-    EG --> H[Handler\nin VNet]
+    APP[App in VNet] --> PE[Private Endpoint Event Grid Topic]
+    PE --> EG[Event Grid keine öffentliche IP]
+    EG --> H[Handler in VNet]
 ```
 
 ---

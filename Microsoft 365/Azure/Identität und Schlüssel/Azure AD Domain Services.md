@@ -48,10 +48,10 @@ Azure AD Domain Services (offizieller Name: **Microsoft Entra Domain Services**)
 
 ```mermaid
 graph TD
-    Q1{App benötigt\nLDAP/Kerberos/NTLM?} -->|Nein| NEIN[Entra ID direkt\nOIDC/SAML nutzen]
-    Q1 -->|Ja| Q2{Eigene DCs\nverwalten?}
+    Q1{App benötigt LDAP/Kerberos/NTLM?} -->|Nein| NEIN[Entra ID direkt OIDC/SAML nutzen]
+    Q1 -->|Ja| Q2{Eigene DCs verwalten?}
     Q2 -->|Nein, lieber Managed| AADDS[Azure AD Domain Services]
-    Q2 -->|Ja, volle Kontrolle| SELFMANAGED[Self-managed AD\nauf Azure VMs]
+    Q2 -->|Ja, volle Kontrolle| SELFMANAGED[Self-managed AD auf Azure VMs]
 ```
 
 **Typische Anwendungsfälle:**
@@ -71,17 +71,17 @@ graph TD
 
 ```mermaid
 graph TD
-    ENTRAID[Microsoft Entra ID\nCloud Users und Gruppen] -->|Unidirektionale Sync| AADDS[Managed Domain\naadds-domain-name]
-    AADDS --> DC1[Domain Controller 1\nMicrosoft-verwaltet]
-    AADDS --> DC2[Domain Controller 2\nMicrosoft-verwaltet]
+    ENTRAID[Microsoft Entra ID Cloud Users und Gruppen] -->|Unidirektionale Sync| AADDS[Managed Domain aadds-domain-name]
+    AADDS --> DC1[Domain Controller 1 Microsoft-verwaltet]
+    AADDS --> DC2[Domain Controller 2 Microsoft-verwaltet]
     DC1 -.->|HA| DC2
     
-    VNET[Azure VNet\nDediziertes Subnet] --> DC1
+    VNET[Azure VNet Dediziertes Subnet] --> DC1
     VNET --> DC2
     
-    VM1[VM 1\nDomain-joined] --> VNET
-    VM2[VM 2\nDomain-joined] --> VNET
-    APP[Legacy App\nLDAP/Kerberos] --> VNET
+    VM1[VM 1 Domain-joined] --> VNET
+    VM2[VM 2 Domain-joined] --> VNET
+    APP[Legacy App LDAP/Kerberos] --> VNET
 ```
 
 ### Synchronisations-Richtung
@@ -112,8 +112,8 @@ AADDS benötigt ein **dediziertes Subnet** in einem Azure VNet:
 
 ```mermaid
 graph LR
-    VNET[VNet\n10 0 0 0/16] --> AADDS_SNET[AADDS Subnet\n10 0 0 0/24]
-    VNET --> APP_SNET[App Subnet\n10 0 1 0/24]
+    VNET[VNet 10 0 0 0/16] --> AADDS_SNET[AADDS Subnet 10 0 0 0/24]
+    VNET --> APP_SNET[App Subnet 10 0 1 0/24]
     AADDS_SNET --> DC1[DC1]
     AADDS_SNET --> DC2[DC2]
     APP_SNET --> VM1[VM - Domain joined]
@@ -167,8 +167,8 @@ Standard-LDAP (Port 389) ist unverschlüsselt — für Produktionsumgebungen mus
 
 ```mermaid
 graph LR
-    APP[LDAP-Client\nLegacy App] -->|Port 636 TLS| AADDS[AADDS\nLDAPS-Endpoint]
-    AADDS -->|Zertifikat-Validierung| CERT[TLS-Zertifikat\nauf AADDS]
+    APP[LDAP-Client Legacy App] -->|Port 636 TLS| AADDS[AADDS LDAPS-Endpoint]
+    AADDS -->|Zertifikat-Validierung| CERT[TLS-Zertifikat auf AADDS]
 ```
 
 **Schritte für LDAPS:**
@@ -237,8 +237,8 @@ Ab Standard SKU: Managed Domain kann auf **mehrere Azure-Regionen** ausgedehnt w
 
 ```mermaid
 graph TD
-    MD[Managed Domain\naadds] --> RS1[Replica Set 1\nWest Europe\nPrimär]
-    MD --> RS2[Replica Set 2\nNorth Europe\nSekundär]
+    MD[Managed Domain aadds] --> RS1[Replica Set 1 West Europe Primär]
+    MD --> RS2[Replica Set 2 North Europe Sekundär]
     RS1 --> DC1A[DC 1A] & DC1B[DC 1B]
     RS2 --> DC2A[DC 2A] & DC2B[DC 2B]
 ```

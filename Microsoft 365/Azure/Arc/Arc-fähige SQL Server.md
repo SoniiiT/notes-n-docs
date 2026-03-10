@@ -32,10 +32,10 @@ Dies ermöglicht:
 graph TD
     ONPREM[On-Premises Server]
     ARC_AGENT[Connected Machine Agent]
-    SQL_EXT[SQL Server Extension\nAzureExtensionForSQLServer]
+    SQL_EXT[SQL Server Extension AzureExtensionForSQLServer]
     SQL_INST[SQL Server Instanz]
     ARM[Azure Resource Manager]
-    RESOURCE[Arc SQL Server Ressource\nmicrosoft.azurearcdata/sqlserverinstances]
+    RESOURCE[Arc SQL Server Ressource microsoft.azurearcdata/sqlserverinstances]
 
     ONPREM --> ARC_AGENT
     ONPREM --> SQL_INST
@@ -115,7 +115,7 @@ Das **SQL Server Best Practices Assessment** analysiert SQL-Server-Konfiguration
 ```mermaid
 graph LR
     ARC_SQL[Arc SQL Server]
-    ASSESS[Assessment starten\nPortal oder CLI]
+    ASSESS[Assessment starten Portal oder CLI]
     RULES[300+ Prüfregeln]
     REPORT[Assessment-Bericht]
     RECO[Empfehlungen]
@@ -204,9 +204,9 @@ az security sql-vulnerability-assessment create \
 
 ```mermaid
 graph LR
-    CLIENT[SQL Client\nSSMS SQLCMD]
-    ENTRA[Microsoft Entra ID\nMFA SSO Conditional Access]
-    SQL22[SQL Server 2022\nmit Arc-Registrierung]
+    CLIENT[SQL Client SSMS SQLCMD]
+    ENTRA[Microsoft Entra ID MFA SSO Conditional Access]
+    SQL22[SQL Server 2022 mit Arc-Registrierung]
 
     CLIENT -->|Entra ID Token| ENTRA
     ENTRA -->|Token validieren| SQL22
@@ -248,7 +248,7 @@ Arc-SQL-Server können über den **Azure Monitor Agent (AMA)** und spezifische D
 graph TD
     SQL[Arc SQL Server]
     AMA[Azure Monitor Agent]
-    DCR[Data Collection Rule\nSQL Insights]
+    DCR[Data Collection Rule SQL Insights]
     LAW[Log Analytics Workspace]
     WORKBOOK[SQL Insights Workbook]
     ALERT[Performance Alerts]
@@ -285,11 +285,11 @@ az monitor data-collection-rule create \
 
 ```mermaid
 graph TD
-    SQL2014[SQL Server 2014\nEnd of Support Juli 2024]
+    SQL2014[SQL Server 2014 End of Support Juli 2024]
     ESU_LICENSE[ESU-Lizenz erstellen]
-    CORES[Core-Anzahl festlegen\nvCores oder physische Cores]
-    BILLING[Monatliche Abrechnung\nüber Azure]
-    UPDATES[Sicherheits-Updates via\nWindows Update / WSUS]
+    CORES[Core-Anzahl festlegen vCores oder physische Cores]
+    BILLING[Monatliche Abrechnung über Azure]
+    UPDATES[Sicherheits-Updates via Windows Update / WSUS]
 
     SQL2014 --> ESU_LICENSE
     ESU_LICENSE --> CORES

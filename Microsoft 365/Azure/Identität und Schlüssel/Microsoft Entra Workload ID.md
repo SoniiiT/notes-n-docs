@@ -29,9 +29,9 @@ Eine **Workload Identity** ist eine Identität, die einer Softwareanwendung, ein
 
 ```mermaid
 graph LR
-    UI[User Identity\nMensch] -.->|Anmeldung mit| MFA[MFA / Passwort]
-    WI[Workload Identity\nApp / Service] -->|Authentifizierung mit| CRED[Client Secret\nCertificate\nFederated Credential\nManaged Identity]
-    WI -->|Zugriff auf| RES[Azure Resources\nAPIs\nDatenbanken]
+    UI[User Identity Mensch] -.->|Anmeldung mit| MFA[MFA / Passwort]
+    WI[Workload Identity App / Service] -->|Authentifizierung mit| CRED[Client Secret Certificate Federated Credential Managed Identity]
+    WI -->|Zugriff auf| RES[Azure Resources APIs Datenbanken]
 ```
 
 **Warum separat von User Identities?**
@@ -48,9 +48,9 @@ Das ist ein häufiges Missverständnis:
 
 ```mermaid
 graph LR
-    AR[App Registration\nGlobales App-Objekt\nHeimat-Tenant] -->|Instanz in| HOME[Heimat-Tenant\nEnterprise App SP]
-    AR -->|Instanz in| TENANT2[Mandant B\nEnterprise App SP]
-    AR -->|Instanz in| TENANT3[Mandant C\nEnterprise App SP]
+    AR[App Registration Globales App-Objekt Heimat-Tenant] -->|Instanz in| HOME[Heimat-Tenant Enterprise App SP]
+    AR -->|Instanz in| TENANT2[Mandant B Enterprise App SP]
+    AR -->|Instanz in| TENANT3[Mandant C Enterprise App SP]
 ```
 
 | Aspekt | App Registration | Enterprise Application (Service Principal) |
@@ -95,7 +95,7 @@ Apps authentifizieren sich gegenüber Entra ID mit **Client Credentials**:
 graph LR
     APP[Anwendung] -->|Client ID + Credential| AAD[Microsoft Entra ID]
     AAD -->|Access Token| APP
-    APP -->|Bearer Token| API[Azure API\nMicrosoft Graph\nEigene API]
+    APP -->|Bearer Token| API[Azure API Microsoft Graph Eigene API]
 ```
 
 ### Vergleich der Credential-Typen
@@ -238,13 +238,13 @@ New-AzADAppFederatedIdentityCredential `
 
 ```mermaid
 graph TD
-    Q1{Workload läuft\nauuf Azure?} -->|Ja| Q2{Benötigt\nMulti-Tenant?}
-    Q1 -->|Nein, z.B. GitHub, lokal| FED[App Registration\nmit Federated Credential]
-    Q2 -->|Nein| MI[Managed Identity\nkein Secret nötig]
-    Q2 -->|Ja| AR[App Registration\nmit Certificate/Secret]
+    Q1{Workload läuft auuf Azure?} -->|Ja| Q2{Benötigt Multi-Tenant?}
+    Q1 -->|Nein, z.B. GitHub, lokal| FED[App Registration mit Federated Credential]
+    Q2 -->|Nein| MI[Managed Identity kein Secret nötig]
+    Q2 -->|Ja| AR[App Registration mit Certificate/Secret]
     
-    MI --> SYSMI[System-assigned\nfür einzelne Ressource]
-    MI --> USRMI[User-assigned\nfür mehrere Ressourcen]
+    MI --> SYSMI[System-assigned für einzelne Ressource]
+    MI --> USRMI[User-assigned für mehrere Ressourcen]
 ```
 
 | Kriterium | Managed Identity | App Registration |
@@ -279,8 +279,8 @@ graph TD
 
 ```mermaid
 graph LR
-    APP[Anwendung] -->|App Permission\nAnwendung handelt selbst| GRAPH[Microsoft Graph API]
-    USER[Benutzer] -->|Delegated Permission\nAnwendung handelt\nim Namen des Benutzers| APP2[Anwendung]
+    APP[Anwendung] -->|App Permission Anwendung handelt selbst| GRAPH[Microsoft Graph API]
+    USER[Benutzer] -->|Delegated Permission Anwendung handelt im Namen des Benutzers| APP2[Anwendung]
     APP2 --> GRAPH
 ```
 
@@ -333,9 +333,9 @@ Add-AzADAppPermission `
 
 ```mermaid
 graph TD
-    AR[App Registration\nHeimat-Tenant A] -->|Multi-Tenant\nSignInAudience: AzureADMultipleOrgs| GLOBAL[Azure AD]
-    GLOBAL -->|Tenant B konsent| SPB[Service Principal\nin Tenant B]
-    GLOBAL -->|Tenant C konsent| SPC[Service Principal\nin Tenant C]
+    AR[App Registration Heimat-Tenant A] -->|Multi-Tenant SignInAudience: AzureADMultipleOrgs| GLOBAL[Azure AD]
+    GLOBAL -->|Tenant B konsent| SPB[Service Principal in Tenant B]
+    GLOBAL -->|Tenant C konsent| SPC[Service Principal in Tenant C]
 ```
 
 ```powershell

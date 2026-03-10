@@ -28,10 +28,10 @@ DDoS Protection erkennt und mildert **volumetrische, protokollbasierte und Appli
 
 ```mermaid
 graph LR
-    ATTACKER[DDoS Angreifer\nBotnetz] -->|Flood Traffic| INTERNET[Internet]
-    INTERNET -->|Volumen-Angriff| MS_NETWORK[Microsoft Global\nNetzwerk]
-    MS_NETWORK -->|Scrubbing Center\nMitigation| FW{DDoS Mitigation}
-    FW -->|Legitimer Traffic| PUBLIC_IP[Öffentliche IP\nder Azure-Ressource]
+    ATTACKER[DDoS Angreifer Botnetz] -->|Flood Traffic| INTERNET[Internet]
+    INTERNET -->|Volumen-Angriff| MS_NETWORK[Microsoft Global Netzwerk]
+    MS_NETWORK -->|Scrubbing Center Mitigation| FW{DDoS Mitigation}
+    FW -->|Legitimer Traffic| PUBLIC_IP[Öffentliche IP der Azure-Ressource]
     FW -->|Angriffs-Traffic| DROP[Verworfen]
 ```
 
@@ -62,8 +62,8 @@ graph LR
 
 ```mermaid
 graph TD
-    ATTACK[Angriff\nUDP/ICMP Flood\nAmplification] -->|Hunderte Gbps| AZURE[Azure DDoS\nScrubbing Center]
-    AZURE -->|Anomalie-Erkennung\nBaseline-Vergleich| MITIG[Mitigation\nRate Limiting\nBlacklisting]
+    ATTACK[Angriff UDP/ICMP Flood Amplification] -->|Hunderte Gbps| AZURE[Azure DDoS Scrubbing Center]
+    AZURE -->|Anomalie-Erkennung Baseline-Vergleich| MITIG[Mitigation Rate Limiting Blacklisting]
     MITIG -->|Nur legitimer Traffic| RESOURCE[Azure Ressource]
 ```
 
@@ -91,10 +91,10 @@ DDoS Protection erstellt **automatisch eine Baseline** für jede öffentliche IP
 
 ```mermaid
 graph LR
-    MONITOR[Azure DDoS\nMonitoring] -->|Lernt normales\nTraffic-Muster| BASELINE[Adaptive Baseline\npro Public IP]
+    MONITOR[Azure DDoS Monitoring] -->|Lernt normales Traffic-Muster| BASELINE[Adaptive Baseline pro Public IP]
     BASELINE -->|Vergleicht| TRAFFIC[Aktueller Traffic]
-    TRAFFIC -->|Anomalie erkannt| MITIG[Automatische\nMitigation]
-    MITIG -->|Normal| PASSTHROUGH[Traffic\ndurchgelassen]
+    TRAFFIC -->|Anomalie erkannt| MITIG[Automatische Mitigation]
+    MITIG -->|Normal| PASSTHROUGH[Traffic durchgelassen]
 ```
 
 **Mitigation-Policies:**
@@ -183,10 +183,10 @@ AzureMetrics
 
 ```mermaid
 graph LR
-    ATTACK[DDoS Angriff\nL3/L4 + L7] -->|L3/L4 Flood| DDOS[Azure DDoS\nNetwork Protection]
-    ATTACK -->|L7 HTTP Flood| WAF[Web Application\nFirewall WAF]
+    ATTACK[DDoS Angriff L3/L4 + L7] -->|L3/L4 Flood| DDOS[Azure DDoS Network Protection]
+    ATTACK -->|L7 HTTP Flood| WAF[Web Application Firewall WAF]
     DDOS -->|Geclean| WAF
-    WAF -->|Geprüft| APP[Anwendung\nApp Gateway\nFront Door]
+    WAF -->|Geprüft| APP[Anwendung App Gateway Front Door]
 ```
 
 | Schutzebene | Tool | Schutz vor |
@@ -241,8 +241,8 @@ Ein **DDoS Network Protection Plan** kann mehrere VNets schützen:
 
 ```mermaid
 graph TD
-    PLAN[DDoS Protection Plan] --> VNET1[VNet Production\nWest Europe]
-    PLAN --> VNET2[VNet Production\nNorth Europe]
+    PLAN[DDoS Protection Plan] --> VNET1[VNet Production West Europe]
+    PLAN --> VNET2[VNet Production North Europe]
     PLAN --> VNET3[VNet DMZ]
 ```
 

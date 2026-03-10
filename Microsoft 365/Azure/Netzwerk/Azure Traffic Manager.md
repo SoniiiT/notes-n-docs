@@ -28,7 +28,7 @@ Traffic Manager ist ein **DNS-basierter Lastverteiler** auf globaler Ebene:
 ```mermaid
 sequenceDiagram
     participant CLIENT as Client
-    participant TM as Traffic Manager\n(DNS)
+    participant TM as Traffic Manager (DNS)
     participant ORIGIN1 as Origin West Europe
     participant ORIGIN2 as Origin East US
 
@@ -55,8 +55,8 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    TM[Traffic Manager] -->|Priorität 1\nNormal| PRIMARY[Primary Endpoint\nWest Europe]
-    TM -.->|Priorität 2\nNur wenn Primary down| SECONDARY[Secondary Endpoint\nNorth Europe]
+    TM[Traffic Manager] -->|Priorität 1 Normal| PRIMARY[Primary Endpoint West Europe]
+    TM -.->|Priorität 2 Nur wenn Primary down| SECONDARY[Secondary Endpoint North Europe]
 ```
 
 Konfiguration:
@@ -97,9 +97,9 @@ Set-AzTrafficManagerProfile -TrafficManagerProfile $profile
 
 ```mermaid
 graph LR
-    USER_EU[User Europa] -->|Niedrigste Latenz| WE[Endpoint\nWest Europe]
-    USER_US[User USA] -->|Niedrigste Latenz| EUS[Endpoint\nEast US]
-    USER_AS[User Asien] -->|Niedrigste Latenz| SEA[Endpoint\nSoutheast Asia]
+    USER_EU[User Europa] -->|Niedrigste Latenz| WE[Endpoint West Europe]
+    USER_US[User USA] -->|Niedrigste Latenz| EUS[Endpoint East US]
+    USER_AS[User Asien] -->|Niedrigste Latenz| SEA[Endpoint Southeast Asia]
 ```
 
 - Basiert auf Azure Latenz-Messungen zwischen PoPs und Endpoints
@@ -132,7 +132,7 @@ Traffic wird basierend auf **geografischem Standort des Benutzers** geroutet:
 
 ```mermaid
 graph LR
-    TM[Traffic Manager\nGeographic] -->|DE, AT, CH| EU_ENDPOINT[EU Endpoint]
+    TM[Traffic Manager Geographic] -->|DE, AT, CH| EU_ENDPOINT[EU Endpoint]
     TM -->|US, CA| US_ENDPOINT[US Endpoint]
     TM -->|Alle anderen| GLOBAL_ENDPOINT[Global Endpoint]
 ```
@@ -181,8 +181,8 @@ New-AzTrafficManagerEndpoint `
 
 ```mermaid
 graph TD
-    PARENT[Parent Profile\nGeographic Routing] -->|Europa| CHILD_EU[Child Profile\nPriority Routing EU]
-    PARENT -->|USA| CHILD_US[Child Profile\nPerformance Routing US]
+    PARENT[Parent Profile Geographic Routing] -->|Europa| CHILD_EU[Child Profile Priority Routing EU]
+    PARENT -->|USA| CHILD_US[Child Profile Performance Routing US]
     CHILD_EU -->|Priorität 1| WE[West Europe]
     CHILD_EU -->|Priorität 2| NE[North Europe]
     CHILD_US --> EUS[East US]
@@ -197,7 +197,7 @@ graph TD
 
 ```mermaid
 graph LR
-    TM[Traffic Manager\nHealth Probes] -->|GET /health| EP1[Endpoint 1]
+    TM[Traffic Manager Health Probes] -->|GET /health| EP1[Endpoint 1]
     TM -->|GET /health| EP2[Endpoint 2]
     EP1 -->|200 OK| TM
     EP2 -->|503 Timeout| TM
@@ -231,8 +231,8 @@ $profile = New-AzTrafficManagerProfile `
 
 ```mermaid
 graph LR
-    TM[Traffic Manager\nPriority Routing] -->|Priorität 1 Normal| PRIMARY[Primary Region\nWest Europe\nTTL: 30s]
-    TM -.->|Priorität 2 Failover| DR[DR Region\nNorth Europe]
+    TM[Traffic Manager Priority Routing] -->|Priorität 1 Normal| PRIMARY[Primary Region West Europe TTL: 30s]
+    TM -.->|Priorität 2 Failover| DR[DR Region North Europe]
 ```
 
 Failover-Zeit = TTL + Monitor-Intervall × Toleranz

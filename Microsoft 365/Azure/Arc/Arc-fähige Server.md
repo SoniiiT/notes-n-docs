@@ -70,10 +70,10 @@ Der Agent besteht aus vier Hauptkomponenten, die als separate Dienste laufen:
 ```mermaid
 graph TD
     subgraph ConnectedMachineAgent
-        HIMDS[HIMDS\nHybrid Instance Metadata Service]
-        GC[GuestConfigAgent\nPolicy und Compliance]
-        EXT[ExtensionManagerAgent\nExtensions verwalten]
-        PROXY[ArcProxyService\nTraffic-Aggregation]
+        HIMDS[HIMDS Hybrid Instance Metadata Service]
+        GC[GuestConfigAgent Policy und Compliance]
+        EXT[ExtensionManagerAgent Extensions verwalten]
+        PROXY[ArcProxyService Traffic-Aggregation]
     end
 
     subgraph Azure

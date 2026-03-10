@@ -28,10 +28,10 @@ ExpressRoute erstellt eine **private, dedizierte Netzwerkverbindung** zu Azure:
 
 ```mermaid
 graph LR
-    ONPREM[On-Premises\nRechenzentrum] -->|Dedizierte Leitung\nLayer 2 oder 3| PROVIDER[Connectivity Provider\noder colocation]
-    PROVIDER -->|Microsoft Enterprise\nEdge Router MSEE| AZURE[Microsoft Azure\nGlobal Backbone]
+    ONPREM[On-Premises Rechenzentrum] -->|Dedizierte Leitung Layer 2 oder 3| PROVIDER[Connectivity Provider oder colocation]
+    PROVIDER -->|Microsoft Enterprise Edge Router MSEE| AZURE[Microsoft Azure Global Backbone]
     AZURE --> VNET[Azure VNets]
-    AZURE --> M365[Microsoft 365\nDynamics 365]
+    AZURE --> M365[Microsoft 365 Dynamics 365]
 ```
 
 **Vorteile gegenüber VPN:**
@@ -51,7 +51,7 @@ Eigenes Equipment in einem Colocation-Rechenzentrum das auch Microsofts Equipmen
 
 ```mermaid
 graph LR
-    CORP_EQUIP[Eigene Router\nim Co-lo RZ] -->|Cross-Connect\nLayer 2| MSEE[Microsoft\nEnterprise Edge]
+    CORP_EQUIP[Eigene Router im Co-lo RZ] -->|Cross-Connect Layer 2| MSEE[Microsoft Enterprise Edge]
     MSEE --> AZURE[Azure]
 ```
 
@@ -63,7 +63,7 @@ Direkte Ethernet-Verbindung vom eigenen RZ zum Microsoft-Netzwerk über einen Pr
 
 ```mermaid
 graph LR
-    CORP[Eigenes RZ] -->|Dedicated\nEthernet Link| PROVIDER[Connectivity\nProvider]
+    CORP[Eigenes RZ] -->|Dedicated Ethernet Link| PROVIDER[Connectivity Provider]
     PROVIDER -->|MSEE| AZURE[Azure]
 ```
 
@@ -88,8 +88,8 @@ Direkte physische Verbindung zu Microsoft-Routern ohne zwischengeschalteten Prov
 
 ```mermaid
 graph LR
-    CORP[Eigene Router\nbei Microsoft RZ] -->|Direktverbindung\n10G oder 100G Ports| MSEE[Microsoft\nEnterprise Edge\nMSEE]
-    MSEE --> AZURE[Azure Global\nBackbone]
+    CORP[Eigene Router bei Microsoft RZ] -->|Direktverbindung 10G oder 100G Ports| MSEE[Microsoft Enterprise Edge MSEE]
+    MSEE --> AZURE[Azure Global Backbone]
 ```
 
 - **10 Gbps** oder **100 Gbps** dedizierte Ports
@@ -118,9 +118,9 @@ Verbindet On-Premises direkt mit Azure VNets:
 
 ```mermaid
 graph LR
-    ONPREM[On-Prem\n192 168 0 0/16] -->|BGP Session\nPrivate Peering| ER[ExpressRoute\nCircuit]
-    ER -->|ER Gateway| VNET[Azure VNet\n10 0 0 0/16]
-    ER -->|Gateway Transit| VNET2[Peered VNet\n10 1 0 0/16]
+    ONPREM[On-Prem 192 168 0 0/16] -->|BGP Session Private Peering| ER[ExpressRoute Circuit]
+    ER -->|ER Gateway| VNET[Azure VNet 10 0 0 0/16]
+    ER -->|Gateway Transit| VNET2[Peered VNet 10 1 0 0/16]
 ```
 
 - BGP-Session zwischen On-Prem-Router und Microsoft (primärer + sekundärer Pfad)
@@ -132,9 +132,9 @@ Direkter Zugriff auf Microsoft-Public-Dienste (Microsoft 365, Azure PaaS) ohne I
 
 ```mermaid
 graph LR
-    ONPREM[On-Prem] -->|BGP Session\nMicrosoft Peering| ER[ExpressRoute]
-    ER -->|Public Microsoft IPs| M365[Microsoft 365\nExchange, SharePoint]
-    ER -->|Public Azure IPs| AZUREPUBLIC[Azure PaaS\nStorage, SQL etc]
+    ONPREM[On-Prem] -->|BGP Session Microsoft Peering| ER[ExpressRoute]
+    ER -->|Public Microsoft IPs| M365[Microsoft 365 Exchange, SharePoint]
+    ER -->|Public Azure IPs| AZUREPUBLIC[Azure PaaS Storage, SQL etc]
 ```
 
 - Erfordert eigene öffentliche IP-Adressen (ASN + öffentliche IPs)
@@ -148,8 +148,8 @@ ExpressRoute nutzt **BGP** für dynamisches Routing:
 
 ```mermaid
 graph LR
-    CE[Customer Edge Router\nCE] -->|BGP Session\nASN: 65001| MSEE1[MSEE Primary\nASN: 12076]
-    CE -->|BGP Session\nASN: 65001| MSEE2[MSEE Secondary\nASN: 12076]
+    CE[Customer Edge Router CE] -->|BGP Session ASN: 65001| MSEE1[MSEE Primary ASN: 12076]
+    CE -->|BGP Session ASN: 65001| MSEE2[MSEE Secondary ASN: 12076]
 ```
 
 | Parameter | Wert |
@@ -209,8 +209,8 @@ Add-AzExpressRouteCircuitPeeringConfig `
 
 ```mermaid
 graph LR
-    CORP[Eigene Fiber\nbei MSEE] -->|100G Port| MSEE[Microsoft\nMSEE Router]
-    MSEE -->|Multiple Circuits\nauf einem Port| C1[Circuit 1\n10G] & C2[Circuit 2\n10G] & C3[Circuit 3\n5G]
+    CORP[Eigene Fiber bei MSEE] -->|100G Port| MSEE[Microsoft MSEE Router]
+    MSEE -->|Multiple Circuits auf einem Port| C1[Circuit 1 10G] & C2[Circuit 2 10G] & C3[Circuit 3 5G]
 ```
 
 ```powershell
@@ -232,9 +232,9 @@ On-Premises-Standorte über Microsofts Backbone verbinden (On-Prem zu On-Prem):
 
 ```mermaid
 graph LR
-    CORP_DE[On-Prem\nDeutschland] -->|ER Circuit 1| MSBB[Microsoft\nGlobal Backbone]
-    CORP_US[On-Prem\nUSA] -->|ER Circuit 2| MSBB
-    MSBB -.->|Global Reach\nDirekte Verbindung| CORP_DE & CORP_US
+    CORP_DE[On-Prem Deutschland] -->|ER Circuit 1| MSBB[Microsoft Global Backbone]
+    CORP_US[On-Prem USA] -->|ER Circuit 2| MSBB
+    MSBB -.->|Global Reach Direkte Verbindung| CORP_DE & CORP_US
 ```
 
 ```powershell
@@ -256,8 +256,8 @@ Mit FastPath: On-Prem → ER Circuit → **direkt zu VM NIC** (Gateway wird umga
 
 ```mermaid
 graph LR
-    ONPREM[On-Prem] -->|Daten| ERGW[ER Gateway\nNur noch Control Plane]
-    ONPREM -->|FastPath\nData Plane bypass| VM[Azure VM\nDirekt]
+    ONPREM[On-Prem] -->|Daten| ERGW[ER Gateway Nur noch Control Plane]
+    ONPREM -->|FastPath Data Plane bypass| VM[Azure VM Direkt]
 ```
 
 ```powershell
@@ -278,8 +278,8 @@ New-AzVirtualNetworkGateway `
 
 ```mermaid
 graph LR
-    ONPREM[On-Prem\nDual-Router] -->|ER Circuit 1\nProvider A| MSEE_A[MSEE A]
-    ONPREM -->|ER Circuit 2\nProvider B| MSEE_B[MSEE B]
+    ONPREM[On-Prem Dual-Router] -->|ER Circuit 1 Provider A| MSEE_A[MSEE A]
+    ONPREM -->|ER Circuit 2 Provider B| MSEE_B[MSEE B]
     MSEE_A & MSEE_B --> VNET[Azure VNet]
 ```
 

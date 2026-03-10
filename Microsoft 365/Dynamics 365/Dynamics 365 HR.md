@@ -27,14 +27,14 @@ aliases:
 
 ```mermaid
 graph TD
-    ORG[Organisation] --> DEP1[Abteilung\nVertrieb]
-    ORG --> DEP2[Abteilung\nEntwicklung]
-    ORG --> DEP3[Abteilung\nHR]
-    DEP1 --> POS1[Position:\nVertriebsleiter]
-    DEP1 --> POS2[Position:\nAccount Manager]
-    POS1 --> EMP1[Mitarbeiter:\nMax Mustermann]
-    POS2 --> EMP2[Mitarbeiter:\nAnna Schmidt]
-    POS2 --> EMP3[Mitarbeiter:\nPeter Bauer]
+    ORG[Organisation] --> DEP1[Abteilung Vertrieb]
+    ORG --> DEP2[Abteilung Entwicklung]
+    ORG --> DEP3[Abteilung HR]
+    DEP1 --> POS1[Position: Vertriebsleiter]
+    DEP1 --> POS2[Position: Account Manager]
+    POS1 --> EMP1[Mitarbeiter: Max Mustermann]
+    POS2 --> EMP2[Mitarbeiter: Anna Schmidt]
+    POS2 --> EMP3[Mitarbeiter: Peter Bauer]
 ```
 
 **Positionsverwaltung:**
@@ -58,12 +58,12 @@ Personalaktionen dokumentieren alle mitarbeiterrelevanten Vorgänge mit Genehmig
 
 ```mermaid
 graph LR
-    REC[Recruiting\nStellenausschreibung] -->|Eingestellt| ONB[Onboarding\nAufgaben und Docs]
-    ONB -->|Aktiv| EMP4[Beschäftigt\nAktiver Mitarbeiter]
+    REC[Recruiting Stellenausschreibung] -->|Eingestellt| ONB[Onboarding Aufgaben und Docs]
+    ONB -->|Aktiv| EMP4[Beschäftigt Aktiver Mitarbeiter]
     EMP4 -->|Beförderung| EMP4
     EMP4 -->|Versetzung| EMP4
-    EMP4 -->|Kündigung| OFF[Offboarding\nAbmeldeprozesse]
-    OFF --> EX[Ehemalig\nAlumni]
+    EMP4 -->|Kündigung| OFF[Offboarding Abmeldeprozesse]
+    OFF --> EX[Ehemalig Alumni]
 ```
 
 ---
@@ -101,11 +101,11 @@ graph LR
 
 ```mermaid
 graph TD
-    EMP5[Mitarbeiter\nbeantragt Urlaub] -->|Antrag| MAN[Manager\nerhält Benachrichtigung]
-    MAN -->|Genehmigt| CONF[Bestätigung\nan Mitarbeiter]
-    MAN -->|Abgelehnt| NOTIF[Ablehnung\nmit Begründung]
-    CONF -->|Synchronisiert| CAL[Teams-Kalender\nOut-of-Office]
-    CONF -->|Aktualisiert| BAL[Urlaubssaldo\nreduziert]
+    EMP5[Mitarbeiter beantragt Urlaub] -->|Antrag| MAN[Manager erhält Benachrichtigung]
+    MAN -->|Genehmigt| CONF[Bestätigung an Mitarbeiter]
+    MAN -->|Abgelehnt| NOTIF[Ablehnung mit Begründung]
+    CONF -->|Synchronisiert| CAL[Teams-Kalender Out-of-Office]
+    CONF -->|Aktualisiert| BAL[Urlaubssaldo reduziert]
 ```
 
 **Teams HR Bot für Urlaubsanträge:**
@@ -144,10 +144,10 @@ Mitarbeiter können Benefits jährlich neu auswählen:
 
 ```mermaid
 graph TD
-    OPEN[Enrollment-Periode\nöffnet (z.B. Oktober)] --> NOTI[Benachrichtigung\nan alle Mitarbeiter]
-    NOTI --> SEL[Mitarbeiter wählt\nBenefits im Self-Service]
-    SEL -->|Bestätigt| CONF2[Bestätigung\nund Wirksamkeitsdatum]
-    CONF2 -->|01.01.| EFFECT[Benefits\naktiv ab 01.01.]
+    OPEN[Enrollment-Periode öffnet (z.B. Oktober)] --> NOTI[Benachrichtigung an alle Mitarbeiter]
+    NOTI --> SEL[Mitarbeiter wählt Benefits im Self-Service]
+    SEL -->|Bestätigt| CONF2[Bestätigung und Wirksamkeitsdatum]
+    CONF2 -->|01.01.| EFFECT[Benefits aktiv ab 01.01.]
 ```
 
 ---
@@ -180,10 +180,10 @@ Compa-Ratio = (Gehalt / Midpoint) × 100
 
 ```mermaid
 graph LR
-    MAN2[Manager\nerhält Budget-Zuteilung] -->|Vorschläge| PROP[Gehaltserhöhungen\nvorschlagen]
-    PROP -->|Review| HR2[HR-Prüfung\nBudget-Check]
-    HR2 -->|Genehmigung| CFO[Geschäftsführung\nGenehmigung]
-    CFO -->|Approved| EFFECT2[Wirksamkeit\nnächste Lohnperiode]
+    MAN2[Manager erhält Budget-Zuteilung] -->|Vorschläge| PROP[Gehaltserhöhungen vorschlagen]
+    PROP -->|Review| HR2[HR-Prüfung Budget-Check]
+    HR2 -->|Genehmigung| CFO[Geschäftsführung Genehmigung]
+    CFO -->|Approved| EFFECT2[Wirksamkeit nächste Lohnperiode]
 ```
 
 ---
@@ -216,12 +216,12 @@ D365 HR ist mit **Microsoft Viva Learning** integriert:
 
 ```mermaid
 graph LR
-    GOAL[Ziele setzen\n(Jahresanfang)] -->|Midyear| MID[Halbjahrsgespräch\nFortschritt prüfen]
-    MID -->|Jahresende| SELF[Selbstbeurteilung\nMitarbeiter]
+    GOAL[Ziele setzen (Jahresanfang)] -->|Midyear| MID[Halbjahrsgespräch Fortschritt prüfen]
+    MID -->|Jahresende| SELF[Selbstbeurteilung Mitarbeiter]
     SELF -->|Manager| MREV[Manager-Beurteilung]
-    MREV -->|360°| PEER[Peer-Feedback\noptional]
-    PEER -->|Kalibrierung| CAL2[Kalibrier-Meeting\nHR + Manager]
-    CAL2 -->|Final| RTNG[Rating\nund Feedback-Gespräch]
+    MREV -->|360°| PEER[Peer-Feedback optional]
+    PEER -->|Kalibrierung| CAL2[Kalibrier-Meeting HR + Manager]
+    CAL2 -->|Final| RTNG[Rating und Feedback-Gespräch]
 ```
 
 ### Performance-Ratings

@@ -43,13 +43,13 @@ Das **OneCopy-Prinzip** ist das zentrale Designprinzip von OneLake:
 
 ```mermaid
 graph TD
-    OL[OneLake\nEin Speicherort]
-    OL --> LH[Lakehouse\nliest Delta-Tabellen]
-    OL --> WH[Data Warehouse\nliest via SQL Endpoint]
-    OL --> DS[Data Science\nNotebooks lesen direkt]
-    OL --> RTI[Real-Time Intelligence\nKQL DB schreibt hierher]
-    OL --> PBI[Power BI\nDirect Lake Mode]
-    OL --> EXT[Externe Tools\nADLS Gen2 API]
+    OL[OneLake Ein Speicherort]
+    OL --> LH[Lakehouse liest Delta-Tabellen]
+    OL --> WH[Data Warehouse liest via SQL Endpoint]
+    OL --> DS[Data Science Notebooks lesen direkt]
+    OL --> RTI[Real-Time Intelligence KQL DB schreibt hierher]
+    OL --> PBI[Power BI Direct Lake Mode]
+    OL --> EXT[Externe Tools ADLS Gen2 API]
     
     style OL fill:#0078d4,color:#fff
 ```
@@ -117,14 +117,14 @@ Jedes Fabric-Item hat einen definierten Speicherort in OneLake:
 ```mermaid
 graph LR
     OL[OneLake]
-    WS[Workspace\n= Container]
+    WS[Workspace = Container]
     OL --> WS
     
-    WS --> LH_F[Lakehouse\nFiles/ + Tables/]
-    WS --> WH_F[Data Warehouse\nTables/ Views/]
-    WS --> KQL_F[KQL Datenbank\nTables/]
-    WS --> ML_F[ML-Modelle\nModels/]
-    WS --> NB_F[Notebooks\nGespeichert in Workspace]
+    WS --> LH_F[Lakehouse Files/ + Tables/]
+    WS --> WH_F[Data Warehouse Tables/ Views/]
+    WS --> KQL_F[KQL Datenbank Tables/]
+    WS --> ML_F[ML-Modelle Models/]
+    WS --> NB_F[Notebooks Gespeichert in Workspace]
 ```
 
 | Fabric-Item | Speicherstruktur in OneLake |
@@ -157,14 +157,14 @@ Shortcuts sind **virtuelle Verknüpfungen** zu externen Datenspeichern, die in O
 
 ```mermaid
 graph LR
-    EXT1[ADLS Gen2\nAzure Storage] -->|Shortcut| OL[OneLake\nFabric Workspace]
-    EXT2[AWS S3\nAmazon] -->|Shortcut| OL
-    EXT3[GCS\nGoogle Cloud] -->|Shortcut| OL
-    EXT4[Dataverse\nDynamics 365] -->|Shortcut| OL
-    WS2[OneLake\nAnderer Workspace] -->|Shortcut| OL
+    EXT1[ADLS Gen2 Azure Storage] -->|Shortcut| OL[OneLake Fabric Workspace]
+    EXT2[AWS S3 Amazon] -->|Shortcut| OL
+    EXT3[GCS Google Cloud] -->|Shortcut| OL
+    EXT4[Dataverse Dynamics 365] -->|Shortcut| OL
+    WS2[OneLake Anderer Workspace] -->|Shortcut| OL
     
-    OL --> LH[Lakehouse\nsieht alles als lokal]
-    OL --> NB[Notebook\nliest direkt]
+    OL --> LH[Lakehouse sieht alles als lokal]
+    OL --> NB[Notebook liest direkt]
 ```
 
 **Shortcut erstellen (Lakehouse):**
@@ -226,9 +226,9 @@ Die **Medallion-Architektur** (Bronze/Silber/Gold) ist das empfohlene Datenschic
 
 ```mermaid
 graph LR
-    RAW[Rohdaten\nQuelldaten] -->|Ingest| BR[Bronze Layer\nRohdaten unverändert]
-    BR -->|Bereinigen\nValidieren| SI[Silber Layer\nBereinigte Daten]
-    SI -->|Aggregieren\nModellieren| GO[Gold Layer\nAnalyse-ready]
+    RAW[Rohdaten Quelldaten] -->|Ingest| BR[Bronze Layer Rohdaten unverändert]
+    BR -->|Bereinigen Validieren| SI[Silber Layer Bereinigte Daten]
+    SI -->|Aggregieren Modellieren| GO[Gold Layer Analyse-ready]
     GO --> PBI[Power BI]
     GO --> DW[Data Warehouse]
     GO --> ML[ML-Modelle]
@@ -268,9 +268,9 @@ Ab 2024 unterstützt OneLake **Row-Level Security** und **Column-Level Security*
 
 ```mermaid
 graph TD
-    USER[Benutzer] --> WSROLE[Workspace-Rolle\ngrober Zugriff]
-    USER --> ITEMROLE[Item-Berechtigungen\nmittlerer Zugriff]
-    USER --> OLROLE[OneLake Data\nAccess Roles\nfeiner Zugriff]
+    USER[Benutzer] --> WSROLE[Workspace-Rolle grober Zugriff]
+    USER --> ITEMROLE[Item-Berechtigungen mittlerer Zugriff]
+    USER --> OLROLE[OneLake Data Access Roles feiner Zugriff]
     
     WSROLE --> DATA[OneLake-Daten]
     ITEMROLE --> DATA

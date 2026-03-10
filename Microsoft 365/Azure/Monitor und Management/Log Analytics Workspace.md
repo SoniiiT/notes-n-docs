@@ -28,10 +28,10 @@ Ein Log Analytics Workspace ist:
 
 ```mermaid
 graph TD
-    Input["Datenquellen\nAzure-Ressourcen\nVMs via AMA\nApp Insights\nMicrosoft Sentinel\nMicrosoft Defender for Cloud"]
-    Ingest["Ingest Pipeline\nDCR-Transformationen\nKomprimierung"]
-    Tables["Workspace-Tabellen\nAnalytics Tier\nBasic Tier\nAuxiliary Tier"]
-    Query["KQL-Abfragen\nAlerts\nWorkbooks\nDashboards\nSentinel-Analysen"]
+    Input["Datenquellen Azure-Ressourcen VMs via AMA App Insights Microsoft Sentinel Microsoft Defender for Cloud"]
+    Ingest["Ingest Pipeline DCR-Transformationen Komprimierung"]
+    Tables["Workspace-Tabellen Analytics Tier Basic Tier Auxiliary Tier"]
+    Query["KQL-Abfragen Alerts Workbooks Dashboards Sentinel-Analysen"]
 
     Input --> Ingest
     Ingest --> Tables
@@ -61,9 +61,9 @@ graph TD
 ```mermaid
 graph TD
     Sub["Azure Subscription"]
-    LAWP["LAW: law-prod-westeurope\nProduktion"]
-    LAWD["LAW: law-dev-westeurope\nEntwicklung / Test"]
-    LAWS["LAW: law-sentinel\nMicrosoft Sentinel\n(separater Workspace empfohlen)"]
+    LAWP["LAW: law-prod-westeurope Produktion"]
+    LAWD["LAW: law-dev-westeurope Entwicklung / Test"]
+    LAWS["LAW: law-sentinel Microsoft Sentinel (separater Workspace empfohlen)"]
 
     Sub --> LAWP
     Sub --> LAWD
@@ -317,14 +317,14 @@ Update-AzOperationalInsightsTable `
 
 ```mermaid
 graph LR
-    OpsTeam["Ops-Team\n(Workspace-Context)"]
-    DevTeam["Dev-Team\n(Resource-Context)"]
-    LAW["Log Analytics\nWorkspace"]
-    VMDaten["VM-Logs\nPerf, Events"]
-    AppDaten["App-Logs\nAppRequests"]
+    OpsTeam["Ops-Team (Workspace-Context)"]
+    DevTeam["Dev-Team (Resource-Context)"]
+    LAW["Log Analytics Workspace"]
+    VMDaten["VM-Logs Perf, Events"]
+    AppDaten["App-Logs AppRequests"]
 
     OpsTeam -- "Vollzugriff via LAW RBAC" --> LAW
-    DevTeam -- "Nur eigene App-Logs\nvia Resource RBAC" --> AppDaten
+    DevTeam -- "Nur eigene App-Logs via Resource RBAC" --> AppDaten
     VMDaten --> LAW
     AppDaten --> LAW
 ```

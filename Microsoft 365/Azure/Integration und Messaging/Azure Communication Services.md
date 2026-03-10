@@ -16,13 +16,13 @@ ACS ist eine **cloudbasierte Kommunikationsplattform**, die Entwicklern ermögli
 
 ```mermaid
 flowchart TD
-    APP[Eigene Anwendung\nWeb / Mobile / Desktop] --> ACS[Azure Communication\nServices]
-    ACS --> VO[Voice\nPSTN/VoIP]
-    ACS --> VI[Video\nGruppen-Calls]
-    ACS --> CH[Chat\nPersistent Threads]
-    ACS --> SM[SMS\nKurznachrichten]
-    ACS --> EM[E-Mail\nTransaktional]
-    ACS --> TM[Teams\nInteroperabilität]
+    APP[Eigene Anwendung Web / Mobile / Desktop] --> ACS[Azure Communication Services]
+    ACS --> VO[Voice PSTN/VoIP]
+    ACS --> VI[Video Gruppen-Calls]
+    ACS --> CH[Chat Persistent Threads]
+    ACS --> SM[SMS Kurznachrichten]
+    ACS --> EM[E-Mail Transaktional]
+    ACS --> TM[Teams Interoperabilität]
 ```
 
 **Typische Anwendungsfälle:**
@@ -53,11 +53,11 @@ Das Calling SDK ermöglicht **browser-basierte VoIP-Anrufe** und PSTN-Integratio
 
 ```mermaid
 sequenceDiagram
-    participant UA as User Agent\n(Browser/App)
+    participant UA as User Agent (Browser/App)
     participant ACS
-    participant PSTN as PSTN\n(Festnetz/Mobilfunk)
+    participant PSTN as PSTN (Festnetz/Mobilfunk)
 
-    UA->>ACS: Calling SDK initialisieren\n(ACS User Token)
+    UA->>ACS: Calling SDK initialisieren (ACS User Token)
     UA->>ACS: startCall("+4930123456")
     ACS->>PSTN: Ausgehender PSTN-Anruf
     PSTN-->>ACS: Verbindung hergestellt
@@ -96,10 +96,10 @@ callAgent.on("incomingCall", async (event) => {
 
 ```mermaid
 flowchart LR
-    SDK[Calling SDK\nBrowser/Native] --> TURN[TURN/ICE\nMedia Relay]
-    TURN --> ACS[ACS Media\nInfrastruktur]
-    ACS --> SFU[Selective\nForwarding Unit]
-    SFU --> P2[Remote\nParticipants]
+    SDK[Calling SDK Browser/Native] --> TURN[TURN/ICE Media Relay]
+    TURN --> ACS[ACS Media Infrastruktur]
+    ACS --> SFU[Selective Forwarding Unit]
+    SFU --> P2[Remote Participants]
     ACS --> PSTN[PSTN Gateway]
 ```
 
@@ -154,11 +154,11 @@ ACS Chat verwendet **persistente Threads** – Nachrichten bleiben gespeichert u
 ```mermaid
 flowchart LR
     subgraph Chat Thread
-        M1[Nachricht 1\nUser A]
-        M2[Nachricht 2\nUser B]
-        M3[Nachricht 3\nUser A\nmit Attachment]
+        M1[Nachricht 1 User A]
+        M2[Nachricht 2 User B]
+        M3[Nachricht 3 User A mit Attachment]
     end
-    UA[User A] --> CT[Chat Thread\nThread ID]
+    UA[User A] --> CT[Chat Thread Thread ID]
     UB[User B] --> CT
     UC[User C gelesen] --> CT
 ```
@@ -238,11 +238,11 @@ ACS Email ermöglicht transaktionale E-Mails mit eigener Domain:
 
 ```mermaid
 flowchart LR
-    APP[Anwendung] --> ACS_EMAIL[ACS Email\nREST API]
-    ACS_EMAIL --> DOMAIN[Eigene Domain\nSPF/DKIM/DMARC]
-    DOMAIN --> RCPT[Empfänger\nE-Mail Postfach]
-    ACS_EMAIL --> EG[Event Grid\nZustellstatus]
-    EG --> TRACK[Tracking\nDelivered/Bounced]
+    APP[Anwendung] --> ACS_EMAIL[ACS Email REST API]
+    ACS_EMAIL --> DOMAIN[Eigene Domain SPF/DKIM/DMARC]
+    DOMAIN --> RCPT[Empfänger E-Mail Postfach]
+    ACS_EMAIL --> EG[Event Grid Zustellstatus]
+    EG --> TRACK[Tracking Delivered/Bounced]
 ```
 
 ```csharp
@@ -284,9 +284,9 @@ const call = callAgent.join(locator, { videoOptions });
 ### Teams Phone mit ACS (Direct Routing)
 ```mermaid
 flowchart LR
-    EXT[Externes System\nCustom App] --> ACS
-    ACS --> TDP[Teams Direct\nRouting]
-    TDP --> TEAMS[Teams Phone\nSystem]
+    EXT[Externes System Custom App] --> ACS
+    ACS --> TDP[Teams Direct Routing]
+    TDP --> TEAMS[Teams Phone System]
     TEAMS --> PSTN[PSTN]
 ```
 

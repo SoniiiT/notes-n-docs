@@ -24,11 +24,11 @@ Azure Alerts überwachen kontinuierlich Signale aus Azure Monitor und lösen Akt
 
 ```mermaid
 graph LR
-    Signal["Signalquelle\nMetriken\nLogs KQL\nActivity Log\nService Health"]
-    Rule["Alert Rule\nBedingung\nSchwellenwert\nFrequenz"]
-    Fired["Alert ausgelöst\nNew State"]
-    AG["Action Group\nE-Mail\nSMS\nRunbook\nWebhook"]
-    APR["Alert Processing Rule\nUnterdrückung\nRouting"]
+    Signal["Signalquelle Metriken Logs KQL Activity Log Service Health"]
+    Rule["Alert Rule Bedingung Schwellenwert Frequenz"]
+    Fired["Alert ausgelöst New State"]
+    AG["Action Group E-Mail SMS Runbook Webhook"]
+    APR["Alert Processing Rule Unterdrückung Routing"]
 
     Signal --> Rule
     Rule --> Fired
@@ -84,10 +84,10 @@ Dynamic Thresholds lernen aus historischen Daten und setzen automatisch sinnvoll
 
 ```mermaid
 graph LR
-    History["Historische Daten\n14-30 Tage Baseline"]
-    ML["Machine Learning\nMuster erkennen\nSaisonalität berücksichtigen"]
-    Threshold["Dynamischer\nSchwellenwert\nObere/Untere Grenze"]
-    Alert["Alert wenn\nAktuelle Metrik\naußerhalb Threshold"]
+    History["Historische Daten 14-30 Tage Baseline"]
+    ML["Machine Learning Muster erkennen Saisonalität berücksichtigen"]
+    Threshold["Dynamischer Schwellenwert Obere/Untere Grenze"]
+    Alert["Alert wenn Aktuelle Metrik außerhalb Threshold"]
 
     History --> ML
     ML --> Threshold
@@ -341,10 +341,10 @@ Alert Processing Rules (früher: Suppression Rules) steuern, **welche Action Gro
 graph TD
     Alert["Alert wird ausgelöst"]
     APR["Alert Processing Rule"]
-    Suppress["Unterdrückung\nz.B. Wartungsfenster\nSamstag 00:00 - 06:00"]
-    Override["Action Group ersetzen\nNachts: On-Call-Gruppe\nTagsüber: Team-Gruppe"]
-    Add["Action Group hinzufügen\nZusätzliche Benachrichtigung"]
-    Notify["Action Group\nbeim Alert"]
+    Suppress["Unterdrückung z.B. Wartungsfenster Samstag 00:00 - 06:00"]
+    Override["Action Group ersetzen Nachts: On-Call-Gruppe Tagsüber: Team-Gruppe"]
+    Add["Action Group hinzufügen Zusätzliche Benachrichtigung"]
+    Notify["Action Group beim Alert"]
 
     Alert --> APR
     APR --> Suppress
@@ -414,11 +414,11 @@ New-AzAlertProcessingRule `
 ```mermaid
 graph TD
     BP["Alert Best Practices"]
-    Actionable["Nur actionable Alerts\nJeder Alert = Ticket/Reaktion"]
-    Routing["Richtiges Routing\nSeverity 0-1: On-Call\nSeverity 2-3: Team-Channel"]
-    Maintenance["Wartungsfenster\nAlert Processing Rules\nvor Deployments"]
-    Review["Regelmäßiger Review\nAlert-Fatigue vermeiden\nUngenutzte Alerts löschen"]
-    Dynamic["Dynamic Thresholds\nfür variable Lasten\nstatt statische Werte"]
+    Actionable["Nur actionable Alerts Jeder Alert = Ticket/Reaktion"]
+    Routing["Richtiges Routing Severity 0-1: On-Call Severity 2-3: Team-Channel"]
+    Maintenance["Wartungsfenster Alert Processing Rules vor Deployments"]
+    Review["Regelmäßiger Review Alert-Fatigue vermeiden Ungenutzte Alerts löschen"]
+    Dynamic["Dynamic Thresholds für variable Lasten statt statische Werte"]
 
     BP --> Actionable
     BP --> Routing

@@ -30,13 +30,13 @@ Der Software Update Point ist die MECM-Rolle, die WSUS als Backend nutzt und Upd
 
 ```mermaid
 graph LR
-    MS[Microsoft Update\nCloud] -->|Synchronisation täglich| SUP[Software Update Point\nWSUS Backend]
+    MS[Microsoft Update Cloud] -->|Synchronisation täglich| SUP[Software Update Point WSUS Backend]
     SUP --> DP1[Distribution Point Berlin]
     SUP --> DP2[Distribution Point München]
     DP1 --> C1[Client Berlin 1]
     DP1 --> C2[Client Berlin 2]
     DP2 --> C3[Client München 1]
-    SUP --> DB[(MECM Datenbank\nUpdate-Metadaten)]
+    SUP --> DB[(MECM Datenbank Update-Metadaten)]
 
     style MS fill:#0078D4,color:#fff
     style SUP fill:#00BCF2,color:#fff
@@ -106,11 +106,11 @@ Software Update Groups sind logische Container für Updates:
 
 ```mermaid
 flowchart LR
-    SYNC[Updates synchronisiert\nMetadaten in DB] --> SUG[Software Update Group\nerstelltgruppiert]
-    SUG --> PKG[Deployment Package\nDateien auf DP verteilt]
-    PKG --> DEPLOY[Deployment\nan Collection]
-    DEPLOY --> CLIENT[Clients installieren\nlaut Maintenance Window]
-    CLIENT --> REPORT[Compliance Report\nin SSRS]
+    SYNC[Updates synchronisiert Metadaten in DB] --> SUG[Software Update Group erstelltgruppiert]
+    SUG --> PKG[Deployment Package Dateien auf DP verteilt]
+    PKG --> DEPLOY[Deployment an Collection]
+    DEPLOY --> CLIENT[Clients installieren laut Maintenance Window]
+    CLIENT --> REPORT[Compliance Report in SSRS]
 ```
 
 ---
@@ -305,14 +305,14 @@ Express Updates reduzieren die Download-Größe für Clients:
 
 ```mermaid
 flowchart TD
-    PT[Patch Tuesday\n2. Dienstag im Monat] --> SYNC[SUP synchronisiert\nneue Updates]
-    SYNC --> ADR[ADR läuft automatisch\nMittwochnacht]
-    ADR --> SUG[Neue SUG erstellt\nUpdates werden auf DP verteilt]
-    SUG --> PILOT[Pilot-Collection\nerst deployen]
-    PILOT --> WAIT[7 Tage warten\nCompliance prüfen]
-    WAIT --> PROD[Production-Collection\ndeployen]
-    PROD --> MW[Maintenance Window\nInstallation in Wartungsfenster]
-    MW --> REPORT[Compliance-Report\nin SSRS]
+    PT[Patch Tuesday 2. Dienstag im Monat] --> SYNC[SUP synchronisiert neue Updates]
+    SYNC --> ADR[ADR läuft automatisch Mittwochnacht]
+    ADR --> SUG[Neue SUG erstellt Updates werden auf DP verteilt]
+    SUG --> PILOT[Pilot-Collection erst deployen]
+    PILOT --> WAIT[7 Tage warten Compliance prüfen]
+    WAIT --> PROD[Production-Collection deployen]
+    PROD --> MW[Maintenance Window Installation in Wartungsfenster]
+    MW --> REPORT[Compliance-Report in SSRS]
     
     style PT fill:#D83B01,color:#fff
     style REPORT fill:#107C10,color:#fff

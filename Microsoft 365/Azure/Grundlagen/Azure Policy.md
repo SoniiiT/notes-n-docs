@@ -129,12 +129,12 @@ Eine **Initiative** bündelt mehrere Policy-Definitionen zu einer zuweisbaren Ei
 
 ```mermaid
 graph TD
-    INI[Initiative\nSicherheitsbaseline Contoso] --> P1[Policy\nMFA erforderlich]
-    INI --> P2[Policy\nNo Public IP für VMs]
-    INI --> P3[Policy\nHTTPS Only Storage]
-    INI --> P4[Policy\nKey Vault Soft Delete]
-    INI --> P5[Policy\nDisk Encryption aktiviert]
-    INI --> P6[Policy\nDiagnoselogs aktiviert]
+    INI[Initiative Sicherheitsbaseline Contoso] --> P1[Policy MFA erforderlich]
+    INI --> P2[Policy No Public IP für VMs]
+    INI --> P3[Policy HTTPS Only Storage]
+    INI --> P4[Policy Key Vault Soft Delete]
+    INI --> P5[Policy Disk Encryption aktiviert]
+    INI --> P6[Policy Diagnoselogs aktiviert]
 ```
 
 **Vorteile von Initiatives:**
@@ -290,9 +290,9 @@ Azure Policy enthält vorkonfigurierte Initiatives für gängige Compliance-Fram
 
 ```mermaid
 graph TD
-    USER[Entwickler] -->|Möchte VM erstellen| RBAC{RBAC-Prüfung\nHat er die Berechtigung?}
+    USER[Entwickler] -->|Möchte VM erstellen| RBAC{RBAC-Prüfung Hat er die Berechtigung?}
     RBAC -->|Nein| DENY1[Denied - Keine Berechtigung]
-    RBAC -->|Ja| POLICY{Policy-Prüfung\nIst Konfiguration erlaubt?}
+    RBAC -->|Ja| POLICY{Policy-Prüfung Ist Konfiguration erlaubt?}
     POLICY -->|Non-Compliant und Deny| DENY2[Denied - Policy verletzt]
     POLICY -->|Compliant oder Audit| CREATE[VM wird erstellt]
 ```

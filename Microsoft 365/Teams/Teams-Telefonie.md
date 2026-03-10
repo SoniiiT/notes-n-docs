@@ -32,16 +32,16 @@ Teams Phone (ehemals: Phone System) ist das cloudbasierte Telefoniesystem von Mi
 
 ```mermaid
 graph TD
-    USER[Teams-Benutzer] --> PHONE[Teams Phone\nPhone System]
-    PHONE --> CP[Calling Plan\nMicrosoft als Carrier]
-    PHONE --> OC[Operator Connect\nZertifizierter Carrier]
-    PHONE --> DR[Direct Routing\nEigener SBC und Carrier]
-    PHONE --> TPM[Teams Phone Mobile\nSIM-basiert]
-    CP --> PSTN1[PSTN\nMicrosoft-Netz]
-    OC --> PSTN2[PSTN\nCarrier-Netz]
+    USER[Teams-Benutzer] --> PHONE[Teams Phone Phone System]
+    PHONE --> CP[Calling Plan Microsoft als Carrier]
+    PHONE --> OC[Operator Connect Zertifizierter Carrier]
+    PHONE --> DR[Direct Routing Eigener SBC und Carrier]
+    PHONE --> TPM[Teams Phone Mobile SIM-basiert]
+    CP --> PSTN1[PSTN Microsoft-Netz]
+    OC --> PSTN2[PSTN Carrier-Netz]
     DR --> SBC[Session Border Controller]
-    SBC --> PSTN3[PSTN\nEigener Carrier]
-    TPM --> MOB[Mobilfunknetz\nOperator Connect Mobile]
+    SBC --> PSTN3[PSTN Eigener Carrier]
+    TPM --> MOB[Mobilfunknetz Operator Connect Mobile]
 ```
 
 ---
@@ -245,11 +245,11 @@ Auto Attendants sind automatische Telefonzentralen, die Anrufer durch ein Menüs
 
 ```mermaid
 graph TD
-    ANRUF[Eingehender Anruf] --> AA[Auto Attendant\nHauptzentrale]
-    AA --> MENU[Menü\nPresse 1 für Vertrieb\nPresse 2 für Support\nPresse 0 für Operator]
-    MENU --> CQ1[Call Queue\nVertrieb]
-    MENU --> CQ2[Call Queue\nSupport]
-    MENU --> USER[Persönliche Weiterleitung\nOperator]
+    ANRUF[Eingehender Anruf] --> AA[Auto Attendant Hauptzentrale]
+    AA --> MENU[Menü Presse 1 für Vertrieb Presse 2 für Support Presse 0 für Operator]
+    MENU --> CQ1[Call Queue Vertrieb]
+    MENU --> CQ2[Call Queue Support]
+    MENU --> USER[Persönliche Weiterleitung Operator]
     CQ1 --> AGENT1[Vertriebsmitarbeiter]
     CQ2 --> AGENT2[Support-Mitarbeiter]
 ```

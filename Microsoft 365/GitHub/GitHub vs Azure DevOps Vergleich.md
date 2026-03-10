@@ -40,26 +40,26 @@ Microsoft akquirierte GitHub im Jahr 2018 für 7,5 Milliarden Dollar. Seitdem ex
 ```mermaid
 flowchart TD
     subgraph GH["GitHub"]
-        GR[GitHub Repos\nGit-Hosting]
-        GA[GitHub Actions\nCI/CD]
-        GP[GitHub Projects\nIssue-Tracking]
-        GK[GitHub Packages\nPackage Registry]
-        GS[GHAS\nSecurity Scanning]
-        GC[GitHub Copilot\nKI-Assistenz]
+        GR[GitHub Repos Git-Hosting]
+        GA[GitHub Actions CI/CD]
+        GP[GitHub Projects Issue-Tracking]
+        GK[GitHub Packages Package Registry]
+        GS[GHAS Security Scanning]
+        GC[GitHub Copilot KI-Assistenz]
     end
 
     subgraph ADO["Azure DevOps"]
-        AR[Azure Repos\nGit und TFVC]
-        AP[Azure Pipelines\nCI/CD]
-        AB[Azure Boards\nWork Items]
-        AA[Azure Artifacts\nPackage Registry]
-        AT[Azure Test Plans\nTest Management]
-        AW[Azure Wiki\nDokumentation]
+        AR[Azure Repos Git und TFVC]
+        AP[Azure Pipelines CI/CD]
+        AB[Azure Boards Work Items]
+        AA[Azure Artifacts Package Registry]
+        AT[Azure Test Plans Test Management]
+        AW[Azure Wiki Dokumentation]
     end
 
     subgraph MS["Microsoft Platform"]
-        EID[Microsoft Entra ID\nAuthentifizierung]
-        AZ[Azure Cloud\nInfrastruktur]
+        EID[Microsoft Entra ID Authentifizierung]
+        AZ[Azure Cloud Infrastruktur]
     end
 
     GH --> MS

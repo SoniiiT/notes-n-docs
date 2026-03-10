@@ -27,12 +27,12 @@ aliases:
 
 ```mermaid
 graph TD
-    IN[Wareneingang\nASN / Blind] --> QC[Qualitätsprüfung\noptional]
-    QC --> PUT[Einlagerung\nLagerplatz-Strategie]
-    PUT --> LOC[Lagerort\nBin / Location]
-    LOC --> PICK[Kommissionierung\nWave Processing]
-    PICK --> PACK[Verpackung\nPacking Station]
-    PACK --> SHIP[Versand\nTräger / Etikett]
+    IN[Wareneingang ASN / Blind] --> QC[Qualitätsprüfung optional]
+    QC --> PUT[Einlagerung Lagerplatz-Strategie]
+    PUT --> LOC[Lagerort Bin / Location]
+    LOC --> PICK[Kommissionierung Wave Processing]
+    PICK --> PACK[Verpackung Packing Station]
+    PACK --> SHIP[Versand Träger / Etikett]
 ```
 
 ### Lagerstruktur
@@ -58,11 +58,11 @@ graph TD
 **Wave Processing (Wellenbearbeitung):**
 ```mermaid
 graph LR
-    SO[Sales Orders\nVersandaufträge] -->|Wave-Vorlage| WV[Wave\nerstellt]
-    WV -->|Automatisch| WORK[Work\nKommissionieraufgaben]
-    WORK -->|Mobile Gerät| WRK[Lagerarbeiter\nkommissioniert]
-    WRK -->|Fertig| CONT[Container\nverpackt]
-    CONT -->|Label| LOAD[Ladung\nbeim Spediteur]
+    SO[Sales Orders Versandaufträge] -->|Wave-Vorlage| WV[Wave erstellt]
+    WV -->|Automatisch| WORK[Work Kommissionieraufgaben]
+    WORK -->|Mobile Gerät| WRK[Lagerarbeiter kommissioniert]
+    WRK -->|Fertig| CONT[Container verpackt]
+    CONT -->|Label| LOAD[Ladung beim Spediteur]
 ```
 
 ---
@@ -82,10 +82,10 @@ graph LR
 
 ```mermaid
 graph LR
-    EST[Geplant\nPlanned Order] -->|Umgewandelt| REL[Freigegeben\nReleased]
-    REL -->|Gestartet| START[Gestartet\nStarted]
-    START -->|Rückmeldung| REP[Rückmeldung\nReport as Finished]
-    REP -->|Abgeschlossen| END[Abgeschlossen\nEnded]
+    EST[Geplant Planned Order] -->|Umgewandelt| REL[Freigegeben Released]
+    REL -->|Gestartet| START[Gestartet Started]
+    START -->|Rückmeldung| REP[Rückmeldung Report as Finished]
+    REP -->|Abgeschlossen| END[Abgeschlossen Ended]
 ```
 
 **Stückliste (Bill of Materials - BOM):**
@@ -113,12 +113,12 @@ graph LR
 
 ```mermaid
 graph TD
-    NEED[Bedarf\nidentifiziert] --> PR[Purchase\nRequisition]
-    PR -->|Genehmigt| RFQ[Request for\nQuotation]
-    RFQ -->|Angebote| EVAL[Angebots-\nauswertung]
-    EVAL -->|Zuschlag| PO[Purchase\nOrder]
-    PO -->|Lieferung| GR[Goods\nReceipt]
-    GR -->|Rechnung| INV[Invoice\nMatching]
+    NEED[Bedarf identifiziert] --> PR[Purchase Requisition]
+    PR -->|Genehmigt| RFQ[Request for Quotation]
+    RFQ -->|Angebote| EVAL[Angebots- auswertung]
+    EVAL -->|Zuschlag| PO[Purchase Order]
+    PO -->|Lieferung| GR[Goods Receipt]
+    GR -->|Rechnung| INV[Invoice Matching]
     INV -->|Bezahlt| PAY[Payment]
 ```
 
@@ -135,10 +135,10 @@ graph TD
 **Lieferanten-Scoreboard:**
 ```mermaid
 graph TD
-    SCORE[Lieferanten-Score] --> DELIV[Liefertreue\nPünktlichkeit %]
-    SCORE --> QUAL[Qualität\nReklamationsquote]
-    SCORE --> PRICE[Preis-\nkonkurrenz]
-    SCORE --> SERV[Service-\nniveau]
+    SCORE[Lieferanten-Score] --> DELIV[Liefertreue Pünktlichkeit %]
+    SCORE --> QUAL[Qualität Reklamationsquote]
+    SCORE --> PRICE[Preis- konkurrenz]
+    SCORE --> SERV[Service- niveau]
 ```
 
 **Vendor Portal (Lieferantenportal):**
@@ -172,13 +172,13 @@ Heute → 2 Wochen → Frozen Zone (keine auto. Änderungen)
 
 ```mermaid
 graph LR
-    HIST[Historische\nVerkaufsdaten] --> AI[Azure ML\nForecast-Modell]
-    EXT[Externe Faktoren\nWetter, Events] --> AI
-    MKT[Marktdaten\nTrends] --> AI
-    AI --> FORE[Nachfrage-\nprognose]
-    FORE --> MRP2[Bedarfs-\nplanung]
+    HIST[Historische Verkaufsdaten] --> AI[Azure ML Forecast-Modell]
+    EXT[Externe Faktoren Wetter, Events] --> AI
+    MKT[Marktdaten Trends] --> AI
+    AI --> FORE[Nachfrage- prognose]
+    FORE --> MRP2[Bedarfs- planung]
     MRP2 --> PO2[Bestellvorschläge]
-    MRP2 --> PRO[Produktions-\naufträge]
+    MRP2 --> PRO[Produktions- aufträge]
 ```
 
 **Forecast-Genauigkeit:**
@@ -247,13 +247,13 @@ Copilot antwortet:
 
 ```mermaid
 graph LR
-    MACH[Maschine\nSensoren] -->|OPC-UA / MQTT| IOTEDGE[Azure IoT Edge]
+    MACH[Maschine Sensoren] -->|OPC-UA / MQTT| IOTEDGE[Azure IoT Edge]
     IOTEDGE -->|Aggregiert| IOTHUB[Azure IoT Hub]
-    IOTHUB -->|Stream| ASA[Azure Stream\nAnalytics]
-    ASA -->|Anomalie| D365A[D365 SCM\nAlert]
-    D365A -->|Automatisch| WO2[Maintenance\nWork Order]
-    ASA -->|Daten| ADX[Azure Data\nExplorer]
-    ADX -->|Analyse| PBI[Power BI\nDashboard]
+    IOTHUB -->|Stream| ASA[Azure Stream Analytics]
+    ASA -->|Anomalie| D365A[D365 SCM Alert]
+    D365A -->|Automatisch| WO2[Maintenance Work Order]
+    ASA -->|Daten| ADX[Azure Data Explorer]
+    ADX -->|Analyse| PBI[Power BI Dashboard]
 ```
 
 ### IoT-Szenarien in SCM

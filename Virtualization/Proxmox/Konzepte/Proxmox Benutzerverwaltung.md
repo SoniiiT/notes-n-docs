@@ -25,12 +25,12 @@ aliases:
 
 ```mermaid
 graph LR
-    REALM["🔐 Realm\n(PAM / PVE / LDAP / AD)"]
-    USER["👤 Benutzer\nadmin@pve"]
-    GROUP["👥 Gruppe\nAdmins"]
-    ROLE["🎭 Rolle\nAdministrator"]
-    ACL["📋 ACL\n/ → Rolle → Benutzer/Gruppe"]
-    OBJ["🖥️ Objekt\n/nodes/pve1/qemu/100"]
+    REALM["🔐 Realm (PAM / PVE / LDAP / AD)"]
+    USER["👤 Benutzer admin@pve"]
+    GROUP["👥 Gruppe Admins"]
+    ROLE["🎭 Rolle Administrator"]
+    ACL["📋 ACL / → Rolle → Benutzer/Gruppe"]
+    OBJ["🖥️ Objekt /nodes/pve1/qemu/100"]
 
     REALM --> USER
     USER --> GROUP

@@ -27,16 +27,16 @@ aliases:
 ```mermaid
 graph TD
     A[Aufgabe] --> B{Tenant-weite Admin-Aufgabe?}
-    B -->|Ja| C[SharePoint Online\nManagement Shell]
-    B -->|Nein| D{Brauche ich\nContent-Verwaltung?}
+    B -->|Ja| C[SharePoint Online Management Shell]
+    B -->|Nein| D{Brauche ich Content-Verwaltung?}
     D -->|Ja| E[PnP PowerShell]
-    D -->|Nein| F{Plattformübergreifend\nLinux/Mac?}
+    D -->|Nein| F{Plattformübergreifend Linux/Mac?}
     F -->|Ja| G[CLI for Microsoft 365]
-    F -->|Nein| H[PnP PowerShell\noder Graph REST API]
+    F -->|Nein| H[PnP PowerShell oder Graph REST API]
 
-    C --> I[Get-SPOSite\nSet-SPOTenant\nSet-SPOSiteCollectionAdmin]
-    E --> J[Listen, Seiten, Webparts\nTemplates, Permissions\nItems, ContentTypes]
-    G --> K[m365 spo site list\nm365 spo list item add]
+    C --> I[Get-SPOSite Set-SPOTenant Set-SPOSiteCollectionAdmin]
+    E --> J[Listen, Seiten, Webparts Templates, Permissions Items, ContentTypes]
+    G --> K[m365 spo site list m365 spo list item add]
 ```
 
 | Modul | Einsatz | Auth-Methoden | Plattform |

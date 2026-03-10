@@ -29,8 +29,8 @@ Ein VPN Gateway ist eine verwaltete Azure-Ressource die verschlüsselte IPsec/IK
 
 ```mermaid
 graph LR
-    ONPREM[On-Premises\nNetzwerk\n192 168 0 0/16] -->|IPsec Tunnel\nPort 500 UDP\nPort 4500 UDP| VPNGW[Azure VPN Gateway\nGatewaySubnet]
-    VPNGW --> VNET[Azure VNet\n10 0 0 0/16]
+    ONPREM[On-Premises Netzwerk 192 168 0 0/16] -->|IPsec Tunnel Port 500 UDP Port 4500 UDP| VPNGW[Azure VPN Gateway GatewaySubnet]
+    VPNGW --> VNET[Azure VNet 10 0 0 0/16]
 ```
 
 **Anwendungsfälle:**
@@ -62,10 +62,10 @@ graph LR
 
 ```mermaid
 graph LR
-    CORP[Unternehmens-Netzwerk\n192 168 1 0/24] -->|IPsec/IKEv2| VGW[VPN Gateway\nAzure]
-    VGW --> VNET[Azure VNet\n10 0 0 0/16]
+    CORP[Unternehmens-Netzwerk 192 168 1 0/24] -->|IPsec/IKEv2| VGW[VPN Gateway Azure]
+    VGW --> VNET[Azure VNet 10 0 0 0/16]
     
-    LNG[Local Network Gateway\n192 168 1 0/24\nPublic IP: 1 2 3 4] -.->|Konfiguration| VGW
+    LNG[Local Network Gateway 192 168 1 0/24 Public IP: 1 2 3 4] -.->|Konfiguration| VGW
 ```
 
 ### Komponenten einer S2S-Verbindung
@@ -138,7 +138,7 @@ Einzelne Clients verbinden sich zu Azure:
 
 ```mermaid
 graph LR
-    LAPTOP[Laptop\nRemote User] -->|OpenVPN/SSTP/IKEv2| VGW[VPN Gateway]
+    LAPTOP[Laptop Remote User] -->|OpenVPN/SSTP/IKEv2| VGW[VPN Gateway]
     VGW --> VNET[Azure VNet]
     
     style LAPTOP fill:#99ccff
@@ -181,7 +181,7 @@ VNets in verschiedenen Regionen oder Subscriptions verbinden:
 
 ```mermaid
 graph LR
-    VNET_WE[VNet\nWest Europe\n10 0 0 0/16] -->|VNet-to-VNet\nIPsec| VNET_NE[VNet\nNorth Europe\n10 1 0 0/16]
+    VNET_WE[VNet West Europe 10 0 0 0/16] -->|VNet-to-VNet IPsec| VNET_NE[VNet North Europe 10 1 0 0/16]
 ```
 
 > [!TIP] VNet Peering vs. VNet-to-VNet
@@ -223,8 +223,8 @@ Zwei aktive VPN-Gateways für höhere Verfügbarkeit:
 
 ```mermaid
 graph LR
-    ONPREM[On-Prem VPN\nDual-Head] -->|Tunnel 1| GW1[Azure VPN GW\nInstanz 1\n20 50 1 1]
-    ONPREM -->|Tunnel 2| GW2[Azure VPN GW\nInstanz 2\n20 50 1 2]
+    ONPREM[On-Prem VPN Dual-Head] -->|Tunnel 1| GW1[Azure VPN GW Instanz 1 20 50 1 1]
+    ONPREM -->|Tunnel 2| GW2[Azure VPN GW Instanz 2 20 50 1 2]
     GW1 & GW2 --> VNET[Azure VNet]
 ```
 
@@ -289,8 +289,8 @@ New-AzVirtualNetworkGatewayConnection `
 
 ```mermaid
 graph LR
-    ONPREM[On-Premises] -->|ExpressRoute\nPrimär| ER[ExpressRoute\nGateway]
-    ONPREM -.->|S2S VPN\nFailover| VPN[VPN Gateway]
+    ONPREM[On-Premises] -->|ExpressRoute Primär| ER[ExpressRoute Gateway]
+    ONPREM -.->|S2S VPN Failover| VPN[VPN Gateway]
     ER & VPN --> VNET[Azure VNet]
 ```
 

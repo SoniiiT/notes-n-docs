@@ -32,7 +32,7 @@ Microsoft Teams Rooms (MTR) ist ein System für **Konferenzräume**, das eine na
 
 ```mermaid
 graph TD
-    ROOM[Konferenzraum] --> MTR[MTR-System\nWindows oder Android]
+    ROOM[Konferenzraum] --> MTR[MTR-System Windows oder Android]
     MTR --> CTRL[Touch-Panel / Controller]
     MTR --> CAM[Zertifizierte Kamera]
     MTR --> MIC[Konferenzmikrofon-Array]
@@ -206,8 +206,8 @@ Das **Pro Management Portal** (`portal.rooms.microsoft.com`) ist der erweiterte 
 
 ```mermaid
 graph LR
-    DEV[Dev-Ring\nNeuste Features\nhohe Risikobereitschaft] --> PILOT[Preview-Ring\nPilot-Räume]
-    PILOT --> GENERAL[General-Ring\nProduktions-Räume\nDefault]
+    DEV[Dev-Ring Neuste Features hohe Risikobereitschaft] --> PILOT[Preview-Ring Pilot-Räume]
+    PILOT --> GENERAL[General-Ring Produktions-Räume Default]
 ```
 
 > [!TIP] Update-Ringe nutzen

@@ -131,8 +131,8 @@ Get-TeamUser -GroupId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" | Select-Object Nam
 graph TD
     ORG1[Tenant A - Contoso] --> SC2[Geteilter Kanal]
     ORG2[Tenant B - Fabrikam] --> SC2
-    SC2 --> SPO3[Eigene SharePoint-Site\nIn Tenant A]
-    ORG2 --> B2B[B2B Direct Connect\nKein Gastkonto nötig]
+    SC2 --> SPO3[Eigene SharePoint-Site In Tenant A]
+    ORG2 --> B2B[B2B Direct Connect Kein Gastkonto nötig]
 ```
 
 ### Kanal-Vergleich
@@ -156,9 +156,9 @@ Ein **archiviertes Team** ist schreibgeschützt — Mitglieder können weiterhin
 
 ```mermaid
 graph LR
-    A[Aktives Team] -->|Archivieren| B[Archiviertes Team\nschreibgeschützt]
+    A[Aktives Team] -->|Archivieren| B[Archiviertes Team schreibgeschützt]
     B -->|Reaktivieren| A
-    A -->|Löschen| C[Gelöschtes Team\n30 Tage Papierkorb]
+    A -->|Löschen| C[Gelöschtes Team 30 Tage Papierkorb]
     C -->|Wiederherstellen| A
     C -->|30 Tage vergangen| D[Permanent gelöscht]
 ```

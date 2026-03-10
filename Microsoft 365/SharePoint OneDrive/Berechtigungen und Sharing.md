@@ -83,9 +83,9 @@ Jede SharePoint-Site verfügt automatisch über drei Standard-Gruppen. Diese Gru
 
 ```mermaid
 graph LR
-    S[SharePoint Site] --> OG[Site Owners\nFull Control]
-    S --> MG[Site Members\nEdit]
-    S --> VG[Site Visitors\nRead]
+    S[SharePoint Site] --> OG[Site Owners Full Control]
+    S --> MG[Site Members Edit]
+    S --> VG[Site Visitors Read]
 
     OG -->|verwalten| MG
     OG -->|verwalten| VG
@@ -238,15 +238,15 @@ SharePoint und OneDrive bieten vier verschiedene Link-Typen für die Freigabe vo
 
 ```mermaid
 graph TD
-    SL[Freigabe-Link erstellen] --> A[Anyone-Link\nanonym]
-    SL --> O[People in your org\nintern]
-    SL --> SP[Specific people\ngezielte Freigabe]
-    SL --> EA[Existing access\naktueller Zugriff]
+    SL[Freigabe-Link erstellen] --> A[Anyone-Link anonym]
+    SL --> O[People in your org intern]
+    SL --> SP[Specific people gezielte Freigabe]
+    SL --> EA[Existing access aktueller Zugriff]
 
-    A --> AR[Keine Anmeldung nötig\nmax Ablaufdatum konfigurierbar]
-    O --> OR[Anmeldung mit M365-Konto\nkein externer Zugriff]
-    SP --> SR[Einladung an bestimmte Personen\nIntern oder extern]
-    EA --> ER[Erstellt keinen neuen Zugriff\nnur Link für vorhandene Nutzer]
+    A --> AR[Keine Anmeldung nötig max Ablaufdatum konfigurierbar]
+    O --> OR[Anmeldung mit M365-Konto kein externer Zugriff]
+    SP --> SR[Einladung an bestimmte Personen Intern oder extern]
+    EA --> ER[Erstellt keinen neuen Zugriff nur Link für vorhandene Nutzer]
 ```
 
 ### Anyone-Link (Anonym)
@@ -358,12 +358,12 @@ Die externe Freigabe wird auf zwei Ebenen gesteuert:
 
 ```mermaid
 graph TD
-    TL[Tenant-Level\nSharePoint Admin Center] -->|begrenzt| SL[Site-Level\nSite Settings]
-    SL -->|begrenzt| UL[User-Level\nEinzelne Freigabe]
+    TL[Tenant-Level SharePoint Admin Center] -->|begrenzt| SL[Site-Level Site Settings]
+    SL -->|begrenzt| UL[User-Level Einzelne Freigabe]
 
-    TL --> TA[Maximale erlaubte Stufe\nfür alle Sites]
-    SL --> SA[Site kann gleich\noder restriktiver sein]
-    UL --> UA[Nutzer kann nur\nerlaubte Links erstellen]
+    TL --> TA[Maximale erlaubte Stufe für alle Sites]
+    SL --> SA[Site kann gleich oder restriktiver sein]
+    UL --> UA[Nutzer kann nur erlaubte Links erstellen]
 ```
 
 > [!IMPORTANT] Tenant-Limit gilt immer
@@ -592,10 +592,10 @@ Set-SPOSite -Identity "https://contoso.sharepoint.com/sites/HR" `
 
 ```mermaid
 graph TD
-    SL[Sensitivity Label auf Site] --> PV[Privatsphäre\nPublic / Private]
-    SL --> EX[Externe Freigabe\nErlaubt / Eingeschränkt / Blockiert]
-    SL --> UD[Unmanaged Devices\nVoll / Eingeschränkt / Blockiert]
-    SL --> EN[Dokument-Verschlüsselung\nfür Inhalte in der Site]
+    SL[Sensitivity Label auf Site] --> PV[Privatsphäre Public / Private]
+    SL --> EX[Externe Freigabe Erlaubt / Eingeschränkt / Blockiert]
+    SL --> UD[Unmanaged Devices Voll / Eingeschränkt / Blockiert]
+    SL --> EN[Dokument-Verschlüsselung für Inhalte in der Site]
 ```
 
 > [!IMPORTANT] Label-Hierarchie verstehen
@@ -646,13 +646,13 @@ Das Tool zeigt die effektive Berechtigungsstufe inklusive Gruppenmitgliedschafte
 
 ```mermaid
 graph TD
-    P[Problem: Nutzer hat Zugriff auf Site\naber nicht auf Bibliothek] --> D1[Diagnose: Vererbung prüfen]
+    P[Problem: Nutzer hat Zugriff auf Site aber nicht auf Bibliothek] --> D1[Diagnose: Vererbung prüfen]
     D1 --> D2[Bibliothek hat Unique Permissions?]
-    D2 -->|Ja| L[Nutzer fehlt in Unique Permissions\nder Bibliothek]
-    D2 -->|Nein| D3[Gruppencheck: Ist Nutzer in\nrichtiger SharePoint-Gruppe?]
-    L --> F1[Nutzer zur Bibliothek hinzufügen\noder Vererbung wiederherstellen]
+    D2 -->|Ja| L[Nutzer fehlt in Unique Permissions der Bibliothek]
+    D2 -->|Nein| D3[Gruppencheck: Ist Nutzer in richtiger SharePoint-Gruppe?]
+    L --> F1[Nutzer zur Bibliothek hinzufügen oder Vererbung wiederherstellen]
     D3 -->|Nein| F2[Nutzer zur richtigen Gruppe hinzufügen]
-    D3 -->|Ja| F3[Entra-Gruppe prüfen:\nist M365-Gruppe synchron?]
+    D3 -->|Ja| F3[Entra-Gruppe prüfen: ist M365-Gruppe synchron?]
 ```
 
 > [!WARNING] M365-Gruppen-Sync beachten

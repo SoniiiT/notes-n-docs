@@ -46,9 +46,9 @@ Berechtigungen werden auf einer Ebene vergeben und nach unten vererbt:
 
 ```mermaid
 graph TD
-    MG[Management Group\nBreiteste Scope] --> SUB[Subscription]
+    MG[Management Group Breiteste Scope] --> SUB[Subscription]
     SUB --> RG[Resource Group]
-    RG --> RES[Einzelne Ressource\nEngste Scope]
+    RG --> RES[Einzelne Ressource Engste Scope]
     
     style MG fill:#ff9999
     style SUB fill:#ffcc99
@@ -68,10 +68,10 @@ Eine **Role Assignment** verbindet drei Elemente:
 
 ```mermaid
 graph LR
-    SP[Security Principal\nWer?] --> RA{Role Assignment}
-    RD[Role Definition\nWas darf er?] --> RA
-    SC[Scope\nWo gilt es?] --> RA
-    RA --> EFFECT[Berechtigung\nerteilt]
+    SP[Security Principal Wer?] --> RA{Role Assignment}
+    RD[Role Definition Was darf er?] --> RA
+    SC[Scope Wo gilt es?] --> RA
+    RA --> EFFECT[Berechtigung erteilt]
 ```
 
 ### Security Principals

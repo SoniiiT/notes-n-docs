@@ -32,15 +32,15 @@ Ohne Lighthouse müssen MSPs für jeden Kundentenant:
 
 ```mermaid
 graph TD
-    MSP[MSP Admin Console\nMicrosoft 365 Lighthouse] --> T1[Kunde 1: Bäckerei GmbH\n45 User]
-    MSP --> T2[Kunde 2: Anwaltskanzlei\n120 User]
-    MSP --> T3[Kunde 3: Arztpraxis\n28 User]
-    MSP --> T4[Kunde 4: Einzelhandel\n200 User]
+    MSP[MSP Admin Console Microsoft 365 Lighthouse] --> T1[Kunde 1: Bäckerei GmbH 45 User]
+    MSP --> T2[Kunde 2: Anwaltskanzlei 120 User]
+    MSP --> T3[Kunde 3: Arztpraxis 28 User]
+    MSP --> T4[Kunde 4: Einzelhandel 200 User]
     
-    MSP -->|Einheitliche Ansicht| COMPLIANCE[Compliance-Status\naller Tenants]
-    MSP -->|Einheitliche Ansicht| RISKY[Riskante Benutzer\naller Tenants]
-    MSP -->|Einheitliche Ansicht| HEALTH[Service Health\naller Tenants]
-    MSP -->|Einheitliche Ansicht| DEVICES[Gerätestatus\naller Tenants]
+    MSP -->|Einheitliche Ansicht| COMPLIANCE[Compliance-Status aller Tenants]
+    MSP -->|Einheitliche Ansicht| RISKY[Riskante Benutzer aller Tenants]
+    MSP -->|Einheitliche Ansicht| HEALTH[Service Health aller Tenants]
+    MSP -->|Einheitliche Ansicht| DEVICES[Gerätestatus aller Tenants]
 ```
 
 ---

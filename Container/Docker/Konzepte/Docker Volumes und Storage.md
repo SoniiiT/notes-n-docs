@@ -46,7 +46,7 @@ Das **Union Filesystem** (OverlayFS) von Docker erklärt dieses Verhalten:
 ```mermaid
 graph TB
     subgraph Container
-        RW["Read-Write Layer\n(Container-spezifisch)"]
+        RW["Read-Write Layer (Container-spezifisch)"]
     end
     subgraph Image
         L3["Layer 3 — App-Code"]
@@ -72,9 +72,9 @@ Docker bietet drei Mechanismen zur Datenpersistenz:
 ```mermaid
 graph LR
     subgraph Docker Host
-        V["Docker Volume\n(/var/lib/docker/volumes/)"]
-        B["Bind Mount\n(beliebiger Host-Pfad)"]
-        T["tmpfs Mount\n(RAM)"]
+        V["Docker Volume (/var/lib/docker/volumes/)"]
+        B["Bind Mount (beliebiger Host-Pfad)"]
+        T["tmpfs Mount (RAM)"]
     end
 
     subgraph Container

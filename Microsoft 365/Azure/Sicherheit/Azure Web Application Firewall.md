@@ -63,17 +63,17 @@ WAF sitzt als Komponente auf drei Azure-Diensten:
 
 ```mermaid
 graph LR
-    A[Client\nBrowser oder API] --> B[Azure Front Door\noder Application Gateway]
+    A[Client Browser oder API] --> B[Azure Front Door oder Application Gateway]
     B --> C{WAF Engine}
-    C --> D[Managed Rules\nCRS oder DRS]
-    C --> E[Custom Rules\nPriority 1-100]
+    C --> D[Managed Rules CRS oder DRS]
+    C --> E[Custom Rules Priority 1-100]
     D --> F{Entscheidung}
     E --> F
-    F -->|Allow| G[Backend Pool\nWeb App oder API]
-    F -->|Block| H[HTTP 403\nBlockseite]
+    F -->|Allow| G[Backend Pool Web App oder API]
+    F -->|Block| H[HTTP 403 Blockseite]
     F -->|Log| G
-    F -->|Redirect| I[Redirect URL\nnur Front Door]
-    G --> J[Response\nan Client]
+    F -->|Redirect| I[Redirect URL nur Front Door]
+    G --> J[Response an Client]
 ```
 
 > [!NOTE] Verarbeitungsreihenfolge
@@ -514,18 +514,18 @@ AzureDiagnostics
 
 ```mermaid
 graph TD
-    A[WAF Policy erstellen\nDetection Mode] --> B[Diagnostic Settings\nLog Analytics aktivieren]
-    B --> C[Produktiven Traffic\n2 bis 4 Wochen beobachten]
-    C --> D[KQL-Analyse\nTop-Regeln und Angreifer-IPs]
-    D --> E{False Positives\ngefunden?}
-    E -->|Ja| F[Exclusions definieren\nEngstmoeglicher Scope]
-    F --> G[Exclusions validieren\nim Detection Mode]
+    A[WAF Policy erstellen Detection Mode] --> B[Diagnostic Settings Log Analytics aktivieren]
+    B --> C[Produktiven Traffic 2 bis 4 Wochen beobachten]
+    C --> D[KQL-Analyse Top-Regeln und Angreifer-IPs]
+    D --> E{False Positives gefunden?}
+    E -->|Ja| F[Exclusions definieren Engstmoeglicher Scope]
+    F --> G[Exclusions validieren im Detection Mode]
     G --> D
-    E -->|Nein| H[Prevention Mode\naktivieren]
-    H --> I[Monitoring und Alerts\nkonfigurieren]
-    I --> J{Neue False Positives\nim Produktivbetrieb?}
+    E -->|Nein| H[Prevention Mode aktivieren]
+    H --> I[Monitoring und Alerts konfigurieren]
+    I --> J{Neue False Positives im Produktivbetrieb?}
     J -->|Ja| F
-    J -->|Nein| K[Stabil in Prevention Mode\nmonatliche Ueberpruefung]
+    J -->|Nein| K[Stabil in Prevention Mode monatliche Ueberpruefung]
 ```
 
 ### Schrittweise Tuning-Anleitung

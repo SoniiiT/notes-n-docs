@@ -30,13 +30,13 @@ Das Fabric Admin Center ist die zentrale Verwaltungsoberfläche für alle Fabric
 
 ```mermaid
 graph TD
-    A[Fabric Admin Center] --> B[Tenant-Einstellungen\nFeature-Aktivierung]
-    A --> C[Kapazitätsverwaltung\nF-SKUs verwalten]
-    A --> D[Workspace-Governance\nErstellen, Richtlinien]
-    A --> E[Domain Management\nDomänen & Unterdomänen]
-    A --> F[Benutzer-Aktivitäten\nAudit Logs]
-    A --> G[Embed-Codes\nExterne Einbettung]
-    A --> H[Organisationsvisuals\nZertifizierte Visuals]
+    A[Fabric Admin Center] --> B[Tenant-Einstellungen Feature-Aktivierung]
+    A --> C[Kapazitätsverwaltung F-SKUs verwalten]
+    A --> D[Workspace-Governance Erstellen, Richtlinien]
+    A --> E[Domain Management Domänen & Unterdomänen]
+    A --> F[Benutzer-Aktivitäten Audit Logs]
+    A --> G[Embed-Codes Externe Einbettung]
+    A --> H[Organisationsvisuals Zertifizierte Visuals]
 ```
 
 > [!NOTE]
@@ -206,12 +206,12 @@ Die **Fabric Capacity Metrics App** ist eine Power BI App, die CU-Verbrauch, Thr
 
 ```mermaid
 graph TD
-    A[Fabric Capacity Metrics App] --> B[CU-Nutzung\nin % der Kapazität]
-    A --> C[Throttling\nDrosselung bei Überlast]
-    A --> D[Smoothing\n30-Sek-Ausgleich]
-    A --> E[Top-Operationen\nnach CU-Verbrauch]
-    A --> F[Workload-Aufschlüsselung\nPower BI, Spark, Warehouse]
-    A --> G[Interaktiv vs Background\nOperations]
+    A[Fabric Capacity Metrics App] --> B[CU-Nutzung in % der Kapazität]
+    A --> C[Throttling Drosselung bei Überlast]
+    A --> D[Smoothing 30-Sek-Ausgleich]
+    A --> E[Top-Operationen nach CU-Verbrauch]
+    A --> F[Workload-Aufschlüsselung Power BI, Spark, Warehouse]
+    A --> G[Interaktiv vs Background Operations]
 ```
 
 ### Throttling und Smoothing verstehen
@@ -247,10 +247,10 @@ Best Practice: Workspace-Erstellung auf eine **spezifische Sicherheitsgruppe** e
 
 ```mermaid
 graph LR
-    A[Fabric-Admin\nTenant-Einstellung] -->|Eingeschränkt auf| B[SG: Fabric-Workspace-Creator]
+    A[Fabric-Admin Tenant-Einstellung] -->|Eingeschränkt auf| B[SG: Fabric-Workspace-Creator]
     B -->|Können erstellen| C[Neue Fabric Workspaces]
     D[Normale Benutzer] -->|Kein Recht| C
-    C -->|Workspace-Admin| E[Kann Mitglieder\nhinzufügen/entfernen]
+    C -->|Workspace-Admin| E[Kann Mitglieder hinzufügen/entfernen]
 ```
 
 ### Workspace-Rollen
@@ -393,14 +393,14 @@ Fabric-Workspaces können mit **Azure DevOps** oder **GitHub** verbunden werden,
 ```mermaid
 sequenceDiagram
     participant D as Developer
-    participant FW as Fabric Workspace\n(Dev)
+    participant FW as Fabric Workspace (Dev)
     participant GH as GitHub Repository
-    participant PW as Fabric Workspace\n(Prod)
+    participant PW as Fabric Workspace (Prod)
 
     D->>FW: Änderungen an Notebook/Pipeline
-    FW->>GH: Commit & Push\n(Fabric → Git)
+    FW->>GH: Commit & Push (Fabric → Git)
     GH->>GH: Code Review / PR
-    GH->>PW: Deployment Pipeline\n(Git → Fabric Prod)
+    GH->>PW: Deployment Pipeline (Git → Fabric Prod)
     PW-->>D: Deployment abgeschlossen
 ```
 
@@ -471,14 +471,14 @@ foreach ($report in $reports.value) {
 
 ```mermaid
 graph TD
-    A[Kostenkontrolle] --> B[Fabric Capacity\nMetrics App]
-    A --> C[Azure Cost Management\nAzure Portal]
-    A --> D[Budget Alerts\nAzure Budgets]
-    A --> E[Auto-Pause\nAußerhalb Arbeitszeiten]
-    A --> F[Right-Sizing\nSKU anpassen]
-    B --> G[CU-Verbrauch\nje Workspace]
-    C --> H[Monatliche Kosten\nje Subscription]
-    D --> I[Alert bei\nBudget-Überschreitung]
+    A[Kostenkontrolle] --> B[Fabric Capacity Metrics App]
+    A --> C[Azure Cost Management Azure Portal]
+    A --> D[Budget Alerts Azure Budgets]
+    A --> E[Auto-Pause Außerhalb Arbeitszeiten]
+    A --> F[Right-Sizing SKU anpassen]
+    B --> G[CU-Verbrauch je Workspace]
+    C --> H[Monatliche Kosten je Subscription]
+    D --> I[Alert bei Budget-Überschreitung]
 ```
 
 ### Azure Budget Alert einrichten

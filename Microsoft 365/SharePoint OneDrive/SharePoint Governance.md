@@ -165,13 +165,13 @@ Jede Site durchläuft einen definierten Lebenszyklus. Governance bedeutet, jeden
 
 ```mermaid
 flowchart LR
-    A([Antrag]) --> B[Erstellung\nund Einrichtung]
+    A([Antrag]) --> B[Erstellung und Einrichtung]
     B --> C[Aktiver Betrieb]
-    C --> D{Review\njährlich}
+    C --> D{Review jährlich}
     D -->|Aktiv| C
     D -->|Inaktiv| E[Archivierung]
     D -->|Löschbar| F[Löschung]
-    E --> G{Aufbewahrungs-\nfrist abgelaufen?}
+    E --> G{Aufbewahrungs- frist abgelaufen?}
     G -->|Nein| E
     G -->|Ja| F
     F --> H([Gelöscht])
@@ -367,12 +367,12 @@ DLP-Richtlinien erkennen sensible Informationen (Kreditkartennummern, Personalau
 ```mermaid
 flowchart TD
     A[Dokument wird hochgeladen] --> B[DLP-Scan im Hintergrund]
-    B --> C{Sensible Daten\nerkannt?}
+    B --> C{Sensible Daten erkannt?}
     C -->|Nein| D[Kein Eingriff]
     C -->|Ja| E{Regel auswerten}
     E -->|Niedrige Vertraulichkeit| F[Audit-Eintrag]
-    E -->|Mittlere Vertraulichkeit| G[Benachrichtigung\nan User und Admin]
-    E -->|Hohe Vertraulichkeit| H[Zugriff einschränken\nExternes Teilen sperren]
+    E -->|Mittlere Vertraulichkeit| G[Benachrichtigung an User und Admin]
+    E -->|Hohe Vertraulichkeit| H[Zugriff einschränken Externes Teilen sperren]
 ```
 
 **Häufig genutzte sensible Informationstypen:**

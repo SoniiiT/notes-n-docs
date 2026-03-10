@@ -48,11 +48,11 @@ Das **Azure Well-Architected Framework (WAF)** ist ein Satz von Leitprinzipien, 
 
 ```mermaid
 graph TD
-    WAF[Well-Architected\nFramework] --> REL[Reliability\nZuverlässigkeit]
-    WAF --> SEC[Security\nSicherheit]
-    WAF --> COST[Cost Optimization\nKostenoptimierung]
-    WAF --> OPS[Operational Excellence\nBetriebliche Exzellenz]
-    WAF --> PERF[Performance Efficiency\nLeistungseffizienz]
+    WAF[Well-Architected Framework] --> REL[Reliability Zuverlässigkeit]
+    WAF --> SEC[Security Sicherheit]
+    WAF --> COST[Cost Optimization Kostenoptimierung]
+    WAF --> OPS[Operational Excellence Betriebliche Exzellenz]
+    WAF --> PERF[Performance Efficiency Leistungseffizienz]
 ```
 
 | Säule | Kernfrage | Hauptziel |
@@ -119,11 +119,11 @@ Beispiel Web-App:
 
 ```mermaid
 graph TD
-    PHYS[Physische Sicherheit\nMicrosoft Rechenzentren] --> PERI[Perimeter\nDDoS Protection Azure Firewall]
-    PERI --> NET[Netzwerk\nNSGs VNet Private Endpoints]
-    NET --> HOST[Host\nAntivirus Patch Management]
-    HOST --> APP[Anwendung\nSecure Code WAF]
-    APP --> DATA[Daten\nVerschlüsselung Key Vault]
+    PHYS[Physische Sicherheit Microsoft Rechenzentren] --> PERI[Perimeter DDoS Protection Azure Firewall]
+    PERI --> NET[Netzwerk NSGs VNet Private Endpoints]
+    NET --> HOST[Host Antivirus Patch Management]
+    HOST --> APP[Anwendung Secure Code WAF]
+    APP --> DATA[Daten Verschlüsselung Key Vault]
 ```
 
 ### Wichtige Security-Patterns
@@ -188,9 +188,9 @@ graph TD
 
 ```mermaid
 graph TD
-    TRACES[Traces\nAnfragen durch das System verfolgen] --> LOGS[Logs\nStrukturierte Ereignisse]
-    LOGS --> METRICS[Metrics\nNumerische Zeitreihen]
-    METRICS --> ALERTS[Alerts\nAktionen bei Schwellenwerten]
+    TRACES[Traces Anfragen durch das System verfolgen] --> LOGS[Logs Strukturierte Ereignisse]
+    LOGS --> METRICS[Metrics Numerische Zeitreihen]
+    METRICS --> ALERTS[Alerts Aktionen bei Schwellenwerten]
 ```
 
 ---
@@ -299,13 +299,13 @@ Beispiel: 3-Tier-Web-App (Frontend, API, Datenbank) in Azure
 
 ```mermaid
 graph TD
-    USER[Benutzer\nweltweit] --> AFD[Azure Front Door\nGlobal Load Balancing CDN WAF]
-    AFD --> AGW[Application Gateway\nWAF SSL Termination]
-    AGW --> APP[App Service\nZone-redundant P2v3]
-    APP --> REDIS[Azure Cache for Redis\nSession App Cache]
-    APP --> SQL[Azure SQL\nGeneral Purpose Zone-redundant]
-    APP --> KV[Key Vault\nSecrets Certificates]
-    APP --> AI[Application Insights\nMonitoring Tracing]
+    USER[Benutzer weltweit] --> AFD[Azure Front Door Global Load Balancing CDN WAF]
+    AFD --> AGW[Application Gateway WAF SSL Termination]
+    AGW --> APP[App Service Zone-redundant P2v3]
+    APP --> REDIS[Azure Cache for Redis Session App Cache]
+    APP --> SQL[Azure SQL General Purpose Zone-redundant]
+    APP --> KV[Key Vault Secrets Certificates]
+    APP --> AI[Application Insights Monitoring Tracing]
 ```
 
 ---

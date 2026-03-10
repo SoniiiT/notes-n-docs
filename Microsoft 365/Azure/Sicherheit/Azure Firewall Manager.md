@@ -117,30 +117,30 @@ Regelsammlungsgruppe (Priorität 500)
 ```mermaid
 graph TD
     subgraph FW_Manager["Azure Firewall Manager"]
-        BP["Base Policy\nSecurity-Team"]
-        CP1["Child Policy\nRegion West"]
-        CP2["Child Policy\nRegion East"]
+        BP["Base Policy Security-Team"]
+        CP1["Child Policy Region West"]
+        CP2["Child Policy Region East"]
         BP --> CP1
         BP --> CP2
     end
 
     subgraph HUB_W["Hub VNet West Europe"]
-        FW1["Azure Firewall\nWest"]
+        FW1["Azure Firewall West"]
         CP1 --> FW1
     end
 
     subgraph HUB_E["Hub VNet East US"]
-        FW2["Azure Firewall\nEast"]
+        FW2["Azure Firewall East"]
         CP2 --> FW2
     end
 
     subgraph SPOKES_W["Spoke VNets West"]
-        SP1["Spoke A\nProduktion"]
-        SP2["Spoke B\nEntwicklung"]
+        SP1["Spoke A Produktion"]
+        SP2["Spoke B Entwicklung"]
     end
 
     subgraph SPOKES_E["Spoke VNets East"]
-        SP3["Spoke C\nDR-Umgebung"]
+        SP3["Spoke C DR-Umgebung"]
     end
 
     FW1 --> SP1
@@ -166,12 +166,12 @@ graph TD
 
     subgraph VWAN["Azure Virtual WAN"]
         subgraph SH1["Secured Hub West Europe"]
-            AFW1["Azure Firewall\noder TSP"]
+            AFW1["Azure Firewall oder TSP"]
             RT1["vWAN Route Table"]
             AFW1 --- RT1
         end
         subgraph SH2["Secured Hub East US"]
-            AFW2["Azure Firewall\noder TSP"]
+            AFW2["Azure Firewall oder TSP"]
             RT2["vWAN Route Table"]
             AFW2 --- RT2
         end
@@ -182,8 +182,8 @@ graph TD
     FWM --> SH2
 
     subgraph BRANCH["Branch-Verbindungen"]
-        VPN["VPN Site\nZweigstellen"]
-        ER["ExpressRoute\nOn-Premises"]
+        VPN["VPN Site Zweigstellen"]
+        ER["ExpressRoute On-Premises"]
     end
 
     SH1 --- VPN
@@ -229,10 +229,10 @@ Trusted Security Partners (TSP) sind Drittanbieter-Sicherheitslösungen, die dir
 
 ```mermaid
 graph LR
-    A["Secured Hub\nerstellen"] --> B["TSP-Partner\nauswählen"]
-    B --> C["Partner-Account\nvia Marketplace\nverknüpfen"]
-    C --> D["Routing Policy\nInternet auf\nTSP setzen"]
-    D --> E["Branch- und\nSpoke-Traffic\nfließt durch TSP"]
+    A["Secured Hub erstellen"] --> B["TSP-Partner auswählen"]
+    B --> C["Partner-Account via Marketplace verknüpfen"]
+    C --> D["Routing Policy Internet auf TSP setzen"]
+    D --> E["Branch- und Spoke-Traffic fließt durch TSP"]
 ```
 
 ---

@@ -27,12 +27,12 @@ Microsoft Purview und Microsoft Fabric sind eng miteinander verknüpft. Purview 
 
 ```mermaid
 graph TD
-    A[Microsoft Purview] --> B[Information Protection\nSensitivity Labels]
-    A --> C[Data Catalog\nAsset-Klassifizierung]
-    A --> D[Data Lineage\nHerkunft tracken]
-    A --> E[DLP Policies\nDatenverlustschutz]
-    A --> F[Audit Logs\nAktivitätsprotokolle]
-    A --> G[Compliance Manager\nRegulativer Rahmen]
+    A[Microsoft Purview] --> B[Information Protection Sensitivity Labels]
+    A --> C[Data Catalog Asset-Klassifizierung]
+    A --> D[Data Lineage Herkunft tracken]
+    A --> E[DLP Policies Datenverlustschutz]
+    A --> F[Audit Logs Aktivitätsprotokolle]
+    A --> G[Compliance Manager Regulativer Rahmen]
 
     B --> H[Fabric Workspace]
     C --> H
@@ -56,7 +56,7 @@ Sensitivity Labels aus **Microsoft 365 Purview Information Protection** können 
 
 ```mermaid
 graph LR
-    A[Datenquelle\nLabel: Vertraulich] -->|Ingestion| B[Lakehouse\nDelta-Tabelle]
+    A[Datenquelle Label: Vertraulich] -->|Ingestion| B[Lakehouse Delta-Tabelle]
     B -->|Automatisch übernommen| C[Semantic Model]
     C -->|Propagiert| D[Power BI Report]
     D -->|Vererbt| E[Power BI Dashboard]
@@ -117,10 +117,10 @@ sequenceDiagram
     participant C as Klassifizierungs-Engine
     participant L as Label-Policy
 
-    F->>P: Scan-Trigger\n(manuell oder geplant)
+    F->>P: Scan-Trigger (manuell oder geplant)
     P->>F: Dateien und Tabellen scannen
     F-->>P: Inhalt (Spaltenwerte, Dateinamen)
-    P->>C: Klassifizierungsregeln anwenden\n(IBAN, Kreditkarten, PII)
+    P->>C: Klassifizierungsregeln anwenden (IBAN, Kreditkarten, PII)
     C-->>P: Klassifizierungsergebnis
     P->>L: Matching-Label ermitteln
     L-->>F: Automatisches Label anwenden
@@ -144,10 +144,10 @@ Sensitivity Labels können **Verschlüsselungs-Policies** enthalten, die auf exp
 
 ```mermaid
 graph TD
-    A[Power BI Report\nLabel: Streng Vertraulich] -->|Export als PDF| B[PDF-Datei]
+    A[Power BI Report Label: Streng Vertraulich] -->|Export als PDF| B[PDF-Datei]
     B --> C{Azure Rights Management}
-    C -->|Verschlüsselt| D[Geschützte PDF\nnur für autorisierte User]
-    D --> E[Nur Benutzer mit\nRechten können öffnen]
+    C -->|Verschlüsselt| D[Geschützte PDF nur für autorisierte User]
+    D --> E[Nur Benutzer mit Rechten können öffnen]
 ```
 
 > [!WARNING]
@@ -163,9 +163,9 @@ Data Lineage in Purview ermöglicht das **Nachverfolgen der Datenherkunft** durc
 
 ```mermaid
 graph LR
-    A[Azure Data Lake\nQuelle] -->|Ingestion Pipeline| B[Fabric Lakehouse\nRaw Layer]
-    B -->|Notebook\nTransformation| C[Fabric Lakehouse\nSilver Layer]
-    C -->|SQL Views\nWarehouse| D[Fabric Warehouse]
+    A[Azure Data Lake Quelle] -->|Ingestion Pipeline| B[Fabric Lakehouse Raw Layer]
+    B -->|Notebook Transformation| C[Fabric Lakehouse Silver Layer]
+    C -->|SQL Views Warehouse| D[Fabric Warehouse]
     D -->|Direct Lake| E[Semantic Model]
     E -->|Power BI| F[Report]
     F -->|Pinning| G[Dashboard]
@@ -254,8 +254,8 @@ sequenceDiagram
 
     U->>R: Daten exportieren (Excel)
     R->>D: Export-Anfrage prüfen
-    D->>D: Sensitivity Label prüfen\nPII-Klassifizierung vorhanden?
-    D-->>U: Policy-Tip anzeigen\n"Diese Datei enthält sensible Daten"
+    D->>D: Sensitivity Label prüfen PII-Klassifizierung vorhanden?
+    D-->>U: Policy-Tip anzeigen "Diese Datei enthält sensible Daten"
     D->>A: DLP-Alert senden
     U-->>R: Export bestätigen oder abbrechen
 ```
@@ -362,9 +362,9 @@ Ab 2024 bietet Fabric einen **eigenen Unified Catalog** (in der Fabric-Oberfläc
 
 ```mermaid
 graph LR
-    A[Fabric Unified Catalog\nIn Fabric-UI] <-->|Bidirektionale Sync| B[Microsoft Purview\nData Catalog]
-    A --> C[Fabric Assets\nLakehouse, Warehouse, etc.]
-    B --> D[Externe Assets\nADLS, SQL, Synapse]
+    A[Fabric Unified Catalog In Fabric-UI] <-->|Bidirektionale Sync| B[Microsoft Purview Data Catalog]
+    A --> C[Fabric Assets Lakehouse, Warehouse, etc.]
+    B --> D[Externe Assets ADLS, SQL, Synapse]
     A --> E[Business Glossar]
     B --> E
     A --> F[Lineage Ansicht]

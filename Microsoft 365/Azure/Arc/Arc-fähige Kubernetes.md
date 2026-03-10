@@ -28,7 +28,7 @@ Das Onboarding erfolgt über den **Arc-Kubernetes-Agent**, der als Kubernetes-De
 graph TD
     subgraph Kubernetes Cluster
         NS[Namespace: azure-arc]
-        AGENT[Arc-Agents\nDeployments und DaemonSets]
+        AGENT[Arc-Agents Deployments und DaemonSets]
         FLUX[Flux v2 Controller]
         GATEKEEPER[OPA Gatekeeper]
     end
@@ -127,10 +127,10 @@ az connectedk8s delete \
 ```mermaid
 graph LR
     DEV[Entwickler]
-    GITREPO[Git Repository\nHelmChart / Kustomize]
-    FLUX[Flux v2\nim Cluster]
+    GITREPO[Git Repository HelmChart / Kustomize]
+    FLUX[Flux v2 im Cluster]
     K8S[Kubernetes Cluster]
-    AZURE[Azure Portal\nFlux Konfiguration]
+    AZURE[Azure Portal Flux Konfiguration]
 
     DEV -->|Push| GITREPO
     GITREPO -->|Pull / Sync| FLUX
@@ -188,12 +188,12 @@ az k8s-configuration flux create \
 ```mermaid
 graph TD
     AZURE[Azure Arc]
-    EXT_MGR[Extension Manager\nim Cluster]
-    FLUX_EXT[microsoft.flux\nGitOps Engine]
-    AMA_EXT[microsoft.azuremonitor.containers\nContainer Insights]
-    DEFENDER_EXT[microsoft.azuredefender.kubernetes\nDefender]
-    POLICY_EXT[azure-policy\nOPA Gatekeeper]
-    OSM_EXT[open-service-mesh\nService Mesh]
+    EXT_MGR[Extension Manager im Cluster]
+    FLUX_EXT[microsoft.flux GitOps Engine]
+    AMA_EXT[microsoft.azuremonitor.containers Container Insights]
+    DEFENDER_EXT[microsoft.azuredefender.kubernetes Defender]
+    POLICY_EXT[azure-policy OPA Gatekeeper]
+    OSM_EXT[open-service-mesh Service Mesh]
 
     AZURE -->|Managed| EXT_MGR
     EXT_MGR --> FLUX_EXT
@@ -233,8 +233,8 @@ Azure Policy nutzt **OPA Gatekeeper** als Admission Controller auf Arc-Kubernete
 graph LR
     USER[kubectl apply]
     API[Kubernetes API Server]
-    GK[OPA Gatekeeper\nAdmission Webhook]
-    POLICY_STORE[Policy Store\nConstraints]
+    GK[OPA Gatekeeper Admission Webhook]
+    POLICY_STORE[Policy Store Constraints]
     ALLOW[Erlaubt]
     DENY[Abgelehnt]
 
@@ -314,10 +314,10 @@ az connectedk8s proxy \
 ```mermaid
 graph LR
     POD[Kubernetes Pod]
-    SA[Service Account\nAnnotation: clientId]
-    OIDC[OIDC Issuer\nim Cluster]
+    SA[Service Account Annotation: clientId]
+    OIDC[OIDC Issuer im Cluster]
     ENTRA[Microsoft Entra ID]
-    AZURE_SVC[Azure-Dienst\nKey Vault Storage etc]
+    AZURE_SVC[Azure-Dienst Key Vault Storage etc]
 
     POD --> SA
     SA --> OIDC
@@ -335,8 +335,8 @@ graph LR
 ```mermaid
 graph TD
     ARM[Azure Resource Manager]
-    CL[Custom Location\nMapping: Namespace X]
-    K8S_NS[Kubernetes Namespace X\nauf Arc-Cluster]
+    CL[Custom Location Mapping: Namespace X]
+    K8S_NS[Kubernetes Namespace X auf Arc-Cluster]
     SQLMI[Arc SQL Managed Instance]
     APPSERVICE[App Service Extension]
 

@@ -46,15 +46,15 @@ GitHub Packages fungiert als **universelles Package-Registry** innerhalb des Git
 flowchart LR
     A[Quellcode schreiben] --> B[GitHub Actions Workflow]
     B --> C[Build]
-    C --> D[Docker build\nbzw Paket erstellen]
-    D --> E[docker push\nbzw package publish]
-    E --> F[GitHub Packages\nghcr.io oder npm-Registry]
+    C --> D[Docker build bzw Paket erstellen]
+    D --> E[docker push bzw package publish]
+    E --> F[GitHub Packages ghcr.io oder npm-Registry]
     F --> G{Sichtbarkeit}
     G -->|public| H[Öffentlich abrufbar]
     G -->|private| I[Nur mit Auth abrufbar]
-    H --> J[docker pull\nbzw npm install]
+    H --> J[docker pull bzw npm install]
     I --> J
-    J --> K[Deployment\nProduktion oder Staging]
+    J --> K[Deployment Produktion oder Staging]
     K --> L[Laufende Anwendung]
 ```
 

@@ -36,8 +36,8 @@ aliases:
 
 ```mermaid
 graph TD
-    BA[Billing Account\nMCA oder EA] --> BP[Billing Profile\neigene Rechnung]
-    BP --> IS[Invoice Section\nKostenstelle]
+    BA[Billing Account MCA oder EA] --> BP[Billing Profile eigene Rechnung]
+    BP --> IS[Invoice Section Kostenstelle]
     IS --> SUB[Subscription]
     SUB --> RG[Resource Group]
     RG --> RES[Resource]
@@ -273,8 +273,8 @@ Update-AzVM -ResourceGroupName "rg-sql" -VM $vm
 
 ```mermaid
 graph LR
-    INFORM[Inform\nKosten verstehen\nTransparenz schaffen] --> OPTIMIZE[Optimize\nKosten reduzieren\nEffizienz steigern]
-    OPTIMIZE --> OPERATE[Operate\nProzesse etablieren\nKontinuierlich verbessern]
+    INFORM[Inform Kosten verstehen Transparenz schaffen] --> OPTIMIZE[Optimize Kosten reduzieren Effizienz steigern]
+    OPTIMIZE --> OPERATE[Operate Prozesse etablieren Kontinuierlich verbessern]
     OPERATE --> INFORM
 ```
 

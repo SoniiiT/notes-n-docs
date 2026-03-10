@@ -28,11 +28,11 @@ Das **Fabric Data Warehouse** ist ein eigenständiges Warehouse-Item in Microsof
 ```mermaid
 graph TD
     DW[Fabric Data Warehouse]
-    DW --> OL[OneLake\nDaten in Delta-Format]
-    DW --> SQL[T-SQL Engine\nvollständiges DML]
-    DW --> SSMS[SSMS / Azure Data Studio\nVerbindung via TDS]
-    DW --> PBI[Power BI\nDirectQuery + Direct Lake]
-    DW --> NB[Notebooks\nvia spark.read]
+    DW --> OL[OneLake Daten in Delta-Format]
+    DW --> SQL[T-SQL Engine vollständiges DML]
+    DW --> SSMS[SSMS / Azure Data Studio Verbindung via TDS]
+    DW --> PBI[Power BI DirectQuery + Direct Lake]
+    DW --> NB[Notebooks via spark.read]
     
     style DW fill:#0078d4,color:#fff
     style OL fill:#e6f3ff
@@ -211,17 +211,17 @@ WHERE w.verkaufsdatum >= '2024-01-01';
 ```mermaid
 graph TD
     USER[Benutzer / Service Principal]
-    USER --> WS[Workspace-Rolle\nAdmin Member Contributor Viewer]
-    USER --> ITEM[Item-Berechtigung\nRead Write Execute]
-    USER --> SQL[SQL-Berechtigung\nGRANT DENY REVOKE]
+    USER --> WS[Workspace-Rolle Admin Member Contributor Viewer]
+    USER --> ITEM[Item-Berechtigung Read Write Execute]
+    USER --> SQL[SQL-Berechtigung GRANT DENY REVOKE]
     
     WS --> DATA[Warehouse-Daten]
     ITEM --> DATA
     SQL --> DATA
     
-    SQL --> OLS[Object-Level Security\nTabellen Views]
-    SQL --> RLS[Row-Level Security\nZeilenfilter]
-    SQL --> CLS[Column-Level Security\nSpalten verbergen]
+    SQL --> OLS[Object-Level Security Tabellen Views]
+    SQL --> RLS[Row-Level Security Zeilenfilter]
+    SQL --> CLS[Column-Level Security Spalten verbergen]
 ```
 
 ### Object-Level Security (OLS)
@@ -293,13 +293,13 @@ GRANT SELECT ON dbo.v_mitarbeiter_public TO [hr-analyst@contoso.com];
 
 ```mermaid
 graph LR
-    AZ_SQL[Azure SQL Database\nQuellsystem] -->|CDC Replikation| MIRROR[Fabric Mirroring\nService]
+    AZ_SQL[Azure SQL Database Quellsystem] -->|CDC Replikation| MIRROR[Fabric Mirroring Service]
     SNOW[Snowflake] -->|CDC Replikation| MIRROR
     COSMOS[Cosmos DB] -->|CDC Replikation| MIRROR
     MIRROR -->|Delta Parquet| OL[OneLake]
-    OL --> FW[Fabric Warehouse\nAbfragen]
-    OL --> NB[Notebooks\nAnalyse]
-    OL --> PBI[Power BI\nBerichte]
+    OL --> FW[Fabric Warehouse Abfragen]
+    OL --> NB[Notebooks Analyse]
+    OL --> PBI[Power BI Berichte]
 ```
 
 **Mirroring konfigurieren:**

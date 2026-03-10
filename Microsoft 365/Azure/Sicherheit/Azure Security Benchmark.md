@@ -119,15 +119,15 @@ MCSB v3 mappt jeden Control auf mehrere etablierte Frameworks. Dieses Mapping er
 
 ```mermaid
 graph TD
-    A[Azure Ressourcen\nin Subscription] --> B[Azure Policy\nDefinitions]
-    B --> C{Compliance\nEvaluierung}
-    C -->|Compliant| D[Grüner Status\nim Dashboard]
-    C -->|Non-Compliant| E[Roter Status\nRecommendation]
-    E --> F[Remediation\nAction]
-    F --> G[Quick Fix oder\nmanuelle Korrektur]
+    A[Azure Ressourcen in Subscription] --> B[Azure Policy Definitions]
+    B --> C{Compliance Evaluierung}
+    C -->|Compliant| D[Grüner Status im Dashboard]
+    C -->|Non-Compliant| E[Roter Status Recommendation]
+    E --> F[Remediation Action]
+    F --> G[Quick Fix oder manuelle Korrektur]
     G --> C
-    D --> H[MCSB Compliance\nScore]
-    H --> I[Regulatory Compliance\nDashboard]
+    D --> H[MCSB Compliance Score]
+    H --> I[Regulatory Compliance Dashboard]
 ```
 
 ### Measurement-Mechanismus im Detail
@@ -146,10 +146,10 @@ graph TD
 
 ```mermaid
 graph LR
-    A[Assess\nIST-Zustand messen] --> B[Prioritize\nRisiken bewerten]
-    B --> C[Implement\nControls umsetzen]
-    C --> D[Monitor\nDashboard beobachten]
-    D --> E[Report\nCompliance nachweisen]
+    A[Assess IST-Zustand messen] --> B[Prioritize Risiken bewerten]
+    B --> C[Implement Controls umsetzen]
+    C --> D[Monitor Dashboard beobachten]
+    D --> E[Report Compliance nachweisen]
     E --> A
 ```
 
@@ -386,16 +386,16 @@ MCSB ist als **Ausgangspunkt** für eigene Sicherheitsrichtlinien konzipiert —
 
 ```mermaid
 graph TD
-    A[MCSB v3\nals Ausgangsbasis] --> B[Gap-Analyse\ndurchführen]
-    B --> C{Control\nrelevant?}
-    C -->|Ja unverändert| D[Direkt\nübernehmen]
-    C -->|Ja anpassen| E[Unternehmensspezifisch\nerweitern]
-    C -->|Nicht relevant| F[Explizit\nausnehmen]
-    D --> G[Interne\nSicherheitsrichtlinie]
+    A[MCSB v3 als Ausgangsbasis] --> B[Gap-Analyse durchführen]
+    B --> C{Control relevant?}
+    C -->|Ja unverändert| D[Direkt übernehmen]
+    C -->|Ja anpassen| E[Unternehmensspezifisch erweitern]
+    C -->|Nicht relevant| F[Explizit ausnehmen]
+    D --> G[Interne Sicherheitsrichtlinie]
     E --> G
     F --> G
-    G --> H[Azure Policy\nInitiative]
-    H --> I[Defender for Cloud\nDashboard]
+    G --> H[Azure Policy Initiative]
+    H --> I[Defender for Cloud Dashboard]
 ```
 
 ### Praxistipps

@@ -34,14 +34,14 @@ Azure Automation ist ein Dienst zur **Prozessautomatisierung** und **Konfigurati
 
 ```mermaid
 graph TD
-    AA["Azure Automation\nAutomation Account"]
-    Runbooks["Runbooks\nPowerShell\nPython\nGraphical"]
-    HRW["Hybrid Runbook Worker\nOn-Prem / andere Cloud"]
-    Sandbox["Azure Sandbox\nCloud-Ausführung"]
-    UM["Update Management\n(Legacy)"]
-    CT["Change Tracking\n& Inventory"]
-    DSC["Desired State\nConfiguration DSC"]
-    Shared["Shared Resources\nCredentials\nVariablen\nCertificates"]
+    AA["Azure Automation Automation Account"]
+    Runbooks["Runbooks PowerShell Python Graphical"]
+    HRW["Hybrid Runbook Worker On-Prem / andere Cloud"]
+    Sandbox["Azure Sandbox Cloud-Ausführung"]
+    UM["Update Management (Legacy)"]
+    CT["Change Tracking & Inventory"]
+    DSC["Desired State Configuration DSC"]
+    Shared["Shared Resources Credentials Variablen Certificates"]
 
     AA --> Runbooks
     AA --> UM
@@ -154,10 +154,10 @@ print("Runbook erfolgreich abgeschlossen.")
 ```mermaid
 graph LR
     AA["Automation Account"]
-    Trigger["Trigger\nSchedule\nWebhook\nAlert\nManual"]
+    Trigger["Trigger Schedule Webhook Alert Manual"]
     Decision{"Ausführungsort"}
-    Sandbox["Azure Sandbox\nCloud-VM\nManaged"]
-    HRW["Hybrid Runbook Worker\nOn-Prem Server\nAzure VM\nArc-fähig"]
+    Sandbox["Azure Sandbox Cloud-VM Managed"]
+    HRW["Hybrid Runbook Worker On-Prem Server Azure VM Arc-fähig"]
 
     Trigger --> AA
     AA --> Decision
@@ -300,10 +300,10 @@ Runbooks können direkt als Reaktion auf Alerts ausgeführt werden:
 
 ```mermaid
 graph LR
-    Alert["Azure Alert\nz.B. VM CPU > 95%"]
-    AG["Action Group\nRunbook-Aktion"]
-    AA["Azure Automation\nRunbook"]
-    Action["Automatische Reaktion\nVM neustarten\nSkalieren\nTicket erstellen"]
+    Alert["Azure Alert z.B. VM CPU > 95%"]
+    AG["Action Group Runbook-Aktion"]
+    AA["Azure Automation Runbook"]
+    Action["Automatische Reaktion VM neustarten Skalieren Ticket erstellen"]
 
     Alert --> AG
     AG --> AA
@@ -440,11 +440,11 @@ Die "Start/Stop VMs v2"-Lösung aus dem Marketplace automatisiert das Hoch- und 
 
 ```mermaid
 graph LR
-    Schedule["Zeitplan\nMo-Fr 08:00 Start\nMo-Fr 20:00 Stop"]
-    Logic["Azure Logic App\nOrchestration"]
-    Runbook["Azure Automation\nRunbook"]
-    VMs["Development VMs\nrg-dev-*"]
-    Savings["Kosteneinsparung\nbis 60% bei 12h/Tag"]
+    Schedule["Zeitplan Mo-Fr 08:00 Start Mo-Fr 20:00 Stop"]
+    Logic["Azure Logic App Orchestration"]
+    Runbook["Azure Automation Runbook"]
+    VMs["Development VMs rg-dev-*"]
+    Savings["Kosteneinsparung bis 60% bei 12h/Tag"]
 
     Schedule --> Logic
     Logic --> Runbook

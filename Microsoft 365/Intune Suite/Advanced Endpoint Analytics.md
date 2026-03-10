@@ -49,11 +49,11 @@ Anomaly Detection analysiert Geräteverhalten und Konfigurationen mit KI/ML-Algo
 
 ```mermaid
 graph TD
-    BASELINE[Normales Verhalten\nBaseline der Umgebung] --> ML[ML-Modell\nMicrosoft Cloud]
-    DEVICES[Alle verwalteten Geräte\nTelemetrie-Daten] --> ML
+    BASELINE[Normales Verhalten Baseline der Umgebung] --> ML[ML-Modell Microsoft Cloud]
+    DEVICES[Alle verwalteten Geräte Telemetrie-Daten] --> ML
     ML -->|Abweichung erkannt| ANOMALY[Anomalie-Alert]
-    ANOMALY --> DETAIL[Details:\nWelche Geräte\nWelche Konfiguration\nSchweregrad]
-    DETAIL --> ACTION[Empfohlene Aktion\ndurch Intune]
+    ANOMALY --> DETAIL[Details: Welche Geräte Welche Konfiguration Schweregrad]
+    DETAIL --> ACTION[Empfohlene Aktion durch Intune]
 ```
 
 ### Anomalie-Kategorien
@@ -132,10 +132,10 @@ Custom Compliance Scripts erweitern die eingebauten Compliance-Checks um beliebi
 
 ```mermaid
 graph LR
-    PS_SCRIPT[PowerShell Script\nauf Gerät ausführen] --> JSON_OUTPUT[JSON Output\nKey-Value-Paare]
-    JSON_OUTPUT --> INTUNE[Intune\nKompliance-Prüfung]
+    PS_SCRIPT[PowerShell Script auf Gerät ausführen] --> JSON_OUTPUT[JSON Output Key-Value-Paare]
+    JSON_OUTPUT --> INTUNE[Intune Kompliance-Prüfung]
     INTUNE -->|Compliant| GREEN[Compliant Status]
-    INTUNE -->|Non-Compliant| RED[Non-Compliant\nConditional Access blockiert]
+    INTUNE -->|Non-Compliant| RED[Non-Compliant Conditional Access blockiert]
 ```
 
 ### Script-Anforderungen
@@ -248,11 +248,11 @@ Bewertet die **Remote-Work-Bereitschaft** der Umgebung anhand von Kriterien:
 
 ```mermaid
 graph TD
-    WFA[Work From Anywhere Score\n0-100] --> CLOUD[Cloud Management\nIntune enrolled, Entra ID joined]
-    WFA --> CLOUD_IDENTITY[Cloud Identity\nEntra ID vs On-Prem AD]
-    WFA --> CLOUD_PROV[Cloud Provisioning\nAutopilot]
-    WFA --> MS365[Microsoft 365\nProduktivitätsscore]
-    WFA --> STARTUP[Startup Performance\nBoot-Zeiten]
+    WFA[Work From Anywhere Score 0-100] --> CLOUD[Cloud Management Intune enrolled, Entra ID joined]
+    WFA --> CLOUD_IDENTITY[Cloud Identity Entra ID vs On-Prem AD]
+    WFA --> CLOUD_PROV[Cloud Provisioning Autopilot]
+    WFA --> MS365[Microsoft 365 Produktivitätsscore]
+    WFA --> STARTUP[Startup Performance Boot-Zeiten]
 ```
 
 | Kategorie | Punkte | Kriterien |

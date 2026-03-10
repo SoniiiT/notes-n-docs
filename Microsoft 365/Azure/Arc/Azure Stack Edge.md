@@ -26,11 +26,11 @@ Das Grundprinzip: Daten lokal verarbeiten, bevor sie — gefiltert und reduziert
 
 ```mermaid
 graph LR
-    IOT_DEVICES[IoT Geräte\nSensoren Kameras PLCs]
-    ASE[Azure Stack Edge\nAppliance]
-    PROCESS[Lokale Verarbeitung\nKI Filterung Aggregation]
-    UPLOAD[Selektiver Upload\nnur relevante Daten]
-    AZURE[Azure Cloud\nSpeicher Analytics]
+    IOT_DEVICES[IoT Geräte Sensoren Kameras PLCs]
+    ASE[Azure Stack Edge Appliance]
+    PROCESS[Lokale Verarbeitung KI Filterung Aggregation]
+    UPLOAD[Selektiver Upload nur relevante Daten]
+    AZURE[Azure Cloud Speicher Analytics]
 
     IOT_DEVICES --> ASE
     ASE --> PROCESS
@@ -71,12 +71,12 @@ Der **Pro 2** ist die aktuelle Hauptversion für Unternehmenseinsatz:
 ```mermaid
 graph TD
     PRO2[Azure Stack Edge Pro 2]
-    COMPUTE[Compute\nIntel Xeon Gold\nbis 32 vCPUs nutzbar]
-    MEMORY[Memory\nbis 204 GB RAM]
-    STORAGE[Storage\nbis 2.5 TB lokales SSD]
-    GPU_OPT[GPU Option\n1-2x NVIDIA A2\nfür KI-Inferenz]
-    NETWORK[Netzwerk\nbis 100GbE Ports]
-    MGMT[Management\nAzure Portal lokal]
+    COMPUTE[Compute Intel Xeon Gold bis 32 vCPUs nutzbar]
+    MEMORY[Memory bis 204 GB RAM]
+    STORAGE[Storage bis 2.5 TB lokales SSD]
+    GPU_OPT[GPU Option 1-2x NVIDIA A2 für KI-Inferenz]
+    NETWORK[Netzwerk bis 100GbE Ports]
+    MGMT[Management Azure Portal lokal]
 
     PRO2 --> COMPUTE
     PRO2 --> MEMORY
@@ -134,11 +134,11 @@ Azure Stack Edge-Geräte sind **Arc-fähige Ressourcen** und werden über Azure 
 
 ```mermaid
 graph TD
-    ASE_DEVICE[Azure Stack Edge\nGerät vor Ort]
-    ARC[Azure Arc\nRegistrierung]
+    ASE_DEVICE[Azure Stack Edge Gerät vor Ort]
+    ARC[Azure Arc Registrierung]
     ARM[Azure Resource Manager]
     PORTAL[Azure Portal]
-    EXTENSIONS[Arc Extensions\nMonitor Defender]
+    EXTENSIONS[Arc Extensions Monitor Defender]
 
     ASE_DEVICE --> ARC
     ARC --> ARM
@@ -161,10 +161,10 @@ graph TD
 
 ```mermaid
 graph LR
-    IOT_HUB[Azure IoT Hub\nin Azure]
+    IOT_HUB[Azure IoT Hub in Azure]
     ASE[Azure Stack Edge]
     IOTEDGE_RT[IoT Edge Runtime]
-    MODULES[IoT Edge Module\nContainer]
+    MODULES[IoT Edge Module Container]
     DEVICES[Downstream IoT Geräte]
 
     IOT_HUB -->|Konfiguration Manifeste| IOTEDGE_RT
@@ -214,9 +214,9 @@ Azure Stack Edge unterstützt drei Compute-Paradigmen:
 ```mermaid
 graph TD
     ASE[Azure Stack Edge]
-    VMS[Virtual Machines\nHyper-V basiert]
-    CONTAINERS[Container\nDocker kompatibel]
-    K8S[Kubernetes\nArc-verbunden]
+    VMS[Virtual Machines Hyper-V basiert]
+    CONTAINERS[Container Docker kompatibel]
+    K8S[Kubernetes Arc-verbunden]
 
     ASE --> VMS
     ASE --> CONTAINERS
@@ -250,10 +250,10 @@ Ein einzigartiges Feature von Azure Stack Edge ist der **lokale ARM-Endpunkt** �
 ```mermaid
 graph TD
     USER[Administrator]
-    LOCAL_ARM[Lokaler ARM\nauf ASE-Gerät]
-    LOCAL_PORTAL[Lokales Azure Portal\nhttps://local-mgmt-ip]
-    CLOUD_ARM[Azure ARM\nin der Cloud]
-    SYNC[Synchronisation\nStatus und Metadaten]
+    LOCAL_ARM[Lokaler ARM auf ASE-Gerät]
+    LOCAL_PORTAL[Lokales Azure Portal https://local-mgmt-ip]
+    CLOUD_ARM[Azure ARM in der Cloud]
+    SYNC[Synchronisation Status und Metadaten]
 
     USER --> LOCAL_ARM
     USER --> LOCAL_PORTAL
@@ -276,12 +276,12 @@ graph TD
 ```mermaid
 graph LR
     subgraph ASE_Network
-        PORT1[Port 1\n1 GbE\nManagement]
-        PORT2[Port 2\n1 GbE\nManagement Redundant]
-        PORT3[Port 3\n10-25 GbE\nData]
-        PORT4[Port 4\n10-25 GbE\nData]
-        PORT5[Port 5\n10-100 GbE\nData High Speed]
-        PORT6[Port 6\n10-100 GbE\nData High Speed]
+        PORT1[Port 1 1 GbE Management]
+        PORT2[Port 2 1 GbE Management Redundant]
+        PORT3[Port 3 10-25 GbE Data]
+        PORT4[Port 4 10-25 GbE Data]
+        PORT5[Port 5 10-100 GbE Data High Speed]
+        PORT6[Port 6 10-100 GbE Data High Speed]
     end
 
     MGMT_NET[Management-Netzwerk]
@@ -315,10 +315,10 @@ Azure Stack Edge bietet lokalen Speicher, der mit Azure Blob Storage synchronisi
 
 ```mermaid
 graph LR
-    APPS[Lokale Applikationen\nVMs Container K8s]
-    LOCAL_SHARE[Lokale SMB/NFS-Freigabe\nauf ASE]
-    CACHE[Edge Cache\nautomatische Tiering]
-    BLOB[Azure Blob Storage\nin Azure]
+    APPS[Lokale Applikationen VMs Container K8s]
+    LOCAL_SHARE[Lokale SMB/NFS-Freigabe auf ASE]
+    CACHE[Edge Cache automatische Tiering]
+    BLOB[Azure Blob Storage in Azure]
 
     APPS --> LOCAL_SHARE
     LOCAL_SHARE --> CACHE
@@ -353,7 +353,7 @@ az storage blob upload \
 graph LR
     ASE[ASE Gerät]
     AZURE[Azure Cloud]
-    REAL_TIME[Echtzeit-Management\nMonitoring Updates]
+    REAL_TIME[Echtzeit-Management Monitoring Updates]
 
     ASE <-->|Permanente Verbindung| AZURE
     AZURE --> REAL_TIME
@@ -363,8 +363,8 @@ graph LR
 
 ```mermaid
 graph LR
-    ASE[ASE Gerät\nOffshore Schiff]
-    SATLINK[Satellitenverbindung\nperiodisch]
+    ASE[ASE Gerät Offshore Schiff]
+    SATLINK[Satellitenverbindung periodisch]
     AZURE[Azure Cloud]
 
     ASE -.->|1-2x täglich| SATLINK
@@ -375,10 +375,10 @@ graph LR
 
 ```mermaid
 graph LR
-    ASE[ASE Gerät\nKlassifiziertes Netzwerk]
-    AIRGAP[Air-Gap\nkeine Verbindung]
-    MANUAL[Manueller Export\nUSB Datenträger]
-    AZURE[Azure Portal\nnur Konfiguration vorab]
+    ASE[ASE Gerät Klassifiziertes Netzwerk]
+    AIRGAP[Air-Gap keine Verbindung]
+    MANUAL[Manueller Export USB Datenträger]
+    AZURE[Azure Portal nur Konfiguration vorab]
 
     ASE --> AIRGAP
     ASE -.->|Periodisch physisch| MANUAL
@@ -393,12 +393,12 @@ Azure Stack Edge mit NVIDIA GPU ist optimiert für **KI-Inferenz am Edge**:
 
 ```mermaid
 graph TD
-    MODEL[ML-Modell trainiert\nin Azure ML]
-    EXPORT[Export\nONNX TensorFlow Lite]
-    DEPLOY[Deployment\nauf ASE als Container]
-    INFERENCE[Lokale Inferenz\nohne Cloud-Latenz]
-    RESULTS[Ergebnisse\nlokal verarbeitet]
-    UPLOAD[Upload\nnur Anomalien in Azure]
+    MODEL[ML-Modell trainiert in Azure ML]
+    EXPORT[Export ONNX TensorFlow Lite]
+    DEPLOY[Deployment auf ASE als Container]
+    INFERENCE[Lokale Inferenz ohne Cloud-Latenz]
+    RESULTS[Ergebnisse lokal verarbeitet]
+    UPLOAD[Upload nur Anomalien in Azure]
 
     MODEL --> EXPORT
     EXPORT --> DEPLOY

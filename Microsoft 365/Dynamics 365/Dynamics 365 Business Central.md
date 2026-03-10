@@ -30,14 +30,14 @@ Business Central (BC) richtet sich an Unternehmen mit 5 bis ca. 500 Mitarbeitern
 
 ```mermaid
 graph TD
-    BC[Business Central] --> FIN[Finanzen\nHauptbuch, AR/AP, Bank]
-    BC --> PURCH[Einkauf\nBestellungen, Lieferanten]
-    BC --> SALES[Verkauf\nAngebote, Aufträge, Rechnungen]
-    BC --> INV[Lager\nWarenwirtschaft, Artikel]
-    BC --> MFG[Produktion\nStücklisten, Fertigung]
-    BC --> PROJ[Projekte\nZeit, Kosten, Ressourcen]
-    BC --> HR2[Personal\nMitarbeiter, Lohnanbindung]
-    BC --> SVC[Service\nWartung, Serviceaufträge]
+    BC[Business Central] --> FIN[Finanzen Hauptbuch, AR/AP, Bank]
+    BC --> PURCH[Einkauf Bestellungen, Lieferanten]
+    BC --> SALES[Verkauf Angebote, Aufträge, Rechnungen]
+    BC --> INV[Lager Warenwirtschaft, Artikel]
+    BC --> MFG[Produktion Stücklisten, Fertigung]
+    BC --> PROJ[Projekte Zeit, Kosten, Ressourcen]
+    BC --> HR2[Personal Mitarbeiter, Lohnanbindung]
+    BC --> SVC[Service Wartung, Serviceaufträge]
 ```
 
 ### Wichtigste Features nach Modul

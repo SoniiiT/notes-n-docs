@@ -51,12 +51,12 @@ VNets verwenden **RFC 1918 private Adressbereiche** (empfohlen):
 
 ```mermaid
 graph TD
-    VNET[VNet\n10 0 0 0/16\n65536 Adressen] --> SNET1[Gateway Subnet\n10 0 0 0/27\n27 Adressen verfügbar]
-    VNET --> SNET2[AzureFirewallSubnet\n10 0 1 0/26\n59 Adressen verfügbar]
-    VNET --> SNET3[AzureBastionSubnet\n10 0 2 0/26\n59 Adressen verfügbar]
-    VNET --> SNET4[App Subnet\n10 0 10 0/24\n251 Adressen verfügbar]
-    VNET --> SNET5[Database Subnet\n10 0 20 0/24\n251 Adressen verfügbar]
-    VNET --> SNET6[Private Endpoint Subnet\n10 0 30 0/24\n251 Adressen verfügbar]
+    VNET[VNet 10 0 0 0/16 65536 Adressen] --> SNET1[Gateway Subnet 10 0 0 0/27 27 Adressen verfügbar]
+    VNET --> SNET2[AzureFirewallSubnet 10 0 1 0/26 59 Adressen verfügbar]
+    VNET --> SNET3[AzureBastionSubnet 10 0 2 0/26 59 Adressen verfügbar]
+    VNET --> SNET4[App Subnet 10 0 10 0/24 251 Adressen verfügbar]
+    VNET --> SNET5[Database Subnet 10 0 20 0/24 251 Adressen verfügbar]
+    VNET --> SNET6[Private Endpoint Subnet 10 0 30 0/24 251 Adressen verfügbar]
 ```
 
 ### Reservierte IP-Adressen pro Subnet
@@ -82,9 +82,9 @@ VNet Peering verbindet zwei VNets direkt über Microsofts Backbone (kein Gateway
 
 ```mermaid
 graph LR
-    HUB[Hub VNet\n10 0 0 0/16] <-->|Peering\nkein Transitrouting| SPOKE1[Spoke VNet 1\n10 1 0 0/16]
-    HUB <-->|Peering| SPOKE2[Spoke VNet 2\n10 2 0 0/16]
-    SPOKE1 -.->|KEIN direkter Traffic\nkein Transit!| SPOKE2
+    HUB[Hub VNet 10 0 0 0/16] <-->|Peering kein Transitrouting| SPOKE1[Spoke VNet 1 10 1 0 0/16]
+    HUB <-->|Peering| SPOKE2[Spoke VNet 2 10 2 0 0/16]
+    SPOKE1 -.->|KEIN direkter Traffic kein Transit!| SPOKE2
 ```
 
 | Merkmal | Regional Peering | Global Peering |
@@ -121,8 +121,8 @@ Ein häufiger Vergleich — zwei verschiedene Ansätze für sicheren PaaS-Zugrif
 
 ```mermaid
 graph LR
-    VM[VM in VNet] -->|Service Endpoint\nöffentliche IP, optimierter Weg| PaaS[Azure Storage\nSQL etc]
-    VM2[VM in VNet] -->|Private Endpoint\nprivate IP im VNet| PE[Private Endpoint\nim VNet]
+    VM[VM in VNet] -->|Service Endpoint öffentliche IP, optimierter Weg| PaaS[Azure Storage SQL etc]
+    VM2[VM in VNet] -->|Private Endpoint private IP im VNet| PE[Private Endpoint im VNet]
     PE -->|Private Link| PaaS
 ```
 
@@ -144,9 +144,9 @@ App Services und Azure Functions können **ausgehenden Traffic** über ein VNet 
 
 ```mermaid
 graph LR
-    APP[App Service\nFunctions] -->|VNet Integration\nAusgehend| VNET[VNet\nPrivate Resources]
+    APP[App Service Functions] -->|VNet Integration Ausgehend| VNET[VNet Private Resources]
     VNET --> DB[(Private Database)]
-    VNET --> KV[Key Vault\nPrivate Endpoint]
+    VNET --> KV[Key Vault Private Endpoint]
 ```
 
 - **Regional VNet Integration**: App Service im gleichen VNet (kein Gateway nötig)
@@ -200,8 +200,8 @@ resource delegatedSubnet 'Microsoft.Network/virtualNetworks/subnets@2023-09-01' 
 ```mermaid
 graph TD
     VM[VM in VNet] -->|DNS Query| DNS{DNS Resolver}
-    DNS -->|Azure-provided DNS\n168 63 129 16| AZUREDNS[Azure DNS\nPublic + Private Zones]
-    DNS -->|Custom DNS| CUSTOMDNS[Eigener DNS Server\nz.B. Bind, Windows DNS]
+    DNS -->|Azure-provided DNS 168 63 129 16| AZUREDNS[Azure DNS Public + Private Zones]
+    DNS -->|Custom DNS| CUSTOMDNS[Eigener DNS Server z.B. Bind, Windows DNS]
     CUSTOMDNS -->|Conditional Forwarding| AZUREDNS
 ```
 
@@ -284,13 +284,13 @@ Set-AzVirtualNetwork -VirtualNetwork $vnet
 
 ```mermaid
 graph TD
-    VNET[VNet\nz.B. 10 0 0 0/16] --> GW[GatewaySubnet\n10 0 0 0/27\nNUR für VPN/ER Gateway]
-    VNET --> FW[AzureFirewallSubnet\n10 0 1 0/26\nNUR für Azure Firewall]
-    VNET --> BASTION[AzureBastionSubnet\n10 0 2 0/26\nNUR für Bastion]
-    VNET --> APP[App-Tier Subnet\n10 0 10 0/24]
-    VNET --> DATA[Data-Tier Subnet\n10 0 20 0/24]
-    VNET --> PE[Private Endpoint Subnet\n10 0 30 0/24]
-    VNET --> MGT[Management Subnet\n10 0 254 0/24]
+    VNET[VNet z.B. 10 0 0 0/16] --> GW[GatewaySubnet 10 0 0 0/27 NUR für VPN/ER Gateway]
+    VNET --> FW[AzureFirewallSubnet 10 0 1 0/26 NUR für Azure Firewall]
+    VNET --> BASTION[AzureBastionSubnet 10 0 2 0/26 NUR für Bastion]
+    VNET --> APP[App-Tier Subnet 10 0 10 0/24]
+    VNET --> DATA[Data-Tier Subnet 10 0 20 0/24]
+    VNET --> PE[Private Endpoint Subnet 10 0 30 0/24]
+    VNET --> MGT[Management Subnet 10 0 254 0/24]
 ```
 
 | Subnet | Namens-Konvention | Minimale Größe |

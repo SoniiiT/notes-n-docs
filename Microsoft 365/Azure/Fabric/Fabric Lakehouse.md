@@ -31,13 +31,13 @@ Ein **Lakehouse** ist ein Fabric-Item, das zwei Konzepte vereint:
 ```mermaid
 graph TD
     LH[Fabric Lakehouse]
-    LH --> FI[Files-Bereich\nRohdaten beliebig]
-    LH --> TA[Tables-Bereich\nDelta Lake Tabellen]
-    TA --> SAE[SQL Analytics Endpoint\nauto-generiert, read-only]
-    TA --> DS[Default Semantic Model\nauto-generiert für Power BI]
+    LH --> FI[Files-Bereich Rohdaten beliebig]
+    LH --> TA[Tables-Bereich Delta Lake Tabellen]
+    TA --> SAE[SQL Analytics Endpoint auto-generiert, read-only]
+    TA --> DS[Default Semantic Model auto-generiert für Power BI]
     
-    FI --> CSV[CSV JSON\nParquet Bilder etc]
-    FI --> SC[Shortcuts zu\nexternen Quellen]
+    FI --> CSV[CSV JSON Parquet Bilder etc]
+    FI --> SC[Shortcuts zu externen Quellen]
     
     style LH fill:#0078d4,color:#fff
     style SAE fill:#e6f3ff
@@ -197,11 +197,11 @@ Die Medallion-Architektur in Fabric wird typischerweise mit **einem Lakehouse pr
 
 ```mermaid
 graph LR
-    SRC[Quellsystem\nDB CSV API] -->|Rohingest| BR[Bronze Lakehouse\nFiles/ ungefiltert]
-    BR -->|Notebook\nPySpark| SI[Silber Lakehouse\nTables/ bereinigt]
-    SI -->|Notebook\nPySpark| GO[Gold Lakehouse\nTables/ aggregiert]
-    GO --> PBI[Power BI\nDirect Lake]
-    GO --> DW[Fabric Warehouse\nCross-DB Query]
+    SRC[Quellsystem DB CSV API] -->|Rohingest| BR[Bronze Lakehouse Files/ ungefiltert]
+    BR -->|Notebook PySpark| SI[Silber Lakehouse Tables/ bereinigt]
+    SI -->|Notebook PySpark| GO[Gold Lakehouse Tables/ aggregiert]
+    GO --> PBI[Power BI Direct Lake]
+    GO --> DW[Fabric Warehouse Cross-DB Query]
     
     style BR fill:#cd7f32,color:#fff
     style SI fill:#a8a8a8
@@ -327,9 +327,9 @@ Shortcuts können sowohl im `Files/`- als auch im `Tables/`-Bereich erstellt wer
 ```mermaid
 graph LR
     LH[Lokales Lakehouse]
-    LH -->|Shortcut Tables| EXT1[Externes ADLS Gen2\nDelta-Tabellen]
-    LH -->|Shortcut Files| EXT2[AWS S3\nParquet-Dateien]
-    LH -->|Shortcut Tables| OL2[Anderes Lakehouse\nim Tenant]
+    LH -->|Shortcut Tables| EXT1[Externes ADLS Gen2 Delta-Tabellen]
+    LH -->|Shortcut Files| EXT2[AWS S3 Parquet-Dateien]
+    LH -->|Shortcut Tables| OL2[Anderes Lakehouse im Tenant]
     
     EXT1 -->|erscheint als| LH
     EXT2 -->|erscheint als| LH

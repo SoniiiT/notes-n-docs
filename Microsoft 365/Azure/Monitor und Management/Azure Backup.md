@@ -40,7 +40,7 @@ graph TD
     C --> I[Azure Blobs]
     C --> J[Azure Disks]
     C --> K[AKS Cluster]
-    C --> L[Azure Database\nfor PostgreSQL]
+    C --> L[Azure Database for PostgreSQL]
 ```
 
 ---
@@ -114,14 +114,14 @@ az dataprotection backup-vault create \
 
 ```mermaid
 graph LR
-    A[Backup Policy] --> B[Daily\ntäglich]
-    A --> C[Weekly\nwöchentlich]
-    A --> D[Monthly\nmonatlich]
-    A --> E[Yearly\njährlich]
-    B --> F[Retention\nz.B. 30 Tage]
-    C --> G[Retention\nz.B. 12 Wochen]
-    D --> H[Retention\nz.B. 60 Monate]
-    E --> I[Retention\nz.B. 10 Jahre]
+    A[Backup Policy] --> B[Daily täglich]
+    A --> C[Weekly wöchentlich]
+    A --> D[Monthly monatlich]
+    A --> E[Yearly jährlich]
+    B --> F[Retention z.B. 30 Tage]
+    C --> G[Retention z.B. 12 Wochen]
+    D --> H[Retention z.B. 60 Monate]
+    E --> I[Retention z.B. 10 Jahre]
 ```
 
 ### VM-Backup-Policy erstellen (PowerShell)
@@ -228,9 +228,9 @@ Der **Microsoft Azure Recovery Services (MARS) Agent** sichert **Dateien, Ordner
 ```mermaid
 graph LR
     A[On-Prem Windows Server] --> B[MARS Agent]
-    B --> C[Recovery Services Vault\nAzure]
-    C --> D[Lokale Sicherungen\nDateien und Ordner]
-    C --> E[System State\nBare Metal Recovery]
+    B --> C[Recovery Services Vault Azure]
+    C --> D[Lokale Sicherungen Dateien und Ordner]
+    C --> E[System State Bare Metal Recovery]
 ```
 
 ### MARS Agent vs. MABS vs. DPM
@@ -265,10 +265,10 @@ Set-AzRecoveryServicesBackupProperty `
 
 ```mermaid
 graph LR
-    A[Primäre Region\nWest Europe] --> B[Recovery Services Vault\nGRS aktiviert]
+    A[Primäre Region West Europe] --> B[Recovery Services Vault GRS aktiviert]
     B --> C[Automatische Replikation]
-    C --> D[Sekundäre Region\nNorth Europe]
-    D --> E[Cross-Region Restore\nbei Ausfall]
+    C --> D[Sekundäre Region North Europe]
+    D --> E[Cross-Region Restore bei Ausfall]
 ```
 
 > [!WARNING]
@@ -284,11 +284,11 @@ Soft Delete schützt Backup-Daten **14 Tage nach dem Löschen** vor versehentlic
 
 ```mermaid
 graph TD
-    A[Backup-Schutz deaktivieren\nund Daten löschen] --> B[Soft-Delete-Status:\n14 Tage aufbewahrt]
+    A[Backup-Schutz deaktivieren und Daten löschen] --> B[Soft-Delete-Status: 14 Tage aufbewahrt]
     B --> C{Innerhalb 14 Tage?}
-    C -- Ja --> D[Wiederherstellen\nmöglich]
+    C -- Ja --> D[Wiederherstellen möglich]
     C -- Nein --> E[Permanentes Löschen]
-    D --> F[Backup-Schutz\nwieder aktiv]
+    D --> F[Backup-Schutz wieder aktiv]
 ```
 
 ```powershell

@@ -77,16 +77,16 @@ Hybrid-Lösung: On-Premises Server + Azure Files als Cloud-Backend mit Cloud Tie
 ```mermaid
 graph LR
     subgraph OnPrem[On-Premises]
-        FS1[Dateiserver 1\nWindows Server]
-        FS2[Dateiserver 2\nWindows Server]
-        Agent1[Azure File Sync\nAgent]
-        Agent2[Azure File Sync\nAgent]
+        FS1[Dateiserver 1 Windows Server]
+        FS2[Dateiserver 2 Windows Server]
+        Agent1[Azure File Sync Agent]
+        Agent2[Azure File Sync Agent]
     end
 
     subgraph Azure[Azure]
         SS[Storage Sync Service]
         SG[Sync Gruppe]
-        AF[Azure File Share\nCloud Endpoint]
+        AF[Azure File Share Cloud Endpoint]
     end
 
     FS1 --> Agent1

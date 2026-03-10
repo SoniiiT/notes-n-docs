@@ -28,10 +28,10 @@ Application Gateway ist ein **regionaler Layer-7 Load Balancer** für HTTP/HTTPS
 
 ```mermaid
 graph LR
-    CLIENT[Clients] -->|HTTPS 443| AGW[Application Gateway\nWAF V2]
-    AGW -->|URL /api| API[API Backend\n10 0 10 4-6]
-    AGW -->|URL /| WEB[Web Backend\n10 0 20 4-6]
-    AGW -->|Host app2.de| APP2[App2 Backend\n10 0 30 4-6]
+    CLIENT[Clients] -->|HTTPS 443| AGW[Application Gateway WAF V2]
+    AGW -->|URL /api| API[API Backend 10 0 10 4-6]
+    AGW -->|URL /| WEB[Web Backend 10 0 20 4-6]
+    AGW -->|Host app2.de| APP2[App2 Backend 10 0 30 4-6]
 ```
 
 **Hauptfeatures:**
@@ -65,8 +65,8 @@ graph LR
     REQ[HTTP Request] --> WAF{WAF Inspection}
     WAF -->|Sauber| APP[Backend Application]
     WAF -->|OWASP-Treffer| ACTION{Mode?}
-    ACTION -->|Detection| LOG[Nur loggen\nkein Block]
-    ACTION -->|Prevention| BLOCK[Request blockieren\n403 Forbidden]
+    ACTION -->|Detection| LOG[Nur loggen kein Block]
+    ACTION -->|Prevention| BLOCK[Request blockieren 403 Forbidden]
 ```
 
 ### OWASP Core Rule Set
@@ -134,11 +134,11 @@ $exclusion = New-AzApplicationGatewayFirewallExclusion `
 
 ```mermaid
 graph TD
-    CLIENT[Client Request] --> LISTENER[Listener\nPort + Hostname + SSL]
-    LISTENER --> RULE[Routing Rule\nBasic oder Path-based]
-    RULE --> BPOOL[Backend Pool\nVMs, VMSS, IPs, FQDNs]
-    RULE --> HTTPSETTING[HTTP Setting\nPort, Protocol, Probe, Cookie-Affinity]
-    HTTPSETTING --> PROBE[Health Probe\nPfad, Intervall, Threshold]
+    CLIENT[Client Request] --> LISTENER[Listener Port + Hostname + SSL]
+    LISTENER --> RULE[Routing Rule Basic oder Path-based]
+    RULE --> BPOOL[Backend Pool VMs, VMSS, IPs, FQDNs]
+    RULE --> HTTPSETTING[HTTP Setting Port, Protocol, Probe, Cookie-Affinity]
+    HTTPSETTING --> PROBE[Health Probe Pfad, Intervall, Threshold]
 ```
 
 ### Listeners
@@ -228,9 +228,9 @@ $pathMap = New-AzApplicationGatewayUrlPathMapConfig `
 
 ```mermaid
 graph LR
-    CLIENT[Client] -->|HTTPS 443| AGW[Application Gateway\nSSL terminiert hier]
-    AGW -->|HTTP 80| BE1[Backend 1\nSSL-Offloading]
-    AGW -->|HTTPS 443| BE2[Backend 2\nEnd-to-End SSL]
+    CLIENT[Client] -->|HTTPS 443| AGW[Application Gateway SSL terminiert hier]
+    AGW -->|HTTP 80| BE1[Backend 1 SSL-Offloading]
+    AGW -->|HTTPS 443| BE2[Backend 2 End-to-End SSL]
 ```
 
 | Modus | Gateway → Backend | Anwendungsfall |
@@ -290,7 +290,7 @@ graph LR
     INT[Internet] -->|HTTPS| AGW[Application Gateway]
     AGW -->|HTTP| POD1[Kubernetes Pod 1]
     AGW -->|HTTP| POD2[Kubernetes Pod 2]
-    AGIC[AGIC Controller\nim AKS Cluster] -.->|Konfiguriert| AGW
+    AGIC[AGIC Controller im AKS Cluster] -.->|Konfiguriert| AGW
 ```
 
 ```bash

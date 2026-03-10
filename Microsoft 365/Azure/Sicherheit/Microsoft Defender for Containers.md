@@ -39,17 +39,17 @@ Defender for Containers arbeitet auf drei unabhängigen, sich ergänzenden Ebene
 
 ```mermaid
 graph TD
-    A["Container-Image\nwird gebaut"] --> B["Registry\nACR / ECR / Artifact Registry"]
-    B --> C{"Image Scan\nVulnerability Assessment"}
-    C -->|"Kritische CVEs gefunden"| D["Alert:\nImage Vulnerabilities"]
-    C -->|"Sauber"| E["Deployment\nauf Kubernetes"]
-    E --> F["Cluster-Ebene\nAKS / EKS / GKE"]
-    F --> G["Admission Controller\nOPA Gatekeeper"]
-    F --> H["Runtime Protection\nDefender Sensor"]
-    F --> I["Posture Management\nCIS Benchmarks"]
-    G -->|"Policy verletzt"| L["Deployment\nblockiert"]
-    H --> J["Alert:\nRuntime Threats"]
-    I --> K["Alert:\nMisconfiguration"]
+    A["Container-Image wird gebaut"] --> B["Registry ACR / ECR / Artifact Registry"]
+    B --> C{"Image Scan Vulnerability Assessment"}
+    C -->|"Kritische CVEs gefunden"| D["Alert: Image Vulnerabilities"]
+    C -->|"Sauber"| E["Deployment auf Kubernetes"]
+    E --> F["Cluster-Ebene AKS / EKS / GKE"]
+    F --> G["Admission Controller OPA Gatekeeper"]
+    F --> H["Runtime Protection Defender Sensor"]
+    F --> I["Posture Management CIS Benchmarks"]
+    G -->|"Policy verletzt"| L["Deployment blockiert"]
+    H --> J["Alert: Runtime Threats"]
+    I --> K["Alert: Misconfiguration"]
 ```
 
 ### Übersicht der Schutzebenen
@@ -262,12 +262,12 @@ Defender for Containers schützt nicht nur Azure-native Workloads. Über **Azure
 
 ```mermaid
 graph LR
-    A["AKS\nAzure"] --> D["Defender for Cloud\nZentrales Dashboard"]
-    B["EKS\nAWS via Arc"] --> D
-    C["GKE\nGCP via Arc"] --> D
-    D --> E["Unified Alerts\nXDR und Sentinel"]
-    D --> F["Unified Posture\nRecommendations"]
-    D --> G["Image Scanning\nMDVM"]
+    A["AKS Azure"] --> D["Defender for Cloud Zentrales Dashboard"]
+    B["EKS AWS via Arc"] --> D
+    C["GKE GCP via Arc"] --> D
+    D --> E["Unified Alerts XDR und Sentinel"]
+    D --> F["Unified Posture Recommendations"]
+    D --> G["Image Scanning MDVM"]
 ```
 
 ### EKS-Cluster via Azure Arc einbinden

@@ -29,14 +29,14 @@ AUM kommuniziert direkt über den **Azure VM Agent** bzw. den **Arc Agent** – 
 
 ```mermaid
 graph TD
-    A[Azure Portal\nAzure Update Manager] --> B{Ressourcentyp}
-    B --> C[Azure VM\nWindows/Linux]
-    B --> D[Arc-fähiger Server\nOn-Prem/andere Cloud]
-    B --> E[AVS VM\nvia Arc]
+    A[Azure Portal Azure Update Manager] --> B{Ressourcentyp}
+    B --> C[Azure VM Windows/Linux]
+    B --> D[Arc-fähiger Server On-Prem/andere Cloud]
+    B --> E[AVS VM via Arc]
     C --> F[Azure VM Agent]
     D --> G[Arc Agent]
     E --> G
-    F --> H[Update Assessment\nund Patching]
+    F --> H[Update Assessment und Patching]
     G --> H
 ```
 
@@ -134,10 +134,10 @@ Maintenance Configurations definieren **geplante Wartungsfenster** für automati
 ```mermaid
 graph LR
     A[Maintenance Configuration] --> B[Scope: Guest OS Update]
-    B --> C[Zeitplan\nDaily/Weekly/Monthly]
-    C --> D[Dauer\nmin 1h 30min]
-    D --> E[Zugeordnete VMs\nund Arc-Server]
-    E --> F[Automatisches Patching\nim Fenster]
+    B --> C[Zeitplan Daily/Weekly/Monthly]
+    C --> D[Dauer min 1h 30min]
+    D --> E[Zugeordnete VMs und Arc-Server]
+    E --> F[Automatisches Patching im Fenster]
 ```
 
 ### Maintenance Configuration erstellen
@@ -232,13 +232,13 @@ az vm install-patches \
 
 ```mermaid
 graph TD
-    A[Customer Managed Schedule] --> B[Maintenance Configuration\ngeplantes Fenster]
-    B --> C{VM Patch\nOrchestration}
-    C --> D[AutomaticByPlatform\n+ BypassPlatformSafetyChecksOnUserSchedule]
-    D --> E[Patching erfolgt\nim definierten Fenster]
-    E --> F[Pre-Maintenance Script\noptional]
+    A[Customer Managed Schedule] --> B[Maintenance Configuration geplantes Fenster]
+    B --> C{VM Patch Orchestration}
+    C --> D[AutomaticByPlatform + BypassPlatformSafetyChecksOnUserSchedule]
+    D --> E[Patching erfolgt im definierten Fenster]
+    E --> F[Pre-Maintenance Script optional]
     F --> G[Update Installation]
-    G --> H[Post-Maintenance Script\noptional]
+    G --> H[Post-Maintenance Script optional]
 ```
 
 ```powershell
@@ -401,9 +401,9 @@ Azure Update Manager lässt sich mit **Change Tracking and Inventory** kombinier
 
 ```mermaid
 graph LR
-    A[Change Tracking\nInventory] -- Baseline vor Patch --> B[Azure Update Manager]
-    B -- Updates installiert --> C[Change Tracking\nPost-Patch Vergleich]
-    C --> D[Änderungsbericht\nin Azure Monitor]
+    A[Change Tracking Inventory] -- Baseline vor Patch --> B[Azure Update Manager]
+    B -- Updates installiert --> C[Change Tracking Post-Patch Vergleich]
+    C --> D[Änderungsbericht in Azure Monitor]
 ```
 
 ---

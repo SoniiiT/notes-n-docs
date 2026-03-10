@@ -16,12 +16,12 @@ APIM ist die **zentrale API-Plattform** in der Azure Integration Services-Famili
 
 ```mermaid
 flowchart LR
-    C[API Client\nApp/Browser] --> GW[APIM Gateway]
-    GW --> B1[Backend 1\nAzure Functions]
-    GW --> B2[Backend 2\nApp Service]
-    GW --> B3[Backend 3\nOn-Prem API]
-    DEV[Developer Portal\nDokumentation] --> GW
-    MGMT[Management Plane\nPortal/ARM/REST] --> GW
+    C[API Client App/Browser] --> GW[APIM Gateway]
+    GW --> B1[Backend 1 Azure Functions]
+    GW --> B2[Backend 2 App Service]
+    GW --> B3[Backend 3 On-Prem API]
+    DEV[Developer Portal Dokumentation] --> GW
+    MGMT[Management Plane Portal/ARM/REST] --> GW
 ```
 
 ---
@@ -98,12 +98,12 @@ Policies sind das Herzstück von APIM. Sie werden als XML-Dokument definiert und
 
 ```mermaid
 flowchart LR
-    REQ[Client\nRequest] --> IB[Inbound\nPolicies]
-    IB --> BE[Backend\nPolicies]
-    BE --> BK[Backend\nService]
-    BK --> OB[Outbound\nPolicies]
-    OB --> RES[Client\nResponse]
-    IB -- Fehler --> ERR[Error\nPolicies]
+    REQ[Client Request] --> IB[Inbound Policies]
+    IB --> BE[Backend Policies]
+    BE --> BK[Backend Service]
+    BK --> OB[Outbound Policies]
+    OB --> RES[Client Response]
+    IB -- Fehler --> ERR[Error Policies]
     BE -- Fehler --> ERR
     OB -- Fehler --> ERR
 ```
@@ -173,9 +173,9 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    P[Produkt\nz.B. Starter/Unlimited] --> API1[API 1]
+    P[Produkt z.B. Starter/Unlimited] --> API1[API 1]
     P --> API2[API 2]
-    U[Benutzer/App] --> S[Subscription\nAPI Key]
+    U[Benutzer/App] --> S[Subscription API Key]
     S --> P
 ```
 
@@ -303,11 +303,11 @@ APIM unterstützt **Backend-Entitäten** für zentrales Management:
 
 ```mermaid
 flowchart LR
-    Internet[Internet\nClients] --> PIP[Public IP\nAPIM External]
-    PIP --> APIM[APIM\nVNet Injected]
-    APIM --> VNet[VNet\nPrivate Subnet]
-    VNet --> Backend[Private\nBackend Service]
-    Corp[Corporate\nNetz VPN] --> APIM
+    Internet[Internet Clients] --> PIP[Public IP APIM External]
+    PIP --> APIM[APIM VNet Injected]
+    APIM --> VNet[VNet Private Subnet]
+    VNet --> Backend[Private Backend Service]
+    Corp[Corporate Netz VPN] --> APIM
 ```
 
 ---

@@ -28,15 +28,15 @@ Customer Insights besteht aus zwei eng verzahnten Modulen:
 
 ```mermaid
 graph TD
-    CID[Customer Insights - Data\nCDP] --> UCP[Unified\nCustomer Profile]
-    CIJ[Customer Insights - Journeys\nehem. Dynamics 365 Marketing] --> UCP
+    CID[Customer Insights - Data CDP] --> UCP[Unified Customer Profile]
+    CIJ[Customer Insights - Journeys ehem. Dynamics 365 Marketing] --> UCP
     UCP --> SEG[Segmentierung]
-    UCP --> AI[KI-Vorhersagen\nChurn, LTV, Empfehlungen]
-    UCP --> JOR[Journey\nOrchestration]
+    UCP --> AI[KI-Vorhersagen Churn, LTV, Empfehlungen]
+    UCP --> JOR[Journey Orchestration]
     JOR --> EMAIL[E-Mail]
     JOR --> SMS[SMS]
-    JOR --> PUSH[Push\nNotification]
-    JOR --> ADS[Werbung\nLinkedIn, Google]
+    JOR --> PUSH[Push Notification]
+    JOR --> ADS[Werbung LinkedIn, Google]
 ```
 
 ---
@@ -62,12 +62,12 @@ Das Unified Customer Profile führt alle Kundendaten in einem 360°-Profil zusam
 
 ```mermaid
 graph LR
-    CRM[CRM-Daten\nD365 Sales] --> MATCH[Identity\nResolution]
-    EML[E-Mail-Daten\nMailchimp] --> MATCH
-    WEB[Web-Daten\nCookies, Sessions] --> MATCH
-    LOYAL[Loyalty-Daten\nTreuepunkte] --> MATCH
-    POS[POS-Daten\nKassensystem] --> MATCH
-    MATCH -->|Deduplizierung| UCP[Unified\nCustomer Profile]
+    CRM[CRM-Daten D365 Sales] --> MATCH[Identity Resolution]
+    EML[E-Mail-Daten Mailchimp] --> MATCH
+    WEB[Web-Daten Cookies, Sessions] --> MATCH
+    LOYAL[Loyalty-Daten Treuepunkte] --> MATCH
+    POS[POS-Daten Kassensystem] --> MATCH
+    MATCH -->|Deduplizierung| UCP[Unified Customer Profile]
 ```
 
 **Identity Resolution:**
@@ -151,11 +151,11 @@ Nutzung: Identifikation inaktiver Kunden
 
 ```mermaid
 graph LR
-    DATA[Historische\nKaufdaten] --> MODEL[AutoML\nChurn-Modell]
-    FEAT[Features\nKauffrequenz, Betraege] --> MODEL
-    MODEL -->|Training abgeschlossen| SCORE[Churn-Score\nje Kunde]
-    SCORE --> SEG2[Segment:\nHohes Churn-Risiko]
-    SEG2 --> JRN[Re-Engagement\nJourney]
+    DATA[Historische Kaufdaten] --> MODEL[AutoML Churn-Modell]
+    FEAT[Features Kauffrequenz, Betraege] --> MODEL
+    MODEL -->|Training abgeschlossen| SCORE[Churn-Score je Kunde]
+    SCORE --> SEG2[Segment: Hohes Churn-Risiko]
+    SEG2 --> JRN[Re-Engagement Journey]
 ```
 
 ---
@@ -176,13 +176,13 @@ Real-time Journeys (ehemals Dynamics 365 Marketing) ermöglicht automatisierte, 
 
 ```mermaid
 graph TD
-    TRIG[Trigger:\nKonto erstellt] --> WAIT1[Warten\n30 Minuten]
-    WAIT1 --> EMAIL1[E-Mail:\nWillkommen senden]
-    EMAIL1 --> IF1{E-Mail\ngeöffnet?}
-    IF1 -->|Ja| WAIT2[Warten\n2 Tage]
-    IF1 -->|Nein| EMAIL2[E-Mail:\nErinnerung senden]
-    WAIT2 --> SMS1[SMS:\nOnboarding-Tipp]
-    EMAIL2 --> EXIT1[Exit:\nInaktiv]
+    TRIG[Trigger: Konto erstellt] --> WAIT1[Warten 30 Minuten]
+    WAIT1 --> EMAIL1[E-Mail: Willkommen senden]
+    EMAIL1 --> IF1{E-Mail geöffnet?}
+    IF1 -->|Ja| WAIT2[Warten 2 Tage]
+    IF1 -->|Nein| EMAIL2[E-Mail: Erinnerung senden]
+    WAIT2 --> SMS1[SMS: Onboarding-Tipp]
+    EMAIL2 --> EXIT1[Exit: Inaktiv]
 ```
 
 ### Unterstützte Kanäle
@@ -271,7 +271,7 @@ graph LR
     CI[Customer Insights] -->|Segmente exportieren| SFMC[Salesforce MC]
     CI -->|Audiences| LI[LinkedIn Ads]
     CI -->|Audiences| GOOGLE[Google Ads]
-    CI -->|API| CUSTOM[Eigene\nSysteme]
+    CI -->|API| CUSTOM[Eigene Systeme]
     CI -->|Synapse Link| ADL[Azure Data Lake]
 ```
 

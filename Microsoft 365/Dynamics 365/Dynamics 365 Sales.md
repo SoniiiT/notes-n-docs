@@ -26,10 +26,10 @@ Der typische Vertriebsprozess in Dynamics 365 Sales folgt einem strukturierten F
 
 ```mermaid
 graph LR
-    L[Lead\nInteresse erfasst] -->|Qualifizieren| OP[Opportunity\nVerkaufschance]
-    OP -->|Angebot erstellen| QU[Quote\nAngebot]
-    QU -->|Akzeptiert| OR[Order\nBestellung]
-    OR -->|Geliefert| IN[Invoice\nRechnung]
+    L[Lead Interesse erfasst] -->|Qualifizieren| OP[Opportunity Verkaufschance]
+    OP -->|Angebot erstellen| QU[Quote Angebot]
+    QU -->|Akzeptiert| OR[Order Bestellung]
+    OR -->|Geliefert| IN[Invoice Rechnung]
     L -->|Nicht qualifiziert| DQ[Disqualifiziert]
     OP -->|Verloren| WL[Won / Lost]
 ```
@@ -74,10 +74,10 @@ Relationship Intelligence nutzt Daten aus Outlook, Teams und LinkedIn, um Bezieh
 
 ```mermaid
 graph TD
-    RS[Relationship\nHealth Score] --> EM[E-Mail-Aktivität\nHäufigkeit, Antwortzeit]
-    RS --> ME[Meeting-Aktivität\nAnzahl, Regelmäßigkeit]
-    RS --> LI[LinkedIn-Signale\nVerbindungen, Aktivität]
-    RS --> TE[Teams-Kommunikation\nChats, Calls]
+    RS[Relationship Health Score] --> EM[E-Mail-Aktivität Häufigkeit, Antwortzeit]
+    RS --> ME[Meeting-Aktivität Anzahl, Regelmäßigkeit]
+    RS --> LI[LinkedIn-Signale Verbindungen, Aktivität]
+    RS --> TE[Teams-Kommunikation Chats, Calls]
 ```
 
 **Score-Kategorien:**
@@ -99,10 +99,10 @@ Sequences sind vordefinierte Aktivitätsketten, die Verkäufer durch einen struk
 
 ```mermaid
 graph TD
-    S1[Tag 1\nEinführungs-E-Mail senden] --> S2[Tag 3\nAnruf versuchen]
-    S2 --> S3[Tag 5\nLinkedIn-Nachricht]
-    S3 --> S4[Tag 7\nFollow-up E-Mail]
-    S4 --> S5[Tag 10\nManager-Eskalation]
+    S1[Tag 1 Einführungs-E-Mail senden] --> S2[Tag 3 Anruf versuchen]
+    S2 --> S3[Tag 5 LinkedIn-Nachricht]
+    S3 --> S4[Tag 7 Follow-up E-Mail]
+    S4 --> S5[Tag 10 Manager-Eskalation]
     S2 -->|Anruf erfolgreich| S6[Meeting buchen]
 ```
 
@@ -215,9 +215,9 @@ Gebietsmanagement ermöglicht:
 ```mermaid
 graph LR
     D365[D365 Sales] -->|Embedded App| TEAMS[Microsoft Teams]
-    TEAMS -->|Sales Workspace| SW[Deals, Kontakte\ndirekt in Teams]
-    TEAMS -->|Conversation\nIntelligence| CI[Anruf-Analyse]
-    TEAMS -->|Collaborative\nSelling| CS[Kollegen einladen]
+    TEAMS -->|Sales Workspace| SW[Deals, Kontakte direkt in Teams]
+    TEAMS -->|Conversation Intelligence| CI[Anruf-Analyse]
+    TEAMS -->|Collaborative Selling| CS[Kollegen einladen]
 ```
 
 **Teams-Features:**

@@ -28,10 +28,10 @@ aliases:
 ```mermaid
 graph TD
     subgraph Kubernetes Cluster
-        ADC[Arc Data Controller\nKubernetes Operator]
-        SQLMI[SQL Managed Instance\nals Kubernetes Pod]
-        PG[PostgreSQL\nals Kubernetes Pod]
-        PVC[Persistent Volume Claims\nStorage]
+        ADC[Arc Data Controller Kubernetes Operator]
+        SQLMI[SQL Managed Instance als Kubernetes Pod]
+        PG[PostgreSQL als Kubernetes Pod]
+        PVC[Persistent Volume Claims Storage]
     end
 
     subgraph Azure
@@ -69,9 +69,9 @@ graph TD
 graph LR
     subgraph BusinessCritical
         PRIMARY[Primary Replica]
-        SEC1[Secondary Replica 1\nlesbar]
-        SEC2[Secondary Replica 2\nlesbar]
-        LISTENER[Availability Group\nListener]
+        SEC1[Secondary Replica 1 lesbar]
+        SEC2[Secondary Replica 2 lesbar]
+        LISTENER[Availability Group Listener]
     end
 
     CLIENT[Anwendung] --> LISTENER
@@ -163,10 +163,10 @@ Der **Arc Data Controller** ist der zentrale Kubernetes-Operator, der alle Arc-D
 ```mermaid
 graph TD
     subgraph arc-namespace
-        CTRL[Arc Data Controller\nKubernetes Deployment]
-        MONITOR_SVC[Monitoring Service\nKibana Grafana]
-        LOG_SVC[Log Service\nElasticSearch]
-        DB_SVC[Database Controller\nPostgreSQL intern]
+        CTRL[Arc Data Controller Kubernetes Deployment]
+        MONITOR_SVC[Monitoring Service Kibana Grafana]
+        LOG_SVC[Log Service ElasticSearch]
+        DB_SVC[Database Controller PostgreSQL intern]
     end
 
     subgraph Kubernetes
@@ -256,7 +256,7 @@ graph TD
 
     subgraph Indirect Connected Mode
         INDIRECT_CTRL[Data Controller]
-        EXPORT[Manueller Export\nUsage Logs Metrics]
+        EXPORT[Manueller Export Usage Logs Metrics]
         INDIRECT_AZURE[Azure ARM]
         INDIRECT_CTRL --> EXPORT
         EXPORT -->|Periodisch Upload| INDIRECT_AZURE
@@ -304,11 +304,11 @@ Der **Business Critical**-Tier nutzt **SQL Server Always On Availability Groups*
 ```mermaid
 graph TD
     CLIENT[Anwendung]
-    LB[Kubernetes Load Balancer\nService]
-    PRIMARY[Primary\nRead Write]
-    SEC1[Secondary 1\nReadOnly]
-    SEC2[Secondary 2\nReadOnly]
-    BACKUP[Backup\nOptional]
+    LB[Kubernetes Load Balancer Service]
+    PRIMARY[Primary Read Write]
+    SEC1[Secondary 1 ReadOnly]
+    SEC2[Secondary 2 ReadOnly]
+    BACKUP[Backup Optional]
 
     CLIENT -->|Schreiben| LB
     LB --> PRIMARY
@@ -330,9 +330,9 @@ graph TD
 graph TD
     SQLMI[Arc SQL MI]
     VCORES[vCore-Konfiguration]
-    TIER[Service Tier\nGP oder BC]
+    TIER[Service Tier GP oder BC]
     LICENSE[Lizenzmodell]
-    BILLING[Stündliche Abrechnung\nin Azure]
+    BILLING[Stündliche Abrechnung in Azure]
 
     SQLMI --> VCORES
     SQLMI --> TIER
@@ -357,11 +357,11 @@ graph TD
 
 ```mermaid
 graph LR
-    FACTORY[Fabrikhalle\nkeine Internet-Verbindung]
-    K8S_EDGE[Kubernetes\nEdge Cluster]
-    ADC[Arc Data Controller\nIndirect Mode]
+    FACTORY[Fabrikhalle keine Internet-Verbindung]
+    K8S_EDGE[Kubernetes Edge Cluster]
+    ADC[Arc Data Controller Indirect Mode]
     SQLMI[SQL MI]
-    PERIODIC[Periodischer Upload\nUSB oder VPN]
+    PERIODIC[Periodischer Upload USB oder VPN]
     AZURE[Azure Billing]
 
     FACTORY --> K8S_EDGE

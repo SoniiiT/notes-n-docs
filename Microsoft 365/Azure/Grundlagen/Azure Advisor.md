@@ -39,11 +39,11 @@ aliases:
 
 ```mermaid
 graph TD
-    ADV[Azure Advisor] --> COST[Cost\nKosten sparen]
-    ADV --> SEC[Security\nSicherheit verbessern]
-    ADV --> REL[Reliability\nVerfügbarkeit erhöhen]
-    ADV --> OPS[Operational Excellence\nBetrieb optimieren]
-    ADV --> PERF[Performance\nLeistung steigern]
+    ADV[Azure Advisor] --> COST[Cost Kosten sparen]
+    ADV --> SEC[Security Sicherheit verbessern]
+    ADV --> REL[Reliability Verfügbarkeit erhöhen]
+    ADV --> OPS[Operational Excellence Betrieb optimieren]
+    ADV --> PERF[Performance Leistung steigern]
 ```
 
 | Kategorie | Deutsch | Fokus | Datenquelle |
@@ -201,11 +201,11 @@ New-AzActivityLogAlert `
 
 ```mermaid
 graph LR
-    ADV[Azure Advisor] --> DEFENDER[Microsoft Defender\nfor Cloud\nSecurity-Empfehlungen]
-    ADV --> MONITOR[Azure Monitor\nAlerting-Integration]
-    ADV --> COST[Azure Cost Management\nCost-Empfehlungen]
-    ADV --> POLICY[Azure Policy\nCompliance-Empfehlungen]
-    ADV --> WAF[Well-Architected\nFramework\nAssessment-Grundlage]
+    ADV[Azure Advisor] --> DEFENDER[Microsoft Defender for Cloud Security-Empfehlungen]
+    ADV --> MONITOR[Azure Monitor Alerting-Integration]
+    ADV --> COST[Azure Cost Management Cost-Empfehlungen]
+    ADV --> POLICY[Azure Policy Compliance-Empfehlungen]
+    ADV --> WAF[Well-Architected Framework Assessment-Grundlage]
 ```
 
 - **Microsoft Defender for Cloud:** Security-Empfehlungen in Advisor werden von Defender gespeist

@@ -266,13 +266,13 @@ WHERE Room.$dtId = 'room-101'
 ```mermaid
 graph LR
     Dev["IoT-Geraet"] -->|MQTT/AMQP/HTTPS| IH["IoT Hub"]
-    IH -->|Event-Trigger| AF1["Azure Function\nDevice-to-ADT"]
-    AF1 -->|REST API| ADT["Azure\nDigital Twins"]
+    IH -->|Event-Trigger| AF1["Azure Function Device-to-ADT"]
+    AF1 -->|REST API| ADT["Azure Digital Twins"]
     ADT -->|Event Routes| EG["Event Grid"]
-    EG -->|Trigger| AF2["Azure Function\nPropagation"]
+    EG -->|Trigger| AF2["Azure Function Propagation"]
     AF2 -->|Update| ADT
-    EG -->|Trigger| AF3["Azure Function\nDownstream"]
-    AF3 -->|Ingest| RTI["Real-Time\nIntelligence"]
+    EG -->|Trigger| AF3["Azure Function Downstream"]
+    AF3 -->|Ingest| RTI["Real-Time Intelligence"]
     AF3 -->|Ingest| Maps["Azure Maps"]
     AF3 -->|Ingest| SA["Stream Analytics"]
 ```

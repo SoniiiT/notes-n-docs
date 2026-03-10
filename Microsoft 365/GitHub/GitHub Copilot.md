@@ -31,19 +31,19 @@ Copilot basiert auf einer Kombination aus:
 
 ```mermaid
 flowchart LR
-    A([Entwickler\nschreibt Code]) --> B[IDE Plugin\nsammelt Kontext]
+    A([Entwickler schreibt Code]) --> B[IDE Plugin sammelt Kontext]
     B --> C{Kontext-Typen}
-    C --> D[Aktuelle Datei\nund Cursor]
-    C --> E[Geöffnete Tabs\nund Imports]
-    C --> F[Workspace-\nMetadaten]
-    D --> G[Copilot Service\nGitHub Cloud]
+    C --> D[Aktuelle Datei und Cursor]
+    C --> E[Geöffnete Tabs und Imports]
+    C --> F[Workspace- Metadaten]
+    D --> G[Copilot Service GitHub Cloud]
     E --> G
     F --> G
-    G --> H[LLM\nGPT-4 / Codex]
-    H --> I[Vorschlag\ngenerieren]
-    I --> J[Sicherheits-\nfilter]
-    J --> K([Ghost Text\nim Editor])
-    K -->|Tab drücken| L([Code\nakzeptiert])
+    G --> H[LLM GPT-4 / Codex]
+    H --> I[Vorschlag generieren]
+    I --> J[Sicherheits- filter]
+    J --> K([Ghost Text im Editor])
+    K -->|Tab drücken| L([Code akzeptiert])
     K -->|Ignorieren| A
 ```
 
@@ -320,14 +320,14 @@ Copilot Workspace ist eine vollständig KI-gestützte Entwicklungsumgebung für 
 
 ```mermaid
 flowchart LR
-    A([GitHub Issue\noder Aufgabe]) --> B[Copilot analysiert\nAnforderungen]
-    B --> C[Plan erstellen\nDateiliste und Änderungen]
-    C --> D{Entwickler\nprüft Plan}
+    A([GitHub Issue oder Aufgabe]) --> B[Copilot analysiert Anforderungen]
+    B --> C[Plan erstellen Dateiliste und Änderungen]
+    C --> D{Entwickler prüft Plan}
     D -->|anpassen| C
-    D -->|genehmigen| E[Code generieren\nDatei für Datei]
-    E --> F[Terminal und Tests\nausführen]
-    F --> G[Pull Request\nautomatisch erstellen]
-    G --> H([Code Review\nund Merge])
+    D -->|genehmigen| E[Code generieren Datei für Datei]
+    E --> F[Terminal und Tests ausführen]
+    F --> G[Pull Request automatisch erstellen]
+    G --> H([Code Review und Merge])
 ```
 
 **Kernfunktionen:**

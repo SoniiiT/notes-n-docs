@@ -18,17 +18,17 @@ Event Hubs ist das **Streaming-Rückgrat** in Azure – konzipiert für **massiv
 flowchart LR
     subgraph Produzenten
         D1[IoT Devices]
-        D2[Web Apps\nClick Events]
-        D3[Microservices\nLogs]
+        D2[Web Apps Click Events]
+        D3[Microservices Logs]
     end
     subgraph Event Hubs Namespace
-        EH[Event Hub\nPartitionierter Stream]
+        EH[Event Hub Partitionierter Stream]
     end
     subgraph Konsumenten
-        SA[Stream Analytics\nEchtzeit-Analyse]
-        FA[Azure Functions\nVerarbeitung]
-        ADLS[ADLS Gen2\nCapture/Archiv]
-        FAB[Fabric RTI\nDashboard]
+        SA[Stream Analytics Echtzeit-Analyse]
+        FA[Azure Functions Verarbeitung]
+        ADLS[ADLS Gen2 Capture/Archiv]
+        FAB[Fabric RTI Dashboard]
     end
     D1 --> EH
     D2 --> EH
@@ -54,13 +54,13 @@ Partitionen sind das Herzstück der Skalierbarkeit in Event Hubs:
 ```mermaid
 flowchart LR
     P[Producer] --> EH[Event Hub]
-    EH --> Part0[Partition 0\nEvents: 1,4,7]
-    EH --> Part1[Partition 1\nEvents: 2,5,8]
-    EH --> Part2[Partition 2\nEvents: 3,6,9]
-    Part0 --> CG1[Consumer Group A\nProcessor 1]
+    EH --> Part0[Partition 0 Events: 1,4,7]
+    EH --> Part1[Partition 1 Events: 2,5,8]
+    EH --> Part2[Partition 2 Events: 3,6,9]
+    Part0 --> CG1[Consumer Group A Processor 1]
     Part1 --> CG1
     Part2 --> CG1
-    Part0 --> CG2[Consumer Group B\nProcessor 1]
+    Part0 --> CG2[Consumer Group B Processor 1]
     Part1 --> CG2
     Part2 --> CG2
 ```
@@ -92,12 +92,12 @@ Consumer Groups ermöglichen **unabhängige, parallele Lesezugriffe** auf densel
 
 ```mermaid
 flowchart TD
-    EH[Event Hub\n3 Partitionen] --> CGA[Consumer Group A\nEchtzeit-Dashboard]
-    EH --> CGB[Consumer Group B\nML-Training]
-    EH --> CGC[Consumer Group C\nArchivierung]
-    CGA --> P0A[Processor\nPartition 0+1+2]
-    CGB --> P0B[Processor\nPartition 0+1+2]
-    CGC --> P0C[Processor\nPartition 0+1+2]
+    EH[Event Hub 3 Partitionen] --> CGA[Consumer Group A Echtzeit-Dashboard]
+    EH --> CGB[Consumer Group B ML-Training]
+    EH --> CGC[Consumer Group C Archivierung]
+    CGA --> P0A[Processor Partition 0+1+2]
+    CGB --> P0B[Processor Partition 0+1+2]
+    CGC --> P0C[Processor Partition 0+1+2]
 ```
 
 - Jede Consumer Group hat einen **unabhängigen Offset/Checkpoint**
@@ -137,11 +137,11 @@ Event Hubs Capture schreibt Event-Streams **automatisch** in Azure Blob Storage 
 ```mermaid
 flowchart LR
     P[Producer] --> EH[Event Hub]
-    EH --> CAP[Capture\nautomatisch]
-    CAP --> BLOB[Blob Storage\nAvro-Dateien]
-    CAP --> ADLS[ADLS Gen2\nAvro-Dateien]
-    BLOB --> ADF[Data Factory\nTransformation]
-    ADLS --> SYNAPSE[Synapse Analytics\nAbfrage]
+    EH --> CAP[Capture automatisch]
+    CAP --> BLOB[Blob Storage Avro-Dateien]
+    CAP --> ADLS[ADLS Gen2 Avro-Dateien]
+    BLOB --> ADF[Data Factory Transformation]
+    ADLS --> SYNAPSE[Synapse Analytics Abfrage]
 ```
 
 ```powershell
@@ -179,9 +179,9 @@ Event Hubs unterstützt das **Kafka-Protokoll** (Kafka 1.0+) ohne Code-Änderung
 
 ```mermaid
 flowchart LR
-    KA[Kafka Producer\nbestehendes System] --> EH[Event Hubs\nKafka-Endpunkt]
-    EH --> KB[Kafka Consumer\nbestehendes System]
-    EH --> FA[Azure Functions\nnativ]
+    KA[Kafka Producer bestehendes System] --> EH[Event Hubs Kafka-Endpunkt]
+    EH --> KB[Kafka Consumer bestehendes System]
+    EH --> FA[Azure Functions nativ]
 ```
 
 **Kafka Producer-Konfiguration:**

@@ -28,12 +28,12 @@ Der AMA ist ein **VM-Extension**, der auf Windows- und Linux-VMs (Azure, Arc) in
 
 ```mermaid
 graph TD
-    VM["VM oder Server\nWindows / Linux\nAzure / Arc"]
-    AMA["Azure Monitor Agent\n(VM Extension)"]
-    DCR["Data Collection Rule\nWas sammeln?\nWohin senden?"]
-    LAW["Log Analytics\nWorkspace"]
-    MSent["Microsoft Sentinel\n(über LAW)"]
-    MDefend["Defender for Cloud\n(über LAW)"]
+    VM["VM oder Server Windows / Linux Azure / Arc"]
+    AMA["Azure Monitor Agent (VM Extension)"]
+    DCR["Data Collection Rule Was sammeln? Wohin senden?"]
+    LAW["Log Analytics Workspace"]
+    MSent["Microsoft Sentinel (über LAW)"]
+    MDefend["Defender for Cloud (über LAW)"]
 
     DCR --> AMA
     VM --> AMA
@@ -58,9 +58,9 @@ graph TD
 
 ```mermaid
 graph LR
-    Old["Legacy-Agenten\nMMA / OMS\nDiagnostics Ext\nDependency Agent"]
-    New["Azure Monitor Agent\nAMA\n+ Dependency Agent"]
-    DCR["Data Collection Rules\nZentrale Konfiguration"]
+    Old["Legacy-Agenten MMA / OMS Diagnostics Ext Dependency Agent"]
+    New["Azure Monitor Agent AMA + Dependency Agent"]
+    DCR["Data Collection Rules Zentrale Konfiguration"]
 
     Old -- "Migration" --> New
     DCR --> New
@@ -80,10 +80,10 @@ DCRs sind das **Herzstück** des AMA. Sie definieren vollständig, was gesammelt
 ```mermaid
 graph LR
     DCR["Data Collection Rule (DCR)"]
-    DS["Data Sources\nWindows Events\nPerf Counters\nSyslog\nCustom Logs"]
-    Trans["Transformation\nKQL-basiert\nFiltern\nAnreichern"]
-    Dest["Destinations\nLog Analytics Workspace\nAzure Monitor Metrics\nEvent Hub"]
-    Assoc["DCR-Association\nWelche VMs nutzen diese DCR?"]
+    DS["Data Sources Windows Events Perf Counters Syslog Custom Logs"]
+    Trans["Transformation KQL-basiert Filtern Anreichern"]
+    Dest["Destinations Log Analytics Workspace Azure Monitor Metrics Event Hub"]
+    Assoc["DCR-Association Welche VMs nutzen diese DCR?"]
 
     DS --> DCR
     DCR --> Trans
@@ -306,9 +306,9 @@ Für Server ohne Internetzugang kann ein **Log Analytics Gateway** als Proxy die
 
 ```mermaid
 graph LR
-    VMNoNet["Server\nOhne direkten\nInternet-Zugang"]
-    Gateway["Log Analytics Gateway\nAuf Netzwerk-Server\nPort 443 HTTPS"]
-    Azure["Azure Monitor\nLog Analytics\nWorkspace"]
+    VMNoNet["Server Ohne direkten Internet-Zugang"]
+    Gateway["Log Analytics Gateway Auf Netzwerk-Server Port 443 HTTPS"]
+    Azure["Azure Monitor Log Analytics Workspace"]
 
     VMNoNet -- "HTTPS Port 443" --> Gateway
     Gateway -- "HTTPS Port 443" --> Azure
@@ -327,9 +327,9 @@ graph LR
 graph LR
     VM["Azure VM"]
     AMA["AMA Agent"]
-    DCR["Defender DCR\n(automatisch erstellt)"]
-    LAW["Log Analytics\nWorkspace"]
-    MDC["Microsoft Defender\nfor Cloud"]
+    DCR["Defender DCR (automatisch erstellt)"]
+    LAW["Log Analytics Workspace"]
+    MDC["Microsoft Defender for Cloud"]
 
     VM --> AMA
     DCR --> AMA
@@ -357,11 +357,11 @@ Sentinel nutzt AMA über spezifische **Datenconnectoren**:
 
 ```mermaid
 graph TD
-    Start["Ausgangslage\nMMA / OMS Agent aktiv"]
-    Inv["Inventar erstellen\nWelche VMs nutzen MMA?\nWelche Lösungen?"]
-    DCR["DCRs erstellen\nGleiche Datenquellen\nwie MMA-Konfiguration"]
-    Install["AMA installieren\n(parallel zu MMA)"]
-    Validate["Validierung\nDaten in LAW prüfen\nAlerts testen"]
+    Start["Ausgangslage MMA / OMS Agent aktiv"]
+    Inv["Inventar erstellen Welche VMs nutzen MMA? Welche Lösungen?"]
+    DCR["DCRs erstellen Gleiche Datenquellen wie MMA-Konfiguration"]
+    Install["AMA installieren (parallel zu MMA)"]
+    Validate["Validierung Daten in LAW prüfen Alerts testen"]
     Remove["MMA deinstallieren"]
 
     Start --> Inv

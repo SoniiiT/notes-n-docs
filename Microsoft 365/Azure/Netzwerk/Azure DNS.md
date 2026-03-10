@@ -28,10 +28,10 @@ Azure DNS hostet **DNS-Zonen** auf Microsofts globalem Anycast-Netzwerk:
 
 ```mermaid
 graph LR
-    CLIENT[DNS Client\nVM oder Benutzer] -->|Query| AZUREDNS[Azure DNS\nAnycast 168 63 129 16]
-    AZUREDNS -->|Public Zone| PUBLIC[Public DNS Zone\nöffentliche Domain]
-    AZUREDNS -->|Private Zone| PRIVATE[Private DNS Zone\ninterne Namen]
-    AZUREDNS -->|Forwarding| ONPREM[Conditional Forwarding\nzu On-Prem DNS]
+    CLIENT[DNS Client VM oder Benutzer] -->|Query| AZUREDNS[Azure DNS Anycast 168 63 129 16]
+    AZUREDNS -->|Public Zone| PUBLIC[Public DNS Zone öffentliche Domain]
+    AZUREDNS -->|Private Zone| PRIVATE[Private DNS Zone interne Namen]
+    AZUREDNS -->|Forwarding| ONPREM[Conditional Forwarding zu On-Prem DNS]
 ```
 
 **Eigenschaften:**
@@ -49,7 +49,7 @@ graph LR
 
 ```mermaid
 graph LR
-    REGISTRAR[Domain Registrar\nz.B. IONOS, GoDaddy] -->|NS-Delegation\nzu Azure DNS Nameserver| AZURE[Azure DNS\nPublic Zone\nexample.com]
+    REGISTRAR[Domain Registrar z.B. IONOS, GoDaddy] -->|NS-Delegation zu Azure DNS Nameserver| AZURE[Azure DNS Public Zone example.com]
     AZURE -->|DNS Antworten| INTERNET[Internet]
 ```
 
@@ -118,7 +118,7 @@ New-AzDnsRecordSet -ZoneName "example.com" -ResourceGroupName "rg-dns" `
 
 ```mermaid
 graph LR
-    DNS[DNS Alias Record\nwww.example.com] -->|Verweist auf| TRAFFIC[Traffic Manager\noder Front Door\noder Public IP]
+    DNS[DNS Alias Record www.example.com] -->|Verweist auf| TRAFFIC[Traffic Manager oder Front Door oder Public IP]
     TRAFFIC -->|Aktuell ermittelte IP| CLIENT[DNS Client]
 ```
 
@@ -147,9 +147,9 @@ Private DNS Zones lösen intern auf — nicht im öffentlichen Internet sichtbar
 
 ```mermaid
 graph LR
-    VM[VM in VNet\n10 0 10 4] -->|DNS Query\nvm01.internal.example.com| AZUREDNS[Azure DNS]
-    AZUREDNS -->|VNet-Link vorhanden?| PRIVZONE[Private DNS Zone\ninternal.example.com]
-    PRIVZONE -->|A-Record\n10 0 10 4| VM
+    VM[VM in VNet 10 0 10 4] -->|DNS Query vm01.internal.example.com| AZUREDNS[Azure DNS]
+    AZUREDNS -->|VNet-Link vorhanden?| PRIVZONE[Private DNS Zone internal.example.com]
+    PRIVZONE -->|A-Record 10 0 10 4| VM
 ```
 
 ```powershell
@@ -184,8 +184,8 @@ Bei aktivierter Auto-Registration werden VM-Namen **automatisch** in der Private
 
 ```mermaid
 graph LR
-    VM[VM\nHostname: vm-app01] -->|VM startet| AUTOREG[Auto-Registration]
-    AUTOREG -->|A-Record: vm-app01.internal.example.com → 10 0 10 4| ZONE[Private DNS Zone\ninternal.example.com]
+    VM[VM Hostname: vm-app01] -->|VM startet| AUTOREG[Auto-Registration]
+    AUTOREG -->|A-Record: vm-app01.internal.example.com → 10 0 10 4| ZONE[Private DNS Zone internal.example.com]
 ```
 
 ```powershell
@@ -207,11 +207,11 @@ New-AzPrivateDnsVirtualNetworkLink `
 
 ```mermaid
 graph TD
-    ONPREM_DNS[On-Prem DNS\nDNS Server] -->|Conditional Forwarder\nazkubdev.internal → Inbound EP| INBOUND[DNS Private Resolver\nInbound Endpoint\n10 0 100 4]
-    INBOUND -->|Auflösung| AZURE_PRIV[Private DNS Zones\nim Azure]
+    ONPREM_DNS[On-Prem DNS DNS Server] -->|Conditional Forwarder azkubdev.internal → Inbound EP| INBOUND[DNS Private Resolver Inbound Endpoint 10 0 100 4]
+    INBOUND -->|Auflösung| AZURE_PRIV[Private DNS Zones im Azure]
     
-    AZURE_DNS[Azure VM\nDNS-Anfrage] -->|Query: corp.contoso.local| OUTBOUND[DNS Private Resolver\nOutbound Endpoint\n10 0 101 4]
-    OUTBOUND -->|Forwarding Rule\ncorp.contoso.local → On-Prem| ONPREM_DNS
+    AZURE_DNS[Azure VM DNS-Anfrage] -->|Query: corp.contoso.local| OUTBOUND[DNS Private Resolver Outbound Endpoint 10 0 101 4]
+    OUTBOUND -->|Forwarding Rule corp.contoso.local → On-Prem| ONPREM_DNS
 ```
 
 ### Inbound Endpoint
@@ -279,8 +279,8 @@ Jeder Private Endpoint benötigt eine eigene Private DNS Zone:
 
 ```mermaid
 graph LR
-    APP[Anwendung] -->|storprod.blob.core.windows.net| PE_DNS[Private DNS Zone\nprivatelink.blob.core.windows.net\nA: storprod → 10 0 30 5]
-    PE_DNS -->|10 0 30 5| PE[Private Endpoint\nNIC im VNet]
+    APP[Anwendung] -->|storprod.blob.core.windows.net| PE_DNS[Private DNS Zone privatelink.blob.core.windows.net A: storprod → 10 0 30 5]
+    PE_DNS -->|10 0 30 5| PE[Private Endpoint NIC im VNet]
     PE --> STORAGE[Azure Storage Account]
 ```
 
@@ -304,8 +304,8 @@ Gleicher Name, unterschiedliche Antwort intern/extern:
 
 ```mermaid
 graph LR
-    INT_CLIENT[Interner Client\nim VNet] -->|DNS: app.example.com| INT_ZONE[Private DNS Zone\napp.example.com → 10 0 10 5]
-    EXT_CLIENT[Externer Client\nInternet] -->|DNS: app.example.com| PUB_ZONE[Public DNS Zone\napp.example.com → 20 50 1 1]
+    INT_CLIENT[Interner Client im VNet] -->|DNS: app.example.com| INT_ZONE[Private DNS Zone app.example.com → 10 0 10 5]
+    EXT_CLIENT[Externer Client Internet] -->|DNS: app.example.com| PUB_ZONE[Public DNS Zone app.example.com → 20 50 1 1]
 ```
 
 **Implementierung:** Gleicher DNS-Name in Public Zone (öffentliche IP) und Private Zone (private IP) registriert.

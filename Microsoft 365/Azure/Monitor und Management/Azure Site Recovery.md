@@ -54,11 +54,11 @@ Azure Site Recovery (ASR) bietet **kontinuierliche Replikation** und **orchestri
 ```mermaid
 graph TD
     A[Quell-Umgebung] --> B{Szenario}
-    B --> C[Azure VM\nRegion A]
-    B --> D[VMware vCenter\nOn-Premises]
-    B --> E[Hyper-V Host\nOn-Premises]
-    B --> F[Physischer Server\nWindows/Linux]
-    C --> G[Azure Region B\nDisaster Recovery]
+    B --> C[Azure VM Region A]
+    B --> D[VMware vCenter On-Premises]
+    B --> E[Hyper-V Host On-Premises]
+    B --> F[Physischer Server Windows/Linux]
+    C --> G[Azure Region B Disaster Recovery]
     D --> G
     E --> G
     F --> G
@@ -72,12 +72,12 @@ graph TD
 
 ```mermaid
 graph LR
-    A[Quell-VM\nRegion A] --> B[ASR Extension\nMobility Service]
-    B --> C[Cache Storage Account\nQuell-Region]
+    A[Quell-VM Region A] --> B[ASR Extension Mobility Service]
+    B --> C[Cache Storage Account Quell-Region]
     C --> D[ASR Replikations-Engine]
-    D --> E[Ziel Storage\nManaged Disks]
-    E --> F[Replizierte VM\nRegion B - gestoppt]
-    F --> G[Recovery Services Vault\nRegion B]
+    D --> E[Ziel Storage Managed Disks]
+    E --> F[Replizierte VM Region B - gestoppt]
+    F --> G[Recovery Services Vault Region B]
 ```
 
 ### Replikations-Ablauf
@@ -147,16 +147,16 @@ az site-recovery protected-item create \
 ```mermaid
 graph TD
     A[Failover initiieren] --> B{Typ}
-    B --> C[Geplant:\nQuell-VM herunterfahren]
-    B --> D[Ungeplant:\nLetzten Recovery Point wählen]
+    B --> C[Geplant: Quell-VM herunterfahren]
+    B --> D[Ungeplant: Letzten Recovery Point wählen]
     C --> E[Finale Synchronisierung]
-    D --> F[Recovery Point auswählen\nlatest / app-consistent]
-    E --> G[Ziel-VM starten\nRegion B]
+    D --> F[Recovery Point auswählen latest / app-consistent]
+    E --> G[Ziel-VM starten Region B]
     F --> G
-    G --> H[Netzwerk-Konfiguration\nanwenden]
+    G --> H[Netzwerk-Konfiguration anwenden]
     H --> I[Test und Validierung]
-    I --> J[Failover bestätigen\nCommit]
-    J --> K[Replikation umkehren\nfür Failback]
+    I --> J[Failover bestätigen Commit]
+    J --> K[Replikation umkehren für Failback]
 ```
 
 ### Failover ausführen (PowerShell)
@@ -207,9 +207,9 @@ Start-AzRecoveryServicesAsrTestFailoverCleanupJob `
 
 ```mermaid
 graph LR
-    A[Produktions-VM\nRegion A] -.->|Replikation| B[Replizierte VM\nRegion B - inaktiv]
-    B -->|Test Failover| C[Test-VM\nIsoliertes Test-VNet]
-    C -->|Tests durchführen| D[Validierung\nerfolgreich]
+    A[Produktions-VM Region A] -.->|Replikation| B[Replizierte VM Region B - inaktiv]
+    B -->|Test Failover| C[Test-VM Isoliertes Test-VNet]
+    C -->|Tests durchführen| D[Validierung erfolgreich]
     D -->|Cleanup| E[Test-VM löschen]
     B -.->|Weiterhin repliziert| B
 ```
@@ -244,12 +244,12 @@ Recovery Plans orchestrieren den **Failover mehrerer VMs** in definierter Reihen
 
 ```mermaid
 graph TD
-    A[Recovery Plan] --> B[Gruppe 1\nInfrastruktur]
-    A --> C[Gruppe 2\nDatenbank-VMs]
-    A --> D[Gruppe 3\nApplication-VMs]
-    A --> E[Gruppe 4\nWeb-Frontend-VMs]
-    B --> F[Manuelle Aktion:\nNetzwerk validieren]
-    C --> G[Skript:\nSQL AG Failover]
+    A[Recovery Plan] --> B[Gruppe 1 Infrastruktur]
+    A --> C[Gruppe 2 Datenbank-VMs]
+    A --> D[Gruppe 3 Application-VMs]
+    A --> E[Gruppe 4 Web-Frontend-VMs]
+    B --> F[Manuelle Aktion: Netzwerk validieren]
+    C --> G[Skript: SQL AG Failover]
     D --> H[Automatisch]
     E --> I[Automatisch]
 ```
@@ -283,10 +283,10 @@ Netzwerk-Mapping definiert die Zuordnung von **Quell-VNets zu Ziel-VNets**.
 
 ```mermaid
 graph LR
-    A[Quell-VNet\nvnet-prod-we\n10.1.0.0/16] --> B[Netzwerk-Mapping\nASR]
-    B --> C[Ziel-VNet\nvnet-dr-ne\n10.2.0.0/16]
-    A1[Subnet: Frontend\n10.1.1.0/24] -.->|Mapping| C1[Subnet: Frontend-DR\n10.2.1.0/24]
-    A2[Subnet: Backend\n10.1.2.0/24] -.->|Mapping| C2[Subnet: Backend-DR\n10.2.2.0/24]
+    A[Quell-VNet vnet-prod-we 10.1.0.0/16] --> B[Netzwerk-Mapping ASR]
+    B --> C[Ziel-VNet vnet-dr-ne 10.2.0.0/16]
+    A1[Subnet: Frontend 10.1.1.0/24] -.->|Mapping| C1[Subnet: Frontend-DR 10.2.1.0/24]
+    A2[Subnet: Backend 10.1.2.0/24] -.->|Mapping| C2[Subnet: Backend-DR 10.2.2.0/24]
 ```
 
 ```powershell

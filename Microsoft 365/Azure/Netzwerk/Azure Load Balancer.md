@@ -27,10 +27,10 @@ Azure Load Balancer verteilt **TCP/UDP-Traffic** auf mehrere Backend-VMs:
 
 ```mermaid
 graph LR
-    INT[Clients] -->|Port 80/443| LB[Azure Load Balancer\nPublic IP: 20.50.1.1]
-    LB -->|Round Robin| VM1[VM 1\n10 0 10 4]
-    LB -->|Hash-basiert| VM2[VM 2\n10 0 10 5]
-    LB -->|Hash-basiert| VM3[VM 3\n10 0 10 6]
+    INT[Clients] -->|Port 80/443| LB[Azure Load Balancer Public IP: 20.50.1.1]
+    LB -->|Round Robin| VM1[VM 1 10 0 10 4]
+    LB -->|Hash-basiert| VM2[VM 2 10 0 10 5]
+    LB -->|Hash-basiert| VM3[VM 3 10 0 10 6]
 ```
 
 **Eigenschaften:**
@@ -81,11 +81,11 @@ $lbRule.LoadDistribution = "SourceIP" # 2-Tupel
 
 ```mermaid
 graph TD
-    FE[Frontend IP\nPublic IP oder Private IP] --> LBR[Load Balancing Rules]
-    LBR --> HP[Health Probe\nStatus-Prüfung]
-    LBR --> BP[Backend Pool\nVMs oder VMSS]
+    FE[Frontend IP Public IP oder Private IP] --> LBR[Load Balancing Rules]
+    LBR --> HP[Health Probe Status-Prüfung]
+    LBR --> BP[Backend Pool VMs oder VMSS]
     HP -->|Healthy?| BP
-    OR[Outbound Rules\nSNAT] --> BP
+    OR[Outbound Rules SNAT] --> BP
 ```
 
 ### Frontend IP Configurations
@@ -177,7 +177,7 @@ Standard Load Balancer hat **kein automatisches Outbound SNAT** — es muss expl
 
 ```mermaid
 graph LR
-    VM[VM ohne Public IP] -->|Ausgehend| LB[Load Balancer\nOutbound Rule]
+    VM[VM ohne Public IP] -->|Ausgehend| LB[Load Balancer Outbound Rule]
     LB -->|SNAT: VM-IP → Public IP| INT[Internet]
 ```
 
@@ -201,9 +201,9 @@ $outboundRule = New-AzLoadBalancerOutboundRuleConfig `
 
 ```mermaid
 graph TD
-    INT[Internet] -->|Port 443| PLB[Public Load Balancer\nPublic IP]
+    INT[Internet] -->|Port 443| PLB[Public Load Balancer Public IP]
     PLB -->|Port 443| WEB1[Web VM 1] & WEB2[Web VM 2]
-    WEB1 & WEB2 -->|Port 8080| ILB[Internal Load Balancer\nPrivate IP 10 0 20 100]
+    WEB1 & WEB2 -->|Port 8080| ILB[Internal Load Balancer Private IP 10 0 20 100]
     ILB -->|Port 8080| APP1[App VM 1] & APP2[App VM 2]
     APP1 & APP2 -->|Port 1433| DB[(SQL Database)]
 ```
@@ -221,8 +221,8 @@ Global verteilter Load Balancer auf Basis mehrerer regionaler Standard LBs:
 
 ```mermaid
 graph TD
-    GLOBAL[Cross-Region LB\nGlobale Public IP] --> WEST[Standard LB\nWest Europe]
-    GLOBAL --> EAST[Standard LB\nEast US]
+    GLOBAL[Cross-Region LB Globale Public IP] --> WEST[Standard LB West Europe]
+    GLOBAL --> EAST[Standard LB East US]
     WEST --> VM1[VM - WE] & VM2[VM - WE]
     EAST --> VM3[VM - EU] & VM4[VM - EU]
 ```

@@ -29,13 +29,13 @@ Application Insights bietet:
 
 ```mermaid
 graph TD
-    App["Anwendung\n.NET / Java / Node.js\nPython / JavaScript"]
-    SDK["App Insights SDK\noder Auto-Instrumentation"]
-    Portal["Azure Portal\nApplication Insights"]
-    LAW["Log Analytics\nWorkspace"]
-    Alerts["Alerts\nSmart Detection"]
-    LiveMetrics["Live Metrics\nEchtzeit"]
-    AppMap["Application Map\nService-Abhängigkeiten"]
+    App["Anwendung .NET / Java / Node.js Python / JavaScript"]
+    SDK["App Insights SDK oder Auto-Instrumentation"]
+    Portal["Azure Portal Application Insights"]
+    LAW["Log Analytics Workspace"]
+    Alerts["Alerts Smart Detection"]
+    LiveMetrics["Live Metrics Echtzeit"]
+    AppMap["Application Map Service-Abhängigkeiten"]
 
     App --> SDK
     SDK --> Portal
@@ -243,12 +243,12 @@ Die Application Map visualisiert **Service-Abhängigkeiten** und ihren Gesundhei
 
 ```mermaid
 graph LR
-    Frontend["Frontend\nAngular App\n100% Success"]
-    API["API Gateway\n.NET 8\n99.2% Success"]
-    OrderSvc["Order Service\nJava\n98.1% Success"]
-    PaymentSvc["Payment Service\nNode.js\n95.3% Success"]
-    DB["Azure SQL\nDatabase\n99.8% Success"]
-    SB["Service Bus\nQueue\n100% Success"]
+    Frontend["Frontend Angular App 100% Success"]
+    API["API Gateway .NET 8 99.2% Success"]
+    OrderSvc["Order Service Java 98.1% Success"]
+    PaymentSvc["Payment Service Node.js 95.3% Success"]
+    DB["Azure SQL Database 99.8% Success"]
+    SB["Service Bus Queue 100% Success"]
 
     Frontend --> API
     API --> OrderSvc
@@ -281,10 +281,10 @@ union AppRequests, AppDependencies, AppExceptions, AppTraces
 
 ```mermaid
 graph LR
-    Req["Incoming Request\nGET /api/orders/123\n250ms total"]
-    SQL1["SQL: SELECT orders\n45ms"]
-    HTTP1["HTTP: PaymentService\n180ms"]
-    SQL2["SQL: UPDATE order\n12ms"]
+    Req["Incoming Request GET /api/orders/123 250ms total"]
+    SQL1["SQL: SELECT orders 45ms"]
+    HTTP1["HTTP: PaymentService 180ms"]
+    SQL2["SQL: UPDATE order 12ms"]
 
     Req --> SQL1
     Req --> HTTP1

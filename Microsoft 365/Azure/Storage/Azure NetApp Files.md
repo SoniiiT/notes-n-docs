@@ -71,17 +71,17 @@ ANF läuft auf dedizierten NetApp-Hardwaresystemen in Azure-Rechenzentren — es
 
 ```mermaid
 graph TD
-    ANF[Azure NetApp Files\nAccount] --> NS[NetApp Account]
-    NS --> CP1[Capacity Pool\nUltra 4 TiB]
-    NS --> CP2[Capacity Pool\nPremium 8 TiB]
+    ANF[Azure NetApp Files Account] --> NS[NetApp Account]
+    NS --> CP1[Capacity Pool Ultra 4 TiB]
+    NS --> CP2[Capacity Pool Premium 8 TiB]
 
-    CP1 --> V1[Volume\nHANA Data\n2 TiB]
-    CP1 --> V2[Volume\nHANA Log\n1 TiB]
-    CP1 --> V3[Volume\nHANA Shared\n1 TiB]
+    CP1 --> V1[Volume HANA Data 2 TiB]
+    CP1 --> V2[Volume HANA Log 1 TiB]
+    CP1 --> V3[Volume HANA Shared 1 TiB]
 
-    CP2 --> V4[Volume\nAVD Profiles\n4 TiB]
-    CP2 --> V5[Volume\nApp Server\n2 TiB]
-    CP2 --> V6[Volume\nBackup Staging\n2 TiB]
+    CP2 --> V4[Volume AVD Profiles 4 TiB]
+    CP2 --> V5[Volume App Server 2 TiB]
+    CP2 --> V6[Volume Backup Staging 2 TiB]
 ```
 
 **Kapazitäts-Hierarchie:**
@@ -174,16 +174,16 @@ Asynchrone Disaster Recovery in eine andere Azure Region:
 ```mermaid
 graph LR
     subgraph PrimärRegion[West Europe]
-        VP[Volume Primary\nProduktion]
+        VP[Volume Primary Produktion]
         SP[Snapshots]
     end
 
     subgraph SekundärRegion[North Europe]
-        VD[Volume Destination\nDR Standby]
+        VD[Volume Destination DR Standby]
         SD[Replizierte Snapshots]
     end
 
-    VP -->|Async Replikation\nRPO: 10 Min - 1 Stunde| VD
+    VP -->|Async Replikation RPO: 10 Min - 1 Stunde| VD
     SP --> SD
 ```
 

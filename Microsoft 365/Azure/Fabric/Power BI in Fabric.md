@@ -27,12 +27,12 @@ Microsoft Fabric vereint mehrere Analytics-Dienste unter einem Dach. Power BI is
 
 ```mermaid
 graph TD
-    A[Microsoft Fabric] --> B[Data Engineering\nLakehouse, Notebooks]
-    A --> C[Data Factory\nPipelines, Dataflows]
-    A --> D[Data Warehouse\nSQL Analytics]
-    A --> E[Real-Time Intelligence\nEventstream, KQL]
-    A --> F[Power BI\nReports, Dashboards]
-    A --> G[Data Science\nML, Experiments]
+    A[Microsoft Fabric] --> B[Data Engineering Lakehouse, Notebooks]
+    A --> C[Data Factory Pipelines, Dataflows]
+    A --> D[Data Warehouse SQL Analytics]
+    A --> E[Real-Time Intelligence Eventstream, KQL]
+    A --> F[Power BI Reports, Dashboards]
+    A --> G[Data Science ML, Experiments]
     F --> H[Semantic Models]
     F --> I[Berichte]
     F --> J[Dashboards]
@@ -60,14 +60,14 @@ Ein **Semantic Model** ist das zentrale Datenobjekt in Power BI — es definiert
 
 ```mermaid
 graph LR
-    A[Datenquelle\nOneLake / SQL / API] --> B[Semantic Model]
+    A[Datenquelle OneLake / SQL / API] --> B[Semantic Model]
     B --> C[Tabellen & Beziehungen]
     B --> D[DAX Measures]
     B --> E[RLS / OLS Rollen]
     B --> F[Hierarchien]
     B --> G[Power BI Report]
     B --> H[Excel / Analyse in Excel]
-    B --> I[Externe Tools\nTabular Editor / DAX Studio]
+    B --> I[Externe Tools Tabular Editor / DAX Studio]
 ```
 
 ### DAX-Beispiel: Measure erstellen
@@ -136,11 +136,11 @@ sequenceDiagram
     participant U as Benutzer
     participant R as Power BI Report
     participant SM as Semantic Model
-    participant OL as OneLake\nDelta-Parquet
+    participant OL as OneLake Delta-Parquet
 
     U->>R: Visuals anklicken
     R->>SM: DAX-Abfrage
-    SM->>OL: Parquet-Dateien lesen\n(kein Import!)
+    SM->>OL: Parquet-Dateien lesen (kein Import!)
     OL-->>SM: Columnare Daten
     SM-->>R: Abfrageergebnis
     R-->>U: Visualisierung
@@ -171,8 +171,8 @@ Deployment Pipelines ermöglichen **CI/CD für Power BI-Inhalte** — Berichte, 
 
 ```mermaid
 graph LR
-    A[Development\nWorkspace] -->|Deploy| B[Test\nWorkspace]
-    B -->|Deploy| C[Production\nWorkspace]
+    A[Development Workspace] -->|Deploy| B[Test Workspace]
+    B -->|Deploy| C[Production Workspace]
     A -.->|Auto-Binding| D[Dev Datenquelle]
     B -.->|Auto-Binding| E[Test Datenquelle]
     C -.->|Auto-Binding| F[Prod Datenquelle]
@@ -222,10 +222,10 @@ Paginated Reports (früher: SSRS) sind für **druckoptimierte, pixelgenaue Beric
 
 ```mermaid
 graph TD
-    A[Paginated Report\nRDL-Format] --> B{Datenquelle}
-    B --> C[Semantic Model\nDAX]
-    B --> D[Azure SQL\nT-SQL]
-    B --> E[Fabric Warehouse\nT-SQL]
+    A[Paginated Report RDL-Format] --> B{Datenquelle}
+    B --> C[Semantic Model DAX]
+    B --> D[Azure SQL T-SQL]
+    B --> E[Fabric Warehouse T-SQL]
     A --> F[PDF Export]
     A --> G[Excel Export]
     A --> H[Word Export]
@@ -245,10 +245,10 @@ Datamarts sind ein **Self-Service Data Warehouse** für Power BI-Benutzer ohne t
 
 ```mermaid
 graph LR
-    A[Datenquelle\nAPI, DB, File] -->|Power Query| B[Datamart\nAzure SQL DB]
+    A[Datenquelle API, DB, File] -->|Power Query| B[Datamart Azure SQL DB]
     B --> C[Auto-Semantic Model]
     C --> D[Power BI Report]
-    B --> E[SQL-Abfragen\nexterner Tools]
+    B --> E[SQL-Abfragen externer Tools]
 ```
 
 ---
@@ -274,9 +274,9 @@ Copilot in Power BI nutzt generative KI für Report-Erstellung und DAX-Unterstü
 
 ```mermaid
 graph LR
-    A[Semantic Model\nDAX Measures] --> B[Narrative Visual]
+    A[Semantic Model DAX Measures] --> B[Narrative Visual]
     B --> C{Copilot Engine}
-    C --> D[Automatischer\nZusammenfassungstext]
+    C --> D[Automatischer Zusammenfassungstext]
     D --> E[Report-Seite]
 ```
 

@@ -61,9 +61,9 @@ Eine **Azure-Region** ist ein geografisches Gebiet mit mindestens einem (meist m
 
 ```mermaid
 graph TD
-    R[Azure Region] --> AZ1[Availability Zone 1\nRechenzentrum A]
-    R --> AZ2[Availability Zone 2\nRechenzentrum B]
-    R --> AZ3[Availability Zone 3\nRechenzentrum C]
+    R[Azure Region] --> AZ1[Availability Zone 1 Rechenzentrum A]
+    R --> AZ2[Availability Zone 2 Rechenzentrum B]
+    R --> AZ3[Availability Zone 3 Rechenzentrum C]
     AZ1 <-->|Dediziertes Netzwerk| AZ2
     AZ2 <-->|Dediziertes Netzwerk| AZ3
     AZ1 <-->|Dediziertes Netzwerk| AZ3
@@ -188,11 +188,11 @@ graph LR
     PS[PowerShell] --> ARM
     API[REST API] --> ARM
     Bicep[Bicep / ARM Templates] --> ARM
-    ARM --> AuthN[Authentifizierung\nEntra ID]
-    ARM --> AuthZ[Autorisierung\nRBAC]
-    ARM --> RP1[Compute\nResource Provider]
-    ARM --> RP2[Network\nResource Provider]
-    ARM --> RP3[Storage\nResource Provider]
+    ARM --> AuthN[Authentifizierung Entra ID]
+    ARM --> AuthZ[Autorisierung RBAC]
+    ARM --> RP1[Compute Resource Provider]
+    ARM --> RP2[Network Resource Provider]
+    ARM --> RP3[Storage Resource Provider]
 ```
 
 **ARM-Vorteile:**
@@ -209,10 +209,10 @@ graph LR
 
 ```mermaid
 graph TD
-    T[Tenant\nEntra ID Organisation] --> MG[Management Groups\nbis 6 Ebenen]
-    MG --> SUB[Subscriptions\nBilling-Grenze]
-    SUB --> RG[Resource Groups\nLebenszyklus-Container]
-    RG --> RES[Resources\nVMs, Storage, Datenbanken etc]
+    T[Tenant Entra ID Organisation] --> MG[Management Groups bis 6 Ebenen]
+    MG --> SUB[Subscriptions Billing-Grenze]
+    SUB --> RG[Resource Groups Lebenszyklus-Container]
+    RG --> RES[Resources VMs, Storage, Datenbanken etc]
 ```
 
 | Ebene | Zweck | Beispiel |

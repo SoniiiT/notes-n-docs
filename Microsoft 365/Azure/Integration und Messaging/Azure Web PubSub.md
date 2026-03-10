@@ -19,8 +19,8 @@ flowchart LR
     C1[Browser Client 1] <-->|WebSocket| WPS[Azure Web PubSub]
     C2[Mobile Client 2] <-->|WebSocket| WPS
     C3[Browser Client 3] <-->|WebSocket| WPS
-    SRV[Backend Server] -->|REST API\nNachricht senden| WPS
-    WPS -->|Event Handler\nWebhook| SRV
+    SRV[Backend Server] -->|REST API Nachricht senden| WPS
+    WPS -->|Event Handler Webhook| SRV
 ```
 
 **Kernprinzipien:**
@@ -49,7 +49,7 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    WPS[Azure Web PubSub\nNamespace] --> H1[Hub: Chat]
+    WPS[Azure Web PubSub Namespace] --> H1[Hub: Chat]
     WPS --> H2[Hub: Dashboard]
     H1 --> G1[Group: room-general]
     H1 --> G2[Group: room-support]

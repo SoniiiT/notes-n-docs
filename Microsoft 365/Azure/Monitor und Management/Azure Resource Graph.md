@@ -31,10 +31,10 @@ Azure Resource Graph bietet:
 ```mermaid
 graph TD
     A[Azure Resource Graph] --> B[KQL-Abfrage]
-    B --> C[Management Group\nkomplett]
+    B --> C[Management Group komplett]
     B --> D[Mehrere Subscriptions]
     B --> E[Single Subscription]
-    C --> F[Alle Ressourcen\nsekundenschnell]
+    C --> F[Alle Ressourcen sekundenschnell]
     D --> F
     E --> F
     F --> G[Portal Anzeige]

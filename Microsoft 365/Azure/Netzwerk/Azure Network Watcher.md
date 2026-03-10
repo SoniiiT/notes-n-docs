@@ -29,15 +29,15 @@ Network Watcher ist ein **regionaler Netzwerk-Diagnose-Dienst**:
 
 ```mermaid
 graph TD
-    NW[Azure Network Watcher] --> CONN[Connection Monitor\nKontinuierliche Überwachung]
-    NW --> IPFLOW[IP Flow Verify\nNSG-Analyse]
-    NW --> NEXTHOP[Next Hop\nRouting-Analyse]
-    NW --> ESR[Effective Security Rules\nNSG-Debug]
-    NW --> FLOW[NSG Flow Logs\nTraffic-Aufzeichnung]
-    NW --> CAPTURE[Packet Capture\nNetzwerk-Analyse]
-    NW --> VPN[VPN Diagnostics\nGateway-Debug]
-    NW --> TOPO[Network Topology\nVisualisierung]
-    NW --> TA[Traffic Analytics\nFlow-Auswertung]
+    NW[Azure Network Watcher] --> CONN[Connection Monitor Kontinuierliche Überwachung]
+    NW --> IPFLOW[IP Flow Verify NSG-Analyse]
+    NW --> NEXTHOP[Next Hop Routing-Analyse]
+    NW --> ESR[Effective Security Rules NSG-Debug]
+    NW --> FLOW[NSG Flow Logs Traffic-Aufzeichnung]
+    NW --> CAPTURE[Packet Capture Netzwerk-Analyse]
+    NW --> VPN[VPN Diagnostics Gateway-Debug]
+    NW --> TOPO[Network Topology Visualisierung]
+    NW --> TA[Traffic Analytics Flow-Auswertung]
 ```
 
 **Aktivierung:** Network Watcher wird automatisch aktiviert wenn eine Ressource in einer Region erstellt wird. Kein manuelles Setup nötig für Basis-Features.
@@ -50,11 +50,11 @@ graph TD
 
 ```mermaid
 graph LR
-    SRC1[Azure VM\nQuelle] -->|HTTP 443\nalle 30s| DEST1[Web App\nZiel]
-    SRC1 -->|TCP 1433\nalle 60s| DEST2[SQL Datenbank\nZiel]
-    SRC2[On-Prem Agent\nQuelle] -->|ICMP\nalle 30s| DEST3[Azure VM\nZiel]
+    SRC1[Azure VM Quelle] -->|HTTP 443 alle 30s| DEST1[Web App Ziel]
+    SRC1 -->|TCP 1433 alle 60s| DEST2[SQL Datenbank Ziel]
+    SRC2[On-Prem Agent Quelle] -->|ICMP alle 30s| DEST3[Azure VM Ziel]
     
-    SRC1 & SRC2 -.->|Metriken\nLatenz, Loss| MONITOR[Azure Monitor\nLog Analytics]
+    SRC1 & SRC2 -.->|Metriken Latenz, Loss| MONITOR[Azure Monitor Log Analytics]
 ```
 
 ### Connection Monitor erstellen
@@ -99,9 +99,9 @@ New-AzNetworkWatcherConnectionMonitor `
 
 ```mermaid
 graph LR
-    USER[Admin] -->|Test-Paket\nQuelle, Ziel, Port, Protokoll| IPF[IP Flow Verify]
-    IPF -->|Prüft NSGs\nauf VM-NIC + Subnet| NSG_CHECK{NSG-Analyse}
-    NSG_CHECK -->|Allow oder Deny| RESULT[Ergebnis +\nwelche Regel getroffen hat]
+    USER[Admin] -->|Test-Paket Quelle, Ziel, Port, Protokoll| IPF[IP Flow Verify]
+    IPF -->|Prüft NSGs auf VM-NIC + Subnet| NSG_CHECK{NSG-Analyse}
+    NSG_CHECK -->|Allow oder Deny| RESULT[Ergebnis + welche Regel getroffen hat]
 ```
 
 ```bash
@@ -199,9 +199,9 @@ Im Portal: VM → Networking → Effective security rules (Button rechts oben)
 ```mermaid
 graph LR
     VM[VM Traffic] -->|Passiert NSG| NSG[Network Security Group]
-    NSG -->|Flow Log v2| STORAGE[Azure Storage\nAccount]
-    STORAGE -->|Diagnose| LA[Log Analytics\nWorkspace]
-    LA -->|Traffic Analytics| TA[Traffic Analytics\nDashboard + Queries]
+    NSG -->|Flow Log v2| STORAGE[Azure Storage Account]
+    STORAGE -->|Diagnose| LA[Log Analytics Workspace]
+    LA -->|Traffic Analytics| TA[Traffic Analytics Dashboard + Queries]
 ```
 
 ### Flow Log aktivieren
@@ -255,9 +255,9 @@ Traffic Analytics wertet Flow Logs aus und visualisiert den Traffic:
 
 ```mermaid
 graph LR
-    FLOW_LOGS[NSG Flow Logs\nin Storage] -->|Verarbeitung| TA_ENGINE[Traffic Analytics\nEngine alle 10/60 min]
-    TA_ENGINE -->|Strukturierte Daten| LA[Log Analytics\nWorkspace]
-    LA -->|Power BI-ähnliches\nDashboard| INSIGHT[Traffic Insights\nGeo-Visualisierung\nTop-Flows\nBösartige IPs]
+    FLOW_LOGS[NSG Flow Logs in Storage] -->|Verarbeitung| TA_ENGINE[Traffic Analytics Engine alle 10/60 min]
+    TA_ENGINE -->|Strukturierte Daten| LA[Log Analytics Workspace]
+    LA -->|Power BI-ähnliches Dashboard| INSIGHT[Traffic Insights Geo-Visualisierung Top-Flows Bösartige IPs]
 ```
 
 ### Nützliche Traffic Analytics KQL-Abfragen
@@ -294,8 +294,8 @@ AzureNetworkAnalytics_CL
 
 ```mermaid
 graph LR
-    NW[Network Watcher] -->|Steuert Capture| AGENT[NW Extension\nauf VM]
-    AGENT -->|Aufzeichnung| PCAP[PCAP-Datei\nin Storage Account\noder lokal auf VM]
+    NW[Network Watcher] -->|Steuert Capture| AGENT[NW Extension auf VM]
+    AGENT -->|Aufzeichnung| PCAP[PCAP-Datei in Storage Account oder lokal auf VM]
 ```
 
 ### Voraussetzungen
@@ -415,7 +415,7 @@ resource nwExtension 'Microsoft.Compute/virtualMachines/extensions@2023-03-01' =
 
 ```mermaid
 graph TD
-    PROB[VM nicht erreichbar\nPort 443] --> IPF[IP Flow Verify\nInbound 443]
+    PROB[VM nicht erreichbar Port 443] --> IPF[IP Flow Verify Inbound 443]
     IPF -->|Deny - Regel X| FIX_NSG[NSG-Regel anpassen]
     IPF -->|Allow| NEXT[Next Hop prüfen]
     NEXT -->|None - Black Hole| FIX_UDR[UDR oder Peering prüfen]

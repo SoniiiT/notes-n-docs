@@ -29,11 +29,11 @@ Teams Phone Mobile ist ein **SIM-basiertes Telefoniesystem** für Microsoft Team
 
 ```mermaid
 graph TD
-    ANRUF[Eingehender Anruf\nüber Mobilfunknetz] --> SIM[SIM-Karte im Smartphone]
-    SIM --> NATIVE[Native Dialer-App\ndes Smartphones]
-    SIM --> TEAMS[Microsoft Teams App\nAnruf-Synchronisierung]
+    ANRUF[Eingehender Anruf über Mobilfunknetz] --> SIM[SIM-Karte im Smartphone]
+    SIM --> NATIVE[Native Dialer-App des Smartphones]
+    SIM --> TEAMS[Microsoft Teams App Anruf-Synchronisierung]
     NATIVE --> HANDOFF[Handoff möglich]
-    HANDOFF --> VOIP[Teams-VoIP\nüber WLAN oder Datennetz]
+    HANDOFF --> VOIP[Teams-VoIP über WLAN oder Datennetz]
     HANDOFF --> DESK[Teams-Desktopanwendung]
 ```
 
@@ -122,10 +122,10 @@ Teams Phone Mobile wird von **Microsoft-zertifizierten Mobilfunk-Operatoren** be
 
 ```mermaid
 graph LR
-    A[Carrier im Teams\nAdmin Center autorisieren] --> B[Nummer beim\nCarrier bestellen]
-    B --> C[Nummer in Teams\nAdmin Center zuweisen]
-    C --> D[Lizenz dem\nBenutzer zuweisen]
-    D --> E[Benutzer aktiviert\nauf Smartphone]
+    A[Carrier im Teams Admin Center autorisieren] --> B[Nummer beim Carrier bestellen]
+    B --> C[Nummer in Teams Admin Center zuweisen]
+    C --> D[Lizenz dem Benutzer zuweisen]
+    D --> E[Benutzer aktiviert auf Smartphone]
 ```
 
 **Schritt 1: Carrier autorisieren**

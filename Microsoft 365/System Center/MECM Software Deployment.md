@@ -100,8 +100,8 @@ Supersedence definiert, welche ältere Anwendung durch die neue ersetzt wird:
 
 ```mermaid
 graph LR
-    NEW[7-Zip 24.06\nNeue Version] -->|ersetzt| OLD[7-Zip 22.01\nAlte Version]
-    OLD -->|Deinstallieren und\ndann installieren| ACTION{Aktion}
+    NEW[7-Zip 24.06 Neue Version] -->|ersetzt| OLD[7-Zip 22.01 Alte Version]
+    OLD -->|Deinstallieren und dann installieren| ACTION{Aktion}
     ACTION -->|Upgrade| NEW
 ```
 
@@ -117,8 +117,8 @@ Abhängigkeiten werden **automatisch vor der Hauptanwendung** installiert:
 
 ```mermaid
 graph LR
-    APP[Hauptanwendung\nSQL Reporting Tool] -->|benötigt| DEP1[SQL Server 2022\nRuntime]
-    APP -->|benötigt| DEP2[Visual C++ 2022\nRedistributable]
+    APP[Hauptanwendung SQL Reporting Tool] -->|benötigt| DEP1[SQL Server 2022 Runtime]
+    APP -->|benötigt| DEP2[Visual C++ 2022 Redistributable]
     DEP1 -->|benötigt| DEP3[Windows Installer 5.0]
 ```
 
@@ -136,25 +136,25 @@ Task Sequences sind Schritt-für-Schritt-Workflows für komplexe Operationen.
 
 ```mermaid
 flowchart LR
-    TS{Task Sequence\nTyp?} --> OSD[OS Deployment\nKomplett-Imaging]
-    TS --> IPU[In-Place Upgrade\nWindows Upgrade]
-    TS --> CUSTOM[Custom TS\nBeliebigte Schritte]
-    TS --> CAPTURE[Capture Image\nReferenz-Image erstellen]
+    TS{Task Sequence Typ?} --> OSD[OS Deployment Komplett-Imaging]
+    TS --> IPU[In-Place Upgrade Windows Upgrade]
+    TS --> CUSTOM[Custom TS Beliebigte Schritte]
+    TS --> CAPTURE[Capture Image Referenz-Image erstellen]
 ```
 
 ### OS Deployment (OSD) Ablauf
 
 ```mermaid
 flowchart TD
-    PXE[PXE Boot oder\nUSB Boot Image] --> WinPE[WinPE startet\nBoot Image laden]
-    WinPE --> PART[Festplatte partitionieren\nund formatieren]
-    PART --> APPLY[Windows Apply\nWIM-Image entpacken]
-    APPLY --> SETUP[Windows Setup\nSysprep Oobe]
-    SETUP --> DOMAIN[Domain Join\nComputer-Konto]
-    DOMAIN --> DRIVER[Treiber installieren\nDriver Package]
-    DRIVER --> APPS[Anwendungen installieren\nSoftware Deployment]
-    APPS --> UPDATES[Windows Updates\nSoftware Update TS Step]
-    UPDATES --> DONE[Fertig\nBenutzer kann sich anmelden]
+    PXE[PXE Boot oder USB Boot Image] --> WinPE[WinPE startet Boot Image laden]
+    WinPE --> PART[Festplatte partitionieren und formatieren]
+    PART --> APPLY[Windows Apply WIM-Image entpacken]
+    APPLY --> SETUP[Windows Setup Sysprep Oobe]
+    SETUP --> DOMAIN[Domain Join Computer-Konto]
+    DOMAIN --> DRIVER[Treiber installieren Driver Package]
+    DRIVER --> APPS[Anwendungen installieren Software Deployment]
+    APPS --> UPDATES[Windows Updates Software Update TS Step]
+    UPDATES --> DONE[Fertig Benutzer kann sich anmelden]
 
     style PXE fill:#0078D4,color:#fff
     style DONE fill:#107C10,color:#fff
@@ -261,7 +261,7 @@ Phased Deployments ermöglichen kontrollierte Rollouts in mehreren Phasen:
 
 ```mermaid
 flowchart LR
-    P1[Phase 1\nPilot-Collection\nIT Abteilung] -->|Erfolgskriterien erfüllt| P2[Phase 2\nProduktion\nAlle Geräte]
+    P1[Phase 1 Pilot-Collection IT Abteilung] -->|Erfolgskriterien erfüllt| P2[Phase 2 Produktion Alle Geräte]
     P1 --> C1{Kriterien?}
     C1 --> K1[X% Erfolgsrate]
     C1 --> K2[Manuelle Genehmigung]

@@ -31,14 +31,14 @@ aliases:
 ```mermaid
 graph TD
     subgraph AzureStackHCI_Cluster
-        NODE1[Node 1\nHyper-V S2D]
-        NODE2[Node 2\nHyper-V S2D]
-        NODE3[Node 3\nHyper-V S2D]
-        S2D[Storage Spaces Direct\ngeteilter Storage Pool]
+        NODE1[Node 1 Hyper-V S2D]
+        NODE2[Node 2 Hyper-V S2D]
+        NODE3[Node 3 Hyper-V S2D]
+        S2D[Storage Spaces Direct geteilter Storage Pool]
     end
 
     subgraph Azure
-        ARC[Azure Arc\nControl Plane]
+        ARC[Azure Arc Control Plane]
         PORTAL[Azure Portal]
         MONITOR[Azure Monitor]
     end
@@ -74,8 +74,8 @@ Seit **Azure Stack HCI 23H2** ist **Azure Arc die einzige Verwaltungsebene**. De
 
 ```mermaid
 graph LR
-    HCI_CLUSTER[HCI Cluster\nonline registriert]
-    ARC_BRIDGE[Arc Resource Bridge\nVM auf HCI]
+    HCI_CLUSTER[HCI Cluster online registriert]
+    ARC_BRIDGE[Arc Resource Bridge VM auf HCI]
     CUSTOM_LOC[Custom Location]
     AZURE[Azure ARM]
 
@@ -154,12 +154,12 @@ Seit Azure Stack HCI 23H2 erfolgt das Deployment vollständig über das Azure Po
 
 ```mermaid
 graph TD
-    PREREQ[Voraussetzungen\nAD Domain Active Directory\nNetzwerk DNS NTP]
-    BOOTSTRAP[Bootstrap\nHCI OS auf Nodes installieren]
-    REGISTER[Arc-Registrierung\nbei Azure]
-    VALIDATE[Validation\nHardware Netzwerk Check]
-    DEPLOY[Cluster Deployment\nüber Azure Portal]
-    POST[Post-Deployment\nAKS AVD Erweiterungen]
+    PREREQ[Voraussetzungen AD Domain Active Directory Netzwerk DNS NTP]
+    BOOTSTRAP[Bootstrap HCI OS auf Nodes installieren]
+    REGISTER[Arc-Registrierung bei Azure]
+    VALIDATE[Validation Hardware Netzwerk Check]
+    DEPLOY[Cluster Deployment über Azure Portal]
+    POST[Post-Deployment AKS AVD Erweiterungen]
 
     PREREQ --> BOOTSTRAP
     BOOTSTRAP --> REGISTER
@@ -198,9 +198,9 @@ Register-AzStackHCI `
 graph TD
     HCI[Azure Stack HCI Cluster]
     ARC_BRIDGE[Arc Resource Bridge]
-    AKS_OP[AKS Arc Operator\nExtension]
-    AKS_CLUSTER[AKS Workload Cluster\nVM-basiert auf HCI]
-    AZURE_PORTAL[Azure Portal\nAKS-Verwaltung]
+    AKS_OP[AKS Arc Operator Extension]
+    AKS_CLUSTER[AKS Workload Cluster VM-basiert auf HCI]
+    AZURE_PORTAL[Azure Portal AKS-Verwaltung]
 
     HCI --> ARC_BRIDGE
     ARC_BRIDGE --> AKS_OP
@@ -245,9 +245,9 @@ az aksarc get-credentials \
 
 ```mermaid
 graph LR
-    USER[Benutzer\nRDP Client]
-    AVD_CONTROL[AVD Control Plane\nin Azure]
-    SESSION_HOSTS[Session Hosts\nHyper-V VMs auf HCI]
+    USER[Benutzer RDP Client]
+    AVD_CONTROL[AVD Control Plane in Azure]
+    SESSION_HOSTS[Session Hosts Hyper-V VMs auf HCI]
 
     USER -->|RDP über Azure Gateway| AVD_CONTROL
     AVD_CONTROL -->|Session Broker| SESSION_HOSTS
@@ -266,10 +266,10 @@ graph LR
 ```mermaid
 graph LR
     HCI[HCI Cluster]
-    AMA[Azure Monitor Agent\nauf HCI-Nodes]
+    AMA[Azure Monitor Agent auf HCI-Nodes]
     DCR[Data Collection Rule]
     LAW[Log Analytics Workspace]
-    INSIGHTS[HCI Insights\nWorkbook]
+    INSIGHTS[HCI Insights Workbook]
 
     HCI --> AMA
     AMA --> DCR

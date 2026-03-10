@@ -29,9 +29,9 @@ Eine **Azure Subscription** ist ein logischer Container, der:
 
 ```mermaid
 graph TD
-    T[Entra ID Tenant] -->|vertraut| S1[Subscription A\nProduktion]
-    T -->|vertraut| S2[Subscription B\nEntwicklung]
-    T -->|vertraut| S3[Subscription C\nTest]
+    T[Entra ID Tenant] -->|vertraut| S1[Subscription A Produktion]
+    T -->|vertraut| S2[Subscription B Entwicklung]
+    T -->|vertraut| S3[Subscription C Test]
     S1 --> RG1[rg-webapp-prod]
     S1 --> RG2[rg-database-prod]
     S2 --> RG3[rg-webapp-dev]
@@ -71,7 +71,7 @@ graph TD
 
 ```mermaid
 graph TD
-    ROOT[Tenant Root Group\nRot MG - immer vorhanden]
+    ROOT[Tenant Root Group Rot MG - immer vorhanden]
     ROOT --> PLATFORM[MG Platform]
     ROOT --> LANDINGZONES[MG Landing Zones]
     ROOT --> SANDBOX[MG Sandbox]
@@ -265,9 +265,9 @@ Wichtige Limits pro Subscription (Stand 2025):
 
 ```mermaid
 graph LR
-    MSP[MSP Tenant\nTechniker] -->|Lighthouse-Delegation| KUNDEN[Kunden Tenant\nSubscription A]
-    MSP -->|Lighthouse-Delegation| KUNDEN2[Kunden Tenant\nSubscription B]
-    MSP -->|Lighthouse-Delegation| KUNDEN3[Kunden Tenant\nSubscription C]
+    MSP[MSP Tenant Techniker] -->|Lighthouse-Delegation| KUNDEN[Kunden Tenant Subscription A]
+    MSP -->|Lighthouse-Delegation| KUNDEN2[Kunden Tenant Subscription B]
+    MSP -->|Lighthouse-Delegation| KUNDEN3[Kunden Tenant Subscription C]
 ```
 
 ---

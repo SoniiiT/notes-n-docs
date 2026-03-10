@@ -27,8 +27,8 @@ Azure Private Link besteht aus zwei Konzepten:
 
 ```mermaid
 graph LR
-    VM[Azure VM\nim VNet] -->|Private IP\nkein Internet| PE[Private Endpoint\n10 0 30 5]
-    PE -->|Azure Private Link| PAAS[Azure PaaS Dienst\nz.B. Storage Account\nSQL Database\nKey Vault]
+    VM[Azure VM im VNet] -->|Private IP kein Internet| PE[Private Endpoint 10 0 30 5]
+    PE -->|Azure Private Link| PAAS[Azure PaaS Dienst z.B. Storage Account SQL Database Key Vault]
 ```
 
 1. **Private Endpoint** — Eine NIC (mit privater IP) im VNet, die den Datenverkehr zu einem Azure-Dienst oder einem Private Link Service leitet
@@ -115,11 +115,11 @@ New-AzPrivateEndpoint `
 
 ```mermaid
 graph TD
-    VM[VM im VNet] -->|DNS Query\nstorprod.blob.core.windows.net| DNS_SERVER{DNS-Server}
-    DNS_SERVER -->|Azure-provided DNS| PVT_DNS[Private DNS Zone\nprivatelink.blob.core.windows.net]
-    PVT_DNS -->|A Record\n10 0 30 5| VM
-    DNS_SERVER -->|Kein VNet-Link!| PUB_DNS[Öffentliches DNS\n52.239.xxx.xxx]
-    PUB_DNS -->|Öffentliche IP| FIREWALL[Firewall blockiert\nKonnektivitätsproblem]
+    VM[VM im VNet] -->|DNS Query storprod.blob.core.windows.net| DNS_SERVER{DNS-Server}
+    DNS_SERVER -->|Azure-provided DNS| PVT_DNS[Private DNS Zone privatelink.blob.core.windows.net]
+    PVT_DNS -->|A Record 10 0 30 5| VM
+    DNS_SERVER -->|Kein VNet-Link!| PUB_DNS[Öffentliches DNS 52.239.xxx.xxx]
+    PUB_DNS -->|Öffentliche IP| FIREWALL[Firewall blockiert Konnektivitätsproblem]
 ```
 
 ### Private DNS Zones — Tabelle nach Dienst
@@ -184,12 +184,12 @@ resource privateDnsZoneGroup 'Microsoft.Network/privateEndpoints/privateDnsZoneG
 
 ```mermaid
 graph TD
-    HUB[Hub VNet\nZentraler DNS-Resolver\noder DNS-Forwarder VM] -->|VNet-Link| DNS_ZONE[Private DNS Zone\nz.B. privatelink.blob.core.windows.net]
+    HUB[Hub VNet Zentraler DNS-Resolver oder DNS-Forwarder VM] -->|VNet-Link| DNS_ZONE[Private DNS Zone z.B. privatelink.blob.core.windows.net]
     
     SPOKE1[Spoke VNet 1] -->|Peering| HUB
     SPOKE2[Spoke VNet 2] -->|Peering| HUB
     
-    HUB --> PE[Private Endpoint\nfür Storage\n10 100 0 5]
+    HUB --> PE[Private Endpoint für Storage 10 100 0 5]
     PE --> STORAGE[Azure Storage]
     
     SPOKE1 -->|DNS Query → Hub| HUB
@@ -244,8 +244,8 @@ Mit **Private Link Service** können eigene Dienste über Private Link angeboten
 
 ```mermaid
 graph LR
-    CONSUMER[Consumer VNet\nanderer Tenant] -->|Private Endpoint| PLS[Private Link Service\nProvider VNet]
-    PLS -->|Azure ILB| APP[Eigene Anwendung\nhinter ILB]
+    CONSUMER[Consumer VNet anderer Tenant] -->|Private Endpoint| PLS[Private Link Service Provider VNet]
+    PLS -->|Azure ILB| APP[Eigene Anwendung hinter ILB]
 ```
 
 **Anwendungsfall:** SaaS-Anbieter möchte seinen Dienst ohne öffentliche IP für Kunden anbieten.
@@ -274,8 +274,8 @@ Traffic zu Private Endpoints kann über Azure Firewall geleitet werden:
 
 ```mermaid
 graph LR
-    VM[VM in Spoke] -->|UDR: 0 0 0 0/0 → FW| FW[Azure Firewall\nim Hub]
-    FW -->|Network Rule erlaubt| PE[Private Endpoint\n10 100 0 5]
+    VM[VM in Spoke] -->|UDR: 0 0 0 0/0 → FW| FW[Azure Firewall im Hub]
+    FW -->|Network Rule erlaubt| PE[Private Endpoint 10 100 0 5]
     PE --> STORAGE[Azure Storage]
 ```
 
@@ -290,11 +290,11 @@ On-Prem-Systeme können über ExpressRoute oder VPN auf Private Endpoints zugrei
 
 ```mermaid
 graph LR
-    ONPREM[On-Prem Server] -->|ExpressRoute\noder VPN| VNET[Azure Hub VNet]
-    VNET --> PE[Private Endpoint\n10 0 30 5]
+    ONPREM[On-Prem Server] -->|ExpressRoute oder VPN| VNET[Azure Hub VNet]
+    VNET --> PE[Private Endpoint 10 0 30 5]
     PE --> SQL[(Azure SQL Database)]
     
-    DNS_FWD[On-Prem DNS\nConditional Forwarder\nprivatelink.database.windows.net\n→ Azure DNS Resolver] -.->|DNS-Auflösung| AZURE_DNS[Azure DNS]
+    DNS_FWD[On-Prem DNS Conditional Forwarder privatelink.database.windows.net → Azure DNS Resolver] -.->|DNS-Auflösung| AZURE_DNS[Azure DNS]
 ```
 
 **DNS-Konfiguration für On-Prem:**

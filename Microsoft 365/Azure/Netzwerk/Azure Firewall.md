@@ -55,12 +55,12 @@ Azure Firewall verarbeitet Regeln in dieser Reihenfolge:
 
 ```mermaid
 graph TD
-    TRAFFIC[Eingehender Traffic] --> DNAT{DNAT Rules\n Treffer?}
+    TRAFFIC[Eingehender Traffic] --> DNAT{DNAT Rules  Treffer?}
     DNAT -->|Ja - DNAT| VM[Interne Ressource]
-    DNAT -->|Nein| NETW{Network Rules\nTreffer?}
+    DNAT -->|Nein| NETW{Network Rules Treffer?}
     NETW -->|Allow| DEST[Ziel]
     NETW -->|Deny| DROP1[Verwerfen]
-    NETW -->|Kein Treffer| APP{Application Rules\nTreffer?}
+    NETW -->|Kein Treffer| APP{Application Rules Treffer?}
     APP -->|Allow| DEST2[Ziel]
     APP -->|Deny oder kein Treffer| DROP2[Verwerfen]
 ```
@@ -126,9 +126,9 @@ $appRule = New-AzFirewallPolicyApplicationRule `
 
 ```mermaid
 graph LR
-    TRAFFIC[Netzwerk-Traffic] --> FW[Azure Firewall\nPremium]
-    FW --> IDPS{IDPS Engine\nSignatur-Check}
-    IDPS -->|Bekannte Bedrohung| ACTION{Alert oder\nDrop}
+    TRAFFIC[Netzwerk-Traffic] --> FW[Azure Firewall Premium]
+    FW --> IDPS{IDPS Engine Signatur-Check}
+    IDPS -->|Bekannte Bedrohung| ACTION{Alert oder Drop}
     IDPS -->|Sauber| DEST[Ziel]
     ACTION -->|Detection Mode| LOG[Nur loggen]
     ACTION -->|Prevention Mode| DROP[Traffic blocken]
@@ -190,10 +190,10 @@ Set-AzFirewallPolicy -InputObject $firewallPolicy
 
 ```mermaid
 graph TD
-    BASE[Base Policy\nGlobale Regeln] --> CHILD1[Child Policy\nHub West Europe]
-    BASE --> CHILD2[Child Policy\nHub North Europe]
-    CHILD1 --> FW1[Firewall\nWest Europe]
-    CHILD2 --> FW2[Firewall\nNorth Europe]
+    BASE[Base Policy Globale Regeln] --> CHILD1[Child Policy Hub West Europe]
+    BASE --> CHILD2[Child Policy Hub North Europe]
+    CHILD1 --> FW1[Firewall West Europe]
+    CHILD2 --> FW2[Firewall North Europe]
 ```
 
 **Vorteile von Firewall Policy:**
@@ -226,11 +226,11 @@ resource firewallPolicy 'Microsoft.Network/firewallPolicies@2023-09-01' = {
 graph TD
     SPOKE1[Spoke VNet 1] -->|Peering| HUB[Hub VNet]
     SPOKE2[Spoke VNet 2] -->|Peering| HUB
-    HUB --> FW[Azure Firewall\n10 0 0 4]
-    FW --> INT[Internet\nEgress]
+    HUB --> FW[Azure Firewall 10 0 0 4]
+    FW --> INT[Internet Egress]
     
-    UDR1[UDR auf Spoke1\n0 0 0 0/0 → FW IP] -.->|Zwingt Traffic| FW
-    UDR2[UDR auf Spoke2\n0 0 0 0/0 → FW IP] -.->|Zwingt Traffic| FW
+    UDR1[UDR auf Spoke1 0 0 0 0/0 → FW IP] -.->|Zwingt Traffic| FW
+    UDR2[UDR auf Spoke2 0 0 0 0/0 → FW IP] -.->|Zwingt Traffic| FW
 ```
 
 ```powershell

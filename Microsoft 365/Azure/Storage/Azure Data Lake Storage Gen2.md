@@ -32,7 +32,7 @@ ADLS Gen2 ist **kein separater Dienst** — es ist ein normaler **Azure Blob Sto
 
 ```mermaid
 graph TD
-    A[Azure Storage Account\nHNS aktiviert] --> B[Container\nFilesystem]
+    A[Azure Storage Account HNS aktiviert] --> B[Container Filesystem]
     B --> C[Ordner bronze]
     B --> D[Ordner silver]
     B --> E[Ordner gold]
@@ -64,20 +64,20 @@ graph TD
 
 ```mermaid
 graph LR
-    SRC1[Datenbank] --> ING[Ingest\nADF / Fabric Pipelines]
+    SRC1[Datenbank] --> ING[Ingest ADF / Fabric Pipelines]
     SRC2[IoT-Daten] --> ING
     SRC3[Log-Dateien] --> ING
 
-    ING --> BRONZE[Bronze Layer\nRohdaten]
-    BRONZE --> SILVER[Silver Layer\nBereinigt validiert]
-    SILVER --> GOLD[Gold Layer\nAggregiert business-ready]
+    ING --> BRONZE[Bronze Layer Rohdaten]
+    BRONZE --> SILVER[Silver Layer Bereinigt validiert]
+    SILVER --> GOLD[Gold Layer Aggregiert business-ready]
 
-    BRONZE --> DB[Databricks\nSpark Jobs]
+    BRONZE --> DB[Databricks Spark Jobs]
     SILVER --> DB
     DB --> GOLD
 
-    GOLD --> FAB[Microsoft Fabric\nPower BI Reports]
-    GOLD --> SYN[Azure Synapse\nSQL Pools]
+    GOLD --> FAB[Microsoft Fabric Power BI Reports]
+    GOLD --> SYN[Azure Synapse SQL Pools]
 ```
 
 **Schichten der Medallion-Architektur:**
@@ -148,11 +148,11 @@ print(f"ACL: {props['acl']}")
 
 ```mermaid
 graph TD
-    RBAC[Azure RBAC\ngrobe Rechte auf Account] --> DA[Storage Blob Data Owner\noder Data Contributor]
-    ACL[POSIX ACLs\nfein-granular auf Ordner/Datei] --> FA[Lese-Zugriff nur auf Silver-Ordner]
+    RBAC[Azure RBAC grobe Rechte auf Account] --> DA[Storage Blob Data Owner oder Data Contributor]
+    ACL[POSIX ACLs fein-granular auf Ordner/Datei] --> FA[Lese-Zugriff nur auf Silver-Ordner]
 
     DA --> USER[Data Engineer]
-    FA --> USER2[Data Analyst\nnur Silver und Gold]
+    FA --> USER2[Data Analyst nur Silver und Gold]
 ```
 
 | Ebene | Methode | Granularität | Anwendungsfall |

@@ -41,7 +41,7 @@ graph LR
 
 ```mermaid
 graph LR
-    APP[Anwendung auf VM] -->|Token-Request IMDS| IMDS[IMDS Endpoint\n169 254 169 254]
+    APP[Anwendung auf VM] -->|Token-Request IMDS| IMDS[IMDS Endpoint 169 254 169 254]
     IMDS -->|Azure AD Token| APP
     APP -->|Bearer Token| VAULT[Key Vault]
     APP -->|Bearer Token| SQL[(SQL Database)]
@@ -281,10 +281,10 @@ az role assignment create \
 **Entscheidungsbaum:**
 ```mermaid
 graph TD
-    A{Läuft auf Azure?} -->|Ja| B{Mehrere Ressourcen\ngleiche Identität?}
-    A -->|Nein| C[App Registration\nmit Federated Credential]
-    B -->|Ja| D[User-assigned\nManaged Identity]
-    B -->|Nein| E[System-assigned\nManaged Identity]
+    A{Läuft auf Azure?} -->|Ja| B{Mehrere Ressourcen gleiche Identität?}
+    A -->|Nein| C[App Registration mit Federated Credential]
+    B -->|Ja| D[User-assigned Managed Identity]
+    B -->|Nein| E[System-assigned Managed Identity]
 ```
 
 ---
@@ -362,14 +362,14 @@ resource appService 'Microsoft.Web/sites@2023-01-01' = {
 
 ```mermaid
 graph TD
-    ERR[401 Unauthorized] --> CHK1{Managed Identity\naktiviert?}
-    CHK1 -->|Nein| FIX1[Identity in Portal/Bicep\naktivieren]
-    CHK1 -->|Ja| CHK2{Role Assignment\nvorhanden?}
-    CHK2 -->|Nein| FIX2[Role Assignment\nerstellen]
+    ERR[401 Unauthorized] --> CHK1{Managed Identity aktiviert?}
+    CHK1 -->|Nein| FIX1[Identity in Portal/Bicep aktivieren]
+    CHK1 -->|Ja| CHK2{Role Assignment vorhanden?}
+    CHK2 -->|Nein| FIX2[Role Assignment erstellen]
     CHK2 -->|Ja| CHK3{Richtige Scope?}
-    CHK3 -->|Nein| FIX3[Scope auf richtige\nRessource setzen]
-    CHK3 -->|Ja| CHK4{Richtiger\nResource-Parameter?}
-    CHK4 -->|Nein| FIX4[resource= Parameter\nim Token-Request prüfen]
+    CHK3 -->|Nein| FIX3[Scope auf richtige Ressource setzen]
+    CHK3 -->|Ja| CHK4{Richtiger Resource-Parameter?}
+    CHK4 -->|Nein| FIX4[resource= Parameter im Token-Request prüfen]
 ```
 
 ### Häufige Fehler und Lösungen

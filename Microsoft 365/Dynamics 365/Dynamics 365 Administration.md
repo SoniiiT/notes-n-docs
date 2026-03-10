@@ -58,10 +58,10 @@ Das Power Platform Admin Center (PPAC) unter [admin.powerplatform.microsoft.com]
 
 ```mermaid
 graph LR
-    DEV[Developer\nUmgebung\nje Entwickler] -->|Lösungsexport| INT[Integration\nSandbox]
-    INT -->|Lösungsimport| UAT[UAT\nSandbox]
-    UAT -->|Go-Live| PROD[Production\nUmgebung]
-    PROD -->|Kopie| REF[Refresh\nSandbox\nperiodisch]
+    DEV[Developer Umgebung je Entwickler] -->|Lösungsexport| INT[Integration Sandbox]
+    INT -->|Lösungsimport| UAT[UAT Sandbox]
+    UAT -->|Go-Live| PROD[Production Umgebung]
+    PROD -->|Kopie| REF[Refresh Sandbox periodisch]
 ```
 
 **Empfohlene Mindeststruktur:**
@@ -193,10 +193,10 @@ graph TD
     SOL[Solution] --> ENT[Tabellen/Entities]
     SOL --> FORMS[Formulare]
     SOL --> VIEWS[Ansichten]
-    SOL --> FLOWS[Power Automate\nFlows]
-    SOL --> APPS[Model-Driven\nApps]
+    SOL --> FLOWS[Power Automate Flows]
+    SOL --> APPS[Model-Driven Apps]
     SOL --> PLUG[Plugins]
-    SOL --> WEB[Web Resources\nJS, HTML]
+    SOL --> WEB[Web Resources JS, HTML]
     SOL --> ENV_VAR[Umgebungsvariablen]
     SOL --> CON_REF[Connection References]
 ```
@@ -263,11 +263,11 @@ stages:
 
 ```mermaid
 graph TD
-    TENANT[Tenant\nMicrosoft Entra ID] --> ORG[Organisation\nDataverse Instanz]
-    ORG --> BU[Business Units\nHierarchisch]
-    BU --> TEAM[Teams\nGruppen]
+    TENANT[Tenant Microsoft Entra ID] --> ORG[Organisation Dataverse Instanz]
+    ORG --> BU[Business Units Hierarchisch]
+    BU --> TEAM[Teams Gruppen]
     TEAM --> USER[Benutzer]
-    USER --> ROLE[Sicherheitsrolle\nzugewiesen]
+    USER --> ROLE[Sicherheitsrolle zugewiesen]
 ```
 
 ### Business Units
@@ -295,15 +295,15 @@ Sicherheitsrollen definieren, was ein Benutzer in Dataverse tun darf:
 
 ```mermaid
 graph TD
-    ROLE2[Sicherheitsrolle] --> ENT2[Entitäts-\nBerechtigungen]
-    ENT2 --> CREATE[Create\nErstellen]
-    ENT2 --> READ[Read\nLesen]
-    ENT2 --> WRITE[Write\nSchreiben]
-    ENT2 --> DELETE[Delete\nLöschen]
-    ENT2 --> APPEND[Append\nAnhängen]
-    ENT2 --> APPTO[Append To\nAngehängt werden]
-    ENT2 --> ASSIGN[Assign\nZuweisen]
-    ENT2 --> SHARE[Share\nTeilen]
+    ROLE2[Sicherheitsrolle] --> ENT2[Entitäts- Berechtigungen]
+    ENT2 --> CREATE[Create Erstellen]
+    ENT2 --> READ[Read Lesen]
+    ENT2 --> WRITE[Write Schreiben]
+    ENT2 --> DELETE[Delete Löschen]
+    ENT2 --> APPEND[Append Anhängen]
+    ENT2 --> APPTO[Append To Angehängt werden]
+    ENT2 --> ASSIGN[Assign Zuweisen]
+    ENT2 --> SHARE[Share Teilen]
 ```
 
 **Zugriffsebenen:**
@@ -350,10 +350,10 @@ Invoke-RestMethod `
 
 ```mermaid
 graph LR
-    ACTION[Benutzeraktion\nin D365] --> AUDIT[Dataverse\nAudit Log]
-    AUDIT --> PPAC2[PPAC\nAudit-Ansicht]
-    AUDIT --> PURVIEW[Microsoft Purview\nCompliance Portal]
-    AUDIT --> EXPORT[Export\nCSV / API]
+    ACTION[Benutzeraktion in D365] --> AUDIT[Dataverse Audit Log]
+    AUDIT --> PPAC2[PPAC Audit-Ansicht]
+    AUDIT --> PURVIEW[Microsoft Purview Compliance Portal]
+    AUDIT --> EXPORT[Export CSV / API]
 ```
 
 **Auditierbare Aktionen:**
@@ -440,11 +440,11 @@ Set-MgUserLicense `
 
 ```mermaid
 graph TD
-    USER2[Benutzer\nmeldet sich an] --> LIC[Lizenz-Prüfung\nEntra ID]
-    LIC -->|Lizenz vorhanden| ENV3[Umgebungszugriff\nprüfen]
-    LIC -->|Keine Lizenz| BLOCK2[Zugriff\nverweigert]
-    ENV3 -->|Sicherheitsrolle| ACCESS[Zugriff\ngewährt]
-    ENV3 -->|Keine Rolle| BLOCK3[Zugriff\nverweigert]
+    USER2[Benutzer meldet sich an] --> LIC[Lizenz-Prüfung Entra ID]
+    LIC -->|Lizenz vorhanden| ENV3[Umgebungszugriff prüfen]
+    LIC -->|Keine Lizenz| BLOCK2[Zugriff verweigert]
+    ENV3 -->|Sicherheitsrolle| ACCESS[Zugriff gewährt]
+    ENV3 -->|Keine Rolle| BLOCK3[Zugriff verweigert]
 ```
 
 ---

@@ -36,13 +36,13 @@ Traditionell erfordert die Zertifikatverteilung an Endpoints eine **On-Premises 
 graph TD
     subgraph TRADITIONAL["Traditionelle PKI"]
         ADCS[ADCS Windows Server] --> NDES[NDES Server]
-        NDES --> CONNECTOR[Intune Connector\nOn-Premises]
+        NDES --> CONNECTOR[Intune Connector On-Premises]
         CONNECTOR --> INTUNE_OLD[Intune Cloud]
     end
     
     subgraph CLOUD_PKI["Microsoft Cloud PKI"]
-        ROOT[Cloud Root CA\nin Intune] --> ISSUING[Cloud Issuing CA\nin Intune]
-        ISSUING --> INTUNE_NEW[Intune Admin Center\nZertifikat-Profile]
+        ROOT[Cloud Root CA in Intune] --> ISSUING[Cloud Issuing CA in Intune]
+        ISSUING --> INTUNE_NEW[Intune Admin Center Zertifikat-Profile]
     end
     
     INTUNE_OLD -->|Zertifikat| DEVICE1[Gerät]
@@ -318,9 +318,9 @@ Get-ChildItem -Path Cert:\LocalMachine\My | Where-Object {
 
 ```mermaid
 graph LR
-    PHASE1[Phase 1\nCloud PKI parallel\naufsetzen] --> PHASE2[Phase 2\nNeue Geräte via\nCloud PKI]
-    PHASE2 --> PHASE3[Phase 3\nBestehende Geräte\nmigieren]
-    PHASE3 --> PHASE4[Phase 4\nADCS abschalten]
+    PHASE1[Phase 1 Cloud PKI parallel aufsetzen] --> PHASE2[Phase 2 Neue Geräte via Cloud PKI]
+    PHASE2 --> PHASE3[Phase 3 Bestehende Geräte migieren]
+    PHASE3 --> PHASE4[Phase 4 ADCS abschalten]
 ```
 
 ### Checkliste Migration

@@ -42,10 +42,10 @@ aliases:
 
 ```mermaid
 flowchart LR
-    A[Assessment\nBestandsaufnahme] --> B[Pilot\nKleine Gruppe]
-    B --> C[Migration\nSchrittweise]
-    C --> D[Optimierung\nCloud-native Features]
-    D --> E[Decommission\nOn-Premises abschalten]
+    A[Assessment Bestandsaufnahme] --> B[Pilot Kleine Gruppe]
+    B --> C[Migration Schrittweise]
+    C --> D[Optimierung Cloud-native Features]
+    D --> E[Decommission On-Premises abschalten]
 
     A --> A1[SC-Produkt-Inventar]
     A --> A2[Workload-Analyse]
@@ -76,16 +76,16 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    P1[Phase 1\nCo-Management aktivieren] --> P2[Phase 2\nEinfache Workloads\nCompliance und WU]
-    P2 --> P3[Phase 3\nKomplexe Workloads\nConfig und Endpoint Protection]
-    P3 --> P4[Phase 4\nNeugeraete via Autopilot\nkein OSD mehr]
-    P4 --> P5[Phase 5\nMECM-Client deinstallieren\nCloud-only]
+    P1[Phase 1 Co-Management aktivieren] --> P2[Phase 2 Einfache Workloads Compliance und WU]
+    P2 --> P3[Phase 3 Komplexe Workloads Config und Endpoint Protection]
+    P3 --> P4[Phase 4 Neugeraete via Autopilot kein OSD mehr]
+    P4 --> P5[Phase 5 MECM-Client deinstallieren Cloud-only]
 
-    P1 --> N1[Hybrid Entra ID Join\nCMG einrichten\nIntune-Lizenz prüfen]
-    P2 --> N2[Compliance Policies\nWindows Update Policies\nResource Access]
-    P3 --> N3[Endpoint Protection\nDevice Configuration\nM365 Apps]
-    P4 --> N4[Windows Autopilot Profile\nHardware Hash Upload\nESP konfigurieren]
-    P5 --> N5[ccmsetup uninstall\nMECM-Infrastruktur decomm]
+    P1 --> N1[Hybrid Entra ID Join CMG einrichten Intune-Lizenz prüfen]
+    P2 --> N2[Compliance Policies Windows Update Policies Resource Access]
+    P3 --> N3[Endpoint Protection Device Configuration M365 Apps]
+    P4 --> N4[Windows Autopilot Profile Hardware Hash Upload ESP konfigurieren]
+    P5 --> N5[ccmsetup uninstall MECM-Infrastruktur decomm]
 
     style P1 fill:#0078D4,color:#fff
     style P5 fill:#107C10,color:#fff
@@ -122,9 +122,9 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    SCOM[SCOM On-Premises] -->|Lift-and-Shift| SCOMMI[SCOM MI\nAzure verwaltet]
-    SCOMMI -->|Schrittweise| MON[Azure Monitor\nLog Analytics]
-    MON -->|Security Workloads| SENT[Microsoft Sentinel\nSIEM SOAR]
+    SCOM[SCOM On-Premises] -->|Lift-and-Shift| SCOMMI[SCOM MI Azure verwaltet]
+    SCOMMI -->|Schrittweise| MON[Azure Monitor Log Analytics]
+    MON -->|Security Workloads| SENT[Microsoft Sentinel SIEM SOAR]
 
     style SCOM fill:#f0f0f0
     style SCOMMI fill:#FFB900,color:#000
@@ -157,12 +157,12 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    VMM[SCVMM 2022\nOn-Premises] --> ARB[Arc Resource Bridge\nKubernetes-Komponente]
-    ARB --> AZURE[Azure Portal\nArc-enabled VMM]
-    AZURE --> POLICY[Azure Policy\nauf VMM-VMs]
-    AZURE --> MONITOR[Azure Monitor\nAMA-Agent]
-    AZURE --> DEFV[Defender for Servers\nOn-Premises VMs]
-    AZURE --> UPD[Azure Update Manager\nPatch Management]
+    VMM[SCVMM 2022 On-Premises] --> ARB[Arc Resource Bridge Kubernetes-Komponente]
+    ARB --> AZURE[Azure Portal Arc-enabled VMM]
+    AZURE --> POLICY[Azure Policy auf VMM-VMs]
+    AZURE --> MONITOR[Azure Monitor AMA-Agent]
+    AZURE --> DEFV[Defender for Servers On-Premises VMs]
+    AZURE --> UPD[Azure Update Manager Patch Management]
 
     style AZURE fill:#0078D4,color:#fff
     style ARB fill:#00BCF2,color:#fff
@@ -272,15 +272,15 @@ Add-HybridRunbookWorker `
 
 ```mermaid
 flowchart TD
-    START[SC-Workload analysieren] --> Q1{Compliance\nDaten müssen On-Premises bleiben?}
-    Q1 -->|Ja| HYBRID[Hybrid-Modell\nOn-Premises behalten\nCloud ergänzt]
-    Q1 -->|Nein| Q2{Netzwerk-Latenz\nkritisch für Workload?}
-    Q2 -->|Ja| Q3{Hybrid Worker oder\nArc-Connectivity möglich?}
-    Q3 -->|Ja| MIGRATE[Migrieren mit\nHybrid-Komponenten]
+    START[SC-Workload analysieren] --> Q1{Compliance Daten müssen On-Premises bleiben?}
+    Q1 -->|Ja| HYBRID[Hybrid-Modell On-Premises behalten Cloud ergänzt]
+    Q1 -->|Nein| Q2{Netzwerk-Latenz kritisch für Workload?}
+    Q2 -->|Ja| Q3{Hybrid Worker oder Arc-Connectivity möglich?}
+    Q3 -->|Ja| MIGRATE[Migrieren mit Hybrid-Komponenten]
     Q3 -->|Nein| HYBRID
-    Q2 -->|Nein| Q4{Neue oder bestehende\nUmgebung?}
-    Q4 -->|Neu| CLOUDNATIVE[Cloud-native\ndirekter Azure-Einsatz]
-    Q4 -->|Bestehend| LIFT[Lift-and-Shift\ndann schrittweise optimieren]
+    Q2 -->|Nein| Q4{Neue oder bestehende Umgebung?}
+    Q4 -->|Neu| CLOUDNATIVE[Cloud-native direkter Azure-Einsatz]
+    Q4 -->|Bestehend| LIFT[Lift-and-Shift dann schrittweise optimieren]
 
     style CLOUDNATIVE fill:#107C10,color:#fff
     style HYBRID fill:#FFB900,color:#000

@@ -63,10 +63,10 @@ D365 Finance unterstützt mehrere Buchungsschichten für verschiedene Zwecke:
 
 ```mermaid
 graph LR
-    OP[Buchungsperiode\ngeöffnet] -->|Buchungen| REC[Abgrenzungen\neingeben]
-    REC -->|Periodenschluss| CLO[Periode\nschließen]
+    OP[Buchungsperiode geöffnet] -->|Buchungen| REC[Abgrenzungen eingeben]
+    REC -->|Periodenschluss| CLO[Periode schließen]
     CLO -->|Jahresende| YE[Jahresabschluss]
-    YE -->|Übertrag| NY[Neue Periode\nEröffnungssalden]
+    YE -->|Übertrag| NY[Neue Periode Eröffnungssalden]
 ```
 
 ---
@@ -77,12 +77,12 @@ graph LR
 
 ```mermaid
 graph TD
-    SO[Sales Order\nVerkaufsauftrag] -->|Lieferung| INV[Invoice\nRechnung erstellt]
-    INV -->|Gesendet| CUST[Kunde\nerhält Rechnung]
-    CUST -->|Zahlung| PAY[Zahlung\neingegangen]
-    PAY -->|Abstimmung| MATCH[Automatisches\nMatching]
-    MATCH -->|Übrig| DIFF[Differenz\nklären]
-    INV -->|Überfällig| COL[Mahnwesen\ninkasso]
+    SO[Sales Order Verkaufsauftrag] -->|Lieferung| INV[Invoice Rechnung erstellt]
+    INV -->|Gesendet| CUST[Kunde erhält Rechnung]
+    CUST -->|Zahlung| PAY[Zahlung eingegangen]
+    PAY -->|Abstimmung| MATCH[Automatisches Matching]
+    MATCH -->|Übrig| DIFF[Differenz klären]
+    INV -->|Überfällig| COL[Mahnwesen inkasso]
 ```
 
 ### Debitorenverwaltung
@@ -121,11 +121,11 @@ graph TD
 
 ```mermaid
 graph LR
-    PR[Purchase\nRequisition] -->|Genehmigt| PO[Purchase\nOrder]
-    PO -->|Wareneingang| GR[Goods Receipt\nWE-Buchung]
-    GR -->|Rechnung| VINV[Vendor Invoice\nKreditorenrechnung]
-    VINV -->|3-Wege-Match| MATCH2[3-Way Match\nPO / WE / RE]
-    MATCH2 -->|Genehmigt| PAY2[Zahlung\nauslösen]
+    PR[Purchase Requisition] -->|Genehmigt| PO[Purchase Order]
+    PO -->|Wareneingang| GR[Goods Receipt WE-Buchung]
+    GR -->|Rechnung| VINV[Vendor Invoice Kreditorenrechnung]
+    VINV -->|3-Wege-Match| MATCH2[3-Way Match PO / WE / RE]
+    MATCH2 -->|Genehmigt| PAY2[Zahlung auslösen]
     PAY2 -->|Bank| PAID[Bezahlt]
 ```
 
@@ -169,7 +169,7 @@ D365 Finance kann Buchungen und Bestellungen gegen das Budget prüfen:
 
 ```mermaid
 graph TD
-    ACT[Buchungsversuch\noder Bestellung] --> BC[Budget-Kontrolle]
+    ACT[Buchungsversuch oder Bestellung] --> BC[Budget-Kontrolle]
     BC -->|Budget verfügbar| OK[Buchen erlaubt]
     BC -->|Budget überschritten| WARN[Warnung]
     BC -->|Harte Grenze| BLOCK[Buchung blockiert]
@@ -231,9 +231,9 @@ Für internationale Zahlungen (Lizenzgebühren, Dividenden):
 
 ```mermaid
 graph TD
-    SUB1[Tochter 1\nDE - EUR] --> CONS[Konsolidierung\nMuttergesellschaft]
-    SUB2[Tochter 2\nUS - USD] -->|Fremdwährung umrechnen| CONS
-    SUB3[Tochter 3\nUK - GBP] -->|Fremdwährung umrechnen| CONS
+    SUB1[Tochter 1 DE - EUR] --> CONS[Konsolidierung Muttergesellschaft]
+    SUB2[Tochter 2 US - USD] -->|Fremdwährung umrechnen| CONS
+    SUB3[Tochter 3 UK - GBP] -->|Fremdwährung umrechnen| CONS
     CONS -->|Intercompany-Eliminierung| FINAL[Konzernabschluss]
 ```
 
@@ -268,11 +268,11 @@ graph TD
 
 ```mermaid
 graph LR
-    RD[Report\nDefinition] --> CD[Column\nDefinition]
-    RD --> ROW[Row\nDefinition]
-    RD --> TREE[Reporting\nTree]
-    CD --> DATES[Perioden\nVergleich]
-    ROW --> ACCTS[Konten\nMappings]
+    RD[Report Definition] --> CD[Column Definition]
+    RD --> ROW[Row Definition]
+    RD --> TREE[Reporting Tree]
+    CD --> DATES[Perioden Vergleich]
+    ROW --> ACCTS[Konten Mappings]
     TREE --> ORG[Org-Hierarchie]
 ```
 

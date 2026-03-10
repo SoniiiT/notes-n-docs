@@ -27,8 +27,8 @@ Co-Management bedeutet: Ein Windows-Gerät ist **gleichzeitig** beim MECM-Client
 
 ```mermaid
 graph LR
-    DEVICE[Windows 10 11\nGerät] -->|MECM Client| MECM[MECM\nOn-Premises]
-    DEVICE -->|MDM Enrollment| INTUNE[Microsoft Intune\nCloud]
+    DEVICE[Windows 10 11 Gerät] -->|MECM Client| MECM[MECM On-Premises]
+    DEVICE -->|MDM Enrollment| INTUNE[Microsoft Intune Cloud]
     MECM -->|Workload A| DEVICE
     INTUNE -->|Workload B| DEVICE
 
@@ -78,7 +78,7 @@ graph LR
         M3[Click-to-Run Apps]
     end
     subgraph PILOT [Pilot zu Intune]
-        P1[Windows Update Policies\nPilot Collection]
+        P1[Windows Update Policies Pilot Collection]
     end
     subgraph INTUNE [Intune verwaltet]
         I1[Compliance Policies]
@@ -99,12 +99,12 @@ Jeder Workload kann für eine **Pilot-Collection** zu Intune verschoben werden, 
 
 ```mermaid
 flowchart TD
-    START[Workload: Endpoint Protection] --> PILOT[Pilot Collection\nIT Abteilung 50 Geräte]
-    PILOT --> TEST[2-4 Wochen testen\nMonitoring und Logs]
+    START[Workload: Endpoint Protection] --> PILOT[Pilot Collection IT Abteilung 50 Geräte]
+    PILOT --> TEST[2-4 Wochen testen Monitoring und Logs]
     TEST --> OK{Stabil?}
-    OK -->|Ja| PROD[Production Collection\nAlle Geräte]
-    OK -->|Nein| ROLLBACK[Workload zurück\nzu MECM]
-    PROD --> MONITOR[Dauerhaftes Monitoring\nCo-Management Dashboard]
+    OK -->|Ja| PROD[Production Collection Alle Geräte]
+    OK -->|Nein| ROLLBACK[Workload zurück zu MECM]
+    PROD --> MONITOR[Dauerhaftes Monitoring Co-Management Dashboard]
 
     style START fill:#0078D4,color:#fff
     style PROD fill:#107C10,color:#fff
@@ -187,10 +187,10 @@ Das Dashboard ist in der MECM-Konsole unter **Monitoring → Co-Management** ver
 
 ```mermaid
 flowchart LR
-    P1[Phase 1\nCo-Management aktivieren\nkeine Workloads verschieben] --> P2[Phase 2\nEinfache Workloads\nCompliance und WU]
-    P2 --> P3[Phase 3\nKomplexe Workloads\nConfig und Apps]
-    P3 --> P4[Phase 4\nNeugeräte via Autopilot\nkein OSD mehr]
-    P4 --> P5[Phase 5\nMECM-Client deinstallieren\nCloud-only]
+    P1[Phase 1 Co-Management aktivieren keine Workloads verschieben] --> P2[Phase 2 Einfache Workloads Compliance und WU]
+    P2 --> P3[Phase 3 Komplexe Workloads Config und Apps]
+    P3 --> P4[Phase 4 Neugeräte via Autopilot kein OSD mehr]
+    P4 --> P5[Phase 5 MECM-Client deinstallieren Cloud-only]
 
     style P1 fill:#0078D4,color:#fff
     style P5 fill:#107C10,color:#fff
@@ -334,11 +334,11 @@ Ein Hauptgrund für die frühe Migration der Compliance-Workload zu Intune:
 
 ```mermaid
 flowchart LR
-    USER[Benutzer versucht\nZugriff auf M365] --> CA[Conditional Access\nAzure Policy]
-    CA --> CHECK{Compliance\nStatus?}
+    USER[Benutzer versucht Zugriff auf M365] --> CA[Conditional Access Azure Policy]
+    CA --> CHECK{Compliance Status?}
     CHECK -->|Compliant via Intune| ALLOW[Zugriff erlaubt]
     CHECK -->|Non-Compliant oder Unknown| BLOCK[Zugriff blockiert]
-    CHECK -->|MECM Compliance\nnicht erkannt| BLOCK
+    CHECK -->|MECM Compliance nicht erkannt| BLOCK
 
     style ALLOW fill:#107C10,color:#fff
     style BLOCK fill:#D83B01,color:#fff

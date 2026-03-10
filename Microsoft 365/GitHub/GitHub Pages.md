@@ -245,9 +245,9 @@ Mit **GitHub Actions** sind diese Einschränkungen aufgehoben — jeder Build-Pr
 ```mermaid
 flowchart LR
     A[Push to main] --> B[Actions Trigger]
-    B --> C[Build Job\nInstall und Build]
-    C --> D[Upload Artifact\nupload-pages-artifact]
-    D --> E[Deploy Job\ndeploy-pages]
+    B --> C[Build Job Install und Build]
+    C --> D[Upload Artifact upload-pages-artifact]
+    D --> E[Deploy Job deploy-pages]
     E --> F[GitHub Pages CDN]
     F --> G[Website live]
 ```

@@ -34,7 +34,7 @@ graph TD
     end
     
     subgraph DMZ["DMZ / Perimeter"]
-        GATEWAY[Microsoft Tunnel Gateway\nLinux Server\nDocker Container]
+        GATEWAY[Microsoft Tunnel Gateway Linux Server Docker Container]
     end
     
     subgraph INTERNAL["Internes Netzwerk"]
@@ -44,11 +44,11 @@ graph TD
         DB[Datenbanken]
     end
     
-    IOS -->|TLS 1.3 / IKEv2\nüber Port 443| GATEWAY
-    AND -->|TLS 1.3 / IKEv2\nüber Port 443| GATEWAY
+    IOS -->|TLS 1.3 / IKEv2 über Port 443| GATEWAY
+    AND -->|TLS 1.3 / IKEv2 über Port 443| GATEWAY
     GATEWAY -->|interner Traffic| APP1
     GATEWAY -->|interner Traffic| APP2
-    INTUNE[Intune Admin Center] -->|Konfiguration\nund Monitoring| GATEWAY
+    INTUNE[Intune Admin Center] -->|Konfiguration und Monitoring| GATEWAY
 ```
 
 ### Site-Konzept
@@ -254,8 +254,8 @@ Der **MAM-Tunnel** ist das differenzierende Feature der Intune Suite gegenüber 
 
 ```mermaid
 graph LR
-    BYOD[BYOD Gerät\nNicht enrolled\nin Intune MDM] -->|MAM-Richtlinien\nauf App-Ebene| MAM_CLIENT[Defender/Edge/\nMS Apps mit MAM]
-    MAM_CLIENT -->|MAM-Tunnel\nVPN im App-Kontext| GATEWAY[Tunnel Gateway]
+    BYOD[BYOD Gerät Nicht enrolled in Intune MDM] -->|MAM-Richtlinien auf App-Ebene| MAM_CLIENT[Defender/Edge/ MS Apps mit MAM]
+    MAM_CLIENT -->|MAM-Tunnel VPN im App-Kontext| GATEWAY[Tunnel Gateway]
     GATEWAY --> INTERNAL[Interne Ressourcen]
 ```
 
@@ -366,8 +366,8 @@ Für Produktionsumgebungen mehrere Server pro Site konfigurieren:
 
 ```mermaid
 graph TD
-    LB[DNS Round-Robin\noder Load Balancer\ntunnel.contoso.com] --> SERVER1[Tunnel Server 1\n10.0.0.10]
-    LB --> SERVER2[Tunnel Server 2\n10.0.0.11]
+    LB[DNS Round-Robin oder Load Balancer tunnel.contoso.com] --> SERVER1[Tunnel Server 1 10.0.0.10]
+    LB --> SERVER2[Tunnel Server 2 10.0.0.11]
     SERVER1 --> INTERNAL[Internes Netzwerk]
     SERVER2 --> INTERNAL
     INTUNE[Intune] -->|Health Monitor| SERVER1
