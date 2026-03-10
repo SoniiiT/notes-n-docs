@@ -104,6 +104,47 @@ $blob.BlobClient.SetAccessTier("Cool")
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Blob-Container und Uploads sind über das Portal in wenigen Klicks verfügbar – auch ohne CLI-Kenntnisse.
+
+### Storage Account erstellen
+
+1. **portal.azure.com** → **Speicherkonten** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Speicherkontoname**: 3–24 Zeichen, global eindeutig
+   - **Region**: z. B. `West Europe`
+   - **Leistung**: Standard oder Premium (für Blob: Standard empfohlen)
+   - **Redundanz**: LRS, ZRS, GRS oder GZRS
+3. **Erweitert**-Tab:
+   - **Öffentlicher Blob-Zugriff**: Aktivieren/Deaktivieren
+   - **Zugriffsebene**: Heiß (Hot) oder Kalt (Cool)
+   - **Hierarchischer Namespace**: Nur für ADLS Gen2
+4. **Überprüfen + erstellen** → **Erstellen**
+
+### Container und Blob erstellen
+
+1. Speicherkonto → **Container** → **+ Container**
+2. **Name** vergeben, **Öffentliche Zugriffsebene**: Privat / Blob / Container
+3. **Erstellen**
+4. Container öffnen → **Hochladen**
+5. Datei auswählen, **Blobtyp** (Block, Append, Page), **Zugriffsebene** wählen → **Hochladen**
+
+### Zugriffsebene eines Blobs ändern
+
+1. Speicherkonto → Container → Blob auswählen
+2. **Ebene ändern** → Hot / Cool / Cold / Archive → **Speichern**
+
+### SAS-Token generieren
+
+1. Speicherkonto → **Shared Access Signature**
+2. Zulässige Dienste, Ressourcentypen, Berechtigungen, Ablaufzeit festlegen
+3. **SAS und Verbindungszeichenfolge generieren** → Token kopieren
+
+---
+
 ## Lifecycle Management Policies
 
 Automatisiertes Blob-Management durch JSON-Richtlinien:

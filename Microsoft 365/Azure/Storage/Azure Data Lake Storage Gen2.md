@@ -279,6 +279,45 @@ azcopy copy "/lokale/daten/" \
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> ADLS Gen2 wird durch Aktivierung des Hierarchischen Namespace beim Erstellen des Speicherkontos eingerichtet.
+
+### Storage Account mit HNS erstellen (ADLS Gen2)
+
+1. **portal.azure.com** → **Speicherkonten** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe, **Name** (global eindeutig), **Region**
+   - **Leistung**: Standard; **Redundanz**: LRS, ZRS oder GRS
+3. **Erweitert**-Tab:
+   - ✅ **Hierarchischen Namespace aktivieren** → Aktiviert ADLS Gen2
+4. **Überprüfen + erstellen** → **Erstellen**
+
+### Dateisystem (Container) erstellen
+
+1. Storage Account → **Container** → **+ Container**
+2. Name vergeben (= Dateisystem-Root) → **Erstellen**
+
+### Verzeichnisse und Dateien verwalten
+
+1. Container öffnen → **+ Verzeichnis hinzufügen**
+2. Verzeichnis öffnen → **Hochladen** für Dateien
+
+### ACL-Berechtigungen setzen
+
+1. Datei oder Verzeichnis auswählen → **...** → **ACL verwalten**
+2. Eigentümer, Gruppe, andere Benutzer/Gruppen mit rwx-Berechtigungen konfigurieren
+3. **Standard-ACL** für Vererbung auf neue Objekte setzen → **Speichern**
+
+### Storage Explorer im Portal
+
+1. Storage Account → **Storage-Explorer (Vorschau)** im linken Menü
+2. Baumansicht: Dateisysteme, Verzeichnisse und Dateien navigieren
+3. Dateien hochladen, herunterladen, ACLs und Eigenschaften einsehen
+
+---
+
 ## Bicep-Beispiel: Storage Account mit HNS
 
 ```bicep

@@ -30,6 +30,40 @@ aliases: [SQL Server VM Azure, SQL auf Azure VMs, IaaS SQL Azure]
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> SQL Server auf Azure VMs wird über spezialisierte Marketplace-Images erstellt, die SQL Server vorinstalliert und vorkonfiguriert bereitstellen.
+
+### SQL Server VM aus Marketplace erstellen
+
+1. **portal.azure.com** → **Virtuelle Computer** → **+ Erstellen** → **Azure-VM aus dem Katalog**
+2. **Image suchen**: `SQL Server` eingeben → gewünschtes Image auswählen:
+   - z. B. `SQL Server 2022 Developer on Windows Server 2022`
+   - oder `SQL Server 2022 Enterprise on Windows Server 2022`
+3. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe, **VM-Name**, **Region**
+   - **Größe**: Für SQL Server empfohlen E-Serie (speicheroptimiert) oder M-Serie (groß)
+   - **Administratorkonto**: Benutzername & Passwort
+4. **Datenträger**-Tab:
+   - OS-Datenträger: Premium SSD
+   - **+ Neuen Datenträger hinzufügen**: separate Premium SSDs für Daten und Logs
+5. **SQL Server-Einstellungen**-Tab (spezifisch für SQL-Images):
+   - **SQL-Konnektivität**: Lokal (nur VM), Privat (VNet) oder Öffentlich
+   - **Port**: 1433 (Standard)
+   - **SQL-Authentifizierung**: Aktivieren & SQL-Administratoranmeldedaten festlegen
+   - **Speicherkonfiguration**: Daten-, Log- und TempDB-Pfade auf separaten Datenträgern
+   - **Automatisierte Sicherung**: Aktivieren, Aufbewahrung & Speicherkonto festlegen
+   - **Automatisiertes Patching**: Wartungsfenster konfigurieren
+6. **Überprüfen + erstellen** → **Erstellen**
+
+### SQL IaaS Agent Extension registrieren
+
+1. VM → **SQL-IaaS-Erweiterung** (wird automatisch bei Marketplace-Images registriert)
+2. Verwaltungsmodus prüfen: Lightweight → Vollständig upgraden für alle Features
+
+---
+
 ## Marketplace-Images
 
 Azure Marketplace bietet vorkonfigurierte SQL Server-Images:

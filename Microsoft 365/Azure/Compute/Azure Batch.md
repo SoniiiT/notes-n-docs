@@ -314,6 +314,47 @@ task = models.TaskAddParameter(
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Das Azure Portal eignet sich besonders für die erstmalige Einrichtung von Batch-Konten, Pools und zur Job-Überwachung.
+
+### Batch-Konto erstellen
+
+1. **portal.azure.com** → **Batch-Konten** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Kontoname**: 3–24 Zeichen, Kleinbuchstaben & Ziffern
+   - **Region**: z. B. `West Europe`
+   - **Speicherkonto**: Verknüpftes Storage-Konto für Task-Output auswählen oder neu erstellen
+3. **Erweitert**-Tab:
+   - **Pool-Zuordnungsmodus**: Batch-Dienst (Standard) oder Benutzerabonnement
+   - Managed Identity (optional)
+4. **Überprüfen + erstellen** → **Erstellen**
+
+### Pool erstellen
+
+1. Batch-Konto → **Pools** → **+ Hinzufügen**
+2. **Pool-ID** vergeben, **VM-Größe** wählen (z. B. `Standard_D4s_v3`)
+3. **Betriebssystem**: Marketplace-Image (Ubuntu, Windows Server) oder eigenes Image
+4. **Zielanzahl dedizierter Knoten** / **Spot-/Low-Priority-Knoten** festlegen
+5. **Anwendungspakete** zuweisen (optional)
+6. **OK** → Pool wird bereitgestellt
+
+### Job und Task erstellen
+
+1. Batch-Konto → **Jobs** → **+ Hinzufügen**
+2. **Pool** auswählen → **OK**
+3. Job → **Tasks** → **+ Hinzufügen**
+4. **Befehlszeile** eingeben, Ein-/Ausgabedateien referenzieren → **Absenden**
+
+### Monitoring
+
+1. Batch-Konto → **Einblicke** → Knoten-, Job- und Task-Status einsehen
+2. **Metriken** → benutzerdefinierte Dashboards erstellen
+
+---
+
 ## Python SDK: Vollständiges Beispiel
 
 ```python

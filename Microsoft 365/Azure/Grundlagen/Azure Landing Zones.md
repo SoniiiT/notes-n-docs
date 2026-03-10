@@ -285,6 +285,30 @@ Nach der ALZ-Implementierung:
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure Landing Zone Accelerator deployen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Suche nach **Deploy Azure landing zones** oder navigiere zu [aka.ms/alz/portal](https://aka.ms/alz/portal)
+3. Wähle das gewünschte **Deployment-Szenario**:
+   - **Azure landing zone** (vollständige Implementierung)
+   - **Foundation** (Basis ohne Networking)
+4. Konfiguriere die Management Group Hierarchie:
+   - **Root Management Group:** Name und ID festlegen
+   - **Platform- und Landing Zone-Subscriptions** zuweisen
+5. Netzwerk konfigurieren:
+   - **Connectivity Subscription** auswählen
+   - **Hub-and-Spoke** oder **Virtual WAN** wählen
+   - **Adressraum** für Hub-VNet festlegen
+6. **Richtlinien** und **Diagnose-Einstellungen** aktivieren
+7. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+> [!NOTE] Hinweis
+> Der ALZ Accelerator im Portal entspricht dem Bicep/Terraform-Accelerator, aber mit geführter UI. Für Produktionsumgebungen ist die IaC-Variante empfohlen.
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Subscriptions und Management Groups]]

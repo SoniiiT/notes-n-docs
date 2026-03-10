@@ -274,6 +274,47 @@ Traffic zu Azure SQL über das Microsoft-Backbone, ohne Private Endpoint. Wenige
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure SQL Database lässt sich über das Portal mit geführtem Server-Setup, SKU-Auswahl und Backup-Konfiguration erstellen.
+
+### SQL-Datenbank erstellen
+
+1. **portal.azure.com** → **SQL-Datenbanken** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Datenbankname**: z. B. `app-db`
+   - **Server**: Neuen Server erstellen
+     - Servername (global eindeutig), Region, Authentifizierungsmethode
+     - SQL-Authentifizierung: Administratorname & Passwort
+3. **Compute + Speicher konfigurieren**:
+   - **Kaufmodell**: vCore oder DTU
+   - **Dienstebene**: General Purpose, Business Critical oder Hyperscale
+   - vCores, Arbeitsspeicher, Speichergröße anpassen
+   - **Serverlos**: Automatisches Pausieren aktivieren (cost-saving)
+4. **Netzwerk**-Tab:
+   - **Konnektivitätsmethode**: Kein Zugriff, Öffentlicher Endpunkt oder Privater Endpunkt
+   - **Azure-Dienste und -Ressourcen Zugriff erlauben**: Ja/Nein
+5. **Sicherheit**-Tab: Microsoft Defender for SQL aktivieren (optional, kostenpflichtig)
+6. **Zusätzliche Einstellungen**-Tab:
+   - **Daten verwenden**: Keine, Beispieldaten (AdventureWorks) oder vorhandene Sicherung
+   - **Sortierung**: z. B. `SQL_Latin1_General_CP1_CI_AS`
+7. **Überprüfen + erstellen** → **Erstellen**
+
+### Query Editor (Portal)
+
+1. SQL-Datenbank → **Abfrage-Editor (Vorschau)**
+2. Mit SQL-Authentifizierung oder Microsoft Entra ID anmelden
+3. SQL-Abfragen direkt im Browser ausführen
+
+### Skalierung
+
+1. SQL-Datenbank → **Compute + Speicher** (im Menü **Konfigurieren**)
+2. vCores oder Dienstebene anpassen → **Übernehmen**
+
+---
+
 ## Elastic Jobs
 
 Elastic Jobs ermöglichen die **Ausführung von T-SQL-Jobs über mehrere Datenbanken** — ähnlich dem SQL Server Agent, aber für Azure SQL Database.

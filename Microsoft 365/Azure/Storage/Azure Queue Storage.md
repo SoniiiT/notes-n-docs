@@ -156,6 +156,41 @@ for msg in messages:
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Queue Storage-Warteschlangen lassen sich direkt im Speicherkonto über das Portal erstellen und testen.
+
+### Storage Account erstellen
+
+1. **portal.azure.com** → **Speicherkonten** → **+ Erstellen**
+2. Name, Region, Redundanz (LRS ausreichend für Queues) → **Überprüfen + erstellen** → **Erstellen**
+
+### Warteschlange erstellen
+
+1. Speicherkonto → **Warteschlangen** → **+ Warteschlange**
+2. **Warteschlangenname** (Kleinbuchstaben, Bindestriche erlaubt) → **OK**
+
+### Nachrichten senden und empfangen (Portal)
+
+1. Warteschlange öffnen → **Nachricht hinzufügen**
+2. **Nachrichtentext** eingeben, **Ablauf** (Sekunden, maximal 7 Tage) → **OK**
+3. **Nachrichten abrufen**: Schaltfläche → Nachrichten werden sichtbar (Visibility Timeout läuft)
+4. Nachricht auswählen → **Nachricht löschen** nach Verarbeitung
+
+### Zugriffssteuerung
+
+1. Speicherkonto → **Zugriffssteuerung (IAM)** → **+ Rollenzuweisung hinzufügen**
+2. Rolle: `Storage Queue Data Contributor` oder `Storage Queue Data Reader`
+3. Mitglied (Benutzer, Gruppe, Managed Identity) → **Überprüfen + zuweisen**
+
+### Monitoring
+
+1. Speicherkonto → **Metriken** → Namespace: **Queue**
+2. Metriken: `QueueMessageCount`, `QueueCapacity` → Dashboard hinzufügen
+
+---
+
 ## Python SDK — Vollständiges Beispiel
 
 ```python

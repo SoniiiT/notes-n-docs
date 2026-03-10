@@ -358,6 +358,51 @@ az postgres flexible-server update `
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure Database for PostgreSQL – Flexible Server lässt sich vollständig über das Portal konfigurieren.
+
+### Flexible Server erstellen
+
+1. **portal.azure.com** → **Azure Database for PostgreSQL Flexible Servers** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Servername**: global eindeutig (z. B. `pgserver-prod`)
+   - **Region**: z. B. `West Europe`
+   - **PostgreSQL-Version**: 16, 15, 14 oder 13
+   - **Workloadtyp**: Entwicklung, Produktion
+   - **Compute + Speicher**: SKU wählen (Burstable B1ms, General Purpose D4s_v3, Memory Optimized E4s_v3)
+   - **Administratorkonto**: Benutzername & Passwort
+3. **Verfügbarkeit**-Tab:
+   - **Hochverfügbarkeit**: Deaktiviert, Zonenredundant oder Gleiche Zone
+4. **Netzwerk**-Tab:
+   - **Konnektivitätsmethode**: Öffentlicher Zugriff + Firewallregeln oder VNet-Integration
+5. **Überprüfen + erstellen** → **Erstellen**
+
+### Datenbank und Erweiterungen verwalten
+
+1. PostgreSQL Flexible Server → **Datenbanken** → **+ Hinzufügen** → Datenbankname → **Speichern**
+2. Server → **Serverparameter** → `azure.extensions` suchen → gewünschte Extensions auswählen (z. B. `PGVECTOR`, `POSTGIS`) → **Speichern**
+
+### Serverparameter konfigurieren
+
+1. PostgreSQL Flexible Server → **Serverparameter**
+2. Parameter filtern (z. B. `max_connections`, `shared_buffers`, `work_mem`)
+3. Wert anpassen → **Speichern**
+
+### Skalierung
+
+1. PostgreSQL Flexible Server → **Compute + Speicher**
+2. Compute-Tier, Speichergröße oder IOPS anpassen → **Speichern**
+
+### Lese-Replikat erstellen
+
+1. PostgreSQL Flexible Server → **Replikation** → **+ Replikat erstellen**
+2. **Name** und **Region** des Replikats → **Erstellen**
+
+---
+
 ## Migration
 
 ### pg_dump / pg_restore

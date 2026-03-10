@@ -260,6 +260,24 @@ graph TD
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure Portal erkunden
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Das **Dashboard** zeigt eine Übersicht aller angehefteten Ressourcen und Dienste
+3. Nutze die **Suchleiste** oben, um Dienste, Ressourcen oder Dokumentation zu finden
+4. Unter **Alle Dienste** findest du alle Azure-Dienste kategorisiert
+5. Über das **Burger-Menü** (☰) links erreichst du:
+   - **Start** — angepasstes Dashboard
+   - **Abonnements** — Subscription-Übersicht
+   - **Ressourcengruppen** — alle RGs
+   - **Alle Ressourcen** — vollständige Ressourcenliste
+6. Oben rechts: **Einstellungen** → Portal-Sprache, Theme und Standardverzeichnis anpassen
+7. Das **Cloud Shell**-Symbol (>_) öffnet eine Browser-basierte Bash/PowerShell-Umgebung
+
+---
+
 ## Verwandte Notizen
 - [[Subscriptions und Management Groups]]
 - [[Resource Groups]]

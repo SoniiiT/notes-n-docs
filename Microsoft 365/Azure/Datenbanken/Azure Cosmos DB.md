@@ -332,6 +332,47 @@ az cosmosdb update `
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Das Portal führt durch die API-Wahl, Kapazitätsmodus und Multi-Region-Konfiguration in einem geführten Assistenten.
+
+### Cosmos DB-Konto erstellen
+
+1. **portal.azure.com** → **Azure Cosmos DB** → **+ Erstellen**
+2. **API auswählen**:
+   - **Azure Cosmos DB for NoSQL** (empfohlen, JSON-Dokumente)
+   - **Azure Cosmos DB for MongoDB** (MongoDB-kompatibel)
+   - **Azure Cosmos DB for Apache Cassandra**
+   - **Azure Cosmos DB for Apache Gremlin** (Graph)
+   - **Azure Cosmos DB for Table** (Key-Value)
+3. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Kontoname**: global eindeutig
+   - **Region** (primäre Schreibregion)
+   - **Kapazitätsmodus**: Provisionierter Durchsatz oder Serverlos
+   - **Free Tier-Rabatt**: Aktivieren (erste 1.000 RU/s + 25 GB kostenlos)
+4. **Globale Verteilung**-Tab: Zusätzliche Leseregionen hinzufügen
+5. **Netzwerk**-Tab: Öffentlicher Endpunkt (alle Netzwerke) oder privater Endpunkt
+6. **Sicherung**-Tab: Sicherungsmodus (Periodisch oder Kontinuierlich) wählen
+7. **Überprüfen + erstellen** → **Erstellen**
+
+### Datenbank und Container erstellen
+
+1. Cosmos DB-Konto → **Daten-Explorer** → **+ Neuer Container**
+2. **Datenbank-ID** (neu oder vorhanden), **Container-ID**
+3. **Partitionsschlüssel**: z. B. `/userId` (gut verteilt wählen!)
+4. **Durchsatz**: Manuell (z. B. 400 RU/s) oder Autoskalierung (max. RU/s festlegen)
+5. **OK**
+
+### Daten einfügen und abfragen
+
+1. Daten-Explorer → Container → **Elemente** → **+ Neues Element**
+2. JSON-Dokument eingeben → **Speichern**
+3. Container → **Neue SQL-Abfrage**: `SELECT * FROM c WHERE c.userId = 'u1'` → **Abfrage ausführen**
+
+---
+
 ## Kosten-Optimierung
 
 | Strategie | Einsparung | Details |

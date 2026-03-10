@@ -354,6 +354,49 @@ spec:
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Das Azure Portal bietet einen geführten Assistenten zur AKS-Cluster-Erstellung mit Netzwerk-, Identitäts- und Add-on-Konfiguration.
+
+### AKS-Cluster erstellen
+
+1. **portal.azure.com** → **Kubernetes-Dienste** → **+ Erstellen** → **Kubernetes-Cluster erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Clustervorkonfiguration**: Dev/Test, Produktion oder benutzerdefiniert
+   - **Kubernetes-Clustername**, **Region**, **Verfügbarkeitszonen**
+   - **Kubernetes-Version** auswählen
+   - **Automatisches Upgrade**: Patch (empfohlen), Stabil oder Schnell
+3. **Knotenpools**-Tab:
+   - System-Knotenpool: VM-Größe (z. B. `Standard_D4s_v3`), Anzahl der Knoten
+   - **+ Knotenpool hinzufügen**: User-Pools für Workloads
+   - **Knotenpool-Modus**: System / Benutzer
+   - Cluster-Autoskalierung aktivieren: Min./Max. Knoten
+4. **Netzwerk**-Tab:
+   - **Netzwerkkonfiguration**: Kubenet oder Azure CNI
+   - VNet und Subnetz auswählen (bei CNI)
+   - **DNS-Namenspräfix** für API-Server
+5. **Integrationen**-Tab:
+   - **Container Registry**: ACR verknüpfen
+   - **Azure Monitor**: Container Insights aktivieren
+   - **Microsoft Defender for Containers**: aktivieren
+6. **Überprüfen + erstellen** → **Erstellen**
+
+### Knotenpool skalieren
+
+1. AKS-Cluster → **Knotenpools**
+2. Knotenpool auswählen → **Skalieren**
+3. Knotenanzahl anpassen oder Autoskalierung aktivieren
+
+### Workloads im Portal prüfen
+
+1. AKS-Cluster → **Workloads**
+2. Deployments, ReplicaSets, Pods und DaemonSets einsehen
+3. Pod → **Protokolle** oder **Live-Protokolle** für Echtzeit-Log-Streaming
+
+---
+
 ## AKS Monitoring
 
 ### Container Insights

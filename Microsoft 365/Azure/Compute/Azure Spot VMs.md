@@ -284,6 +284,37 @@ while True:
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Spot VMs werden beim Erstellen einer regulären VM über die **Erweitert**-Einstellungen aktiviert.
+
+### Spot VM erstellen
+
+1. **portal.azure.com** → **Virtuelle Computer** → **+ Erstellen** → **Virtuelle Azure-Maschine**
+2. **Grundlagen**-Tab: Abonnement, Ressourcengruppe, VM-Name, Region, Image wählen
+3. **Größe**: VM-Größe auswählen (Spot-fähige Größen: D-, E-, F-Serie usw.)
+4. Im **Grundlagen**-Tab → **Azure Spot-Rabatt**: **Ja** aktivieren
+   - **Entfernungstyp**: Kapazitätsbasiert oder Preisbasiert
+   - **Entfernungsrichtlinie**: Freigeben (Deallocate) oder Löschen (Delete)
+   - **Max. Preis (USD/Stunde)**: Eigenes Limit festlegen oder „Aktueller Spot-Preis" wählen
+5. Netzwerk, Datenträger, Verwaltung wie bei regulärer VM konfigurieren
+6. **Überprüfen + erstellen** → **Erstellen**
+
+### Spot-Preise prüfen
+
+1. portal.azure.com → **Virtuelle Computer** → **+ Erstellen**
+2. Bei der Größenauswahl → **Preisdetails anzeigen** → Vergleich Spot vs. On-Demand
+
+### Spot VMs in VM Scale Sets (VMSS)
+
+1. portal.azure.com → **VM-Skalierungsgruppen** → **+ Erstellen**
+2. **Orchestrierungsmodus**: Einheitlich oder Flexibel
+3. **Instanzdetails** → **Azure Spot-Instanz**: Ja
+4. **Entfernungsrichtlinie** & Spot-Prioritätsmix (% Spot vs. Regular) konfigurieren
+
+---
+
 ## Spot VM erstellen
 
 ### Azure CLI

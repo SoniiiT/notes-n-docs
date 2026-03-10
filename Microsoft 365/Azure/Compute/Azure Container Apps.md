@@ -378,6 +378,43 @@ az containerapp job start \
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Container Apps Environments und Apps lassen sich vollständig über das Portal erstellen und verwalten.
+
+### Container Apps Environment erstellen
+
+1. **portal.azure.com** → **Container Apps** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Name der Container App**
+   - **Region**: z. B. `West Europe`
+   - **Container Apps-Umgebung**: Neu erstellen → Name & Region → **Erstellen**
+3. **App-Container**-Tab:
+   - **Image-Quelle**: Schnellstart (Beispiel-Image), Azure Container Registry oder Docker Hub
+   - Image & Tag auswählen
+   - **CPU und Arbeitsspeicher**: z. B. 0,5 vCPU / 1 Gi
+   - Umgebungsvariablen hinzufügen
+4. **Ingress**-Tab:
+   - Ingress aktivieren: intern oder extern
+   - **Zielport** (z. B. 80) festlegen
+5. **Überprüfen + erstellen** → **Erstellen**
+
+### Skalierung konfigurieren
+
+1. Container App → **Skalierung und Replikate**
+2. **Min. / Max. Replikate** festlegen
+3. **+ Skalierungsregel hinzufügen**: HTTP-Anfragen, CPU, Arbeitsspeicher oder benutzerdefiniertes KEDA-Skalar
+
+### Revision verwalten
+
+1. Container App → **Revisionsverwaltung**
+2. **+ Neue Revision erstellen**: geändertes Image, Umgebungsvariablen, Ressourcen eingeben
+3. Datenverkehr zwischen Revisionen aufteilen (Canary/Blue-Green)
+
+---
+
 ## Monitoring
 
 ```bash

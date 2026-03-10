@@ -283,6 +283,46 @@ az redis access-policy-assignment create `
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure Cache for Redis lässt sich über das Portal in wenigen Schritten erstellen und konfigurieren.
+
+### Redis-Cache erstellen
+
+1. **portal.azure.com** → **Azure Cache für Redis** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **DNS-Name**: global eindeutiger Cache-Name (z. B. `mein-redis`)
+   - **Region**: z. B. `West Europe`
+   - **Cache-SKU**: Basic, Standard oder Premium
+   - **Cache-Größe**: C0 (250 MB) bis C6 (53 GB) bei Standard/Basic; P1–P5 bei Premium
+3. **Netzwerk**-Tab:
+   - **Konnektivitätsmethode**: Öffentlicher Endpunkt oder privater Endpunkt
+4. **Erweitert**-Tab:
+   - **Redis-Version**: 6 (empfohlen)
+   - **Nicht-TLS-Port**: Deaktivieren (Sicherheitsempfehlung)
+   - **Clustering** (nur Premium): Anzahl der Shards festlegen
+5. **Überprüfen + erstellen** → **Erstellen** (Bereitstellung dauert ca. 10–20 Minuten)
+
+### Verbindungsdetails abrufen
+
+1. Redis-Cache → **Zugriffsschlüssel**
+2. **Primärer Verbindungsstring** kopieren → enthält Hostname, Port und Zugriffsschlüssel
+3. Alternativ: **Hostnamen**, **Port** und **Schlüssel** separat einsehen
+
+### Redis-Konsole im Portal
+
+1. Redis-Cache → **Konsole**
+2. Redis-Befehle direkt ausführen: `PING`, `SET key value`, `GET key`, `INFO`
+
+### Skalierung
+
+1. Redis-Cache → **Skalieren**
+2. Neuen Tarif oder Größe auswählen → **Speichern** (Datenmigration erfolgt automatisch)
+
+---
+
 ## .NET StackExchange.Redis — Cache-Aside Pattern
 
 ```csharp

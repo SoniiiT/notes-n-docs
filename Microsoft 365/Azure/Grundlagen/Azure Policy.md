@@ -299,6 +299,38 @@ graph TD
 
 ---
 
+## Via Azure Portal (UI)
+
+### Policy-Definition erstellen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Richtlinie** (Suchleiste: „Policy")
+3. Klicke auf **Definitionen** → **+ Richtliniendefinition**
+4. Konfiguriere:
+   - **Definitionsspeicherort:** Subscription oder Management Group
+   - **Name:** z.B. `Require tag on resources`
+   - **Kategorie:** Neue oder vorhandene Kategorie wählen
+   - **Richtlinienregel:** JSON-Regel eingeben oder aus Vorlage wählen
+5. Klicke auf **Speichern**
+
+### Policy zuweisen
+
+1. **Richtlinie** → **Zuweisungen** → **+ Richtlinie zuweisen**
+2. Konfiguriere:
+   - **Umfang:** Subscription, Resource Group oder Management Group
+   - **Richtliniendefinition:** Built-in oder Custom Policy wählen
+   - **Parameter:** z.B. erlaubte SKUs oder Regionen
+   - **Korrektur:** Managed Identity aktivieren wenn nötig
+3. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+### Compliance-Status prüfen
+
+1. **Richtlinie** → **Compliance** — Übersicht aller nicht-konformen Ressourcen
+2. Klicke auf eine Policy → Detailansicht mit betroffenen Ressourcen
+3. **Wartungsaufgabe** erstellen: Richtlinie → **Wartung** → **+ Wartungsaufgabe erstellen**
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Subscriptions und Management Groups]]

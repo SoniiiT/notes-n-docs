@@ -344,6 +344,40 @@ type: Microsoft.ContainerInstance/containerGroups
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> ACI-Container können direkt im Portal gestartet werden – ideal für schnelle Tests und Einzelcontainer-Workloads.
+
+### Container-Instanz erstellen
+
+1. **portal.azure.com** → **Container Instances** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Containername**, **Region**
+   - **Image-Quelle**: Schnellstart, Azure Container Registry oder „Andere Registrierung" (Docker Hub, GHCR)
+   - **Image**: z. B. `nginx:latest`
+   - **Betriebssystemtyp**: Linux / Windows
+   - **Größe**: CPU (z. B. 1 Kern) & Arbeitsspeicher (z. B. 1,5 GB)
+3. **Netzwerk**-Tab:
+   - **Netzwerktyp**: Öffentlich, Privat (VNet) oder Keine
+   - **DNS-Namensbezeichnung** für öffentliche IP
+   - **Ports** öffnen (z. B. 80/TCP)
+4. **Erweitert**-Tab:
+   - **Neustartrichtlinie**: Immer, Bei Fehler, Nie
+   - Umgebungsvariablen & Secrets eintragen
+   - **Befehlsüberschreibung** (Entrypoint/CMD) optional anpassen
+5. **Überprüfen + erstellen** → **Erstellen**
+
+### Container-Logs und Status prüfen
+
+1. Container Instanz → **Container** im linken Menü
+2. **Protokolle**-Tab: Echtzeit-Logs einsehen
+3. **Ereignisse**-Tab: Start- und Fehlerereignisse verfolgen
+4. **Verbinden**-Tab: Interaktive Shell im Browser starten
+
+---
+
 ## az container Befehle
 
 ```bash

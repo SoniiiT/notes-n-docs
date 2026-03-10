@@ -274,6 +274,36 @@ Häufig verwechselt — aber grundlegend unterschiedlich:
 
 ---
 
+## Via Azure Portal (UI)
+
+### Rollenzuweisung hinzufügen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zur gewünschten Ressource, Ressourcengruppe oder Subscription
+3. Klicke im linken Menü auf **Zugriffssteuerung (IAM)**
+4. Klicke auf **+ Hinzufügen** → **Rollenzuweisung hinzufügen**
+5. **Rolle** auswählen (z.B. `Contributor`, `Reader`, `Owner` oder Custom Role)
+6. **Zugriff zuweisen an:** `Benutzer, Gruppe oder Dienstprinzipal` wählen
+7. **Mitglieder** auswählen: Benutzer, Gruppe oder Service Principal suchen und auswählen
+8. (Optional) **Bedingungen** hinzufügen (Attribute-Based Access Control)
+9. Klicke auf **Überprüfen + zuweisen** → **Zuweisen**
+
+### Bestehende Rollenzuweisungen anzeigen
+
+1. Ressource → **Zugriffssteuerung (IAM)** → Tab **Rollenzuweisungen**
+2. Filtere nach Rolle, Typ oder Name
+3. Zum Entfernen: Zuweisung auswählen → **Entfernen**
+
+### Custom Role erstellen
+
+1. Subscription oder Ressourcengruppe → **Zugriffssteuerung (IAM)**
+2. Klicke auf **+ Hinzufügen** → **Benutzerdefinierte Rolle hinzufügen**
+3. Wähle: **Von vorn beginnen** oder **Von einer vorhandenen Rolle klonen**
+4. Berechtigungen konfigurieren, Umfang (Scope) festlegen
+5. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+---
+
 ## RBAC über CLI
 
 ```bash

@@ -329,6 +329,48 @@ public static async Task Run(
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Über das Portal lassen sich Funktions-Apps inkl. Hosting-Plan erstellen und Funktionen direkt im Browser testen.
+
+### Funktions-App erstellen
+
+1. **portal.azure.com** → **Funktions-Apps** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Funktions-App-Name**: global eindeutig
+   - **Veröffentlichen**: Code oder Container-Image
+   - **Laufzeitstapel**: .NET, Node.js, Python, Java, PowerShell
+   - **Version**: Runtime-Version auswählen
+   - **Region**: z. B. `West Europe`
+3. **Hosting**-Tab:
+   - **Hostingplan**: Verbrauch (Serverless), Premium oder App Service-Plan
+   - **Speicherkonto**: neu erstellen oder vorhandenes wählen
+4. **Überwachung**-Tab: Application Insights aktivieren (empfohlen)
+5. **Überprüfen + erstellen** → **Erstellen**
+
+### Funktion im Portal erstellen
+
+1. Funktions-App → **Funktionen** → **+ Erstellen**
+2. **Entwicklungsumgebung**: Im Portal entwickeln
+3. **Vorlage auswählen**: HTTP-Trigger, Timer-Trigger, Queue-Trigger usw.
+4. **Neue Funktion**: Name vergeben, Autorisierungsebene wählen (Anonymous, Function, Admin)
+5. → **Erstellen**
+
+### Funktion testen
+
+1. Funktion → **Code + Testen**
+2. **Test/Ausführen**: Anforderungstext eingeben → **Ausführen**
+3. Ausgabe und Protokolle direkt im Browser prüfen
+
+### App-Einstellungen (Umgebungsvariablen)
+
+1. Funktions-App → **Konfiguration** → **+ Neue Anwendungseinstellung**
+2. Name & Wert eintragen → **Speichern**
+
+---
+
 ## Local Development
 
 ```bash

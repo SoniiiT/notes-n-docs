@@ -429,6 +429,47 @@ graph TB
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure Data Factory wird über das Portal erstellt und über **Autor & Monitor** (ADF Studio) konfiguriert.
+
+### Data Factory erstellen
+
+1. **portal.azure.com** → **Data Factories** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Name**: global eindeutig
+   - **Region**: z. B. `West Europe`
+   - **Version**: V2 (Standard)
+3. **Git-Konfiguration**-Tab (empfohlen):
+   - **Git konfigurieren**: Azure DevOps Git oder GitHub
+   - Repository, Branch und Root-Ordner auswählen
+   - Alternativ: „Später konfigurieren"
+4. **Überprüfen + erstellen** → **Erstellen**
+
+### ADF Studio öffnen
+
+1. Data Factory → **Autor und Überwachung** → ADF Studio öffnet sich
+2. Alternativ: `https://adf.azure.com` direkt aufrufen
+
+### Pipeline erstellen (ADF Studio)
+
+1. ADF Studio → **Autor** (Bleistift-Symbol) → **Pipelines** → **+** → **Pipeline**
+2. Activities-Palette → Aktivität per Drag & Drop in Canvas ziehen
+3. **Copy Data**: Quelle und Senke als Linked Services konfigurieren
+4. **Dataset** erstellen: Linked Service + Verbindungsdetails + Schema
+5. Pipeline → **Debuggen** → Parameter eingeben → Ausführen testen
+6. **Alle veröffentlichen** → Änderungen in ADF speichern
+
+### Trigger erstellen
+
+1. ADF Studio → **Verwalten** → **Trigger** → **+ Neu**
+2. **Typ**: Zeitplan, Rollierendes Fenster, Ereignis (Blob-Erstellung) oder benutzerdefiniertes Ereignis
+3. Pipeline zuweisen, Parameter festlegen → **OK** → **Trigger aktivieren**
+
+---
+
 ## PowerShell/CLI Beispiele
 
 ```powershell

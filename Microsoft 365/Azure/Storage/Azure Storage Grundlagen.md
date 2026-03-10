@@ -169,6 +169,45 @@ New-AzRoleAssignment `
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Speicherkonten, Container und grundlegende Konfigurationen lassen sich vollständig über das Portal verwalten.
+
+### Storage Account erstellen
+
+1. **portal.azure.com** → **Speicherkonten** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Speicherkontoname**: 3–24 Zeichen, global eindeutig, nur Kleinbuchstaben und Ziffern
+   - **Region**: z. B. `West Europe`
+   - **Leistung**: Standard (GPv2) oder Premium
+   - **Redundanz**: LRS, ZRS, GRS oder GZRS
+3. **Erweitert**-Tab:
+   - Öffentlichen Blob-Zugriff deaktivieren (Sicherheitsempfehlung)
+   - Sichere Übertragung (HTTPS) erzwingen: ✅
+   - TLS-Mindestversion: TLS 1.2
+   - **Hierarchischer Namespace**: Nur für ADLS Gen2
+4. **Netzwerk**-Tab:
+   - **Konnektivitätsmethode**: Öffentlicher Endpunkt (alle Netzwerke), ausgewählte Netzwerke oder privater Endpunkt
+5. **Datenschutz**-Tab: Soft Delete für Blobs/Container/Dateifreigaben aktivieren
+6. **Überprüfen + erstellen** → **Erstellen**
+
+### Zugriffsschlüssel und Verbindungszeichenfolge
+
+1. Speicherkonto → **Zugriffsschlüssel**
+2. **Schlüssel1** oder **Schlüssel2** anzeigen und kopieren
+3. **Verbindungszeichenfolge** für SDKs und AzCopy kopieren
+4. ⚠️ Schlüssel regelmäßig rotieren → **Neu generieren**
+
+### Storage Explorer im Portal
+
+1. Speicherkonto → **Storage-Explorer (Vorschau)**
+2. Alle Dienste (Blobs, Dateifreigaben, Queues, Tables) in einer Baumansicht verwalten
+3. Dateien hochladen, herunterladen, ACLs und Metadaten bearbeiten
+
+---
+
 ## AzCopy — Beispiele
 
 ```bash

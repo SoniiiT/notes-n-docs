@@ -403,6 +403,45 @@ az acr config content-trust update \
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Das Portal ermöglicht die Verwaltung von Registrierungen, Repositories und Zugriffsrichtlinien ohne CLI.
+
+### Container Registry erstellen
+
+1. **portal.azure.com** → **Container Registries** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Registrierungsname**: 5–50 Zeichen (global eindeutig, z. B. `meinregistry`)
+   - **Region**: z. B. `West Europe`
+   - **SKU**: Basic, Standard oder Premium (für Geo-Replikation & Private Endpoints)
+3. **Überprüfen + erstellen** → **Erstellen**
+
+### Images und Repositories verwalten
+
+1. Container Registry → **Repositories**
+2. Repository auswählen → Tags und Manifeste einsehen
+3. Tag auswählen → **Löschen** oder **In ACR-Tasks verwenden**
+
+### Zugriffssteuerung
+
+1. Container Registry → **Zugriffssteuerung (IAM)**
+2. **+ Rollenzuweisung hinzufügen**: `AcrPush` für CI/CD-Dienste, `AcrPull` für AKS/Container Apps
+
+### Geo-Replikation (Premium)
+
+1. Container Registry → **Replikationen** → **+ Hinzufügen**
+2. Zielregion auswählen → **Erstellen**
+
+### ACR Tasks (Build-Pipeline)
+
+1. Container Registry → **Tasks** → **+ Hinzufügen**
+2. **Schnellaufgabe** oder **Aufgabe mit Trigger** konfigurieren
+3. Quell-Repository (GitHub), Dockerfile-Pfad und Basis-Image-Trigger festlegen
+
+---
+
 ## Vollständige az acr Befehlsreferenz
 
 ```bash

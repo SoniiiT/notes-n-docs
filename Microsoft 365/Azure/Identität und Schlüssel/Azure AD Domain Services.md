@@ -133,6 +133,44 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure AD Domain Services erstellen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Suche in der Suchleiste nach **Azure AD Domain Services** → Klicke auf **+ Erstellen**
+3. Tab **Grundlagen** konfigurieren:
+   - **Abonnement:** Gewünschtes Abonnement
+   - **Ressourcengruppe:** z.B. `rg-aadds`
+   - **DNS-Domänenname:** z.B. `aadds.mycompany.onmicrosoft.com`
+   - **Region:** z.B. `West Europe`
+   - **SKU:** `Standard`, `Enterprise` oder `Premium`
+   - **Gesamtstrukturtyp:** `Benutzer` (für Benutzer-Sync) oder `Ressource` (für Trust)
+4. Tab **Netzwerk** konfigurieren:
+   - **Virtuelles Netzwerk:** Vorhandenes VNet wählen oder neu erstellen
+   - **Subnetz:** Dediziertes Subnetz für AADDS auswählen (mind. /27)
+5. Tab **Verwaltung**: Admin-Gruppe konfigurieren
+6. Tab **Synchronisierung**: `Alle` oder `Mit Umfang` (bestimmte Gruppen)
+7. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+> [!WARNING] Deploymentdauer
+> Das Erstellen einer AADDS-Instanz dauert **30–45 Minuten**. Während dieser Zeit wird der Status als „Wird bereitgestellt" angezeigt.
+
+### AADDS-Status prüfen
+
+1. **Azure AD Domain Services** → Instanz öffnen
+2. **Übersicht** zeigt: Gesundheitsstatus, DNS-Namen, IP-Adressen der Domain Controller
+3. **Integrität** → Detaillierte Healthchecks anzeigen
+4. DNS-Server-IP-Adressen notieren → Diese müssen im VNet als DNS-Server eingetragen werden
+
+### VNet DNS konfigurieren
+
+1. Zum **virtuellen Netzwerk** navigieren → **DNS-Server**
+2. **Benutzerdefiniert** wählen → AADDS-IP-Adressen (beide DCs) eintragen
+3. **Speichern** → VNet-verbundene VMs müssen neu gestartet werden
+
+---
+
 ## AADDS deployen
 
 ```powershell

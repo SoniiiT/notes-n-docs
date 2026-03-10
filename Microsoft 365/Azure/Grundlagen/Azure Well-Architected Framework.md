@@ -321,6 +321,30 @@ Azure Advisor integriert WAF-Empfehlungen direkt:
 
 ---
 
+## Via Azure Portal (UI)
+
+### Well-Architected Review starten
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Azure Advisor** → **Well-Architected Assessment**
+   - Alternativ: Direkt zu [aka.ms/assessments](https://aka.ms/assessments) → **Azure Well-Architected Review**
+3. Klicke auf **Bewertung starten**
+4. Wähle die **Workload-Kategorie** (z.B. `Web Application`, `SAP`, `Mission Critical`)
+5. Beantworte die Fragen zu den 5 Säulen:
+   - Zuverlässigkeit, Sicherheit, Kostenoptimierung, Betriebliche Exzellenz, Leistungseffizienz
+6. Nach Abschluss: **Bericht anzeigen** mit priorisierten Empfehlungen und Scores
+
+### Assessment-Ergebnisse im Advisor anzeigen
+
+1. **Azure Advisor** → **Well-Architected** Tab
+2. Empfehlungen nach Priorität und Säule gefiltert anzeigen
+3. Direkt zur Ressource springen und Verbesserungen umsetzen
+
+> [!TIP] Tipp
+> Das Well-Architected Review-Tool ist auch unter [learn.microsoft.com/assessments](https://learn.microsoft.com/assessments) verfügbar und speichert Ergebnisse für Vergleiche über Zeit.
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Azure Advisor]]

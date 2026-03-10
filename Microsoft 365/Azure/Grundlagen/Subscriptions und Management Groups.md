@@ -272,6 +272,30 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Abonnements anzeigen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Abonnements** (Suchleiste oder linkes Menü)
+3. Alle verfügbaren Subscriptions werden aufgelistet
+4. Klicke auf eine Subscription → **Übersicht** zeigt Ausgaben, Ressourcen, IAM
+
+### Management Groups verwalten
+
+1. Navigiere zu **Verwaltungsgruppen** (Suchleiste)
+2. Klicke auf **+ Verwaltungsgruppe erstellen**
+3. Konfiguriere:
+   - **ID der Verwaltungsgruppe:** Eindeutige ID (z.B. `mg-corp`)
+   - **Anzeigename:** Lesbarer Name (z.B. `Corp Root`)
+4. Klicke auf **Senden**
+5. Zum Verschieben einer Subscription: Subscription auswählen → **Details** → **Übergeordnete Verwaltungsgruppe ändern**
+
+> [!TIP] Tipp
+> Management Groups sind unter **Entra ID → Verwaltungsgruppen** oder direkt über die Suchleiste erreichbar.
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Resource Groups]]

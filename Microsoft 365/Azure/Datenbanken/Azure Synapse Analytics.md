@@ -374,6 +374,51 @@ ALTER COLUMN Email ADD MASKED WITH (FUNCTION = 'email()');
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure Synapse Analytics wird über das Portal erstellt und anschließend über **Synapse Studio** konfiguriert und betrieben.
+
+### Synapse Analytics Workspace erstellen
+
+1. **portal.azure.com** → **Azure Synapse Analytics** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Arbeitsbereichsname**: global eindeutig
+   - **Region**: z. B. `West Europe`
+   - **Data Lake Storage Gen2**: Neues Speicherkonto erstellen oder vorhandenes mit HNS wählen
+   - **Dateisystemname** (Container) festlegen
+3. **Sicherheit**-Tab:
+   - **SQL-Administratorname** & Passwort festlegen
+   - **Verwaltete Identität** aktivieren
+4. **Netzwerk**-Tab:
+   - **Verwaltetes virtuelles Netzwerk** aktivieren (empfohlen für Produktionsumgebungen)
+5. **Überprüfen + erstellen** → **Erstellen**
+
+### Synapse Studio öffnen
+
+1. Synapse Workspace → **Synapse Studio öffnen** (oder `web.azuresynapse.net`)
+2. Navigation: Daten, Entwickeln, Integrieren, Überwachen, Verwalten
+
+### Dedicated SQL Pool erstellen
+
+1. Synapse Studio → **Verwalten** → **SQL-Pools** → **+ Neu**
+2. **Poolname**, **Leistungsebene** (DW100c bis DW30000c) → **Erstellen**
+3. ⚠️ Pool bei Nichtbenutzung **anhalten** (Kosten sparen!)
+
+### Apache Spark Pool erstellen
+
+1. Synapse Studio → **Verwalten** → **Apache Spark-Pools** → **+ Neu**
+2. **Poolname**, **Knotengröße**, **Knotenanzahl** (Min./Max. für Autoskalierung) → **Erstellen**
+
+### Notebook erstellen und ausführen
+
+1. Synapse Studio → **Entwickeln** → **+** → **Notebook**
+2. Sprache wählen: PySpark, Spark (Scala), SQL, .NET Spark
+3. Spark Pool zuweisen → Code ausführen
+
+---
+
 ## Kosten
 
 | Komponente | Abrechnungsmodell | Beispiel |

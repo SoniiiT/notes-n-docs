@@ -338,6 +338,36 @@ Resources
 
 ---
 
+## Via Azure Portal (UI)
+
+### Ressourcengruppe erstellen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Ressourcengruppen** → Klicke auf **+ Erstellen**
+3. Konfiguriere:
+   - **Abonnement:** Gewünschtes Abonnement auswählen
+   - **Ressourcengruppe:** Name eingeben (z.B. `rg-webapp-prod`)
+   - **Region:** Standort wählen (z.B. `West Europe`)
+4. (Optional) **Tags** hinzufügen: Schlüssel-Wert-Paare für Tagging-Strategie
+5. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+### Resource Lock setzen
+
+1. Ressourcengruppe öffnen → **Sperren** im linken Menü
+2. Klicke auf **+ Hinzufügen**
+3. Konfiguriere:
+   - **Sperrname:** z.B. `lock-no-delete`
+   - **Sperrtyp:** `CanNotDelete` oder `ReadOnly`
+4. Klicke auf **OK**
+
+### Tag hinzufügen
+
+1. Ressourcengruppe öffnen → **Tags** im linken Menü
+2. Schlüssel und Wert eingeben (z.B. `Environment` = `Production`)
+3. Klicke auf **Anwenden**
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Subscriptions und Management Groups]]

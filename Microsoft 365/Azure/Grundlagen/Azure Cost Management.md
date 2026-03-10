@@ -314,6 +314,42 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Kostenverwaltung aufrufen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Kostenverwaltung + Abrechnung** (Suchleiste)
+3. Wähle den gewünschten **Billing Scope** (Subscription, Management Group oder Billing Account)
+
+### Kostenanalyse durchführen
+
+1. **Kostenverwaltung + Abrechnung** → **Kostenanalyse**
+2. Filtere nach: Zeitraum, Ressourcengruppe, Dienst, Tag, etc.
+3. Ansicht wechseln: **Akkumuliert**, **Täglich**, **Dienst**, **Ressource**
+4. Klicke auf **Speichern** um die Ansicht als benutzerdefinierte Ansicht zu sichern
+
+### Budget erstellen
+
+1. **Kostenverwaltung** → **Budgets** → **+ Hinzufügen**
+2. Konfiguriere:
+   - **Name:** z.B. `Budget-WebApp-Prod`
+   - **Betrag:** Monatliches Budgetlimit (z.B. `500` EUR)
+   - **Ablaufdatum:** Budget-Laufzeit festlegen
+3. **Warnbedingungen** hinzufügen:
+   - **Prozent des Budgets:** z.B. bei 80% und 100%
+   - **E-Mail-Empfänger:** für Benachrichtigungen
+4. Klicke auf **Erstellen**
+
+### Reservierungen kaufen
+
+1. **Kostenverwaltung + Abrechnung** → **Reservierungen** → **+ Hinzufügen**
+2. Produkt wählen (z.B. `Virtual Machines`)
+3. Konfiguriere: Region, VM-Größe, Laufzeit (1 oder 3 Jahre), Zahlungsoption
+4. Klicke auf **Kaufen**
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Subscriptions und Management Groups]]

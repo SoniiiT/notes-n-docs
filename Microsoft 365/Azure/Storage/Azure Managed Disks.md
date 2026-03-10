@@ -305,6 +305,43 @@ Revoke-AzDiskAccess -ResourceGroupName "myRG" -DiskName "importedDisk"
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Managed Disks können direkt über die VM-Ressource oder als eigenständige Ressource im Portal verwaltet werden.
+
+### Managed Disk erstellen
+
+1. **portal.azure.com** → **Datenträger** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Datenträgername**
+   - **Region** & **Verfügbarkeitszone**
+   - **Quelltyp**: Keine (leerer Datenträger), Snapshot, Speicher-Blob oder anderer Datenträger
+   - **Größe**: GiB eingeben oder aus Tabelle wählen
+   - **Datenträgertyp**: Premium SSD v1/v2, Standard SSD, Standard HDD, Ultra Disk
+3. **Erweitert**-Tab: Verschlüsselung, Shared Disk (max. Freigaben konfigurieren)
+4. **Überprüfen + erstellen** → **Erstellen**
+
+### Datenträger an VM anhängen
+
+1. **Virtuelle Computer** → VM auswählen → **Datenträger**
+2. **+ Vorhandenen Datenträger anfügen** → Datenträger aus Liste wählen → **Speichern**
+3. In der VM: Datenträger initialisieren und formatieren (Datenträgerverwaltung / `fdisk`)
+
+### Snapshot erstellen
+
+1. **Datenträger** → gewünschten Disk auswählen → **+ Snapshot erstellen**
+2. **Snapshotname**, **Momentaufnahmetyp**: Vollständig oder Inkrementell
+3. **Überprüfen + erstellen** → **Erstellen**
+
+### Datenträgertyp (Performance Tier) ändern
+
+1. Datenträger auswählen → **Größe + Leistung**
+2. Neuen Datenträgertyp oder Größe wählen → **Speichern** (VM muss ggf. deallocated sein)
+
+---
+
 ## Bicep-Beispiel: Data Disk an VM anhängen
 
 ```bicep

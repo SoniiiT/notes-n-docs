@@ -275,6 +275,49 @@ az netappfiles account ad add \
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure NetApp Files wird hierarchisch über das Portal eingerichtet: NetApp-Konto → Kapazitätspool → Volume.
+
+### NetApp-Konto erstellen
+
+1. **portal.azure.com** → **Azure NetApp Files** → **+ Erstellen**
+2. **Kontoname**, **Abonnement**, **Ressourcengruppe**, **Region** → **Erstellen**
+
+### Kapazitätspool erstellen
+
+1. NetApp-Konto → **Kapazitätspools** → **+ Pool hinzufügen**
+2. **Poolname**, **Service Level**: Standard, Premium oder Ultra
+3. **Größe** (4 TiB Minimum) in TiB
+4. **QoS-Typ**: Auto oder Manuell → **Erstellen**
+
+### Volume erstellen
+
+1. Kapazitätspool → **Volumes** → **+ Volume hinzufügen**
+2. **Grundlagen**-Tab:
+   - **Volumename**, **Kapazitätspool** auswählen
+   - **Kontingent** in GiB (Mindestgröße: 100 GiB)
+   - **Virtuelles Netzwerk** & **Delegiertes Subnetz** (muss an `Microsoft.NetApp/volumes` delegiert sein)
+3. **Protokoll**-Tab:
+   - **Protokolltyp**: NFSv3, NFSv4.1 oder SMB/CIFS
+   - Exportrichtlinie: IP-Bereich & Zugriffsrechte (rw/ro)
+4. **Überprüfen + erstellen** → **Erstellen**
+5. **Mount-Anleitung**: Volume → **Einbindungsanweisungen** → mount-Befehl kopieren
+
+### Snapshot erstellen
+
+1. Volume → **Snapshots** → **+ Snapshot hinzufügen**
+2. **Snapshotname** → **OK**
+
+### Snapshot-Richtlinie konfigurieren
+
+1. NetApp-Konto → **Snapshotrichtlinien** → **+ Richtlinie hinzufügen**
+2. Stündliche, tägliche, wöchentliche oder monatliche Snapshots konfigurieren
+3. **Snapshots aufbewahren**: Anzahl der zu behaltenden Snapshots → **Speichern**
+
+---
+
 ## VNet-Konfiguration und Delegated Subnet
 
 ```bash

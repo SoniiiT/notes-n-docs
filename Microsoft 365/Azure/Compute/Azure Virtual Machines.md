@@ -234,6 +234,46 @@ az quota create --resource-name "cores" \
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Das Azure Portal führt durch alle VM-Konfigurationsschritte mit validierter Eingabe – ideal für einmalige Deployments.
+
+### Virtuelle Maschine erstellen
+
+1. **portal.azure.com** → **Virtuelle Computer** → **+ Erstellen** → **Virtuelle Azure-Maschine**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **VM-Name**, **Region**, **Verfügbarkeitsoptionen** (Zone / Verfügbarkeitsgruppe / Keine)
+   - **Image**: z. B. `Ubuntu Server 24.04 LTS`, `Windows Server 2025 Datacenter`
+   - **Größe**: → **Alle Größen anzeigen** → Filtere nach Familie (D, E, F usw.)
+   - **Administratorkonto**: SSH-Public-Key (Linux) oder Benutzername/Passwort (Windows)
+   - **Eingehende Ports**: RDP (3389) oder SSH (22) erlauben
+3. **Datenträger**-Tab:
+   - OS-Datenträger-Typ: Premium SSD, Standard SSD, Standard HDD
+   - **+ Neuen Datenträger erstellen und anfügen** für Datendatenträger
+4. **Netzwerk**-Tab:
+   - Virtuelles Netzwerk, Subnetz, öffentliche IP auswählen
+   - **NIC-Netzwerksicherheitsgruppe**: Keine, Einfach oder Erweitert
+5. **Verwaltung**-Tab:
+   - **System-seitig zugewiesene Identität** aktivieren (Managed Identity)
+   - **Automatisches Herunterfahren** konfigurieren
+6. **Überwachung**-Tab: Startdiagnose aktivieren
+7. **Überprüfen + erstellen** → **Erstellen**
+
+### VM-Größe nachträglich ändern
+
+1. VM → **Größe** im linken Menü → Neue Größe auswählen → **Größe ändern**
+2. ⚠️ VM wird neu gestartet
+
+### VMSS erstellen
+
+1. portal.azure.com → **VM-Skalierungsgruppen** → **+ Erstellen**
+2. Orchestrierungsmodus, Image, Größe, Instanzanzahl konfigurieren
+3. **Skalierung** → automatische Skalierungsregeln festlegen
+
+---
+
 ## Bicep-Beispiel: Linux VM
 
 ```bicep

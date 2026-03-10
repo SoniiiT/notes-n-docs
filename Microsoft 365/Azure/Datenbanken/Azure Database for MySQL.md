@@ -281,6 +281,49 @@ az mysql flexible-server parameter set `
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure Database for MySQL – Flexible Server lässt sich vollständig über das Portal erstellen und konfigurieren.
+
+### Flexible Server erstellen
+
+1. **portal.azure.com** → **Azure Database for MySQL Flexible Servers** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Servername**: global eindeutig (z. B. `mysql-server-prod`)
+   - **Region**: z. B. `West Europe`
+   - **MySQL-Version**: 8.0 oder 5.7
+   - **Workloadtyp**: Entwicklung/Test, Produktion (bestimmt Standardkonfiguration)
+   - **Compute + Speicher**: SKU auswählen (Burstable B1ms, General Purpose D4s_v3, Business Critical E4s_v3)
+   - **Administratorkonto**: Benutzername & Passwort
+3. **Verfügbarkeit**-Tab:
+   - **Hochverfügbarkeit**: Deaktiviert, Zonenredundant oder Gleiche Zone
+   - **Standby-Verfügbarkeitszone** wählen (bei zonenredundant)
+4. **Netzwerk**-Tab:
+   - **Konnektivitätsmethode**: Öffentlicher Zugriff oder privater Zugriff (VNet-Integration)
+   - Firewall-Regeln hinzufügen (bei öffentlichem Zugriff)
+5. **Sicherheit**-Tab: Microsoft Defender für MySQL aktivieren (optional)
+6. **Überprüfen + erstellen** → **Erstellen**
+
+### Datenbank erstellen
+
+1. MySQL Flexible Server → **Datenbanken** → **+ Hinzufügen**
+2. **Datenbankname**, Zeichensatz und Sortierung wählen → **Erstellen**
+
+### Serverparameter konfigurieren
+
+1. MySQL Flexible Server → **Serverparameter**
+2. Parameter suchen (z. B. `max_connections`, `innodb_buffer_pool_size`)
+3. Wert anpassen → **Speichern**
+
+### Skalierung
+
+1. MySQL Flexible Server → **Compute + Speicher**
+2. Compute-Tier oder Speichergröße anpassen → **Speichern** (Neustart erforderlich)
+
+---
+
 ## Import und Export
 
 ### mysqldump (Klassisch)

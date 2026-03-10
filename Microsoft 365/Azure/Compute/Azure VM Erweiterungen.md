@@ -498,6 +498,39 @@ az vm diagnostics set \
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> VM-Erweiterungen lassen sich direkt in der VM-Ressource hinzufügen, konfigurieren und entfernen.
+
+### Erweiterung hinzufügen
+
+1. **portal.azure.com** → **Virtuelle Computer** → VM auswählen
+2. Linkes Menü → **Erweiterungen und Anwendungen**
+3. **+ Hinzufügen**
+4. Erweiterung aus der Liste wählen (z. B. **Custom Script Extension**, **Azure Monitor Agent**, **Microsoft Antimalware**)
+5. Konfigurationsparameter eingeben (z. B. Script-URI, Speicherkonto-SAS-Token)
+6. **Überprüfen + erstellen** → **Erstellen**
+
+### Erweiterungsstatus prüfen
+
+1. VM → **Erweiterungen und Anwendungen**
+2. Erweiterung auswählen → **Bereitstellungsstatus**: Erfolgreich / Fehlgeschlagen / Wird erstellt
+3. Detaillierte Fehlermeldungen im **Status**-Bereich einsehen
+
+### Erweiterung entfernen
+
+1. VM → **Erweiterungen und Anwendungen**
+2. Erweiterung auswählen → **Deinstallieren** → Bestätigen
+
+### Azure Monitor Agent über Policy zuweisen
+
+1. portal.azure.com → **Azure Policy** → **Zuweisungen** → **+ Zuweisen**
+2. Policy-Definition: `Configure Windows/Linux machines to run Azure Monitor Agent`
+3. Scope (Abonnement / Ressourcengruppe) → **Überprüfen + erstellen**
+
+---
+
 ## Erweiterungen verwalten
 
 ### Portal

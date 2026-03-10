@@ -218,6 +218,42 @@ Set-ItemProperty -Path $regPath -Name "FlipFlopProfileDirectoryName" -Value 1
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Azure Files-Freigaben können vollständig über das Portal erstellt, konfiguriert und mit AD-Authentifizierung versehen werden.
+
+### Storage Account und Dateifreigabe erstellen
+
+1. **portal.azure.com** → **Speicherkonten** → **+ Erstellen**
+2. **Grundlagen**: Name, Region, **Leistung**: Standard (GPv2) oder Premium (FileStorage)
+3. **Redundanz**: LRS / ZRS / GRS wählen → **Erstellen**
+4. Storage Account → **Dateifreigaben** → **+ Dateifreigabe**
+5. **Name** (z. B. `share01`), **Kontingent** in GiB, **Zugriffsebene**: Transaction Optimized / Hot / Cool
+6. **Erstellen**
+
+### Azure File Sync einrichten
+
+1. portal.azure.com → **Azure File Sync** → **+ Erstellen** (Storage Sync Service)
+2. Storage Sync Service → **Synchronisierungsgruppen** → **+ Erstellen**
+3. **Cloudsendpunkt**: Azure-Dateifreigabe auswählen
+4. Auf dem Windows Server: **Azure File Sync-Agent** installieren → Server registrieren
+5. Im Portal: **Serverendpunkte** → **+ Serverpunkt hinzufügen** → registrierten Server & Pfad wählen
+
+### AD-Authentifizierung aktivieren
+
+1. Storage Account → **Dateifreigaben** → **Active Directory** (Identitätsbasierter Zugriff)
+2. **Azure Active Directory Domain Services** oder **On-Premises AD DS** aktivieren
+3. Storage-Konto mit AD-Domäne verbinden (Kerberos-Authentifizierung)
+
+### Freigabe verbinden (Verbindungsbefehl)
+
+1. Dateifreigabe öffnen → **Verbinden**
+2. Betriebssystem wählen (Windows / Linux / macOS)
+3. Generiertes PowerShell- oder mount-Skript kopieren und ausführen
+
+---
+
 ## PowerShell-Beispiele
 
 ### Share erstellen

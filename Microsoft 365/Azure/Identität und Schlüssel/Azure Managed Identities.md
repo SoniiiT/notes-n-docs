@@ -289,6 +289,46 @@ graph TD
 
 ---
 
+## Via Azure Portal (UI)
+
+### System-assigned Managed Identity aktivieren
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zur gewünschten Ressource (z.B. Virtual Machine, App Service, Function App)
+3. Klicke im linken Menü auf **Identität**
+4. Wähle den Tab **Systemseitig zugewiesen**
+5. Setze **Status** auf **Ein**
+6. Klicke auf **Speichern** → Bestätige mit **Ja**
+7. Die **Objekt-ID** der neuen Managed Identity wird angezeigt — diese wird für RBAC-Zuweisungen benötigt
+
+### User-assigned Managed Identity erstellen
+
+1. Navigiere zu **Verwaltete Identitäten** (Suchleiste: „Managed Identities")
+2. Klicke auf **+ Erstellen**
+3. Konfiguriere:
+   - **Abonnement:** Gewünschtes Abonnement
+   - **Ressourcengruppe:** z.B. `rg-identities`
+   - **Region:** z.B. `West Europe`
+   - **Name:** z.B. `id-myapp-prod`
+4. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+### User-assigned Identity einer Ressource zuweisen
+
+1. Zur Ressource navigieren (z.B. VM) → **Identität** → Tab **Benutzerseitig zugewiesen**
+2. Klicke auf **+ Hinzufügen**
+3. Vorhandene User-assigned Identity auswählen
+4. Klicke auf **Hinzufügen**
+
+### RBAC-Berechtigung für Managed Identity erteilen
+
+1. Zur Zielressource navigieren (z.B. Key Vault, Storage Account)
+2. **Zugriffssteuerung (IAM)** → **+ Hinzufügen** → **Rollenzuweisung hinzufügen**
+3. Rolle auswählen (z.B. `Key Vault Secrets User`)
+4. **Zugriff zuweisen an:** `Verwaltete Identität` wählen
+5. Managed Identity auswählen → **Überprüfen + zuweisen**
+
+---
+
 ## Managed Identity erstellen — Portal, PowerShell, Bicep
 
 ### Portal

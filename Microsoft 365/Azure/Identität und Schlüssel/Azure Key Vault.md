@@ -441,6 +441,50 @@ Restore-AzKeyVaultSecret `
 
 ---
 
+## Via Azure Portal (UI)
+
+### Key Vault erstellen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Schlüsseltresore** (Suchleiste: „Key Vault") → Klicke auf **+ Erstellen**
+3. Konfiguriere auf dem Tab **Grundlagen**:
+   - **Abonnement:** Gewünschtes Abonnement
+   - **Ressourcengruppe:** z.B. `rg-security`
+   - **Name des Schlüsseltresors:** Eindeutiger Name (z.B. `kv-myapp-prod`)
+   - **Region:** z.B. `West Europe`
+   - **Tarif:** `Standard` oder `Premium`
+   - **Soft-Delete:** Aktiviert (empfohlen, Standardeinstellung)
+   - **Aufbewahrungsdauer für gelöschte Tresore:** 7–90 Tage
+4. Tab **Zugriffsrichtlinie** oder **Azure RBAC** wählen als Zugriffsmodell
+5. Tab **Netzwerk:** Öffentlich, ausgewählte Netzwerke oder Privater Endpunkt
+6. Klicke auf **Überprüfen + erstellen** → **Erstellen**
+
+### Secret hinzufügen
+
+1. Key Vault öffnen → **Geheimnisse** im linken Menü → **+ Generieren/Importieren**
+2. Konfiguriere:
+   - **Uploadoption:** `Manuell`
+   - **Name:** z.B. `database-password`
+   - **Wert:** Den geheimen Wert eingeben
+   - **Inhaltstyp:** Optional (z.B. `text/plain`)
+   - **Aktivierungsdatum / Ablaufdatum:** Optional setzen
+3. Klicke auf **Erstellen**
+
+### Zugriffsrichtlinie hinzufügen (Vault Access Policy Modell)
+
+1. Key Vault → **Zugriffsrichtlinien** → **+ Erstellen**
+2. Berechtigungen wählen: Schlüssel, Geheimnis, Zertifikat-Operationen auswählen
+3. Prinzipal auswählen: Benutzer, Gruppe oder Managed Identity
+4. Klicke auf **Erstellen**
+
+### RBAC-Berechtigung zuweisen (RBAC-Modell)
+
+1. Key Vault → **Zugriffssteuerung (IAM)** → **+ Hinzufügen** → **Rollenzuweisung hinzufügen**
+2. Rolle wählen: z.B. `Key Vault Secrets User` (lesen) oder `Key Vault Secrets Officer` (lesen/schreiben)
+3. Mitglied auswählen → **Überprüfen + zuweisen**
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure RBAC]]

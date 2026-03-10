@@ -240,6 +240,41 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure Advisor aufrufen
+
+1. Melde dich an beim **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Azure Advisor** (Suchleiste)
+3. Das **Dashboard** zeigt den Advisor Score und Empfehlungen in 5 Kategorien:
+   - **Zuverlässigkeit**, **Sicherheit**, **Leistung**, **Optimale Betriebsprozesse**, **Kosten**
+
+### Empfehlung umsetzen
+
+1. **Azure Advisor** → gewünschte Kategorie auswählen (z.B. **Kosten**)
+2. Empfehlung anklicken → Details und betroffene Ressourcen anzeigen
+3. Klicke auf **Beheben** (wenn automatische Korrektur verfügbar) oder folge den manuellen Schritten
+4. Zum Zurückstellen: **Zurückstellen** → Zeitraum wählen (z.B. 7 Tage)
+5. Zum Ablehnen: **Verwerfen** → Begründung eingeben
+
+### Advisor Alert einrichten
+
+1. **Azure Advisor** → **Warnungen** → **+ Neue Advisor-Warnung erstellen**
+2. Konfiguriere:
+   - **Umfang:** Subscription oder Ressourcengruppe
+   - **Bedingung:** Kategorie und Impact-Stufe auswählen
+   - **Aktionsgruppe:** E-Mail, SMS oder Webhook festlegen
+3. Klicke auf **Erstellen**
+
+### Advisor Digest aktivieren
+
+1. **Azure Advisor** → **Konfiguration** → **Digest**
+2. Klicke auf **+ Advisor-Digest hinzufügen**
+3. Konfiguriere: Sprache, Häufigkeit (wöchentlich), E-Mail-Empfänger
+4. Klicke auf **Erstellen**
+
+---
+
 ## Verwandte Notizen
 - [[Azure Überblick]]
 - [[Azure Cost Management]]

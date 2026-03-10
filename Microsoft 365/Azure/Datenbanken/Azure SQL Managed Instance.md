@@ -238,6 +238,46 @@ New-AzSqlInstance -ResourceGroupName "rg-prod" `
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> SQL Managed Instance wird vollständig in einem VNet bereitgestellt – das Portal führt durch VNet-Erstellung und MI-Konfiguration.
+
+### SQL Managed Instance erstellen
+
+1. **portal.azure.com** → **Verwaltete SQL-Instanzen** → **+ Erstellen**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe
+   - **Name der verwalteten Instanz**: global eindeutig
+   - **Region**: z. B. `West Europe`
+   - **Compute + Speicher konfigurieren**:
+     - **Dienstebene**: Universell (GP) oder Unternehmenskritisch (BC)
+     - **Hardwaregeneration**: Standard-Serie, Premium-Serie oder speicherpoptimiert
+     - **vCores**: 4–80; **Speicher**: bis 16 TiB
+3. **Netzwerk**-Tab:
+   - **Virtuelles Netzwerk / Subnetz**: Neues VNet erstellen (empfohlen) oder vorhandenes MI-Subnetz wählen
+   - Das Subnetz muss an `Microsoft.Sql/managedInstances` delegiert sein
+   - **Verbindungstyp**: Proxy oder Umleitung
+4. **Sicherheit**-Tab:
+   - **Microsoft Entra ID-Authentifizierung** konfigurieren (optional)
+   - **Microsoft Defender for SQL** aktivieren
+5. **Zusätzliche Einstellungen**-Tab:
+   - **Sortierung**, **Zeitzone**, **Sicherungsredundanz** wählen
+6. **Überprüfen + erstellen** → **Erstellen**
+   - ⚠️ Bereitstellung dauert 4–6 Stunden beim ersten Mal
+
+### Datenbanken verwalten
+
+1. SQL Managed Instance → **Datenbanken** → **+ Erstellen** → Datenbankname → **Erstellen**
+2. Alternativ: Datenbank mit SSMS oder Azure Data Studio verbinden und T-SQL verwenden
+
+### Skalierung
+
+1. SQL Managed Instance → **Compute + Speicher**
+2. vCores oder Dienstebene anpassen → **Speichern** (Neustart erforderlich)
+
+---
+
 ## Migration von SQL Server
 
 ### Azure Database Migration Service (DMS) — Online Migration

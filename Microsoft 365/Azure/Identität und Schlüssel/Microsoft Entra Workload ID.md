@@ -409,6 +409,51 @@ $tokenPayload = $tokenPayload + '=' * (4 - $tokenPayload.Length % 4)
 
 ---
 
+## Via Azure Portal (UI)
+
+### App-Registrierung erstellen
+
+1. Melde dich an bei **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Anwendungen** → **App-Registrierungen** → Klicke auf **+ Neue Registrierung**
+3. Konfiguriere:
+   - **Name:** z.B. `app-myservice-prod`
+   - **Unterstützte Kontotypen:** `Nur Konten in diesem Organisationsverzeichnis` (Single Tenant)
+   - **Umleitungs-URI:** Optional (nur bei interaktiven Flows)
+4. Klicke auf **Registrieren**
+5. Die **Anwendungs-ID (Client-ID)** und **Verzeichnis-ID (Tenant-ID)** werden angezeigt — notieren!
+
+### Client Secret erstellen
+
+1. App-Registrierung öffnen → **Zertifikate & Geheimnisse**
+2. Tab **Geheime Clientschlüssel** → **+ Neuer geheimer Clientschlüssel**
+3. Konfiguriere:
+   - **Beschreibung:** z.B. `prod-secret-2025`
+   - **Ablauf:** 6 Monate, 12 Monate, 24 Monate oder benutzerdefiniert
+4. Klicke auf **Hinzufügen**
+5. **Secret-Wert sofort kopieren** — er wird nur einmal angezeigt!
+
+### Federated Credential konfigurieren (kein Secret nötig)
+
+1. App-Registrierung → **Zertifikate & Geheimnisse** → Tab **Verbundanmeldeinformationen**
+2. Klicke auf **+ Anmeldeinformation hinzufügen**
+3. Szenario wählen: z.B. `GitHub Actions`, `Kubernetes`, `Azure Pipelines`
+4. Konfiguriere:
+   - **Organisation:** GitHub-Organisation oder Repo-Name
+   - **Repository:** z.B. `myorg/myrepo`
+   - **Entität:** `Branch`, `Tag` oder `Pull Request` → Wert eingeben
+5. Klicke auf **Hinzufügen**
+
+### API-Berechtigungen hinzufügen
+
+1. App-Registrierung → **API-Berechtigungen** → **+ Berechtigung hinzufügen**
+2. **Microsoft Graph** oder andere API auswählen
+3. Berechtigungstyp wählen: **Anwendungsberechtigungen** (Daemon) oder **Delegierte Berechtigungen**
+4. Berechtigungen suchen und auswählen (z.B. `User.Read.All`)
+5. Klicke auf **Berechtigungen hinzufügen**
+6. Für Anwendungsberechtigungen: **Administratorzustimmung erteilen** klicken
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure RBAC]]

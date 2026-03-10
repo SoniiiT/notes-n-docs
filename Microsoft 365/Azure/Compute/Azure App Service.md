@@ -75,6 +75,42 @@ Der App Service Plan definiert Region, Betriebssystem, Compute-Ressourcen und Fe
 
 ---
 
+## Via Azure Portal (UI)
+
+> [!TIP] Schnelleinstieg
+> Über das Portal lassen sich App Service Plans und Web Apps in wenigen Minuten erstellen, ohne CLI-Kenntnisse.
+
+### Web App erstellen
+
+1. **portal.azure.com** → Suchleiste → **App Services** → **+ Erstellen** → **Web-App**
+2. **Grundlagen**-Tab:
+   - Abonnement & Ressourcengruppe wählen
+   - **Name**: global eindeutiger Hostname (z. B. `meine-app`)
+   - **Veröffentlichen**: Code oder Docker-Container
+   - **Laufzeitstapel**: .NET, Node.js, Python, Java, PHP o. a. wählen
+   - **Betriebssystem**: Linux oder Windows
+   - **Region**: z. B. `West Europe`
+3. **App Service Plan**:
+   - Neuen Plan erstellen oder vorhandenen wählen
+   - **SKU und Größe**: Free (F1), Basic (B1–B3), Standard (S1–S3), Premium (P1v3–P3v3)
+   - → **SKU ändern** öffnet den Preisrechner
+4. **Überwachung**-Tab: Application Insights aktivieren (empfohlen)
+5. **Überprüfen + erstellen** → **Erstellen**
+
+### App Service Plan skalieren (Scale up/out)
+
+1. App Service → **Skalieren (App Service Plan)** im linken Menü
+2. **Hochskalieren**: anderen SKU-Tier auswählen → **Übernehmen**
+3. **Horizontal hochskalieren**: Regelbasiert → **+ Regel hinzufügen** → Schwellenwert & Aktion konfigurieren
+
+### Deployment Center (CI/CD einrichten)
+
+1. App Service → **Deployment Center**
+2. Quelle wählen: GitHub, Azure DevOps, Bitbucket, Local Git, FTP
+3. Für GitHub: Repository & Branch auswählen → GitHub Actions Workflow wird automatisch erstellt
+
+---
+
 ## Deployment-Methoden
 
 | Methode | Wann verwenden | Besonderheiten |
