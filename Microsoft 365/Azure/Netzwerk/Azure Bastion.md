@@ -43,6 +43,39 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure Bastion bereitstellen
+
+**Option A — Direkt bei der VM:**
+1. VM im Portal öffnen → **Verbinden** → **Bastion** → **Bastion bereitstellen**
+2. Portal legt automatisch `AzureBastionSubnet` und Bastion-Host an → **Bereitstellen**
+
+**Option B — Manuell:**
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Bastions** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen
+   - **SKU:** Basic, Standard oder Premium
+   - **Instanzenanzahl:** mindestens 2 für Hochverfügbarkeit
+3. **Virtuelles Netzwerk** wählen → Subnet **`AzureBastionSubnet`** auswählen (min. /26)
+4. **Öffentliche IP-Adresse** erstellen → **Überprüfen + erstellen** → **Erstellen**
+
+### Mit VM über Bastion verbinden
+
+1. VM → **Verbinden** → **Bastion**
+2. **Benutzername** und **Authentifizierungstyp** (Kennwort oder SSH-Schlüssel) eingeben
+3. **Verbinden** — Browser-basierte RDP/SSH-Session öffnet sich im neuen Tab
+
+### Shareable Link erstellen (Standard/Premium)
+
+1. Bastion-Host → **Shareable Links** → **+ Hinzufügen**
+2. Ziel-VM und Ablaufzeit wählen → **Anwenden** → Link kopieren und teilen
+
+> [!IMPORTANT] AzureBastionSubnet
+> Das Subnetz muss **exakt** `AzureBastionSubnet` heißen und mindestens **/26** sein. NSG-Regeln für Inbound 443 (Internet→Bastion) und 8080/5701 (Gateway Manager→Bastion) sind Pflicht.
+
+---
+
 ## SKUs
 
 | Feature | Basic | Standard | Premium |

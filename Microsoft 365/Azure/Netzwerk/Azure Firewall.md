@@ -32,6 +32,37 @@ Azure Firewall ist ein **managed Network Security Service** für Azure:
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure Firewall erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Firewalls** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen
+   - **Firewall-SKU:** Standard oder Premium
+   - **Firewall-Verwaltung:** Mit oder ohne Firewall Policy
+3. **Firewall konfigurieren:**
+   - **Virtuelles Netzwerk** wählen (muss `AzureFirewallSubnet` /26 oder größer enthalten)
+   - **Öffentliche IP-Adresse** erstellen oder vorhandene wählen
+4. **Firewall Policy** erstellen oder zuweisen (empfohlen)
+5. **Tags** → **Überprüfen + erstellen** → **Erstellen**
+
+### Firewall Policy und Regeln konfigurieren
+
+1. **Firewall Policy** öffnen → **Regelsammlungen** → **+ Regelsammlung hinzufügen**
+2. **Typ** wählen: **DNAT**, **Netzwerk** oder **Anwendung**
+3. **Name**, **Priorität** und **Aktion** (Zulassen/Verweigern) festlegen
+4. **Regeln hinzufügen** (Quelle, Ziel, Port, Protokoll) → **Hinzufügen**
+
+### Firewall einer Policy zuordnen
+
+1. Firewall öffnen → **Firewall Policy** → **Vorhandene hinzufügen** oder neue Policy erstellen
+
+> [!IMPORTANT] AzureFirewallSubnet
+> Das Subnetz muss exakt **`AzureFirewallSubnet`** heißen und mindestens `/26` groß sein. Ohne dieses Subnetz kann die Firewall nicht deployed werden.
+
+---
+
 ## SKUs
 
 | Feature | Basic | Standard | Premium |

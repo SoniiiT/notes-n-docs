@@ -44,6 +44,38 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Application Gateway erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Anwendungsgateways** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen
+   - **Tier:** Standard V2 oder WAF V2
+   - **Autoskalierung:** Min./Max. Kapazitätseinheiten festlegen
+   - **Availability Zone** wählen
+   - **Virtuelles Netzwerk** und **dediziertes Subnetz** (min. /24, kein anderer Dienst) wählen
+3. **Front-Ends:**
+   - **Öffentliche IP-Adresse** erstellen oder wählen
+   - Optional: private Frontend-IP-Adresse konfigurieren
+4. **Back-Ends:**
+   - **+ Back-End-Pool hinzufügen** → VMs, VMSS, App Services, IP-Adressen oder FQDNs
+5. **Konfiguration (Routing-Regeln):**
+   - **+ Routingregel hinzufügen**
+   - **Listener:** Port, Protokoll (HTTP/HTTPS), Host-Header, TLS-Zertifikat (bei HTTPS)
+   - **Back-End-Ziele:** HTTP-Einstellungen (Protokoll, Port, Cookiebasierte Sitzungsaffinität)
+6. **Tags** → **Überprüfen + erstellen** → **Erstellen**
+
+### WAF-Richtlinie konfigurieren
+
+1. **WAF-Richtlinien** → **+ Erstellen** → Modus (**Erkennung** oder **Prävention**), OWASP-Regelset wählen
+2. App Gateway → **Web Application Firewall** → WAF-Richtlinie zuordnen
+
+> [!NOTE] Dediziertes Subnetz
+> Das Application Gateway **muss** ein eigenes dediziertes Subnetz haben. Kein anderer Dienst darf im selben Subnetz laufen.
+
+---
+
 ## SKUs
 
 | SKU | WAF | Autoscaling | Anwendungsfall |

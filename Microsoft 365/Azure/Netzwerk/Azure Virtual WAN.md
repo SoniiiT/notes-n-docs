@@ -48,6 +48,38 @@ graph TD
 
 ---
 
+## Via Azure Portal (UI)
+
+### Virtual WAN erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Virtual WANs** → **+ Erstellen**
+2. **Abonnement**, **Ressourcengruppe**, **Name**, **Region** und **Typ** (Basic oder Standard) wählen → **Überprüfen + erstellen** → **Erstellen**
+
+### Virtuellen Hub erstellen
+
+1. Virtual WAN öffnen → **Hubs** → **+ Neuer Hub**
+2. **Region**, **Name**, **Hub-Adressraum** (z. B. `10.100.0.0/23`) eingeben
+3. Optional: **VPN-Gateway**, **ExpressRoute-Gateway** oder **Azure Firewall** im Hub aktivieren → **Überprüfen + erstellen** → **Erstellen**
+
+> [!WARNING] Hub-Erstellung dauert 30+ Minuten
+> Während der Hub-Bereitstellung sind keine Änderungen möglich.
+
+### VNet mit Hub verbinden
+
+1. Virtual WAN → **Virtuelle Netzwerkverbindungen** → **+ Verbindung hinzufügen**
+2. **Verbindungsname**, **Hubs**, **Abonnement**, **Virtuelles Netzwerk** wählen → **Erstellen**
+
+### Site-to-Site VPN-Site erstellen
+
+1. Virtual WAN → **VPN-Sites** → **+ VPN-Site erstellen**
+2. **Name**, **Region**, **Gerätehersteller**, **BGP-AS-Nummer** (optional), **Link-Name**, **Bandbreite** und **Link-IP-Adresse** eingeben
+3. VPN-Site mit Hub verbinden → **Verbindung herunterladen** (Konfigurationsdatei für On-Prem-Gerät)
+
+> [!TIP] Secured Virtual Hub
+> Im Hub **Azure Firewall** aktivieren, um aus dem Hub einen **Secured Virtual Hub** zu machen — zentralisierte Sicherheitsrichtlinien für den gesamten WAN-Datenverkehr.
+
+---
+
 ## SKUs
 
 | Feature | Basic | Standard |

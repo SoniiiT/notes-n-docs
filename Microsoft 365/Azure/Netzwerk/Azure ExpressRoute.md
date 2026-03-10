@@ -43,6 +43,37 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### ExpressRoute-Verbindung (Circuit) erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **ExpressRoute-Verbindungen** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement**, **Ressourcengruppe**, **Name** und **Standort** wählen
+3. **Konfiguration:**
+   - **Anbieter** aus der Liste wählen (z. B. Equinix, Megaport)
+   - **Peeringstandort** wählen (z. B. Frankfurt, Amsterdam)
+   - **Bandbreite** wählen (50 Mbps – 10 Gbps)
+   - **SKU:** Local, Standard oder Premium
+   - **Abrechnungsmodell:** Getaktet (Metered) oder Unbegrenzt (Unlimited)
+4. **Tags** → **Überprüfen + erstellen** → **Erstellen**
+5. Nach Erstellung: **Service Key** kopieren und an den Konnektivitätsanbieter übermitteln
+
+### ExpressRoute mit VNet verbinden
+
+1. ExpressRoute-Verbindung öffnen → **Verbindungen** → **+ Hinzufügen**
+2. **Name** vergeben, **Virtuelles Netzwerkgateway** (ExpressRoute-Gateway) wählen → **OK**
+
+### Privates Peering konfigurieren
+
+1. ExpressRoute-Verbindung → **Azure Private Peering** → **Konfigurieren**
+2. **Peer-ASN**, **Primäres Subnetz** (/30), **Sekundäres Subnetz** (/30) und **VLAN-ID** eingeben → **Speichern**
+
+> [!IMPORTANT] Circuit-Status
+> Die Verbindung ist erst nutzbar, wenn der Anbieter den Circuit **bereitgestellt** hat (Status: **Provisioned**). Dies kann Tage bis Wochen dauern.
+
+---
+
 ## Verbindungsmodelle
 
 ### CloudExchange Colocation

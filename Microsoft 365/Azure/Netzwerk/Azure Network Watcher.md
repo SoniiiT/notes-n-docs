@@ -44,6 +44,44 @@ graph TD
 
 ---
 
+## Via Azure Portal (UI)
+
+### Network Watcher aktivieren
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Network Watcher**
+2. Network Watcher ist in jeder Region **automatisch aktiviert**, sobald ein VNet in dieser Region existiert
+3. Falls nicht aktiv: **Übersicht** → Region in der Liste finden → **Aktivieren**
+
+### IP-Fluss überprüfen (IP Flow Verify)
+
+1. Network Watcher → **IP-Fluss überprüfen**
+2. **Abonnement**, **Ressourcengruppe**, **VM** und **Netzwerkschnittstelle** wählen
+3. **Richtung** (Eingehend/Ausgehend), **Protokoll** (TCP/UDP), **Quell-/Ziel-IP** und **Port** eingeben
+4. **Prüfen** → Ergebnis: **Zugriff erlaubt** oder **Zugriff verweigert** (mit verantwortlicher NSG-Regel)
+
+### Verbindungsmonitor (Connection Monitor) erstellen
+
+1. Network Watcher → **Verbindungsmonitor** → **+ Erstellen**
+2. **Name** und **Region** wählen → **Weiter: Testgruppen**
+3. **+ Testgruppe hinzufügen** → Quellen (VM, VMSS, Arc-Server), Ziele (URL/IP/Azure-Ressource) und Tests (HTTP, TCP, ICMP mit Port und Schwellenwert) konfigurieren
+4. **Weiter: Warnungen erstellen** → optional → **Überprüfen + erstellen** → **Erstellen**
+
+### NSG Flow Logs aktivieren
+
+1. Network Watcher → **NSG-Datenflussprotokolle** → **+ Erstellen**
+2. **NSG** auswählen, **Speicherkonto** wählen, **Aufbewahrungsdauer** (Tage) festlegen
+3. **Traffic Analytics** aktivieren → **Log Analytics Workspace** wählen → **Speichern**
+
+### Paketerfassung starten
+
+1. Network Watcher → **Paketerfassung** → **+ Hinzufügen**
+2. **VM**, **Speicherkonto** und/oder lokalen **Dateipfad**, **Max. Bytes pro Paket**, **Max. Bytes pro Sitzung**, **Zeitlimit** konfigurieren → **Starten**
+
+> [!TIP] Nächster Hop prüfen
+> Unter **Nächster Hop** kann man für jede VM und Ziel-IP den tatsächlichen Routing-Pfad prüfen — ideal zur Diagnose von UDR/Routing-Problemen.
+
+---
+
 ## Connection Monitor
 
 **Connection Monitor** überwacht Konnektivität und Latenz zwischen Endpunkten kontinuierlich:

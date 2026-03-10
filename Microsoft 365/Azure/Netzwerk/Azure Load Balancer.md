@@ -41,6 +41,36 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Load Balancer erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Lastenausgleich** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen
+   - **SKU:** Standard (empfohlen) oder Basic
+   - **Typ:** **Öffentlich** (internet-facing) oder **Intern** (privat)
+   - **Tier:** Regional oder Global (nur Standard)
+3. **Front-End-IP-Konfiguration:**
+   - **+ Front-End-IP-Konfiguration hinzufügen**
+   - Name, öffentliche IP-Adresse (neu erstellen oder vorhandene) oder privates Subnetz wählen
+4. **Back-End-Pools:**
+   - **+ Back-End-Pool hinzufügen** → Name vergeben → **VMs oder VMSS** zuordnen
+5. **Eingehende Regeln:**
+   - **+ Lastenausgleichsregel hinzufügen** → Frontend-IP, Backend-Pool, Port, Protokoll und **Integritätstest** konfigurieren
+6. **Ausgehende Regeln** (optional): SNAT für ausgehenden Datenverkehr konfigurieren
+7. **Tags** → **Überprüfen + erstellen** → **Erstellen**
+
+### Integritätstest (Health Probe) hinzufügen
+
+1. Load Balancer → **Integritätstests** → **+ Hinzufügen**
+2. **Name**, **Protokoll** (HTTP/HTTPS/TCP), **Port** und **Intervall** konfigurieren → **Hinzufügen**
+
+> [!TIP] Standard SKU für Produktion
+> Der **Standard SKU** unterstützt Availability Zones, HTTPS Health Probes und ist für Produktionsworkloads zwingend empfohlen. Basic SKU wird abgekündigt.
+
+---
+
 ## SKUs: Basic vs. Standard
 
 > [!DANGER] Basic Load Balancer End-of-Life

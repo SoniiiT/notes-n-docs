@@ -43,6 +43,44 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Öffentliche DNS-Zone erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **DNS-Zonen** → **+ Erstellen**
+2. **Abonnement**, **Ressourcengruppe** und **Name** (z. B. `example.com`) eingeben → **Überprüfen + erstellen** → **Erstellen**
+3. Zone öffnen → **Nameserver** notieren (4 Azure-Nameserver)
+4. Beim Domainregistrar die **NS-Einträge** auf die Azure-Nameserver zeigen lassen (Delegation)
+
+### DNS-Einträge hinzufügen
+
+1. DNS-Zone öffnen → **+ Eintragssatz**
+2. **Name**, **Typ** (A, AAAA, CNAME, MX, TXT etc.), **TTL** und **Wert** eingeben → **OK**
+
+| Eintragstyp | Beispiel-Wert |
+|-------------|---------------|
+| A | `203.0.113.10` |
+| CNAME | `www` → `example.com` |
+| MX | Priorität + Mailserver-FQDN |
+| TXT | SPF, DKIM, Verifizierungsstrings |
+
+### Private DNS-Zone erstellen
+
+1. **Private DNS-Zonen** → **+ Erstellen** → Name (z. B. `internal.corp`) → **Erstellen**
+2. Zone → **VNET-Verknüpfungen** → **+ Hinzufügen** → VNet wählen, **Autoregistrierung** aktivieren (optional) → **OK**
+
+### DNS Private Resolver einrichten
+
+1. Suchleiste → **DNS Private Resolver** → **+ Erstellen**
+2. **Abonnement**, **Ressourcengruppe**, **Name**, **Region** und **VNet** wählen
+3. **Eingehende Endpunkte** → **+ Endpunkt hinzufügen** → Subnetz wählen
+4. **Ausgehende Endpunkte** → **+ Endpunkt hinzufügen** → Subnetz + **Weiterleitungsregelsets** konfigurieren → **Überprüfen + erstellen** → **Erstellen**
+
+> [!TIP] Delegation prüfen
+> Nach der NS-Delegation mit `nslookup -type=NS example.com` prüfen, ob die Azure-Nameserver angezeigt werden. DNS-Propagierung kann bis zu 48 Stunden dauern.
+
+---
+
 ## Public DNS Zones
 
 Öffentliche DNS-Zonen für das Hosten von Domains in Azure:

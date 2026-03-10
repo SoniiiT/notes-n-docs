@@ -42,6 +42,36 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### NSG erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Netzwerksicherheitsgruppen** → **+ Erstellen**
+2. **Abonnement**, **Ressourcengruppe**, **Name** und **Region** eingeben → **Überprüfen + erstellen** → **Erstellen**
+
+### Eingehende / Ausgehende Sicherheitsregeln hinzufügen
+
+1. NSG öffnen → **Eingehende Sicherheitsregeln** oder **Ausgehende Sicherheitsregeln** → **+ Hinzufügen**
+2. Konfiguration:
+   - **Quelle:** IP-Adressen, Diensttag oder Anwendungssicherheitsgruppe
+   - **Quellportbereiche:** `*` oder spezifische Ports
+   - **Ziel:** IP-Adressen, Diensttag oder ASG
+   - **Dienst:** Vordefinierter Dienst (z. B. HTTP, HTTPS, RDP) oder benutzerdefiniert
+   - **Aktion:** **Zulassen** oder **Verweigern**
+   - **Priorität:** Zahl zwischen 100–4096 (niedrig = höhere Priorität)
+   - **Name** für die Regel vergeben
+3. **Hinzufügen**
+
+### NSG mit Subnetz oder NIC verknüpfen
+
+1. NSG → **Subnetze** → **+ Zuordnen** → Virtuelles Netzwerk und Subnetz wählen → **OK**
+2. Alternativ: NSG → **Netzwerkschnittstellen** → **+ Zuordnen** → NIC wählen
+
+> [!NOTE] Reihenfolge der Auswertung
+> Subnetz-NSG wird **vor** NIC-NSG ausgewertet (Eingang) bzw. **nach** NIC-NSG (Ausgang). Beide müssen Datenverkehr erlauben.
+
+---
+
 ## Regelstruktur
 
 Jede NSG-Regel besteht aus:

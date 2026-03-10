@@ -40,6 +40,38 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### VPN Gateway erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **VPN-Gateways** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen
+   - **Gatewaytyp:** VPN
+   - **VPN-Typ:** Routenbasiert (empfohlen) oder Richtlinienbasiert
+   - **SKU** wählen (z. B. VpnGw2, VpnGw2AZ für Zone-Redundanz)
+   - **Generation:** Generation2
+   - **Virtuelles Netzwerk** wählen (muss `GatewaySubnet` /27 oder größer enthalten)
+   - **Öffentliche IP-Adresse** erstellen (bei AZ-SKU: Zone-redundante IP)
+3. **Tags** → **Überprüfen + erstellen** → **Erstellen**
+
+> [!WARNING] Deployment-Dauer
+> Das Erstellen eines VPN-Gateways dauert **30–45 Minuten**. Währenddessen keine Änderungen am GatewaySubnet vornehmen.
+
+### Site-to-Site-Verbindung einrichten
+
+1. **Lokale Netzwerkgateways** → **+ Erstellen** → IP des On-Prem-VPN-Geräts und On-Prem-Adressraum eingeben
+2. VPN Gateway → **Verbindungen** → **+ Hinzufügen**
+3. **Typ:** Site-to-Site (IPsec) → **Lokales Netzwerkgateway** wählen → **Gemeinsam verwendeter Schlüssel (PSK)** eingeben → **OK**
+
+### Point-to-Site (P2S) konfigurieren
+
+1. VPN Gateway → **Point-to-Site-Konfiguration** → **Jetzt konfigurieren**
+2. **Adresspool** für VPN-Clients (z. B. `172.16.0.0/24`), **Tunneltyp** (OpenVPN/IKEv2) und **Authentifizierungstyp** wählen
+3. Zertifikat hochladen (Root-Zertifikat) → **Speichern** → VPN-Clientpaket herunterladen
+
+---
+
 ## Gateway-SKUs und Durchsatz
 
 | SKU | Max. Throughput | S2S Tunnel | P2S Verbindungen | BGP | Anmerkung |

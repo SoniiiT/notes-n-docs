@@ -49,6 +49,38 @@ sequenceDiagram
 
 ---
 
+## Via Azure Portal (UI)
+
+### Traffic Manager-Profil erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Traffic Manager-Profile** → **+ Erstellen**
+2. **Name** eingeben (wird Teil des DNS-Namens: `<name>.trafficmanager.net`)
+3. **Routingmethode** wählen:
+   - **Leistung** — niedrigste Latenz für den Endbenutzer
+   - **Priorität** — Active/Passive Failover
+   - **Gewichtet** — prozentuale Lastverteilung
+   - **Geografisch** — Geo-basiertes Routing
+   - **Mehrwert** — mehrere gesunde Endpunkte zurückgeben
+   - **Subnetz** — Routing basierend auf Client-IP
+4. **Abonnement** und **Ressourcengruppe** wählen → **Erstellen**
+
+### Endpunkte hinzufügen
+
+1. Traffic Manager-Profil öffnen → **Endpunkte** → **+ Hinzufügen**
+2. **Typ** wählen: Azure-Endpunkt, Externer Endpunkt oder Geschachtelter Endpunkt
+3. **Name**, **Zielressourcentyp** (z. B. App Service, öffentliche IP), **Ziel** und **Priorität/Gewichtung** angeben
+4. **Hinzufügen**
+
+### Integritätsüberwachung konfigurieren
+
+1. Profil → **Konfiguration** → **Endpunktüberwachung**
+2. **Protokoll** (HTTP/HTTPS/TCP), **Port**, **Pfad** und **Intervall** einstellen → **Speichern**
+
+> [!NOTE] Nur DNS-basiertes Routing
+> Traffic Manager funktioniert ausschließlich über DNS — kein Proxy, kein Datendurchlauf. TLS-Terminierung und Sitzungsaffinität müssen an den Endpunkten konfiguriert sein.
+
+---
+
 ## Routing-Methoden
 
 ### Priority (Active/Passive Failover)

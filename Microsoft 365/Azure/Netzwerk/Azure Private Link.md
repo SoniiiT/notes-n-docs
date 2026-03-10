@@ -36,6 +36,34 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Privaten Endpunkt erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Private Link** → **Private Endpunkte** → **+ Erstellen**
+2. **Grundlagen:** **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen
+3. **Ressource:**
+   - **Verbindungsmethode:** In meinem Verzeichnis → Ressourcentyp wählen (z. B. `Microsoft.Storage/storageAccounts`)
+   - **Ressource** aus der Liste wählen → **Unterressource** (z. B. `blob`, `file`) wählen
+4. **Virtuelles Netzwerk:**
+   - **Virtuelles Netzwerk** und **Subnetz** wählen
+   - **Private IP-Konfiguration:** Dynamisch oder statisch
+   - Optional: **Anwendungssicherheitsgruppe** zuordnen
+5. **DNS-Integration:**
+   - **In private DNS-Zone integrieren:** Ja (empfohlen)
+   - Automatisch erstellte **Private DNS Zone** wird angezeigt
+6. **Tags** → **Überprüfen + erstellen** → **Erstellen**
+
+### Private DNS Zone manuell verknüpfen
+
+1. **Private DNS-Zonen** → Zone öffnen (z. B. `privatelink.blob.core.windows.net`)
+2. **VNET-Verknüpfungen** → **+ Hinzufügen** → VNet auswählen → **OK**
+
+> [!IMPORTANT] DNS-Konfiguration ist kritisch
+> Ohne korrekte Private DNS Zone löst der Dienstname die **öffentliche IP** auf — der Private Endpoint wird umgangen. DNS-Integration immer aktivieren oder manuell konfigurieren.
+
+---
+
 ## Private Endpoints
 
 ### Vorteile

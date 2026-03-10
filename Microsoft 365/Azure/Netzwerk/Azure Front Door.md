@@ -44,6 +44,35 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### Front Door-Profil erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Front Door und CDN-Profile** → **+ Erstellen**
+2. **Schnellstart:** **Azure Front Door** wählen → **Weiter: Vergleich**
+3. **SKU** wählen: **Standard** (CDN + globales LB) oder **Premium** (+ WAF, Private Link)
+4. **Grundlagen:** **Abonnement**, **Ressourcengruppe**, **Name** → **Weiter: Geheimnisse**
+5. **Endpunkt hinzufügen:**
+   - **+ Endpunkt hinzufügen** → Endpunktname (wird Teil des `*.z01.azurefd.net`-Hostnamens)
+6. **Ursprungsgruppen:**
+   - **+ Ursprungsgruppe hinzufügen** → Name, Integritätstest-Pfad und -Protokoll
+   - **+ Ursprung hinzufügen** → Typ (App Service, Storage, öffentliche IP etc.), Hostname, Priorität, Gewichtung
+7. **Routen:**
+   - **+ Route hinzufügen** → Endpunkt, Muster (`/*`), akzeptierte Protokolle, Weiterleitung/HTTPS-Umleitung, Ursprungsgruppe
+8. **WAF-Richtlinie** (Premium): Zuordnen oder neu erstellen
+9. **Überprüfen + erstellen** → **Erstellen**
+
+### Benutzerdefinierte Domäne hinzufügen
+
+1. Front Door-Profil → **Domänen** → **+ Hinzufügen**
+2. Domänentyp, Hostname und TLS-Zertifikat (Managed oder eigenes) konfigurieren
+3. CNAME-Eintrag beim DNS-Anbieter auf den Front Door-Endpunkt setzen → Validierung abwarten
+
+> [!TIP] Caching aktivieren
+> Beim Erstellen einer Route **Caching aktivieren** und Cachingregeln (Query String, Komprimierung) konfigurieren, um Ursprungsserver zu entlasten.
+
+---
+
 ## SKUs
 
 | Feature | Standard | Premium |

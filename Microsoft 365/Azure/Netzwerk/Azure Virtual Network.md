@@ -32,6 +32,40 @@ Ein **Virtual Network (VNet)** ist ein logisch isoliertes Netzwerk in Azure:
 
 ---
 
+## Via Azure Portal (UI)
+
+### Virtuelles Netzwerk erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **Virtuelle Netzwerke** → **+ Erstellen**
+2. **Grundlagen:**
+   - **Abonnement** und **Ressourcengruppe** wählen
+   - **Name** eingeben (z. B. `vnet-prod-westeurope-001`)
+   - **Region** auswählen
+3. **IP-Adressen:**
+   - **IPv4-Adressraum** festlegen (z. B. `10.0.0.0/16`)
+   - **+ Subnetz hinzufügen** → Name, Adressbereich, optionale Delegierung
+   - Optional: **IPv6-Adressraum** aktivieren
+4. **Sicherheit:** Azure Bastion, Azure Firewall oder DDoS-Schutz optional aktivieren
+5. **Tags** vergeben → **Überprüfen + erstellen** → **Erstellen**
+
+### Subnetz nachträglich hinzufügen
+
+1. **Virtuelle Netzwerke** → VNet auswählen → **Subnetze** → **+ Subnetz**
+2. **Name** und **Adressbereich** eingeben
+3. Optional: **Netzwerksicherheitsgruppe**, **Routingtabelle** oder **Subnetzdelegierung** zuweisen → **Speichern**
+
+### VNet Peering einrichten
+
+1. VNet auswählen → **Peerings** → **+ Hinzufügen**
+2. **Name des Peerings** (lokal und remote) eingeben
+3. **Virtuelles Remote-Netzwerk** (Abonnement + VNet) auswählen
+4. Optionen: **Zugriff**, **Weitergeleiteter Datenverkehr**, **Gatewaytransit** → **Hinzufügen**
+
+> [!TIP] Adressräume prüfen
+> Vor dem Peering sicherstellen, dass sich die Adressräume der VNets **nicht überschneiden** — überlappende Bereiche verhindern das Peering.
+
+---
+
 ## Adressräume und Subnets planen
 
 ### IP-Adressraum

@@ -43,6 +43,35 @@ graph LR
 
 ---
 
+## Via Azure Portal (UI)
+
+### DDoS-Netzwerkschutzplan erstellen
+
+1. [Azure-Portal](https://portal.azure.com) → Suchleiste → **DDoS-Schutzpläne** → **+ Erstellen**
+2. **Abonnement**, **Ressourcengruppe**, **Name** und **Region** wählen → **Überprüfen + erstellen** → **Erstellen**
+
+### DDoS-Schutzplan mit VNet verknüpfen
+
+1. **Virtuelle Netzwerke** → VNet auswählen → **DDoS-Schutz**
+2. DDoS-Netzwerkschutz auf **Aktivieren** umschalten
+3. **DDoS-Schutzplan** aus der Liste wählen → **Speichern**
+
+### DDoS-IP-Schutz für einzelne öffentliche IP (IP Protection)
+
+1. **Öffentliche IP-Adresse** öffnen → **DDoS-Schutz**
+2. **DDoS-IP-Schutz** aktivieren → **Speichern**
+
+### Diagnoseeinstellungen und Alerts konfigurieren
+
+1. DDoS-Schutzplan → **Diagnoseeinstellungen** → **+ Diagnoseeinstellung hinzufügen**
+2. Log Analytics Workspace wählen → Metriken aktivieren → **Speichern**
+3. **Warnungen** → **+ Neue Warnungsregel** → Metrik **Unter DDoS-Angriff oder nicht** konfigurieren
+
+> [!TIP] IP Protection vs. Network Protection
+> **IP Protection** (pro öffentlicher IP, günstiger) ist für einzelne Ressourcen geeignet. **Network Protection** deckt alle öffentlichen IPs im VNet ab und bietet zusätzlich DDoS Rapid Response (DRR) und SLA-Garantien.
+
+---
+
 ## DDoS Protection Tiers
 
 | Tier | Schutz | Preis (ca.) | Anwendungsfall |
