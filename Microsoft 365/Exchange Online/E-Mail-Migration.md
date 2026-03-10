@@ -42,6 +42,62 @@ graph TD
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Migrationsendpunkt einrichten
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Migration → Endpunkte**
+3. Klicke auf **+ Endpunkt hinzufügen**
+4. Wähle den Endpunkttyp:
+   - **Exchange Remote Move** → für Hybrid-Migrationen
+   - **Exchange Outlook Anywhere** → für Cutover/Staged
+   - **IMAP** → für Gmail und andere IMAP-Quellen
+5. Konfiguriere die Verbindungseinstellungen:
+   - **E-Mail-Adresse:** Administrator-E-Mail des Quellsystems
+   - **Anmeldeinformationen:** Benutzername und Passwort
+   - **Autodiscover:** aktiviert lassen (empfohlen)
+6. Klicke auf **Weiter** → Verbindung wird getestet
+7. Klicke auf **Neuen Endpunkt erstellen**
+
+### Cutover-Migrationsbatch erstellen
+
+1. EAC → **Migration → Migrationsbatches → + Batch hinzufügen**
+2. Wähle **Migration zu Exchange Online**
+3. Migrationstyp: **Cutover-Migration**
+4. Zuvor erstellten Endpunkt auswählen
+5. Konfiguriere:
+   - **Name:** Batchname (z.B. "Cutover-01")
+   - **Zielzustellungsdomäne:** `[tenant].mail.onmicrosoft.com`
+6. Klicke auf **Weiter** → Überprüfung → **Batch starten**
+
+### IMAP-Migrationsbatch erstellen
+
+1. EAC → **Migration → Migrationsbatches → + Batch hinzufügen**
+2. Wähle **Migration zu Exchange Online**
+3. Migrationstyp: **IMAP-Migration**
+4. IMAP-Endpunkt auswählen
+5. CSV-Datei mit Benutzerkonten hochladen (Format: `EmailAddress,UserName,Password`)
+6. Zielzustellungsdomäne eingeben und **Batch starten**
+
+### Migrationsstatus überwachen
+
+1. EAC → **Migration → Migrationsbatches**
+2. Batch auswählen → Details anzeigen:
+   - **Gesamt:** Gesamtzahl der Postfächer
+   - **Synchronisiert:** Erfolgreich migrierte Postfächer
+   - **Fehler:** Fehlgeschlagene Postfächer (anklicken für Details)
+3. Über **Details anzeigen** → Fehlermeldungen einzelner Benutzer prüfen
+4. Batch über **Aktionen → Abschließen** finalisieren (nach MX-Umstellung)
+
+> [!TIP]
+> Alternativ über: **Microsoft 365 Admin Center** ([admin.microsoft.com](https://admin.microsoft.com)) → **Einstellungen → Domänen und Setup → Datenmigration** für geführte Cutover-Migrationen mit Schritt-für-Schritt-Assistenten
+
+> [!NOTE]
+> PST-Import wird nicht über das EAC, sondern über das **Microsoft Purview Compliance-Portal** ([compliance.microsoft.com](https://compliance.microsoft.com)) → **Datenverwaltung → Importieren → PST-Dateien importieren** durchgeführt.
+
+---
+
 ## Cutover Migration
 
 Bei der Cutover-Migration werden **alle Postfächer auf einmal** in einem Batch migriert. Benutzer sind während der Migration nicht in Exchange Online, bis der Batch abgeschlossen ist.

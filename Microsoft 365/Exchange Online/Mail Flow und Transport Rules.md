@@ -52,6 +52,70 @@ graph TD
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Akzeptierte Domäne hinzufügen
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Nachrichtenfluss → Akzeptierte Domänen**
+3. Klicke auf **+ Domäne hinzufügen**
+4. Konfiguriere die Einstellungen:
+   - **Name:** Anzeigename der Domäne
+   - **Akzeptierte Domäne:** Vollständiger Domänenname (z.B. `neuedomaene.de`)
+   - **Domänentyp:** Autoritativ / Internes Relay / Externes Relay wählen
+5. Klicke auf **Speichern**
+
+> [!NOTE]
+> Die Domäne muss zuerst im **Microsoft 365 Admin Center → Einstellungen → Domänen** verifiziert werden, bevor sie als akzeptierte Domäne in Exchange Online konfiguriert werden kann.
+
+### Connector erstellen
+
+1. EAC → **Nachrichtenfluss → Connectors → + Connector hinzufügen**
+2. Wähle Verbindungsquelle und -ziel:
+   - **Office 365 → Partnerorganisation** (für Outbound zu externem System)
+   - **Partnerorganisation → Office 365** (für Inbound von externem System)
+   - **Office 365 → Ihre Organisation** (für Hybrid Outbound)
+   - **Ihre Organisation → Office 365** (für Hybrid Inbound)
+3. Vergib einen **Namen** und eine **Beschreibung**
+4. Konfiguriere die Routingeinstellungen:
+   - **Smart Host:** FQDN oder IP-Adresse des Zielservers
+   - **TLS-Einstellungen:** Verschlüsselung auswählen
+5. Sicherheitseinstellungen:
+   - **Zertifikatname prüfen:** aktivieren (empfohlen)
+   - **Absender-IP-Adressen beschränken:** bei Bedarf konfigurieren
+6. Verbindung testen mit **Connector validieren**
+7. Klicke auf **Speichern**
+
+### Transport Rule (Nachrichtenflussregel) erstellen
+
+1. EAC → **Nachrichtenfluss → Regeln → + Regel hinzufügen**
+2. Vergib einen **Regelnamen**
+3. Konfiguriere die **Bedingung** (Wenn):
+   - Beispiel: **Der Absender befindet sich** → **Innerhalb der Organisation**
+   - Mehrere Bedingungen mit **Und/Oder** verknüpfen
+4. Wähle die **Aktion** (Dann):
+   - Beispiel: **Folgenden Haftungsausschluss anfügen** → HTML-Text eingeben
+   - Weitere Aktionen: BCC hinzufügen, Betreff voranstellen, Nachricht ablehnen
+5. Optional: **Ausnahmen** (Außer wenn) definieren
+6. **Priorität** festlegen (niedrigere Zahl = höhere Priorität)
+7. Klicke auf **Speichern** — die Regel ist sofort aktiv
+
+### Nachrichtenablaufverfolgung (Message Trace)
+
+1. EAC → **Nachrichtenfluss → Nachrichtenablaufverfolgung**
+2. Suchparameter eingeben:
+   - **Absenderadresse:** E-Mail-Adresse des Absenders (optional)
+   - **Empfängeradresse:** E-Mail-Adresse des Empfängers (optional)
+   - **Zeitraum:** Letzten 48 Stunden (schnell) oder bis zu 90 Tage (erweiterter Trace)
+3. Klicke auf **Suche**
+4. Nachricht aus der Liste auswählen → **Details anzeigen**
+   - Einzelne Ereignisse im Nachrichtenfluss sehen (Empfangen, Gefiltert, Zugestellt etc.)
+
+> [!TIP]
+> Alternativ über: **Microsoft 365 Admin Center → Support → Diagnosetool starten** für eine vereinfachte E-Mail-Diagnose bei Zustellproblemen.
+
+---
+
 ## Akzeptierte Domänen (Accepted Domains)
 
 Bevor Exchange Online E-Mails für eine Domäne empfangen kann, muss diese als akzeptierte Domäne konfiguriert sein.

@@ -18,6 +18,38 @@ aliases:
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+Die meisten Aufgaben, die mit Exchange Online PowerShell erledigt werden, können auch über das Exchange Admin Center ausgeführt werden.
+
+### Schnellübersicht: EAC-Äquivalente für häufige PowerShell-Aufgaben
+
+| PowerShell-Aufgabe | EAC-Navigationspfad |
+|-------------------|-------------------|
+| `Get-Mailbox` | **Empfänger → Postfächer** |
+| `New-Mailbox` | **Empfänger → Postfächer → + Postfach hinzufügen** |
+| `Set-Mailbox` | **Empfänger → Postfächer → Postfach auswählen → Bearbeiten** |
+| `Get-DistributionGroup` | **Empfänger → Gruppen** |
+| `New-TransportRule` | **Nachrichtenfluss → Regeln → +** |
+| `Get-AcceptedDomain` | **Nachrichtenfluss → Akzeptierte Domänen** |
+| `Get-InboundConnector` | **Nachrichtenfluss → Connectors** |
+| `Get-MessageTrace` | **Nachrichtenfluss → Nachrichtenablaufverfolgung** |
+| `Get-PublicFolder` | **Öffentliche Ordner → Öffentliche Ordner** |
+| `Get-MigrationBatch` | **Migration → Migrationsbatches** |
+
+### EAC aufrufen
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Melde dich mit dem gleichen **Microsoft 365 Administrator-Konto** an, das du für PowerShell verwenden würdest
+
+> [!NOTE]
+> Einige fortgeschrittene Konfigurationen — insbesondere Massenoperationen, Skripte, Automatisierungen und detaillierte Filterabfragen — sind **ausschließlich über PowerShell** möglich. Das EAC bietet keine Batch-Verarbeitung oder Skripting-Möglichkeiten. Für produktive Verwaltungsaufgaben ist PowerShell deshalb unerlässlich.
+
+> [!TIP]
+> Im **EAC** gibt es an vielen Stellen einen Hinweis „PowerShell-Befehl anzeigen" — dieser zeigt den entsprechenden PowerShell-Befehl für die gerade ausgeführte Aktion, ideal zum Lernen der PowerShell-Syntax.
+
+---
+
 ## Modul installieren und verbinden
 
 ### Installation

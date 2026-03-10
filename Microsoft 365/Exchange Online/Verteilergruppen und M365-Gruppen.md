@@ -38,6 +38,68 @@ graph TD
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Verteilergruppe erstellen
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Empfänger → Gruppen → + Gruppe hinzufügen**
+3. Wähle den Gruppentyp:
+   - **Verteilergruppe** → Klassische Verteilerliste
+   - **E-Mail-aktivierte Sicherheitsgruppe** → Für Berechtigungen + E-Mail
+   - **Dynamische Verteilergruppe** → Automatische Mitgliedschaft per Filter
+   - **Microsoft 365-Gruppe** → Moderne Zusammenarbeit
+4. Konfiguriere:
+   - **Name:** Gruppenname (z.B. „Marketing Team")
+   - **Alias:** Kurzname ohne Leerzeichen
+   - **E-Mail-Adresse:** (z.B. `marketing@contoso.com`)
+   - **Datenschutz:** Öffentlich / Privat (bei M365-Gruppen)
+5. **Eigentümer** festlegen (mindestens einen Eigentümer)
+6. **Mitglieder** hinzufügen
+7. Konfiguriere **Beitrittseinstellungen:**
+   - **Offen:** Jeder kann beitreten
+   - **Geschlossen:** Nur Eigentümer können Mitglieder hinzufügen (empfohlen)
+8. Klicke auf **Gruppe erstellen**
+
+### Mitglieder einer Gruppe verwalten
+
+1. EAC → **Empfänger → Gruppen**
+2. Gewünschte Gruppe auswählen
+3. Auf **Mitglieder anzeigen** klicken
+4. Über **+ Mitglieder hinzufügen** oder Papierkorb-Symbol entfernen
+5. Klicke auf **Speichern**
+
+### Gruppeneinstellungen bearbeiten
+
+1. EAC → **Empfänger → Gruppen** → Gruppe auswählen → **Bearbeiten** (Stift)
+2. Verfügbare Einstellungen:
+   - **Allgemein:** Name, Alias, E-Mail, Beschreibung
+   - **E-Mail-Adressen:** Zusätzliche SMTP-Adressen
+   - **Zustellung verwalten:** Wer darf an die Gruppe senden (intern/extern)
+   - **Moderation:** Genehmigung durch Moderatoren aktivieren
+3. Klicke auf **Speichern**
+
+### Microsoft 365-Gruppe über M365 Admin Center erstellen
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Teams und Gruppen → Aktive Teams und Gruppen**
+3. Klicke auf **+ Gruppe hinzufügen**
+4. Typ: **Microsoft 365**
+5. Konfiguriere:
+   - **Name** und **Beschreibung**
+   - **Eigentümer** und **Mitglieder**
+   - **Datenschutz:** Öffentlich oder Privat
+   - **Teams-Team erstellen:** optional aktivieren
+6. Klicke auf **Weiter** → **Gruppe erstellen**
+
+> [!TIP]
+> **Dynamische Verteilergruppen** können zwar im EAC angezeigt werden, der **RecipientFilter** (LDAP-Abfrage) lässt sich aber nur über PowerShell präzise konfigurieren. Das EAC bietet nur vordefinierte Filterkategorien.
+
+> [!NOTE]
+> **Group Naming Policies** und **Group Expiration Policies** werden ausschließlich im **Entra Admin Center** ([entra.microsoft.com](https://entra.microsoft.com)) unter **Gruppen → Einstellungen** konfiguriert.
+
+---
+
 ## Klassische Verteilergruppe (Distribution Group)
 
 Eine Verteilergruppe leitet E-Mails an alle Mitglieder weiter. Sie kann keine Berechtigungen für Ressourcen verwalten.

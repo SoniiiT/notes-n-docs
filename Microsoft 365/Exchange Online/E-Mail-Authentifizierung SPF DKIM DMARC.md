@@ -40,6 +40,47 @@ graph LR
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### DKIM aktivieren
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **E-Mail-Authentifizierung → DKIM**
+3. Wähle die gewünschte Domäne aus der Liste
+4. Klicke auf **Aktivieren**, um DKIM-Signaturen einzuschalten
+5. Das EAC zeigt die erforderlichen **CNAME-Einträge** für deinen DNS-Anbieter an:
+   - `selector1._domainkey.[domäne]` → CNAME-Ziel kopieren
+   - `selector2._domainkey.[domäne]` → CNAME-Ziel kopieren
+6. Erstelle diese CNAME-Einträge beim DNS-Anbieter
+7. Nach DNS-Propagation (bis zu 72 Stunden): Status wechselt auf **Aktiviert**
+
+> [!TIP]
+> Alternativ erreichbar über: **Microsoft Defender-Portal** ([security.microsoft.com](https://security.microsoft.com)) → **E-Mail und Zusammenarbeit → Richtlinien und Regeln → Bedrohungsrichtlinien → E-Mail-Authentifizierungseinstellungen → DKIM**
+
+### SPF-Record prüfen (über Admin Center)
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Domänen**
+3. Wähle die gewünschte Domäne aus
+4. Klicke auf **DNS-Einträge anzeigen** oder **DNS-Einträge verwalten**
+5. Prüfe ob ein **TXT-Eintrag** mit `v=spf1` vorhanden ist
+6. Fehlende oder fehlerhafte Einträge direkt beim **DNS-Anbieter** korrigieren
+
+> [!NOTE]
+> SPF- und DMARC-Records sind **reine DNS-Einträge** und werden nicht über das EAC, sondern direkt beim DNS-Anbieter (z. B. Cloudflare, GoDaddy, IONOS) erstellt und verwaltet. Das Microsoft 365 Admin Center kann den Status prüfen, aber keine DNS-Einträge direkt bearbeiten.
+
+### DMARC-Status überwachen
+
+1. Öffne [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **E-Mail und Zusammenarbeit → Richtlinien und Regeln → Bedrohungsrichtlinien → E-Mail-Authentifizierungseinstellungen**
+3. Wechsle zum Tab **DMARC**
+4. Den Status und bestehende DMARC-Records für alle verifizierten Domänen einsehen
+
+> [!TIP]
+> Für eine detaillierte Analyse von DMARC-Berichten externe Tools verwenden: [dmarcian.com](https://dmarcian.com), [dmarc.postmarkapp.com](https://dmarc.postmarkapp.com) oder [MXToolbox](https://mxtoolbox.com/DMARC.aspx)
+
+---
+
 ## SPF — Sender Policy Framework
 
 ### Was ist SPF?

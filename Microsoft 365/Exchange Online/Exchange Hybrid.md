@@ -77,6 +77,56 @@ Minimaler Hybrid ohne Exchange-Edge-Server im DMZ. Nutzt den **Microsoft Hybrid 
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Hybrid Configuration Wizard (HCW) starten
+
+Der HCW ist selbst ein grafisches Tool. So wird er gestartet:
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Hybrideinrichtung**
+3. Klicke auf **Konfigurieren** im Classic Hybrid- oder Modern Hybrid-Bereich
+4. Der **Hybrid Configuration Wizard** wird heruntergeladen und gestartet
+5. Im HCW-Assistenten:
+   - Melde dich mit **Microsoft 365 Global Admin**-Konto an
+   - Melde dich mit **On-Premises Exchange Admin**-Konto an
+   - Wähle **Vollständige Hybridkonfiguration** oder **Minimale Hybridkonfiguration**
+   - Für Modern Hybrid: **Hybrid-Agent verwenden** aktivieren
+6. Der Assistent konfiguriert automatisch:
+   - Inbound- und Outbound-Konnektoren
+   - Organisationsbeziehungen
+   - OAuth-Authentifizierung
+   - TLS-Zertifikate
+
+> [!TIP]
+> Den HCW direkt herunterladen unter: [aka.ms/HybridWizard](https://aka.ms/HybridWizard)
+
+### Konnektoren im EAC prüfen
+
+1. EAC → **Nachrichtenfluss → Connectors**
+2. Durch den HCW erstellte Konnektoren prüfen:
+   - **Inbound von On-Premises:** Typ „Von Ihrer Organisation"
+   - **Outbound zu On-Premises:** Typ „An Ihre Organisation"
+3. Konnektor auswählen → **Bearbeiten** für Details
+
+### Free/Busy-Organisationsbeziehungen anzeigen
+
+1. EAC → **Organisation → Freigabe**
+2. Unter **Organisationsfreigabe** die Beziehung zu Exchange Online / On-Premises prüfen
+3. Freigaberichtlinie bearbeiten:
+   - **Zugriffsebene:** Nur Frei/Gebucht / Frei/Gebucht + Betreff / Vollständige Details
+
+### Hybrid-Migrationsbatch über EAC verwalten
+
+1. EAC → **Migration → Migrationsbatches**
+2. Bestehende Batches für Onboarding (On-Premises → Cloud) oder Offboarding (Cloud → On-Premises) verwalten
+3. **+ Batch hinzufügen** → **Migration zu Exchange Online** → **Exchange Remote Move**
+
+> [!NOTE]
+> Die meisten Hybrid-Konfigurationen müssen nach wie vor über den **Hybrid Configuration Wizard** (HCW) eingerichtet werden. Das EAC bietet hauptsächlich Monitoring und Nachbearbeitung.
+
+---
+
 ## Hybrid Configuration Wizard (HCW)
 
 Der HCW automatisiert die gesamte Hybrid-Einrichtung.

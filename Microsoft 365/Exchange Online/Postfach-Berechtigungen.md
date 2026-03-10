@@ -40,6 +40,58 @@ graph TD
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Full Access-Berechtigung vergeben
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Empfänger → Postfächer**
+3. Gewünschtes Postfach (z.B. `support@contoso.com`) auswählen
+4. Klicke auf **Delegierung verwalten** (im Detailbereich rechts)
+5. Unter **Full Access** auf **+ Hinzufügen** klicken
+6. Benutzer suchen und auswählen
+7. **Automapping** ist standardmäßig aktiviert (Postfach erscheint automatisch in Outlook)
+8. Klicke auf **Speichern**
+
+### Send As-Berechtigung vergeben
+
+1. EAC → **Empfänger → Postfächer** → Postfach auswählen
+2. **Delegierung verwalten** öffnen
+3. Unter **Senden als** auf **+ Hinzufügen** klicken
+4. Benutzer suchen und hinzufügen
+5. Klicke auf **Speichern**
+
+> [!NOTE]
+> Nach dem Vergeben von Send As-Berechtigungen kann es bis zu **60 Minuten** dauern, bis die Berechtigung in Exchange Online vollständig repliziert ist.
+
+### Send on Behalf-Berechtigung vergeben
+
+1. EAC → **Empfänger → Postfächer** → Postfach auswählen
+2. **Delegierung verwalten** öffnen
+3. Unter **Senden im Auftrag von** auf **+ Hinzufügen** klicken
+4. Benutzer suchen und hinzufügen
+5. Klicke auf **Speichern**
+
+### Kalender-Delegation über Outlook konfigurieren
+
+1. Benutzer öffnet **Outlook** (Desktop oder Web)
+2. Rechtsklick auf **Kalender** → **Freigabe und Berechtigungen**
+3. Benutzer per E-Mail-Adresse einladen
+4. Berechtigungsstufe wählen:
+   - **Kann anzeigen, wann ich beschäftigt bin** (AvailabilityOnly)
+   - **Kann Titel und Ort sehen** (LimitedDetails)
+   - **Kann alle Details sehen** (Reviewer)
+   - **Kann bearbeiten** (Editor)
+5. Klicke auf **Freigeben**
+
+> [!TIP]
+> Kalender-Delegationen können auch über **Outlook Web App (OWA)** unter **Einstellungen (Zahnrad) → Kalender → Freigegebene Kalender** verwaltet werden.
+
+> [!NOTE]
+> **Application Access Policies** (Beschränkung von App-Zugriffen auf bestimmte Postfächer) sind ausschließlich über PowerShell konfigurierbar — das EAC bietet hierfür keine Oberfläche.
+
+---
+
 ## Full Access
 
 Full Access erlaubt einem Benutzer, ein fremdes Postfach vollständig zu öffnen, zu lesen und zu verwalten. Es erlaubt **kein Senden** im Namen der fremden Adresse (ohne zusätzliche Send As-Berechtigung).

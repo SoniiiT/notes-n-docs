@@ -58,6 +58,57 @@ graph TD
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### Public Folder Mailbox erstellen
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Öffentliche Ordner → Postfächer für öffentliche Ordner**
+3. Klicke auf **+ Postfach für öffentliche Ordner hinzufügen**
+4. Konfiguriere:
+   - **Name:** Anzeigename (z.B. „PrimaryPublicFolder")
+5. Klicke auf **Speichern**
+
+> [!NOTE]
+> Das erste erstellte Postfach wird automatisch als **primäres Postfach** (mit beschreibbarer Hierarchie) festgelegt. Alle weiteren sind sekundäre Postfächer.
+
+### Öffentlichen Ordner erstellen
+
+1. EAC → **Öffentliche Ordner → Öffentliche Ordner**
+2. Klicke auf **+ Ordner hinzufügen**
+3. Konfiguriere:
+   - **Name:** Ordnername (z.B. „Unternehmen")
+   - **Übergeordneter Pfad:** Stammverzeichnis `\` oder vorhandenen Ordner wählen
+4. Klicke auf **Speichern**
+5. Unterordner erstellen: Ordner auswählen → **+ Unterordner hinzufügen**
+
+### Berechtigungen über EAC verwalten
+
+1. EAC → **Öffentliche Ordner → Öffentliche Ordner**
+2. Gewünschten Ordner auswählen
+3. Im Detailbereich auf **Verwalten** bei **Ordnerberechtigungen** klicken
+4. Benutzer hinzufügen:
+   - **+ Hinzufügen** → Benutzer suchen und auswählen
+   - **Berechtigungsstufe** wählen (Besitzer / Herausgeber / Bearbeiter / Reviewer etc.)
+5. Klicke auf **Speichern**
+
+### E-Mail-Aktivierung über EAC
+
+1. EAC → **Öffentliche Ordner → Öffentliche Ordner**
+2. Ordner auswählen → **E-Mail-Einstellungen** im Detailbereich
+3. **E-Mail-Aktivierung:** aktivieren
+4. **E-Mail-Adresse** eingeben (z.B. `vertrieb-eingang@contoso.com`)
+5. Option **Externe Absender zulassen:** aktivieren falls benötigt
+6. Klicke auf **Speichern**
+
+> [!TIP]
+> Alternativ erreichbar über: **Microsoft 365 Admin Center → Admin Center → Exchange → Öffentliche Ordner**
+
+> [!NOTE]
+> Die **Migration** von On-Premises-Public-Folders nach Exchange Online kann nicht vollständig über das EAC durchgeführt werden — hierfür sind PowerShell-Skripte von Microsoft erforderlich.
+
+---
+
 ## Public Folder Mailboxes erstellen
 
 ```powershell

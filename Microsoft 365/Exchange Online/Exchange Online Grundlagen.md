@@ -185,6 +185,45 @@ Das **Exchange Admin Center** ist die webbasierte Verwaltungsoberfläche für Ex
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+Das **Exchange Admin Center (EAC)** ist die zentrale webbasierte Verwaltungsoberfläche für Exchange Online.
+
+### Erster Zugriff auf das EAC
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Melde dich mit deinem **Microsoft 365 Administrator-Konto** an
+3. Die Hauptnavigation auf der linken Seite bietet Zugriff auf alle Bereiche
+
+### Wichtige Bereiche im EAC (Schnellübersicht)
+
+| Bereich | Navigationspfad | Häufigste Aufgaben |
+|---------|----------------|-------------------|
+| Postfächer verwalten | **Empfänger → Postfächer** | Erstellen, bearbeiten, löschen |
+| Gruppen verwalten | **Empfänger → Gruppen** | Verteilergruppen, M365-Gruppen |
+| Transportregeln | **Nachrichtenfluss → Regeln** | Disclaimer, Blockierungen |
+| Konnektoren | **Nachrichtenfluss → Connectors** | Hybrid, Smart Host |
+| Domänen | **Nachrichtenfluss → Akzeptierte Domänen** | Neue Domäne hinzufügen |
+| Nachverfolgung | **Nachrichtenfluss → Nachrichtenablaufverfolgung** | E-Mail-Probleme diagnostizieren |
+| Öffentliche Ordner | **Öffentliche Ordner → Öffentliche Ordner** | Ordner, Berechtigungen |
+| Migration | **Migration → Migrationsbatches** | Postfächer migrieren |
+| DKIM | **E-Mail-Authentifizierung → DKIM** | DKIM aktivieren |
+
+### Weitere Admin-Portale im Überblick
+
+| Portal | URL | Zweck |
+|--------|-----|-------|
+| Microsoft 365 Admin Center | [admin.microsoft.com](https://admin.microsoft.com) | Benutzer, Lizenzen, Domänen |
+| Exchange Admin Center | [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com) | E-Mail-Verwaltung |
+| Microsoft Defender-Portal | [security.microsoft.com](https://security.microsoft.com) | Anti-Spam, Anti-Phishing, Safe Links |
+| Microsoft Purview | [compliance.microsoft.com](https://compliance.microsoft.com) | Compliance, eDiscovery, Aufbewahrung |
+| Entra Admin Center | [entra.microsoft.com](https://entra.microsoft.com) | Identitäten, Gruppen, Conditional Access |
+
+> [!TIP]
+> Vom **Microsoft 365 Admin Center** aus das EAC öffnen: **Admin Center → Exchange** (in der linken Navigation unter „Admin Center"). Dies öffnet das EAC im gleichen Browser-Tab.
+
+---
+
 ## Verwandte Notizen
 
 - [[Postfächer verwalten]]

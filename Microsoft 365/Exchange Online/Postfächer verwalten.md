@@ -29,6 +29,74 @@ aliases:
 
 ---
 
+## Via Exchange Admin Center (UI)
+
+### User Mailbox erstellen
+
+1. Öffne das **Exchange Admin Center** unter [admin.exchange.microsoft.com](https://admin.exchange.microsoft.com)
+2. Navigiere zu **Empfänger → Postfächer → + Postfach hinzufügen**
+3. Wähle **Benutzerpostfach**
+4. Wähle **Neuen Benutzer erstellen** oder **Vorhandenen Benutzer auswählen**
+5. Konfiguriere die Einstellungen:
+   - **Anzeigename:** Vollständiger Name
+   - **Benutzername:** E-Mail-Adresse (z.B. `max.mustermann@contoso.com`)
+   - **Kennwort:** Sicheres Anfangskennwort setzen
+   - **Postfachalias:** Kurzname
+6. Klicke auf **Speichern**
+7. Weise anschließend im **Microsoft 365 Admin Center → Benutzer → Aktive Benutzer** eine Exchange-Lizenz zu
+
+### Shared Mailbox erstellen
+
+1. EAC → **Empfänger → Postfächer → + Postfach hinzufügen**
+2. Wähle **Freigegebenes Postfach**
+3. Konfiguriere:
+   - **Anzeigename:** (z.B. „Support Team")
+   - **E-Mail-Adresse:** (z.B. `support@contoso.com`)
+4. Klicke auf **Speichern**
+5. Mitglieder hinzufügen: Postfach auswählen → **Delegierung verwalten** → **Full Access** → Benutzer hinzufügen
+
+### Raum- oder Geräte-Postfach (Resource Mailbox) erstellen
+
+1. EAC → **Empfänger → Ressourcen → + Ressource hinzufügen**
+2. Wähle **Raum** oder **Gerät**
+3. Konfiguriere:
+   - **Name:** (z.B. „Besprechungsraum A101")
+   - **E-Mail-Adresse:** (z.B. `room-a101@contoso.com`)
+   - **Kapazität:** Anzahl der Personen (nur Räume)
+4. Unter **Buchungsoptionen** konfigurieren:
+   - **Buchungsanfragen automatisch annehmen:** aktivieren
+   - **Konflikte zulassen:** deaktivieren (empfohlen)
+   - **Buchungsfenster:** maximale Vorausbuchungsdauer
+5. Klicke auf **Speichern**
+
+### Archive Mailbox aktivieren
+
+1. EAC → **Empfänger → Postfächer** → Postfach auswählen
+2. Im Detailbereich rechts auf **Weitere Einstellungen** klicken
+3. Unter **Archivpostfach** auf **Verwalten** klicken
+4. Klicke auf **Aktivieren** → Bestätigen
+5. Status wechselt auf **Aktiv** (Provisionierung dauert einige Minuten)
+
+> [!TIP]
+> Alternativ über: **Microsoft 365 Admin Center → Aktive Benutzer → Benutzer auswählen → E-Mail-Tab → Archiv verwalten**
+
+### Postfach-Einstellungen bearbeiten
+
+1. EAC → **Empfänger → Postfächer** → Postfach auswählen
+2. Klicke auf den **Postfachnamen** oder auf **Bearbeiten** (Stift-Symbol)
+3. Verfügbare Einstellungen:
+   - **Allgemein:** Anzeigename, Alias, E-Mail-Adressen
+   - **E-Mail-Adressen:** Zusätzliche SMTP-Adressen (Aliases)
+   - **Postfachfeatures:** OWA, ActiveSync, IMAP, POP aktivieren/deaktivieren
+   - **E-Mail-Weiterleitung:** Weiterleitung zu anderer Adresse konfigurieren
+   - **Postfachkontingent:** Speicherlimits einstellen
+4. Klicke auf **Speichern**
+
+> [!NOTE]
+> **Inaktive Postfächer** (nach Benutzerlöschung mit aktivem Litigation Hold) können nur über PowerShell wiederhergestellt werden — das EAC zeigt sie nicht an.
+
+---
+
 ## User Mailbox erstellen und konfigurieren
 
 ### Über das Exchange Admin Center (EAC)
