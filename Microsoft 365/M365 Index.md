@@ -240,16 +240,16 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Virtual Machines | VM-Typen, Größen, Images, Availability Sets/Zones, Scale Sets |
-| Azure VM Erweiterungen | Custom Script, Azure Monitor Agent, Disk Encryption, Domain Join |
-| Azure Spot VMs | Preemptible Workloads, Eviction Policies, Cost Savings |
-| Azure App Service | Web Apps, API Apps, Plan-Typen, Deployment Slots, Autoscaling |
-| Azure Functions | Serverless, Trigger-Typen, Durable Functions, Hosting-Pläne |
-| Azure Container Instances (ACI) | Schnelle Container-Deployments, Container Groups, Sidecars |
-| Azure Kubernetes Service (AKS) | Cluster-Management, Node Pools, Networking, Upgrades, KEDA |
-| Azure Container Apps | Serverless Kubernetes, KEDA, Dapr, Revision Management |
-| Azure Container Registry (ACR) | Image-Storage, Geo-Replication, Tasks, Webhooks, Vulnerability Scan |
-| Azure Batch | HPC-Workloads, Jobs, Pools, Task-Scheduling, Low Priority |
+| [[Azure Virtual Machines]] | VM-Typen, Größen, Images, Availability Sets/Zones, Scale Sets |
+| [[Azure VM Erweiterungen]] | Custom Script, Azure Monitor Agent, Disk Encryption, Domain Join |
+| [[Azure Spot VMs]] | Preemptible Workloads, Eviction Policies, Cost Savings |
+| [[Azure App Service]] | Web Apps, API Apps, Plan-Typen, Deployment Slots, Autoscaling |
+| [[Azure Functions]] | Serverless, Trigger-Typen, Durable Functions, Hosting-Pläne |
+| [[Azure Container Instances]] | Schnelle Container-Deployments, Container Groups, Sidecars |
+| [[Azure Kubernetes Service]] | Cluster-Management, Node Pools, Networking, Upgrades, KEDA |
+| [[Azure Container Apps]] | Serverless Kubernetes, KEDA, Dapr, Revision Management |
+| [[Azure Container Registry]] | Image-Storage, Geo-Replication, Tasks, Webhooks, Vulnerability Scan |
+| [[Azure Batch]] | HPC-Workloads, Jobs, Pools, Task-Scheduling, Low Priority |
 
 ---
 
@@ -257,13 +257,13 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Storage Grundlagen | Account-Typen, Redundanz (LRS/ZRS/GRS/GZRS), Access Tiers |
-| Azure Blob Storage | Container, Blobs, Lifecycle Management, Versioning, Soft Delete |
-| Azure Files | SMB/NFS Shares, Azure File Sync, AD-Authentifizierung |
-| Azure Queue Storage | Message Queuing, Grundlagen, Anwendungsfälle |
-| Azure Data Lake Storage Gen2 | Hierarchical Namespace, Analytics-Workloads, ACLs |
-| Azure Managed Disks | HDD/SSD/Ultra, Snapshots, Disk Encryption, Shared Disks |
-| Azure NetApp Files | Enterprise NFS/SMB, Performance-Tiers, Volumes, Cross-Region |
+| [[Azure Storage Grundlagen]] | Account-Typen, Redundanz (LRS/ZRS/GRS/GZRS), Access Tiers |
+| [[Azure Blob Storage]] | Container, Blobs, Lifecycle Management, Versioning, Soft Delete |
+| [[Azure Files]] | SMB/NFS Shares, Azure File Sync, AD-Authentifizierung |
+| [[Azure Queue Storage]] | Message Queuing, Grundlagen, Anwendungsfälle |
+| [[Azure Data Lake Storage Gen2]] | Hierarchical Namespace, Analytics-Workloads, ACLs |
+| [[Azure Managed Disks]] | HDD/SSD/Ultra, Snapshots, Disk Encryption, Shared Disks |
+| [[Azure NetApp Files]] | Enterprise NFS/SMB, Performance-Tiers, Volumes, Cross-Region |
 
 ---
 
@@ -271,15 +271,15 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure SQL Database | DTU vs. vCore, Single/Elastic Pool, Hyperscale, Business Critical |
-| Azure SQL Managed Instance | Near 100% SQL Compatibility, VNet-Integration, Migration |
-| SQL Server on Azure VMs | IaaS, Availability Groups, FCI, SQL IaaS Extension |
-| Azure Database for PostgreSQL | Flexible Server, Hochverfügbarkeit, Extensions, Citus |
-| Azure Database for MySQL | Flexible Server, Replikation, Backup, Zone Redundancy |
-| Azure Cosmos DB | Multi-Model (SQL/MongoDB/Cassandra/Gremlin/Table), RUs, Verteilung |
-| Azure Cache for Redis | Caching-Szenarien, Tiers, Persistenz, Clustering, Geo-Replication |
-| Azure Synapse Analytics | Data Warehouse, Spark, Serverless SQL, Pipelines, Link |
-| Azure Data Factory | ETL/ELT, Pipelines, Integration Runtimes, Monitoring |
+| [[Azure SQL Database]] | DTU vs. vCore, Single/Elastic Pool, Hyperscale, Business Critical |
+| [[Azure SQL Managed Instance]] | Near 100% SQL Compatibility, VNet-Integration, Migration |
+| [[SQL Server auf Azure VMs]] | IaaS, Availability Groups, FCI, SQL IaaS Extension |
+| [[Azure Database for PostgreSQL]] | Flexible Server, Hochverfügbarkeit, Extensions, Citus |
+| [[Azure Database for MySQL]] | Flexible Server, Replikation, Backup, Zone Redundancy |
+| [[Azure Cosmos DB]] | Multi-Model (SQL/MongoDB/Cassandra/Gremlin/Table), RUs, Verteilung |
+| [[Azure Cache for Redis]] | Caching-Szenarien, Tiers, Persistenz, Clustering, Geo-Replication |
+| [[Azure Synapse Analytics]] | Data Warehouse, Spark, Serverless SQL, Pipelines, Link |
+| [[Azure Data Factory]] | ETL/ELT, Pipelines, Integration Runtimes, Monitoring |
 
 ---
 
