@@ -536,6 +536,28 @@ GitHub-Repos mit Azure Pipelines oder Azure Boards kombiniert werden sollen — 
 
 ---
 
+## Via GitHub.com (UI)
+
+### GitHub.com Navigation
+
+1. **github.com/[org]/[repo]** → **Actions** (Pipelines), **Security**, **Settings**
+2. **github.com/orgs/[org]/settings** → Organisationseinstellungen
+3. **github.com/enterprises/[enterprise]** → Enterprise-Verwaltung
+
+### Azure DevOps Navigation
+
+1. **dev.azure.com/[org]/[project]** → Boards, Repos, Pipelines, Artifacts
+2. **dev.azure.com/[org]/_settings** → Organisationseinstellungen
+3. **Pipelines** → **New pipeline** → Quellcode-Verbindung wählen
+
+### Migration via GitHub UI
+
+1. Öffne **github.com/enterprises/[enterprise]** → **Settings** → **GitHub Enterprise Importer**
+2. Quell-Provider (Azure DevOps) auswählen
+3. Migration starten und Status verfolgen
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Actions]]

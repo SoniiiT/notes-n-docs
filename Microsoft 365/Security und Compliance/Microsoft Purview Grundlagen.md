@@ -202,6 +202,34 @@ Der Purview Data Catalog (früher Azure Purview) bietet Data Governance für:
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Compliance Manager aufrufen und Verbesserungsmaßnahmen umsetzen
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Compliance Manager**
+3. Überprüfe deinen **Compliance Score** auf der Übersichtsseite
+4. Klicke auf **Verbesserungsmaßnahmen**, um die Liste der empfohlenen Aktionen zu sehen
+5. Filtere nach:
+   - **Kategorie:** Datenschutz, Informationsschutz, etc.
+   - **Status:** Nicht gestartet, In Bearbeitung, Abgeschlossen
+   - **Punktzahl:** Nach Punkte-Impact sortieren
+6. Klicke auf eine Maßnahme und folge der **Implementierungsanleitung**
+7. Setze den Status auf **Implementiert** nach Abschluss
+
+### Assessment erstellen
+
+1. Navigiere zu **Compliance Manager → Assessments**
+2. Klicke auf **+ Assessment hinzufügen**
+3. Wähle eine **Regulierungsvorlage** (z.B. DSGVO, ISO 27001, NIST)
+4. Konfiguriere **Name**, **Gruppe** und **Dienste**
+5. Klicke auf **Assessment erstellen**
+
+> [!TIP]
+> Nutze den **Compliance Manager**, um den aktuellen Compliance-Status gegenüber wichtigen Standards wie DSGVO oder ISO 27001 zu bewerten und priorisierte Maßnahmen umzusetzen.
+
+---
+
 ## Lizenzierung: E3 vs. E5 Compliance
 
 | Feature | M365 E3 | M365 E5 | E5 Compliance Add-on |

@@ -253,6 +253,34 @@ New-ComplianceRetentionEvent -Name "Austritt_MaxMuster" `
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Aufbewahrungsrichtlinie erstellen
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Datenverwaltung → Aufbewahrungsrichtlinien**
+3. Klicke auf **+ Neue Aufbewahrungsrichtlinie**
+4. Konfiguriere:
+   - **Name und Beschreibung:** Aussagekräftigen Namen vergeben
+   - **Art:** Statisch oder Adaptiv
+   - **Speicherorte:** Exchange, SharePoint, OneDrive, Teams usw. auswählen
+   - **Aufbewahrungsdauer:** Zeitraum und Startpunkt festlegen
+   - **Aktion nach Ablauf:** Inhalte beibehalten, löschen oder zuerst beibehalten, dann löschen
+5. Klicke auf **Weiter** und dann **Erstellen**
+
+### Aufbewahrungsbezeichnung (Retention Label) veröffentlichen
+
+1. Navigiere zu **Datenverwaltung → Bezeichnungen**
+2. Klicke auf **+ Bezeichnung erstellen**
+3. Konfiguriere Bezeichnungseinstellungen und klicke auf **Weiter**
+4. Nach der Erstellung: **Bezeichnungen veröffentlichen → + Neue Bezeichnungsrichtlinie**
+5. Wähle Labels, Speicherorte und Benutzer aus, dann klicke auf **Veröffentlichen**
+
+> [!TIP]
+> Nutze **Auto-Anwendung** für Bezeichnungen, um Labels automatisch auf Inhalte mit bestimmten Sensitive Information Types oder Keywords anzuwenden — navigiere dafür zu **Datenverwaltung → Bezeichnungen → Bezeichnung automatisch anwenden**.
+
+---
+
 ## PowerShell-Verwaltung
 
 ```powershell

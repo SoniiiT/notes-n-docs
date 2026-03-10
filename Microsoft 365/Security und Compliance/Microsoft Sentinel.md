@@ -330,6 +330,32 @@ UEBA erstellt Baseline-Profile für Benutzer und Entitäten:
 
 ---
 
+## Via Microsoft Sentinel (Azure Portal) (UI)
+
+### Sentinel-Workspace einrichten und Analytics Rule erstellen
+
+1. Öffne das **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Suche nach **Microsoft Sentinel** und wähle deinen Workspace
+3. Navigiere zu **Konfiguration → Datenconnectors**:
+   - Wähle einen Connector (z.B. **Microsoft 365 Defender**)
+   - Klicke auf **Connectorseite öffnen** und folge den Anweisungen
+4. Navigiere zu **Konfiguration → Analytics**
+5. Klicke auf **+ Erstellen → Geplante Abfrageregel**
+6. Konfiguriere:
+   - **Name und Beschreibung:** Regelname vergeben
+   - **Schweregrad:** Niedrig, Mittel, Hoch oder Kritisch
+   - **MITRE ATT&CK:** Taktiken und Techniken zuordnen
+   - **KQL-Abfrage:** Erkennungslogik eingeben und testen
+   - **Abfragehäufigkeit:** z.B. alle 5 Minuten
+   - **Lookback-Zeitraum:** Zeitfenster für die Abfrage
+   - **Entitätszuordnungen:** Account, Host, IP-Adresse zuordnen
+7. Klicke auf **Überprüfen und erstellen**
+
+> [!TIP]
+> Nutze den **Content Hub** unter **Inhaltsverwaltung → Content Hub**, um fertige Solutions mit vorgefertigten Analytics Rules, Workbooks und Playbooks für bekannte Produkte (z.B. Microsoft 365, AWS) zu installieren.
+
+---
+
 ## Kostenmodell
 
 | Modell | Beschreibung | Empfehlung |

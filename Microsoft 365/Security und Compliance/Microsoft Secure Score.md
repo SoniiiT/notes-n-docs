@@ -166,6 +166,26 @@ Wenn der Score **sinkt**, identifiziert Secure Score die Ursache:
 
 ---
 
+## Via Microsoft Defender Portal (UI)
+
+### Secure Score überprüfen und Maßnahmen umsetzen
+
+1. Öffne **Microsoft Defender Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **Sicherheitsbewertung**
+3. Überprüfe deinen aktuellen **Score** und die Aufschlüsselung nach Kategorien (Identität, Geräte, Apps, Daten)
+4. Klicke auf **Verbesserungsmaßnahmen**
+5. Filtere und sortiere nach:
+   - **Punktzahl-Auswirkung:** Höchsten Gewinn zuerst
+   - **Kategorie:** Identity, Devices, Apps, Data
+   - **Status:** Zum Beheben, Geplant, Von Drittanbieter verwaltet
+6. Klicke auf eine Maßnahme und wähle **Jetzt lösen** für direkten Zugriff auf die Einstellungsseite
+7. Markiere abgeschlossene Maßnahmen als **Abgeschlossen** oder **Geplant**
+
+> [!TIP]
+> Nutze die **Vergleichsfunktion** unter **Verlauf & Vergleich**, um deinen Score mit dem Branchendurchschnitt oder ähnlichen Organisationen zu vergleichen.
+
+---
+
 ## Secure Score API (Microsoft Graph)
 
 ```powershell

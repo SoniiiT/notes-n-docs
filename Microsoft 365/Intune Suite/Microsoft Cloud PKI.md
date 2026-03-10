@@ -340,6 +340,56 @@ graph LR
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Root CA erstellen
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Mandantenverwaltung** → **Cloud PKI**
+3. Klicke **+ Erstellen** → **Root CA**
+4. Konfiguriere die Root CA:
+   - **Name:** Eindeutiger Name (z. B. `Contoso Root CA`)
+   - **Gültigkeit:** Empfohlen 10–25 Jahre
+   - **Schlüssellänge:** 4096 Bit (empfohlen)
+   - **Hash-Algorithmus:** SHA-256
+   - **Subject-Attribute:** Organisation, Land, Common Name
+5. Klicke **Weiter** → **Überprüfen und erstellen** → **Erstellen**
+6. Root CA Zertifikat herunterladen für Trusted Certificate Profile
+
+### Issuing CA erstellen
+
+1. Navigiere zu **Mandantenverwaltung** → **Cloud PKI** → **+ Erstellen** → **Issuing CA**
+2. Konfiguriere die Issuing CA:
+   - **Name:** z. B. `Contoso Issuing CA`
+   - **Übergeordnete CA:** Erstellte Root CA auswählen
+   - **Gültigkeit:** 3–5 Jahre empfohlen
+   - **Schlüssellänge:** 2048 oder 4096 Bit
+   - **Zertifikatsgültigkeit für ausgestellte Zertifikate:** z. B. 1 Jahr
+3. **Erstellen** bestätigen
+
+### SCEP-Zertifikatprofil deployen
+
+1. Navigiere zu **Geräte** → **Konfigurationsprofile** → **+ Profil erstellen**
+2. **Plattform** wählen (Windows, iOS, Android, macOS)
+3. **Profiltyp:** Vorlagen → **SCEP-Zertifikat**
+4. Konfiguriere das Profil:
+   - **Zertifikattyp:** Gerät oder Benutzer
+   - **Antragsteller-Namensformat:** z. B. `CN={{DeviceName}}`
+   - **Zertifizierungsstelle:** Cloud PKI Issuing CA auswählen
+   - **Gültigkeit:** Gewünschte Laufzeit
+   - **Erweiterte Schlüsselverwendung:** Clientauthentifizierung
+5. **Zuweisung:** Zielgruppen auswählen → **Speichern**
+
+### Zertifikat-Revocation
+
+1. Navigiere zu **Mandantenverwaltung** → **Cloud PKI**
+2. Issuing CA auswählen → **Ausgestellte Zertifikate**
+3. Zertifikat suchen (nach Gerät, Benutzer oder Seriennummer)
+4. Zertifikat auswählen → **Widerrufen** → Widerrufsgrund angeben
+5. CRL wird automatisch aktualisiert
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Intune Suite Überblick]]

@@ -361,6 +361,57 @@ graph LR
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Dev Center im Azure Portal erstellen
+
+1. Öffne **[portal.azure.com](https://portal.azure.com)**
+2. Suche nach **Dev Center** → **+ Erstellen**
+3. **Ressourcengruppe** und **Name** eingeben, **Region** wählen
+4. **Überprüfen und erstellen** → **Erstellen**
+
+### Projekte anlegen
+
+1. Im Azure Portal → **Dev Center** auswählen → **Projekte** → **+ Erstellen**
+2. **Name**, **Beschreibung** und **maximale Dev Boxes pro Entwickler** konfigurieren
+3. **Erstellen** bestätigen
+
+### Dev Box-Definition erstellen
+
+1. Im Dev Center → **Dev Box-Definitionen** → **+ Erstellen**
+2. Konfiguriere die Definition:
+   - **Name:** z. B. `Backend-Dev-Large`
+   - **Image:** Marketplace-Image oder Custom Image auswählen
+   - **Compute:** SKU auswählen (z. B. 8 vCPU, 32 GB RAM)
+   - **Speicher:** SSD-Größe wählen (256 GB / 512 GB / 1 TB)
+3. **Erstellen** bestätigen
+
+### Pool erstellen
+
+1. Im Azure Portal → Projekt auswählen → **Pools** → **+ Erstellen**
+2. Konfiguriere den Pool:
+   - **Dev Box-Definition** auswählen
+   - **Netzwerkverbindung:** Microsoft-gehostet oder eigene VNet-Verbindung
+   - **Auto-Stop-Zeit** konfigurieren (täglich um z. B. 18:00 Uhr)
+3. **Erstellen** bestätigen
+
+### Dev Box-Übersicht in Intune
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Geräte** → **Windows** → **Microsoft Dev Box**
+3. Übersicht aller konfigurierten Dev Boxes und zugehöriger Intune-Geräte
+4. Compliance-Status und Richtlinien prüfen
+
+### Developer Self-Service
+
+1. Öffne **[devbox.microsoft.com](https://devbox.microsoft.com)**
+2. Mit **Entra ID-Konto** anmelden
+3. Klicke **+ Neue Dev Box** → Pool auswählen → **Erstellen**
+4. Nach der Bereitstellung (ca. 20–40 Minuten): **Verbinden** via Browser oder RDP
+5. Dev Box **starten**, **stoppen** oder **löschen** über das Self-Service-Portal
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Intune Suite Überblick]]

@@ -333,11 +333,46 @@ Microsoft veröffentlicht Status-Updates für den Autopatch-Dienst:
 
 ---
 
-## Verwandte Notizen
+## Via Microsoft Intune Admin Center (UI)
 
-- [[Microsoft Intune Suite Überblick]]
-- [[Intune Grundlagen]]
-- [[Windows Update for Business]]
+### Autopatch aktivieren
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Mandantenverwaltung** → **Windows Autopatch**
+3. Klicke auf **Registrierungsvoraussetzungen prüfen** — alle Voraussetzungen müssen grün sein
+4. Klicke **Autopatch aktivieren** und bestätige die Nutzungsbedingungen
+5. Warte auf die Bereitstellung der Standard-Deployment-Ringe (ca. 5–10 Minuten)
+
+### Deployment Rings anpassen
+
+1. Navigiere zu **Geräte** → **Windows** → **Windows Autopatch** → **Deployment Rings**
+2. Vorhandene Ringe anzeigen: **Test**, **First**, **Fast**, **Broad**
+3. Klicke auf einen Ring → **Eigenschaften bearbeiten:**
+   - **Deployment-Verzögerung** in Tagen anpassen
+   - **Update-Deadline** konfigurieren
+4. Für **benutzerdefinierte Ringe:** → **+ Ring erstellen**
+   - Name vergeben, Verzögerung und Zielgruppen definieren
+
+### Geräte zuweisen und verwalten
+
+1. Navigiere zu **Geräte** → **Windows** → **Windows Autopatch** → **Geräte**
+2. Geräte werden automatisch dem **Broad-Ring** zugewiesen (über die Autopatch-Gerätegruppe)
+3. Gerät in einen anderen Ring verschieben: Gerät auswählen → **Ring zuweisen**
+4. **Ausschlüsse:** Gerät aus Autopatch entfernen → **Aus Autopatch entfernen**
+
+### Update Health Dashboard
+
+1. Navigiere zu **Berichte** → **Windows Update** → **Windows Autopatch**
+2. Übersicht über Update-Compliance aller Geräte:
+   - **Aktuell** — Gerät hat alle Updates erhalten
+   - **In Bearbeitung** — Update wird gerade installiert
+   - **Nicht konform** — Update fehlgeschlagen oder überfällig
+3. Klicke auf ein Gerät für Details: Installierte Updates, Fehlercode, Letzter Kontakt
+4. **Exportieren** für Berichte an Management
+
+---
+
+## Verwandte Notizen
 - [[Konfigurationsprofile]]
 - [[Compliance Policies]]
 - [[Windows Autopilot]]

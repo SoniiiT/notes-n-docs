@@ -268,6 +268,35 @@ graph TD
 
 ---
 
+## Via Microsoft Defender Portal (UI)
+
+### Incident untersuchen und verwalten
+
+1. Öffne **Microsoft Defender Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **Incidents & Warnungen → Incidents**
+3. Klicke auf ein Incident für die Detailansicht:
+   - **Übersicht:** Betroffene Assets, Schweregrad, Status
+   - **Angriffsverlauf:** Visueller Attack Graph
+   - **Warnungen:** Alle zugehörigen Alerts
+   - **Assets:** Betroffene Geräte, Benutzer, Postfächer
+4. Weise den Incident einem Analysten zu über **Zuweisen**
+5. Setze den Status auf **In Bearbeitung** und wähle eine Klassifizierung
+
+### Custom Detection Rule erstellen
+
+1. Navigiere zu **Hunting → Benutzerdefinierte Erkennungen**
+2. Klicke auf **+ Regel erstellen**
+3. Gib eine **KQL-Abfrage** ein und klicke auf **Ergebnisse ausführen**
+4. Konfiguriere:
+   - **Häufigkeit:** Ausführungsintervall festlegen
+   - **Aktionen:** Alert erstellen, Datei isolieren, etc.
+5. Klicke auf **Speichern**
+
+> [!TIP]
+> Nutze **Threat Analytics** unter **Bedrohungsanalyse**, um aktuelle Bedrohungsberichte von Microsoft Research zu lesen und eigene Exposure-Bewertungen einzusehen.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | Defender XDR-Abdeckung |

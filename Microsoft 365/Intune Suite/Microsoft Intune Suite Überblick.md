@@ -316,6 +316,43 @@ graph TD
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Intune Suite Add-ons anzeigen
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Mandantenverwaltung** → **Add-ons** *(Intune Suite)*
+3. Übersicht aller verfügbaren Add-ons mit Status (Aktiv / Testversion / Nicht aktiviert)
+
+### Testversion eines Add-ons aktivieren
+
+1. Navigiere zu **Mandantenverwaltung** → **Add-ons**
+2. Gewünschtes Add-on auswählen (z. B. **Endpoint Privilege Management**)
+3. Klicke **Testversion starten** → Bedingungen bestätigen
+4. Testversion ist sofort aktiv (30-Tage-Testzeitraum)
+5. Lizenzstatus prüfen: **[admin.microsoft.com](https://admin.microsoft.com)** → **Abrechnung** → **Ihre Produkte**
+
+### Lizenzstatus prüfen
+
+1. Öffne **[admin.microsoft.com](https://admin.microsoft.com)**
+2. Navigiere zu **Abrechnung** → **Ihre Produkte**
+3. Nach **Intune Suite** oder einzelnen Add-ons filtern
+4. Zugewiesene Lizenzen vs. verfügbare Lizenzen prüfen
+5. Lizenz einem Benutzer zuweisen: **Benutzer** → **Aktive Benutzer** → Benutzer auswählen → **Lizenzen und Apps**
+
+### Komponenten der Suite aufrufen
+
+| Komponente | Navigationspfad |
+|-----------|----------------|
+| **EPM** | Endpunktsicherheit → Endpoint Privilege Management |
+| **Cloud PKI** | Mandantenverwaltung → Cloud PKI |
+| **Remote Help** | Mandantenverwaltung → Remote Help |
+| **Tunnel** | Mandantenverwaltung → Microsoft Tunnel Gateway |
+| **Advanced Analytics** | Berichte → Endpoint Analytics |
+| **Autopatch** | Geräte → Windows → Windows Autopatch |
+
+---
+
 ## Verwandte Notizen
 
 - [[Intune Grundlagen]]

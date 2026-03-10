@@ -312,6 +312,34 @@ EmailUrlInfo
 
 ---
 
+## Via Microsoft Defender Portal (UI)
+
+### Safe Links und Safe Attachments konfigurieren
+
+1. Öffne **Microsoft Defender Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **E-Mail & Zusammenarbeit → Richtlinien & Regeln → Bedrohungsrichtlinien**
+3. Klicke auf **Safe Links**:
+   - Klicke auf **+ Erstellen** für eine neue Richtlinie
+   - **Name:** Aussagekräftigen Namen vergeben
+   - **Benutzer und Gruppen:** Empfänger auswählen
+   - **URL-Einstellungen:** „Schädliche URLs in Echtzeit überprüfen" aktivieren
+   - Klicke auf **Speichern**
+4. Zurück zu **Bedrohungsrichtlinien**, klicke auf **Safe Attachments**:
+   - Klicke auf **+ Erstellen**
+   - **Aktion:** Dynamic Delivery oder Blockieren auswählen
+   - Klicke auf **Speichern**
+
+### Preset-Sicherheitsrichtlinien aktivieren
+
+1. Navigiere zu **E-Mail & Zusammenarbeit → Richtlinien & Regeln → Bedrohungsrichtlinien**
+2. Klicke auf **Voreingestellte Sicherheitsrichtlinien**
+3. Aktiviere **Standardschutz** oder **Strenger Schutz** und weise Benutzer zu
+
+> [!TIP]
+> Die **voreingestellten Sicherheitsrichtlinien** (Standard / Streng) sind die empfohlene Methode für die meisten Organisationen, da sie automatisch mit Best Practices aktuell gehalten werden.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | MDO-Abdeckung |

@@ -200,6 +200,36 @@ graph LR
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Priva Privacy Risk Management einrichten
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Priva → Datenschutz-Risikomanagement**
+3. Klicke auf **Einrichten** beim ersten Start
+4. Wähle **Richtlinie erstellen** und konfiguriere:
+   - **Richtlinientyp:** Datenübertragung, Daten-Thesaurus, Daten-Maximierung
+   - **Name:** Aussagekräftiger Name
+   - **Datenbereiche:** Speicherorte (Exchange, SharePoint, Teams, OneDrive) festlegen
+   - **Schweregrad:** Niedrig, Mittel oder Hoch
+   - **Benachrichtigungen:** Benutzertipps aktivieren
+5. Klicke auf **Erstellen**
+
+### Subject Rights Request erstellen
+
+1. Navigiere zu **Priva → Anträge auf Rechte betroffener Personen**
+2. Klicke auf **+ Anfrage erstellen**
+3. Konfiguriere:
+   - **Antragstyp:** Export, Löschung, Korrektur, Zugriffseinschränkung
+   - **Betroffene Person:** Name und E-Mail-Adresse eingeben
+   - **Inhaltssuchparameter:** Suchbereiche festlegen
+4. Klicke auf **Erstellen** und überwache den Fortschritt im Dashboard
+
+> [!NOTE]
+> Die Bearbeitung eines Subject Rights Requests kann mehrere Tage dauern. Priva schätzt automatisch das Abschlussdatum basierend auf dem Datenvolumen.
+
+---
+
 ## Konfiguration und Einrichtung
 
 ### Voraussetzungen

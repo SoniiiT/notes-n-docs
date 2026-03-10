@@ -212,6 +212,31 @@ graph LR
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Vertraulichkeitsbezeichnung erstellen und veröffentlichen
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Informationsschutz → Bezeichnungen**
+3. Klicke auf **+ Bezeichnung erstellen**
+4. Konfiguriere auf der Registerkarte **Name und Beschreibung**:
+   - **Name:** Interne Bezeichnung (z.B. „Vertraulich")
+   - **Anzeigename:** Benutzeranzeige (z.B. „Vertraulich – Intern")
+   - **Beschreibung:** Verwendungshinweis für Benutzer
+5. Konfiguriere die Schutzeinstellungen:
+   - **Verschlüsselung:** Berechtigungen zuweisen oder Benutzer wählen lassen
+   - **Inhaltsmarkierung:** Wasserzeichen, Kopf-/Fußzeile aktivieren
+   - **Auto-Labeling:** Bedingungen für automatische Anwendung festlegen
+   - **Gruppen- und Website-Schutz:** Datenschutz und Zugriff für Teams/Sites
+6. Klicke auf **Erstellen**
+7. Navigiere zu **Informationsschutz → Bezeichnungsrichtlinien → + Richtlinie veröffentlichen**
+8. Wähle Labels, Benutzer/Gruppen und Richtlinieneinstellungen aus und klicke auf **Veröffentlichen**
+
+> [!TIP]
+> Teste neue Labels zunächst mit einer kleinen Gruppe in einer **Pilotrichtlinie**, bevor du sie unternehmensweit ausrollst. Eine Änderung an veröffentlichten Labels kann bis zu 24 Stunden dauern, bis sie in Office Apps wirksam ist.
+
+---
+
 ## PowerShell-Verwaltung
 
 ```powershell
