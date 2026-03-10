@@ -191,15 +191,15 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Überblick | Regionen, Availability Zones, Dienste-Kategorien, SLAs |
-| Subscriptions und Management Groups | Hierarchie, Billing, EA/MCA, Cost Management |
-| Resource Groups | Konzept, Tagging, Locks, Deployment-Scopes |
-| Azure RBAC | Built-in Roles, Custom Roles, Scope-Hierarchie, PIM für Azure |
-| Azure Policy | Definitionen, Initiatives, Assignments, Compliance, Remediation |
-| Azure Landing Zones | Cloud Adoption Framework, Enterprise-Scale, Hub-and-Spoke |
-| Azure Cost Management | Budgets, Alerts, Cost Analysis, Advisor, Reservations, Savings Plans |
-| Azure Advisor | Empfehlungen für Kosten, Sicherheit, Performance, Reliability |
-| Azure Well-Architected Framework | 5 Säulen (Cost, Reliability, Security, Performance, Operations), Assessments, Review Tool |
+| [[Azure Überblick]] | Regionen, Availability Zones, Dienste-Kategorien, SLAs |
+| [[Subscriptions und Management Groups]] | Hierarchie, Billing, EA/MCA, Cost Management |
+| [[Resource Groups]] | Konzept, Tagging, Locks, Deployment-Scopes |
+| [[Azure RBAC]] | Built-in Roles, Custom Roles, Scope-Hierarchie, PIM für Azure |
+| [[Azure Policy]] | Definitionen, Initiatives, Assignments, Compliance, Remediation |
+| [[Azure Landing Zones]] | Cloud Adoption Framework, Enterprise-Scale, Hub-and-Spoke |
+| [[Azure Cost Management]] | Budgets, Alerts, Cost Analysis, Advisor, Reservations, Savings Plans |
+| [[Azure Advisor]] | Empfehlungen für Kosten, Sicherheit, Performance, Reliability |
+| [[Azure Well-Architected Framework]] | 5 Säulen (Cost, Reliability, Security, Performance, Operations), Assessments, Review Tool |
 
 ---
 
@@ -207,10 +207,10 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Managed Identities | System-assigned vs. User-assigned, Anwendungsfälle, Best Practices |
-| Azure Key Vault | Secrets, Keys, Certificates, Access Policies, RBAC, Private Endpoint |
-| Azure AD Domain Services (AADDS) | Managed Domain Services, LDAP, Kerberos, Migration von on-prem |
-| Microsoft Entra Workload ID | Service Principals, App Registrations, Federated Credentials |
+| [[Azure Managed Identities]] | System-assigned vs. User-assigned, Anwendungsfälle, Best Practices |
+| [[Azure Key Vault]] | Secrets, Keys, Certificates, Access Policies, RBAC, Private Endpoint |
+| [[Azure AD Domain Services]] | Managed Domain Services, LDAP, Kerberos, Migration von on-prem |
+| [[Microsoft Entra Workload ID]] | Service Principals, App Registrations, Federated Credentials |
 
 ---
 
@@ -218,21 +218,21 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Virtual Network (VNet) | Adressräume, Subnets, Peering, Service Endpoints, Private Endpoints |
-| Network Security Groups (NSG) | Regeln, Application Security Groups, Flow Logs, Diagnose |
-| Azure Firewall | SKUs, DNAT/SNAT, Policy, Threat Intelligence, Premium-Features |
-| Azure Load Balancer | SKUs, Frontend/Backend, Health Probes, Outbound Rules |
-| Azure Application Gateway | WAF, URL-Routing, SSL-Offloading, Autoscaling |
-| Azure Front Door | Global Load Balancing, CDN, WAF, Private Link Origin |
-| Azure Traffic Manager | DNS-basiertes Load Balancing, Routing-Methoden |
-| Azure VPN Gateway | Site-to-Site, Point-to-Site, VNet-to-VNet, BGP |
-| Azure ExpressRoute | Private Peering, Microsoft Peering, Circuit-SKUs, FastPath |
-| Azure Virtual WAN | Hub-and-Spoke in der Cloud, Routing-Policies, Secured Hub |
-| Azure Bastion | Sicherer RDP/SSH-Zugang ohne öffentliche IP, SKUs |
-| Azure DDoS Protection | Basic vs. Standard, Metriken, Adaptive Tuning |
-| Azure Private Link | Private Endpoints, Private Link Service, DNS-Integration |
-| Azure DNS | Public/Private Zones, DNS Private Resolver, Forwarding Rules |
-| Azure Network Watcher | Connection Monitor, NSG Flow Logs, Packet Capture, Topology |
+| [[Azure Virtual Network]] | Adressräume, Subnets, Peering, Service Endpoints, Private Endpoints |
+| [[Network Security Groups]] | Regeln, Application Security Groups, Flow Logs, Diagnose |
+| [[Azure Firewall]] | SKUs, DNAT/SNAT, Policy, Threat Intelligence, Premium-Features |
+| [[Azure Load Balancer]] | SKUs, Frontend/Backend, Health Probes, Outbound Rules |
+| [[Azure Application Gateway]] | WAF, URL-Routing, SSL-Offloading, Autoscaling |
+| [[Azure Front Door]] | Global Load Balancing, CDN, WAF, Private Link Origin |
+| [[Azure Traffic Manager]] | DNS-basiertes Load Balancing, Routing-Methoden |
+| [[Azure VPN Gateway]] | Site-to-Site, Point-to-Site, VNet-to-VNet, BGP |
+| [[Azure ExpressRoute]] | Private Peering, Microsoft Peering, Circuit-SKUs, FastPath |
+| [[Azure Virtual WAN]] | Hub-and-Spoke in der Cloud, Routing-Policies, Secured Hub |
+| [[Azure Bastion]] | Sicherer RDP/SSH-Zugang ohne öffentliche IP, SKUs |
+| [[Azure DDoS Protection]] | Basic vs. Standard, Metriken, Adaptive Tuning |
+| [[Azure Private Link]] | Private Endpoints, Private Link Service, DNS-Integration |
+| [[Azure DNS]] | Public/Private Zones, DNS Private Resolver, Forwarding Rules |
+| [[Azure Network Watcher]] | Connection Monitor, NSG Flow Logs, Packet Capture, Topology |
 
 ---
 
