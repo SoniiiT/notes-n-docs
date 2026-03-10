@@ -39,6 +39,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Bot** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Erstellen" → "Azure Bot" suchen
+2. **Bot konfigurieren** – Bot-Handle (global eindeutiger Name), Subscription, RG, Region, Tarif (Free F0 / Standard S1)
+3. **App-Typ wählen** – Einzel-Mandant, Multi-Mandant oder Benutzerseitig zugewiesene verwaltete Identität
+4. **Bot Framework Composer** – Nach Bereitstellung: Ressource öffnen → "In Bot Framework Composer öffnen"
+5. **Kanäle konfigurieren** – Bot-Ressource → "Kanäle" → Teams, Web Chat, Direct Line etc. aktivieren
+6. **Webchat testen** – Bot-Ressource → "In Webchat testen"
+7. **Lokale Konfiguration** – Einstellungen → App-ID und Passwort in `appsettings.json` eintragen
+
+---
+
 ## Bot Framework SDK
 
 Das **Bot Framework SDK** ist das Entwickler-Framework für programmatische Bot-Entwicklung:

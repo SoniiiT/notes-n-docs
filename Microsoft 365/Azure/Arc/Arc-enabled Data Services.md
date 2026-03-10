@@ -54,6 +54,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Arc** → **Datendienste** → **+ Data Controller erstellen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com → Azure Arc → Datendienste** – Zur Datendienste-Übersicht navigieren
+2. **+ Data Controller erstellen** – Neuen Datencontroller anlegen
+3. **Verbindungsmodus wählen** – Direkt (empfohlen) oder Indirekt
+4. **Kubernetes-Cluster auswählen** – Muss bereits Arc-fähig sein
+5. **Konfiguration** – Namespace, Storage Class und Monitoring konfigurieren
+6. **Managed Instance erstellen** – Nach Data Controller-Bereitstellung: "+ Azure SQL Managed Instance" oder "+ PostgreSQL"
+7. **Service Tier wählen** – General Purpose oder Business Critical
+
+---
+
 ## Azure SQL Managed Instance auf Arc
 
 **SQL Managed Instance enabled by Azure Arc** (kurz: Arc SQL MI) ist eine containerisierte Version von SQL Server, die auf Kubernetes läuft und durch den Arc Data Controller verwaltet wird.

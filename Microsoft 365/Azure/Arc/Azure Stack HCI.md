@@ -146,6 +146,25 @@ Das **Azure Stack HCI OS** ist ein eigenständiges Windows Server-basiertes Betr
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Stack HCI** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com → "Azure Stack HCI" suchen** – Dienst in der Suchleiste finden und öffnen
+2. **+ Erstellen** – Neuen HCI-Cluster anlegen
+3. **Basics** – Subscription, Resource Group, Cluster-Name und Region ausfüllen
+4. **Konfiguration** – Node-Details, Netzwerk (Storage, Management, Compute) und Active Directory konfigurieren
+5. **Validierung starten** – Hardware-, Netzwerk- und AD-Check durchführen
+6. **Deployment starten** – Läuft automatisiert ab
+7. **Post-Deployment** – AKS, AVD oder andere Extensions hinzufügen
+
+---
+
 ## Cluster-Erstellung und Azure-Registrierung
 
 ### Neue Deployment-Methode (23H2)

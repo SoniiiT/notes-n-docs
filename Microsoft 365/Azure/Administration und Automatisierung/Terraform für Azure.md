@@ -98,6 +98,24 @@ infra/
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Cloud Shell** → `terraform version`
+
+### Schritt-für-Schritt
+
+1. **Cloud Shell öffnen** – portal.azure.com → Cloud Shell `>_` → Bash wählen
+2. **Terraform prüfen** – `terraform version` – ist in Cloud Shell vorinstalliert
+3. **Storage Account für State** – portal.azure.com → Speicherkonten → + Erstellen → Container "tfstate" anlegen
+4. **Service Principal erstellen** – portal.azure.com → Microsoft Entra ID → App-Registrierungen → + Neue Registrierung → Geheimnis erstellen
+5. **Subscription-ID kopieren** – portal.azure.com → Abonnements → ID in die Zwischenablage kopieren
+6. **State-Backend konfigurieren** – Terraform-Code auf den erstellten Storage Account zeigen lassen
+
+---
+
 ## Wichtige Terraform-Befehle
 
 | Befehl | Funktion |

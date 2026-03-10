@@ -17,6 +17,27 @@ aliases:
 
 ---
 
+---
+
+## Via Microsoft 365 Admin Center (UI)
+
+> [!TIP] Schnellzugriff
+> [admin.microsoft.com](https://admin.microsoft.com) → **Benutzer** → **Aktive Benutzer**
+
+### Schritt-für-Schritt
+
+1. **Benutzerverwaltung** – admin.microsoft.com → Benutzer → Aktive Benutzer (Lizenzen, MFA, Passwort-Reset)
+2. **Gruppen** – admin.microsoft.com → Gruppen → Erstellen und Mitglieder verwalten
+3. **Exchange** – Exchange Admin Center (admin.exchange.microsoft.com) → Empfänger → Postfächer
+4. **Teams** – Teams Admin Center (admin.teams.microsoft.com) → Teams verwalten, Richtlinien konfigurieren
+5. **SharePoint** – SharePoint Admin Center → Websitesammlungen verwalten
+6. **Massenoperationen** – Für komplexe Massenoperationen ist PowerShell weiterhin empfohlen
+
+> [!NOTE]
+> Das Admin Center deckt die häufigsten Verwaltungsaufgaben grafisch ab. Für Automatisierungen und komplexe Skripte ist PowerShell die bessere Wahl.
+
+---
+
 ## Überblick: Die wichtigsten M365-Module
 
 | Modul | Verwendung | Install |

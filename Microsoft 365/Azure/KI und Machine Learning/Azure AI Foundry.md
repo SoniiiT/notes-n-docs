@@ -72,6 +72,25 @@ Der **AI Foundry Hub** ist die übergeordnete Ressource, die gemeinsame Infrastr
 
 ---
 
+---
+
+## Via Azure AI Foundry (UI)
+
+> [!TIP] Schnellzugriff
+> [ai.azure.com](https://ai.azure.com) → **+ Neues Projekt** → Hub konfigurieren
+
+### Schritt-für-Schritt
+
+1. **ai.azure.com aufrufen** – Im Browser öffnen und mit Microsoft-Konto anmelden
+2. **Neues Projekt erstellen** – "+ Neues Projekt" → Projektname und Hub auswählen (oder neu erstellen)
+3. **Hub konfigurieren** – Azure-Subscription, Resource Group, Region und verbundene Ressourcen (Storage, Key Vault, Azure OpenAI, AI Search) festlegen
+4. **Modell bereitstellen** – Linke Sidebar → "Modellkatalog" → Modell wählen → "Bereitstellen"
+5. **Prompt Flow erstellen** – Linke Sidebar → "Prompt Flow" → + Erstellen → Flow-Typ wählen
+6. **Evaluierungen** – "Auswertung" → + Neue Auswertung → Datensatz und Metriken konfigurieren
+7. **Deployments überwachen** – "Bereitstellungen" → Endpunkt- und Modell-Status im Blick behalten
+
+---
+
 ## Model Catalog
 
 Der **Model Catalog** bietet Zugang zu über 1.900 Modellen verschiedener Anbieter:

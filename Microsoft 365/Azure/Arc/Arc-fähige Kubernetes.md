@@ -73,6 +73,24 @@ Arc-enabled Kubernetes funktioniert mit **jeder CNCF-konformen** Kubernetes-Dist
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Arc** → **Kubernetes-Cluster** → **+ Hinzufügen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com → Azure Arc → Kubernetes-Cluster** – Zur Kubernetes-Übersicht navigieren
+2. **+ Hinzufügen** – Neuen verbundenen Cluster hinzufügen
+3. **Basics ausfüllen** – Subscription, Resource Group, Cluster-Name, Region
+4. **Skript herunterladen** – Helm/kubectl-Skript für die Verbindung herunterladen
+5. **Skript lokal ausführen** – Verbindet den lokalen Cluster mit Arc
+6. **GitOps konfigurieren** – GitOps-Konfigurationen können direkt im Portal hinzugefügt werden
+
+---
+
 ## Onboarding: Az connectedk8s connect
 
 ### Voraussetzungen

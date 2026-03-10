@@ -52,6 +52,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Machine Learning Studio (UI)
+
+> [!TIP] Schnellzugriff
+> [ml.azure.com](https://ml.azure.com) → **Arbeitsbereich** → **Designer** / **Automatisiertes ML**
+
+### Schritt-für-Schritt
+
+1. **Workspace erstellen** – portal.azure.com → "+ Erstellen" → "Machine Learning" → Subscription, RG, Region, Name
+2. **Studio öffnen** – "Studio starten" → ml.azure.com öffnet den Arbeitsbereich
+3. **Compute einrichten** – Linke Sidebar → "Compute" → Compute-Instanz (für Entwicklung) oder Compute-Cluster (für Training) erstellen
+4. **Designer (No-Code)** – "Designer" → + Neue Pipeline → Module per Drag & Drop verbinden
+5. **AutoML** – "Automatisiertes ML" → + Neuer AutoML-Auftrag → Datensatz und Task-Typ (Classification/Regression/etc.) wählen → Starten
+6. **Modelle verwalten** – "Modelle" → Modell registrieren oder bereitgestellte Modelle überwachen
+7. **Endpunkte** – "Endpunkte" → Online- oder Batch-Endpunkte für Inferenz verwalten
+
+---
+
 ## Workspace-Komponenten
 
 ### Kernressourcen

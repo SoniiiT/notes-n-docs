@@ -117,6 +117,25 @@ azcmagent show
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Arc** → **Server** → **+ Hinzufügen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com → Azure Arc → Server** – Zur Server-Übersicht navigieren
+2. **+ Hinzufügen** – "Server mit Azure Arc verbinden" auswählen
+3. **Grundkonfiguration** – Subscription, Resource Group, Region und OS-Typ auswählen
+4. **Authentifizierungsmethode wählen** – Service Principal wird empfohlen
+5. **Onboarding-Skript herunterladen** – PowerShell für Windows / Shell-Skript für Linux
+6. **Skript auf Zielserver ausführen** – Mit Administratorrechten auf dem Zielserver ausführen
+7. **Server-Liste prüfen** – Server erscheint nach wenigen Minuten in der Server-Liste
+
+---
+
 ## Installation des Connected Machine Agent
 
 ### Methode 1: Interaktiv (einzelner Server)

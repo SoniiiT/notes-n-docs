@@ -48,6 +48,23 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Lighthouse** → **Meine Kunden**
+
+### Schritt-für-Schritt
+
+1. **Dienstanbieter-Ansicht** – portal.azure.com → "Azure Lighthouse" suchen → "Meine Kunden"
+2. **Kunden-Onboarding** – ARM-Template deployen ODER Marketplace-Angebot nutzen
+3. **Kunden-Seite** – portal.azure.com → Azure Lighthouse → "Dienstanbieter" → Angebote anzeigen und Delegierungen genehmigen
+4. **Delegierungen verwalten** – Nach Genehmigung: Dienstanbieter sieht Kunden-Ressourcen unter "Meine Kunden" → Delegierungen
+5. **Ressourcen verwalten** – Delegierte Ressourcen können direkt im Portal verwaltet werden (Subscription oder Resource Group auswählen)
+
+---
+
 ## Onboarding-Methoden
 
 ### Methode 1: ARM Template / Bicep

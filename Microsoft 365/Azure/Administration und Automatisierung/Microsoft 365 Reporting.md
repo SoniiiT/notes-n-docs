@@ -67,6 +67,25 @@ graph LR
 
 ---
 
+---
+
+## Via Microsoft 365 Admin Center (UI)
+
+> [!TIP] Schnellzugriff
+> [admin.microsoft.com](https://admin.microsoft.com) → **Berichte** → **Nutzung**
+
+### Schritt-für-Schritt
+
+1. **admin.microsoft.com → Berichte → Nutzung** – Zur Berichtsübersicht navigieren
+2. **Dienst auswählen** – Microsoft 365, Exchange, SharePoint, Teams, OneDrive oder Yammer
+3. **Zeitraum filtern** – 7, 30, 90 oder 180 Tage
+4. **Detailberichte** – Aktivität, Gerätenutzung oder Benutzeraktivität aufrufen
+5. **CSV-Export** – "Herunterladen" in jedem Bericht verfügbar
+6. **Anonymisierung** – Berichte → Einstellungen → Nutzername anzeigen oder verbergen
+7. **Power BI** – Berichte → Power BI → "Microsoft 365 Usage Analytics" App installieren
+
+---
+
 ## Microsoft Graph Reporting API
 
 Die **Microsoft Graph API** bietet programmatischen Zugriff auf alle M365-Nutzungsberichte. Ideal für Custom Dashboards, Power BI-Integration oder automatisierte Exports.

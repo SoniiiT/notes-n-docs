@@ -81,6 +81,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Recovery Services-Tresore** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **Recovery Services-Tresor erstellen** – portal.azure.com → "Recovery Services-Tresore" suchen → + Erstellen
+2. **Grundkonfiguration** – Subscription, Resource Group, Name und Region wählen
+3. **Redundanz konfigurieren** – Tresor-Eigenschaften: LRS / GRS / ZRS
+4. **Backup aktivieren** – "+ Sicherung" → Workload und Backup-Ziel wählen
+5. **M365-Backup nativ** – admin.microsoft.com → Einstellungen → Microsoft 365 Backup → Aktivieren
+6. **Schutzrichtlinien erstellen** – Aufbewahrungszeitraum und Häufigkeit definieren
+7. **Wiederherstellung** – Backup-Tresor → Sicherungselemente → Element auswählen → Wiederherstellen
+
+---
+
 ## Veeam Backup for Microsoft 365
 
 **Veeam Backup for Microsoft 365** ist die führende Drittanbieter-Lösung.

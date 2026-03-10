@@ -89,6 +89,33 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal / KI-Portale (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **+ Erstellen** → **KI + Machine Learning**
+
+| Dienst | Portal-URL | Schnellzugriff |
+|--------|-----------|----------------|
+| Azure OpenAI | ai.azure.com | Deployments → + Modell bereitstellen |
+| AI Foundry | ai.azure.com | + Neues Projekt → Hub konfigurieren |
+| AI Services | portal.azure.com | KI + Machine Learning → + Erstellen |
+| Document Intelligence | documentintelligence.ai.azure.com | Studio → Dokument analysieren |
+| AI Search | portal.azure.com | KI-Suche → + Erstellen |
+| Azure ML | ml.azure.com | Designer / AutoML / Endpunkte |
+| Bot Service | portal.azure.com | Azure Bot → + Erstellen |
+| Security Copilot | securitycopilot.microsoft.com | Erste Schritte → SCU zuweisen |
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Ressource erstellen" → "KI + Machine Learning"
+2. **Dienst auswählen** – Gewünschten KI-Dienst auswählen und Grundkonfiguration vornehmen (Subscription, RG, Region, Tarif)
+3. **Studio wechseln** – Nach Bereitstellung in den jeweiligen Studio-Link wechseln (s. Tabelle oben)
+4. **Keys & Endpunkte** – Immer unter "Schlüssel und Endpunkt" in der Ressourcen-Übersicht abrufbar
+
+---
+
 ## Anwendungsfälle und Dienst-Zuordnung
 
 ### Szenario-Matrix

@@ -322,6 +322,25 @@ In den Desired Properties von `$edgeHub`:
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **IoT Hub** → **IoT Edge** → **+ IoT Edge-Gerät hinzufügen**
+
+### Schritt-für-Schritt
+
+1. **Voraussetzung** – IoT Hub muss vorhanden sein (portal.azure.com → IoT Hub erstellen falls nötig)
+2. **IoT Edge-Gerät hinzufügen** – IoT Hub → "IoT Edge" (linke Sidebar) → "+ IoT Edge-Gerät hinzufügen"
+3. **Gerät konfigurieren** – Geräte-ID und Authentifizierungstyp (SAS empfohlen) → Speichern
+4. **Verbindungszeichenfolge kopieren** – Gerät anklicken → Verbindungszeichenfolge für Gerätekonfiguration kopieren
+5. **Module bereitstellen** – Gerät → "Module festlegen" → "+ Hinzufügen" → Marketplace-Modul oder Custom Module
+6. **Deployment Manifest** – Automatisch generiert – Routen nach Bedarf konfigurieren
+7. **Gerätestatus prüfen** – IoT Edge-Gerät → Laufzeitstatus "Aktiv" nach erfolgreicher Verbindung
+
+---
+
 ## Installation auf Ubuntu
 
 ### Voraussetzungen

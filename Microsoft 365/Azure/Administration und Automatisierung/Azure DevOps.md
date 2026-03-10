@@ -43,6 +43,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure DevOps (UI)
+
+> [!TIP] Schnellzugriff
+> [dev.azure.com](https://dev.azure.com) → **Organisation erstellen** → **+ Neues Projekt**
+
+### Schritt-für-Schritt
+
+1. **dev.azure.com aufrufen** – "Neue Organisation erstellen" starten
+2. **Organisation benennen** – Name und Region wählen
+3. **+ Neues Projekt** – Name, Visibility (Public/Private), Versionskontrolle (Git/TFVC), Prozessvorlage festlegen
+4. **Boards nutzen** – Work Items, Sprints und Backlogs über linke Seitenleiste verwalten
+5. **Repos verwalten** – Repository klonen, Branches verwalten, Pull Requests erstellen
+6. **Pipeline erstellen** – "+ Pipeline" → YAML aus Repo oder Classic Editor wählen
+7. **Artifacts** – Feed erstellen → + Neuer Feed
+
+---
+
 ## Azure Pipelines: YAML vs. Classic
 
 **YAML-Pipelines** sind der empfohlene Ansatz seit 2019. Konfiguration liegt als Code im Repository — versioniert, reviewbar und wiederverwendbar.

@@ -49,6 +49,26 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **KI-Suche** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Ressource erstellen" → "KI-Suche" (Azure AI Search)
+2. **Grundkonfiguration** – Subscription, Resource Group, Name, Region, Tarif (Free / Basic / Standard)
+3. **Zu Ressource wechseln** – "Erstellen" → nach Bereitstellung: "Zu Ressource wechseln"
+4. **Index erstellen** – "Indizes" → "+ Index hinzufügen" → Felder definieren (searchable, filterable, sortable, facetable)
+5. **Datenquelle hinzufügen** – "Datenquellen" → + Hinzufügen (Azure Blob, SQL, Cosmos DB, Table Storage)
+6. **Indexer erstellen** – "Indexer" → + Hinzufügen → Zeitplan für regelmäßige Aktualisierungen
+7. **Skillset konfigurieren** – "Skillsets" → + Hinzufügen → KI-Anreicherungen (OCR, Entitätserkennung, Schlüsselwörter)
+8. **Suchexplorer** – "Such-Explorer" → Suchanfragen direkt testen
+
+---
+
 ## Volltext-Suche (Lucene-basiert)
 
 ### Analyser, Tokenizer und Filter

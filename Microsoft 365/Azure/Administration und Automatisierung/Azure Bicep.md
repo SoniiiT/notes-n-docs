@@ -200,6 +200,25 @@ module aksCluster 'br/public:avm/res/container-service/managed-cluster:0.3.0' = 
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Benutzerdefinierte Vorlage bereitstellen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com** – "Benutzerdefinierte Vorlage bereitstellen" (Deploy a custom template) suchen
+2. **Eigene Vorlage erstellen** – "Eigene Vorlage im Editor erstellen" → Bicep-Code einfügen
+3. **Schnellstartvorlage wählen** – Alternativ aus Azure-Quickstart-Templates auswählen
+4. **Parameter ausfüllen** – Subscription, Resource Group, Region und Variablen eingeben
+5. **Überprüfen und erstellen** – Validierung abwarten
+6. **Erstellen** – Deployment wird gestartet
+7. **Fortschritt verfolgen** – Unter "Bereitstellungen" in der Resource Group
+
+---
+
 ## Deployment Scopes
 
 Bicep unterstützt vier Deployment-Scopes:

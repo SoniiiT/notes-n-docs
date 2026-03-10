@@ -53,6 +53,25 @@ Install-Module Az.Accounts, Az.Compute, Az.Network, Az.Storage -Scope CurrentUse
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Cloud Shell (>_)** → PowerShell
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com aufrufen** – Im Browser anmelden
+2. **Cloud Shell öffnen** – Symbol `>_` oben rechts klicken
+3. **PowerShell wählen** – Falls Bash angezeigt wird, oben in der Leiste auf "PowerShell" umschalten
+4. **Storage Account einrichten** – Einmalig für Datei-Persistenz
+5. **Az-Module nutzen** – Sind vorinstalliert – keine separate Installation nötig
+6. **Bereits angemeldet** – `Connect-AzAccount` nicht erforderlich
+7. **Lokale Installation** – `Install-Module -Name Az` für lokale PowerShell-Umgebung
+
+---
+
 ## Connect-AzAccount — Authentifizierungsmethoden
 
 ```mermaid

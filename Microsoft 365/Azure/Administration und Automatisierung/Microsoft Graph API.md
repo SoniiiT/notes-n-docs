@@ -106,6 +106,25 @@ Start-Process $consentUrl
 
 ---
 
+---
+
+## Via Graph Explorer (UI)
+
+> [!TIP] Schnellzugriff
+> [developer.microsoft.com/graph/graph-explorer](https://developer.microsoft.com/graph/graph-explorer)
+
+### Schritt-für-Schritt
+
+1. **Graph Explorer aufrufen** – developer.microsoft.com/graph/graph-explorer im Browser öffnen
+2. **Anmelden** – "Mit Microsoft anmelden" → Consent für Graph-Berechtigungen erteilen
+3. **Anfrage erstellen** – HTTP-Methode (GET/POST/PATCH/DELETE) und API-Endpunkt eingeben
+4. **Request Body** – Für POST/PATCH im JSON-Tab eingeben
+5. **Abfrage ausführen** – Antwort im unteren Bereich anzeigen
+6. **Zugriffstoken** – "Zugriffstoken" Tab: Token für eigene Anwendungen kopieren
+7. **Eigene App registrieren** – portal.azure.com → Microsoft Entra ID → App-Registrierungen → + Neue Registrierung
+
+---
+
 ## Wichtige Ressourcen (Resources)
 
 | Ressource | Endpunkt | Beschreibung |

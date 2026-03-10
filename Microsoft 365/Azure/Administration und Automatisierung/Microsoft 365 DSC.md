@@ -63,6 +63,26 @@ Microsoft365DSC unterstützt über **900 Ressourcen** über alle M365-Workloads 
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Microsoft Entra ID** → **App-Registrierungen**
+
+### Schritt-für-Schritt
+
+1. **Ist-Zustand dokumentieren** – admin.microsoft.com → Einstellungen → Microsoft 365-Einstellungen als Referenz
+2. **App-Registrierung** – portal.azure.com → Microsoft Entra ID → App-Registrierungen → + Neue Registrierung (für Zertifikats-Authentifizierung)
+3. **API-Berechtigungen** – App-Registrierung → "API-Berechtigungen" → Berechtigungen für alle M365-Workloads hinzufügen → Admin-Zustimmung erteilen
+4. **Zertifikat hochladen** – Zertifikat erstellen und unter "Zertifikate und Geheimnisse" hochladen
+5. **IDs notieren** – Tenant-ID und App-ID für die DSC-Konfiguration speichern
+
+> [!NOTE]
+> Microsoft 365 DSC ist primär ein PowerShell-Tool – kein eigenes Portal vorhanden. Die Portal-Schritte dienen der Vorbereitung der Authentifizierung.
+
+---
+
 ## Installation und Authentifizierung
 
 ### Modul installieren

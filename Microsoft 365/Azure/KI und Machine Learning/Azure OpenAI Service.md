@@ -67,6 +67,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure AI Foundry / Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [ai.azure.com](https://ai.azure.com) → **Deployments** → **+ Modell bereitstellen**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "Azure OpenAI" → + Erstellen → Subscription, RG, Region, Tier wählen
+2. **AI Foundry öffnen** – Nach Bereitstellung: "Zu Azure AI Foundry wechseln" (ai.azure.com)
+3. **Modell bereitstellen** – AI Foundry → Deployments → + Modell bereitstellen → Modell aus Katalog wählen (gpt-4o, gpt-4, gpt-35-turbo etc.)
+4. **Deployment konfigurieren** – Deployment-Name, Deployment-Typ (Standard/Provisioned), Token-Limit festlegen
+5. **Chat Playground** – Playground → Chat Playground → System Message setzen → Modell testen
+6. **DALL-E Playground** – Playground → Images → Prompt eingeben → Bild generieren
+7. **API-Key kopieren** – AI Foundry → Projekt-Einstellungen → Verbindungen → API-Key und Endpunkt kopieren
+
+---
+
 ## Deployment-Typen
 
 ### Übersicht

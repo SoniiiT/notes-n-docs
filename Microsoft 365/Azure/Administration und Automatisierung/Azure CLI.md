@@ -87,6 +87,25 @@ az version
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Cloud Shell (>_)**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com aufrufen** – Im Browser anmelden
+2. **Cloud Shell öffnen** – Symbol `>_` oben rechts klicken
+3. **Shell-Typ wählen** – "Bash" oder "PowerShell" auswählen
+4. **Storage Account einrichten** – Einmalig für persistente Dateien (wird automatisch vorgeschlagen)
+5. **Azure CLI nutzen** – `az`-Befehle sofort ausführen – `az login` nicht nötig (bereits authentifiziert)
+6. **Dateien übertragen** – Über Cloud Shell hochladen/herunterladen
+7. **Lokale Installation** – Für lokale Nutzung: docs.microsoft.com/cli/azure/install-azure-cli
+
+---
+
 ## az login — Authentifizierungsmethoden
 
 ### Interaktiv (Browser)

@@ -50,6 +50,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Dokumentintelligenz** → **+ Erstellen** → **Studio öffnen**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Ressource erstellen" → "Dokumentintelligenz" suchen → + Erstellen
+2. **Grundkonfiguration** – Subscription, Resource Group, Region, Name, Tarif (Free F0 / Standard S0)
+3. **Studio öffnen** – Nach Bereitstellung: "Document Intelligence Studio öffnen" (documentintelligence.ai.azure.com)
+4. **Prebuilt Model testen** – Studio → Prebuilt Models → Dokument hochladen → Modell wählen (Invoice, Receipt, ID Document, etc.) → Analysieren
+5. **Custom Model erstellen** – Studio → Custom Models → "+ Projekt erstellen" → Training-Dokumente hochladen → Felder labeln → Trainieren
+6. **Composed Model** – Studio → Composed Model: Mehrere Custom Models kombinieren
+7. **API-Key kopieren** – portal.azure.com → Ressource → "Schlüssel und Endpunkt"
+
+---
+
 ## Prebuilt Models
 
 Microsoft bietet vortrainierte Modelle für häufige Dokumenttypen:

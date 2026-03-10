@@ -629,6 +629,25 @@ azsphere device-group update \
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Sphere** → **Katalog** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Ressource erstellen" → "Azure Sphere"
+2. **Grundkonfiguration** – Subscription, Resource Group, Katalog-Name, Region
+3. **Zu Ressource wechseln** – "Erstellen" → nach Bereitstellung: Sphere-Katalog öffnen
+4. **Geräte registrieren** – "Geräte" → Gerätegruppe zuweisen
+5. **Produktgruppen** – "Produktgruppen" → + Erstellen → Geräte einer Gruppe zuweisen
+6. **OTA-Updates** – "Bereitstellungen" → + Neues Deployment → Image-Pakete (App + OS) auswählen
+7. **Monitoring** – "Metriken" in der Katalog-Übersicht aufrufen
+
+---
+
 ## CLI-Schnellreferenz
 
 ```bash

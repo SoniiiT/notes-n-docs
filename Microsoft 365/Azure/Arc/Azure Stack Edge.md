@@ -182,6 +182,25 @@ graph LR
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Stack Edge** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com → "Azure Stack Edge" suchen** – Dienst in der Suchleiste finden
+2. **+ Erstellen** – Produktmodell auswählen (Pro 2, Mini R, etc.)
+3. **Basics** – Subscription, Resource Group, Name und Region ausfüllen
+4. **Aktivierungsschlüssel generieren** – Am physischen Gerät über lokale Web-UI eingeben
+5. **Konfiguration** – Compute, Netzwerk und Storage über Portal oder lokale Web-UI konfigurieren
+6. **Arc-Verbindung** – Wird automatisch eingerichtet
+7. **Extensions hinzufügen** – IoT Edge, AKS, ML über "Add-ons" hinzufügen
+
+---
+
 ## Azure Kubernetes Service auf Edge
 
 Azure Stack Edge kann einen **Kubernetes-Cluster** hosten, der über Azure Arc verwaltet wird:

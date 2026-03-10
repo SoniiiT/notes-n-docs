@@ -534,6 +534,25 @@ az network private-endpoint create \
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Digital Twins** → **+ Erstellen** → **Explorer öffnen**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Ressource erstellen" → "Azure Digital Twins"
+2. **Grundkonfiguration** – Subscription, Resource Group, Region, Ressourcen-Name
+3. **Explorer öffnen** – Nach Bereitstellung: "Azure Digital Twins Explorer öffnen" (explorer.digitaltwins.azure.net)
+4. **Modelle hochladen** – Explorer → "Modelle hochladen" → DTDL-JSON-Dateien hochladen (Gerätemodelle, Räume, Etagen etc.)
+5. **Twin-Graph erstellen** – Explorer → "+ Twin hinzufügen" → Modell auswählen → Eigenschaften setzen
+6. **Beziehungen verbinden** – Twins im Explorer per Drag & Drop verbinden
+7. **ADT-Query testen** – Abfragebereich → DTDL-Abfragen im Explorer ausführen
+
+---
+
 ## Bereitstellung und Verwaltung
 
 ### ADT-Instanz erstellen

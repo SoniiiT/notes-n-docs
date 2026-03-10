@@ -48,6 +48,25 @@ graph TD
 
 ---
 
+---
+
+## Via Security Copilot Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [securitycopilot.microsoft.com](https://securitycopilot.microsoft.com) → **Erste Schritte** → SCU zuweisen
+
+### Schritt-für-Schritt
+
+1. **Portal aufrufen** – securitycopilot.microsoft.com (Global Admin oder Security Admin benötigt)
+2. **Erste Einrichtung** – "Erste Schritte" → Kapazität konfigurieren
+3. **SCU zuweisen** – Kapazität → Azure-Subscription auswählen → SCU-Anzahl festlegen (Mindest: 1 SCU/Stunde)
+4. **Datenspeicherung** – Region für Datenspeicherung wählen (EU Data Boundary verfügbar)
+5. **Promptbook starten** – Startseite → "+ Neue Sitzung" → Prompt eingeben oder Promptbook wählen
+6. **Plugins aktivieren** – Einstellungen → Plugins → Microsoft-eigene und Drittanbieter-Plugins aktivieren
+7. **Embedded Experience** – Microsoft Defender XDR (security.microsoft.com) → Incident → "Security Copilot zusammenfassen"
+
+---
+
 ## Security Copilot Portal (Standalone)
 
 Das **Standalone Portal** unter `securitycopilot.microsoft.com` bietet:

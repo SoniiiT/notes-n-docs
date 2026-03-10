@@ -323,6 +323,23 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Arc** → **Übersicht**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com aufrufen** – Im Browser öffnen und anmelden
+2. **Suche "Azure Arc"** – In der Suchleiste oben eingeben und den Dienst öffnen
+3. **Übersicht erkunden** – Zeigt Arc-fähige Ressourcen: Server, Kubernetes, SQL, Datendienste
+4. **Ressource-Typ auswählen** – Gewünschten Typ in der linken Sidebar wählen
+5. **+ Hinzufügen klicken** – Onboarding-Prozess starten
+
+---
+
 ## Schnellstart-Befehle
 
 ### Arc-Server-Onboarding (Service Principal)

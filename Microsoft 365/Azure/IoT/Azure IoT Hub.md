@@ -50,6 +50,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **IoT Hub** → **+ Erstellen**
+
+### Schritt-für-Schritt
+
+1. **IoT Hub erstellen** – portal.azure.com → "+ Ressource erstellen" → "IoT Hub"
+2. **Grundkonfiguration** – Subscription, Resource Group, Region, Hub-Name, Tarif (Free / Basic / Standard)
+3. **Zu Ressource wechseln** – "Erstellen" → nach Bereitstellung: Übersicht mit Statistiken
+4. **Gerät hinzufügen** – "Geräte" (linke Sidebar) → "+ Gerät hinzufügen" → Geräte-ID und Authentifizierungstyp (SAS / X.509)
+5. **Verbindungszeichenfolge kopieren** – Gerät anklicken → Verbindungszeichenfolge für das Gerät kopieren
+6. **Device Twin** – Gerät öffnen → "Device Twin" → JSON-Dokument mit gewünschten und gemeldeten Eigenschaften bearbeiten
+7. **Nachrichtenrouting** – "Nachrichtenrouting" → "+ Hinzufügen" → Endpunkt und Routen konfigurieren
+
+---
+
 ## D2C — Device-to-Cloud Messaging
 
 **D2C-Nachrichten** (Telemetrie) sind die häufigste Kommunikationsform: Geräte senden Sensordaten, Statusmeldungen oder Ereignisse an den IoT Hub.

@@ -65,6 +65,25 @@ Sicherheitsrelevante Mitteilungen — oft mit Handlungsbedarf (Patches, Konfigur
 
 ---
 
+---
+
+## Via Azure Portal / Admin Center (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Service Health** | [admin.microsoft.com](https://admin.microsoft.com) → **Integrität**
+
+### Schritt-für-Schritt
+
+1. **Azure Service Health** – portal.azure.com → "Service Health" suchen → Dashboard öffnen
+2. **Filter anpassen** – Subscription, Service und Region filtern
+3. **Status einsehen** – Aktuelle Probleme, geplante Wartungen und Health-Advisories prüfen
+4. **Integritätswarnungen** – "+ Integritätswarnung hinzufügen" → E-Mail, SMS oder Webhook konfigurieren
+5. **Ressourcenintegrität** – portal.azure.com → Ressource → "Ressourcenintegrität" (linke Sidebar)
+6. **M365 Dienststatus** – admin.microsoft.com → Integrität → Dienststatus → Alle Dienste und aktive Vorfälle
+7. **Message Center** – admin.microsoft.com → Integrität → Nachrichtencenter (geplante Änderungen)
+
+---
+
 ## Azure Status Page (Öffentlicher Status)
 
 Die öffentliche **Azure Status Page** zeigt den globalen Zustand aller Azure-Dienste und -Regionen.

@@ -48,6 +48,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure IoT Central (UI)
+
+> [!TIP] Schnellzugriff
+> [apps.azureiotcentral.com](https://apps.azureiotcentral.com) → **+ Neue App erstellen**
+
+### Schritt-für-Schritt
+
+1. **App erstellen** – apps.azureiotcentral.com aufrufen → "Neue App erstellen"
+2. **App konfigurieren** – Vorlage wählen (Blank / Industry-Template) → App-Name, URL-Subdomain, Tarif (Free / Standard), Region
+3. **Gerätevorlage erstellen** – Linke Sidebar → "Gerätevorlagen" → "+ Neu" → Gerätetyp und Fähigkeitsmodell definieren
+4. **Fähigkeiten hinzufügen** – Telemetrie, Properties und Commands per Formular
+5. **Dashboard erstellen** – Linke Sidebar → "Dashboards" → "+ Neues Dashboard" → Kacheln (Grafik, KPI, Map) per Drag & Drop
+6. **Gerät verbinden** – "Geräte" → "+ Neu" → Gerät-ID und Vorlage zuweisen → Verbindungsschlüssel abrufen
+7. **Regeln definieren** – "Regeln" → "+ Neu" → Bedingung (Telemetriewert) und Aktion (E-Mail, Webhook) festlegen
+
+---
+
 ## Device Templates (Gerätevorlagen)
 
 Device Templates sind das **Herzstück** von IoT Central. Sie beschreiben, welche Daten ein Gerät sendet und welche Befehle es akzeptiert.

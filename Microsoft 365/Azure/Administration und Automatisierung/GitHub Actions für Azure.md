@@ -95,6 +95,23 @@ jobs:
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Microsoft Entra ID** → **App-Registrierungen** → **+ Neue Registrierung**
+
+### Schritt-für-Schritt
+
+1. **App-Registrierung erstellen** – portal.azure.com → Microsoft Entra ID → App-Registrierungen → + Neue Registrierung (für OIDC/Service Principal)
+2. **Verbundene Anmeldeinformationen** – Registrierte App → "Zertifikate und Geheimnisse" → "Verbundene Anmeldeinformationen" → + Anmeldeinformation → GitHub Actions-Workflow
+3. **GitHub Secrets** – github.com → Repository → Settings → Secrets and variables → Actions → New repository secret (AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID)
+4. **Rollenzuweisung** – Azure Portal → Subscriptions → IAM → Rollenzuweisung → App-Registrierung als Contributor hinzufügen
+5. **Workflow-Datei** – Im Repo unter `.github/workflows/` erstellen oder bearbeiten
+
+---
+
 ## Azure Login — azure/login Action
 
 ### OIDC / Federated Credentials (empfohlen — kein dauerhaftes Secret)

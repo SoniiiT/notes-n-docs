@@ -53,6 +53,25 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **+ Erstellen** → **KI + Machine Learning** → **Azure KI Services**
+
+### Schritt-für-Schritt
+
+1. **Ressource erstellen** – portal.azure.com → "+ Ressource erstellen" → "KI + Machine Learning" → "Azure KI Services"
+2. **Grundkonfiguration** – Subscription, Resource Group, Region, Name, Tarif (Free F0 / Standard S0)
+3. **Zu Ressource wechseln** – "Erstellen" → nach Bereitstellung: "Zu Ressource wechseln"
+4. **Keys und Endpunkt** – Linke Sidebar → "Schlüssel und Endpunkt" → Key1/Key2 und Endpunkt-URL kopieren
+5. **Dienste testen** – "Schnellstart" → Links zu den jeweiligen Studios (Vision Studio, Speech Studio, Language Studio)
+6. **Vision Studio** – vision.cognitive.azure.com → Bildanalyse, OCR, Custom Vision direkt testen
+7. **Speech Studio** – speech.microsoft.com → Sprache-zu-Text und Text-zu-Sprache testen
+
+---
+
 ## Service-Kategorien: Vision
 
 ### Computer Vision

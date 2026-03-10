@@ -63,6 +63,24 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP] Schnellzugriff
+> [portal.azure.com](https://portal.azure.com) → **Azure Arc** → **SQL Server** → **+ Hinzufügen**
+
+### Schritt-für-Schritt
+
+1. **portal.azure.com → Azure Arc → SQL Server** – Zur SQL Server-Übersicht navigieren
+2. **+ Hinzufügen** – "SQL Server mit Azure Arc verbinden" auswählen
+3. **Verbindungsmethode wählen** – "Connected Machine Agent schon installiert" oder "Agent installieren"
+4. **Konfiguration** – Subscription, Resource Group und SQL Server-Instanz auswählen
+5. **Best Practices Assessment** – Im Portal unter "Bewertungen" aktivierbar
+6. **ESU-Aktivierung** – Unter "Lizenzen" für Extended Security Updates
+
+---
+
 ## Onboarding-Prozess
 
 ### Voraussetzungen

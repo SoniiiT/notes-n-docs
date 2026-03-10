@@ -247,6 +247,24 @@ $body = @{
 
 ---
 
+---
+
+## Via Microsoft 365 Admin Center (UI)
+
+> [!TIP] Schnellzugriff
+> [admin.microsoft.com](https://admin.microsoft.com) → **Abrechnung** → **Lizenzen**
+
+### Schritt-für-Schritt
+
+1. **admin.microsoft.com aufrufen** – Mit Admin-Konto anmelden
+2. **Lizenzen verwalten** – Abrechnung → Lizenzen → Übersicht aller lizenzierten Produkte
+3. **Lizenz zuweisen** – Lizenz auswählen → "Benutzer hinzufügen" → Benutzer suchen und zuweisen
+4. **Gruppen-basierte Lizenzierung** – admin.microsoft.com → Benutzer → Aktive Benutzer → Microsoft Entra ID (Link) → Gruppen → Lizenz zuweisen
+5. **Lizenzen kaufen** – Abrechnung → Ihre Produkte → + Dienste hinzufügen
+6. **Lizenzberichte** – Berichte → Nutzung → Produkte
+
+---
+
 ## Automatisierung der Lizenzvergabe
 
 ### PowerShell + Graph API: Onboarding-Automation
