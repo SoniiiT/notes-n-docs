@@ -505,6 +505,30 @@ In **Repository Settings → Environments → github-pages** können Schutzregel
 
 ---
 
+## Via GitHub.com (UI)
+
+### GitHub Pages aktivieren
+
+1. Öffne **[github.com](https://github.com/[org]/[repo])**
+2. Navigiere zu **Settings** → **Pages**
+3. Unter **Build and deployment** → Source: **Deploy from a branch** oder **GitHub Actions**
+4. Branch auswählen (meist `main` oder `gh-pages`), Ordner `/` oder `/docs`
+5. **Save** → URL wird angezeigt (z. B. `https://[org].github.io/[repo]`)
+
+### Custom Domain konfigurieren
+
+1. **Settings** → **Pages** → **Custom domain**
+2. Domain eingeben → **Save**
+3. DNS beim Domain-Registrar konfigurieren (CNAME oder A-Records)
+4. **Enforce HTTPS** aktivieren (nach DNS-Propagation)
+
+### Deployment-Status prüfen
+
+1. Repository → **Actions** Tab → **pages build and deployment** Workflow
+2. Status der letzten Deployments anzeigen
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Grundlagen]]

@@ -623,6 +623,37 @@ image: ghcr.io/my-org/my-app:v1.2.3@sha256:a1b2c3d4e5f6...
 
 ---
 
+## Via GitHub.com (UI)
+
+### Package anzeigen
+
+1. Öffne **github.com/[org]/packages**
+2. Package-Typ filtern (Container, npm, NuGet, etc.)
+3. Package anklicken → Versions, Downloads, README einsehen
+
+### Package Sichtbarkeit ändern
+
+1. Package öffnen → **Package settings**
+2. **Change package visibility** → **Public** / **Private**
+
+### Zugriffssteuerung (ghcr.io)
+
+1. Container Package → **Package settings**
+2. **Manage access** → Teams/Repositories hinzufügen
+3. Berechtigungen festlegen: **Read** / **Write** / **Admin**
+
+### Package mit Repository verknüpfen
+
+1. Package → **Package settings** → **Connect repository**
+2. Repository auswählen → **Connect**
+
+### Alte Versionen löschen
+
+1. Package → **Versions** Tab
+2. Versionen markieren → **Delete selected**
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Actions]]

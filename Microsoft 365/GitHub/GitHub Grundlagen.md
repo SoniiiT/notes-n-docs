@@ -408,6 +408,40 @@ config/local.py
 
 ---
 
+## Via GitHub.com (UI)
+
+### Repository erstellen
+
+1. Öffne **[github.com](https://github.com)** → **+** Button (oben rechts) → **New repository**
+2. Owner, Name und Visibility wählen
+3. Optional: README, .gitignore, Lizenz hinzufügen
+4. **Create repository**
+
+### Pull Request erstellen
+
+1. Repository → **Pull requests** Tab → **New pull request**
+2. Base-Branch und Compare-Branch auswählen
+3. Titel und Beschreibung eingeben
+4. Reviewer zuweisen → **Create pull request**
+
+### Issue erstellen
+
+1. Repository → **Issues** Tab → **New issue**
+2. Template auswählen (falls vorhanden)
+3. Titel, Beschreibung, Labels, Assignee ausfüllen → **Submit new issue**
+
+### Branch erstellen
+
+1. Repository-Hauptseite → Branch-Dropdown (zeigt aktuellen Branch)
+2. Neuen Branch-Namen eingeben → **Create branch**
+
+### Datei direkt bearbeiten
+
+1. Datei im Repository anklicken → Bleistift-Icon (**Edit this file**)
+2. Änderungen vornehmen → **Commit changes**
+
+---
+
 ## GitHub CLI (gh)
 
 Die GitHub CLI ermöglicht vollständige GitHub-Verwaltung aus dem Terminal:
