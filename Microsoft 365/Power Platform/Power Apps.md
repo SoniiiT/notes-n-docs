@@ -299,6 +299,44 @@ Power Apps können als Teams-Tab oder persönliche App direkt in Microsoft Teams
 
 ---
 
+## Via Power Apps (UI)
+
+### Canvas App erstellen
+
+1. Öffne **Power Apps** unter [make.powerapps.com](https://make.powerapps.com)
+2. Wähle oben rechts die gewünschte **Umgebung** aus
+3. Navigiere im linken Menü zu **Erstellen**
+4. Wähle **Canvas-App von Grund auf** und entscheide dich für das Layout:
+   - **Tablet**: Querformat, ideal für Desktop-Nutzung
+   - **Telefon**: Hochformat, optimiert für mobile Geräte
+   - **Responsiv** (empfohlen 2024): Passt sich automatisch an alle Bildschirmgrößen an
+5. Vergib einen **App-Namen** und klicke auf **Erstellen** — Power Apps Studio öffnet sich
+6. Füge über das linke Panel **Steuerelemente** ein (Schaltflächen, Galerien, Formulare)
+7. Verbinde über **Daten** > **Daten hinzufügen** eine Datenquelle (z.B. SharePoint, Dataverse, Excel)
+8. Konfiguriere Navigation zwischen Bildschirmen mit `Navigate(ScreenName)` in der `OnSelect`-Eigenschaft
+9. Klicke oben auf **Speichern** (Cloud-Speicherung) und anschließend auf **Veröffentlichen**
+
+> [!TIP] Moderne Steuerelemente aktivieren
+> Unter **Einstellungen** > **Neue Funktionen** lassen sich moderne Steuerelemente (Modern Controls) aktivieren, die ein aktualisiertes Design und bessere Barrierefreiheit bieten.
+
+### Model-Driven App erstellen
+
+1. Öffne **Power Apps** unter [make.powerapps.com](https://make.powerapps.com)
+2. Navigiere zu **Erstellen** > **Modellgesteuerte App**
+3. Gib einen **Namen** ein und klicke auf **Erstellen**
+4. Wähle über **Navigation hinzufügen** die Dataverse-Tabellen aus, die in der App erscheinen sollen
+5. Konfiguriere Formulare, Ansichten und Diagramme für jede Tabelle
+6. Klicke auf **Speichern** und dann **Veröffentlichen**
+
+### App freigeben und verteilen
+
+1. Öffne die App in [make.powerapps.com](https://make.powerapps.com) und klicke auf **…** > **Freigeben**
+2. Suche nach **Benutzern oder Gruppen** aus dem Azure AD
+3. Lege die Berechtigungsstufe fest (Benutzer oder Co-Besitzer)
+4. Klicke auf **Freigeben** — Benutzer erhalten eine E-Mail mit dem App-Link
+
+---
+
 ## ALM für Power Apps (Application Lifecycle Management)
 
 ### Solutions

@@ -276,6 +276,52 @@ Direkter Aufruf beliebiger REST-APIs als Action (JSON-Antwort wird geparst).
 
 ---
 
+## Via Microsoft Copilot Studio (UI)
+
+### Neuen Copilot (Agent) erstellen
+
+1. Öffne **Microsoft Copilot Studio** unter [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com)
+2. Wähle oben rechts die gewünschte **Umgebung** aus
+3. Klicke im linken Menü auf **Erstellen** oder **+ Neuer Agent**
+4. Wähle zwischen **Vorlage** (z.B. HR, IT-Helpdesk) oder **Leerer Agent**
+5. Gib dem Agenten einen **Namen** und eine **Beschreibung** — Copilot Studio schlägt anhand der Beschreibung eine erste Konfiguration vor
+6. Lege **Sprache** und **Begrüßungsnachricht** fest
+7. Klicke auf **Erstellen**
+
+### Topic (Thema) konfigurieren
+
+1. Öffne einen bestehenden Agenten in [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com)
+2. Navigiere im linken Menü zu **Topics**
+3. Klicke auf **+ Neues Topic** > **Von Grund auf**
+4. Vergib einen **Namen** und trage **Trigger-Phrasen** ein (mindestens 5 verschiedene Formulierungen)
+5. Gestalte den **Konversationsfluss** im visuellen Editor:
+   - **Nachricht**: Bot sendet eine Antwort
+   - **Frage**: Bot stellt eine Frage und speichert die Antwort in einer Variable
+   - **Bedingung**: Verzweigung abhängig vom Variablenwert
+   - **Aktion**: Power Automate Flow aufrufen
+6. Klicke oben auf **Speichern**
+
+### Wissensquellen hinzufügen (Generative Answers)
+
+1. Navigiere im Agenten zu **Wissen** (Knowledge)
+2. Klicke auf **+ Wissensquelle hinzufügen**
+3. Wähle den Quelltyp: **Öffentliche Website**, **SharePoint**, **Dateien** oder **Dataverse**
+4. Gib die URL oder wähle die Dateien aus und klicke auf **Hinzufügen**
+5. Aktiviere unter **KI-Einstellungen** die Option **Generative Antworten**, damit der Bot auch unbekannte Fragen auf Basis der Wissensquellen beantwortet
+
+### Copilot in Microsoft Teams veröffentlichen
+
+1. Navigiere im Agenten zu **Kanäle** (Channels)
+2. Klicke auf **Microsoft Teams** > **Teams hinzufügen**
+3. Klicke auf **Aktivieren**
+4. Kopiere den **Teams-Link** oder füge den Bot als App im Teams Admin Center hinzu
+5. Klicke auf **Veröffentlichen** oben rechts, damit die aktuellen Änderungen live gehen
+
+> [!NOTE] Veröffentlichen erforderlich
+> Änderungen am Agenten werden erst nach dem Klick auf **Veröffentlichen** für Endbenutzer sichtbar. Die interne Testumgebung (Test-Canvas) zeigt immer die aktuelle unveröffentlichte Version.
+
+---
+
 ## Test-Canvas und Debugging
 
 - **Test-Canvas**: Im Copilot Studio integriertes Chat-Fenster zum direkten Testen

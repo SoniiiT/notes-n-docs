@@ -248,6 +248,36 @@ Das CoE Starter Kit ist eine kostenfreie Sammlung von Power Platform-Lösungen v
 
 ---
 
+## Via Power Platform Admin Center (UI)
+
+### Umgebung (Environment) erstellen
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere im linken Menü zu **Umgebungen**
+3. Klicke auf **+ Neu**
+4. Gib einen **Namen** ein und wähle den **Typ** (Produktion, Sandbox oder Developer)
+5. Wähle die **Region** (z.B. Europe) und aktiviere bei Bedarf **Dataverse**
+6. Klicke auf **Speichern** — die Bereitstellung dauert ca. 1–5 Minuten
+
+> [!TIP] Neue Navigation 2024
+> Das Admin Center verwendet seit 2024 eine aufgabenorientierte Navigation. Über den Schalter **„Try the new admin center"** oben kann das neue Layout aktiviert werden, das Bereiche nach Aufgabenfeldern (Umgebungen, Sicherheit, Einstellungen) gruppiert.
+
+### Connector-Typen und Policies einsehen
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere zu **Sicherheit** > **Daten- und Datenschutzrichtlinien** (Data Policies)
+3. Wähle eine bestehende Policy aus, um die Connector-Klassifizierungen (Business / Non-Business / Gesperrt) einzusehen
+4. Klicke auf **+ Neue Richtlinie**, um eine neue DLP Policy anzulegen
+
+### Tenant-Übersicht und Nutzungsstatistiken
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere zu **Analytics** > **Power Platform**
+3. Wähle den gewünschten Zeitraum und die Umgebung aus
+4. Sieh Nutzungsdaten zu Apps, Flows, Connectors und aktiven Benutzern ein
+
+---
+
 ## Power Platform CLI
 
 Die Power Platform CLI (`pac`) ist das offizielle Kommandozeilenwerkzeug für ALM und Administration.

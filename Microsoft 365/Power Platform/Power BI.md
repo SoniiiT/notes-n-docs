@@ -344,6 +344,53 @@ graph LR
 
 ---
 
+## Via Power BI Service (UI)
+
+### Arbeitsbereich (Workspace) erstellen
+
+1. Öffne den **Power BI Service** unter [app.powerbi.com](https://app.powerbi.com)
+2. Navigiere im linken Menü zu **Arbeitsbereiche**
+3. Klicke auf **+ Neuer Arbeitsbereich**
+4. Vergib einen **Namen** und eine optionale Beschreibung
+5. Konfiguriere unter **Erweitert** die Lizenz (Pro, Premium Per User oder Premium-Kapazität)
+6. Füge **Mitglieder** hinzu und weise Rollen zu (Betrachter, Mitwirkender, Mitglied, Administrator)
+7. Klicke auf **Speichern**
+
+### Bericht im Power BI Service erstellen und veröffentlichen
+
+1. Öffne den **Power BI Service** unter [app.powerbi.com](https://app.powerbi.com)
+2. Navigiere in den gewünschten **Arbeitsbereich**
+3. Klicke auf **+ Neu** > **Bericht** (oder lade eine `.pbix`-Datei per **Hochladen** hoch)
+4. Wähle eine **Datenquelle** aus (z.B. Excel, SharePoint, Dataverse)
+5. Erstelle Visualisierungen per Drag & Drop aus dem Felder-Panel
+6. Klicke auf **Speichern** und vergib einen Berichtsnamen
+7. Klicke auf **Veröffentlichen**, um den Bericht im Arbeitsbereich verfügbar zu machen
+
+> [!TIP] Power BI Desktop vs. Service
+> Komplexe Datenmodelle und DAX-Berechnungen werden typischerweise in **Power BI Desktop** erstellt und dann über **Datei → Veröffentlichen** in den Service hochgeladen. Einfache Berichte können direkt im Service erstellt werden.
+
+### Power BI App erstellen und verteilen
+
+1. Öffne den **Power BI Service** unter [app.powerbi.com](https://app.powerbi.com)
+2. Navigiere in den Arbeitsbereich mit den fertigen Berichten
+3. Klicke oben rechts auf **App erstellen**
+4. Vergib **Name**, **Beschreibung** und lade ein **Logo** hoch
+5. Wähle unter **Navigation** die Berichte und Dashboards aus, die in der App erscheinen sollen
+6. Definiere die **Reihenfolge** und erstelle optionale Abschnitte (Sections)
+7. Unter **Berechtigungen** festlegen, wer die App sehen darf (Einzelpersonen, Gruppen oder gesamte Organisation)
+8. Klicke auf **App veröffentlichen**
+
+### Gateways und geplante Aktualisierung konfigurieren
+
+1. Öffne das **Power BI Admin Center** unter [admin.powerbi.com](https://admin.powerbi.com)
+2. Navigiere zu **Verbindungen und Gateways** > **On-Premises-Datengateways**
+3. Überprüfe den Status der registrierten Gateways
+4. Für die Aktualisierung: Wähle im Arbeitsbereich das Dataset aus > **Einstellungen** > **Geplante Aktualisierung**
+5. Aktiviere den Schalter und konfiguriere Häufigkeit und Uhrzeit
+6. Klicke auf **Übernehmen**
+
+---
+
 ## Power BI Embedding
 
 | Variante | Beschreibung | Lizenz |

@@ -319,6 +319,42 @@ Abstraktion einer Connector-Verbindung innerhalb einer Solution:
 
 ---
 
+## Via Power Automate (UI)
+
+### Automatisierten Cloud Flow erstellen
+
+1. Öffne **Power Automate** unter [make.powerautomate.com](https://make.powerautomate.com)
+2. Wähle oben rechts die gewünschte **Umgebung** aus
+3. Navigiere im linken Menü zu **Erstellen**
+4. Wähle **Automatisierter Cloud-Flow** (durch ein Ereignis ausgelöst)
+5. Gib einen **Flow-Namen** ein und suche nach dem gewünschten **Trigger** (z.B. „Wenn eine neue E-Mail eingeht")
+6. Klicke auf **Erstellen** — der Flow-Designer öffnet sich
+7. Konfiguriere den Trigger (z.B. Postfach, Filter)
+8. Klicke auf **+ Neuer Schritt**, suche nach der gewünschten **Aktion** (z.B. „Teams-Nachricht senden")
+9. Fülle alle Pflichtfelder der Aktion aus, nutze **dynamische Inhalte** aus vorherigen Schritten
+10. Klicke oben rechts auf **Speichern** und dann auf **Testen**, um den Flow zu prüfen
+
+> [!TIP] Copilot-Unterstützung bei der Flow-Erstellung
+> Auf der Startseite von make.powerautomate.com kann ein Flow per natürlichsprachlicher Beschreibung mit **Copilot** erstellt werden. Der KI-Assistent schlägt passende Trigger und Aktionen vor.
+
+### Geplanten Cloud Flow erstellen
+
+1. Öffne **Power Automate** unter [make.powerautomate.com](https://make.powerautomate.com)
+2. Navigiere zu **Erstellen** > **Geplanter Cloud-Flow**
+3. Gib einen **Namen** ein und konfiguriere **Startzeit**, **Wiederholungsintervall** (täglich, stündlich usw.)
+4. Klicke auf **Erstellen** und füge die gewünschten Aktionen hinzu
+5. Klicke auf **Speichern**
+
+### Flow in einer Solution anlegen (empfohlen für ALM)
+
+1. Öffne **Power Automate** unter [make.powerautomate.com](https://make.powerautomate.com)
+2. Navigiere zu **Solutions** im linken Menü
+3. Öffne die gewünschte Solution oder klicke auf **+ Neue Solution**
+4. Klicke innerhalb der Solution auf **+ Neu** > **Automatisierung** > **Cloud Flow**
+5. Erstelle den Flow wie gewohnt — er ist nun in der Solution und transportierbar
+
+---
+
 ## Flow-Checker und häufige Fehler
 
 ### Flow-Checker (eingebaut)

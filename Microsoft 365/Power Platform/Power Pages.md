@@ -230,6 +230,50 @@ Steuern den Datenzugriff auf Dataverse-Tabellenebene:
 
 ---
 
+## Via Power Pages (UI)
+
+### Neue Website erstellen
+
+1. Öffne **Power Pages** unter [make.powerpages.microsoft.com](https://make.powerpages.microsoft.com)
+2. Wähle oben rechts die gewünschte **Dataverse-Umgebung** aus
+3. Klicke auf **+ Website erstellen** (Create a site)
+4. Wähle zwischen einer **Vorlage** (z.B. Leer, After School, Community) oder einem leeren Layout
+5. Vergib einen **Namen** für die Website und lege die **Webadresse** fest (Subdomain)
+6. Wähle die **Sprache** und klicke auf **Fertig** — die Website wird bereitgestellt (ca. 1–3 Minuten)
+
+### Seiten erstellen und Navigation konfigurieren
+
+1. Öffne die Website im **Design Studio** über [make.powerpages.microsoft.com](https://make.powerpages.microsoft.com)
+2. Wechsle in den Arbeitsbereich **Seiten** (Pages)
+3. Klicke auf **+ Neue Seite**, vergib einen Namen und wähle ein **Seitenlayout**
+4. Gestalte den Inhalt per Drag & Drop: Abschnitte, Text, Bilder, Schaltflächen hinzufügen
+5. Passe die **Navigation** an: Im Seitenbaum Seiten per Drag & Drop umordnen oder verschachteln (Unterseiten erstellen)
+6. Klicke auf **Vorschau** (Desktop / Mobil), um das Ergebnis zu prüfen
+7. Klicke auf **Synchronisieren** und dann **Website veröffentlichen**
+
+### Dataverse-Formular auf einer Seite einbetten
+
+1. Öffne die gewünschte Seite im **Design Studio**
+2. Klicke in einen Abschnitt und wähle im Komponentenmenü **Formular**
+3. Klicke auf **+ Neues Formular** oder wähle ein vorhandenes Dataverse-Formular aus
+4. Wähle die **Dataverse-Tabelle** (z.B. Anfragen) und das **Formular** (Erstellen / Bearbeiten)
+5. Konfiguriere **Weiterleitungsseite** nach dem Absenden
+6. Stelle sicher, dass für die Tabelle **Tabellenberechtigungen** (Table Permissions) konfiguriert sind
+7. Klicke auf **OK** und dann auf **Website veröffentlichen**
+
+> [!IMPORTANT] Tabellenberechtigungen konfigurieren
+> Ohne konfigurierte Tabellenberechtigungen können Webbenutzer standardmäßig keine Daten lesen oder schreiben. Navigiere dazu im Design Studio zu **Sicherheit** > **Tabellenberechtigungen**.
+
+### Authentifizierung für externe Benutzer einrichten
+
+1. Öffne das **Power Pages Admin Center** über das Design Studio > **Einstellungen** > **Administratorcenter**
+2. Navigiere zu **Authentifizierung** > **Identitätsanbieter**
+3. Klicke auf **+ Anbieter hinzufügen** und wähle den gewünschten Typ (Azure AD, Microsoft Account, lokale Anmeldung)
+4. Trage die **Client-ID** und das **Client-Secret** aus der Azure App Registration ein
+5. Klicke auf **Konfigurieren** und **Speichern**
+
+---
+
 ## Web-API in Power Pages
 
 Power Pages bietet eine client-seitige JavaScript-Web-API für direkten Dataverse-Zugriff ohne Server-Roundtrip:

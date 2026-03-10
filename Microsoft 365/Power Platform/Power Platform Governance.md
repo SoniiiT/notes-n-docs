@@ -138,6 +138,43 @@ Automatisierte Compliance-Durchsetzung:
 
 ---
 
+## Via Power Platform Admin Center (UI)
+
+### DLP Policy erstellen
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere zu **Sicherheit** > **Daten- und Datenschutzrichtlinien** (Data Policies)
+3. Klicke auf **+ Neue Richtlinie**
+4. Vergib einen **Namen** für die Policy (z.B. „Tenant-Basis-DLP")
+5. Wähle den **Geltungsbereich**: Alle Environments, ausgewählte Environments oder bestimmte ausschließen
+6. Ordne jeden Connector der richtigen Gruppe zu: **Business**, **Non-Business** oder **Gesperrt**
+   - Nutze die Suchfunktion, um Connectors schnell zu finden
+   - Per Drag & Drop oder Kontextmenü zwischen den Gruppen verschieben
+7. Optional: Einzelne **Connector Actions** (z.B. nur bestimmte API-Endpunkte) fein konfigurieren
+8. Klicke auf **Weiter**, prüfe die Zusammenfassung und klicke auf **Erstellen**
+
+> [!WARNING] DLP Impact-Analyse vor Rollout
+> Prüfe im **CoE Starter Kit DLP Impact Report**, welche bestehenden Apps und Flows von der neuen Policy betroffen wären, bevor du sie aktivierst.
+
+### Managed Environment aktivieren
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere zu **Umgebungen** und wähle die gewünschte Umgebung aus
+3. Klicke auf **Managed Environments aktivieren** in der Detailansicht
+4. Konfiguriere die gewünschten Einschränkungen (Maker-Onboarding, Solution-Checks, Sharing-Limits)
+5. Klicke auf **Speichern**
+
+### Umgebungsstrategie konfigurieren
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere zu **Umgebungen** > **+ Neu**
+3. Wähle den **Typ** (Produktion, Sandbox, Developer) entsprechend der Strategie
+4. Vergib eine klare Namenskonvention (z.B. `[Org]-[Projekt]-[Typ]`)
+5. Weise über **Rollen** die Environment Admins und Maker zu
+6. Klicke auf **Speichern**
+
+---
+
 ## Data Loss Prevention (DLP) Policies
 
 DLP-Policies sind der wichtigste technische Kontrollmechanismus für Datensicherheit in der Power Platform.

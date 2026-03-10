@@ -241,6 +241,43 @@ Eine eingeschränkte Dataverse-Version, die direkt in Teams-Environments ohne se
 
 ---
 
+## Via Power Platform Admin Center / Power Apps (UI)
+
+### Benutzerdefinierte Tabelle in Dataverse erstellen
+
+1. Öffne **Power Apps** unter [make.powerapps.com](https://make.powerapps.com) und wähle die gewünschte Umgebung
+2. Navigiere im linken Menü zu **Dataverse** > **Tabellen**
+3. Klicke auf **+ Neue Tabelle** > **Tabelle hinzufügen**
+4. Wähle zwischen **Standard-Tabelle** (mit Display Name & Plural Name) oder **Aktivitäts-Tabelle**
+5. Vergib einen **Anzeigenamen** (z.B. „Projektantrag") — der logische Name wird automatisch generiert
+6. Konfiguriere die **primäre Spalte** (Standard: Name-Spalte)
+7. Klicke auf **Erstellen**
+8. Füge anschließend **Spalten** hinzu: Klicke auf **+ Neue Spalte**, wähle Datentyp (Text, Zahl, Auswahl, Lookup usw.) und konfiguriere Einschränkungen
+9. Klicke nach jeder Spalte auf **Speichern**
+
+> [!TIP] Tabellen immer in Solutions erstellen
+> Erstelle Dataverse-Tabellen stets innerhalb einer **Solution** (über Dataverse > Solutions > [Solution öffnen] > + Neu > Tabelle), damit sie zwischen Environments transportierbar sind.
+
+### Sicherheitsrollen konfigurieren
+
+1. Öffne das **Power Platform Admin Center** unter [admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)
+2. Navigiere zu **Umgebungen** und wähle die gewünschte Umgebung aus
+3. Klicke auf **Einstellungen** > **Benutzer + Berechtigungen** > **Sicherheitsrollen**
+4. Klicke auf **+ Neue Rolle** oder bearbeite eine bestehende Rolle
+5. Konfiguriere für jede Tabelle die CRUD-Berechtigungen auf den gewünschten Ebenen (Benutzer, Geschäftseinheit, Organisation)
+6. Klicke auf **Speichern und schließen**
+
+### Beziehung zwischen Tabellen erstellen
+
+1. Öffne **Power Apps** unter [make.powerapps.com](https://make.powerapps.com)
+2. Navigiere zu **Dataverse** > **Tabellen** und öffne die gewünschte Tabelle
+3. Wechsle zum Reiter **Beziehungen**
+4. Klicke auf **+ Neue Beziehung** und wähle den Beziehungstyp (Viele-zu-einem, Viele-zu-vielen)
+5. Wähle die **verknüpfte Tabelle** aus und vergib einen Anzeigenamen für die Beziehung
+6. Klicke auf **Fertig** und dann auf **Tabelle speichern**
+
+---
+
 ## Web API (OData REST)
 
 Dataverse stellt eine vollständige OData v4 REST-API bereit.
