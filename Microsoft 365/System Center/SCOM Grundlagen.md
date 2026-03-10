@@ -292,6 +292,49 @@ Hybrid-Szenario: AMA sendet Logs an Log Analytics Workspace, SCOM-Agent überwac
 
 ---
 
+## Via SCOM Operations Console (UI)
+
+### Management Pack importieren
+
+1. Öffne die **SCOM Operations Console**
+2. Navigiere zur Ansicht **Verwaltung → Management Packs**
+3. Klicke auf **Management Packs importieren** im Aktionsbereich (rechts)
+4. Im Assistenten:
+   - **Quelle:** Aus Katalog online suchen oder **Aus Datei hinzufügen** (.mp / .mpb)
+   - **Auswahl:** Gewünschte MPs markieren — Abhängigkeiten werden automatisch erkannt
+   - **Import:** Übersicht prüfen und Warnungen beachten
+5. Klicke auf **Installieren** und nach Abschluss **Fertig**
+
+> [!NOTE] Test zuerst
+> Neue Management Packs zuerst in der **Testumgebung** importieren und Overrides anpassen, bevor sie in Produktion eingesetzt werden.
+
+### Override erstellen (MP Tuning)
+
+1. Navigiere zu **Erstellen → Management Pack-Objekte → Monitore** (oder Regeln)
+2. Wähle einen Monitor aus → Rechtsklick → **Außerkraftsetzungen → Außerkraftsetzung erstellen**
+3. Wähle den Geltungsbereich:
+   - **Für alle Objekte der Klasse:** Gilt für die gesamte Klasse
+   - **Für eine bestimmte Gruppe:** Eingeschränkt auf eine Gruppe
+   - **Für ein bestimmtes Objekt:** Zielgenau für einen einzelnen Server
+4. Im Dialogfenster: Parameter anpassen (z.B. Schwellenwert, Aktivierungszustand)
+5. Ziel-Management-Pack auswählen (eigenes benutzerdefiniertes MP empfohlen, **nicht** das ursprüngliche MP)
+6. Klicke auf **OK**
+
+### Alarmansicht und Benachrichtigung konfigurieren
+
+1. Navigiere zu **Überwachung → Aktive Warnungen**
+2. Klicke auf **Warnungsansicht erstellen** im Aktionsbereich um gefilterte Ansichten zu erstellen
+3. Filter nach: Schweregrad (Kritisch/Warnung), Kategorie, Quelle, Zuweisungsstatus
+4. Für E-Mail-Benachrichtigungen: **Verwaltung → Benachrichtigungen → Abonnements → Abonnement erstellen**
+   - **Kriterien:** Filter für Alarm-Bedingungen
+   - **Abonnenten:** Empfänger und E-Mail-Kanäle auswählen
+5. Klicke auf **Fertig stellen**
+
+> [!TIP] Dashboard nutzen
+> Unter **Mein Arbeitsbereich → Dashboards** lassen sich eigene Monitoring-Dashboards mit Kacheln für Warnungen, Performance-Graphen und Zustandsansichten erstellen.
+
+---
+
 ## Wichtige PowerShell-Cmdlets
 
 ```powershell

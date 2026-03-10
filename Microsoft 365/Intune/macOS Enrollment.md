@@ -603,6 +603,51 @@ file /Applications/MeineApp.app/Contents/MacOS/MeineApp
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### macOS-Enrollment über die UI konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+
+#### Apple MDM Push Certificate einrichten (falls noch nicht vorhanden)
+
+2. Navigiere zu **Geräte → macOS → Enrollment → Apple MDM Push Certificate**
+3. Lade den CSR herunter, erstelle das Zertifikat auf [identity.apple.com/pushcert](https://identity.apple.com/pushcert) und lade es hoch
+
+#### ADE-Profil für macOS erstellen
+
+4. Navigiere zu **Geräte → macOS → Enrollment → Enrollment-Programmtoken**
+5. Wähle den ABM-Token → **Profile → + Profil erstellen → macOS**
+6. Konfiguriere:
+   - **Benutzeraffinität:** `Mit Benutzeraffinität registrieren`
+   - **Überwacht:** `Ja`
+   - **Registrierungssperre:** `Ja`
+   - **Setup-Assistent-Schritte:** nicht benötigte Schritte ausblenden (Datenschutz, Apple ID, Bildschirmzeit)
+7. Klicke auf **Weiter → Erstellen**
+8. Weise das Profil den gewünschten ABM-Geräten zu
+
+#### FileVault-Verwaltung aktivieren
+
+9. Navigiere zu **Endpunktsicherheit → Datenträgerverschlüsselung → + Richtlinie erstellen**
+10. Wähle **Plattform: macOS** und **Profil: FileVault**
+11. Konfiguriere:
+    - **FileVault aktivieren:** `Ja`
+    - **Wiederherstellungsschlüssel-Rotation:** `1 Monat`
+    - **Escrow-Beschreibung für Wiederherstellungsschlüssel:** Informationstext für Benutzer
+12. Weise die Richtlinie einer macOS-Gerätegruppe zu → **Weiter → Erstellen**
+
+#### macOS-Konfigurationsprofil (Settings Catalog) erstellen
+
+13. Navigiere zu **Geräte → macOS → Konfigurationsprofile → + Profil erstellen**
+14. Wähle **Plattform: macOS** und **Profiltyp: Einstellungskatalog**
+15. Klicke auf **+ Einstellungen hinzufügen** und suche nach den gewünschten Kategorien (z. B. **Passwort**, **Firewall**, **Sicherheits- und Datenschutz**)
+16. Konfiguriere die gewünschten Einstellungen → **Weiter → Zuweisungen → Erstellen**
+
+> [!TIP]
+> Den **Bootstrap Token**-Status eines macOS-Geräts kannst du im Admin Center unter **Geräte → [Gerät auswählen] → Übersicht** einsehen. Der Bootstrap Token wird automatisch hinterlegt, wenn das Gerät bei Intune enrollt und der Benutzer sich anmeldet.
+
+---
+
 ## Troubleshooting
 
 ### Häufige Probleme und Lösungen

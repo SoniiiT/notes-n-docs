@@ -682,6 +682,35 @@ jobs:
 
 ---
 
+## Via GitHub.com (UI)
+
+### Workflow erstellen
+
+1. Öffne **[github.com](https://github.com/[org]/[repo])**
+2. Klicke auf den **Actions** Tab
+3. Klicke **New workflow**
+4. Wähle ein Template oder **set up a workflow yourself**
+5. Editor öffnet `.github/workflows/[name].yml`
+6. Workflow schreiben, **Commit changes** klicken
+
+### Secrets konfigurieren
+
+1. Repository → **Settings** → **Secrets and variables** → **Actions**
+2. **New repository secret** → Name und Wert eingeben
+3. **Add secret**
+
+### Workflow manuell auslösen (workflow_dispatch)
+
+1. **Actions** Tab → Workflow in der linken Liste auswählen
+2. **Run workflow** → Branch wählen → **Run workflow**
+
+### Artifact herunterladen
+
+1. **Actions** Tab → Workflow-Run öffnen
+2. Im Abschnitt **Artifacts** → Artifact anklicken zum Download
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Grundlagen]]

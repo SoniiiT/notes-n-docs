@@ -248,6 +248,34 @@ CloudAppEvents
 
 ---
 
+## Via Microsoft Defender Portal (UI)
+
+### App-Richtlinie erstellen
+
+1. Öffne **Microsoft Defender Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **Cloud-Apps → Richtlinien → Richtlinienverwaltung**
+3. Klicke auf **+ Richtlinie erstellen** und wähle den Richtlinientyp:
+   - **Aktivitätsrichtlinie:** Zur Überwachung spezifischer Cloud-Aktivitäten
+   - **Dateirichtlinie:** Für DLP in Cloud-Apps
+   - **Sitzungsrichtlinie:** Für Echtzeit-Kontrolle via CASB
+4. Konfiguriere:
+   - **Name:** Aussagekräftiger Richtlinienname
+   - **Filter:** App, Benutzer, IP-Adresse, Aktivitätstyp festlegen
+   - **Schweregrad:** Niedrig, Mittel oder Hoch
+   - **Aktionen:** Blockieren, Benachrichtigung, Governanceaktion
+5. Klicke auf **Erstellen**
+
+### Shadow IT entdecken
+
+1. Navigiere zu **Cloud-Apps → Cloud Discovery → Dashboard**
+2. Überprüfe entdeckte Apps und kategorisiere sie
+3. Klicke auf eine App und wähle **Als genehmigt markieren** oder **Als nicht genehmigt markieren**
+
+> [!TIP]
+> Aktiviere die **Microsoft Defender for Endpoint Integration** unter **Einstellungen → Cloud Apps → Microsoft Defender for Endpoint**, um Shadow IT auch auf verwalteten Endpunkten zu erkennen.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | MDA-Abdeckung |

@@ -222,6 +222,48 @@ flowchart LR
 
 ---
 
+## Via Configuration Manager Konsole (UI)
+
+### Co-Management aktivieren
+
+1. Öffne die **Configuration Manager Konsole**
+2. Navigiere zu **Verwaltung → Cloud Services → Co-Verwaltung**
+3. Klicke auf **Co-Verwaltung konfigurieren** in der Aktionsleiste
+4. Im Assistenten:
+   - **Anmeldung:** Azure-Mandanten auswählen und Anmeldeinformationen eingeben
+   - **Aktivierung:** Automatische Registrierung auf **Pilot** oder **Alle** setzen
+   - **Workloads:** Schieberegler für jeden Workload auf **Intune** oder **Pilot Intune** stellen
+   - **Staging:** Pilot-Sammlung für schrittweise Migration auswählen
+5. Klicke auf **Fertig stellen**
+
+> [!IMPORTANT] Voraussetzungen
+> MECM-Clients müssen **Hybrid-Azure-AD-joined** sein. Stelle sicher, dass **Azure AD Connect** konfiguriert und ein **Cloud Management Gateway (CMG)** erreichbar ist.
+
+### Workload-Staging konfigurieren
+
+1. Navigiere zu **Verwaltung → Cloud Services → Co-Verwaltung**
+2. Doppelklicke auf die Co-Management-Konfiguration
+3. Wechsle zur Registerkarte **Workloads**
+4. Für jeden Workload (z.B. Compliance-Richtlinien, Endpoint Protection):
+   - **Configuration Manager:** Workload vollständig in MECM belassen
+   - **Pilot Intune:** Nur Geräte in der Pilot-Sammlung zu Intune verschieben
+   - **Intune:** Alle co-verwalteten Geräte zu Intune verschieben
+5. Klicke auf **OK**
+
+### Co-Management Dashboard anzeigen
+
+1. Navigiere zu **Überwachung → Co-Verwaltung**
+2. Das Dashboard zeigt:
+   - **Co-Management Enrollment Status** — Anzahl co-verwalteter Geräte
+   - **Workload-Verteilung** — Welche Workloads von MECM vs. Intune verwaltet werden
+   - **Client OS Distribution** — Geräteverteilung nach OS-Version
+3. Klicke auf Dashboard-Kacheln für detaillierte Gerätelisten und Drill-Down
+
+> [!NOTE] Pilot-Sammlung
+> Starte mit einer kleinen Pilot-Sammlung (z.B. IT-Abteilung) um Workloads zu testen, bevor sie auf alle Geräte ausgerollt werden.
+
+---
+
 ## PowerShell-Beispiele
 
 ```powershell

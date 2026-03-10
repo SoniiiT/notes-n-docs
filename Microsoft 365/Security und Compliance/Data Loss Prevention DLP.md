@@ -274,6 +274,28 @@ Export: CSV für SIEM-Integration
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### DLP-Richtlinie einrichten
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Datenverlust-Prävention → Richtlinien**
+3. Klicke auf **+ Richtlinie erstellen**
+4. Wähle eine Vorlage (z.B. **DSGVO**, **Kreditkarten**) oder **Benutzerdefiniert** und klicke auf **Weiter**
+5. Konfiguriere:
+   - **Name und Beschreibung:** Aussagekräftigen Namen vergeben
+   - **Speicherorte:** Exchange, SharePoint, OneDrive, Teams, Endpoints auswählen
+   - **Bedingungen:** Sensitive Information Types (SITs) hinzufügen
+   - **Aktionen:** Zugriff blockieren, Benachrichtigung senden, Bericht generieren
+   - **Policy Tips:** Benutzerbenachrichtigungen aktivieren
+   - **Simulation:** Richtlinie zunächst im Simulation Mode testen
+6. Klicke auf **Speichern**
+
+> [!TIP]
+> Aktiviere **Simulation Mode**, bevor du die Richtlinie erzwingst, um False Positives zu identifizieren und die Auswirkungen zu bewerten.
+
+---
+
 ## PowerShell-Verwaltung
 
 ```powershell

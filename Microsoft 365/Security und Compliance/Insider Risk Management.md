@@ -254,6 +254,28 @@ Update-InsiderRiskPolicySetting -EnableAnonymization $true
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Richtlinie für Insider-Risikomanagement erstellen
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Insider-Risikomanagement → Richtlinien**
+3. Klicke auf **+ Richtlinie erstellen**
+4. Wähle ein **Policy Template** (z.B. „Datenlecks", „Sicherheitsverstöße") und klicke auf **Weiter**
+5. Konfiguriere:
+   - **Name und Beschreibung:** Aussagekräftigen Namen vergeben
+   - **Benutzer und Gruppen:** Alle oder spezifische Benutzer überwachen
+   - **Indikatoren:** Relevante Aktivitätssignale aktivieren (z.B. Datei-Downloads, USB-Nutzung)
+   - **Erkennung:** Schwellenwerte für Risk Scores festlegen
+   - **Warnungsschwelle:** Trigger für Alerts konfigurieren
+6. Überprüfe die Zusammenfassung und klicke auf **Erstellen**
+7. Überwache Alerts unter **Insider-Risikomanagement → Warnungen**
+
+> [!TIP]
+> Aktiviere **Adaptive Protection** unter **Adaptive Protection**, um DLP-Richtlinien dynamisch basierend auf dem Risikoniveau der Benutzer anzupassen.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | IRM-Abdeckung |

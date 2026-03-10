@@ -250,6 +250,47 @@ Im **Supervised Mode** (nur ADE) sind zusätzliche Verwaltungsfunktionen verfüg
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### iOS/iPadOS-Enrollment vollständig über die UI konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+
+#### Apple MDM Push Certificate einrichten (Voraussetzung)
+
+2. Navigiere zu **Geräte → iOS/iPadOS → Enrollment → Apple MDM Push Certificate**
+3. Klicke auf **Apple MDM Push Certificate herunterladen** → lade das CSR herunter
+4. Öffne [identity.apple.com/pushcert](https://identity.apple.com/pushcert) und lade das CSR hoch
+5. Lade das ausgestellte Apple-Zertifikat herunter und lade es unter **Zertifikat hochladen** in Intune hoch
+6. Klicke auf **Hochladen**
+
+#### ADE-Enrollment-Profil erstellen
+
+7. Navigiere zu **Geräte → iOS/iPadOS → Enrollment → Enrollment-Programmtoken**
+8. Wähle den vorhandenen ABM-Token aus → klicke auf **Profile** → **+ Profil erstellen**
+9. Konfiguriere:
+   - **Name:** z. B. `iOS-ADE-Supervised`
+   - **Benutzeraffinität:** `Mit Benutzeraffinität registrieren` (für persönlich zugewiesene Geräte)
+   - **Überwacht:** `Ja` (empfohlen)
+   - **Registrierungssperre:** `Ja`
+   - **Setup-Assistent-Anpassung:** nicht benötigte Schritte deaktivieren (Datenschutz, Apple ID, etc.)
+10. Klicke auf **Weiter → Erstellen**
+11. Weise das Profil Geräten zu: **Alle Geräte** oder eine spezifische Seriennummernliste
+
+#### VPP-Token einrichten
+
+12. Navigiere zu **Mandantenverwaltung → Connectors und Token → Apple VPP-Token**
+13. Klicke auf **+ Erstellen** und lade den VPP-Token aus Apple Business Manager hoch
+14. Aktiviere **Automatische App-Updates** → **Weiter → Erstellen**
+
+> [!TIP]
+> Erneuere das **Apple MDM Push Certificate** jährlich **vor** seinem Ablauf und **immer mit derselben Apple-ID** — sonst verlieren alle iOS/macOS-Geräte ihre MDM-Verbindung und müssen neu enrollt werden.
+
+> [!NOTE]
+> **Web-Based Device Enrollment** (ab iOS 15) ist für BYOD-Szenarien verfügbar, ohne dass Benutzer die Company Portal App installieren müssen. Konfiguriere es unter **Geräte → iOS/iPadOS → Enrollment → Web-based device enrollment**.
+
+---
+
 ## Fehlerbehebung iOS Enrollment
 
 ### Häufige Probleme

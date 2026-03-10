@@ -340,6 +340,60 @@ Remediations können mit folgenden Zeitplänen ausgeführt werden:
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Endpoint Analytics Dashboard aufrufen
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Berichte** → **Endpoint Analytics**
+3. Das **Übersichts-Dashboard** zeigt:
+   - **Work From Anywhere Score** — Gesamtbewertung der Remote-Arbeitsfähigkeit
+   - **Startup Performance Score** — Gerätestartzeit-Bewertung
+   - **Application Reliability Score** — App-Absturz- und Hänger-Bewertung
+   - **Recommended Software Score** — Software-Compliance
+4. Klicke auf einen Score für Details und Gerätelisten
+
+### Anomalieerkennung (Anomaly Detection)
+
+1. Navigiere zu **Berichte** → **Endpoint Analytics** → **Anomalieerkennung**
+2. Das Dashboard zeigt erkannte Anomalien gruppiert nach Schweregrad (Hoch / Mittel / Niedrig)
+3. Klicke auf eine Anomalie für:
+   - Betroffene Geräte und Benutzer
+   - Zeitlicher Verlauf der Anomalie
+   - Empfohlene Maßnahmen
+4. **Filter** nach Anomalie-Typ, Zeitraum oder Schweregrad anwenden
+
+### Enhanced Device Timeline
+
+1. Navigiere zu **Geräte** → Gewünschtes Gerät auswählen
+2. Klicke auf **Timeline** im Gerätemenü
+3. Zeitraum auswählen (bis zu 7 Tage)
+4. Ereignisse filtern nach: Anwendungen, Treiber, Registrierung, Netzwerk, Prozesse
+5. Einzelne Ereignisse anklicken für Details (Zeitstempel, Prozess, Benutzer, Hash)
+
+### Startup Performance analysieren
+
+1. Navigiere zu **Berichte** → **Endpoint Analytics** → **Startleistung**
+2. Geräteliste sortieren nach **Geräte-Boot-Zeit** (langsam zuerst)
+3. Einzelnes Gerät anklicken für Aufschlüsselung:
+   - **Boot-Phase:** BIOS-Zeit, OS-Startzeit, Anmeldezeit
+   - **Top-Prozesse** die den Start verlangsamen
+4. **Softwareempfehlungen** prüfen: Empfohlene Microsoft-Software für bessere Performance
+
+### Custom Compliance Scripts verwalten
+
+1. Navigiere zu **Geräte** → **Konfigurationsprofile** → **+ Profil erstellen**
+   *Alternativ:* **Berichte** → **Endpoint Analytics** → **Proaktive Korrekturen**
+2. Für **Proaktive Korrekturen (Remediations):**
+   - Navigiere zu **Berichte** → **Endpoint Analytics** → **Proaktive Korrekturen**
+   - Klicke **+ Skriptpaket erstellen**
+   - **Erkennungsskript** und **Korrektuurskript** hochladen (PowerShell)
+   - Zeitplan konfigurieren: stündlich / täglich / wöchentlich
+   - Zuweisung an Gerätegruppen
+3. **Status überwachen:** Erkannt / Behoben / Fehler pro Gerät
+
+---
+
 ## Log Analytics Integration
 
 ### Workspace verbinden

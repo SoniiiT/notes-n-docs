@@ -161,6 +161,43 @@ MDM Compliance URL:   https://portal.manage.microsoft.com/?portalAction=Complian
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Windows-Enrollment und Enrollment Status Page konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Enrollment → Windows Enrollment**
+
+#### Auto-Enrollment konfigurieren (Entra ID)
+
+3. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+4. Navigiere zu **Identität → Mobilität (MDM und MAM) → Microsoft Intune**
+5. Setze den **MDM-Benutzerbereich** auf `Alle` oder `Einige` (ausgewählte Gruppe)
+6. Klicke auf **Speichern**
+
+#### Enrollment Status Page (ESP) konfigurieren
+
+7. Zurück im Intune Admin Center: **Geräte → Enrollment → Windows Enrollment → Registrierungsstatusseite**
+8. Klicke auf **+ Profil erstellen**
+9. Konfiguriere die Einstellungen:
+   - **App- und Profilkonfigurationsfortschritt anzeigen:** `Ja`
+   - **Geräteverwendung bis zur Installation aller Apps und Profile blockieren:** `Ja`
+   - **Timeout (Minuten):** `60`
+   - **Benutzern das Zurücksetzen des Geräts bei Installationsfehler erlauben:** `Ja`
+10. Weise das Profil einer **Entra ID-Gruppe** zu → **Weiter → Erstellen**
+
+#### Enrollment-Beschränkungen konfigurieren
+
+11. Navigiere zu **Geräte → Enrollment → Geräteregistrierungseinschränkungen**
+12. Wähle eine bestehende Einschränkung oder erstelle eine neue über **+ Einschränkung erstellen**
+13. Konfiguriere erlaubte Plattformen, OS-Versionen und Gerätelimits pro Benutzer
+14. Klicke auf **Weiter → Erstellen**
+
+> [!TIP]
+> Für **BYOD-Szenarien** reicht oft MAM ohne MDM-Enrollment aus. Konfiguriere App Protection Policies unter **Apps → App-Schutzrichtlinien**, ohne Auto-Enrollment zu erzwingen.
+
+---
+
 ## MDM-Enrollment via Group Policy
 
 Für Geräte, die bereits **Active Directory-joined** sind, kann das MDM-Enrollment per **Gruppenrichtlinie** erzwungen werden.

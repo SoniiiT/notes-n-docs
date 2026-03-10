@@ -276,6 +276,29 @@ DS Access:
 
 ---
 
+## Via Microsoft Defender Portal (UI)
+
+### MDI-Workspace konfigurieren und Sensoren überwachen
+
+1. Öffne **Microsoft Defender Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **Einstellungen → Identitäten**
+3. Klicke auf **Workspace erstellen**, falls noch kein Workspace vorhanden ist
+4. Navigiere zu **Einstellungen → Identitäten → Sensoren**:
+   - Überprüfe den Status aller installierten Sensoren
+   - Klicke auf einen Sensor für Details (Version, Kommunikationsstatus, Domain Controller)
+5. Lade das **Sensor-Installationspaket** unter **+ Sensor hinzufügen** herunter
+6. Konfiguriere **Verzeichnisdienst-Konten** unter **Einstellungen → Identitäten → Verzeichnisdienstkonten**
+
+### MDI-Warnungen überprüfen
+
+1. Navigiere zu **Identitäten → Integrität und Sicherheit → Empfehlungen**
+2. Überprüfe Warnungen unter **Incidents & Warnungen → Warnungen** (Filter: Quelle = Defender for Identity)
+
+> [!TIP]
+> Aktiviere **Honey Tokens** unter **Einstellungen → Identitäten → Honey Tokens**, um Angreifer zu täuschen und frühzeitig zu erkennen.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | MDI-Abdeckung |

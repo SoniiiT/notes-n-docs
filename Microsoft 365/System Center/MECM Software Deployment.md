@@ -297,6 +297,51 @@ flowchart LR
 
 ---
 
+## Via Configuration Manager Konsole (UI)
+
+### Anwendung erstellen
+
+1. Öffne die **Configuration Manager Konsole**
+2. Navigiere zu **Softwarebibliothek → Anwendungsverwaltung → Anwendungen**
+3. Klicke auf **Anwendung erstellen** in der Aktionsleiste
+4. Im Assistenten:
+   - **Allgemein:** Typ auswählen (z.B. **Windows Installer**, **Script Installer**, **MSIX**)
+   - **Allgemeine Informationen:** Name, Hersteller, Version, Verwaltungskategorie
+   - **Bereitstellungstyp:** Installations-/Deinstallationsbefehl, Erkennungsmethode (Registry, MSI-Code, Skript)
+   - **Anforderungen:** Hardware- und Software-Voraussetzungen definieren
+   - **Abhängigkeiten:** Voraussetzende Anwendungen hinzufügen
+5. Klicke auf **Fertig stellen**
+
+> [!TIP] Erkennungsmethode
+> Nutze **MSI-Produktcode** für MSI-Pakete (automatisch erkannt) oder eine **Registrierungsregel** für Custom Installer — ohne korrekte Erkennungsmethode werden Anwendungen mehrfach installiert.
+
+### Anwendung bereitstellen (Deploy)
+
+1. Rechtsklick auf die Anwendung → **Bereitstellen**
+2. Im Bereitstellungs-Assistenten:
+   - **Allgemein:** Sammlung auswählen, Verteilungspunkte auswählen
+   - **Bereitstellungseinstellungen:** Zweck (**Erforderlich** / **Verfügbar**), Aktion (Installieren / Deinstallieren)
+   - **Zeitplanung:** Verfügbarkeitsdatum und Stichtag (Deadline) festlegen
+   - **Benutzererfahrung:** Benachrichtigungen, Neustartverhalten, Installationsverhalten
+   - **Warnungen:** Compliance-Schwellenwerte konfigurieren
+3. Klicke auf **Weiter** und **Fertig stellen**
+
+> [!NOTE] Required vs. Available
+> **Erforderlich** erzwingt automatische Installation zum Stichtag. **Verfügbar** zeigt die App im Software Center zur manuellen Installation an.
+
+### Task Sequence bereitstellen
+
+1. Navigiere zu **Softwarebibliothek → Betriebssysteme → Tasksequenzen**
+2. Rechtsklick auf die Task Sequence → **Bereitstellen**
+3. Im Assistenten:
+   - **Allgemein:** Sammlung auswählen (PXE-Boot: nur Gerätesammlungen)
+   - **Bereitstellungseinstellungen:** Zweck, Verfügbarkeit für (Configuration Manager, PXE, Medien)
+   - **Zeitplanung:** Verfügbarkeitsfenster und Stichtag
+   - **Benutzererfahrung:** Fortschrittsanzeige, automatischer Neustart
+4. Klicke auf **Weiter** und **Fertig stellen**
+
+---
+
 ## PowerShell-Beispiele
 
 ```powershell

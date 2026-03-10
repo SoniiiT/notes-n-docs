@@ -242,6 +242,37 @@ Audit Premium protokolliert zusätzliche hochwertige Ereignisse:
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Audit Log durchsuchen
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Überwachung → Überwachungssuche**
+3. Konfiguriere die Suche:
+   - **Datumsbereich:** Start- und Enddatum festlegen
+   - **Aktivitäten:** Spezifische Aktivitäten auswählen oder alle einschließen
+   - **Benutzer:** Optional auf bestimmte Benutzer einschränken
+   - **Datei/Ordner/Website:** Optional nach Ressource filtern
+4. Klicke auf **Suche**
+5. Warte auf die Ergebnisse und klicke auf einzelne Einträge für Details
+
+### eDiscovery-Fall erstellen
+
+1. Navigiere zu **eDiscovery → Premium**
+2. Klicke auf **+ Fall erstellen**
+3. Konfiguriere:
+   - **Name:** Fallbezeichnung (z.B. Fallnummer oder Projekt)
+   - **Beschreibung:** Kurzbeschreibung des Falles
+   - **Mitglieder:** Berechtigte Personen hinzufügen
+4. Klicke auf **Speichern** und öffne den neuen Fall
+5. Füge unter **Quellen → Custodians** die relevanten Datenhüter hinzu
+6. Erstelle unter **Haltebereich** einen Legal Hold für die Quellen
+
+> [!NOTE]
+> Für die Audit-Suche ist mindestens die Rolle **Überwachungsprotokolle anzeigen** erforderlich. Premium-Audit benötigt eine E5- oder Audit-Add-on-Lizenz.
+
+---
+
 ## Audit Log über PowerShell
 
 ```powershell

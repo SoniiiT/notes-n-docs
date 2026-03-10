@@ -238,6 +238,55 @@ Zugriffssteuerung:
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Compliance-Richtlinie erstellen und zuweisen
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Compliance-Richtlinien → + Richtlinie erstellen**
+3. Wähle die **Plattform** (z. B. Windows 10 und höher, iOS/iPadOS, Android Enterprise, macOS)
+4. Klicke auf **Erstellen**
+
+#### Compliance-Einstellungen konfigurieren
+
+5. Vergib einen **Namen** (z. B. `WIN-COMPLIANCE-Standard-v1`)
+6. Konfiguriere die gewünschten Anforderungen (Beispiel für Windows):
+   - **Gerätezustand → BitLocker:** `Erforderlich`
+   - **Gerätezustand → Microsoft Defender Antimalware:** `Erforderlich`
+   - **Geräteeigenschaften → Mindest-Betriebssystemversion:** z. B. `10.0.19041`
+   - **Systemsicherheit → Kennwort erforderlich:** `Ja`
+   - **Systemsicherheit → Minimale Kennwortlänge:** `8`
+7. Klicke auf **Weiter**
+
+#### Aktionen für Nicht-Konformität festlegen
+
+8. Im Tab **Aktionen für Nichtkonformität** klicke auf **+ Aktion hinzufügen**
+9. Konfiguriere den Aktionszeitplan:
+   - **Tag 0:** Gerät als nicht konform markieren
+   - **Tag 1:** E-Mail an Endbenutzer senden
+   - **Tag 7:** Remotesperre (optional)
+10. Klicke auf **Weiter**
+
+#### Richtlinie zuweisen
+
+11. Wähle unter **Zuweisungen** die Ziel-Entra-ID-Gruppe (z. B. `Alle Windows-Geräte`)
+12. Optional: Gruppen **ausschließen** (z. B. Test-Geräte)
+13. Klicke auf **Weiter → Erstellen**
+
+#### Standard-Compliance-Verhalten konfigurieren
+
+14. Navigiere zu **Geräte → Compliance-Richtlinien → Kompatibilitätsrichtlinieneinstellungen**
+15. Setze **Geräte ohne zugewiesene Kompatibilitätsrichtlinie** auf **Nicht konform**
+16. Klicke auf **Speichern**
+
+> [!TIP]
+> Erstelle **E-Mail-Benachrichtigungsvorlagen** unter **Geräte → Compliance-Richtlinien → Benachrichtigungen** — mit Unternehmenslogo und Helpdesk-Link — bevor du E-Mail-Aktionen zu den Richtlinien hinzufügst.
+
+> [!IMPORTANT]
+> Verknüpfe Compliance Policies mit **Conditional Access** im Entra Admin Center: **Schutz → Bedingter Zugriff → Neue Richtlinie** → Zugriffssteuerung → **Konformes Gerät erfordern**.
+
+---
+
 ## Device Compliance Berichte
 
 ### Intune Compliance-Dashboard

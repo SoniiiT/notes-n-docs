@@ -254,6 +254,47 @@ BMR ermöglicht die vollständige Wiederherstellung auf identische oder neue Har
 
 ---
 
+## Via DPM Administrator-Konsole (UI)
+
+### Schutzgruppe erstellen
+
+1. Öffne die **DPM Administrator-Konsole**
+2. Klicke auf die Ansicht **Schutz** (linke Navigationsleiste)
+3. Klicke auf **Neu** in der Aktionsleiste
+4. Im Assistenten für neue Schutzgruppen:
+   - **Schutzgruppentyp:** Server (Dateidaten, Systemstatus, Hyper-V) oder Clients
+   - **Gruppenmitglieder:** Datenquellen auswählen (Volumes, Shares, Exchange-Postfachdatenbanken, SQL Server, SharePoint)
+   - **Schutzgruppenname:** Eindeutigen, beschreibenden Namen vergeben
+   - **Schutzmethode:** Kurzfristiger Schutz (Disk) und/oder Langfristiger Schutz (Tape / Azure Online)
+   - **Kurzfristige Ziele:** Aufbewahrungsdauer und Synchronisationsintervall
+   - **Datenträgerzuordnung:** Speicherplatz automatisch oder manuell zuweisen
+   - **Replikaerstellung:** Jetzt automatisch oder manuell zu einem späteren Zeitpunkt
+5. Klicke auf **Gruppe erstellen**
+
+> [!TIP] Azure-Integration aktivieren
+> Wähle im Schritt **Schutzmethode** die Option **Ich möchte Onlineschutz**, um Daten direkt in **Azure Backup** zu schreiben. Voraussetzung: MARS-Agent installiert und Recovery Services Vault konfiguriert.
+
+### Wiederherstellung durchführen
+
+1. Klicke auf die Ansicht **Wiederherstellung**
+2. Erweitere im linken Bereich den Server und wähle die geschützte Datenquelle
+3. Wähle im **Kalender** rechts oben den gewünschten Wiederherstellungspunkt (Datum/Uhrzeit)
+4. Klicke auf **Wiederherstellen** in der Aktionsleiste
+5. Im Assistenten:
+   - **Wiederherstellungstyp:** Am ursprünglichen Speicherort / An alternativem Speicherort / In Netzwerkfreigabe kopieren
+   - **Zieloptionen:** Vorhandene Version überschreiben oder Kopie nebeneinander erstellen
+   - **Sicherheitseinstellungen:** Sicherheitsgruppen der Quelldatei wiederherstellen
+6. Klicke auf **Fertig stellen**
+
+### Warnungen und Status überwachen
+
+1. Klicke auf die Ansicht **Überwachung**
+2. Überprüfe unter **Warnungen** aktive Fehler und Hinweise
+3. Unter **Aufträge** den Status aktueller Sicherungs- und Wiederherstellungsaufträge einsehen
+4. Klicke auf einen Auftrag → **Details** für vollständige Protokollinformationen
+
+---
+
 ## Wichtige PowerShell-Cmdlets
 
 ```powershell

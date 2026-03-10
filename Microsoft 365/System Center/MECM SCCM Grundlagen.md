@@ -185,6 +185,46 @@ AND SMS_R_SYSTEM.Build >= "22000"
 
 ---
 
+## Via Configuration Manager Konsole (UI)
+
+### Collections erstellen
+
+1. Öffne die **Configuration Manager Konsole**
+2. Navigiere zu **Bestand und Kompatibilität → Gerätesammlungen**
+3. Klicke auf **Gerätesammlung erstellen** in der Aktionsleiste
+4. Im Assistenten:
+   - **Allgemein:** Name, Kommentar, einschränkende Sammlung auswählen
+   - **Mitgliedschaftsregeln:** Direkte Regel, Abfrageregel oder Einschlussregel hinzufügen
+   - **Zeitplan:** Inkrementelle Updates aktivieren (empfohlen)
+5. Klicke auf **Fertig stellen**
+
+> [!TIP] Abfrageregel-Beispiel
+> Nutze den **Abfrageanweisungs-Editor**, um Sammlungen dynamisch nach WMI-Klassen zu befüllen — z.B. alle Geräte mit Windows 11.
+
+### Client-Einstellungen anpassen
+
+1. Navigiere zu **Verwaltung → Clienteinstellungen**
+2. Klicke auf **Benutzerdefinierte Clienteinstellungen erstellen**
+3. Wähle die Einstellungsart: **Geräteeinstellungen** oder **Benutzereinstellungen**
+4. Aktiviere gewünschte Komponenten (Hardware-Inventar, Software-Inventar, Software Center usw.)
+5. Weise die Einstellungen einer **Gerätesammlung** zu
+6. Klicke auf **OK**
+
+> [!NOTE] Priorität
+> Benutzerdefinierte Clienteinstellungen überschreiben die Standardeinstellungen — niedrigere Prioritätsnummer = höhere Gewichtung.
+
+### Discovery-Methode konfigurieren
+
+1. Navigiere zu **Verwaltung → Hierarchiekonfiguration → Ermittlungsmethoden**
+2. Doppelklicke auf eine Methode (z.B. **Active Directory-Systemermittlung**)
+3. Aktiviere die Methode und konfiguriere:
+   - **Verzeichnispfade:** Active Directory-OUs auswählen
+   - **Zeitplan:** Vollständige und inkrementelle Ermittlung
+   - **Attribute:** Zusätzliche LDAP-Attribute einbeziehen
+4. Klicke auf **OK**
+
+---
+
 ## Wichtige PowerShell-Cmdlets
 
 ```powershell

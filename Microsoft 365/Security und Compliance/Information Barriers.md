@@ -199,6 +199,33 @@ Set-SPOTenant -InformationBarriersSuspension $false
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Informationsbarrieren einrichten
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Informationsbarrieren → Segmente**
+3. Überprüfe die vorhandenen Segmente oder erstelle neue:
+   - Klicke auf **+ Segment erstellen**
+   - **Name:** Segmentname (z.B. „Investmentbanking")
+   - **Benutzerattribut:** Entra ID-Attribut auswählen (z.B. `Department`)
+   - **Attributwert:** Wert festlegen (z.B. „Investment Banking")
+   - Klicke auf **Speichern**
+4. Navigiere zu **Informationsbarrieren → Richtlinien**
+5. Klicke auf **+ Richtlinie erstellen**
+6. Konfiguriere:
+   - **Name:** Richtlinienname
+   - **Segment (dieses Segment):** Quellsegment auswählen
+   - **Art:** Block oder Allow auswählen
+   - **Segment (anderes Segment):** Zielsegment auswählen
+7. Klicke auf **Speichern**
+8. Aktiviere die Richtlinien unter **Richtlinienanwendung → Anwenden**
+
+> [!WARNING]
+> Das Anwenden von IB-Richtlinien kann einige Stunden dauern. Prüfe den Status unter **Richtlinienanwendung** im Portal.
+
+---
+
 ## Vollständiger Einrichtungs-Workflow
 
 ```mermaid

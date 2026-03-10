@@ -343,6 +343,45 @@ Intune > Geräte > Konfigurationsprofile > Erstellen > Windows 10/11 > Vorlagen 
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Konfigurationsprofil erstellen (Settings Catalog — empfohlen)
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Konfigurationsprofile → + Profil erstellen**
+3. Wähle die **Plattform** (z. B. Windows 10 und höher)
+4. Wähle **Profiltyp: Einstellungskatalog** → **Erstellen**
+5. Vergib einen **Namen** nach Namenskonvention (z. B. `WIN-SEC-Defender-v1`) → **Weiter**
+
+#### Einstellungen hinzufügen
+
+6. Klicke auf **+ Einstellungen hinzufügen**
+7. Suche nach Kategorien oder Einstellungsnamen (z. B. „BitLocker", „Defender", „Firewall")
+8. Aktiviere die gewünschten Einstellungen mit der Checkbox → klicke auf **Schließen**
+9. Konfiguriere die Werte der ausgewählten Einstellungen im rechten Bereich
+10. Klicke auf **Weiter**
+
+#### Profil zuweisen
+
+11. Unter **Zuweisungen**: Wähle **+ Gruppen hinzufügen** für Einschließen und ggf. Ausschließen
+12. Optional: Klicke auf **Filter bearbeiten** um Assignment Filters anzuwenden (z. B. nur Windows 11)
+13. Klicke auf **Weiter → Erstellen**
+
+#### Administrative Vorlagen (ADMX) erstellen
+
+14. Navigiere zu **Geräte → Konfigurationsprofile → + Profil erstellen**
+15. Wähle **Plattform: Windows 10 und höher**, **Profiltyp: Vorlagen → Administrative Vorlagen**
+16. Suche im linken Bereich nach dem gewünschten Richtlinienbereich (z. B. **Windows-Komponenten → Windows Update**)
+17. Konfiguriere die Einstellungen und weise das Profil zu → **Weiter → Erstellen**
+
+> [!TIP]
+> Nutze den **Einstellungskatalog** als erste Wahl — er wird kontinuierlich erweitert und bietet Volltextsuche, direkten Link zur Microsoft-Dokumentation und bessere Konflikt-Transparenz als ältere Vorlagen.
+
+> [!NOTE]
+> Für Einstellungen ohne nativen Profiltyp im Settings Catalog existiert das **Custom OMA-URI**-Profil (siehe folgender Abschnitt). Prüfe zuerst den Settings Catalog, bevor du OMA-URI nutzt.
+
+---
+
 ## Custom Profile (OMA-URI)
 
 Custom Profile ermöglichen die direkte Konfiguration von MDM-Einstellungen via OMA-URI, wenn kein nativer Profiltyp verfügbar ist.

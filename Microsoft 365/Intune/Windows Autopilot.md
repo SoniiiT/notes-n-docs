@@ -364,6 +364,58 @@ Die JSON-Datei wird in die Task Sequence als Paket eingebunden. Die Task Sequenc
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Windows Autopilot über die UI konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+
+#### Autopilot-Geräte registrieren (CSV-Import)
+
+2. Navigiere zu **Geräte → Enrollment → Windows Autopilot → Geräte**
+3. Klicke auf **Importieren**
+4. Lade die CSV-Datei mit den Hardware-Hashes hoch (Format: Seriennummer, Windows-Produkt-ID, Hardware-Hash, Group Tag, Assigned User)
+5. Warte auf die Bestätigung der Importierung (kann bis zu 15 Minuten dauern)
+6. Klicke auf **Synchronisieren** um den Importstatus zu aktualisieren
+
+#### Autopilot-Bereitstellungsprofil erstellen
+
+7. Navigiere zu **Geräte → Enrollment → Windows Autopilot → Bereitstellungsprofile → + Profil erstellen**
+8. Wähle **Windows-PC**
+9. Konfiguriere:
+   - **Name:** z. B. `AUTOPILOT-UserDriven-EntraJoin-v1`
+   - **Bereitstellungsmodus:** `Benutzergesteuert`
+   - **In Microsoft Entra ID einbinden als:** `In Microsoft Entra ID eingebunden`
+   - **EULA überspringen:** `Ja`
+   - **Datenschutzeinstellungen überspringen:** `Ja`
+   - **Kontoänderungsoptionen ausblenden:** `Ja`
+   - **Benutzerkontentyp:** `Standard`
+10. Klicke auf **Weiter → Zuweisungen**
+11. Weise das Profil einer Autopilot-Gerätegruppe zu (dynamisch nach Seriennummer oder Group Tag)
+12. Klicke auf **Weiter → Erstellen**
+
+#### Enrollment Status Page für Autopilot konfigurieren
+
+13. Navigiere zu **Geräte → Enrollment → Windows Enrollment → Registrierungsstatusseite**
+14. Klicke auf **+ Profil erstellen**
+15. Konfiguriere:
+    - **App- und Profilkonfigurationsfortschritt anzeigen:** `Ja`
+    - **Geräteverwendung blockieren:** `Ja`
+    - **Timeout:** `60` Minuten
+    - **Benutzern das Zurücksetzen erlauben:** `Ja`
+16. Weise das ESP-Profil der gleichen Autopilot-Gruppe zu → **Weiter → Erstellen**
+
+#### Autopilot-Status überwachen
+
+17. Navigiere zu **Geräte → Enrollment → Windows Autopilot → Geräte**
+18. Überprüfe den **Bereitstellungsprofilstatus** der registrierten Geräte
+19. Navigiere zu **Berichte → Windows Autopilot → Autopilot-Bereitstellungen** für Deployment-Berichte
+
+> [!TIP]
+> Nutze **Group Tags** beim Hardware-Hash-Import, um Geräte automatisch dynamischen Entra-ID-Gruppen zuzuweisen. Erstelle eine dynamische Gerätegruppe mit der Regel `(device.devicePhysicalIds -any (_ -eq "[OrderID]:TAG_NAME"))` für automatische Profilzuweisung.
+
+---
+
 ## Fehlerbehebung
 
 ### MDMDiagnosticsTool

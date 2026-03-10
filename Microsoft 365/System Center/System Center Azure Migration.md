@@ -327,6 +327,60 @@ Invoke-RestMethod `
 
 ---
 
+## Via Azure Portal (UI)
+
+### Azure Migrate-Projekt erstellen
+
+1. Öffne das **Azure Portal** (`portal.azure.com`)
+2. Suche nach **Azure Migrate** und öffne den Dienst
+3. Klicke auf **Projekt erstellen**
+4. Im Assistenten:
+   - **Abonnement & Ressourcengruppe:** Ziel-Ressourcengruppe auswählen oder neu erstellen
+   - **Projektname:** Eindeutigen Namen vergeben (z.B. `SCVMM-Migration-2025`)
+   - **Region:** Azure-Region für Migrationsmetadaten auswählen
+5. Klicke auf **Erstellen**
+
+### On-Premises-Server ermitteln (Discovery)
+
+1. Navigiere im Migrate-Projekt zu **Server, Datenbanken und Web-Apps**
+2. Klicke auf **Entdecken** im Abschnitt **Azure Migrate: Ermittlung und Bewertung**
+3. Wähle den Virtualisierungstyp:
+   - **Hyper-V** für SCVMM-Umgebungen
+   - **VMware vSphere** für VMware-Umgebungen
+   - **Physische oder andere Server** für Bare-Metal
+4. Lade die **Azure Migrate-Appliance** (OVA / VHD) herunter und deploye sie On-Premises
+5. Registriere die Appliance im Portal mit dem generierten **Projektschlüssel**
+6. Starte die Discovery — nach 24 h sind Serverinventare und Abhängigkeiten verfügbar
+
+### Bewertung erstellen und Migrationsplan ableiten
+
+1. Navigiere zu **Bewertungstools → Bewertungen erstellen**
+2. Wähle den Bewertungstyp:
+   - **Azure VM** für Lift & Shift
+   - **Azure VMware Solution** für VMware-Migration
+   - **Azure SQL** für SQL Server-Migrationen
+3. Konfiguriere Bewertungseinstellungen:
+   - **Zielregion**, **Reservierungstyp** (Pay-as-you-go / 1-Jahr / 3-Jahr)
+   - **VM-Größenkriterien** (leistungsbasiert oder lokal)
+   - **Azure Hybrid Benefit** für Windows Server / SQL Server Lizenzen
+4. Wähle die ermittelten Server aus und klicke auf **Bewertung erstellen**
+5. Öffne den Bewertungsbericht für Kosten- und Bereitschaftsanalyse
+
+> [!TIP] Kostenschätzung nutzen
+> Die Bewertung zeigt **monatliche Azure-Kosten** und die **Azure-Bereitschaft** jedes Servers — nutze diese Daten als Entscheidungsgrundlage, welche Workloads migriert, modernisiert oder on-premises behalten werden sollen.
+
+### Migration durchführen (Replikation und Failover)
+
+1. Navigiere zu **Azure Migrate: Servermigration → Replizieren**
+2. Wähle die zu migrierenden VMs aus
+3. Konfiguriere Replikationseinstellungen:
+   - **Zielressourcengruppe**, **Virtuelles Netzwerk**, **Verfügbarkeitsoption**
+4. Starte die **Replikation** und überwache den Fortschritt
+5. Klicke nach Abschluss auf **Testmigration** für einen unterbrechungsfreien Test
+6. Nach erfolgreichen Tests: **Migration** durchführen und On-Premises-VMs abschalten
+
+---
+
 ## Verwandte Notizen
 
 - [[MECM SCCM Grundlagen]]

@@ -181,6 +181,28 @@ Update-ComplianceFrameworkConfig -AnonymousUsers $true
 
 ---
 
+## Via Microsoft Purview Compliance Portal (UI)
+
+### Richtlinie erstellen
+
+1. Öffne **Microsoft Purview Compliance Portal** unter [purview.microsoft.com](https://purview.microsoft.com)
+2. Navigiere zu **Kommunikationscompliance → Richtlinien**
+3. Klicke auf **+ Richtlinie erstellen**
+4. Wähle ein Template oder **Benutzerdefinierte Richtlinie** und klicke auf **Weiter**
+5. Konfiguriere:
+   - **Name:** Aussagekräftiger Richtlinienname (z.B. „Offensive Sprache")
+   - **Überwachte Benutzer:** Benutzer oder Gruppen auswählen
+   - **Reviewer:** Mindestens einen Compliance-Reviewer zuweisen
+   - **Kommunikationskanäle:** Teams, Exchange, Yammer auswählen
+   - **Bedingungen:** Trainable Classifiers oder Keywords konfigurieren
+   - **Stichprobengröße:** Prozentualen Anteil festlegen (z.B. 20 %)
+6. Überprüfe die Zusammenfassung und klicke auf **Richtlinie erstellen**
+
+> [!TIP]
+> Weise Reviewer der Rolle **Communication Compliance Analysts** unter **Einstellungen → Rollen und Berechtigungen** zu, bevor du die Richtlinie erstellst.
+
+---
+
 ## Konfiguration — Schritt für Schritt
 
 ### 1. Rollen zuweisen

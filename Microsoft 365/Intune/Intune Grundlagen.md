@@ -324,6 +324,28 @@ graph TD
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Initiale Tenant-Konfiguration durchführen
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Prüfe den Tenant-Status: **Mandantenverwaltung → Mandantenstatus**
+3. Überprüfe die MDM-Authority: **Geräte → Übersicht** → der Bereich „MDM-Authority" muss auf **Microsoft Intune** zeigen
+4. Richte das **Apple MDM Push Certificate** ein: **Geräte → iOS/iPadOS → Enrollment → Apple MDM Push Certificate**
+5. Verbinde **Android Enterprise** (Managed Google Play): **Geräte → Android → Android Enrollment → Verwaltetes Google Play**
+6. Konfiguriere **Enrollment Restrictions**: **Geräte → Enrollment → Geräteregistrierungseinschränkungen**
+7. Richte **RBAC-Rollen** ein: **Mandantenverwaltung → Rollen → Alle Rollen → Zuweisungen**
+8. Verwalte **Scope Tags**: **Mandantenverwaltung → Scope-Tags → Erstellen**
+9. Passe das **Company Portal** an: **Mandantenverwaltung → Anpassung**
+
+> [!TIP]
+> Beginne mit **Mandantenverwaltung → Mandantenstatus** — dort siehst du die Gesamtgesundheit deines Tenants, aktive Lizenzen, Connector-Status und aktuelle Microsoft-Servicehinweise auf einen Blick.
+
+> [!NOTE]
+> Die MDM-Authority lässt sich im Admin Center nicht mehr direkt ändern. Neue Tenants haben automatisch „Intune" als MDM-Authority gesetzt. Bei Migration von SCCM ist Co-Management über den ConfigMgr-Assistenten einzurichten.
+
+---
+
 ## Tenant-Einrichtung (Erste Schritte)
 
 ### Checkliste für die initiale Konfiguration

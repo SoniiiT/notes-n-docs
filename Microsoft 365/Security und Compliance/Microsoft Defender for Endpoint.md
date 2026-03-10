@@ -325,6 +325,30 @@ graph LR
 
 ---
 
+## Via Microsoft Defender Portal (UI)
+
+### Gerät onboarden und überwachen
+
+1. Öffne **Microsoft Defender Portal** unter [security.microsoft.com](https://security.microsoft.com)
+2. Navigiere zu **Einstellungen → Endpunkte → Onboarding**
+3. Wähle das **Betriebssystem** und die **Bereitstellungsmethode**:
+   - **Intune:** Richtlinie in Intune-Konsole anwenden
+   - **Gruppenrichtlinie:** GPO-Paket herunterladen und bereitstellen
+   - **Lokales Skript:** Für Tests, Skript direkt auf dem Gerät ausführen
+4. Lade das **Onboarding-Paket** herunter und deploye es
+5. Überprüfe den Gerätestatus unter **Endpunkte → Geräteinventar**
+
+### ASR-Regeln konfigurieren
+
+1. Navigiere zu **Einstellungen → Endpunkte → Angriffsflächen-Reduzierung**
+2. Überprüfe den Status der ASR-Regeln
+3. Konfiguriere Regeln über **Intune** oder **Gruppenrichtlinie** (Modus: Überwachen oder Blockieren)
+
+> [!NOTE]
+> Gerätestatus, Alerts und Incidents werden unter **Endpunkte → Geräteinventar** bzw. **Incidents & Warnungen** angezeigt. Advanced Hunting ist über **Hunting → Erweiterte Suche** erreichbar.
+
+---
+
 ## Lizenzierung
 
 | Lizenz | MDE-Abdeckung |

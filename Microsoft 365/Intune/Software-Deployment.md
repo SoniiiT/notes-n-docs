@@ -414,6 +414,51 @@ Der Deployment Intent steuert, wie eine App auf Geräten bereitgestellt wird.
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Apps über das Intune Admin Center deployen
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Apps → Alle Apps → + Hinzufügen**
+
+#### Win32 App deployen (.intunewin)
+
+3. Wähle **App-Typ: Windows-App (Win32)** → **Auswählen**
+4. Klicke auf **App-Paketdatei auswählen** und lade die `.intunewin`-Datei hoch
+5. Konfiguriere die **App-Informationen**:
+   - **Name**, **Beschreibung**, **Herausgeber**, **App-Version**, **Kategorie**
+6. Klicke auf **Weiter → Programm**
+7. Konfiguriere **Installations- und Deinstallationsbefehle** (z. B. `setup.exe /S`, `msiexec /x {GUID} /qn`)
+8. Wähle **Installationsverhalten:** `System`
+9. Klicke auf **Weiter → Anforderungen**
+10. Konfiguriere Betriebssystem-Mindestversion und Architektur → **Weiter → Erkennungsregeln**
+11. Konfiguriere mindestens eine Erkennungsregel (Registry, Datei oder MSI-Produktcode) → **Weiter → Abhängigkeiten → Ablösung**
+12. Klicke auf **Weiter → Zuweisungen**
+13. Füge Gruppen unter **Erforderlich** oder **Verfügbar** hinzu → **Weiter → Erstellen**
+
+#### Microsoft Store App deployen (neu / WinGet-basiert)
+
+14. Wähle **App-Typ: Microsoft Store-App (neu)** → **Auswählen**
+15. Klicke auf **Microsoft Store durchsuchen** und suche nach der App-ID
+16. Wähle die App → **Auswählen**
+17. Konfiguriere **Aktualisierungsverhalten** → Weise die App Gruppen zu → **Weiter → Erstellen**
+
+#### Microsoft 365 Apps deployen
+
+18. Wähle **App-Typ: Microsoft 365-Apps → Windows 10 und höher** → **Auswählen**
+19. Konfiguriere **App Suite**:
+    - Wähle die gewünschten Apps (Word, Excel, Outlook, Teams, etc.)
+    - **Updatekanal:** `Monatlicher Enterprise-Kanal`
+    - **Version:** `Neueste`
+    - **Architektur:** `64-Bit`
+    - **Bestehende MSI-Office-Versionen entfernen:** `Ja`
+20. Weise die App-Suite Gruppen zu → **Weiter → Erstellen**
+
+> [!TIP]
+> Überwache den App-Installationsstatus unter **Apps → Alle Apps → [App auswählen] → Geräteinstallationsstatus** oder **Benutzerinstallationsstatus**. Fehlercodes und Gerätenamen werden dort direkt angezeigt.
+
+---
+
 ## Troubleshooting Win32 App Installation
 
 ### Log-Dateien

@@ -613,6 +613,38 @@ Microsoft Defender for Cloud kann GitHub-Organisationen über einen **DevOps Sec
 
 ---
 
+## Via GitHub.com (UI)
+
+### GHAS aktivieren (Repository)
+
+1. Öffne **[github.com](https://github.com/[org]/[repo])**
+2. Navigiere zu **Settings** → **Security** → **Code security and analysis**
+3. Aktiviere: **Dependency graph**, **Dependabot alerts**, **Code scanning**, **Secret scanning**
+4. **Save changes**
+
+### Code Scanning Alerts
+
+1. Repository → **Security** Tab → **Code scanning**
+2. Alert auswählen → Details, betroffene Zeile und Empfehlung einsehen
+3. **Dismiss alert** oder Issue erstellen
+
+### Secret Scanning Alerts
+
+1. Repository → **Security** → **Secret scanning**
+2. Alert öffnen → **Close as** (Revoked / Used in tests / etc.)
+
+### Dependabot Alerts
+
+1. Repository → **Security** → **Dependabot**
+2. Alert öffnen → **Create Dependabot security update**
+
+### Push Protection umgehen
+
+1. Bei einem abgelehnten Push → Link in der Fehlermeldung öffnen
+2. Begründung auswählen → **Allow secret**
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Actions]]

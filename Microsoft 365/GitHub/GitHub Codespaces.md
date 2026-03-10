@@ -554,6 +554,35 @@ Gesamt: ~$48,92/Monat
 
 ---
 
+## Via GitHub.com (UI)
+
+### Codespace erstellen
+
+1. Öffne **[github.com](https://github.com/[org]/[repo])**
+2. Klicke den grünen **Code** Button
+3. Wähle den Tab **Codespaces**
+4. **Create codespace on [branch]** oder **...** für Optionen (Machine Type, Region)
+5. VS Code im Browser öffnet sich automatisch
+
+### Codespace verwalten
+
+1. Öffne **[github.com/codespaces](https://github.com/codespaces)**
+2. Laufende und gestoppte Codespaces anzeigen
+3. **...** Menü → **Stop** / **Delete** / **Change machine type**
+
+### Prebuild konfigurieren
+
+1. Repository → **Settings** → **Codespaces**
+2. **Set up prebuild** → Branch, Region, Auslöser konfigurieren
+3. **Create**
+
+### Organisation Policies
+
+1. Öffne **github.com/organizations/[org]/settings/codespaces**
+2. **Policies** → Erlaubte Machine Types, maximale Idle-Timeout, etc. konfigurieren
+
+---
+
 ## Codespaces via CLI verwalten
 
 ```bash

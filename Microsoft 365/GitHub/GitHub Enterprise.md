@@ -508,6 +508,39 @@ Enterprise Account B: Kunde Beta AG
 
 ---
 
+## Via GitHub.com (UI)
+
+### Enterprise Account verwalten
+
+1. Öffne **github.com/enterprises/[enterprise]**
+2. Übersicht: Organisationen, Mitglieder, Policies einsehen
+
+### SAML SSO konfigurieren
+
+1. Öffne **github.com/organizations/[org]/settings/security**
+2. **Enable SAML authentication** aktivieren
+3. IdP-Metadaten eingeben (Entra ID: SSO URL, Issuer, Public Certificate)
+4. **Test SAML configuration** → **Save**
+
+### Enterprise Managed Users (EMU)
+
+1. Öffne **github.com/enterprises/[enterprise]/settings/authentication_security**
+2. SCIM-Provider konfigurieren
+3. Provisioning-URL und Token generieren
+
+### Audit Log
+
+1. Öffne **github.com/enterprises/[enterprise]/settings/audit-log**
+2. Filter nach: Aktion, Benutzer, Zeitraum, Organisation
+3. **Export** → CSV herunterladen
+
+### Enterprise Policies
+
+1. Öffne **github.com/enterprises/[enterprise]/settings/policies**
+2. Repository-Policies, Actions-Policies, etc. konfigurieren
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Grundlagen]]

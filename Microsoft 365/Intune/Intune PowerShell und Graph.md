@@ -107,6 +107,48 @@ Get-Module Microsoft.Graph* -ListAvailable | Select-Object Name, Version | Sort-
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Intune-Konfiguration und Berichte ohne Scripting verwalten
+
+Viele Intune-Aufgaben, die sich per PowerShell oder Graph API automatisieren lassen, können auch direkt über die Web-UI des **Microsoft Intune Admin Centers** erledigt werden — ohne Scripting-Kenntnisse.
+
+> [!NOTE]
+> PowerShell und die Graph API sind primär für **Automatisierung, Massenoperationen und CI/CD-Pipelines** sinnvoll. Für einmalige Konfigurationen und das tägliche Management ist die UI die einfachere Wahl.
+
+#### Geräte und Berichte im Admin Center
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. **Geräte → Alle Geräte:** Filtere, suche und exportiere die komplette Geräteliste als CSV
+3. **Berichte → Gerätecompliance:** Exportiere Compliance-Berichte für alle oder gefilterte Geräte
+4. **Berichte → Endpoint Analytics:** Sieh Health Scores und exportiere Leistungsdaten
+5. **Berichte → Windows-Updates:** Sieh den Update-Status aller Windows-Geräte
+
+#### Massenaktionen über die UI
+
+6. Navigiere zu **Geräte → Alle Geräte**
+7. Wähle mehrere Geräte über die Checkboxen aus
+8. Klicke auf **...** (Mehr) für Massenaktionen:
+   - **Synchronisieren** (MDM-Check-In erzwingen)
+   - **Neu starten**
+   - **Gerät zurücksetzen (Wipe)**
+   - **Außer Betrieb nehmen (Retire)**
+   - **BitLocker-Schlüssel rotieren**
+
+#### Graph Explorer (ohne eigenes Script)
+
+9. Öffne [developer.microsoft.com/en-us/graph/graph-explorer](https://developer.microsoft.com/en-us/graph/graph-explorer)
+10. Melde dich mit dem Intune Admin-Konto an
+11. Teste Graph API-Abfragen direkt im Browser ohne eigene PowerShell-Umgebung:
+    - `GET https://graph.microsoft.com/v1.0/deviceManagement/managedDevices` — alle Geräte
+    - `GET https://graph.microsoft.com/v1.0/deviceManagement/deviceCompliancePolicies` — alle Compliance-Richtlinien
+12. Wechsle im linken Bereich unter **Permissions** und erteile die benötigten Berechtigungen
+
+> [!TIP]
+> Für schnelle CSV-Exporte reicht die UI vollständig aus. Für **wiederkehrende Reports, automatische Provisionierung** oder **CI/CD-Integration** (z. B. Autopilot-Registrierung, Gruppen-Provisionierung) ist das Microsoft Graph PowerShell SDK die empfohlene Wahl.
+
+---
+
 ## Verbindung herstellen
 
 ### Delegated Auth (interaktiv – für Entwicklung und Tests)

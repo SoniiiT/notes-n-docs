@@ -206,6 +206,51 @@ Bewertet, ob Geräte empfohlene Software-Konfigurationen und -versionen verwende
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Endpoint Analytics aktivieren und Berichte einsehen
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Berichte → Endpoint Analytics**
+
+#### Endpoint Analytics aktivieren
+
+3. Klicke auf **Einstellungen** (Zahnradsymbol) → **Endpoint Analytics-Einstellungen**
+4. Aktiviere **Endpoint Analytics** für:
+   - **Zielbereich:** `Alle Geräte` oder ausgewählte Gerätegruppen
+   - **Intune-Datensammlung:** `Aktiviert`
+5. Klicke auf **Speichern**
+
+#### Health Scores einsehen
+
+6. Navigiere zu **Berichte → Endpoint Analytics → Übersicht**
+   - Sieh den Gesamt-Score (0–100) und die Kategoriescores auf einen Blick
+   - Vergleiche mit der **Baseline (Branchenmedian)**
+7. Für Details navigiere zu den Unterberichten:
+   - **Startleistung** → Boot- und Login-Zeiten, Top-Prozesse mit Verzögerungen
+   - **App-Zuverlässigkeit** → Absturz- und Hänger-Raten nach App
+   - **Akkuintegrität** → Akkukapazitäten der Laptop-Flotte
+   - **Überall arbeiten** → Cloud-Management und Autopilot-Score
+
+#### Berichte exportieren
+
+8. In jedem Unterbericht: Klicke auf **Exportieren** um die Daten als CSV herunterzuladen
+9. Nutze den **Filter** oben im Bericht um nach Gerätekategorie, Betriebssystem oder Zeitraum zu filtern
+
+#### Proactive Remediations (Wartungsskripte) im Admin Center überwachen
+
+10. Navigiere zu **Berichte → Endpoint Analytics → Wartungen** (Proactive Remediations)
+11. Sieh den Status aller konfigurierten Skript-Pakete:
+    - **Erkannt (ohne Wartung):** Skript hat Problem gefunden, Wartung noch nicht erfolgt
+    - **Wartung erfolgreich:** Skript hat Problem behoben
+    - **Fehlgeschlagen:** Wartungsskript ist fehlgeschlagen
+12. Klicke auf ein Paket → **Gerätestatus** für Detailinfos je Gerät
+
+> [!TIP]
+> Filtere den **Startup Performance**-Bericht nach Gerätemodell um schlechte Hardware-Klassen zu identifizieren — ein gezielter Hardware-Refresh der schlechtesten 10 % der Geräte kann den Gesamtscore erheblich verbessern.
+
+---
+
 ## Proactive Remediations
 
 Proactive Remediations (in neueren Versionen: **Remediations**) erlauben das Ausführen von PowerShell-Skript-Paaren auf Endgeräten – automatisiert und wiederholbar.

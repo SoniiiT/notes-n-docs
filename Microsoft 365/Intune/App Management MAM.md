@@ -373,6 +373,61 @@ Detection Rule:
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### App Protection Policy (MAM) über die UI erstellen
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Apps → App-Schutzrichtlinien → + Richtlinie erstellen**
+3. Wähle die **Plattform**: iOS/iPadOS oder Android
+
+#### App Protection Policy konfigurieren
+
+4. Vergib einen **Namen** (z. B. `APP-iOS-BYOD-Standard`)
+5. Klicke unter **Apps** auf **+ Öffentliche Apps auswählen** und wähle z. B.:
+   - Microsoft Outlook
+   - Microsoft Teams
+   - Microsoft OneDrive
+   - Microsoft Word, Excel, PowerPoint
+6. Klicke auf **Weiter**
+
+#### Datenschutzeinstellungen konfigurieren
+
+7. Im Tab **Datenschutz** konfiguriere:
+   - **Sichern von Organisationsdaten:** `Blockieren`
+   - **Organisationsdaten an andere Apps senden:** `Richtlinienverwaltete Apps`
+   - **Daten von anderen Apps empfangen:** `Richtlinienverwaltete Apps`
+   - **Screenshots und Google-Assistent:** `Blockieren` (Android) / **Bildschirmaufnahme:** `Blockieren` (iOS)
+   - **Organisationsdaten auf verwalteten Speicherorten speichern:** `Erforderlich`
+8. Klicke auf **Weiter**
+
+#### Zugriffsanforderungen konfigurieren
+
+9. Im Tab **Zugriffsanforderungen** konfiguriere:
+   - **PIN für Zugriff:** `Erforderlich`
+   - **PIN-Typ:** `Numerisch`
+   - **Mindest-PIN-Länge:** `6`
+   - **Biometrie statt PIN zulassen:** `Zulassen`
+10. Klicke auf **Weiter**
+
+#### Bedingter Start (Conditional Launch)
+
+11. Im Tab **Bedingter Start** konfiguriere z. B.:
+    - **Maximale PIN-Versuche:** `5` → Aktion: **Unternehmensdaten zurücksetzen**
+    - **Offline-Toleranzperiode:** `720` Stunden → Aktion: **Zugriff blockieren**
+    - **Jailbroken/gerootete Geräte:** Aktion: **Zugriff blockieren**
+12. Klicke auf **Weiter → Zuweisungen**
+
+#### Richtlinie zuweisen
+
+13. Wähle unter **Einschließen** die Zielgruppe (z. B. `Alle Benutzer` oder eine spezifische BYOD-Gruppe)
+14. Klicke auf **Weiter → Erstellen**
+
+> [!TIP]
+> App Protection Policies gelten auch **ohne MDM-Enrollment** (MAM-WE). Benutzer mit privaten Geräten können Unternehmensdaten in Office-Apps verwenden, ohne das Gerät vollständig bei Intune anzumelden — ideal für BYOD-Szenarien.
+
+---
+
 ## App-Kategorien und App-Reporting
 
 ### App-Kategorien

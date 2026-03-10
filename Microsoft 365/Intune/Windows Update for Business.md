@@ -305,6 +305,54 @@ In Co-managed Umgebungen muss entschieden werden, welches System die Update-Verw
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Windows Update Rings und Feature Updates über die UI konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+
+#### Update Ring erstellen (Quality Updates)
+
+2. Navigiere zu **Geräte → Windows → Update-Richtlinien für Windows 10 und höher → + Profil erstellen → Windows 10 und höher Update Ring**
+3. Vergib einen **Namen** (z. B. `WUfB-Pilot-Ring`)
+4. Konfiguriere:
+   - **Quality Update-Verzögerung (Tage):** `0` (Pilot) / `7` (UAT) / `14` (Produktion)
+   - **Feature Update-Verzögerung (Tage):** `0` / `30` / `60`
+   - **Stichtag für Quality Updates:** `2` / `3` / `5` Tage
+   - **Stichtag für Feature Updates:** `7` / `10` / `14` Tage
+   - **Aktivitätszeitraum — Start:** `08:00`
+   - **Aktivitätszeitraum — Ende:** `18:00`
+5. Klicke auf **Weiter → Zuweisungen**
+6. Weise den Ring der entsprechenden Pilotgruppe zu → **Weiter → Erstellen**
+7. Wiederhole die Schritte 2–6 für UAT- und Produktionsringe
+
+#### Feature Update Policy erstellen (Windows-Versionsupgrade)
+
+8. Navigiere zu **Geräte → Windows → Update-Richtlinien für Windows 10 und höher → + Profil erstellen → Feature-Updates**
+9. Wähle die **Ziel-Windows-Version** (z. B. `Windows 11, Version 24H2`)
+10. Konfiguriere optional einen **gestaffelten Rollout** (Startdatum, Rollout-Tage)
+11. Weise die Policy der Zielgruppe zu → **Weiter → Erstellen**
+
+#### Driver Update Policy erstellen
+
+12. Navigiere zu **Geräte → Windows → Update-Richtlinien für Windows 10 und höher → + Profil erstellen → Treiber-Updates**
+13. Wähle **Genehmigungsmethode:** `Automatisch` oder `Manuell`
+14. Weise die Policy zu → **Weiter → Erstellen**
+
+#### Update-Compliance überwachen
+
+15. Navigiere zu **Berichte → Windows-Updates**
+16. Wähle zwischen:
+    - **Quality updates:** Status der monatlichen Updates je Ring
+    - **Feature updates:** Rollout-Fortschritt der Windows-Versionen
+    - **Driver updates:** Status der Treiber-Updates
+17. Klicke auf **Exportieren** für einen CSV-Bericht
+
+> [!TIP]
+> Nutze die **Pausierungsfunktion** bei Problemen: Navigiere zum betroffenen Update Ring → **Qualitätsupdates pausieren** oder **Feature-Updates pausieren**. Updates werden für maximal 35 Tage pausiert.
+
+---
+
 ## PowerShell: Update-Status prüfen
 
 ### Windows Update Log analysieren

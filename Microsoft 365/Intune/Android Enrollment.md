@@ -286,6 +286,48 @@ graph LR
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Android Enterprise über die UI einrichten und verwalten
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+
+#### Managed Google Play verbinden (Voraussetzung)
+
+2. Navigiere zu **Geräte → Android → Android Enrollment → Verwaltetes Google Play**
+3. Klicke auf **Ich stimme zu** und dann auf **Starten**
+4. Melde dich mit dem Unternehmens-Google-Account an und bestätige die Verbindung mit Intune
+5. Klicke auf **Fertig stellen**
+
+#### Android Enterprise Enrollment-Profil erstellen (Work Profile / BYOD)
+
+6. Navigiere zu **Geräte → Android → Android Enrollment → Arbeitsprofile für persönliche Geräte**
+7. Klicke auf **+ Erstellen**
+8. Konfiguriere den **Namen** und optionale Beschreibung
+9. Weise das Profil einer Entra ID-Gruppe zu → **Weiter → Erstellen**
+
+#### Vollständig verwaltete Geräte (COBO / COPE) einrichten
+
+10. Navigiere zu **Geräte → Android → Android Enrollment → Vollständig verwaltete Geräte**
+11. Klicke auf **Unternehmenseigene Vollständig verwaltete Benutzergeräte** → wähle die gewünschte Enrollment-Methode:
+    - **QR-Code:** zum Scannen beim Geräte-Setup
+    - **NFC-Token:** für NFC-basiertes Enrollment
+    - **Enrollment-Token:** alphanumerischer Token für die manuelle Eingabe
+12. Notiere oder lade den Enrollment-Token / QR-Code herunter
+
+#### Managed Google Play App genehmigen
+
+13. Navigiere zu **Apps → Android → + Hinzufügen → Verwaltete Google Play App**
+14. Suche nach der App → klicke auf **Genehmigen** → genehmige die angeforderten Berechtigungen
+15. Klicke auf **Genehmigt halten** → **Wählen**
+16. Klicke auf **Synchronisieren** um die App in Intune verfügbar zu machen
+17. Weise die App einer Gruppe mit dem gewünschten **Intent** (Erforderlich / Verfügbar) zu
+
+> [!TIP]
+> Nutze den **Managed Home Screen** (Microsoft Launcher for Business) für Dedicated Devices (Kiosk-Szenarien): **Apps → Android → + Hinzufügen → Verwaltete Google Play App** → suche nach „Managed Home Screen".
+
+---
+
 ## Fehlerbehebung Android Enrollment
 
 ### Häufige Probleme

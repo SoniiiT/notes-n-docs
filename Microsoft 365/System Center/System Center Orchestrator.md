@@ -234,6 +234,52 @@ Invoke-RestMethod `
 
 ---
 
+## Via Runbook Designer (UI)
+
+### Runbook erstellen
+
+1. Öffne den **Runbook Designer**
+2. Erweitere im linken Bereich den Ordner **Runbooks**
+3. Rechtsklick auf einen Ordner → **Neues Runbook**
+4. Vergib einen aussagekräftigen Namen (z.B. `VM-Bereitstellung-Automatisch`)
+5. Im Designerbereich (rechts):
+   - Wähle im Menü **Activities** die gewünschte Kategorie
+   - Ziehe Activities auf die Arbeitsfläche
+   - Verbinde Activities mit **Links** (Pfeilverbindungen) in der gewünschten Reihenfolge
+6. Speichere das Runbook (Strg+S)
+7. Klicke auf **Runbook prüfen** (Check) in der Symbolleiste für Validierung
+
+### Activity konfigurieren
+
+1. Doppelklicke auf eine Activity (z.B. **Run Program** oder **Create VM**)
+2. Im Properties-Dialog:
+   - **Allgemein:** Computername, Programmpfad, Parameter eingeben
+   - **Erweitert:** Timeout, Fehlerverhalten
+3. Für Eingaben aus vorherigen Activities:
+   - Klicke mit rechter Maustaste in ein Eingabefeld → **Abonnieren → Veröffentlichte Daten**
+   - Wähle die Quell-Activity und das gewünschte Ausgabefeld
+4. Klicke auf **Fertig**
+
+> [!TIP] Published Data
+> **Veröffentlichte Daten** (Published Data) ist das Kernkonzept von SCOrch — damit werden Ausgaben einer Activity als Eingaben der nächsten verwendet, ohne manuelle Variablendefinitionen.
+
+### Links und Bedingungen konfigurieren
+
+1. Klicke mit rechter Maustaste auf einen Link-Pfeil → **Eigenschaften**
+2. Im Dialogfenster:
+   - **Bedingungen:** Include- oder Exclude-Regeln für Verzweigungslogik hinzufügen (z.B. `Exit code equals 0`)
+   - **Farbe:** Visuell zwischen Erfolgs- (grün) und Fehlerpfad (rot) unterscheiden
+3. Klicke auf **OK**
+
+### Runbook testen und veröffentlichen
+
+1. Klicke auf **Runbook-Tester** in der Symbolleiste
+2. Im Tester-Fenster: **Ausführen** klicken und Aktivitätsstatus live beobachten
+3. Nach erfolgreichem Test: Tester schließen
+4. Klicke auf **Einchecken** (Check In) um das Runbook auf dem Runbook-Server zu veröffentlichen
+
+---
+
 ## PowerShell-Integration
 
 ### Run .NET Script Activity (PowerShell)

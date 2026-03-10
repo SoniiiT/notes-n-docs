@@ -278,6 +278,53 @@ SCVMM 2022 kann Azure Stack HCI-Cluster als Hyper-V Hosts verwalten:
 
 ---
 
+## Via VMM Konsole (UI)
+
+### Neuen Hyper-V-Host hinzufügen
+
+1. Öffne die **VMM Konsole**
+2. Wechsle zur Ansicht **Fabric** (Schaltfläche unten links)
+3. Navigiere zu **Server → Alle Hosts**
+4. Klicke auf **Hosts hinzufügen** in der Aktionsleiste (Ribbon)
+5. Im Assistenten:
+   - **Ressourcentyp:** Windows Server-Computer in einer Active Directory-Domäne auswählen
+   - **Anmeldeinformationen:** Ausführendes Konto auswählen oder erstellen
+   - **Computer:** Hostnamen oder IP-Adressen eingeben und prüfen
+   - **Hostgruppe:** Ziel-Hostgruppe (z.B. `Production\Rack01`) auswählen
+6. Klicke auf **Weiter** und **Fertig stellen**
+
+### VM-Vorlage erstellen
+
+1. Wechsle zur Ansicht **Bibliothek**
+2. Navigiere zu **Vorlagen → VM-Vorlagen**
+3. Klicke auf **VM-Vorlage erstellen** in der Aktionsleiste
+4. Im Assistenten:
+   - **Quelle:** Aus vorhandener VM (Sysprep vorausgesetzt) oder aus VHD
+   - **Identität:** Name, Beschreibung, Betriebssystem
+   - **Hardware:** CPU-Anzahl, RAM, Netzwerkadapter-Konfiguration
+   - **Betriebssystem:** Productkey, Zeitzone, Administratorkennwort, Domänenbeitritt
+   - **Anwendung/SQL:** Optional Application Framework Profile hinzufügen
+5. Klicke auf **Fertig stellen**
+
+### Virtuelle Maschine aus Vorlage bereitstellen
+
+1. Wechsle zur Ansicht **VMs und Dienste**
+2. Klicke auf **Virtuellen Computer erstellen** in der Aktionsleiste
+3. Im Assistenten:
+   - **Quelle:** Aus vorhandener VM-Vorlage erstellen
+   - **Identität:** Name, Beschreibung, VM-Generation
+   - **Konfiguration:** CPU und RAM bei Bedarf anpassen
+   - **Verwaltung:** Ausführendes Konto, Verfügbarkeits-Set
+   - **Platzierung:** Host oder Private Cloud auswählen (automatische Bewertung)
+   - **Speicher:** Datenträger und Speicherpfad konfigurieren
+   - **Netzwerk:** Virtuelle Netzwerke zuweisen
+4. Klicke auf **Weiter** und **Fertig stellen**
+
+> [!TIP] Private Cloud für Self-Service
+> Weise VM-Vorlagen einer **Private Cloud** zu und vergebe Rollen unter **Einstellungen → Sicherheit → Benutzerrollen**, damit Teams VMs ohne Admin-Rechte selbst bereitstellen können.
+
+---
+
 ## Wichtige PowerShell-Cmdlets
 
 ```powershell

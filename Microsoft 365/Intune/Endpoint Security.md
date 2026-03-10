@@ -511,6 +511,58 @@ graph TD
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Endpoint Security Richtlinien über die UI konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Endpunktsicherheit**
+
+#### Antivirus-Richtlinie erstellen (Microsoft Defender)
+
+3. Navigiere zu **Endpunktsicherheit → Antivirus → + Richtlinie erstellen**
+4. Wähle **Plattform: Windows 10, Windows 11 und Windows Server**, **Profil: Microsoft Defender Antivirus**
+5. Konfiguriere:
+   - **Echtzeitschutz aktivieren:** `Aktiviert`
+   - **Verhaltensüberwachung aktivieren:** `Aktiviert`
+   - **Cloudbasierter Schutz:** `Aktiviert`
+   - **PUA-Schutz:** `PUAs blockieren`
+   - **Netzwerkschutz:** `Aktiviert (Blockiermodus)`
+6. Weise die Richtlinie einer Windows-Gerätegruppe zu → **Weiter → Erstellen**
+
+#### BitLocker-Richtlinie erstellen
+
+7. Navigiere zu **Endpunktsicherheit → Datenträgerverschlüsselung → + Richtlinie erstellen**
+8. Wähle **Plattform: Windows 10 und höher**, **Profil: BitLocker**
+9. Konfiguriere:
+   - **BitLocker-Verschlüsselung aktivieren:** `Ja`
+   - **Verschlüsselungsalgorithmus:** `XTS-AES 256-Bit`
+   - **BitLocker-Wiederherstellungsinformationen in Azure Active Directory speichern:** `Ja`
+   - **Wiederherstellungsinformationen müssen gespeichert werden:** `Ja`
+10. Weise die Richtlinie zu → **Weiter → Erstellen**
+
+#### Firewall-Richtlinie erstellen
+
+11. Navigiere zu **Endpunktsicherheit → Firewall → + Richtlinie erstellen**
+12. Wähle **Plattform: Windows 10, Windows 11 und Windows Server**, **Profil: Microsoft Defender Firewall**
+13. Konfiguriere für alle Profile (Domäne, Privat, Öffentlich):
+    - **Firewall:** `Aktiviert`
+    - **Eingehende Verbindungen standardmäßig blockieren:** `Ja`
+14. Weise die Richtlinie zu → **Weiter → Erstellen**
+
+#### Security Baseline deployen
+
+15. Navigiere zu **Endpunktsicherheit → Sicherheitsbaselines**
+16. Wähle z. B. **Sicherheitsbaseline für Windows 10 und höher**
+17. Klicke auf **+ Profil erstellen** → vergib einen Namen
+18. Überprüfe die vordefinierten Einstellungen und passe ggf. einzelne Werte an
+19. Weise die Baseline einer Windows-Gerätegruppe zu → **Weiter → Erstellen**
+
+> [!TIP]
+> Überprüfe die **Sicherheitsaufgaben** unter **Endpunktsicherheit → Sicherheitsaufgaben** — hier erscheinen Empfehlungen aus der Microsoft Defender Vulnerability Management Integration, die direkt zu Remediations führen können.
+
+---
+
 ## Defender for Endpoint Integration (MDE-Connector)
 
 ### Connector-Konfiguration

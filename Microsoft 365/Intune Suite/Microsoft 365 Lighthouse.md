@@ -300,6 +300,57 @@ $complianceStatus.value |
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Tenant Onboarding in Lighthouse
+
+1. Öffne **[lighthouse.microsoft.com](https://lighthouse.microsoft.com)**
+2. Navigiere zu **Mandanten** → **+ Mandant hinzufügen**
+3. Wähle den Kundenmandanten aus der Liste der GDAP-Beziehungen
+4. Bestätige die **GDAP-Beziehung** und die erforderlichen Berechtigungen
+5. Überwache den **Onboarding-Status** in der Mandantenübersicht:
+   - **Aktiv** — Vollständig ongeboardet
+   - **In Bearbeitung** — Onboarding läuft
+   - **Inaktiv** — Voraussetzungen nicht erfüllt
+6. Bei Problemen: Auf den Mandanten klicken → **Onboarding-Status** → Fehlermeldungen prüfen
+
+### Baseline deployen
+
+1. Navigiere zu **Bereitstellungspläne** *(Deployment Plans)*
+2. Einen vorhandenen **Baseline**-Plan auswählen oder **+ Erstellen**
+3. Klicke auf **Mandanten zuweisen** → Kundenmandanten aus der Liste wählen
+4. **Vergleichsansicht:** Baseline-Sollzustand vs. aktueller Ist-Zustand des Mandanten
+5. Klicke **Bereitstellen** für einzelne Konfigurationsschritte
+6. **Deployment-Status überwachen:** Konform / Nicht konform / In Bearbeitung pro Mandant
+
+### Risky Users überwachen und behandeln
+
+1. Navigiere zu **Benutzer** → **Riskante Benutzer**
+2. **Filter nach Mandant** über das Dropdown oben
+3. Sortiere nach **Risikoebene** (Hoch / Mittel / Niedrig)
+4. Benutzer anklicken für Details: Risikoereignisse, letzte Anmeldungen, MFA-Status
+5. Verfügbare **Aktionen:**
+   - **Kennwort zurücksetzen** — Sofortiger Kennwortwechsel erzwingen
+   - **MFA-Registrierung erzwingen** — Nächste Anmeldung erfordert MFA-Setup
+   - **Alle Sitzungen sperren** — Alle aktiven Tokens widerrufen
+   - **Als sicher bestätigen** — Risiko-Flag entfernen (nach Untersuchung)
+
+### Device Compliance über alle Mandanten prüfen
+
+1. Navigiere zu **Geräte** → **Gerätekonformität**
+2. Gesamtübersicht aller Mandanten auf einen Blick
+3. **Filter** nach Mandant, Konformitätsstatus oder OS-Typ
+4. Nicht konforme Geräte anklicken → Richtlinie und Fehlerdetails anzeigen
+
+### Service Health überwachen
+
+1. Navigiere zu **Dienstintegrität** *(Service Health)*
+2. Alle aktiven M365-Vorfälle und geplanten Wartungen aller Mandanten
+3. **Filter nach Mandant** oder Dienst (Exchange, Teams, Intune, etc.)
+4. Klicke auf einen Vorfall für Zeitplan, Auswirkungen und Workarounds
+
+---
+
 ## PowerShell: Tenant-übergreifende Automation
 
 ### Alle Lighthouse-Tenants abrufen

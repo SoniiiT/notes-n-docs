@@ -238,6 +238,49 @@ EPM berechnet einen **Risk Score** für jedes Gerät basierend auf:
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### EPM Policy erstellen
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Endpunktsicherheit** → **Endpoint Privilege Management**
+3. Klicke auf **Richtlinien** → **+ Richtlinie erstellen**
+4. Wähle **Plattform:** Windows und den gewünschten **Policy-Typ:**
+   - **Windows Elevation Settings Policy** — Basiseinstellungen (EPM aktivieren, Default-Verhalten)
+   - **Windows Elevation Rules Policy** — Regeln für spezifische Anwendungen
+5. Vergib einen **Namen** und optional eine **Beschreibung**
+6. Konfiguriere die **Elevation Settings** (für Settings Policy):
+   - **Endpoint Privilege Management:** Aktiviert
+   - **Default Elevation Response:** Ablehnen *(empfohlen)* oder Benutzer bestätigt
+   - **Validierung:** Zertifikat, Pfad und/oder Hash
+7. Konfiguriere **Elevation Rules** (für Rules Policy):
+   - Klicke **+ Regel hinzufügen**
+   - Gib **Dateiname/Pfad**, **Datei-Hash (SHA-256)**, **Publisher** und **Produktname** ein
+   - Wähle **Elevation-Typ:** Automatisch / Benutzer bestätigt / Vom Support genehmigt
+   - Konfiguriere **Kindprozessverhalten** (empfohlen: Elevation ablehnen)
+8. **Zuweisung:** Zielgruppen (Benutzer- oder Gerätegruppen) auswählen
+9. **Überprüfen und erstellen** → **Erstellen**
+
+### Approval Requests verwalten
+
+1. Navigiere zu **Endpunktsicherheit** → **Endpoint Privilege Management** → **Genehmigungsanfragen**
+2. Ausstehende Anfragen anzeigen: Benutzer, Gerät, Anwendung, Begründung, Datei-Hash
+3. Klicke auf eine Anfrage → **Genehmigen** oder **Ablehnen**
+4. Optional: Kommentar zur Entscheidung hinzufügen
+
+### EPM Reports aufrufen
+
+1. Navigiere zu **Berichte** → **Endpoint Analytics** → **Endpoint Privilege Management**
+2. Verfügbare Report-Typen:
+   - **Elevation Report** — Alle Elevation-Events mit Benutzer, Gerät, App, Zeitstempel
+   - **Verwaltete Elevations** — Elevations durch EPM-Policies (Automatisch/Bestätigt)
+   - **Nicht verwaltete Elevations** — Elevations ohne passende EPM-Regel
+   - **Abgelehnte Elevations** — Abgelehnte Elevation-Anfragen
+3. Filter nach Zeitraum, Benutzer oder Gerät anwenden
+4. **Exportieren** für weitere Analyse in Excel/CSV
+
+---
+
 ## PowerShell und Microsoft Graph für EPM-Audit
 
 ### Graph API: Elevation Reports abfragen

@@ -549,6 +549,38 @@ Aktivierung: Enterprise Settings → Data residency → EU
 
 ---
 
+## Via GitHub.com (UI)
+
+### Copilot aktivieren (Personal)
+
+1. Öffne **[github.com/settings/copilot](https://github.com/settings/copilot)**
+2. Wähle **Copilot Individual** oder **Business**
+3. Plan auswählen → Zahlungsmethode eingeben → **Save**
+
+### Copilot in IDE nutzen
+
+1. VS Code: Extension **GitHub Copilot** installieren
+2. Mit GitHub Account anmelden
+3. Vorschläge erscheinen beim Tippen (Tab zum Akzeptieren)
+
+### Copilot für Organisation konfigurieren
+
+1. Öffne **github.com/organizations/[org]/settings/copilot**
+2. **Policies** → Suggestion matching, Telemetry, etc. einstellen
+3. **Access management** → Festlegen, welche Mitglieder Zugriff haben
+
+### Copilot Chat in github.com
+
+1. Öffne **[github.com](https://github.com)** → Copilot Icon (oben rechts)
+2. Fragen stellen, Code-Probleme debuggen, Dokumentation generieren
+
+### Pull Request Zusammenfassung
+
+1. Pull Request öffnen → **Copilot** Icon im Beschreibungsfeld
+2. **Summarize** → Automatische Zusammenfassung einfügen
+
+---
+
 ## Verwandte Notizen
 
 - [[GitHub Grundlagen]]

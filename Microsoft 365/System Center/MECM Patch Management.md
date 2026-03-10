@@ -320,6 +320,51 @@ flowchart TD
 
 ---
 
+## Via Configuration Manager Konsole (UI)
+
+### Software Update Group (SUG) erstellen und bereitstellen
+
+1. Öffne die **Configuration Manager Konsole**
+2. Navigiere zu **Softwarebibliothek → Softwareupdates → Alle Softwareupdates**
+3. Filtere nach Klassifikation, Produkt und Veröffentlichungsdatum
+4. Wähle gewünschte Updates aus → Rechtsklick → **Software Update Group erstellen**
+5. Gib einen Namen ein (z.B. `Patch-Tuesday-2025-06`) und klicke **Erstellen**
+6. Navigiere zu **Softwarebibliothek → Softwareupdates → Software Update Groups**
+7. Rechtsklick auf die SUG → **Bereitstellen**
+8. Im Assistenten:
+   - **Allgemein:** Bereitstellungsname, Sammlung auswählen
+   - **Bereitstellungseinstellungen:** Typ (Erforderlich), Aktivierung zum Stichtag
+   - **Zeitplanung:** Verfügbarkeitsdatum und Stichtag festlegen
+   - **Benutzererfahrung:** Benachrichtigungen, Neustartverhalten (z.B. Server vs. Workstations)
+   - **Verteilungspunkte:** Download-Verhalten (von DP oder direkt von Internet)
+9. Klicke auf **Fertig stellen**
+
+### Automatic Deployment Rule (ADR) einrichten
+
+1. Navigiere zu **Softwarebibliothek → Softwareupdates → Automatische Bereitstellungsregeln**
+2. Klicke auf **Automatische Bereitstellungsregel erstellen**
+3. Im Assistenten:
+   - **Allgemein:** Name, Sammlung, vorhandene SUG erweitern oder neue erstellen
+   - **Bereitstellungseinstellungen:** Aktivierung, Weckcomputer
+   - **Softwareupdates:** Filter nach Klassifikation, Produkt, Ablösungszustand, Veröffentlicht (letzte 1 Monat)
+   - **Zeitplan:** Auswertungszeitplan (z.B. jeden 2. Dienstag im Monat)
+   - **Bereitstellungszeitplan:** Stichtag relativ zur Auswertung (z.B. +7 Tage)
+4. Klicke auf **Fertig stellen**
+
+> [!TIP] Patch-Tuesday-Automatisierung
+> Setze den ADR-Zeitplan auf **Monatlich – 2. Dienstag** und den Stichtag auf **+7 Tage** — so haben Admins eine Woche Zeit zum Testen, bevor Updates automatisch installiert werden.
+
+### Compliance-Status überwachen
+
+1. Navigiere zu **Überwachung → Bereitstellungen**
+2. Wähle die Update-Bereitstellung aus
+3. Im unteren Detailbereich:
+   - **Zusammenfassung:** Gesamtanzahl, konform, nicht konform, Fehler
+   - **Konformitätsstatistik:** Prozentuale Übersicht
+4. Rechtsklick → **Ressourcen anzeigen** für detaillierte Geräteliste nach Status
+
+---
+
 ## Verwandte Notizen
 
 - [[MECM SCCM Grundlagen]]
