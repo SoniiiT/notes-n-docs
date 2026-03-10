@@ -155,22 +155,22 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Microsoft Defender for Office 365 | Plan 1/2, Safe Links, Safe Attachments, Anti-Phishing, AIR |
-| Microsoft Defender for Endpoint | Onboarding, EDR, Attack Surface Reduction, Vulnerability Management |
-| Microsoft Defender for Identity | On-Premises AD-Schutz, Lateral Movement Detection, Alerts |
-| Microsoft Defender for Cloud Apps | CASB, Shadow IT, App-Governance, Session Controls, App Connector |
-| Microsoft Defender XDR | Unified Security Operations, Incidents, Hunting, Automated IR |
-| Microsoft Sentinel (SIEM/SOAR) | Workspaces, Analytics Rules, Playbooks, Hunting, Connectors |
-| Microsoft Purview Grundlagen | Compliance Center, Datenschutz, Klassifizierung, Governance |
-| Sensitivity Labels | Klassifizierung, Verschlüsselung, Markierungen, Auto-Labeling |
-| Data Loss Prevention (DLP) | Richtlinien, Bedingungen, Aktionen, Endpunkt-DLP, Teams-DLP |
-| Retention Policies und Labels | Aufbewahrungsfristen, Disposition Review, Regulatory Records |
-| eDiscovery und Audit | Core/Premium eDiscovery, Audit Log, Content Search, Legal Hold |
-| Information Barriers | Kommunikationsbeschränkungen, Segmentierung |
-| Communication Compliance | Richtlinienüberwachung, Reviewer-Workflows, ML-Klassifizierung |
-| Insider Risk Management | Risikorichtlinien, Indikatoren, Alerts, Cases |
-| Microsoft Priva | Privacy Risk Management, Subject Rights Requests |
-| Microsoft Secure Score | Bewertung, Empfehlungen, Vergleich, Verbesserungsmaßnahmen |
+| [[Microsoft Defender for Office 365]] | Plan 1/2, Safe Links, Safe Attachments, Anti-Phishing, AIR |
+| [[Microsoft Defender for Endpoint]] | Onboarding, EDR, Attack Surface Reduction, Vulnerability Management |
+| [[Microsoft Defender for Identity]] | On-Premises AD-Schutz, Lateral Movement Detection, Alerts |
+| [[Microsoft Defender for Cloud Apps]] | CASB, Shadow IT, App-Governance, Session Controls, App Connector |
+| [[Microsoft Defender XDR]] | Unified Security Operations, Incidents, Hunting, Automated IR |
+| [[Microsoft Sentinel]] | Workspaces, Analytics Rules, Playbooks, Hunting, Connectors |
+| [[Microsoft Purview Grundlagen]] | Compliance Center, Datenschutz, Klassifizierung, Governance |
+| [[Sensitivity Labels]] | Klassifizierung, Verschlüsselung, Markierungen, Auto-Labeling |
+| [[Data Loss Prevention DLP]] | Richtlinien, Bedingungen, Aktionen, Endpunkt-DLP, Teams-DLP |
+| [[Retention Policies und Labels]] | Aufbewahrungsfristen, Disposition Review, Regulatory Records |
+| [[eDiscovery und Audit]] | Core/Premium eDiscovery, Audit Log, Content Search, Legal Hold |
+| [[Information Barriers]] | Kommunikationsbeschränkungen, Segmentierung |
+| [[Communication Compliance]] | Richtlinienüberwachung, Reviewer-Workflows, ML-Klassifizierung |
+| [[Insider Risk Management]] | Risikorichtlinien, Indikatoren, Alerts, Cases |
+| [[Microsoft Priva]] | Privacy Risk Management, Subject Rights Requests |
+| [[Microsoft Secure Score]] | Bewertung, Empfehlungen, Vergleich, Verbesserungsmaßnahmen |
 
 ---
 
