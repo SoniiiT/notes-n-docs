@@ -328,6 +328,33 @@ for lakehouse in response.json()["value"]:
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**OneLake-Datenhub öffnen:**
+1. [app.fabric.microsoft.com](https://app.fabric.microsoft.com) → Linke Navigation → **OneLake-Datenhub**
+2. Alle Fabric-Elemente (Lakehouses, Warehouses, KQL-Datenbanken) werden angezeigt
+
+**OneLake Explorer (Desktop) nutzen:**
+- [OneLake Explorer herunterladen](https://aka.ms/OneLakeExplorer) → Installieren
+- Nach Anmeldung erscheint OneLake als Laufwerk im Windows Explorer
+
+**Shortcut im Lakehouse erstellen:**
+- Lakehouse öffnen → Bereich **Tabellen** oder **Dateien** → **+ Neue Abkürzung**
+- Quelle: ADLS Gen2, OneLake (anderes Workspace-Element), Amazon S3 oder Google Cloud Storage wählen
+
+**Daten im Datenhub filtern:**
+- OneLake-Datenhub → Filteroptionen: nach Workspace, Element-Typ oder Eigeninhaber filtern
+
+**Zertifizierungsstatus prüfen:**
+- Element im Datenhub anklicken → **Bewerbung** oder **Zertifiziert** Status anzeigen
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

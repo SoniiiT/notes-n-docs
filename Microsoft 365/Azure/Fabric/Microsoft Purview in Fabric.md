@@ -376,6 +376,34 @@ graph LR
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Purview-Governance in Fabric aufrufen:**
+1. [app.fabric.microsoft.com](https://app.fabric.microsoft.com) → Zahnrad-Icon (⚙) oben rechts → **Admin Portal**
+2. Linke Navigation → **Governance** und **Information Protection**
+
+**Sensitivity Labels anzeigen/verwalten:**
+- Admin Portal → **Information Protection** → **Vertraulichkeitsbezeichnungen** → Status der Label-Einstellungen prüfen
+
+**Data Lineage anzeigen:**
+- Workspace-Element (z. B. Dataset) öffnen → **Herkunft** (Linienansicht) → Datenfluss von Quelle bis Bericht visualisieren
+
+**Purview Data Catalog (Fabric-Assets):**
+- [purview.microsoft.com](https://purview.microsoft.com) → **Unified Catalog** → Fabric-Assets suchen und Metadaten anzeigen
+
+**DLP-Richtlinien prüfen:**
+- [purview.microsoft.com](https://purview.microsoft.com) → **Datenverlust-Verhinderung** → Richtlinien für Fabric überprüfen
+
+**Audit-Logs:**
+- Admin Portal → **Audit-Protokolle** → Fabric-Aktivitäten filtern und exportieren
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

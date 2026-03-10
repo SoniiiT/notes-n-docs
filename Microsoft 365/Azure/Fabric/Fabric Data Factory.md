@@ -379,6 +379,37 @@ for pipeline in pipelines:
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Datenpipeline erstellen:**
+1. Workspace öffnen → **+ Neu** → **Datenpipeline**
+2. Name eingeben → **Erstellen**
+
+**Aktivitäten hinzufügen:**
+- Pipeline-Canvas → **Aktivitäten** (oben) → Aktivität per Drag & Drop einfügen
+- Oder **+ Aktivität hinzufügen** im Canvas
+
+**Copy-Aktivität konfigurieren:**
+- Aktivität auswählen → Reiter **Quelle** → Verbindung/Datensatz wählen
+- Reiter **Ziel** → Zielspeicher konfigurieren
+
+**Dataflow Gen2 erstellen:**
+- Workspace → **+ Neu** → **Dataflow Gen2** → Power Query Editor öffnet sich
+
+**Pipeline ausführen:**
+- **Ausführen** (▶) → Manuell ausführen oder Trigger planen
+- Reiter **Ausgabe** → Ausführungsstatus und Details prüfen
+
+**Zeitplan konfigurieren:**
+- Pipeline → **Trigger hinzufügen** → **Neu** → Zeitplan definieren → **Speichern**
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

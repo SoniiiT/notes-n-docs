@@ -324,6 +324,27 @@ Microsoft kommuniziert die Roadmap öffentlich unter [aka.ms/fabricroadmap](http
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Workspace erstellen:**
+1. [app.fabric.microsoft.com](https://app.fabric.microsoft.com) öffnen
+2. Linke Navigation → **Workspaces** → **+ Neuer Workspace**
+3. Name und Beschreibung eingeben → **Erweitert** → Lizenztyp wählen
+4. **Kapazität zuweisen** (Fabric-Kapazität oder Premium) → **Anwenden**
+
+**Fabric-Erfahrung wechseln:**
+- Linke Navigation → **Fabric-Startseite** → Erfahrung über das Seitenmenü auswählen (z. B. Data Engineering, Power BI, Real-Time Intelligence)
+
+**Fabric-Trial aktivieren:**
+- [app.fabric.microsoft.com](https://app.fabric.microsoft.com) → Benachrichtigung oben rechts → **Fabric-Testversion starten**
+
+---
+
 ## Verwandte Notizen
 
 - [[OneLake]]

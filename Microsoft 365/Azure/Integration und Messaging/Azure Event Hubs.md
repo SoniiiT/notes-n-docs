@@ -388,6 +388,36 @@ az network private-endpoint create \
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Event Hubs-Namespace erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Event Hubs**
+2. Ressourcengruppe, Namespace-Name, Region und **Tarif** wählen (Basic, Standard, Premium, Dedicated)
+3. **Erstellen**
+
+**Event Hub hinzufügen:**
+- Namespace öffnen → **+ Event Hub**
+- Name, Partitionsanzahl (Standard: 4) und Aufbewahrungsdauer festlegen → **Erstellen**
+
+**Consumer Group erstellen:**
+- Event Hub öffnen → **Consumer Groups** → **+ Consumer Group** → Name eingeben
+
+**Capture aktivieren:**
+- Event Hub → **Capture** → **Ein** → Azure Storage oder Data Lake als Ziel wählen → Dateiformat (Avro) und Zeitfenster festlegen
+
+**Verbindungszeichenfolge abrufen:**
+- Namespace → **SAS-Richtlinien** → Richtlinie auswählen → Verbindungszeichenfolge kopieren
+
+**Daten überwachen:**
+- Namespace → **Überwachung** → **Metriken** → Eingehende/ausgehende Nachrichten visualisieren
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Event Grid]]

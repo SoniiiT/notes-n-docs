@@ -219,6 +219,36 @@ print(f"Verbundene Clients: {info.client_count}")
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Web PubSub-Dienst erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Web PubSub Service**
+2. Ressourcengruppe, Name, Region und **Tarif** wählen (Free: 1 Einheit, Standard: bis 100 Einheiten)
+3. **Erstellen**
+
+**Connection String abrufen:**
+- Web PubSub → **Schlüssel** → **Primäre Verbindungszeichenfolge** kopieren
+
+**Hub-Einstellungen konfigurieren:**
+- Web PubSub → **Einstellungen** → **+ Hub hinzufügen** → Hub-Name festlegen
+- Event Handler-URL (Upstream) konfigurieren → Systemereignisse auswählen (connect, disconnected, message)
+
+**Skalierung:**
+- Web PubSub → **Skalieren** → Einheitenanzahl erhöhen oder Tier wechseln
+
+**Verbindungen überwachen:**
+- Web PubSub → **Metriken** → Aktive Verbindungen, gesendete Nachrichten, Fehler visualisieren
+
+**Live Trace Tool:**
+- Web PubSub → **Live-Ablaufverfolgung** → Echtzeit-Verbindungsdiagnose aktivieren
+
+---
+
 ## REST API für Server-zu-Client Messaging
 
 Die REST API ermöglicht Messaging ohne persistente Server-Verbindung:

@@ -411,6 +411,36 @@ graph LR
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Azure Migrate-Projekt erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Azure Migrate**
+2. Ressourcengruppe, Projektname und Geografie wählen → **Erstellen**
+
+**Ermittlung starten:**
+- Migrate-Projekt → **Server, Datenbanken und Web-Apps** → **Ermittlung** → **Appliance-basierte Ermittlung**
+- Discovery Appliance herunterladen (OVA/VHD) → In VMware/Hyper-V bereitstellen → Anmeldedaten konfigurieren
+
+**Assessment erstellen:**
+- Nach Ermittlung → **Bewerten** → Typ wählen (Azure VMs, AVS, SQL, App Service) → Zielparameter festlegen → Bericht anzeigen
+
+**Migrationstools konfigurieren:**
+- Migrate-Projekt → **Migration und Modernisierung** → **Replikation einrichten**
+- Mobilitätsdienst installieren → Replikation starten → Test-Failover durchführen
+
+**Datenbankmigrationen:**
+- Migrate-Projekt → **Datenbanken** → **Azure Database Migration Service** → Migrationsprojekt erstellen
+
+**Fortschritt verfolgen:**
+- Migrate-Projekt → **Übersicht** → Ermittelte Server, Bewertungen und Migrationen im Dashboard anzeigen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Site Recovery]]

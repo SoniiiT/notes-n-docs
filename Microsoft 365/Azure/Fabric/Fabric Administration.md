@@ -321,6 +321,37 @@ Write-Host "Domain erstellt: $($domain.id)"
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Admin Portal öffnen:**
+1. [app.fabric.microsoft.com](https://app.fabric.microsoft.com) öffnen
+2. Oben rechts → **Zahnrad-Icon (⚙)** → **Adminportal**
+
+**Mandanteneinstellungen konfigurieren:**
+- Admin Portal → **Mandanteneinstellungen** → Einstellungen aktivieren/deaktivieren (z. B. Copilot, Export, Freigabe)
+
+**Kapazität verwalten:**
+- Admin Portal → **Kapazitätseinstellungen** → Kapazität auswählen → Arbeitslast und Skalierung konfigurieren
+
+**Workspaces verwalten:**
+- Admin Portal → **Workspaces** → Workspace suchen → Details, Benutzer, Kapazitätszuweisung anzeigen
+
+**Benutzeraktivitäten überwachen:**
+- Admin Portal → **Verwendungsmetriken** → Aktive Benutzer, Abfragen und Kapazitätsnutzung einsehen
+
+**Domains konfigurieren:**
+- Admin Portal → **Domänen** → **+ Neue Domäne erstellen** → Workspaces zuweisen
+
+**Fabric-Kapazität in Azure verwalten:**
+- [portal.azure.com](https://portal.azure.com) → **Microsoft Fabric** → Kapazität auswählen → Skalierung und Einstellungen
+
+---
+
 ## Admin-APIs (Power BI / Fabric REST API)
 
 Fabric- und Power BI-Admin-APIs ermöglichen die **programmatische Verwaltung** aller Fabric-Ressourcen.

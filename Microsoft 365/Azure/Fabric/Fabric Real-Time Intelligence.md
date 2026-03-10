@@ -451,6 +451,36 @@ WebEvents
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Eventhouse erstellen:**
+1. Workspace öffnen → **+ Neu** → **Eventhouse**
+2. Name eingeben → **Erstellen** (enthält automatisch eine KQL-Datenbank)
+
+**KQL-Datenbank hinzufügen:**
+- Eventhouse öffnen → **+ Neue Datenbank** → Name eingeben
+
+**Eventstream erstellen:**
+- Workspace → **+ Neu** → **Eventstream**
+- Quelle hinzufügen: **+ Quelle** (Event Hubs, IoT Hub, Custom App etc.)
+- Ziel hinzufügen: **+ Ziel** → KQL-Datenbank oder Lakehouse auswählen
+
+**KQL-Abfrage ausführen:**
+- KQL-Datenbank öffnen → **Abfrage-Explorer** → KQL eingeben → **Ausführen**
+
+**Real-Time Dashboard erstellen:**
+- Workspace → **+ Neu** → **Real-Time-Dashboard** → Kacheln mit KQL-Abfragen konfigurieren
+
+**Activator erstellen:**
+- Workspace → **+ Neu** → **Activator** → Datenstrom verbinden → Regel und Aktion definieren
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

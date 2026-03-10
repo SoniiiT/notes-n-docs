@@ -392,6 +392,38 @@ spec:
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**APIM-Instanz erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **API Management**
+2. Ressourcengruppe, Name, Region und **Pricing Tier** wählen (Developer, Basic, Standard, Premium)
+3. **Erstellen** → Bereitstellung dauert 30–40 Minuten
+
+**API importieren:**
+- APIM-Instanz → **APIs** → **+ API hinzufügen**
+- Format wählen: **OpenAPI** (Swagger), **WSDL**, **Azure Function**, **Logic App** etc.
+- Spezifikations-URL oder Datei hochladen → **Erstellen**
+
+**Policy konfigurieren:**
+- API oder Operation auswählen → **Design** → **Inbound/Outbound/Backend processing** → **+ Policy hinzufügen**
+- Policy-Editor öffnet sich → XML oder Policy-Designer verwenden
+
+**Developer Portal aktivieren:**
+- APIM → **Developer Portal** → **Veröffentlichen** → Portal-URL teilen
+
+**API testen:**
+- API auswählen → Operation anklicken → Reiter **Test** → Parameter eingeben → **Senden**
+
+**Subscription erstellen:**
+- APIM → **Abonnements** → **+ Abonnement hinzufügen** → Scope (Produkt/API) wählen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Logic Apps]]

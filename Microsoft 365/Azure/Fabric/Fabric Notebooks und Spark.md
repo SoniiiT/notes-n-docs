@@ -468,6 +468,34 @@ graph TD
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Notebook erstellen:**
+1. Workspace öffnen → **+ Neu** → **Notebook**
+2. Notebook öffnet sich mit Standard-PySpark-Umgebung
+
+**Lakehouse anhängen:**
+- Im Notebook links → **+ Datenspeicher hinzufügen** → Lakehouse auswählen
+
+**Spark-Compute wählen:**
+- Oben rechts im Notebook → Cluster-Symbol → **Starter-Pool** (kostenlos) oder eigene **Umgebung** auswählen
+
+**Sprache wechseln:**
+- Zellen-Dropdown → Python / Scala / SQL / R auswählen
+
+**Notebook ausführen:**
+- **Alle ausführen** (Doppelpfeil) oder einzelne Zelle mit **Shift+Enter**
+
+**Notebook teilen:**
+- **Datei** → **Teilen** → Benutzer hinzufügen oder Link erstellen
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

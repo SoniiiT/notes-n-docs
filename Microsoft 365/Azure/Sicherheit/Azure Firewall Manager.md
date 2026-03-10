@@ -295,6 +295,37 @@ Write-Output "Regelsammlungsgruppe zugeordnet: $($RuleCollectionGroup.Name)"
 
 ---
 
+---
+
+## Via Azure Portal / Defender for Cloud (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Firewall Manager öffnen:**
+1. [portal.azure.com](https://portal.azure.com) → Suche: **Firewall Manager**
+2. **Übersicht** zeigt alle geschützten Hubs und VNets
+
+**Firewall-Richtlinie erstellen:**
+- Firewall Manager → **Azure Firewall-Richtlinien** → **+ Erstellen**
+- Region, Tier (Standard/Premium) und übergeordnete Richtlinie (für Vererbung) wählen
+- Regeln in den Reitern **DNAT**, **Netzwerk**, **Anwendung** konfigurieren
+
+**Geschütztes Virtual Hub erstellen:**
+- Firewall Manager → **Geschützte virtuelle Hubs** → **+ Neue geschützte virtuelle Hub-Instanz erstellen**
+- Virtual WAN und Hub auswählen → Azure Firewall oder Security Partner Provider konfigurieren
+
+**Hub-and-Spoke mit Firewall absichern:**
+- Firewall Manager → **Azure Virtual Networks** → VNet auswählen → **Sicherheitskonfiguration** zuweisen
+
+**IP Groups verwalten:**
+- Firewall Manager → **IP-Gruppen** → **+ Erstellen** → IP-Adressen/Ranges eingeben → In Firewallregeln verwenden
+
+**Monitoring:**
+- Firewall Manager → Firewall auswählen → **Diagnoseeinstellungen** → Log Analytics Workspace verbinden
+
+---
+
 ## Policy-as-Code mit Bicep
 
 ### Firewall Policy mit Regelsammlung

@@ -372,6 +372,31 @@ ORDER BY TABLE_SCHEMA, TABLE_NAME;
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Lakehouse erstellen:**
+1. Workspace öffnen → **+ Neu** → **Lakehouse**
+2. Name eingeben → **Erstellen**
+
+**Dateien hochladen:**
+- Lakehouse öffnen → Bereich **Dateien** → **Hochladen** → Dateien oder Ordner wählen
+
+**Tabellen erstellen (aus Dateien):**
+- Rechtsklick auf Datei (CSV, Parquet) → **In Tabelle laden** → Tabellenname festlegen
+
+**Daten durchsuchen:**
+- Reiter **SQL-Analyseendpunkt** → SQL-Editor öffnen → Tabellen abfragen
+
+**Abkürzung (Shortcut) hinzufügen:**
+- Bereich **Tabellen** oder **Dateien** → **+ Neue Abkürzung** → Quelle wählen (ADLS, OneLake, S3)
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

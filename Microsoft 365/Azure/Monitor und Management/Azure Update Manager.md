@@ -462,6 +462,38 @@ Gesamt:                  $7,50 / Monat
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Azure Update Manager öffnen:**
+1. [portal.azure.com](https://portal.azure.com) → Suche: **Azure Update Manager**
+2. **Übersicht** zeigt Compliance-Status aller Computer
+
+**Compliancebericht anzeigen:**
+- Update Manager → **Computer** → Computer auswählen → Update-Status, ausstehende Updates und Verlauf
+
+**Sofortige Bewertung starten:**
+- Computer → **Jetzt bewerten** → Aktuelle Update-Compliance wird abgerufen
+
+**Updates sofort installieren:**
+- Computer → **Updates installieren** → Updates auswählen → **Jetzt installieren**
+
+**Wartungskonfiguration erstellen:**
+- Update Manager → **Wartungskonfigurationen** → **+ Erstellen**
+- Zeitplan (Wochentag, Uhrzeit, Wiederholung) und zulässige Updates konfigurieren → **Computer zuordnen**
+
+**Azure Policy-Integration:**
+- Update Manager → **Empfehlungen** → Policy-Zuweisung für automatisches Patching konfigurieren
+
+**Reporting Dashboard:**
+- Update Manager → **Berichte** → **Update-Compliance-Bericht** → Filtere nach Abonnement, Region oder Betriebssystem
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Automation]]

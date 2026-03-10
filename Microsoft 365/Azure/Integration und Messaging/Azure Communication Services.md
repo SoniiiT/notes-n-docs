@@ -416,6 +416,34 @@ Console.WriteLine($"Gültig bis: {tokenResult.Value.ExpiresOn}");
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Communication Services-Ressource erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Communication Services**
+2. Ressourcengruppe, Name und Region (Data-at-rest) wählen → **Erstellen**
+
+**Verbindungszeichenfolge abrufen:**
+- Ressource öffnen → **Schlüssel** → **Verbindungszeichenfolge** oder **Zugriffsschlüssel** kopieren
+
+**Telefonnummer kaufen:**
+- Ressource → **Telefonnummern** → **+ Erhalten** → Land, Typ (Lokal/Gebührenfrei) und Funktionen wählen → **Kaufen**
+
+**E-Mail-Domäne konfigurieren:**
+- Ressource → **E-Mail** → **+ Domänen hinzufügen** → Azure-Domäne (kostenlos) oder eigene Domäne verifizieren
+
+**Teams-Interoperabilität aktivieren:**
+- Ressource → **Teams-Interoperabilität** → Aktivieren → Teams Tenant-ID eintragen
+
+**Nutzung und Monitoring:**
+- Ressource → **Überwachung** → **Metriken** → Anrufminuten, gesendete SMS, E-Mails anzeigen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Web PubSub]]

@@ -447,6 +447,34 @@ AzureDiagnostics
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Recovery Services-Tresor erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Recovery Services-Tresor**
+2. Ressourcengruppe, Name und Region → **Erstellen**
+
+**Azure-VM sichern:**
+- Tresor öffnen → **Sicherung** → **Azure** / **Virtuelle Computer** → VMs auswählen → **Sicherung aktivieren**
+
+**Sicherungsrichtlinie konfigurieren:**
+- Tresor → **Sicherungsrichtlinien** → **+ Hinzufügen** → Typ (Azure VM, SQL, Dateifreigabe) → Zeitplan und Aufbewahrung festlegen
+
+**Backup Center aufrufen:**
+- [portal.azure.com](https://portal.azure.com) → Suche: **Backup Center** → Tresore und Sicherungsinstanzen zentral verwalten
+
+**Wiederherstellung durchführen:**
+- Tresor → **Sicherungselemente** → Element auswählen → **Wiederherstellen** → Wiederherstellungspunkt wählen
+
+**Soft Delete konfigurieren:**
+- Tresor → **Eigenschaften** → **Sicherheitskonfiguration** → Vorläufiges Löschen aktivieren/deaktivieren
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Site Recovery]]

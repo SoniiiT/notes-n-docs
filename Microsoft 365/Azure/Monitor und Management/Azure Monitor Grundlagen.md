@@ -391,6 +391,35 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Azure Monitor öffnen:**
+1. [portal.azure.com](https://portal.azure.com) → Suche: **Monitor** oder Linke Navigation → **Monitor**
+2. **Übersicht** zeigt Metriken, Logs, Alerts und Insights
+
+**Metriken anzeigen:**
+- Azure Monitor → **Metriken** → **Bereich auswählen** (Ressource) → Metrik wählen → Diagramm anpassen
+
+**Diagnoseeinstellungen konfigurieren:**
+- Ressource öffnen → **Überwachung** → **Diagnoseeinstellungen** → **+ Diagnoseeinstellung hinzufügen**
+- Ziel wählen: Log Analytics Workspace, Storage Account oder Event Hub
+
+**Workbook erstellen:**
+- Azure Monitor → **Arbeitsmappen** → **+ Neu** → Visualisierungen per Drag & Drop aufbauen
+
+**Insights aufrufen:**
+- Azure Monitor → **Insights** → VMs, Container, Netzwerke oder Anwendungen direkt überwachen
+
+**Dashboard anheften:**
+- Metrik-Diagramm → **An Dashboard anheften** → Vorhandenes oder neues Dashboard wählen
+
+---
+
 ## Schnellstart: Basis-Monitoring per Bicep
 
 ```bicep

@@ -337,6 +337,38 @@ az resource list \
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Logic App erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Logic App**
+2. Ressourcengruppe, Name, Region und **Plan** wählen (Verbrauch / Standard)
+3. **Erstellen** → Nach Bereitstellung **Ressource aufrufen**
+
+**Workflow im Designer erstellen:**
+- Logic App → **Workflows** (Standard) oder direkt **Designer öffnen** (Verbrauch)
+- **Trigger auswählen**: Suche z. B. nach „HTTP", „Schedule", „When a message is received"
+- **+ Neuer Schritt** → Aktion suchen und konfigurieren (z. B. „Send an email", „HTTP")
+
+**Konnektor autorisieren:**
+- Aktion auswählen → **Anmelden** → OAuth-Flow durchlaufen → Verbindung wird gespeichert
+
+**Bedingung hinzufügen:**
+- **+ Neuer Schritt** → **Steuerelement** → **Bedingung** → Bedingungsausdruck formulieren
+
+**Workflow ausführen und testen:**
+- **Ausführen** (▶ Trigger) → Manuelle Ausführung starten
+- **Übersicht** → **Ausführungsverlauf** → Einzelne Ausführung aufklappen → Status jedes Schritts prüfen
+
+**Trigger konfigurieren (Zeitplan):**
+- Trigger öffnen → Wiederholungsintervall und -häufigkeit einstellen → **Speichern**
+
+---
+
 ## Deployment
 
 ### ARM-Template (Consumption)

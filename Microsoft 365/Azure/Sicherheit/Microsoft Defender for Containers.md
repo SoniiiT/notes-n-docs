@@ -329,6 +329,35 @@ az k8s-extension show \
 
 ---
 
+---
+
+## Via Azure Portal / Defender for Cloud (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Defender for Containers aktivieren:**
+1. [portal.azure.com](https://portal.azure.com) → **Microsoft Defender für Cloud**
+2. **Umgebungseinstellungen** → Abonnement auswählen
+3. Plan **Container** auf **Ein** schalten → **Einstellungen** → Sensor-Optionen prüfen → **Speichern**
+
+**Container-Workloads überwachen:**
+- Defender for Cloud → **Workload-Schutz** → **Container** → Cluster und Images anzeigen
+
+**Image-Schwachstellen anzeigen:**
+- Linke Navigation → **Empfehlungen** → Filter: **Container** → Empfehlungen zu Image-Vulnerabilities aufrufen
+
+**Kubernetes-Cluster absichern:**
+- **Empfehlungen** → Kubernetes-spezifische Empfehlungen (Pod Security, RBAC) anzeigen → Korrektur ausführen
+
+**Sicherheitswarnungen für Container:**
+- **Sicherheitswarnungen** → Filter: **Ressourcentyp: Kubernetes** → Warnung aufklappen → Details und Angriffsvektor prüfen
+
+**Defender-Sensor-Status prüfen:**
+- AKS-Cluster im Portal öffnen → **Insights** → Defender-Sensor-Status anzeigen
+
+---
+
 ## Einrichtung & Aktivierung
 
 ### Defender for Containers per PowerShell aktivieren

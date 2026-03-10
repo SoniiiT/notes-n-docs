@@ -421,6 +421,38 @@ KILL '<request_id>';
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Warehouse erstellen:**
+1. Workspace öffnen → **+ Neu** → **Warehouse**
+2. Name eingeben → **Erstellen**
+
+**Tabellen erstellen:**
+- Warehouse öffnen → **Neu** → **SQL-Abfrage** → `CREATE TABLE`-Statement ausführen
+- Oder: **Laden von Daten** → CSV/Parquet-Datei hochladen → Tabelle automatisch erstellen
+
+**Daten abfragen:**
+- Reiter **SQL-Abfrage-Editor** → KQL oder T-SQL eingeben → **Ausführen**
+
+**Views erstellen:**
+- SQL-Editor → `CREATE VIEW`-Statement schreiben → Ausführen
+
+**Modell-Ansicht:**
+- Reiter **Modell** → Beziehungen zwischen Tabellen per Drag & Drop definieren
+
+**Berichte erstellen:**
+- Reiter **Berichterstattung** → **Neuer Bericht** → Power BI-Designer öffnet sich
+
+**Monitoring:**
+- Warehouse → **Abfrage-Aktivität** → Laufende und vergangene Abfragen einsehen
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

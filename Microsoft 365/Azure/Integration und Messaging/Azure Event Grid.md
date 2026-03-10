@@ -356,6 +356,37 @@ az eventgrid namespace create \
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Event Grid-Thema erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Event Grid-Thema**
+2. Ressourcengruppe, Name und Region auswählen → **Erstellen**
+
+**Ereignisabonnement erstellen:**
+- Event Grid-Thema öffnen → **+ Ereignisabonnement**
+- Name, Ereignistypen-Filter und **Endpunkttyp** wählen (Event Hub, Webhook, Azure Function, Service Bus)
+- Endpunkt-URL/Ressource konfigurieren → **Erstellen**
+
+**Systemthemen konfigurieren (Azure-Dienste):**
+- Azure-Ressource öffnen (z. B. Storage Account) → **Ereignisse** → **+ Ereignisabonnement**
+
+**Ereignisse testen (Event Grid Viewer):**
+- Thema → **Ereignisabonnement** → Testwebhook-URL von [requestbin.com](https://requestbin.com) verwenden
+- Azure CLI-Testereignis senden → Eingang im Viewer prüfen
+
+**Dead-Letter konfigurieren:**
+- Ereignisabonnement erstellen/bearbeiten → **Zusätzliche Features** → Storage-Container für Dead-Letter auswählen
+
+**Metriken überwachen:**
+- Event Grid-Thema → **Metriken** → PublishedEvents, DeliveredEvents, DroppedEvents anzeigen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Service Bus]]

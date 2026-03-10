@@ -249,6 +249,39 @@ resources
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Resource Graph Explorer öffnen:**
+1. [portal.azure.com](https://portal.azure.com) → Suche: **Resource Graph-Explorer**
+2. KQL-Abfrage-Editor wird angezeigt
+
+**Erste Abfrage ausführen:**
+```kql
+Resources
+| project name, type, location, resourceGroup
+| limit 20
+```
+→ **Abfrage ausführen** → Ergebnisse in Tabelle oder JSON-Ansicht
+
+**Abfrage im Bereich einschränken:**
+- **Bereich** oben links → Verzeichnis, Verwaltungsgruppe oder Abonnement auswählen
+
+**Abfrage speichern:**
+- **Speichern** (💾) → Name und Kategorie eingeben → Unter **Gespeicherte Abfragen** abrufbar
+
+**Ergebnisse exportieren:**
+- Abfrage ausführen → **CSV herunterladen** → Ergebnisse für Berichte verwenden
+
+**Diagramm anheften:**
+- Abfrage → Reiter **Diagramme** → Visualisierungstyp wählen → **An Dashboard anheften**
+
+---
+
 ## Resource Graph über PowerShell
 
 ```powershell

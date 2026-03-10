@@ -537,6 +537,34 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal / Defender for Cloud (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Defender for Cloud öffnen:**
+1. [portal.azure.com](https://portal.azure.com) → Suche: **Microsoft Defender für Cloud**
+2. **Übersicht** zeigt Secure Score, Empfehlungen und aktive Warnungen
+
+**Empfehlungen anzeigen und umsetzen:**
+- Linke Navigation → **Empfehlungen** → Empfehlung anklicken → **Korrektur** (Quick Fix) ausführen
+
+**Sicherheitswarnungen verwalten:**
+- Linke Navigation → **Sicherheitswarnungen** → Warnung auswählen → Details und empfohlene Aktion prüfen → **Aktion ausführen**
+
+**Defender-Plan aktivieren:**
+- **Umgebungseinstellungen** → Abonnement auswählen → Defender-Pläne (Server, Storage, SQL etc.) ein-/ausschalten
+
+**Secure Score verfolgen:**
+- **Übersicht** → **Sicherheitsbewertung** → Historischen Verlauf und Verbesserungspotenzial anzeigen
+
+**Multi-Cloud onboarden:**
+- **Umgebungseinstellungen** → **+ Umgebung hinzufügen** → AWS oder GCP auswählen → Connector konfigurieren
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Defender for Containers]]

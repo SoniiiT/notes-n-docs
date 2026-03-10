@@ -187,6 +187,33 @@ graph LR
 
 ---
 
+---
+
+## Via Azure Portal / Defender for Cloud (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**MCSB-Compliance in Defender for Cloud prüfen:**
+1. [portal.azure.com](https://portal.azure.com) → **Microsoft Defender für Cloud**
+2. Linke Navigation → **Regulatorische Compliance**
+3. Standard **Microsoft Cloud Security Benchmark** auswählen → Kontrollen anzeigen
+
+**Empfehlungen nach Kontrollbereich filtern:**
+- Regulatorische Compliance → MCSB aufklappen → Kontrollbereich auswählen (z. B. „NS: Netzwerksicherheit")
+- Empfehlungen mit Status (Bestanden/Nicht bestanden) anzeigen
+
+**Compliance-Bericht exportieren:**
+- Regulatorische Compliance → **Bericht herunterladen** → PDF oder CSV exportieren
+
+**Standard zu Abonnement hinzufügen:**
+- **Umgebungseinstellungen** → Abonnement → **Sicherheitsrichtlinien** → **+ Standard hinzufügen** → MCSB oder andere Standards
+
+**Exemption (Ausnahme) erstellen:**
+- Empfehlung öffnen → **Ausnahme erstellen** → Gültigkeitsdauer und Begründung eingeben
+
+---
+
 ## Code-Beispiele
 
 ### PowerShell: Compliance-Score abfragen

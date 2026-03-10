@@ -414,6 +414,36 @@ New-AzMetricAlertRuleV2 `
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Recovery Services-Tresor erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Recovery Services-Tresor**
+2. Ressourcengruppe, Name und **Zielregion** (DR-Region) wählen → **Erstellen**
+
+**Replikation für Azure-VM aktivieren:**
+- Tresor → **Site Recovery** → **Schritt 1: Infrastruktur vorbereiten** → Azure-to-Azure wählen
+- **+ Replizieren** → Quellregion, VMs auswählen, Zielressourcengruppe und VNet konfigurieren → **Replikation aktivieren**
+
+**Replikationsstatus überwachen:**
+- Tresor → **Replizierte Elemente** → VM auswählen → Replikationsstatus und RPO-Wert anzeigen
+
+**Test-Failover durchführen:**
+- Repliziertes Element → **Test-Failover** → Wiederherstellungspunkt und isoliertes VNet wählen → **OK**
+- Nach Test: **Test-Failover bereinigen** → Ressourcen aus Test-Failover löschen
+
+**Wiederherstellungsplan erstellen:**
+- Tresor → **Wiederherstellungspläne** → **+ Plan hinzufügen** → VMs gruppieren und Reihenfolge festlegen
+
+**Failover durchführen (Notfall):**
+- Repliziertes Element → **Failover** → Wiederherstellungspunkt wählen → **Failover** bestätigen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Backup]]

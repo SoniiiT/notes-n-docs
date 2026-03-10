@@ -449,6 +449,37 @@ Sampling reduziert Telemetrie-Volumen und damit Kosten.
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Application Insights erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Application Insights**
+2. Ressourcengruppe, Name, Region und **Log Analytics Workspace** (workspace-based) auswählen → **Erstellen**
+
+**Instrumentierungsschlüssel/Connection String abrufen:**
+- Ressource öffnen → **Übersicht** → **Connection String** kopieren → In Anwendungskonfiguration eintragen
+
+**Anwendungszuordnung anzeigen:**
+- Application Insights → **Anwendungszuordnung** → Topologie der Abhängigkeiten (Dienste, Datenbanken) visualisieren
+
+**Live Metrics anzeigen:**
+- Application Insights → **Livemetriken** → Echtzeit-Anfragen, Fehler und Leistung beobachten
+
+**Availability-Test erstellen:**
+- Application Insights → **Verfügbarkeit** → **+ Standard-Test hinzufügen** → URL, Frequenz und Schwellenwerte konfigurieren
+
+**Fehler und Ausnahmen analysieren:**
+- Application Insights → **Fehler** → Fehlerrate und Ausnahmen nach Operation oder Abhängigkeit aufschlüsseln
+
+**Performance-Analyse:**
+- Application Insights → **Leistung** → Langsame Anfragen und Abhängigkeiten identifizieren
+
+---
+
 ## Bicep: Application Insights
 
 ```bicep

@@ -394,6 +394,33 @@ $copilotSettings | Select-Object settingName, enabled, canSpecifySecurityGroups
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Copilot in Notebook aktivieren:**
+1. Notebook öffnen → Oben rechts **Copilot**-Symbol (Funkeln-Icon) anklicken
+2. Copilot-Seitenleiste öffnet sich rechts
+3. Natürlichsprachliche Anfrage eingeben (z. B. „Erstelle einen PySpark-Code zum Einlesen einer CSV")
+
+**Copilot in Power BI aktivieren:**
+- Bericht öffnen → **Copilot** im Menüband (Ribbon) → Fragenfeld in der Seitenleiste nutzen
+- Oder: Berichtsseite → **Copilot-Berichtsseite hinzufügen** → Automatisch generierte Zusammenfassung
+
+**Copilot in Data Factory:**
+- Pipeline öffnen → **Copilot**-Symbol → Pipeline-Beschreibung eingeben → Aktivitäten automatisch generieren lassen
+
+**Copilot im Data Warehouse:**
+- Warehouse SQL-Editor → **Copilot** oben rechts → SQL-Abfragen generieren oder erklären lassen
+
+**Voraussetzungen prüfen:**
+- Fabric Admin Portal → **Mandanteneinstellungen** → **Copilot und Azure OpenAI Service** → Aktiviert?
+
+---
+
 ## Verwandte Notizen
 
 - [[Microsoft Fabric Grundlagen]]

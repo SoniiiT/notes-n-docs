@@ -165,6 +165,36 @@ sequenceDiagram
 
 ---
 
+---
+
+## Via Microsoft Fabric Portal (UI)
+
+> [!TIP]
+> Portal: **[app.fabric.microsoft.com](https://app.fabric.microsoft.com)**
+
+**Bericht erstellen:**
+1. Workspace öffnen → **+ Neu** → **Bericht**
+2. Semantikmodell auswählen → Power BI Designer öffnet sich
+3. Visualisierungen per Drag & Drop aus dem Bereichsfenster einfügen
+
+**Semantikmodell (Dataset) erstellen:**
+- Workspace → **+ Neu** → **Semantikmodell**
+- Oder aus Lakehouse: Lakehouse öffnen → **Neuer Semantikmodell** (oben rechts)
+
+**Direct Lake aktivieren:**
+- Semantikmodell → **Einstellungen** → Verbindungstyp **Direct Lake** wählen
+
+**Dashboard erstellen:**
+- Workspace → **+ Neu** → **Dashboard** → Kacheln aus vorhandenen Berichten anheften
+
+**Deployment Pipeline:**
+- Workspace → **Deployment-Pipelines** → **+ Erstellen** → Stufen (Entwicklung/Test/Produktion) konfigurieren
+
+**Bericht veröffentlichen:**
+- Power BI Desktop → **Veröffentlichen** → Ziel-Workspace auswählen
+
+---
+
 ## Deployment Pipelines
 
 Deployment Pipelines ermöglichen **CI/CD für Power BI-Inhalte** — Berichte, Semantic Models und Dashboards können strukturiert von Dev über Test nach Prod deployed werden.

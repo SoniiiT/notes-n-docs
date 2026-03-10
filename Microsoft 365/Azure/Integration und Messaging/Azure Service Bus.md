@@ -352,6 +352,38 @@ public static async Task Run(
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Service Bus-Namespace erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Service Bus**
+2. Ressourcengruppe, Namespace-Name, Region und **Tarif** wählen (Basic, Standard, Premium)
+3. **Erstellen**
+
+**Queue erstellen:**
+- Namespace öffnen → **Queues** → **+ Queue**
+- Name, Max. Größe, Time-to-Live und Dead-Lettering-Optionen konfigurieren → **Erstellen**
+
+**Topic und Subscription erstellen:**
+- Namespace → **Topics** → **+ Topic** → Name und Größe festlegen → **Erstellen**
+- Topic öffnen → **+ Subscription** → Name und Filter-Regeln konfigurieren
+
+**Nachrichten testen (Service Bus Explorer):**
+- Queue oder Subscription → **Service Bus Explorer** (im Portal)
+- **Senden** → Testnachricht eingeben → **Empfangen** → Nachricht abholen
+
+**Verbindungszeichenfolge abrufen:**
+- Namespace → **SAS-Richtlinien** → Richtlinie auswählen → Verbindungszeichenfolge kopieren
+
+**Dead Letter Queue einsehen:**
+- Queue → **Service Bus Explorer** → **Subqueue: Dead-letter** auswählen → Nachrichten anzeigen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Event Grid]]

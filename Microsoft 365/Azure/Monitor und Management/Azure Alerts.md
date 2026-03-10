@@ -432,6 +432,36 @@ graph TD
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Alert-Regel erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **Monitor** → **Warnungen** → **+ Erstellen** → **Warnungsregel**
+2. **Bereich** (Ressource) auswählen → **Bedingung** konfigurieren
+3. Signaltyp wählen: **Metrik**, **Protokollsuche**, **Aktivitätsprotokoll** oder **Service Health**
+4. Schwellenwert definieren → **Weiter: Aktionen**
+
+**Aktionsgruppe erstellen:**
+- **Aktionen** → **Aktionsgruppe erstellen**
+- Benachrichtigungen: E-Mail, SMS, Push, Voice
+- Aktionen: Azure Function, Logic App, Webhook, ITSM, Automation Runbook → **Speichern**
+
+**Alert-Verarbeitungsregel erstellen:**
+- Monitor → **Warnungen** → **Warnungsverarbeitungsregeln** → **+ Erstellen**
+- Unterdrückung oder Aktionsgruppenüberschreibung für Wartungsfenster
+
+**Aktive Warnungen anzeigen:**
+- Monitor → **Warnungen** → Übersicht nach Schweregrad (Sev 0–4) → Warnung anklicken → Details und Verlauf
+
+**Alert per E-Mail testen:**
+- Warnungsregel → **Testwarnung senden** → Aktionsgruppe direkt auslösen
+
+---
+
 ## Verwandte Notizen
 
 - [[Azure Monitor Grundlagen]]

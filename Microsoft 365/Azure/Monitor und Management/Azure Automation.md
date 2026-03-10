@@ -471,6 +471,36 @@ graph LR
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Automation-Konto erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Automation**
+2. Ressourcengruppe, Name und Region auswählen → **System-zugewiesene verwaltete Identität** aktivieren → **Erstellen**
+
+**Runbook erstellen:**
+- Automation-Konto → **Runbooks** → **+ Runbook erstellen**
+- Typ wählen: **PowerShell**, **Python**, **Grafisch** → Code eingeben → **Veröffentlichen**
+
+**Runbook ausführen und testen:**
+- Runbook → **Starten** → Eingabeparameter angeben → **OK**
+- **Aufträge** → Auftragsprotokoll und Ausgabe anzeigen
+
+**Zeitplan konfigurieren:**
+- Runbook → **Verknüpfen** → **Zeitplan** → Neuen Zeitplan erstellen (einmalig/wiederkehrend)
+
+**Hybrid Runbook Worker hinzufügen:**
+- Automation-Konto → **Hybrid Runbook Worker-Gruppen** → **+ Erstellen** → Gruppe anlegen → Worker registrieren
+
+**Change Tracking aktivieren:**
+- Automation-Konto → **Change Tracking und Bestand** → **Aktivieren** → Log Analytics Workspace verbinden
+
+---
+
 ## Bicep: Automation Account
 
 ```bicep

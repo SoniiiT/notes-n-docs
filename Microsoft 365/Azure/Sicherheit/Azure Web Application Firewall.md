@@ -257,6 +257,37 @@ Eine WAF Policy ist die zentrale Konfigurationseinheit, die Managed Rules, Custo
 
 ---
 
+---
+
+## Via Azure Portal / Defender for Cloud (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**WAF-Richtlinie erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **WAF-Richtlinie**
+2. **Zuordnung** wählen: **Application Gateway** oder **Front Door und CDN**
+3. Ressourcengruppe, Name und Region → **Erstellen**
+
+**WAF-Modus konfigurieren:**
+- WAF-Richtlinie öffnen → **Richtlinieneinstellungen** → Modus: **Erkennung** oder **Prävention** → **Speichern**
+
+**Verwaltete Regeln anzeigen:**
+- WAF-Richtlinie → **Verwaltete Regeln** → OWASP-Regelsatz-Version wählen (CRS 3.2 / DRS 2.1)
+- Einzelne Regelgruppen aktivieren/deaktivieren
+
+**Custom Rules hinzufügen:**
+- WAF-Richtlinie → **Benutzerdefinierte Regeln** → **+ Benutzerdefinierte Regel hinzufügen**
+- Bedingungen (IP, Header, URI) und Aktion (Zulassen/Blockieren/Protokollieren) festlegen
+
+**WAF einem Application Gateway zuordnen:**
+- Application Gateway öffnen → **Web Application Firewall** → WAF-Richtlinie zuweisen
+
+**WAF-Protokolle analysieren:**
+- Application Gateway → **Diagnoseeinstellungen** → Log Analytics Workspace → `AzureDiagnostics`-Tabelle abfragen
+
+---
+
 ## Deployment mit Bicep
 
 ```bicep

@@ -445,6 +445,37 @@ Heartbeat
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**AMA über Portal installieren:**
+1. VM im Portal öffnen → **Überwachung** → **Insights** → **Aktivieren**
+2. Log Analytics Workspace auswählen → AMA wird automatisch installiert
+
+**Über Diagnoseeinstellungen (empfohlen):**
+- Ressource öffnen → **Überwachung** → **Diagnoseeinstellungen** → **+ Diagnoseeinstellung hinzufügen**
+- Datenquellen auswählen → Log Analytics Workspace als Ziel → **Speichern** (installiert AMA automatisch)
+
+**Data Collection Rule (DCR) erstellen:**
+- Azure Monitor → **Datensammlungsregeln** → **+ Erstellen**
+- Plattformtyp (Windows/Linux) → Datenquellen hinzufügen (Leistungsindikatoren, Windows Events, Syslog)
+- Ziel: Log Analytics Workspace → **Erstellen**
+
+**DCR einer VM zuordnen:**
+- DCR öffnen → **Ressourcen** → **+ Ressourcen hinzufügen** → VMs oder VM Scale Sets auswählen
+
+**AMA-Statusprüfung:**
+- VM → **Erweiterungen und Anwendungen** → **AzureMonitorWindowsAgent** oder **AzureMonitorLinuxAgent** → Status prüfen
+
+**Gesammelte Daten abfragen:**
+- Log Analytics Workspace → **Protokolle** → `Heartbeat` oder `Perf`-Tabelle abfragen
+
+---
+
 ## Bicep: AMA + DCR + Association
 
 ```bicep

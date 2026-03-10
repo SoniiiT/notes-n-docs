@@ -417,6 +417,34 @@ union
 
 ---
 
+---
+
+## Via Azure Portal (UI)
+
+> [!TIP]
+> Portal: **[portal.azure.com](https://portal.azure.com)**
+
+**Log Analytics Workspace erstellen:**
+1. [portal.azure.com](https://portal.azure.com) → **+ Ressource erstellen** → **Log Analytics-Arbeitsbereich**
+2. Ressourcengruppe, Name und Region auswählen → **Erstellen**
+
+**KQL-Abfrage ausführen:**
+- Workspace öffnen → **Protokolle** → KQL-Abfrage eingeben (z. B. `Heartbeat | summarize count() by Computer`) → **Ausführen**
+
+**Tabellen und Datenquellen anzeigen:**
+- Workspace → **Tabellen** → Alle verfügbaren Tabellen mit Schema und Aufbewahrungszeit anzeigen
+
+**Diagnoseeinstellungen verbinden:**
+- Azure-Ressource → **Diagnoseeinstellungen** → **+ Hinzufügen** → Diesen Workspace als Ziel wählen
+
+**Abfragen speichern:**
+- KQL-Editor → **Speichern** → Name und Kategorie eingeben → Unter **Gespeicherte Abfragen** abrufbar
+
+**Datenaufbewahrung konfigurieren:**
+- Workspace → **Nutzung und geschätzte Kosten** → **Datenaufbewahrung** → Aufbewahrungszeitraum anpassen
+
+---
+
 ## Bicep: Log Analytics Workspace
 
 ```bicep
