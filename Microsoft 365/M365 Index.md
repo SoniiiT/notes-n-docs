@@ -428,16 +428,16 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Dynamics 365 Überblick | Architektur, Dataverse, Lizenzierung, Power Platform Integration |
-| Dynamics 365 Sales | Lead-Management, Opportunities, Forecast, Copilot-Integration |
-| Dynamics 365 Customer Service | Cases, Queues, SLA, Omnichannel, Knowledge Management |
-| Dynamics 365 Field Service | Work Orders, Scheduling, IoT-Integration, Copilot-Dispatcher |
-| Dynamics 365 Finance | Hauptbuch, Debitoren/Kreditoren, Budgetierung, Reporting |
-| Dynamics 365 Supply Chain Management | Lagerverwaltung, Produktion, Beschaffung, Prognose |
-| Dynamics 365 Business Central | SMB ERP, Finanzen, Einkauf, Lager, Produktion, Projekte |
-| Dynamics 365 Customer Insights | Customer Data Platform (CDP), Journeys (ehem. Marketing), Segmentierung |
-| Dynamics 365 HR | Mitarbeiterverwaltung, Urlaub, Benefits, Lernpfade |
-| Dynamics 365 Administration | Umgebungen, Lösungen, ALM, Monitoring, Dataverse-Sicherheit |
+| [[Dynamics 365 Überblick]] | Architektur, Dataverse, Lizenzierung, Power Platform Integration |
+| [[Dynamics 365 Sales]] | Lead-Management, Opportunities, Forecast, Copilot-Integration |
+| [[Dynamics 365 Customer Service]] | Cases, Queues, SLA, Omnichannel, Knowledge Management |
+| [[Dynamics 365 Field Service]] | Work Orders, Scheduling, IoT-Integration, Copilot-Dispatcher |
+| [[Dynamics 365 Finance]] | Hauptbuch, Debitoren/Kreditoren, Budgetierung, Reporting |
+| [[Dynamics 365 Supply Chain Management]] | Lagerverwaltung, Produktion, Beschaffung, Prognose |
+| [[Dynamics 365 Business Central]] | SMB ERP, Finanzen, Einkauf, Lager, Produktion, Projekte |
+| [[Dynamics 365 Customer Insights]] | Customer Data Platform (CDP), Journeys (ehem. Marketing), Segmentierung |
+| [[Dynamics 365 HR]] | Mitarbeiterverwaltung, Urlaub, Benefits, Lernpfade |
+| [[Dynamics 365 Administration]] | Umgebungen, Lösungen, ALM, Monitoring, Dataverse-Sicherheit |
 
 ---
 
@@ -445,15 +445,15 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| MECM / SCCM Grundlagen | Configuration Manager, Site-Hierarchie, Client-Deployment, Discovery |
-| MECM Software Deployment | Pakete, Anwendungen, Task Sequences, OS Deployment (OSD), PXE |
-| MECM Patch Management | SUP, Software Update Groups, Wartungsfenster, Compliance |
-| MECM Co-Management | Workload-Verschiebung zu Intune, Piloting, Anforderungen |
-| System Center Operations Manager (SCOM) | Monitoring, Management Packs, Alerting, Dashboards, AMA-Integration |
-| System Center Virtual Machine Manager (SCVMM) | Hyper-V Fabric-Management, Templates, SDN, VMM-Bibliothek |
-| System Center Data Protection Manager (DPM) | Backup für Hyper-V, SQL, Exchange, SharePoint, Azure-Integration |
-| System Center Orchestrator | Runbooks, Integration Packs, Workflows, Automatisierung |
-| System Center → Azure-Migration | Ablösung durch Azure Arc, Azure Monitor, Intune, Update Manager |
+| [[MECM SCCM Grundlagen]] | Configuration Manager, Site-Hierarchie, Client-Deployment, Discovery |
+| [[MECM Software Deployment]] | Pakete, Anwendungen, Task Sequences, OS Deployment (OSD), PXE |
+| [[MECM Patch Management]] | SUP, Software Update Groups, Wartungsfenster, Compliance |
+| [[MECM Co-Management]] | Workload-Verschiebung zu Intune, Piloting, Anforderungen |
+| [[SCOM Grundlagen\|System Center Operations Manager (SCOM)]] | Monitoring, Management Packs, Alerting, Dashboards, AMA-Integration |
+| [[SCVMM Grundlagen\|System Center Virtual Machine Manager (SCVMM)]] | Hyper-V Fabric-Management, Templates, SDN, VMM-Bibliothek |
+| [[DPM Grundlagen\|System Center Data Protection Manager (DPM)]] | Backup für Hyper-V, SQL, Exchange, SharePoint, Azure-Integration |
+| [[System Center Orchestrator]] | Runbooks, Integration Packs, Workflows, Automatisierung |
+| [[System Center Azure Migration\|System Center → Azure-Migration]] | Ablösung durch Azure Arc, Azure Monitor, Intune, Update Manager |
 
 ---
 
@@ -461,15 +461,15 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Endpoint Privilege Management (EPM) | Least-Privilege für Windows, Elevation Rules, Approval Workflows |
-| Microsoft Cloud PKI | Managed PKI in Intune, Root/Issuing CA, SCEP/PKCS, Zertifikat-Deployment |
-| Microsoft Tunnel | VPN-Gateway für iOS/Android, Split Tunneling, Conditional Access, MAM |
-| Remote Help | Remotesupport über Intune, Unattended Access, Rollen, Audit |
-| Advanced Endpoint Analytics | Anomaly Detection, Enhanced Reporting, Custom Compliance |
-| Microsoft Autopatch | Automatisiertes Patch Management (Windows/M365/Edge/Teams), Ringe, Reporting |
-| Microsoft 365 Lighthouse | MSP Multi-Tenant-Verwaltung, Tenants, Baselines, Alerts, Delegated Access |
-| Microsoft Dev Box | Cloud-Entwicklerworkstations, Dev Center, Projekte, Pools, Netzwerk |
-| Microsoft Intune Suite Überblick | Alle Add-ons im Überblick, Lizenzierung, wann welcher Plan sinnvoll ist |
+| [[Endpoint Privilege Management EPM\|Endpoint Privilege Management (EPM)]] | Least-Privilege für Windows, Elevation Rules, Approval Workflows |
+| [[Microsoft Cloud PKI]] | Managed PKI in Intune, Root/Issuing CA, SCEP/PKCS, Zertifikat-Deployment |
+| [[Microsoft Tunnel]] | VPN-Gateway für iOS/Android, Split Tunneling, Conditional Access, MAM |
+| [[Remote Help]] | Remotesupport über Intune, Unattended Access, Rollen, Audit |
+| [[Advanced Endpoint Analytics]] | Anomaly Detection, Enhanced Reporting, Custom Compliance |
+| [[Microsoft Autopatch]] | Automatisiertes Patch Management (Windows/M365/Edge/Teams), Ringe, Reporting |
+| [[Microsoft 365 Lighthouse]] | MSP Multi-Tenant-Verwaltung, Tenants, Baselines, Alerts, Delegated Access |
+| [[Microsoft Dev Box]] | Cloud-Entwicklerworkstations, Dev Center, Projekte, Pools, Netzwerk |
+| [[Microsoft Intune Suite Überblick]] | Alle Add-ons im Überblick, Lizenzierung, wann welcher Plan sinnvoll ist |
 
 ---
 
