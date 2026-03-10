@@ -180,6 +180,63 @@ Element → Manage Access → Advanced Settings → Delete Unique Permissions
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Berechtigungen über die Site-Einstellungen verwalten
+
+#### Benutzer zu SharePoint-Gruppe hinzufügen
+
+1. Öffne die gewünschte SharePoint-Site
+2. Klicke auf das **Zahnrad-Symbol (Einstellungen) → Site-Berechtigungen**
+3. Klicke auf **Mitglieder einladen** oder wähle eine Gruppe (Owners / Members / Visitors)
+4. Klicke auf **⋮ → Mitglieder hinzufügen**, gib Namen oder E-Mail ein
+5. Klicke auf **Hinzufügen**
+
+> [!TIP]
+> Direkt in einer Site: **Einstellungen (Zahnrad) → Site-Berechtigungen → Alle Berechtigungen anzeigen** öffnet die klassische Berechtigungsseite.
+
+#### Vererbungsbruch für Bibliothek / Liste setzen
+
+1. Öffne die gewünschte **Bibliothek oder Liste** → klicke auf **Einstellungen (Zahnrad) → Bibliothekseinstellungen**
+2. Klicke auf **Berechtigungen für diese Bibliothek** (unter „Berechtigungen und Verwaltung")
+3. Klicke auf **Berechtigungsvererbung unterbrechen → OK**
+4. Passe Berechtigungen an: **Berechtigungen erteilen** oder Gruppen / Benutzer entfernen
+
+#### Individuelle Berechtigung auf Listenelement setzen
+
+1. Klicke auf das Element → **⋮ → Mehr → Zugriff verwalten**
+2. Klicke auf **Erweitert** → **Berechtigungsvererbung unterbrechen**
+3. Klicke auf **Berechtigungen erteilen** → Benutzer und Stufe auswählen → **Freigeben**
+
+### Externe Freigabe-Richtlinien konfigurieren (Tenant-weit)
+
+1. Öffne das **SharePoint Admin Center** unter [admin.microsoft.com/sharepoint](https://admin.microsoft.com/sharepoint)
+2. Navigiere zu **Richtlinien → Freigabe**
+3. Stelle den Schieberegler für **SharePoint** auf die gewünschte Stufe:
+   - **Jeder** — Anonyme Links erlaubt
+   - **Neue und vorhandene Gäste** — Authentifizierung erforderlich
+   - **Nur vorhandene Gäste** — Keine neuen Gasteinladungen
+   - **Nur Personen in Ihrer Organisation** — Keine externe Freigabe
+4. Konfiguriere unter **Erweiterte Einstellungen für externe Freigabe**:
+   - **Standardlinktyp** (intern / spezifische Personen / anonym)
+   - **Ablaufdatum** für Jeder-Links (empfohlen: 30 Tage)
+   - **Domaineinschränkungen** (Erlaubnisliste / Sperrliste)
+5. Klicke auf **Speichern**
+
+### Externe Freigabe pro Site konfigurieren
+
+1. Navigiere im SPAC zu **Sites → Aktive Sites**
+2. Klicke auf den **Site-Namen** → Detailpanel öffnet sich
+3. Klicke im oberen Menü auf **Freigabe**
+4. Wähle den Freigabe-Level für diese Site (maximal gleich dem Tenant-Level)
+5. Aktiviere optional **Erweiterte Einstellungen**: Domaineinschränkungen, Linkablauf
+6. Klicke auf **Speichern**
+
+> [!NOTE]
+> Berechtigungsberichte und der **„Check Permissions"**-Check für einzelne Benutzer sind nur über **Site-Einstellungen → Websiteberechtigungen → Berechtigungen prüfen** oder PowerShell verfügbar. Das Access Review Dashboard befindet sich im Microsoft Entra Admin Center.
+
+---
+
 ## Individuelle Berechtigungen vergeben
 
 ### Benutzer oder Gruppe direkt hinzufügen

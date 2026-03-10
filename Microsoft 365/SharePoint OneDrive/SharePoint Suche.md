@@ -182,6 +182,70 @@ flowchart LR
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Microsoft Search Bookmarks (Promoted Results) konfigurieren
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Suche und Intelligenz → Antworten → Lesezeichen**
+3. Klicke auf **+ Hinzufügen**
+4. Konfiguriere:
+   - **Titel** und **URL** des beworbenen Ergebnisses
+   - **Schlüsselwörter** (Suchwörter, die dieses Lesezeichen auslösen)
+   - **Reservierte Schlüsselwörter** (exakte Übereinstimmung erzwingen)
+   - **Datumsbereich** (optional: zeitlich begrenzte Anzeige)
+5. Klicke auf **Veröffentlichen**
+
+> [!TIP]
+> Lesezeichen lassen sich per **CSV-Import** massenweise hinzufügen: **Lesezeichen → Importieren → CSV-Vorlage herunterladen**.
+
+### Suchvertikalen (Search Verticals) konfigurieren
+
+#### Tenant-weit (für alle Benutzer):
+
+1. Im **Microsoft 365 Admin Center** → **Einstellungen → Suche und Intelligenz → Anpassungen → Vertikalen**
+2. Klicke auf **+ Vertikal hinzufügen**
+3. Konfiguriere:
+   - **Name** (z. B. „Richtlinien", „Verträge", „Personen")
+   - **Inhaltsquelle**: SharePoint / OneDrive oder Graph Connector
+   - **KQL-Abfrage** (optional: Einschränkung auf bestimmte Inhaltstypen oder Eigenschaften)
+   - **Ergebnislayout** (Standard oder Result Type zuweisen)
+4. Klicke auf **Veröffentlichen**
+
+#### Site-spezifisch:
+
+1. Öffne die SharePoint-Site → **Einstellungen (Zahnrad) → Alle Site-Einstellungen**
+2. Klicke unter **Suche** auf **Suchvertikalen konfigurieren**
+3. Füge eine Vertikal analog zur Tenant-Konfiguration hinzu
+
+### Such-Schema: Managed Property per UI erstellen
+
+1. Navigiere im **SharePoint Admin Center** zu **Weitere Features → Suche → Öffnen**
+2. Klicke auf **Such-Schema verwalten**
+3. Klicke auf **Neue verwaltete Eigenschaft**
+4. Konfiguriere:
+   - **Name** der verwalteten Eigenschaft
+   - **Typ** (Text, Integer, Dezimalzahl, Datum/Zeit, Ja/Nein)
+   - **Gecrawlte Eigenschaften** (Zuordnung zu Crawled Properties)
+   - **Suchbar / Abrufbar / Einschränkbar / Sortierbar** aktivieren
+5. Klicke auf **OK**
+
+> [!NOTE]
+> Nach dem Erstellen einer neuen Managed Property muss ein **vollständiger Crawl** der Inhaltsquellen abgewartet werden, bevor sie in Suchabfragen verfügbar ist.
+
+### Graph Connectors per UI einrichten
+
+1. Im **Microsoft 365 Admin Center** → **Einstellungen → Suche und Intelligenz → Datenquellen**
+2. Klicke auf **+ Verbindung hinzufügen**
+3. Wähle einen **Microsoft Graph Connector** (z. B. ServiceNow, Confluence, GitHub, Azure DevOps)
+4. Folge dem Einrichtungsassistenten:
+   - Verbindungsdetails (URL, Anmeldedaten / App-ID)
+   - Zugriffsberechtigungen (Zugriffskontrolllisten)
+   - Synchronisationshäufigkeit
+5. Klicke auf **Veröffentlichen**
+
+---
+
 ## Promoted Results und Bookmarks
 
 ### Klassische Suche — Promoted Results (Best Bets)

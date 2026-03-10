@@ -22,6 +22,46 @@ aliases:
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+> [!NOTE]
+> Für Administratoren, die selten oder einmalig Änderungen vornehmen, bietet das **SharePoint Admin Center** eine grafische Alternative zu PowerShell. Die meisten Tenant-weiten Konfigurationen sowie Site-Verwaltung sind ohne Skript-Kenntnisse durchführbar.
+
+### Häufige Admin-Aufgaben im SPAC — ohne PowerShell
+
+| Aufgabe | UI-Pfad im SPAC |
+|---------|----------------|
+| Alle Sites anzeigen | **Sites → Aktive Sites** |
+| Site erstellen | **Sites → Aktive Sites → + Erstellen** |
+| Site löschen / wiederherstellen | **Aktive Sites → Löschen** / **Gelöschte Sites → Wiederherstellen** |
+| Speicher anpassen | **Aktive Sites → Site → Details → Speicher bearbeiten** |
+| Site-Admin hinzufügen | **Aktive Sites → Site → Mitgliedschaft → Admins bearbeiten** |
+| Externe Freigabe (tenant-weit) | **Richtlinien → Freigabe** |
+| Externe Freigabe pro Site | **Aktive Sites → Site → Freigabe** |
+| Conditional Access | **Richtlinien → Zugriffssteuerung** |
+| Hub-Site konfigurieren | **Aktive Sites → Site → ⋮ → Als Hub-Site registrieren** |
+| OneDrive-Speicher-Standard | **Einstellungen → OneDrive** |
+| SPFx-Lösung deployen | **Weitere Features → Apps → App-Catalog** |
+
+### App-Catalog und SPFx-Lösungen per UI deployen
+
+1. Navigiere im SPAC zu **Weitere Features → Apps → Öffnen**
+2. Klicke im App-Catalog auf **Neue App hinzufügen** (oder direkt in die Bibliothek hochladen)
+3. Lade die `.sppkg`-Datei hoch
+4. Aktiviere **Diese Lösung mandantenweit bereitstellen** (für Tenant-weites Deployment)
+5. Klicke auf **Bereitstellen**
+
+### Term Store per UI verwalten
+
+1. Navigiere zu **Inhaltsdienste → Terminologiespeicher**
+2. Erstelle Gruppen, Begriffssätze und Begriffe über die grafische Oberfläche
+3. Vergib mehrsprachige Labels und Synonyme direkt im Browser
+
+> [!TIP]
+> Für einmalige, nicht-automatisierbare Aufgaben (Site-Erstellung, Freigabe-Einstellungen, Admin hinzufügen) ist die UI schneller als PowerShell. Für **Massenoperationen, Reporting und Automatisierung** ist PowerShell/PnP die richtige Wahl.
+
+---
+
 ## Überblick: Welches Tool für welchen Zweck?
 
 ```mermaid

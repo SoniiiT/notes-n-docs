@@ -397,6 +397,82 @@ Set-SPOTenant -ExternalUserExpirationRequired $true -ExternalUserExpireInDays 18
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Neue Websitesammlung erstellen
+
+1. Öffne das **SharePoint Admin Center** unter [admin.microsoft.com/sharepoint](https://admin.microsoft.com/sharepoint)
+2. Navigiere zu **Sites → Aktive Sites**
+3. Klicke auf **+ Erstellen**
+4. Wähle den Sitetyp:
+   - **Teamwebsite** — mit Microsoft 365-Gruppe, ideal für Zusammenarbeit
+   - **Kommunikationswebsite** — ohne Gruppe, für Intranets und Breitkommunikation
+   - **Andere Optionen** — für klassische Sites, Document Center etc.
+5. Fülle die Pflichtfelder aus:
+   - **Name** (wird auch im URL vorgeschlagen)
+   - **Site-Adresse** (URL-Pfad)
+   - **Primärer Administrator**
+   - **Sprache** und **Zeitzone**
+6. Klicke auf **Fertig stellen**
+
+### Speicherkontingent einer Site anpassen
+
+1. Navigiere zu **Sites → Aktive Sites**
+2. Klicke auf den **Site-Namen** → Detailpanel öffnet sich rechts
+3. Wechsle zum Tab **Details**
+4. Klicke neben **Speicher** auf **Bearbeiten**
+5. Gib das neue Kontingent in GB ein → **Speichern**
+
+> [!TIP]
+> Tenant-weiten Standard-Speicher festlegen: **Einstellungen → OneDrive** → Standard-Speicher pro Site
+
+### Site Collection Administratoren verwalten
+
+1. Navigiere zu **Sites → Aktive Sites**
+2. Klicke auf den **Site-Namen**
+3. Im Detailpanel: Tab **Mitgliedschaft**
+4. Klicke auf **Websitesammlung-Administratoren bearbeiten**
+5. Füge Benutzer hinzu oder entferne sie → **Speichern**
+
+### Site löschen und wiederherstellen
+
+**Site löschen:**
+1. **Aktive Sites** → Site auswählen (Checkbox links) → Toolbar: **Löschen**
+2. Bestätige die Löschung → Site landet im Papierkorb (93 Tage aufbewahrt)
+
+**Site wiederherstellen:**
+1. Navigiere zu **Sites → Gelöschte Sites**
+2. Site auswählen → **Wiederherstellen**
+3. Bestätige → Site erscheint wieder unter Aktive Sites
+
+### Hub-Site konfigurieren
+
+#### Site als Hub-Site registrieren
+
+1. **Aktive Sites** → Site auswählen → **⋮ → Als Hub-Site registrieren**
+2. Gib einen **Hub-Site-Namen** ein → **Speichern**
+
+#### Site mit Hub-Site verknüpfen
+
+1. **Aktive Sites** → Site auswählen → **⋮ → Hub-Sitezuordnung bearbeiten**
+2. Wähle die gewünschte Hub-Site aus der Dropdown-Liste → **Speichern**
+
+#### Hub-Site-Einstellungen anpassen
+
+1. Öffne die Hub-Site direkt in SharePoint
+2. Klicke auf **Einstellungen (Zahnrad) → Hub-Site-Einstellungen**
+3. Konfiguriere Navigation, Thema und Zugriffsberechtigungen für die Hub-Site
+4. Klicke auf **Speichern**
+
+### Externe Freigabe pro Site konfigurieren
+
+1. **Aktive Sites** → Site auswählen → klicke auf den Site-Namen
+2. Im Detailpanel oben auf **Freigabe** klicken
+3. Wähle die maximale Freigabestufe für diese Site
+4. Klicke auf **Speichern**
+
+---
+
 ## PowerShell-Schnellreferenz
 
 ### Get-SPOSite – Wichtige Parameter

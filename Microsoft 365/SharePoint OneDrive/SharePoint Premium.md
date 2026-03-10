@@ -63,6 +63,68 @@ graph TD
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+> [!NOTE]
+> Die meisten SharePoint Premium- und SAM-Funktionen sind nativ im SharePoint Admin Center verfügbar. PowerShell wird vorwiegend für Automatisierung und Batch-Operationen benötigt.
+
+### Inactive Site Policy konfigurieren
+
+1. Öffne das **SharePoint Admin Center** unter [admin.microsoft.com/sharepoint](https://admin.microsoft.com/sharepoint)
+2. Navigiere zu **Richtlinien → Datenverwaltung → Inaktive Sites**
+3. Klicke auf **+ Richtlinie erstellen**
+4. Konfiguriere:
+   - **Inaktivitätszeitraum:** 90, 180 oder 365 Tage
+   - **Scope:** Alle Sites oder Sites eines bestimmten Templates / Hub
+   - **Aktion:** E-Mail-Benachrichtigung an Site-Besitzer oder automatisches Archivieren
+5. Klicke auf **Speichern und aktivieren**
+
+### Site Access Reviews starten
+
+1. Navigiere zu **Richtlinien → Datenverwaltung → Zugriffsüberprüfungen**
+2. Klicke auf **+ Neue Zugriffsüberprüfung**
+3. Wähle den **Scope** (z. B. alle Sites mit externen Benutzern)
+4. Setze die **Wiederholungsfrequenz** (einmalig, monatlich, vierteljährlich, jährlich)
+5. Klicke auf **Starten**
+
+### Restricted Access Control (RAC) pro Site aktivieren
+
+1. Navigiere zu **Sites → Aktive Sites** → gewünschte Site auswählen
+2. Öffne das Detailpanel → Tab **Einstellungen** oder **Richtlinien**
+3. Aktiviere **Eingeschränkte Zugriffssteuerung**
+4. Füge die erlaubten Gruppen hinzu → **Speichern**
+
+### Data Access Governance (DAG) Reports aufrufen
+
+1. Navigiere im SPAC zu **Berichte → Datenzugriffs-Governance**
+2. Wähle einen Berichtstyp:
+   - **Sites mit „Jeder"-Links** — übermäßige Freigabe aufdecken
+   - **Sites mit sensiblen Labels und vielen externen Nutzern**
+   - **Sites mit Block Download Policy**
+3. Exportiere den Bericht als CSV für weitere Analyse
+
+### Microsoft 365 Backup aktivieren
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Setup → Microsoft 365 Backup**
+3. Klicke auf **Erste Schritte**
+4. Wähle die zu sichernden Workloads:
+   - **SharePoint Online**
+   - **OneDrive for Business**
+   - **Exchange Online**
+5. Bestätige die Aktivierung → Klicke auf **Aktivieren**
+
+### Backup-Wiederherstellung durchführen
+
+1. Im **Microsoft 365 Admin Center → Microsoft 365 Backup**
+2. Wähle den Workload (SharePoint / OneDrive / Exchange)
+3. Suche die Site / den Benutzer → klicke auf **Wiederherstellen**
+4. Wähle einen **Wiederherstellungspunkt** (Datum und Uhrzeit)
+5. Wähle den **Wiederherstellungsmodus** (überschreiben oder neben Original)
+6. Klicke auf **Wiederherstellen** und verfolge den Fortschritt im Aktivitätsprotokoll
+
+---
+
 ## SharePoint Advanced Management (SAM)
 
 SAM ist die Governance-Komponente von SharePoint Premium. Sie richtet sich primär an **SharePoint-Administratoren und Compliance-Teams**, die große SharePoint-Umgebungen kontrollieren und steuern müssen.

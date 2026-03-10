@@ -80,6 +80,63 @@ graph TD
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Site-Erstellung durch Benutzer steuern
+
+1. Öffne das **SharePoint Admin Center** unter [admin.microsoft.com/sharepoint](https://admin.microsoft.com/sharepoint)
+2. Navigiere zu **Einstellungen → Startseite der Website** (Site Creation)
+3. Wähle unter **Site-Erstellung durch Benutzer**:
+   - ✅ **Benutzer können Sites in SharePoint erstellen** (Standard)
+   - Oder: Kontrollkästchen deaktivieren, um Self-Service zu deaktivieren
+4. Klicke auf **Speichern**
+
+> [!NOTE]
+> Die Einschränkung, *welche Benutzergruppe* Microsoft 365 Groups (und damit Team-Sites) erstellen darf, ist nur über **Microsoft Entra Admin Center → Gruppen → Allgemein → Gruppenerstellung einschränken** möglich — nicht über das SPAC.
+
+### Ablaufrichtlinie für M365 Groups konfigurieren
+
+1. Öffne das **Microsoft Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Gruppen → Ablaufrichtlinie**
+3. Konfiguriere:
+   - **Gruppenlebensdauer:** 90, 180, 365 Tage oder benutzerdefiniert
+   - **Benachrichtigungs-E-Mail** für Gruppen ohne Besitzer
+   - **Gilt für:** Alle Gruppen oder ausgewählte Gruppen
+4. Klicke auf **Speichern**
+
+### Sensitivity Labels für Sites und Gruppen konfigurieren
+
+1. Öffne das **Microsoft Purview Compliance Portal** unter [compliance.microsoft.com](https://compliance.microsoft.com)
+2. Navigiere zu **Informationsschutz → Vertraulichkeitsbezeichnungen**
+3. Wähle ein Label oder klicke auf **+ Label erstellen**
+4. Aktiviere unter **Bereich** die Option **Gruppen und Sites**
+5. Konfiguriere **Gruppen- und Site-Einstellungen**:
+   - **Datenschutz:** Öffentlich / Privat
+   - **Externer Benutzerzugriff:** Erlauben / Blockieren
+   - **Externe Freigabe:** Gesonderter Level für diese Bezeichnung
+   - **Zugriff von nicht verwalteten Geräten:** Zulassen / Einschränken / Blockieren
+6. Veröffentliche das Label über eine **Bezeichnungsrichtlinie** → **Speichern**
+
+### DLP-Richtlinie für SharePoint erstellen
+
+1. Im **Purview Compliance Portal** → **Lösungen → Verhinderung von Datenverlust → Richtlinien → + Richtlinie erstellen**
+2. Wähle eine Vorlage (z. B. **Datenschutz → DSGVO**) oder **Benutzerdefinierte Richtlinie**
+3. Wähle Speicherorte: **SharePoint-Sites** und/oder **OneDrive-Konten**
+4. Konfiguriere Regeln: Erkennungsbedingungen (sensible Inhaltstypen) → Aktionen (Zugriff blockieren, Benachrichtigung senden, Audit)
+5. Starte im **Testmodus** → Analysiere Treffer → Dann produktiv aktivieren → **Absenden**
+
+### Aufbewahrungsrichtlinie für SharePoint erstellen
+
+1. Im **Purview Compliance Portal** → **Lösungen → Datenverwaltung → Aufbewahrungsrichtlinien → + Neue Richtlinie**
+2. Benenne die Richtlinie
+3. Wähle **Statische Bereiche** → Speicherort **SharePoint-Sites** → gewünschte Sites auswählen
+4. Konfiguriere:
+   - **Aufbewahren für:** X Jahre / Tage (ab Erstellungsdatum, Änderungsdatum oder Ereignis)
+   - **Nach Ablauf:** Inhalt löschen oder zur Dispositionsüberprüfung weiterleiten
+5. Überprüfe und **Absenden**
+
+---
+
 ## Site Creation Policies
 
 Ohne Einschränkungen kann jeder Benutzer im Tenant Microsoft 365 Groups und damit automatisch SharePoint-Sites erstellen – das führt schnell zu unkontrollierbarem Wildwuchs.

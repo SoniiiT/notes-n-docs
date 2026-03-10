@@ -437,6 +437,67 @@ Set-SPOTenant -SharingDomainRestrictionMode AllowList
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Standard-OneDrive-Speicher für alle Nutzer festlegen
+
+1. Öffne das **SharePoint Admin Center** unter [admin.microsoft.com/sharepoint](https://admin.microsoft.com/sharepoint)
+2. Navigiere zu **Einstellungen → OneDrive**
+3. Setze unter **Standardspeicher pro Benutzer** den gewünschten Wert in GB
+4. Klicke auf **Speichern**
+
+> [!TIP]
+> Alternativ: **Microsoft 365 Admin Center → Einstellungen → Organisationseinstellungen → OneDrive** für Freigabe- und Sync-Standardeinstellungen.
+
+### Speicher für einzelnen Benutzer anpassen
+
+1. Navigiere im SPAC zu **Sites → Aktive Sites**
+2. Filtere oder suche nach `my.sharepoint.com` um OneDrive-Sites zu finden
+3. Klicke auf die ODB-Site des Nutzers (`/personal/vorname_nachname_domain_com`)
+4. Klicke auf **⋮ → Kontingent bearbeiten**
+5. Gib den neuen Wert in GB ein → **Speichern**
+
+> [!TIP]
+> Direkter Weg: **Microsoft 365 Admin Center → Benutzer → Aktive Benutzer → Benutzer auswählen → OneDrive → Speicher verwalten**
+
+### Known Folder Move (KFM) per Intune aktivieren
+
+> [!NOTE]
+> KFM kann nicht direkt im OneDrive Admin Center per Klick aktiviert werden. Der empfohlene Weg für verwaltete Geräte ist **Microsoft Intune**:
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Konfiguration → + Erstellen → Einstellungskatalog**
+3. Plattform: **Windows 10 und höher**
+4. Suche im Einstellungskatalog nach **OneDrive**
+5. Aktiviere **Bekannte Ordner von Windows in OneDrive verschieben (Silent)**
+6. Trage die **Tenant-ID** (Azure AD-Verzeichnis-ID) ein
+7. Weise das Profil einer Gerätegruppe zu → **Speichern**
+
+### Externe Freigabe für OneDrive konfigurieren
+
+1. Navigiere im SPAC zu **Richtlinien → Freigabe**
+2. Stelle den **OneDrive**-Schieberegler auf den gewünschten Level
+3. Konfiguriere unter **Erweiterte Einstellungen**:
+   - **Ablaufzeit für Gastlinks** (empfohlen: 30–180 Tage)
+   - **Erlaubte oder gesperrte Domains**
+4. Klicke auf **Speichern**
+
+### OneDrive-Aufbewahrung nach Benutzerlöschung konfigurieren
+
+1. Navigiere im SPAC zu **Einstellungen → OneDrive**
+2. Setze unter **Aufbewahrung** den Zeitraum nach Benutzerlöschung (30–3650 Tage)
+3. Lege optional einen **sekundären Besitzer** fest, der Zugriff erhält
+4. Klicke auf **Speichern**
+
+### OneDrive-Nutzungsberichte aufrufen
+
+1. Öffne das **Microsoft 365 Admin Center → Berichte → Nutzung**
+2. Wähle **OneDrive → Dateiaktivität** oder **OneDrive → Konten**
+3. Wähle den Zeitraum (7, 30, 90 oder 180 Tage)
+4. Klicke auf **Herunterladen** für CSV-Export
+
+---
+
 ## PowerShell-Verwaltung
 
 ### Verbindung herstellen

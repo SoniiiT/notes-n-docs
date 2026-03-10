@@ -214,6 +214,64 @@ Webparts sind die bausteinartige Inhaltskomponenten einer Modern Page. Sie werde
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Neue SharePoint-Seite erstellen
+
+1. Navigiere zur gewünschten SharePoint-Site
+2. Klicke auf **+ Neu → Seite**
+3. Wähle ein **Seitenlayout** (leer oder aus einer Vorlage)
+4. Bearbeite den Seitentitel im oberen Bereich
+5. Füge Webparts hinzu: Klicke auf das **+**-Symbol zwischen Sektionen → Webpart auswählen
+6. Konfiguriere das Webpart im rechten Einstellungspanel
+7. Klicke auf **Veröffentlichen** (oder **Als News-Post veröffentlichen**)
+
+> [!TIP]
+> Schneller Zugriff: **Einstellungen (Zahnrad) → Seite hinzufügen** oder über die Schnellstartleiste **Seiten → Neue Seite**
+
+### Sektionen und Layout konfigurieren
+
+1. Öffne eine Seite im **Bearbeitungsmodus** (Bleistift-Symbol oben rechts)
+2. Klicke auf das **Sektions-Symbol** (links neben der Sektion) → Layout wählen
+3. Verfügbare Layouts: 1 Spalte, 2 Spalten, 3 Spalten, 1/3 links, 1/3 rechts
+4. Hintergrundfarbe der Sektion über **Sektionsfarbe** festlegen (Neutral, Weich, Stark, Akzent)
+
+### Webpart hinzufügen und konfigurieren
+
+1. Klicke im Bearbeitungsmodus auf das **+**-Symbol
+2. Wähle ein Webpart aus der Galerie (z. B. **Hervorgehobene Inhalte**, **Neuigkeiten**, **Schnelllinks**)
+3. Konfiguriere das Webpart im **Eigenschaftspanel** rechts
+4. Ziehe Webparts per **Drag & Drop** an eine neue Position
+5. Klicke auf **Neu veröffentlichen**
+
+### Seitenvorlage erstellen und verwenden
+
+**Vorlage speichern:**
+1. Öffne eine fertig gestaltete Seite → klicke auf **⋮ (Weitere Optionen) → Als Vorlage speichern**
+2. Gib der Vorlage einen Namen → **Vorlage speichern**
+
+**Vorlage verwenden:**
+1. **+ Neu → Seite → Aus vorhandener Vorlage**
+2. Wähle die gespeicherte Vorlage → **Seite erstellen**
+
+### Audience Targeting für Webparts aktivieren
+
+1. Öffne **Site-Inhalte → Site Pages Bibliothek**
+2. Klicke auf **⋮ → Einstellungen** (Bibliothekseinstellungen)
+3. Aktiviere **Zielgruppen-Targeting** → **Speichern**
+4. Öffne eine Seite im Bearbeitungsmodus → wähle ein unterstütztes Webpart (z. B. Hervorgehobene Inhalte, Neuigkeiten)
+5. Im Webpart-Panel: **Zielgruppen** hinzufügen (M365-Gruppe, Sicherheitsgruppe oder Entra-Gruppe)
+
+### Mehrsprachige Seite konfigurieren
+
+1. Öffne **Site-Einstellungen (Zahnrad) → Mehrsprachige Einstellungen**
+2. Aktiviere **Seiten und Nachrichtenartikel für mehrere Sprachen aktivieren**
+3. Füge die gewünschten Sprachen hinzu (z. B. Englisch, Französisch)
+4. Weise Übersetzer für die Sprachen zu
+5. Bestätige mit **Speichern**
+
+---
+
 ## Seitenvorlagen (Page Templates)
 
 Templates ermöglichen es, Seitenlayouts mit vorbefüllten Webparts zu speichern und bei neuen Seiten wiederzuverwenden.

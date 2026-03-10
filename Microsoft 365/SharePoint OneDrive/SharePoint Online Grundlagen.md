@@ -198,6 +198,52 @@ graph TD
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### SharePoint Admin Center aufrufen
+
+1. Melde dich bei [admin.microsoft.com](https://admin.microsoft.com) mit einem **SharePoint-Administrator**- oder **Global-Administrator**-Konto an
+2. Klicke im linken Navigationsbereich auf **Alle anzeigen → Admin Center → SharePoint**
+3. Alternativ: Direkt unter `https://[Tenant]-admin.sharepoint.com` aufrufen
+
+### Neue Site erstellen
+
+1. Navigiere zu **Sites → Aktive Sites → + Erstellen**
+2. Wähle den Sitetyp:
+   - **Teamwebsite** — mit M365-Gruppe, für Projektzusammenarbeit
+   - **Kommunikationswebsite** — ohne Gruppe, für Intranets
+3. Fülle Name, URL, Sprache und primären Administrator aus
+4. Klicke auf **Fertig stellen**
+
+### Websitesammlung verwalten
+
+| Aufgabe | Pfad im SPAC |
+|---------|-------------|
+| Alle Sites anzeigen | **Sites → Aktive Sites** |
+| Gelöschte Sites wiederherstellen | **Sites → Gelöschte Sites** |
+| Speicher einer Site anpassen | **Aktive Sites → Site → Details → Speicher bearbeiten** |
+| Site-Admin hinzufügen | **Aktive Sites → Site → Mitgliedschaft → Admins bearbeiten** |
+| Site löschen | **Aktive Sites → Site auswählen → Löschen** |
+
+### Term Store (Managed Metadata) verwalten
+
+1. Navigiere zu **Inhaltsdienste → Terminologiespeicher**
+2. Klicke auf **+ Begriffsgruppe hinzufügen** für neue Gruppen
+3. Innerhalb einer Gruppe: **+ Begriffssatz hinzufügen**
+4. Klicke auf einen Begriffssatz → **+ Begriff hinzufügen**
+5. Vergib mehrsprachige Beschriftungen und Synonyme → **Speichern**
+
+### Speicher- und Nutzungsstatistiken abrufen
+
+1. Im SPAC: **Startseite** → Kacheln zeigen Tenant-Speichernutzung und aktive Sites
+2. Pro Site: **Aktive Sites** → Spalten **Speicher (genutzt)** und **Speicher (Kontingent)** direkt sichtbar
+3. Detaillierte Berichte: **Microsoft 365 Admin Center → Berichte → Nutzung → SharePoint**
+
+> [!TIP]
+> Über **Aktive Sites → Spalten anpassen** können weitere Spalten (z. B. Letzte Aktivität, Vorlagenname, Hub-Zuordnung) zur Übersichtsansicht hinzugefügt werden.
+
+---
+
 ## SharePoint Admin Center
 
 Das Admin Center (`https://[Tenant]-admin.sharepoint.com`) bietet folgende Bereiche:

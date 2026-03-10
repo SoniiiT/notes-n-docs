@@ -389,6 +389,54 @@ sequenceDiagram
 
 ---
 
+## Via SharePoint Admin Center (UI)
+
+### Syntex-Dienste aktivieren (Pay-as-you-go)
+
+1. Öffne das **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Setup → Dateien und Inhalt → Inhaltsdienste mit Syntex automatisieren**
+3. Klicke auf **Erste Schritte**
+4. Verbinde ein **Azure-Abonnement** und wähle eine **Ressourcengruppe**
+5. Aktiviere die gewünschten Syntex-Dienste
+6. Klicke auf **Speichern**
+
+### Document Understanding-Modell erstellen (Content Center)
+
+1. Erstelle ein **Content Center** (falls noch keines vorhanden): **SPAC → Sites → + Erstellen → Andere Optionen → Content Center**
+2. Öffne das Content Center → klicke auf **+ Neues Modell**
+3. Wähle den Modelltyp:
+   - **Unterrichtsmethode** — für unstrukturierte Dokumente (Verträge, Berichte)
+   - **Freihandformular-Verständnis** — für halbstrukturierte Formulare
+4. Benenne das Modell → **Erstellen**
+5. Lade **Beispieldokumente** hoch (mind. 5 positive + 5 negative Beispiele)
+6. Konfiguriere den **Klassifizierer**: Welche Merkmale identifizieren diesen Dokumententyp?
+7. Füge **Extraktoren** hinzu: Welche Felder sollen als Metadaten extrahiert werden?
+8. Klicke auf **Trainieren und testen** → Überprüfe die Genauigkeit
+9. Klicke auf **Veröffentlichen**
+
+### Modell auf eine Bibliothek anwenden
+
+1. Öffne die Ziel-**Dokumentbibliothek** in SharePoint
+2. Klicke auf **Automatisieren → KI-Modell anwenden**
+3. Wähle ein veröffentlichtes Modell aus der Liste
+4. Klicke auf **Bibliothek hinzufügen** → Das Modell klassifiziert neue Dokumente automatisch
+
+### SharePoint Copilot-Agenten konfigurieren
+
+1. Öffne die gewünschte **SharePoint-Site**
+2. Klicke auf das **Copilot-Symbol** (rechts oben) oder: **Einstellungen (Zahnrad) → Copilot konfigurieren**
+3. Klicke auf **+ Neuer Agent** (oder bearbeite den vorhandenen Site-Agenten)
+4. Konfiguriere:
+   - **Name** und **Beschreibung** des Agenten
+   - **Wissensquellen**: Bibliotheken, Ordner oder gesamte Site
+   - **Verhalten**: Systemanweisungen / Persona festlegen
+5. Klicke auf **Erstellen** → Agent ist sofort im Copilot-Chat der Site verfügbar
+
+> [!NOTE]
+> Für erweiterte Agent-Konfigurationen (eigene Aktionen, API-Anbindungen, externe Wissensquellen) steht **Microsoft Copilot Studio** unter [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) zur Verfügung. Modelltraining und Corpus-Management können vollständig über das Content Center UI ohne PowerShell durchgeführt werden.
+
+---
+
 ## Governance und Best Practices
 
 > [!TIP] Syntex-Einführung strukturiert angehen
