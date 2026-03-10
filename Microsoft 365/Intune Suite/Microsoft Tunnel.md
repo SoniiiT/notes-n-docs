@@ -172,6 +172,52 @@ sudo systemctl status mstunnel
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Site erstellen
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Mandantenverwaltung** → **Microsoft Tunnel Gateway**
+3. Klicke auf **Sites** → **+ Erstellen**
+4. Konfiguriere die Site:
+   - **Name:** z. B. `Berlin-Datacenter`
+   - **Öffentliche IP/FQDN:** Extern erreichbare Adresse des Tunnel-Servers (z. B. `tunnel.contoso.com`)
+   - **Port:** Standard 443 (TCP/UDP)
+   - **IP-Bereich:** VPN-Client IP-Pool (z. B. `172.16.0.0/16`)
+   - **DNS-Server:** Interne DNS-Server-IPs
+   - **DNS-Suffix:** Internes Suffix (z. B. `corp.contoso.com`)
+5. **Erstellen** bestätigen
+
+### Serverzertifikat hochladen
+
+1. Navigiere zu **Mandantenverwaltung** → **Microsoft Tunnel Gateway** → **Server**
+2. Server auswählen oder nach Registrierung anklicken
+3. **Serverzertifikat hochladen:** PFX-Datei mit Zertifikat und privatem Schlüssel
+4. Zertifikat-Passwort eingeben → **Hochladen**
+
+### VPN-Profil für Tunnel erstellen
+
+1. Navigiere zu **Geräte** → **Konfigurationsprofile** → **+ Profil erstellen**
+2. **Plattform** wählen:
+   - **Android Enterprise** → Profiltyp: VPN → **Microsoft Tunnel**
+   - **iOS/iPadOS** → Profiltyp: VPN → **Microsoft Tunnel (MAM)**
+3. Konfiguriere das VPN-Profil:
+   - **Verbindungsname:** z. B. `Intune Tunnel VPN`
+   - **VPN-Serveradresse:** Tunnel Site FQDN
+   - **Split-Tunneling:** Aktiviert (nur interne Routen durch Tunnel)
+   - **Pro-App-VPN:** Optional nach App filtern
+4. **Zuweisung:** Benutzer- oder Gerätegruppen zuweisen → **Speichern**
+
+### Server-Health überwachen
+
+1. Navigiere zu **Mandantenverwaltung** → **Microsoft Tunnel Gateway** → **Server**
+2. Health-Status aller registrierten Server prüfen:
+   - **CPU-Auslastung**, **Speichernutzung**, **Verbindungen**
+   - **Letzter Kontakt** mit Intune
+3. Klicke auf einen Server für detaillierte Health-Metriken und Diagnose-Logs
+
+---
+
 ## Site und Server-Konfiguration in Intune
 
 ### Site erstellen

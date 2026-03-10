@@ -128,6 +128,59 @@ Geeignet für: Senior IT-Administratoren, Second/Third-Level-Support
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Remote Help aktivieren und konfigurieren
+
+1. Öffne **[intune.microsoft.com](https://intune.microsoft.com)**
+2. Navigiere zu **Mandantenverwaltung** → **Remote Help**
+3. Klicke auf **Einstellungen** → **Konfigurieren**
+4. Aktiviere **Remote Help:** Umschalter auf **Aktiviert**
+5. Konfiguriere organisationsweite Einstellungen:
+   - **Unbeaufsichtigter Zugriff:** Aktivieren für Windows Enterprise
+   - **Chat-Funktion:** Aktivieren oder deaktivieren
+   - **Benachrichtigung des Benutzers:** Immer anzeigen (empfohlen)
+   - **Kamera-Sharing:** Aktivieren oder deaktivieren
+6. **Speichern**
+
+### RBAC-Rollen für Remote Help zuweisen
+
+1. Navigiere zu **Mandantenverwaltung** → **Rollen** → **Alle Rollen**
+2. Rolle auswählen:
+   - **Remote Help Administrator** — Vollzugriff inkl. Unattended Access
+   - **Help Desk Operator** — Nur beaufsichtigter Zugriff
+3. Klicke **Zuweisungen** → **+ Zuweisen**
+4. **Gruppen** zuweisen (Entra ID-Gruppe der Help-Desk-Mitarbeiter)
+5. **Speichern**
+
+### Remote Help App deployen
+
+1. Navigiere zu **Apps** → **Alle Apps** → **+ Hinzufügen**
+2. **App-Typ:** Microsoft-App
+3. Wähle **Remote Help** aus der Liste
+4. **Zuweisung:** Alle Geräte oder spezifische Gerätegruppen
+5. **Erstellen**
+
+### Sitzung als Helfer starten
+
+1. **Remote Help App** auf dem Helfer-Gerät öffnen (oder über Browser: **aka.ms/remotehelp**)
+2. Mit **Entra ID-Konto** anmelden
+3. Sitzungstyp wählen: **Vollständige Kontrolle** oder **Nur anzeigen**
+4. **Sitzungscode** dem Benutzer mitteilen (per Teams, Telefon, etc.)
+
+5. *Alternativ direkt aus Intune:*
+   - Navigiere zu **Geräte** → Gerät suchen → **Remote Help**
+   - Klicke **Remote Help starten** → Verbindung wird initiiert
+
+### Audit-Logs prüfen
+
+1. Navigiere zu **Mandantenverwaltung** → **Remote Help** → **Berichte**
+2. Alle Remote-Help-Sitzungen anzeigen: Helfer, Benutzer, Gerät, Dauer, Sitzungstyp
+3. **Filter** nach Zeitraum, Helfer oder Gerät
+4. **Exportieren** als CSV für Compliance-Nachweise
+
+---
+
 ## Attended Access: Windows Sitzung starten
 
 ### Aus Intune Admin Center (Helfer-Seite)
