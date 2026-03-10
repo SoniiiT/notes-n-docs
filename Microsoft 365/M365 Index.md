@@ -178,12 +178,12 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Windows 365 (Cloud PC) | Grundlagen, Pläne, Provisioning, Management über Intune |
-| Windows 365 Boot / Frontline | Shared-Modus, Offline-Fähigkeit, Frontline-Worker |
-| Azure Virtual Desktop (AVD) | Host Pools, Session Hosts, App Groups, Workspaces |
-| AVD Netzwerk und Identität | Verbindungsarchitektur, Entra ID Join, FSLogix Profile Container |
-| FSLogix | Profile Container, Office Container, Cloud Cache, Konfiguration |
-| RDS vs. AVD vs. W365 | Vergleich der Desktop-Virtualisierungs-Optionen |
+| [[Windows 365 Cloud PC]] | Grundlagen, Pläne, Provisioning, Management über Intune |
+| [[Windows 365 Boot und Frontline]] | Shared-Modus, Offline-Fähigkeit, Frontline-Worker |
+| [[Azure Virtual Desktop AVD]] | Host Pools, Session Hosts, App Groups, Workspaces |
+| [[AVD Netzwerk und Identität]] | Verbindungsarchitektur, Entra ID Join, FSLogix Profile Container |
+| [[FSLogix]] | Profile Container, Office Container, Cloud Cache, Konfiguration |
+| [[RDS vs AVD vs W365 Vergleich]] | Vergleich der Desktop-Virtualisierungs-Optionen |
 
 ---
 
