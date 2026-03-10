@@ -192,6 +192,32 @@ graph TD
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Neuen Planner-Plan erstellen
+
+1. Öffne **Microsoft Teams** → klicke im linken Menü auf **Planner** (oder installiere die App über den App-Store)
+2. Klicke auf **Neuer Plan**
+3. Gib einen Namen ein und wähle eine übergeordnete M365-Gruppe
+4. Füge **Buckets** (Spalten) und **Aufgaben** mit Fälligkeitsdaten und Zuständigen hinzu
+
+### Planner-Tab zu einem Teams-Kanal hinzufügen
+
+1. Öffne den gewünschten **Teams-Kanal**
+2. Klicke auf **+ Tab hinzufügen** → **Planner**
+3. Wähle **Neuen Plan erstellen** oder **Bestehenden Plan hinzufügen**
+4. Benenne den Tab und klicke auf **Speichern**
+
+### Planner Premium (Project for the Web) aktivieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Abrechnung → Ihre Produkte** → prüfe vorhandene Planner-Lizenzen
+3. Navigiere zu **Benutzer → Aktive Benutzer → Benutzer auswählen → Tab Lizenzen**
+4. Aktiviere die **Planner Plan 1/3/5**-Lizenz → **Änderungen speichern**
+5. Öffne den neuen Planner in Teams → **Premium-Plan erstellen** für Gantt und Abhängigkeiten
+
+---
+
 ## Planner in Teams einrichten
 
 ### Planner-Tab zu Kanal hinzufügen

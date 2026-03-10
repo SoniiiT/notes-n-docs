@@ -63,6 +63,35 @@ graph TD
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Home Site im SharePoint Admin Center einrichten
+
+1. Melde dich an beim **SharePoint Admin Center** unter `https://<tenant>-admin.sharepoint.com`
+2. Navigiere zu **Einstellungen → Home Site**
+3. Gib die URL der Communication Site ein, die als Home Site dienen soll
+4. Klicke auf **Speichern**
+
+### Viva Connections in Teams aktivieren
+
+1. Melde dich an beim **Microsoft Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Teams-Apps → Apps verwalten**
+3. Suche nach **Viva Connections** und stelle sicher, dass die App erlaubt ist
+4. Navigiere zu **Teams-Apps → Einrichtungsrichtlinien**
+5. Bearbeite die globale Richtlinie → **Apps hinzufügen → Viva Connections** auswählen
+6. Verschiebe die App an die gewünschte Position in der Leiste → **Speichern**
+
+### Dashboard im SharePoint Home Site konfigurieren
+
+1. Öffne die **Home Site** in SharePoint
+2. Klicke auf das **Zahnrad-Symbol → Viva Connections einrichten**
+3. Navigiere zu **Dashboard → Karte hinzufügen**
+4. Wähle eine vordefinierte Karte (z.B. *Genehmigte Anfragen*, *Schichtpläne*) oder erstelle eine benutzerdefinierte Adaptive Card
+5. Konfiguriere **Zielgruppen** für jede Karte (Entra ID-Gruppen)
+6. Klicke auf **Veröffentlichen**
+
+---
+
 ## Einrichtung: Schritt für Schritt
 
 ### Schritt 1: Home Site erstellen und designieren

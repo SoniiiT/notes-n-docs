@@ -97,6 +97,32 @@ Der **Leadership Corner** ist ein dedizierter Bereich für:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Viva Engage Admin Center öffnen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Klicke in der linken Navigation auf **Admin Center → Viva Engage** (oder öffne direkt [engage.cloud.microsoft](https://engage.cloud.microsoft))
+3. Klicke oben rechts auf das **Zahnrad-Symbol** um das Viva Engage Admin Center zu öffnen
+
+### Community erstellen
+
+1. Öffne **Viva Engage** unter [engage.cloud.microsoft](https://engage.cloud.microsoft)
+2. Klicke auf **+ Neue Community**
+3. Gib Namen, Beschreibung und Sichtbarkeit ein (Öffentlich / Privat / Geheim)
+4. Lade Mitglieder ein und weise **Community-Admins** zu
+5. Klicke auf **Community erstellen**
+
+### Features im Viva Engage Admin Center konfigurieren
+
+1. Öffne das **Viva Engage Admin Center** (Zahnrad-Symbol in Engage)
+2. Navigiere zu **Mandanteneinstellungen**
+3. Aktiviere oder deaktiviere **Storylines**, **Answers in Viva** und **Leadership Corner**
+4. Konfiguriere unter **Moderation** die Überwachungsregeln und blockierten Schlüsselwörter
+5. Klicke auf **Speichern**
+
+---
+
 ## Native Mode
 
 Der **Native Mode** ist der empfohlene Betriebsmodus für Unternehmens-Tenants:

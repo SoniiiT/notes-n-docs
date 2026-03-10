@@ -160,6 +160,33 @@ OneDrive → Dateien → Microsoft Loop → [Workspace-Name] → [Seitenname].lo
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Loop für den Tenant aktivieren oder deaktivieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Organisationseinstellungen**
+3. Wähle den Tab **Dienste** → **Microsoft Loop**
+4. Aktiviere oder deaktiviere **Loop-Workspaces** und **Loop-Komponenten in Teams/Outlook**
+5. Klicke auf **Speichern**
+
+### Neuen Loop Workspace erstellen
+
+1. Öffne die **Microsoft Loop App** unter [loop.microsoft.com](https://loop.microsoft.com) oder über den M365 App-Launcher
+2. Klicke auf **Neuer Workspace**
+3. Gib einen Namen und optional eine Beschreibung ein
+4. Lade Teammitglieder über **Mitglieder hinzufügen** ein
+5. Erstelle erste **Seiten** über das **+**-Symbol im Workspace
+
+### Loop Component in Teams-Chat einfügen
+
+1. Öffne einen **Teams-Chat oder Kanal**
+2. Klicke auf das **Loop-Symbol** (Schleife) in der Nachrichtenleiste
+3. Wähle den Component-Typ (Tabelle, Aufgabenliste, Abstimmung usw.)
+4. Bearbeite den Component direkt im Chat – Änderungen sind sofort für alle sichtbar
+
+---
+
 ## Governance und Admin-Einstellungen
 
 ### Loop im Admin Center aktivieren/deaktivieren

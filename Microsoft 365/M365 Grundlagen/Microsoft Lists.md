@@ -228,6 +228,33 @@ Lists erbt die Berechtigungen von der SharePoint-Site, in der die Liste erstellt
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Neue Liste erstellen (Microsoft Lists App)
+
+1. Rufe die **Microsoft Lists App** unter [lists.microsoft.com](https://lists.microsoft.com) auf oder öffne sie über den M365 App-Launcher
+2. Klicke auf **Neue Liste**
+3. Wähle eine **Vorlage** (z.B. *Issue Tracker*, *Asset Manager*) oder beginne mit einer leeren Liste
+4. Gib Namen, Beschreibung und Farbe ein → **Erstellen**
+
+### Liste in einem Teams-Kanal einbinden
+
+1. Öffne den gewünschten **Teams-Kanal**
+2. Klicke auf **+ Tab hinzufügen** → **Lists**
+3. Wähle **Bestehende Liste hinzufügen** oder **Neue Liste erstellen**
+4. Wähle die Liste aus und benenne den Tab
+5. Klicke auf **Speichern**
+
+### Spalten und Ansichten verwalten (SharePoint-Einstellungen)
+
+1. Öffne die Liste in **Microsoft Lists** oder **SharePoint**
+2. Klicke auf das **Zahnrad-Symbol → Listeneinstellungen**
+3. Wähle unter **Spalten** eine Spalte zum Bearbeiten oder klicke **Spalte erstellen**
+4. Wähle den **Datentyp** (Text, Zahl, Auswahl, Person usw.) → **Speichern**
+5. Unter **Ansichten** lassen sich neue Ansichtstypen (Grid, Galerie, Kalender, Board) anlegen
+
+---
+
 ## Troubleshooting
 
 > [!WARNING] "Ansicht kann nicht angezeigt werden" (5.000-Limit)

@@ -175,6 +175,35 @@ Whiteboards können als **persistenter Tab** in einem Teams-Kanal hinzugefügt w
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Microsoft Whiteboard im Admin Center verwalten
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Organisationseinstellungen**
+3. Wähle den Tab **Dienste** → **Microsoft Whiteboard**
+4. Aktiviere oder deaktiviere den Dienst für den Tenant
+5. Konfiguriere **externe Zusammenarbeit** (Gäste einladen ja/nein)
+6. Klicke auf **Speichern**
+
+### Neues Whiteboard erstellen
+
+1. Öffne die **Whiteboard-App** unter [whiteboard.microsoft.com](https://whiteboard.microsoft.com) oder über den M365 App-Launcher
+2. Klicke auf **Neues Whiteboard**
+3. Gib einen Namen ein und beginne mit der Arbeit auf der Canvas
+4. Füge Elemente hinzu: **Sticky Notes**, **Bilder**, **Formen**, **Freihand-Zeichnungen** oder **Vorlagen**
+5. Teile das Whiteboard über das **Teilen-Symbol** → Link generieren und Berechtigungen festlegen
+
+### Whiteboard in Teams-Meeting verwenden
+
+1. Starte oder trete einem **Teams-Meeting** bei
+2. Klicke in der Meeting-Steuerleiste auf **Inhalte teilen**
+3. Wähle unter **Whiteboard** die Option **Microsoft Whiteboard**
+4. Das Whiteboard öffnet sich für alle Meeting-Teilnehmer zur gemeinsamen Bearbeitung
+5. Nach dem Meeting ist das Whiteboard in **OneDrive → Whiteboards** gespeichert und weiter bearbeitbar
+
+---
+
 ## Verwaltung (Admin Center)
 
 ### Admin-Einstellungen

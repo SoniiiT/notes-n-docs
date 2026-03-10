@@ -169,6 +169,35 @@ Manager können ihren Teammitgliedern direkt aus Teams heraus Lerninhalte empfeh
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Viva Learning Content-Quellen konfigurieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Viva → Viva Learning**
+3. Wähle den Tab **Verwalten → Content-Quellen**
+4. Aktiviere oder deaktiviere vorhandene Quellen (Microsoft Learn, LinkedIn Learning usw.)
+5. Um eine **SharePoint-Quelle** hinzuzufügen: **Hinzufügen → SharePoint-URL eingeben**
+6. Klicke auf **Speichern**
+
+### Featured Content (Pflichtschulungen) verwalten
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Viva → Viva Learning → Hervorgehobener Inhalt**
+3. Klicke auf **Inhalt hinzufügen**
+4. Suche nach dem gewünschten Kurs → **Hinzufügen**
+5. Lege ein optionales **Fälligkeitsdatum** fest
+6. Klicke auf **Speichern** – der Kurs erscheint prominent auf der Viva Learning Startseite
+
+### Viva Learning App in Teams für alle Benutzer pinnen
+
+1. Melde dich an beim **Microsoft Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Teams-Apps → Einrichtungsrichtlinien**
+3. Bearbeite die globale Richtlinie → **Apps hinzufügen → Viva Learning**
+4. Verschiebe die App an die gewünschte Position in der App-Leiste → **Speichern**
+
+---
+
 ## Admin-Einstellungen
 
 ### Viva Learning Admin Center

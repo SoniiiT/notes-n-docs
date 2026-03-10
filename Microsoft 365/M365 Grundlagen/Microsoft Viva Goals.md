@@ -240,6 +240,34 @@ In Teams-Meetings kann Viva Goals für **OKR-Review-Meetings** genutzt werden:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Viva Goals lizenzieren und einrichten
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Abrechnung → Ihre Produkte** → prüfe die **Viva Goals** oder **Viva Suite**-Lizenz
+3. Navigiere zu **Benutzer → Aktive Benutzer → Benutzer auswählen → Tab Lizenzen**
+4. Aktiviere **Microsoft Viva Goals** → **Änderungen speichern**
+
+### Organisation in Viva Goals einrichten
+
+1. Öffne **Viva Goals** unter [goals.microsoft.com](https://goals.microsoft.com) oder in **Microsoft Teams → Viva Goals**
+2. Klicke auf **Organisation erstellen**
+3. Gib Organisationsname, Zeitraum (z.B. *Q1 2025*) und Farbe ein
+4. Lege **Abteilungen und Teams** als Untereinheiten an
+5. Weise Benutzern Rollen zu: **Organization Admin**, **Team Admin** oder **Member**
+
+### OKR erstellen
+
+1. Öffne **Viva Goals** und wähle den aktuellen Zeitraum
+2. Klicke auf **+ Hinzufügen → Objective**
+3. Gib einen ambitionierten, qualitativen Titel ein
+4. Richte das Objective über **Ausrichten an** an einem übergeordneten Ziel aus
+5. Füge **2–4 Key Results** mit Startwert, Zielwert und Metriktyp hinzu
+6. Verknüpfe optional ein **Projekt** (Planner, Azure DevOps) für automatischen Fortschritt
+
+---
+
 ## Troubleshooting
 
 > [!WARNING] OKR-Fortschritt wird nicht aktualisiert (Planner-Integration)

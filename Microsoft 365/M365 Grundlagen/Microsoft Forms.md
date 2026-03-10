@@ -233,6 +233,28 @@ Formulare und Antworten werden in **Microsoft-Cloud-Infrastruktur** gespeichert:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Microsoft Forms im Tenant verwalten
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Organisationseinstellungen**
+3. Wähle den Tab **Dienste** → **Microsoft Forms**
+4. Konfiguriere, wer externe Formulare erstellen und teilen darf
+5. Aktiviere oder deaktiviere den Phishing-Schutz und automatisch blockierte Formulare
+6. Klicke auf **Speichern**
+
+### Neues Formular erstellen (Forms-App)
+
+1. Rufe die **Microsoft Forms App** unter [forms.office.com](https://forms.office.com) auf oder öffne sie über den M365 App-Launcher
+2. Klicke auf **Neues Formular**
+3. Gib einen Titel und optional eine Beschreibung ein
+4. Füge Fragen hinzu über **Frage hinzufügen** → Fragetyp wählen
+5. Konfiguriere Zugriffseinstellungen über das **Zahnrad-Symbol** (wer antworten darf, Start-/Enddatum)
+6. Klicke auf **Teilen** und wähle den Zugriffstyp sowie die Sharing-Methode (Link, QR-Code, Embed)
+
+---
+
 ## Troubleshooting
 
 > [!WARNING] Externe Benutzer können Formular nicht ausfüllen

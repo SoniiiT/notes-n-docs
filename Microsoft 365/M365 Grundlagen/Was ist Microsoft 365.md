@@ -215,6 +215,41 @@ Microsoft 365 entwickelt sich kontinuierlich weiter. Die wichtigsten Entwicklung
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Microsoft 365 Admin Center aufrufen und navigieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Nutze die **linke Navigationsleiste** für den Zugriff auf alle Bereiche:
+   - **Startseite** – Dashboard mit KPIs und Servicestatus
+   - **Benutzer** – Aktive Benutzer, Gastbenutzer, gelöschte Benutzer
+   - **Gruppen** – M365-Gruppen, Verteiler, geteilte Postfächer
+   - **Abrechnung** – Lizenzen, Rechnungen, Zahlungsmethoden
+   - **Einstellungen** – Organisationsprofil, Sicherheit, Dienste und Add-Ins
+   - **Berichte** – Verwendung und Aktivierungen
+   - **Integrität** – Dienststatus und Nachrichten-Center
+   - **Admin Center** – Links zu Exchange, Teams, SharePoint, Entra ID, Intune
+
+### Weitere Admin Center aufrufen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Admin Center** in der linken Leiste (ganz unten)
+3. Wähle das gewünschte Admin Center:
+   - **Exchange** – E-Mail und Postfachverwaltung
+   - **Teams** – Teams-Konfiguration, Meetings, Telefonie
+   - **SharePoint** – Sites, OneDrive, externe Freigaben
+   - **Entra ID** – Identität, Gruppen, Conditional Access
+   - **Intune** – Geräteverwaltung und App-Schutz
+
+### Microsoft 365-Dienstintegrität überwachen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Integrität → Dienststatus**
+3. Prüfe den Echtzeit-Status aller M365-Dienste
+4. Navigiere zu **Integrität → Nachrichten-Center** für Ankündigungen und geplante Änderungen
+
+---
+
 ## Troubleshooting: Häufige Fragen
 
 > [!QUESTION] Ist Microsoft 365 dasselbe wie Azure?

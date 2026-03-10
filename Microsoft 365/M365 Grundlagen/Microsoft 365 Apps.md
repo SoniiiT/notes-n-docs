@@ -44,6 +44,35 @@ Microsoft 365 Apps umfassen die bekannten Office-Desktopanwendungen, die im Rahm
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### M365 Apps-Deployment via Microsoft Intune konfigurieren
+
+1. Melde dich an beim **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Apps → Windows → Hinzufügen**
+3. Wähle als App-Typ **Microsoft 365 Apps for Windows 10 und höher**
+4. Klicke auf **App-Suite konfigurieren** und wähle die gewünschten Apps (Word, Excel, PowerPoint usw.)
+5. Wähle den **Update-Kanal** (z.B. *Monatlicher Unternehmenskanal*)
+6. Stelle **Architektur** auf *64-Bit* ein
+7. Wechsle zu **Zuweisungen** und füge Benutzer- oder Gerätegruppen hinzu
+8. Klicke auf **Erstellen** – Apps werden automatisch auf zugewiesenen Geräten verteilt
+
+### Update-Kanal im M365 Apps Admin Center ändern
+
+1. Melde dich an beim **Microsoft 365 Apps Admin Center** unter [config.office.com](https://config.office.com)
+2. Navigiere zu **Wartung → Kanäle**
+3. Wähle die Gerätegruppe → **Update-Kanal ändern**
+4. Wähle den gewünschten Kanal (z.B. *Monatlicher Unternehmenskanal*)
+5. Bestätige mit **Verschieben**
+
+### Aktivierungsstatus und App-Integrität prüfen
+
+1. Melde dich an beim **Microsoft 365 Apps Admin Center** unter [config.office.com](https://config.office.com)
+2. Navigiere zu **Integrität → App-Integrität**
+3. Prüfe Absturzraten, Add-in-Probleme und Geräte mit veralteten Versionen in der Übersicht
+
+---
+
 ## Click-to-Run Technologie
 
 **Click-to-Run (C2R)** ist die Installationstechnologie für Microsoft 365 Apps. Sie ersetzt den klassischen Windows Installer (MSI) seit Office 2013.

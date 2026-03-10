@@ -159,6 +159,40 @@ Wichtige Add-ons, die separat lizenziert werden können:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Lizenzüberblick und verfügbare Lizenzen prüfen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Abrechnung → Ihre Produkte**
+3. Prüfe alle aktiven Abonnements sowie verbrauchte und verfügbare Lizenzen
+
+### Lizenz einem Benutzer zuweisen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Benutzer → Aktive Benutzer**
+3. Klicke auf den gewünschten Benutzer → Tab **Lizenzen und Apps**
+4. Setze einen Haken bei der gewünschten Lizenz
+5. Deaktiviere ggf. einzelne Service-Pläne unter **Apps**
+6. Klicke auf **Änderungen speichern**
+
+### Gruppenbasierte Lizenzierung konfigurieren
+
+1. Melde dich an beim **Entra Admin Center** unter [entra.microsoft.com](https://entra.microsoft.com)
+2. Navigiere zu **Identität → Gruppen → Alle Gruppen**
+3. Wähle eine Gruppe aus → **Lizenzen**
+4. Klicke auf **Zuweisung hinzufügen**
+5. Wähle den Lizenzplan und deaktiviere ggf. einzelne Dienste
+6. Klicke auf **Speichern**
+
+### Lizenznutzung und Kosten prüfen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Berichte → Verwendung → Lizenzen** für eine Übersicht über zugewiesene und verfügbare Lizenzen
+3. Über **Abrechnung → Rechnungen und Zahlungen** sind vergangene Rechnungen einsehbar
+
+---
+
 ## Gruppenbasierte Lizenzierung
 
 Lizenzen können in Entra ID **automatisch über Gruppen** zugewiesen werden. Dies vereinfacht das Management erheblich.

@@ -196,6 +196,34 @@ Der **Semantic Index for Copilot** ist ein spezieller Index, der nicht nur Schl�
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Microsoft 365 Copilot-Lizenz zuweisen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Benutzer → Aktive Benutzer**
+3. Klicke auf den gewünschten Benutzer → Tab **Lizenzen und Apps**
+4. Aktiviere die Lizenz **Microsoft 365 Copilot**
+5. Klicke auf **Änderungen speichern**
+
+### Copilot-Einstellungen und Adoption verwalten
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Copilot**
+3. Prüfe den Aktivierungsstatus und konfiguriere tenant-weite Benutzerrichtlinien
+4. Navigiere zu **Berichte → Verwendung → Copilot** um die Adoption nachzuverfolgen
+
+### Copilot in Teams-Meetings konfigurieren
+
+1. Melde dich an beim **Microsoft Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Meetings → Meeting-Richtlinien**
+3. Wähle die gewünschte Richtlinie (z.B. *Global*)
+4. Suche den Abschnitt **Aufzeichnung und Transkription**
+5. Stelle **Copilot** auf *Ein* (erlaubt KI-Zusammenfassungen in Meetings)
+6. Klicke auf **Speichern**
+
+---
+
 ## Lizenzierung
 
 ### Anforderungen

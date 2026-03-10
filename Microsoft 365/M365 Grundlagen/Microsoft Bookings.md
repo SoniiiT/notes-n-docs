@@ -44,6 +44,29 @@ Microsoft Bookings löst das klassische Problem: "Haben Sie am Dienstag um 14 Uh
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Microsoft Bookings für den Tenant aktivieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Organisationseinstellungen**
+3. Wähle den Tab **Dienste** → **Buchungen**
+4. Aktiviere oder deaktiviere die Option **Buchungen für Ihre Organisation aktivieren**
+5. Konfiguriere weitere Einstellungen (z.B. wer Buchungsseiten erstellen darf)
+6. Klicke auf **Änderungen speichern**
+
+### Neue Buchungsseite erstellen (Bookings-App)
+
+1. Öffne die **Bookings-App** unter [bookings.office.com](https://bookings.office.com) oder über den M365 App-Launcher
+2. Klicke auf **Neue Buchungsseite erstellen**
+3. Gib Name und Kategorie ein → **Weiter**
+4. Konfiguriere Geschäftszeiten, Logo und Zeitzone
+5. Füge unter **Dienste** die buchbaren Leistungen hinzu
+6. Füge unter **Mitarbeiter** die beteiligten Personen hinzu
+7. Veröffentliche die Seite und teile den **Buchungslink**
+
+---
+
 ## Voraussetzungen und Lizenzierung
 
 > [!IMPORTANT] Lizenzanforderungen

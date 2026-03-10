@@ -166,6 +166,35 @@ graph LR
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Teams-Meeting-Aufzeichnung aktivieren
+
+1. Melde dich an beim **Microsoft Teams Admin Center** unter [admin.teams.microsoft.com](https://admin.teams.microsoft.com)
+2. Navigiere zu **Meetings → Meeting-Richtlinien**
+3. Klicke auf die gewünschte Richtlinie (z.B. *Global*)
+4. Suche den Abschnitt **Aufzeichnung und Transkription**
+5. Aktiviere **Cloud-Aufzeichnung** und **Transkription**
+6. Stelle unter **Ablauf der Meeting-Aufzeichnung** die gewünschten Tage ein (`-1` = unbegrenzt)
+7. Klicke auf **Speichern**
+
+### Video über Microsoft Stream hochladen und teilen
+
+1. Öffne **Microsoft Stream** unter [stream.microsoft.com](https://stream.microsoft.com)
+2. Klicke auf **+ Hochladen**
+3. Ziehe die Videodatei in das Upload-Fenster oder wähle sie aus
+4. Gib Titel, Beschreibung und Sprache an
+5. Konfiguriere Berechtigungen (eigene Organisation, bestimmte Personen)
+6. Klicke auf **Veröffentlichen**
+
+### OneDrive-Speicherkontingent prüfen
+
+1. Melde dich an beim **SharePoint Admin Center** unter `https://<tenant>-admin.sharepoint.com`
+2. Navigiere zu **Einstellungen → Speicher**
+3. Überprüfe das verwendete und verfügbare Speicherkontingent für SharePoint und OneDrive
+
+---
+
 ## Admin-Einstellungen
 
 ### Teams-Aufzeichnungsrichtlinien

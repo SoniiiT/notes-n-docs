@@ -67,6 +67,42 @@ az account show --query tenantId -o tsv
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Tenant erstellen
+
+1. Rufe [microsoft.com/microsoft-365](https://www.microsoft.com/de-de/microsoft-365) auf
+2. Wähle einen Plan → **Kostenlos testen** oder **Jetzt kaufen**
+3. Klicke auf **Für Ihr Unternehmen** → **Neues Konto erstellen**
+4. Gib E-Mail-Adresse, Passwort und Organisationsname ein
+5. Lege den **Domainnamen** fest (`<name>.onmicrosoft.com`) – dieser ist dauerhaft und nicht änderbar
+6. Wähle **Land/Region** (für EU-Datenspeicherung: *Deutschland* oder ein EU-Land)
+7. Schließe die Zahlung ab
+
+### Domain hinzufügen und verifizieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Domänen → Domäne hinzufügen**
+3. Gib deinen Domainnamen ein (z.B. `contoso.de`) → **Diese Domain verwenden**
+4. Wähle die Überprüfungsmethode (**TXT-Eintrag** empfohlen)
+5. Setze den angezeigten TXT-Eintrag bei deinem DNS-Anbieter
+6. Klicke auf **Überprüfen** nach TTL-Ablauf
+7. Konfiguriere die angezeigten **DNS-Einträge** (MX, CNAME, TXT für SPF)
+
+### Organisationseinstellungen verwalten
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Organisationseinstellungen → Organisationsprofil**
+3. Ändere Name, Sprache, Zeitzone und Support-Informationen → **Speichern**
+
+### Datenspeicherorte prüfen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Einstellungen → Organisationseinstellungen → Datenspeicherorte**
+3. Überprüfe für jeden Dienst, in welcher Region die Daten gespeichert werden
+
+---
+
 ## Tenant erstellen
 
 ### Voraussetzungen

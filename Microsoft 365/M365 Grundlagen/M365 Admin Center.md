@@ -60,6 +60,43 @@ Die Startseite zeigt:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Benutzer erstellen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Benutzer → Aktive Benutzer**
+3. Klicke auf **Benutzer hinzufügen**
+4. Gib Name, Anzeigename und Benutzerprinzipalname (E-Mail-Adresse) ein
+5. Stelle **Nutzungsstandort** auf *Deutschland* ein
+6. Wähle die gewünschte **Lizenz** aus
+7. Weise bei Bedarf eine **Admin-Rolle** zu
+8. Klicke auf **Fertig stellen → Hinzufügen**
+
+### Lizenz zuweisen oder ändern
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Benutzer → Aktive Benutzer**
+3. Klicke auf den gewünschten Benutzer → Tab **Lizenzen und Apps**
+4. Aktiviere oder deaktiviere die gewünschten **Lizenzen**
+5. Klicke auf **Änderungen speichern**
+
+### Admin-Rolle zuweisen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Rollen → Rollenzuweisungen**
+3. Wähle die gewünschte Rolle (z.B. *Benutzeradministrator*)
+4. Klicke auf **Admins hinzufügen**
+5. Suche nach dem Benutzer und wähle ihn aus → **Speichern**
+
+### Dienststatus prüfen
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Integrität → Dienststatus**
+3. Überprüfe den Status aller M365-Dienste (Grün = Normal, Gelb = Eingeschränkt, Rot = Incident)
+
+---
+
 ## Benutzer und Lizenzen verwalten
 
 ### Benutzer erstellen

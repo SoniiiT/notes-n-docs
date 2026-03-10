@@ -202,6 +202,36 @@ Empfehlungen umfassen:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Viva Pulse für den Tenant aktivieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Viva → Viva Pulse**
+3. Stelle sicher, dass der Dienst für den Tenant aktiviert ist
+4. Konfiguriere die **Mindestantworten** (Standard: 5, kann erhöht werden)
+5. Aktiviere oder deaktiviere **benutzerdefinierte Fragen** für Manager
+6. Klicke auf **Speichern**
+
+### Pulsumfrage erstellen und senden
+
+1. Öffne die **Viva Pulse App** in **Microsoft Teams** (oder installiere sie über den App-Store)
+2. Klicke auf **Neue Anfrage**
+3. Wähle eine **Vorlage** (z.B. *Team Health*, *Workload*, *Wellbeing*)
+4. Passe optional einzelne Fragen an
+5. Wähle **Empfänger** aus (Teams-Gruppe oder individuelle Personen)
+6. Lege die **Antwortfrist** fest (24 Stunden bis 7 Tage)
+7. Klicke auf **Senden** – Empfänger erhalten eine Teams-Benachrichtigung
+
+### Ergebnisse auswerten
+
+1. Öffne die **Viva Pulse App** in Teams
+2. Navigiere zu **Meine Anfragen** → wähle die abgeschlossene Umfrage
+3. Prüfe **Gesamtscore**, **Stärken** und **Verbesserungsbereiche**
+4. Lies die **anonymen Kommentare** und nutze die **KI-Empfehlungen** für Folgemaßnahmen
+
+---
+
 ## Admin-Konfiguration
 
 ### Viva Pulse im Admin Center

@@ -213,6 +213,27 @@ Nach der Veröffentlichung bietet Viva Amplify **Reichweiten-Analytics**:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Viva Amplify lizenzieren und Zugriff konfigurieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Abrechnung → Ihre Produkte** → prüfe die **Viva Amplify** oder **Viva Suite**-Lizenz
+3. Navigiere zu **Benutzer → Aktive Benutzer → Benutzer auswählen → Tab Lizenzen und Apps**
+4. Aktiviere **Viva Amplify** oder **Microsoft Viva Suite** → **Änderungen speichern**
+
+### Neue Kampagne in Viva Amplify erstellen
+
+1. Öffne die **Viva Amplify App** über den M365 App-Launcher oder direkt in Teams
+2. Klicke auf **Neue Kampagne**
+3. Gib Kampagnenname, Beschreibung und Zeitraum ein
+4. Lade **Team-Mitglieder** als Autoren oder Genehmiger ein
+5. Erstelle die erste **Publikation** über **Neue Publikation**
+6. Verfasse den Inhalt und wähle die **Veröffentlichungskanäle** (SharePoint News, Teams, Outlook)
+7. Passe Zielgruppen und Kanaleinstellungen an → **Veröffentlichen**
+
+---
+
 ## Troubleshooting
 
 > [!WARNING] E-Mail-Kanal sendet nicht

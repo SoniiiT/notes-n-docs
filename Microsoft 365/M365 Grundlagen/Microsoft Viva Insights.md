@@ -191,6 +191,34 @@ Basierend auf den Metriken gibt Viva Insights konkrete Empfehlungen:
 
 ---
 
+## Via Microsoft 365 Admin Center (UI)
+
+### Viva Insights für den Tenant konfigurieren
+
+1. Melde dich an beim **Microsoft 365 Admin Center** unter [admin.microsoft.com](https://admin.microsoft.com)
+2. Navigiere zu **Viva → Viva Insights**
+3. Konfiguriere die **Mindest-Teamgröße** für Team-Insights (Standard: 10 Personen)
+4. Aktiviere oder deaktiviere Features wie **Briefing-E-Mails** und **Virtual Commute**
+5. Lege fest, welche Benutzer von der Analyse ausgeschlossen werden (z.B. sensible Rollen)
+6. Klicke auf **Speichern**
+
+### Personal Insights in der Viva Insights App nutzen
+
+1. Öffne **Microsoft Teams → Apps → Viva Insights** (oder installiere die App über den App-Store)
+2. Navigiere zur **Startseite** für eine Übersicht deiner Arbeitsgewohnheiten
+3. Gehe zu **Fokus → Fokuszeit planen**, um tägliche Fokusblöcke im Kalender zu reservieren
+4. Erkunde **Wellbeing → Virtual Commute**, um das Arbeitsende zu markieren
+5. Passe persönliche Einstellungen unter **Einstellungen** an (Arbeitszeiten, Opt-out)
+
+### Team-Insights für Manager aufrufen
+
+1. Öffne **Microsoft Teams → Viva Insights App**
+2. Navigiere zum Tab **Ihr Team**
+3. Prüfe aggregierte Metriken zu After-Hours-Arbeit, Meeting-Last und Fokuszeit
+4. Nutze die **Manager-Empfehlungen** für konkrete Maßnahmen
+
+---
+
 ## Einrichtung und Konfiguration
 
 ### Admin-Konfiguration
