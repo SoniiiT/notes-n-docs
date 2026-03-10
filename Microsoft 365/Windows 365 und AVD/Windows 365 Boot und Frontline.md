@@ -164,6 +164,42 @@ Kassierer und Lagermitarbeiter nutzen gemeinsam genutzte Terminals. Der Shared M
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Windows 365 Boot Policy konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Windows 365 → Windows 365 Boot**
+3. Klicke auf **+ Boot-Einstellungen erstellen**
+4. Gib einen **Namen** für die Boot-Policy ein (z.B. `Boot-Policy-Produktion`)
+5. Konfiguriere das **Startverhalten**: Gerät startet direkt in den Cloud PC des angemeldeten Nutzers
+6. Optional: Passe **Anmeldebildschirm** (Logo, Hintergrundfarbe) an
+7. Klicke auf **Weiter → Zuweisungen** → Sicherheitsgruppe mit den Zielgeräten hinzufügen
+8. Klicke auf **Erstellen**
+
+> [!NOTE] Voraussetzung: Intune-Enrollment der physischen Geräte
+> Die Windows 11-Geräte müssen vollständig bei Intune enrolled sein, bevor die Boot-Policy greift. Nach der nächsten Richtliniensynchronisation und einem Neustart startet das Gerät direkt in den Cloud PC.
+
+### Windows 365 Frontline Provisioning Policy erstellen
+
+1. Navigiere zu **Geräte → Windows 365 → Bereitstellungsrichtlinien**
+2. Klicke auf **+ Erstellen**
+3. Wähle als **Lizenztyp**: **Frontline**
+4. Wähle den **Frontline-Modus**:
+   - **Dedicated**: 3 Nutzer teilen 1 persistenten Cloud PC (reihum, max. 1 gleichzeitig aktiv)
+   - **Shared**: Non-persistenter Pool — alle Nutzerdaten werden bei Abmeldung gelöscht
+5. Konfiguriere die **Sitzungseinstellungen** (besonders für Shared Mode):
+   - **Sitzungs-Timeout (Inaktivität)**: z.B. 60 Minuten
+   - **Trennungs-Timeout**: z.B. 15 Minuten nach Verbindungsabbruch
+6. Wähle **Netzwerk**, **Image** und **Sprache** (wie bei regulärer Provisioning Policy)
+7. Klicke auf **Weiter → Zuweisungen** → Frontline-Nutzergruppe hinzufügen
+8. Klicke auf **Erstellen**
+
+> [!TIP] Concurrent Sessions überwachen
+> Unter **Geräte → Windows 365 → Frontline-Nutzung** ist die aktuelle Auslastung der Concurrent-Lizenzen in Echtzeit sichtbar. Ein Alert wird ausgelöst, wenn alle Lizenzen belegt sind.
+
+---
+
 ## Windows 365 Frontline — Konfiguration
 
 ### Voraussetzungen

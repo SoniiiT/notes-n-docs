@@ -48,6 +48,50 @@ Die Verbindung funktioniert so:
 
 ---
 
+## Via Azure Portal (UI)
+
+### NSG-Regeln für AVD Session Hosts konfigurieren
+
+1. Öffne das **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Netzwerksicherheitsgruppen** → wähle die NSG des Session Host-Subnets
+3. Klicke auf **Ausgehende Sicherheitsregeln → + Hinzufügen**
+4. Konfiguriere die Regel für den AVD Control Plane:
+   - **Quelle**: *VirtualNetwork*
+   - **Ziel-Service-Tag**: *WindowsVirtualDesktop*
+   - **Protokoll**: *TCP*, **Zielportbereich**: `443`
+   - **Aktion**: *Zulassen*, **Priorität**: `100`
+   - **Name**: `Allow-AVD-ControlPlane`
+5. Klicke auf **Hinzufügen**
+6. Wiederhole den Vorgang für weitere Service Tags: `AzureActiveDirectory`, `AzureMonitor`, `Storage`
+
+> [!TIP] Azure Service Tags verwenden
+> Statt einzelner IP-Adressen bieten **Service Tags** automatisch aktualisierte IP-Bereiche. Unter **portal.azure.com → Netzwerksicherheitsgruppen → Service Tags** sind alle verfügbaren Tags aufgelistet.
+
+### Conditional Access für AVD konfigurieren
+
+1. Navigiere zu **Microsoft Entra ID → Sicherheit → Bedingter Zugriff → Richtlinien**
+2. Klicke auf **+ Neue Richtlinie erstellen**
+3. Gib einen **Namen** ein (z.B. `AVD - MFA für externe Nutzer`)
+4. Konfiguriere die **Zuweisungen**:
+   - **Benutzer**: Zielgruppe (z.B. alle AVD-Nutzer)
+   - **Zielanwendungen**: Wähle **Azure Virtual Desktop** UND **Windows Virtual Desktop** (beide!)
+   - **Bedingungen → Netzwerkstandorte**: Alle Standorte ausschließlich *Vertrauenswürdige Standorte*
+5. Unter **Zugriffssteuerung → Gewähren**: **Mehrstufige Authentifizierung erforderlich** auswählen
+6. Status auf **Ein** setzen und auf **Erstellen** klicken
+
+> [!IMPORTANT] Beide App-IDs absichern
+> Conditional Access muss auf **beide** Service Principals angewendet werden: *Azure Virtual Desktop* (Feed-Zugriff) **und** *Windows Virtual Desktop* (Verbindungsaufbau). Nur eine App zu schützen bietet keinen vollständigen Schutz.
+
+### RDP Shortpath im Portal aktivieren
+
+1. Navigiere zu **Azure Virtual Desktop → Host Pools** → gewünschten Host Pool öffnen
+2. Klicke auf **Einstellungen → RDP-Eigenschaften**
+3. Füge unter **Erweitert** folgende RDP-Eigenschaft hinzu: `networkautodetect:i:0;`
+4. Aktiviere auf den Session Hosts via **Intune → Geräte → Konfigurationsprofile** die entsprechende UDP-Firewallregel (Port 3390)
+5. Klicke auf **Speichern**
+
+---
+
 ## Erforderliche URLs und Ports (Firewall-Whitelist)
 
 Session Hosts benötigen ausgehenden Zugriff auf folgende Endpunkte:

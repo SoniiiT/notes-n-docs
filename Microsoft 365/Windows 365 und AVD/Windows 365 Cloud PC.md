@@ -104,6 +104,40 @@ Windows 365 bietet eine breite Palette an Konfigurationen, die nach vCPUs, RAM u
 
 ---
 
+## Via Microsoft Intune Admin Center (UI)
+
+### Cloud PC Provisioning Policy erstellen
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Windows 365 → Bereitstellungsrichtlinien**
+3. Klicke auf **+ Erstellen**
+4. Gib einen **Namen** ein (z.B. `PP-W365-Standard`) und wähle den **Lizenztyp** (*Enterprise* oder *Frontline*)
+5. Wähle unter **Netzwerk** entweder **Microsoft-hosted Network** oder eine vorhandene **Azure Network Connection (ANC)**
+6. Wähle ein **Image** aus der Galerie (z.B. *Windows 11 Enterprise + Microsoft 365 Apps 23H2*) oder ein Custom Image
+7. Konfiguriere **Sprache & Region** (z.B. `Deutsch (Deutschland)`)
+8. Wähle den **AD-Beitrittstyp**: **Microsoft Entra ID Join** (cloud-only) oder **Hybrid Microsoft Entra Join**
+9. Klicke auf **Weiter → Zuweisungen** → gewünschte **Entra ID-Sicherheitsgruppe** hinzufügen
+10. Klicke auf **Erstellen**
+
+> [!NOTE] Automatisches Provisioning
+> Nach der Zuweisung werden Cloud PCs automatisch für alle Mitglieder der Sicherheitsgruppe erstellt. Der Status ist unter **Geräte → Windows 365 → Alle Cloud-PCs** einsehbar.
+
+### Cloud PC verwalten (Resize, Reprovision, Troubleshoot)
+
+1. Navigiere zu **Geräte → Windows 365 → Alle Cloud-PCs**
+2. Wähle einen Cloud PC aus der Liste
+3. Im Detailbereich sind folgende **Aktionen** verfügbar:
+   - **Größe ändern (Resize)**: Plan auf höhere CPU/RAM upgraden — ohne Datenverlust
+   - **Erneut bereitstellen (Reprovision)**: Cloud PC auf Provisionierungszustand zurücksetzen (**Datenverlust!**)
+   - **Probleme beheben (Troubleshoot)**: Konnektivitätsprüfung starten (DNS, Entra ID, Intune, ANC)
+   - **Neustart**: Cloud PC neu starten
+   - **Wiederherstellen (Restore)**: Snapshot aus den letzten 7 Tagen wiederherstellen
+
+> [!TIP] Bereitstellungsstatus überwachen
+> Unter **Windows 365 → Organisationseinstellungen** lässt sich der Status aller Provisioning Policies einsehen. Fehler werden mit Fehlercode und empfohlenem Lösungsschritt angezeigt.
+
+---
+
 ## Provisioning Policy
 
 Eine **Provisioning Policy** definiert, wie Cloud PCs für eine Nutzergruppe erstellt werden. Sie ist das zentrale Konfigurationsobjekt in Windows 365 Enterprise.

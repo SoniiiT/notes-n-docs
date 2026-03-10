@@ -144,6 +144,49 @@ Bei Personal Host Pools wird jedem Benutzer eine dedizierte VM zugewiesen:
 
 ---
 
+## Via Azure Portal (UI)
+
+### Host Pool erstellen
+
+1. Öffne das **Azure Portal** unter [portal.azure.com](https://portal.azure.com)
+2. Navigiere zu **Azure Virtual Desktop → Host Pools**
+3. Klicke auf **+ Erstellen**
+4. Konfiguriere die **Grundeinstellungen**:
+   - **Abonnement** und **Ressourcengruppe** auswählen
+   - **Host Pool-Name** eingeben (z.B. `hp-avd-pooled-prod`)
+   - **Standort** wählen (z.B. *Westeuropa*)
+   - **Host Pool-Typ**: *Gepoolter* oder *Persönlicher*
+   - **Lastenausgleichsalgorithmus**: *Breadth First* (gleichmäßig verteilt) oder *Depth First* (kostenoptimiert)
+   - **Maximales Sitzungslimit** festlegen (z.B. `8` pro VM)
+5. Klicke auf **Weiter: Virtual Machines** und füge Session Hosts hinzu:
+   - **VM-Größe** auswählen (z.B. *Standard D4s v5*)
+   - **Image** aus der Galerie wählen (z.B. *Windows 11 Enterprise Multi-Session + Microsoft 365 Apps*)
+   - **Anzahl der VMs** festlegen
+   - **VNet und Subnet** aus der eigenen Subscription wählen
+   - **Domänenbeitritt**: Entra ID Join oder Hybrid Entra Join konfigurieren
+6. Klicke auf **Weiter: Arbeitsbereich** → vorhandenen Workspace zuweisen oder **Neuen erstellen**
+7. Klicke auf **Überprüfen + Erstellen** → **Erstellen**
+
+> [!NOTE] Registrierungstoken
+> Beim Erstellen des Host Pools wird automatisch ein Registrierungstoken generiert. Es wird benötigt, wenn Session Hosts später manuell registriert werden sollen.
+
+### Anwendungsgruppe (App Group) und Workspace konfigurieren
+
+1. Navigiere zu **Azure Virtual Desktop → Anwendungsgruppen**
+2. Klicke auf **+ Erstellen**
+3. Wähle den **Host Pool** und den **Anwendungsgruppentyp**:
+   - *Desktop*: Vollständiger Windows-Desktop
+   - *RemoteApp*: Einzelne Anwendungen veröffentlichen
+4. Bei **RemoteApp**: Klicke auf **Anwendungen** → **+ Hinzufügen** → Anwendungspfad oder Start-Menü-App auswählen
+5. Weise Benutzer oder Gruppen unter **Zuweisungen** zu
+6. Klicke auf **Überprüfen + Erstellen** → **Erstellen**
+7. Verknüpfe die App Group mit einem **Workspace** unter **Azure Virtual Desktop → Arbeitsbereiche → App Groups**
+
+> [!TIP] Scaling Plan aktivieren
+> Unter **Azure Virtual Desktop → Skalierungspläne** kann ein Autoscaling-Plan erstellt und dem Host Pool zugewiesen werden. So werden VMs außerhalb der Geschäftszeiten automatisch heruntergefahren — erhebliche Kosteneinsparung bei gepoolten Host Pools.
+
+---
+
 ## AVD Agent und Bootloader
 
 Jeder Session Host benötigt zwei Komponenten für die Kommunikation mit dem AVD Control Plane:

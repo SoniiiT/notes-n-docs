@@ -184,6 +184,52 @@ New-AzRoleAssignment `
 
 ---
 
+## Via Gruppenrichtlinien / Intune (UI)
+
+### FSLogix Profile Container via Intune Einstellungskatalog konfigurieren
+
+1. Öffne das **Microsoft Intune Admin Center** unter [intune.microsoft.com](https://intune.microsoft.com)
+2. Navigiere zu **Geräte → Konfiguration → + Erstellen → Neue Richtlinie**
+3. Wähle **Plattform**: *Windows 10 und höher*, **Profiltyp**: *Einstellungskatalog*
+4. Gib einen **Namen** ein (z.B. `FSLogix - Profile Container`)
+5. Klicke auf **+ Einstellungen hinzufügen** und suche nach **FSLogix**
+6. Aktiviere und konfiguriere folgende Einstellungen:
+   - **Profile Container: Enabled** → `1` (aktiviert)
+   - **Profile Container: VHD Locations** → UNC-Pfad eingeben, z.B. `\\stavdfslogix.file.core.windows.net\profiles`
+   - **Profile Container: Delete Local Profile When VHD Should Apply** → `1`
+   - **Profile Container: Volume Type** → `VHDX`
+   - **Profile Container: Size In MBs** → z.B. `30000` (30 GB)
+   - **Profile Container: Flip Flop Profile Directory Name** → `1` (SID_Username-Format)
+   - **Profile Container: Is Dynamic** → `1` (dynamisch wachsende VHDX)
+7. Klicke auf **Weiter → Zuweisungen** → Gruppe der Session Hosts hinzufügen
+8. Klicke auf **Erstellen**
+
+> [!TIP] Einstellungskatalog statt ADMX-Import
+> Der **Einstellungskatalog** ist die empfohlene Methode für Entra-ID-joined-Geräte — ein manueller ADMX-Import ist nicht erforderlich, da FSLogix-Einstellungen bereits in Intune integriert sind.
+
+### FSLogix ADMX via Gruppenrichtlinien konfigurieren (Hybrid-Umgebungen)
+
+1. Lade die **FSLogix ADMX-Vorlagen** unter [aka.ms/FSLogixDownload](https://aka.ms/FSLogixDownload) herunter
+2. Entpacke das Archiv und kopiere:
+   - `fslogix.admx` → `C:\Windows\PolicyDefinitions\` auf dem Gruppenrichtlinien-Server
+   - `fslogix.adml` → `C:\Windows\PolicyDefinitions\de-DE\`
+3. Öffne die **Gruppenrichtlinienverwaltung** (`gpmc.msc`)
+4. Erstelle ein neues GPO (z.B. `FSLogix - Profile Container`) und klicke auf **Bearbeiten**
+5. Navigiere zu **Computerkonfiguration → Richtlinien → Administrative Vorlagen → FSLogix → Profile Container**
+6. Konfiguriere folgende Einstellungen:
+   - **Enabled**: *Aktiviert*
+   - **VHD Location**: UNC-Pfad (z.B. `\\stavdfslogix.file.core.windows.net\profiles`)
+   - **Delete local profile when VHD should apply**: *Aktiviert*
+   - **Volume type**: *VHDX*
+   - **Size in MBs**: z.B. `30000`
+7. Verknüpfe das GPO mit der **OU der Session Hosts**
+8. Erzwinge eine Aktualisierung: `gpupdate /force` auf den Session Hosts
+
+> [!NOTE] GPO vs. Intune — Wann was nutzen?
+> In reinen Cloud-Umgebungen (Entra ID Join ohne AD DS) ist **Intune mit Einstellungskatalog** die richtige Wahl. GPO eignet sich für hybride Umgebungen mit Hybrid Entra Join, wo ein Active Directory Domain Controller vorhanden ist.
+
+---
+
 ## FSLogix-Konfiguration (Registry / GPO)
 
 Die empfohlene Konfigurationsmethode ist GPO (Group Policy) oder direkte Registry-Einstellung via PowerShell oder Intune.

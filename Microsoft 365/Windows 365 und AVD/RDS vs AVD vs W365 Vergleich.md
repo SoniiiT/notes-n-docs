@@ -282,6 +282,15 @@ graph LR
 
 ---
 
+> [!TIP] Direkt zu den Administrations-Portalen
+> Jede Plattform hat ihr eigenes Verwaltungsportal — hier die direkten Einstiegspunkte:
+> - **Windows 365 & Intune-Verwaltung**: [intune.microsoft.com](https://intune.microsoft.com) → **Geräte → Windows 365**
+> - **Azure Virtual Desktop**: [portal.azure.com](https://portal.azure.com) → **Azure Virtual Desktop** → Host Pools / App Groups / Arbeitsbereiche
+> - **Remote Desktop Services**: Server Manager auf dem **RD Connection Broker** → **Remote Desktop Services**
+> - **Microsoft 365 Lizenzen**: [admin.microsoft.com](https://admin.microsoft.com) → **Abrechnung → Lizenzen** → Zuweisung von W365-Lizenzen an Benutzer
+
+---
+
 ## Verwandte Notizen
 
 - [[Windows 365 Cloud PC]]
