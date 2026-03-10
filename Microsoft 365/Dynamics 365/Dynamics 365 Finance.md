@@ -71,6 +71,86 @@ graph LR
 
 ---
 
+## Via Dynamics 365 Finance (UI)
+
+Dynamics 365 Finance ist unter `https://[tenant].operations.dynamics.com` erreichbar. Die Oberfläche folgt der Finance & Operations-Navigation mit Modulen im linken Bereich und einem anpassbaren Dashboard.
+
+### Buchungsperiode öffnen und schließen
+
+**Navigation:** `Hauptbuch` → `Ledger` → `Ledger-Kalender` → `Periodensteuerung`
+
+1. Im Navigationsmenü **Hauptbuch** → **Ledger-Einrichtung** → **Ledger-Kalender** öffnen
+2. Den gewünschten **Geschäftsjahr-Kalender** auswählen (z. B. `GJ 2025`)
+3. In der Periodenübersicht die gewünschte Periode anklicken
+4. Den **Modulstatus** für jedes Modul einzeln steuern:
+
+| Modul | Status-Optionen |
+|-------|----------------|
+| **Hauptbuch** | Offen, Zurückgestellt, Dauerhaft geschlossen |
+| **Kreditoren** | Offen, Zurückgestellt |
+| **Debitoren** | Offen, Zurückgestellt |
+| **Anlagen** | Offen, Zurückgestellt |
+
+5. Status auf **Dauerhaft geschlossen** setzen um Buchungen zu verhindern
+6. **Speichern** → Änderungen wirken sofort
+
+> [!WARNING] Periodenschluss betrifft alle Buchungsebenen
+> Beim Schließen einer Periode werden alle Buchungsschichten (Current, Tax, Operations) gleichzeitig gesperrt, sofern nicht einzeln konfiguriert. Für Steueranpassungen nach Schluss eine separate **Anpassungsperiode** nutzen.
+
+---
+
+### Sachkontobuchung erstellen
+
+**Navigation:** `Hauptbuch` → `Journaleinträge` → `Allgemeine Erfassungen` → `+ Neu`
+
+1. Im Menü **Hauptbuch** → **Journaleinträge** → **Allgemeine Erfassungen** öffnen
+2. **+ Neu** klicken → Erfassungsname auswählen (z. B. `Allgemein` oder `Abgrenzung`)
+3. **Positionen** klicken um Buchungszeilen einzugeben
+4. Buchungszeilen erfassen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Datum** | `31.01.2025` |
+| **Konto-Typ** | `Sachkonto` |
+| **Konto** | `6300` (Miete) |
+| **Beschreibung** | `Januarmiete Büro München` |
+| **Soll** | `5.000,00` |
+| **Gegenkonto-Typ** | `Sachkonto` |
+| **Gegenkonto** | `1600` (Verbindlichkeiten) |
+| **Finanzdimensionen** | Kostenstelle: `CC-100`, Abteilung: `001` |
+
+5. Buchung prüfen: **Überprüfen** → **Erfassung überprüfen** (Validierung ohne Buchen)
+6. **Buchen** klicken → Journal wird permanent gebucht
+
+> [!TIP] Buchungsvorlagen verwenden
+> Für wiederkehrende Buchungen (Abgrenzungen, Abschreibungen) können **Buchungsvorlagen** unter `Hauptbuch → Journaleinträge → Buchungsvorlagen` angelegt werden. Diese befüllen die Felder automatisch und reduzieren Eingabefehler erheblich.
+
+---
+
+### Finanzabschluss durchführen
+
+**Navigation:** `Hauptbuch` → `Periodenabschluss` → `Finanzabschluss`
+
+1. Im Menü **Hauptbuch** → **Periodenabschluss** → **Finanzabschluss** öffnen
+2. Eine neue Abschlussvorlage auswählen oder **+ Neu** für einen neuen Lauf
+3. Im Assistent die Schritte durchlaufen:
+
+| Schritt | Aktion |
+|---------|--------|
+| **1. Vorbereitung** | Offene Buchungsperioden prüfen, alle Journale buchen |
+| **2. Abstimmung** | Intercompany-Salden abstimmen |
+| **3. Abgrenzungen** | Periodische Abgrenzungsbuchungen prüfen |
+| **4. Abschluss** | Schaltfläche **Finanzabschluss ausführen** klicken |
+| **5. Überprüfung** | Eröffnungssalden des Folgejahres prüfen |
+
+4. Den Status der einzelnen Aufgaben über die **Aufgabenliste** in der Abschlussvorlage verfolgen
+5. Zuständige Mitarbeiter erhalten automatisch Benachrichtigungen wenn ihre Aufgabe fällig ist
+
+> [!IMPORTANT] Jahresabschluss ist nicht umkehrbar
+> Nachdem der **Jahresabschluss** ausgeführt wurde und Eröffnungssalden übertragen wurden, sollten keine Buchungen mehr im abgeschlossenen Jahr vorgenommen werden. Korrekturen erfordern einen erneuten Abschlusslauf.
+
+---
+
 ## Debitoren (Accounts Receivable)
 
 ### AR-Prozesse

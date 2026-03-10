@@ -40,6 +40,79 @@ Das Power Platform Admin Center (PPAC) unter [admin.powerplatform.microsoft.com]
 
 ---
 
+## Via Power Platform Admin Center (UI)
+
+Das Power Platform Admin Center ([admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)) ist die primäre grafische Oberfläche für die gesamte Dynamics 365- und Power Platform-Administration.
+
+### Umgebung erstellen
+
+**Navigation:** `Environments` → `+ New`
+
+1. Im linken Menü **Environments** auswählen
+2. Oben rechts auf **+ New** klicken
+3. Pflichtfelder ausfüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Name** | `D365 UAT – Vertrieb` |
+| **Region** | `Europe` |
+| **Type** | `Sandbox` |
+| **Purpose** | `Test der neuen CRM-Konfiguration` |
+| **Add a Dataverse data store** | ✅ Aktiviert |
+| **Language** | `German (Germany)` |
+| **Currency** | `EUR` |
+
+4. **Save** klicken — die Umgebung wird in ca. 3–5 Minuten bereitgestellt
+5. Nach Abschluss erscheint die Umgebung in der Liste mit Status **Ready**
+
+> [!TIP] Umgebungstyp sorgfältig wählen
+> Sandbox-Umgebungen können jederzeit auf den Ausgangszustand zurückgesetzt (Reset) oder auf Basis einer Production-Kopie neu befüllt werden. Developer-Umgebungen sind kostenlos, aber auf einen einzigen Benutzer beschränkt und nicht für Teamarbeit geeignet.
+
+---
+
+### DLP-Policy erstellen
+
+**Navigation:** `Policies` → `Data policies` → `+ New Policy`
+
+1. Im linken Menü **Policies** → **Data policies** öffnen
+2. **+ New Policy** klicken
+3. **Name der Policy** vergeben, z. B. `Unternehmensstandard-DLP`
+4. Im Schritt **Prebuilt connectors** die Connectors klassifizieren:
+   - Spalte **Business**: Dataverse, SharePoint, Teams, Outlook, Dynamics 365 verschieben
+   - Spalte **Non-Business**: Twitter, Dropbox belassen
+   - Spalte **Blocked**: Slack, WhatsApp per Drag-and-Drop hineinziehen
+5. Im Schritt **Custom connectors** eigene Connectors klassifizieren
+6. Im Schritt **Define scope** festlegen:
+   - `Add all environments` für tenant-weite Geltung, **oder**
+   - `Add multiple environments` für gezielte Umgebungen
+7. **Create policy** klicken — Policy ist sofort aktiv
+
+> [!WARNING] DLP-Policies können bestehende Flows brechen
+> Bevor eine neue DLP-Policy aktiviert wird, prüfen ob bestehende Power Automate-Flows betroffen sind. Im PPAC unter `Analytics → Power Automate` können laufende Flows identifiziert werden.
+
+---
+
+### Kapazität überprüfen
+
+**Navigation:** `Resources` → `Capacity`
+
+1. Im linken Menü **Resources** → **Capacity** öffnen
+2. Übersicht zeigt drei Kategorien: **Database**, **File**, **Log**
+3. Auf eine Zeile klicken, um den Verbrauch je Umgebung aufzuschlüsseln
+4. Kritische Umgebungen sind rot markiert (Kapazität >90 % verbraucht)
+5. Unter dem Tab **Add-ons** können zusätzliche Kapazitätspakete zugewiesen werden
+
+| Anzeigefeld | Bedeutung |
+|-------------|----------|
+| **Allocated** | Zugewiesene Kapazität dieser Umgebung |
+| **Actual** | Tatsächlich genutzter Speicher |
+| **Available (Tenant)** | Noch freie tenant-weite Kapazität |
+
+> [!NOTE] Kapazitäts-Warnungen einrichten
+> Unter `Settings → Email notifications` können automatische Warnmails konfiguriert werden, die bei Überschreiten eines Schwellenwerts (z. B. 80 %) verschickt werden.
+
+---
+
 ## Umgebungsverwaltung (Environments)
 
 ### Umgebungstypen

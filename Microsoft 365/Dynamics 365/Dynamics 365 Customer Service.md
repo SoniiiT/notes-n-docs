@@ -234,6 +234,88 @@ Case: "Drucker druckt nicht nach Windows-Update"
 
 ---
 
+## Via Dynamics 365 Customer Service (UI)
+
+Die Dynamics 365 Customer Service-Oberfläche ist unter `https://[tenant].crm.dynamics.com` verfügbar. Die primäre Agenten-App heißt **Customer Service Hub** oder (für Omnichannel-Agenten) **Customer Service workspace**.
+
+### Case erstellen
+
+**Navigation:** `Customer Service Hub` → `Cases` → `+ Neu`
+
+1. In der App **Customer Service Hub** das Menü **Service** aufklappen → **Cases** wählen
+2. In der Listenansicht **+ Neu** klicken
+3. Das Case-Formular öffnet sich – folgende Felder befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Case-Titel** | `Drucker nicht erreichbar nach Update` |
+| **Kunde** | `Contoso AG` (Account oder Kontakt) |
+| **Betreff** | `Druckerproblem` |
+| **Priorität** | `Hoch` |
+| **Case-Typ** | `Problem` |
+| **Herkunft** | `Telefon` |
+| **Beschreibung** | Detaillierte Problembeschreibung |
+
+4. Im Abschnitt **SLA** wird nach dem Speichern automatisch die zutreffende SLA angezeigt (Countdown sichtbar)
+5. Unter **Aktivitäten** können Aufgaben, Anrufe und E-Mails ergänzt werden
+6. **Speichern** → Case erhält eine eindeutige Case-Nummer (z. B. `CAS-00012345`)
+
+> [!TIP] Case direkt aus E-Mail erstellen
+> Über die Dynamics 365 App for Outlook lassen sich Cases direkt aus einem Kunden-E-Mail heraus erstellen. Der E-Mail-Inhalt wird automatisch als Beschreibung übernommen und der Kontakt verknüpft.
+
+---
+
+### Queue verwalten
+
+**Navigation:** `Service` → `Queues` → Queue auswählen → `Queue-Elemente`
+
+1. Im Menü **Service** → **Queues** öffnen
+2. In der Listenansicht die gewünschte Queue auswählen (z. B. `Deutsch – Level 1 Support`)
+3. Es öffnet sich die Queue-Detailansicht mit allen enthaltenen Cases und Aktivitäten
+4. Einzelne Queue-Elemente können per **Übernehmen** einem Agenten zugewiesen werden:
+   - **Mir zuweisen**: Agent übernimmt den Case selbst
+   - **Jemandem zuweisen**: Auswahl eines bestimmten Agenten oder Teams
+5. Reihenfolge der Elemente wird durch Priorität und SLA-Fälligkeit bestimmt
+6. Über **Elemente freigeben** kann ein Case zurück in die Queue gegeben werden
+
+| Spalte | Bedeutung |
+|--------|----------|
+| **Titel** | Case-Beschreibung |
+| **Eingegangen** | Zeitpunkt der Einreihung |
+| **Bearbeitet von** | Zugewiesener Agent |
+| **SLA-Status** | In Zeit / Gefährdet / Verletzt |
+
+> [!WARNING] Queue-Kapazität überwachen
+> Zu lange Queues führen zu SLA-Verletzungen. Im Supervisor Dashboard (Customer Service Workspace → Omnichannel) ist die Queue-Länge in Echtzeit sichtbar. Bei Überlauf können temporäre Umleitungsregeln konfiguriert werden.
+
+---
+
+### SLA-Status prüfen
+
+**Navigation:** Case öffnen → Abschnitt `SLA` **oder** `Service` → `Dashboards` → `Tier 1 Dashboard`
+
+1. Einen Case öffnen → im Formular nach unten scrollen zum Abschnitt **SLA**
+2. Die SLA-KPI-Übersicht zeigt:
+
+| KPI | Bedeutung |
+|-----|----------|
+| **Erste Antwort bis** | Frist für die erste Agentenantwort |
+| **Lösungszeit bis** | Frist für die vollständige Lösung |
+| **Status** | `In Bearbeitung`, `Gefährdet`, `Verletzt`, `Erfüllt` |
+| **Verbleibende Zeit** | Countdown bis zur Fälligkeit |
+
+3. Für eine Gesamtübersicht: Im Menü **Service** → **Dashboards** → **Tier 1 Dashboard** öffnen
+4. Das Dashboard zeigt alle Cases nach SLA-Status gruppiert:
+   - Grün = innerhalb der SLA
+   - Gelb = SLA gefährdet (< 20 % Zeit verbleibend)
+   - Rot = SLA verletzt
+5. Durch Klick auf eine Zahl wird die gefilterte Case-Liste geöffnet
+
+> [!NOTE] SLA-Uhr pausieren bei Kundenrückfrage
+> Wenn auf eine Kundenantwort gewartet wird, kann die SLA-Uhr manuell pausiert werden (sofern in der SLA-Konfiguration aktiviert). Dazu im Case-Formular den Status auf `Warten auf Kunde` setzen.
+
+---
+
 ## Copilot in Customer Service
 
 ### Copilot-Features für Agenten

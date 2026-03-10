@@ -291,6 +291,95 @@ graph LR
 
 ---
 
+## Via Dynamics 365 Customer Insights (UI)
+
+Customer Insights ist unter [customerinsights.ai.dynamics.com](https://customerinsights.ai.dynamics.com) erreichbar. Die Oberfläche gliedert sich in zwei Hauptbereiche: **Data** (für das CDP / Unified Profile) und **Journeys** (für Kampagnen und Marketingautomatisierung).
+
+### Datenquelle verbinden
+
+**Navigation:** `Data` → `Data sources` → `+ Add data source`
+
+1. Im linken Menü **Data** → **Data sources** öffnen
+2. **+ Add data source** klicken
+3. Datenquellentyp auswählen:
+
+| Typ | Beispiele | Verbindungsart |
+|-----|----------|----------------|
+| **Microsoft** | Dataverse, Azure Data Lake | Managed Identity / OAuth |
+| **Import** | CSV, Excel | Datei-Upload |
+| **Azure** | Azure SQL, Synapse | Verbindungszeichenfolge |
+| **Power Query** | Salesforce, SAP, REST API | Power Query Connector |
+| **Real-time** | Azure Event Hubs | Verbindungszeichenfolge |
+
+4. Verbindungsparameter eingeben und **Weiter** klicken
+5. Im Power Query-Editor die relevanten Tabellen auswählen und ggf. Daten transformieren
+6. **Speichern** → erste Dateningestion startet automatisch (Dauer je nach Datenmenge 5–60 Min.)
+7. Status unter **Data sources** verfolgen: `Wird aktualisiert` → `Erfolgreich`
+
+> [!TIP] Datenaktualisierung planen
+> Nach der ersten Verbindung unter den **Einstellungen** der Datenquelle einen **Aktualisierungsplan** einrichten (täglich, stündlich). Ohne Zeitplan werden die Daten nur manuell aktualisiert.
+
+---
+
+### Kundenprofil erstellen und Segment definieren
+
+**Navigation:** `Data` → `Unify` → danach `Segments` → `+ New`
+
+**Daten vereinheitlichen (einmalige Einrichtung):**
+1. Im Menü **Data** → **Unify** → **Customer columns** öffnen
+2. Felder aus verschiedenen Quellen als Identifikatoren markieren (E-Mail, Telefon, Kundennummer)
+3. Im Schritt **Matching rules** festlegen, wie Datensätze aus verschiedenen Quellen zusammengeführt werden
+4. **Run** klicken → Unified Customer Profiles werden berechnet
+
+**Segment anlegen:**
+1. Im Menü **Segments** → **+ New** → **Build your own** klicken
+2. Im Segment Builder Bedingungen hinzufügen:
+
+| Beispielbedingung | Einstellung |
+|-------------------|------------|
+| Land/Region | `= Deutschland` |
+| Letzter Kauf | `vor mehr als 90 Tagen` |
+| Jahresumsatz | `> 500 €` |
+| Churn-Score | `> 60 %` |
+
+3. Bedingungen mit **UND / ODER** verknüpfen
+4. **Vorschau ausführen** → geschätzte Segmentgröße wird angezeigt
+5. **Name** vergeben → **Speichern und ausführen**
+6. Segment steht nach Berechnung für Journeys und Exporte bereit
+
+> [!NOTE] Segmentaktualisierung
+> Dynamische Segmente werden nach jedem Datenaktualisierungslauf neu berechnet. Die Aktualisierungsfrequenz hängt vom Datenquellen-Zeitplan ab. Im Segment unter **Details** ist der Zeitpunkt der letzten Berechnung sichtbar.
+
+---
+
+### Journey erstellen
+
+**Navigation:** `Real-time journeys` → `+ New` → Journey-Typ wählen
+
+1. Im linken Menü **Real-time journeys** → **+ New** klicken
+2. Journey-Typ auswählen:
+   - **Trigger-basiert**: Startet wenn ein Ereignis eintritt (z. B. Konto erstellt, Formular ausgefüllt)
+   - **Segment-basiert**: Startet für alle Mitglieder eines Segments zu einem festen Zeitpunkt
+3. Für **Trigger-basiert**: Trigger auswählen (z. B. `Contact created`) → **Erstellen**
+4. Im Journey-Designer Schritte per Drag-and-Drop hinzufügen:
+
+| Element | Beschreibung |
+|---------|-------------|
+| **Send an email** | E-Mail-Versand mit personalisierten Inhalten |
+| **Send a text message** | SMS-Versand |
+| **Wait** | Wartezeit (z. B. 2 Tage) |
+| **If/then branch** | Bedingung (z. B. E-Mail geöffnet: Ja/Nein) |
+| **Exit** | Journey beenden |
+
+5. Jeden E-Mail-Schritt mit einer **E-Mail-Vorlage** verknüpfen (unter **Assets → Emails** erstellt)
+6. Oben rechts **Validate** klicken → Fehler und Warnungen prüfen
+7. **Go live** klicken → Journey ist aktiv und startet für neue Trigger-Ereignisse
+
+> [!IMPORTANT] E-Mail-Adressen vor Go-Live prüfen
+> Vor dem Aktivieren sicherstellen, dass alle verlinkten E-Mail-Vorlagen den Status **Live** haben und die Journey-Einstellungen (Kontakteinwilligung, Abmeldelink) DSGVO-konform konfiguriert sind.
+
+---
+
 ## Verwandte Notizen
 
 - [[Dynamics 365 Überblick]]

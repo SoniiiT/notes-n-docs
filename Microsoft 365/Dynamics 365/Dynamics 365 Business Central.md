@@ -329,6 +329,92 @@ Gesamt: €15.500 | Soll ich eine Mahnung erstellen?"
 
 ---
 
+## Via Dynamics 365 Business Central (UI)
+
+Business Central ist unter [businesscentral.dynamics.com](https://businesscentral.dynamics.com) erreichbar. Nach der Anmeldung gelangt man direkt auf das **Rollencenter**, das je nach Lizenz und Konfiguration unterschiedlich aussieht (z. B. Buchhalter, Verkaufsbearbeiter, Geschäftsführer).
+
+### Debitor anlegen
+
+**Navigation:** `Debitoren` → `+ Neu` **oder** Suche: `Debitoren`
+
+1. Oben rechts das Suchfeld (Lupe-Symbol oder `Alt + Q`) öffnen → `Debitoren` eingeben
+2. In der Debitorenliste **+ Neu** klicken → eine **Debitorenvorlage** auswählen (z. B. `Inland`)
+3. Im Debitorenstamm die Felder befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Nr.** | automatisch aus Nummernserie |
+| **Name** | `Mustermann GmbH` |
+| **Adresse** | `Musterstraße 1` |
+| **PLZ / Ort** | `80331 München` |
+| **Land** | `DE` |
+| **Währungscode** | leer = Hauswährung EUR |
+| **Zahlungsbedingungen** | `30T` (30 Tage netto) |
+| **MwSt.-Geschäftsbuchungsgruppe** | `INLAND` |
+| **Debitorenbuchungsgruppe** | `INLAND` |
+
+4. Unter dem Tab **Zahlung** Bankverbindung und SEPA-Lastschriftmandat hinterlegen (optional)
+5. **Speichern und schließen** (oben links zurück → BC speichert automatisch)
+
+> [!TIP] Debitorenvorlagen für verschiedene Kundengruppen
+> Lege separate Debitorenvorlagen für Inland, EU und Drittland an. Die Vorlage befüllt automatisch die korrekten Buchungsgruppen und MwSt.-Einstellungen, was Buchungsfehler bei der Rechnungsstellung verhindert.
+
+---
+
+### Verkaufsauftrag erstellen
+
+**Navigation:** `Verkauf` → `Aufträge` → `+ Neu`
+
+1. Im Rollencenter-Menü **Verkauf** → **Aufträge** öffnen (oder Suche: `Verkaufsaufträge`)
+2. **+ Neu** klicken
+3. Im Auftragskopf befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Debitorennr.** | `KUND-0042` (Debitor suchen und auswählen) |
+| **Auftragsdatum** | `automatisch (heute)` |
+| **Gewünschtes Lieferdatum** | `14.02.2025` |
+| **Ihre Referenz** | `AB 2025-047` (Kundennummer/Referenz) |
+
+4. Im Tab **Zeilen** Artikel hinzufügen:
+   - Spalte **Art**: `Artikel`
+   - Spalte **Nr.**: Artikelnummer eingeben oder suchen
+   - Spalte **Menge**: gewünschte Menge
+   - **VK-Preis** wird automatisch aus Preisliste vorgeschlagen
+   - Zeilenrabatt ggf. eintragen
+5. Unter **Statistik** (Menü oben) Gesamtbetrag prüfen
+6. **Freigeben** klicken → Auftrag ist für Lieferung und Fakturierung bereit
+7. **Buchen** → wählen ob **Lieferung**, **Rechnung** oder **Lieferung und Rechnung**
+
+---
+
+### Einkaufsrechnung buchen
+
+**Navigation:** `Einkauf` → `Rechnungen` → `+ Neu`
+
+1. Im Menü **Einkauf** → **Rechnungen** öffnen (oder Suche: `Einkaufsrechnungen`)
+2. **+ Neu** klicken
+3. Rechnungskopf befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Kreditorennr.** | `LIEF-007` |
+| **Kreditorenrechnungsnr.** | `RE-2025-4711` (Rechnungsnummer des Lieferanten) |
+| **Rechnungsdatum** | `31.01.2025` |
+| **Fälligkeitsdatum** | automatisch aus Zahlungsbedingungen |
+
+4. Im Tab **Zeilen** Rechnungspositionen erfassen:
+   - **Art**: `Artikel`, `Sachkonto` oder `Ressource`
+   - Für Artikel: Artikelnummer und Menge eingeben → Preis aus Bestellung vorschlagen lassen
+   - Für Direktkosten: Sachkonto (z. B. `6300 Miete`) mit Betrag erfassen
+5. Über **Bestellung** im Menü kann die Rechnung mit einer offenen Bestellung verknüpft werden (3-Wege-Match)
+6. **Buchen** klicken → Rechnung wird gebucht, Verbindlichkeit entsteht, Lagerbestand aktualisiert sich (bei Artikeln)
+
+> [!NOTE] Belegnummern-Vorschriften DACH
+> In Deutschland, Österreich und der Schweiz muss die **Kreditorenrechnungsnummer** des Lieferanten eingetragen werden. BC verwendet diese für die GoBD-konforme Belegverknüpfung und als Duplikatsprüfung.
+
+---
+
 ## Verwandte Notizen
 
 - [[Dynamics 365 Überblick]]

@@ -272,6 +272,77 @@ Microsoft Entra ID Tenant
 
 ---
 
+## Via Power Platform Admin Center (UI)
+
+Das Power Platform Admin Center ([admin.powerplatform.microsoft.com](https://admin.powerplatform.microsoft.com)) ist der zentrale Einstiegspunkt für alle tenant-weiten Einstellungen, Lizenzübersichten und Umgebungsverwaltung – auch wenn keine spezifische Dynamics 365-App verwaltet werden soll.
+
+### Umgebungen anzeigen und verwalten
+
+**Navigation:** `Environments` → Umgebung auswählen
+
+1. Im linken Menü **Environments** öffnen — alle vorhandenen Umgebungen werden tabellarisch angezeigt
+2. Spalten der Liste:
+
+| Spalte | Beschreibung |
+|--------|-------------|
+| **Name** | Anzeigename der Umgebung |
+| **Type** | Production, Sandbox, Developer, Trial |
+| **Region** | Azure-Rechenzentrumsregion |
+| **State** | Ready, Preparing, Deleting |
+| **Created** | Erstellungsdatum |
+
+3. Auf eine Umgebung klicken → Detailbereich öffnet sich mit:
+   - **Settings** (Sicherheitsrollen, Funktionen, Audit)
+   - **Resources** (installierte Apps, Flows, Connectors)
+   - **History** (Lösung-Imports, Backups)
+4. Über **Copy** kann die Umgebung als Sandbox-Kopie dupliziert werden
+
+> [!TIP] Umgebungsfilter nutzen
+> Bei vielen Umgebungen den Suchfilter oben verwenden oder nach **Type** filtern. So lassen sich Production- und Sandbox-Umgebungen schnell trennen.
+
+---
+
+### Lizenzübersicht abrufen
+
+**Navigation:** `Billing` → `Licenses`
+
+1. Im linken Menü **Billing** → **Licenses** öffnen
+2. Die Übersicht zeigt alle im Tenant zugewiesenen Dynamics 365- und Power Platform-Lizenzen
+3. Relevante Spalten:
+
+| Spalte | Bedeutung |
+|--------|----------|
+| **Product** | Lizenzname (z. B. Dynamics 365 Sales Enterprise) |
+| **Licenses purchased** | Erworbene Lizenzmenge |
+| **Licenses assigned** | Aktuell zugewiesene Lizenzen |
+| **Available** | Noch nicht vergebene Lizenzen |
+
+4. Klick auf ein Produkt → Detailansicht mit Auflistung der zugewiesenen Benutzer
+5. Von hier direkter Link ins **Microsoft 365 Admin Center** für die Lizenzverwaltung
+
+> [!IMPORTANT] Lizenz-Zuweisung erfolgt im M365 Admin Center
+> Das PPAC zeigt nur die Übersicht. Die eigentliche Lizenz-Zuweisung an Benutzer erfolgt im Microsoft 365 Admin Center unter `Users → Active users → Lizenzen und Apps`.
+
+---
+
+### App-Nutzung analysieren
+
+**Navigation:** `Analytics` → `Power Apps` oder `Power Automate`
+
+1. Im linken Menü **Analytics** öffnen
+2. Unter **Power Apps** werden Nutzungsdaten für alle Canvas- und Model-Driven Apps angezeigt:
+   - Aktive Benutzer (täglich, wöchentlich, monatlich)
+   - Sitzungsanzahl je App
+   - Fehlerrate
+3. Unter **Dataverse** zeigt die **Capacity**-Ansicht den Storage-Verbrauch je Umgebung
+4. Den Zeitraum über den Datumsselektor oben rechts anpassen (7, 30, 90 Tage)
+5. Exportfunktion: **Download** → CSV für weitere Auswertung in Excel oder Power BI
+
+> [!NOTE] Analysedaten haben einen Verzug
+> Die Nutzungsdaten im PPAC werden nicht in Echtzeit aktualisiert — typischer Verzug beträgt 24–48 Stunden. Für Echtzeit-Monitoring empfiehlt sich Azure Application Insights.
+
+---
+
 ## Verwandte Notizen
 
 - [[Dynamics 365 Sales]]

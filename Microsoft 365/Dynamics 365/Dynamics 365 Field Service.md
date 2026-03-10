@@ -285,6 +285,87 @@ Microsoft Remote Assist ermöglicht Fernsupport via Mixed Reality:
 
 ---
 
+## Via Dynamics 365 Field Service (UI)
+
+Dynamics 365 Field Service ist unter `https://[tenant].crm.dynamics.com` erreichbar. Die Hauptapp heißt **Field Service**. Für die Einsatzplanung wird das **Schedule Board** verwendet, das direkt im Browser läuft.
+
+### Work Order erstellen
+
+**Navigation:** `Field Service` → `Work Orders` → `+ Neu`
+
+1. Im linken Menü **Field Service** → **Work Orders** öffnen
+2. In der Listenansicht **+ Neu** klicken
+3. Das Work-Order-Formular öffnet sich – Pflichtfelder befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Zusammenfassung** | `Klimaanlage Wartung Q1 2025` |
+| **Serviceaccount** | `Mustermann Industrie GmbH` |
+| **Servicestandort** | `Werk München-Nord` |
+| **Incident Type** | `Klimaanlage Wartung` (lädt Aufgaben automatisch) |
+| **Priorität** | `Normal` |
+| **Systemstatus** | `Offen – Nicht geplant` |
+| **Bevorzugtes Datum** | `15.02.2025` |
+| **Bezug auf Agreement** | Wartungsvertrag verknüpfen (optional) |
+
+4. Nach Auswahl des **Incident Type** werden Service Tasks, Produkte und die geschätzte Dauer automatisch befüllt
+5. Im Tab **Produkte** benötigte Ersatzteile prüfen und ggf. ergänzen
+6. **Speichern** → Work Order erhält eine Nummer (z. B. `WO-00004521`)
+
+> [!TIP] Incident Types für häufige Servicefälle anlegen
+> Gut gepflegte Incident Types sparen bei der Work Order-Erstellung erheblich Zeit. Alle Standard-Servicefälle (z. B. „Jährliche Brandschutzinspektion") sollten als Incident Type mit vordefinierten Tasks, Produkten und Dauer hinterlegt sein.
+
+---
+
+### Ressource einplanen
+
+**Navigation:** `Field Service` → `Schedule Board`
+
+1. Im linken Menü **Field Service** → **Scheduling** → **Schedule Board** öffnen
+2. Das Board zeigt horizontal die Zeit (Tages-/Wochenansicht) und vertikal alle verfügbaren Ressourcen (Techniker)
+3. Unten im Bereich **Anforderungen** erscheinen alle offenen, noch nicht geplanten Work Orders
+4. Eine Work Order per **Drag-and-Drop** auf einen Techniker und Zeitslot ziehen
+5. Alternativ: Work Order in der **Anforderungsliste** markieren → **Buchen** klicken → Assistenten nutzen:
+   - Filterkriterien setzen: Skills, Gebiet, Verfügbarkeit
+   - Empfohlene Ressourcen werden nach Eignung sortiert angezeigt
+6. Nach der Buchung ändert sich der Work-Order-Status automatisch auf `Geplant`
+
+| Ansichtstyp | Beschreibung |
+|-------------|-------------|
+| **Täglich** | Detailansicht für heute und morgen |
+| **Wöchentlich** | Überblick über die ganze Woche |
+| **Monatlich** | Langfristige Kapazitätsplanung |
+| **Karte** | Geografische Ansicht mit Techniker-Standorten |
+
+> [!NOTE] Filter für das Schedule Board
+> Das Schedule Board kann nach Territorium, Team und Skills gefiltert werden. Für große Disponenten-Teams empfiehlt sich je ein eigenes Board-Tab pro Region oder Servicebereich.
+
+---
+
+### Techniker-Einsatz abschließen
+
+**Navigation:** Field Service Mobile App **oder** Work Order öffnen → Status ändern
+
+**Im Browser (Disponent):**
+1. Work Order öffnen → Status auf `Abgeschlossen` setzen
+2. Im Tab **Buchungen** die Buchung öffnen → **Enddatum/-uhrzeit** eintragen
+3. Reisezeit und tatsächliche Arbeitszeit im Tab **Zeiterfassung** prüfen
+4. Verbrauchte Produkte im Tab **Produkte** auf **Verwendet** setzen und Menge anpassen
+5. **Speichern** → Work Order kann jetzt fakturiert werden (Status `Gebucht`)
+
+**In der Mobile App (Techniker):**
+1. App öffnen → **Mein Tag** → Work Order antippen
+2. Statuswechsel: `Unterwegs` → `In Bearbeitung` → `Abgeschlossen`
+3. Service Tasks als erledigt markieren (Häkchen setzen)
+4. Fotos und Notizen hinzufügen
+5. Kundenunterschrift auf dem Touchscreen einholen
+6. **Abschließen** tippen → Daten werden mit D365 synchronisiert
+
+> [!IMPORTANT] Lagerbestand bei Produktverbrauch buchen
+> Werden Ersatzteile verbraucht, muss der Lagerbestand manuell oder über die Mobile App angepasst werden. Nur so bleibt der Lagersaldo korrekt und Nachbestellungen werden ausgelöst.
+
+---
+
 ## Verwandte Notizen
 
 - [[Dynamics 365 Überblick]]

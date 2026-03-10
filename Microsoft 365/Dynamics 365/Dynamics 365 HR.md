@@ -236,6 +236,97 @@ graph LR
 
 ---
 
+## Via Dynamics 365 Human Resources (UI)
+
+Dynamics 365 Human Resources ist unter `https://[tenant].hr.dynamics.com` oder über die HR-App im Power Platform-Portal erreichbar. Die Hauptnavigation gliedert sich in die Bereiche **Mitarbeiter**, **Urlaub und Abwesenheit**, **Vergütung** und **Leistung**.
+
+### Mitarbeiter anlegen
+
+**Navigation:** `Mitarbeiter` → `Mitarbeiter` → `+ Neu`
+
+1. Im linken Menü **Mitarbeiter** → **Mitarbeiter** öffnen
+2. **+ Neu** klicken → das Mitarbeiter-Formular öffnet sich
+3. Im Tab **Allgemein** die Stammdaten befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Vorname** | `Anna` |
+| **Nachname** | `Schmidt` |
+| **Bekannter Name** | `Anna Schmidt` |
+| **Personalnummer** | automatisch aus Nummernserie |
+| **Einstellungsdatum** | `01.02.2025` |
+| **Abteilung** | `Vertrieb` |
+| **Position** | `Account Manager` |
+| **Manager** | `Max Mustermann` |
+| **Beschäftigungstyp** | `Vollzeit` |
+
+4. Im Tab **Persönliche Informationen** Kontakt- und Adressdaten ergänzen
+5. Im Tab **Vergütung** den **Fixen Vergütungsplan** zuweisen und Gehalt eintragen
+6. Im Tab **Urlaub** automatisch den Urlaubsplan zuweisen (sofern konfiguriert)
+7. **Speichern** → Mitarbeiter erscheint in der Liste
+8. Optional: **Onboarding-Checkliste** über **Aufgaben** zuweisen
+
+> [!TIP] Personalaktions-Workflow für Compliance
+> Für eine revisionssichere Dokumentation den Mitarbeitereintritt als **Personalaktion** mit Genehmigungsworkflow konfigurieren (unter Einstellungen → Personalaktionstypen). Dadurch wird jede Einstellung mit Genehmiger, Datum und Begründung protokolliert.
+
+---
+
+### Urlaub genehmigen
+
+**Navigation:** `Urlaub und Abwesenheit` → `Genehmigungen` **oder** direkt aus der Teams-Benachrichtigung
+
+**Als Manager in der HR-App:**
+1. Im linken Menü **Urlaub und Abwesenheit** → **Genehmigungen** öffnen
+2. Alle offenen Urlaubsanträge des eigenen Teams werden angezeigt
+3. Antrag anklicken → Details des Antrags prüfen:
+
+| Information | Details |
+|------------|---------|
+| **Mitarbeiter** | Antragsteller |
+| **Zeitraum** | Von – Bis Datum |
+| **Anzahl Tage** | Arbeitstage (Feiertage herausgerechnet) |
+| **Abwesenheitstyp** | Jahresurlaub, Sonderurlaub, etc. |
+| **Aktueller Saldo** | Verbleibende Urlaubstage vor Antrag |
+| **Kommentar** | Anmerkung des Mitarbeiters |
+
+4. **Genehmigen** oder **Ablehnen** klicken
+5. Bei Ablehnung: Pflichtfeld **Begründung** ausfüllen
+6. Nach Genehmigung erhält der Mitarbeiter automatisch eine Benachrichtigung
+7. Der Urlaubssaldo des Mitarbeiters wird sofort aktualisiert
+
+> [!NOTE] Kalenderkonflikt-Prüfung
+> Vor der Genehmigung prüfen ob andere Teammitglieder im gleichen Zeitraum abwesend sind. Im HR-Modul unter **Urlaub und Abwesenheit → Teamkalender** ist die Teamverfügbarkeit übersichtlich dargestellt.
+
+---
+
+### Leistungsbeurteilung starten
+
+**Navigation:** `Leistung` → `Beurteilungen` → `+ Neu`
+
+1. Im linken Menü **Leistung** → **Beurteilungen** öffnen
+2. **+ Neu** klicken → Beurteilungsvorlage auswählen (z. B. `Jahresgespräch 2025`)
+3. Im Formular die Basisinformationen eintragen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Mitarbeiter** | `Anna Schmidt` |
+| **Beurteilungsperiode** | `01.01.2025 – 31.12.2025` |
+| **Vorlage** | `Standardbeurteilung` |
+| **Beurteilungstyp** | `Jahresgespräch` |
+| **Status** | `In Bearbeitung` |
+
+4. Im Tab **Ziele** die vereinbarten Jahresziele hinzufügen oder aus dem Vorjahr übernehmen:
+   - Zielname, Beschreibung, Gewichtung (%) und Bewertungsskala festlegen
+5. **Speichern** → Beurteilung ist angelegt
+6. Über die Schaltfläche **Mitarbeiterselbstbeurteilung senden** erhält der Mitarbeiter den Zugang zur Selbsteinschätzung im **Employee Self-Service Portal**
+7. Nach Abschluss der Selbstbeurteilung erscheint die Beurteilung in der **Manager-Ansicht** zur Bewertung
+8. Nach der Manager-Bewertung: **Abschlussgespräch** vereinbaren und Status auf `Abgeschlossen` setzen
+
+> [!TIP] Ziele aus dem Vorjahr übernehmen
+> Statt Ziele manuell neu einzugeben, über **Ziele kopieren** aus der Vorjahresbeurteilung übernehmen und anpassen. Das spart Zeit und sorgt für Kontinuität in der Mitarbeiterentwicklung.
+
+---
+
 ## Payroll-Integration
 
 D365 HR enthält keine native Lohnbuchhaltung — Integration mit externen Lohnanbietern:

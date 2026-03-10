@@ -203,6 +203,93 @@ graph LR
 
 ---
 
+## Via Dynamics 365 Supply Chain Management (UI)
+
+Dynamics 365 Supply Chain Management ist unter `https://[tenant].operations.dynamics.com` erreichbar. Die Navigation erfolgt über das Modulmenü links sowie das anpassbare Arbeitsbereich-Dashboard.
+
+### Bestellung anlegen
+
+**Navigation:** `Beschaffung` → `Bestellungen` → `Alle Bestellungen` → `+ Neu`
+
+1. Im Navigationsmenü **Beschaffung und Sourcing** → **Bestellungen** → **Alle Bestellungen** öffnen
+2. Oben links **+ Neu** klicken
+3. Im Dialog **Bestellung erstellen** folgende Felder befüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Kreditorenkonto** | `LIEF-0042` (Lieferant auswählen) |
+| **Bestelldatum** | `automatisch (heute)` |
+| **Lieferdatum** | `15.02.2025` |
+| **Lagerort** | `Lager 01, Werk München` |
+| **Lieferadresse** | aus Kreditoren-Stammdaten übernommen |
+
+4. **OK** klicken → Bestellkopf wird erstellt
+5. Im Tab **Bestellpositionen** Artikel hinzufügen:
+   - **Artikelnummer** eingeben oder suchen
+   - **Menge** und **Einheit** setzen
+   - **Preis** aus Handelsvereinbarung wird automatisch vorgeschlagen
+6. Über **Kaufvertrag** kann ein Rahmenvertrag referenziert werden
+7. **Speichern** → Bestellung erhält Nummer (z. B. `PO-2025-00847`)
+8. **Bestätigen** klicken → Bestellung wird an Lieferanten versendet (per E-Mail oder Lieferantenportal)
+
+> [!TIP] Handelsvereinbarungen prüfen
+> Vor dem Anlegen einer Bestellung unter **Beschaffung → Preise und Rabatte → Handelsvereinbarungen** prüfen, ob aktuelle Preisabsprachen mit dem Lieferanten hinterlegt sind. D365 SCM wendet diese automatisch an, wenn Artikel und Lieferant übereinstimmen.
+
+---
+
+### Lager-Transaktion buchen
+
+**Navigation:** `Lagerverwaltung` → `Journale` → `Artikel` → `+ Neu`
+
+1. Im Menü **Lagerverwaltung** → **Journale** → **Artikel** öffnen
+2. **+ Neu** klicken → Journaltyp auswählen:
+
+| Journaltyp | Verwendung |
+|------------|-----------|
+| **Bestandsanpassung** | Korrekturen bei Inventurabweichungen |
+| **Umlagerung** | Artikel zwischen Lagerplätzen umbuchen |
+| **Stückliste** | Materialentnahme für Produktion buchen |
+| **Zählung** | Inventurergebnisse erfassen |
+
+3. **Positionen** öffnen → neue Zeile hinzufügen:
+   - **Artikelnummer**, **Lagerort**, **Lagerplatz** auswählen
+   - **Menge** (positiv = Zugang, negativ = Abgang)
+   - **Kostenkategorie** oder **Kostenbetrag** ggf. angeben
+4. **Überprüfen** → **Buchen** klicken
+5. Buchung erscheint sofort in den **Lagertransaktionen** des Artikels
+
+> [!WARNING] Buchungen mit negativem Lagerbestand
+> Falls die Option **Physisch negativ** im Artikelmodell nicht aktiviert ist, schlägt die Buchung fehl, wenn die verfügbare Menge nicht ausreicht. Fehlermeldung prüfen und ggf. Lagerbestand zuerst korrigieren.
+
+---
+
+### Produktionsauftrag erstellen
+
+**Navigation:** `Produktionssteuerung` → `Produktionsaufträge` → `Alle Produktionsaufträge` → `+ Neu`
+
+1. Im Menü **Produktionssteuerung** → **Produktionsaufträge** → **Alle Produktionsaufträge** öffnen
+2. **+ Neu** klicken → Im Dialog ausfüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Artikelnummer** | `FP-LAPTOP-001` (Fertigprodukt) |
+| **BOM-Version** | automatisch aus aktivierter BOM |
+| **Arbeitsplanversion** | automatisch vorgeschlagen |
+| **Menge** | `50 Stück` |
+| **Lieferdatum** | `28.02.2025` |
+| **Lagerort** | `Produktion – Halle 2` |
+
+3. **Erstellen** klicken → Produktionsauftrag wird angelegt (Status: **Erstellt**)
+4. **Schätzen** klicken → Materialbedarfe und Kapazitäten werden berechnet
+5. **Einplanen** klicken → Starttermin wird auf Basis freier Kapazitäten ermittelt
+6. **Freigeben** klicken → Auftrag wird an die Fertigung übergeben (Materialentnahme möglich)
+7. Nach Abschluss: **Als fertig melden** → produzierte Menge ins Lager buchen
+
+> [!NOTE] Planungshorizont beachten
+> Der Produktionsauftrag sollte frühzeitig erstellt werden, damit die **Bedarfsplanung (MRP)** ausreichend Zeit hat, Komponentenbestellungen auszulösen. Für kritische Materialien die Vorlaufzeiten im Artikelstamm prüfen.
+
+---
+
 ## Copilot in Supply Chain Management
 
 ### Copilot-Features im Detail

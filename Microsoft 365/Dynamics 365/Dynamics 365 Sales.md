@@ -141,6 +141,85 @@ Manager können Gesprächsaufzeichnungen nutzen, um:
 
 ---
 
+## Via Dynamics 365 Sales (UI)
+
+Die Dynamics 365 Sales-Oberfläche ist unter `https://[tenant].crm.dynamics.com` erreichbar. Der Einstieg erfolgt über die **Sales Hub**-App, die im App-Switcher (oben links) ausgewählt werden kann.
+
+### Lead erstellen
+
+**Navigation:** `Sales` → `Leads` → `+ Neu`
+
+1. Im linken Navigationsmenü **Sales** aufklappen → **Leads** wählen
+2. In der Listenansicht oben auf **+ Neu** klicken
+3. Das Lead-Formular öffnet sich – folgende Felder ausfüllen:
+
+| Feld | Wert (Beispiel) |
+|------|----------------|
+| **Thema** | `Lizenzanfrage ERP-System 2025` |
+| **Vorname / Nachname** | `Max Mustermann` |
+| **Unternehmen** | `Mustermann GmbH` |
+| **E-Mail** | `max@mustermann.de` |
+| **Telefon** | `+49 89 123456` |
+| **Lead-Quelle** | `Messe` |
+| **Branche** | `Fertigungsindustrie` |
+| **Mitarbeiterzahl** | `50–200` |
+
+4. **Speichern** klicken (oben links oder `Strg + S`)
+5. Nach dem Speichern können im Abschnitt **Aktivitäten** direkt Aufgaben, Anrufe oder E-Mails verknüpft werden
+
+> [!TIP] Lead-Quelle immer befüllen
+> Das Feld **Lead-Quelle** ist entscheidend für die spätere Kampagnenauswertung. Korrekte Befüllung ermöglicht die Analyse, welche Kanäle (Messe, Web, LinkedIn) den höchsten ROI liefern.
+
+---
+
+### Opportunity anlegen
+
+**Navigation:** `Sales` → `Opportunities` → `+ Neu` **oder** Lead qualifizieren
+
+1. Variante A – direkt: Im Menü **Sales** → **Opportunities** → **+ Neu**
+2. Variante B – aus Lead: Lead öffnen → oben in der Befehlszeile **Qualifizieren** klicken → Opportunity wird automatisch erstellt
+3. Im Opportunity-Formular die wichtigsten Felder befüllen:
+
+| Feld | Beschreibung | Beispiel |
+|------|-------------|---------|
+| **Thema** | Kurzbeschreibung | `ERP-Einführung 2025` |
+| **Account** | Verknüpftes Unternehmen | `Mustermann GmbH` |
+| **Kontakt** | Ansprechpartner | `Max Mustermann` |
+| **Geschätzter Umsatz** | Erwarteter Wert | `€85.000` |
+| **Abschlussdatum** | Erwarteter Abschluss | `31.03.2025` |
+| **Sales Stage** | Aktuelle Phase | `Qualifizierung` |
+| **Wahrscheinlichkeit** | Abschluss-% | `40 %` |
+
+4. Unter dem Tab **Produkte** können Angebotszeilen mit Produkten und Preisen hinterlegt werden
+5. **Speichern und schließen** oder in der Pipeline weiterarbeiten
+
+---
+
+### Angebot erstellen
+
+**Navigation:** Opportunity öffnen → Tab `Angebote` → `+ Neues Angebot`
+
+1. Eine Opportunity öffnen, die bereits Produkte enthält
+2. Zum Tab **Angebote** wechseln → **+ Neues Angebot** klicken
+3. Das Angebot übernimmt automatisch Kunde, Produkte und Preise aus der Opportunity
+4. Felder prüfen und anpassen:
+
+| Feld | Hinweis |
+|------|---------|
+| **Gültig bis** | Ablaufdatum des Angebots setzen |
+| **Zahlungsbedingungen** | z. B. `30 Tage netto` |
+| **Preisliste** | Passende Preisliste wählen |
+| **Rabatt** | Zeilen- oder Gesamtrabatt anwendbar |
+| **Beschreibung** | Individuelle Anmerkungen |
+
+5. Über **Als PDF drucken** oder **E-Mail senden** (in der Befehlszeile) wird das Angebot an den Kunden übermittelt
+6. Sobald der Kunde annimmt: **Angebot aktivieren** → **Auftrag erstellen**
+
+> [!NOTE] Angebots-Genehmigungsworkflow
+> In vielen Projekten ist ein Genehmigungsworkflow für Angebote über einem bestimmten Betrag konfiguriert. In diesem Fall erscheint nach dem Speichern der Button **Genehmigung anfordern** statt **Aktivieren**.
+
+---
+
 ## Copilot in Dynamics 365 Sales
 
 Microsoft Copilot ist nativ in die Sales-Oberfläche integriert und bietet KI-Unterstützung im täglichen Vertriebsalltag.
