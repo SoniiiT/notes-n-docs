@@ -287,17 +287,17 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Microsoft Fabric Grundlagen | Unified Analytics Platform, Kapazitäten, Workspaces, Lizenzierung, F-SKUs |
-| OneLake | Zentraler Data Lake für Fabric, Shortcuts, OneCopy-Prinzip, ADLS-Kompatibilität |
-| Fabric Lakehouse | Delta-Tabellen, SQL Analytics Endpoint, Notebooks, Medaillon-Architektur |
-| Fabric Data Warehouse | T-SQL Warehouse, Cross-Database Queries, Mirroring, Copilot-Integration |
-| Fabric Data Factory | Pipelines, Dataflows Gen2, Copy Activity, Monitoring |
-| Fabric Real-Time Intelligence | Eventstreams, KQL-Datenbank, Real-Time Dashboards, Activator (Reflexe) |
-| Power BI in Fabric | Semantic Models, Direct Lake Mode, Deployment Pipelines, Datamarts |
-| Fabric Notebooks & Spark | PySpark, Scala, SparkR, Lakehouse-Anbindung, Umgebungen |
-| Microsoft Purview in Fabric | Data Governance, Sensitivity Labels, Data Lineage, Information Protection |
-| Fabric Copilot | KI-gestützte Datenanalyse, DAX-Generierung, Report-Erstellung, Notebook-Hilfe |
-| Fabric Administration | Kapazitätsverwaltung, Tenant-Einstellungen, Monitoring Hub, Alerting |
+| [[Microsoft Fabric Grundlagen]] | Unified Analytics Platform, Kapazitäten, Workspaces, Lizenzierung, F-SKUs |
+| [[OneLake]] | Zentraler Data Lake für Fabric, Shortcuts, OneCopy-Prinzip, ADLS-Kompatibilität |
+| [[Fabric Lakehouse]] | Delta-Tabellen, SQL Analytics Endpoint, Notebooks, Medaillon-Architektur |
+| [[Fabric Data Warehouse]] | T-SQL Warehouse, Cross-Database Queries, Mirroring, Copilot-Integration |
+| [[Fabric Data Factory]] | Pipelines, Dataflows Gen2, Copy Activity, Monitoring |
+| [[Fabric Real-Time Intelligence]] | Eventstreams, KQL-Datenbank, Real-Time Dashboards, Activator (Reflexe) |
+| [[Power BI in Fabric]] | Semantic Models, Direct Lake Mode, Deployment Pipelines, Datamarts |
+| [[Fabric Notebooks und Spark]] | PySpark, Scala, SparkR, Lakehouse-Anbindung, Umgebungen |
+| [[Microsoft Purview in Fabric]] | Data Governance, Sensitivity Labels, Data Lineage, Information Protection |
+| [[Fabric Copilot]] | KI-gestützte Datenanalyse, DAX-Generierung, Report-Erstellung, Notebook-Hilfe |
+| [[Fabric Administration]] | Kapazitätsverwaltung, Tenant-Einstellungen, Monitoring Hub, Alerting |
 
 ---
 
@@ -305,13 +305,13 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Logic Apps | Low-Code Workflows, Connectors, Standard vs. Consumption |
-| Azure API Management | API Gateway, Policies, Developer Portal, Versioning, APIM-Tiers |
-| Azure Service Bus | Queues, Topics, Subscriptions, Dead Letter, Sessions, Geo-DR |
-| Azure Event Grid | Ereignisbasierte Architektur, Topics, Event Subscriptions, CloudEvents |
-| Azure Event Hubs | Big Data Streaming, Capture, Kafka-Kompatibilität, Dedicated |
-| Azure Web PubSub | Real-Time Web-Anwendungen, WebSocket, SignalR Service |
-| Azure Communication Services | CPaaS — Voice, Video, Chat, SMS, E-Mail als APIs; Teams-Interop, Calling SDK |
+| [[Azure Logic Apps]] | Low-Code Workflows, Connectors, Standard vs. Consumption |
+| [[Azure API Management]] | API Gateway, Policies, Developer Portal, Versioning, APIM-Tiers |
+| [[Azure Service Bus]] | Queues, Topics, Subscriptions, Dead Letter, Sessions, Geo-DR |
+| [[Azure Event Grid]] | Ereignisbasierte Architektur, Topics, Event Subscriptions, CloudEvents |
+| [[Azure Event Hubs]] | Big Data Streaming, Capture, Kafka-Kompatibilität, Dedicated |
+| [[Azure Web PubSub]] | Real-Time Web-Anwendungen, WebSocket, SignalR Service |
+| [[Azure Communication Services]] | CPaaS — Voice, Video, Chat, SMS, E-Mail als APIs; Teams-Interop, Calling SDK |
 
 ---
 
@@ -319,11 +319,11 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Microsoft Defender for Cloud | CSPM, Workload Protection, Secure Score, Regulatory Compliance |
-| Microsoft Defender for Containers | Image Scanning, Runtime Protection, AKS, Registry-Scans |
-| Azure Firewall Manager | Zentrale Richtlinien, Virtual WAN-Integration, DDoS |
-| Azure Web Application Firewall (WAF) | OWASP-Regelsets, Custom Rules, Bot Protection, Exclusions |
-| Azure Security Benchmark | Best-Practice-Richtlinien, CIS, NIST-Mapping |
+| [[Microsoft Defender for Cloud]] | CSPM, Workload Protection, Secure Score, Regulatory Compliance |
+| [[Microsoft Defender for Containers]] | Image Scanning, Runtime Protection, AKS, Registry-Scans |
+| [[Azure Firewall Manager]] | Zentrale Richtlinien, Virtual WAN-Integration, DDoS |
+| [[Azure Web Application Firewall]] | OWASP-Regelsets, Custom Rules, Bot Protection, Exclusions |
+| [[Azure Security Benchmark]] | Best-Practice-Richtlinien, CIS, NIST-Mapping |
 
 ---
 
@@ -331,17 +331,17 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Monitor Grundlagen | Metriken, Logs, Alerts, Dashboards, Workbooks |
-| Log Analytics Workspace | Tabellen, KQL-Abfragen, Datenaufbewahrung, Workspace-Design |
-| Azure Monitor Agent (AMA) | DCR-basierte Konfiguration, Ablösung von MMA/OMS |
-| Application Insights | APM, Dependency Tracking, Live Metrics, Smart Detection |
-| Azure Alerts | Metric Alerts, Log Alerts, Activity Log Alerts, Action Groups |
-| Azure Automation | Runbooks, State Configuration (DSC), Hybrid Worker |
-| Azure Update Manager | Patch Management für Azure und Arc-fähige Server |
-| Azure Backup | Recovery Services Vault, Policies, MARS Agent, MABS |
-| Azure Site Recovery (ASR) | Disaster Recovery, Replikation, Failover/Failback, RPO/RTO |
-| Azure Migrate | Assessment, Server Migration, Database Migration Service |
-| Azure Resource Graph | Ressourcen abfragen, KQL, Compliance-Übersicht, Änderungshistorie |
+| [[Azure Monitor Grundlagen]] | Metriken, Logs, Alerts, Dashboards, Workbooks |
+| [[Log Analytics Workspace]] | Tabellen, KQL-Abfragen, Datenaufbewahrung, Workspace-Design |
+| [[Azure Monitor Agent]] | DCR-basierte Konfiguration, Ablösung von MMA/OMS |
+| [[Application Insights]] | APM, Dependency Tracking, Live Metrics, Smart Detection |
+| [[Azure Alerts]] | Metric Alerts, Log Alerts, Activity Log Alerts, Action Groups |
+| [[Azure Automation]] | Runbooks, State Configuration (DSC), Hybrid Worker |
+| [[Azure Update Manager]] | Patch Management für Azure und Arc-fähige Server |
+| [[Azure Backup]] | Recovery Services Vault, Policies, MARS Agent, MABS |
+| [[Azure Site Recovery]] | Disaster Recovery, Replikation, Failover/Failback, RPO/RTO |
+| [[Azure Migrate]] | Assessment, Server Migration, Database Migration Service |
+| [[Azure Resource Graph]] | Ressourcen abfragen, KQL, Compliance-Übersicht, Änderungshistorie |
 
 ---
 

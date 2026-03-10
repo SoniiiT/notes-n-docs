@@ -14,7 +14,7 @@ aliases:
 
 # Azure Managed Disks
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure Managed Disks sind verwaltete virtuelle Festplatten für Azure VMs — ohne eigenen Storage Account. Microsoft übernimmt Redundanz, Replikation und Skalierung. Von Standard HDD bis Ultra Disk decken sie alle Workload-Anforderungen von Dev/Test bis SAP HANA ab.
 
 ---

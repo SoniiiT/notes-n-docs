@@ -13,7 +13,7 @@ aliases:
 
 # Azure Queue Storage
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure Queue Storage ist ein einfacher, hochskalierbarer Message-Queuing-Dienst für asynchrone Kommunikation zwischen Anwendungskomponenten. Er eignet sich für Workload-Entkopplung, Task-Verteilung und einfache Event-gesteuerte Architekturen bei sehr geringen Kosten.
 
 ---

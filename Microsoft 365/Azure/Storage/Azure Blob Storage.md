@@ -13,7 +13,7 @@ aliases:
 
 # Azure Blob Storage
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure Blob Storage ist der skalierbarer Objektspeicher von Microsoft Azure für unstrukturierte Daten. Er eignet sich für Videos, Bilder, Backups, Logs, Static Websites und Big-Data-Workloads. Mit Milliarden von Objekten und Exabytes an Kapazität ist er der Kern der Azure-Speicherplattform.
 
 ---

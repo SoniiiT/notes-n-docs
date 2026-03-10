@@ -13,7 +13,7 @@ aliases:
 
 # Azure Storage Grundlagen
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure Storage ist die skalierbare, hochverfügbare und sichere Cloud-Speicherplattform von Microsoft. Sie bietet Blob-Speicher, Datei-Shares, Queues, Tabellen und Disk-Speicher in einem einheitlichen Dienst mit globaler Redundanz und Enterprise-Sicherheitsfunktionen.
 
 ---

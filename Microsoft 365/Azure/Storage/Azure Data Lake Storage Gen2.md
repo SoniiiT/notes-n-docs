@@ -16,7 +16,7 @@ aliases:
 
 # Azure Data Lake Storage Gen2
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure Data Lake Storage Gen2 (ADLS Gen2) kombiniert die Skalierbarkeit von Azure Blob Storage mit einem hierarchischen Namespace für Enterprise-Analytics-Workloads. Es ist die Grundlage für Microsoft Fabric, Azure Synapse Analytics und Azure Databricks-Pipelines in der Medallion-Architektur.
 
 ---

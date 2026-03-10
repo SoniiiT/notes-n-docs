@@ -15,7 +15,7 @@ aliases:
 
 # Azure Files
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure Files ist ein vollständig verwalteter Cloud-Dateifreigabedienst, der SMB 3.x und NFS 4.1 Protokolle unterstützt. Er ermöglicht das Ersetzen oder Ergänzen lokaler Dateiserver ohne Infrastrukturverwaltung — mit Active Directory Authentifizierung, Snapshots und Azure File Sync für Hybrid-Szenarien.
 
 ---

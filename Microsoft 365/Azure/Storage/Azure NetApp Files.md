@@ -16,7 +16,7 @@ aliases:
 
 # Azure NetApp Files
 
-> [!ABSTRACT]
+> [!ABSTRACT] TL;DR
 > Azure NetApp Files (ANF) ist ein vollständig verwalteter Enterprise-Storage-Dienst auf Basis von NetApp ONTAP. Er bietet Ultra-Low-Latency NFS und SMB Shares für anspruchsvollste Workloads wie SAP HANA, HPC, Oracle Datenbanken und Azure Virtual Desktop mit NetApp-zertifizierter Performance.
 
 ---
