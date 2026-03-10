@@ -349,13 +349,13 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure Arc Grundlagen | Konzept, Architektur, unterstützte Ressourcentypen, Lizenzierung |
-| Arc-fähige Server | Onboarding Windows/Linux, Connected Machine Agent, Extensions |
-| Arc-fähige Kubernetes | Cluster-Verbindung, GitOps (Flux), Cluster Extensions, Azure Policy |
-| Arc-fähige SQL Server | Management über Arc, Best Practices Assessment, Lizenzierung |
-| Arc-enabled Data Services | Azure SQL MI auf Arc, PostgreSQL Hyperscale, Controller |
-| Azure Stack HCI | Hyper-V Cluster mit Azure-Integration, Arc-basiertes Management |
-| Azure Stack Edge | Edge-Computing, IoT, lokale Azure-Dienste, GPU-SKUs |
+| [[Azure Arc Grundlagen]] | Konzept, Architektur, unterstützte Ressourcentypen, Lizenzierung |
+| [[Arc-fähige Server]] | Onboarding Windows/Linux, Connected Machine Agent, Extensions |
+| [[Arc-fähige Kubernetes]] | Cluster-Verbindung, GitOps (Flux), Cluster Extensions, Azure Policy |
+| [[Arc-fähige SQL Server]] | Management über Arc, Best Practices Assessment, Lizenzierung |
+| [[Arc-enabled Data Services]] | Azure SQL MI auf Arc, PostgreSQL Hyperscale, Controller |
+| [[Azure Stack HCI]] | Hyper-V Cluster mit Azure-Integration, Arc-basiertes Management |
+| [[Azure Stack Edge]] | Edge-Computing, IoT, lokale Azure-Dienste, GPU-SKUs |
 
 ---
 
@@ -363,20 +363,20 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Microsoft Graph API | REST API, Berechtigungen, Delegated vs. Application, SDKs, Throttling |
-| PowerShell für Microsoft 365 | Graph PowerShell, ExchangeOnline, Teams, SharePoint PnP |
-| Azure PowerShell | Az-Modul, Authentifizierung, häufige Befehle, Scripting-Patterns |
-| Azure CLI | Installation, Befehle, Skripte, JSON-Ausgabe, Best Practices |
-| Azure Bicep | Infrastructure as Code, Module, Deployment, Parameter Files |
-| Terraform für Azure | AzureRM Provider, State Management, Module, Workspaces |
-| GitHub Actions für Azure | CI/CD Pipelines, OIDC Auth, Deployment Workflows |
-| Azure DevOps | Pipelines, Repos, Boards, Artifacts, Service Connections |
-| Microsoft 365 DSC | Desired State Configuration für M365-Tenant-Konfiguration |
-| Microsoft 365 Reporting | Admin Center Reports, Graph Reports, Power BI Integration |
-| Service Health und Monitoring | Admin Center, Service Health Dashboard, Incidents, Post-Mortems |
-| Backup-Strategien für M365 | Veeam, Drittanbieter, native Retention vs. echtes Backup |
-| Lizenzmanagement | Gruppen-basierte Lizenzierung, Kostenoptimierung, Automatisierung |
-| Azure Lighthouse | Delegiertes Ressourcen-Management für MSPs, Multi-Tenant Azure-Verwaltung, Marketplace-Angebote |
+| [[Microsoft Graph API]] | REST API, Berechtigungen, Delegated vs. Application, SDKs, Throttling |
+| [[PowerShell für Microsoft 365]] | Graph PowerShell, ExchangeOnline, Teams, SharePoint PnP |
+| [[Azure PowerShell]] | Az-Modul, Authentifizierung, häufige Befehle, Scripting-Patterns |
+| [[Azure CLI]] | Installation, Befehle, Skripte, JSON-Ausgabe, Best Practices |
+| [[Azure Bicep]] | Infrastructure as Code, Module, Deployment, Parameter Files |
+| [[Terraform für Azure]] | AzureRM Provider, State Management, Module, Workspaces |
+| [[GitHub Actions für Azure]] | CI/CD Pipelines, OIDC Auth, Deployment Workflows |
+| [[Azure DevOps]] | Pipelines, Repos, Boards, Artifacts, Service Connections |
+| [[Microsoft 365 DSC]] | Desired State Configuration für M365-Tenant-Konfiguration |
+| [[Microsoft 365 Reporting]] | Admin Center Reports, Graph Reports, Power BI Integration |
+| [[Service Health und Monitoring]] | Admin Center, Service Health Dashboard, Incidents, Post-Mortems |
+| [[Backup-Strategien für M365]] | Veeam, Drittanbieter, native Retention vs. echtes Backup |
+| [[Lizenzmanagement]] | Gruppen-basierte Lizenzierung, Kostenoptimierung, Automatisierung |
+| [[Azure Lighthouse]] | Delegiertes Ressourcen-Management für MSPs, Multi-Tenant Azure-Verwaltung, Marketplace-Angebote |
 
 ---
 
@@ -384,15 +384,15 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure OpenAI Service | GPT-4/o, DALL-E, Whisper, Embeddings, Deployments, Quotas, Private Endpoints |
-| Azure AI Foundry | Unified AI-Entwicklungsplattform, Prompt Flow, Model Catalog, Evaluation |
-| Azure AI Services | Vision (OCR, Face), Speech (STT/TTS), Language (NLP, Übersetzer), Anomaly Detector |
-| Azure AI Document Intelligence | Formularerkennung, Custom Models, Prebuilt Models (Rechnungen, IDs, Verträge) |
-| Azure AI Search | Volltext + Vektorsuche, Skillsets, Indexer, Semantic Ranking, RAG-Integration |
-| Azure Machine Learning | Workspaces, Compute, MLOps, Automated ML, Designer, Pipeline, Deployment |
-| Azure Bot Service | Chatbot-Plattform, Direktkanal, Teams-Integration, Composer |
-| Microsoft Security Copilot | KI-gestützter Security-Assistent, Skills, Promptbooks, MSSP-Szenarien |
-| Azure AI Zusammenfassung | Überblick aller KI-Dienste, Auswahl-Guide (welcher Dienst wann?) |
+| [[Azure OpenAI Service]] | GPT-4/o, DALL-E, Whisper, Embeddings, Deployments, Quotas, Private Endpoints |
+| [[Azure AI Foundry]] | Unified AI-Entwicklungsplattform, Prompt Flow, Model Catalog, Evaluation |
+| [[Azure AI Services]] | Vision (OCR, Face), Speech (STT/TTS), Language (NLP, Übersetzer), Anomaly Detector |
+| [[Azure AI Document Intelligence]] | Formularerkennung, Custom Models, Prebuilt Models (Rechnungen, IDs, Verträge) |
+| [[Azure AI Search]] | Volltext + Vektorsuche, Skillsets, Indexer, Semantic Ranking, RAG-Integration |
+| [[Azure Machine Learning]] | Workspaces, Compute, MLOps, Automated ML, Designer, Pipeline, Deployment |
+| [[Azure Bot Service]] | Chatbot-Plattform, Direktkanal, Teams-Integration, Composer |
+| [[Microsoft Security Copilot]] | KI-gestützter Security-Assistent, Skills, Promptbooks, MSSP-Szenarien |
+| [[Azure KI Zusammenfassung]] | Überblick aller KI-Dienste, Auswahl-Guide (welcher Dienst wann?) |
 
 ---
 
@@ -400,11 +400,11 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| Azure IoT Hub | Geräteverwaltung, D2C/C2D Messaging, Device Twins, Routes, DPS |
-| Azure IoT Central | Managed IoT-Plattform, Device Templates, Dashboards, Regeln, Export |
-| Azure Digital Twins | Digitale Modellierung, DTDL, Graphen, Event Routes, Integration |
-| Azure Sphere | Sicheres Microcontroller-Ökosystem, Guardian Module, AS3-Updates |
-| Azure IoT Edge | Container auf Edge-Geräten, Module, Offline-Fähigkeit, Azure Functions |
+| [[Azure IoT Hub]] | Geräteverwaltung, D2C/C2D Messaging, Device Twins, Routes, DPS |
+| [[Azure IoT Central]] | Managed IoT-Plattform, Device Templates, Dashboards, Regeln, Export |
+| [[Azure Digital Twins]] | Digitale Modellierung, DTDL, Graphen, Event Routes, Integration |
+| [[Azure Sphere]] | Sicheres Microcontroller-Ökosystem, Guardian Module, AS3-Updates |
+| [[Azure IoT Edge]] | Container auf Edge-Geräten, Module, Offline-Fähigkeit, Azure Functions |
 
 ---
 
@@ -412,15 +412,15 @@ tags:
 
 | Thema | Beschreibung |
 |-------|-------------|
-| GitHub Grundlagen | Repositories, Branches, Pull Requests, Issues, Projects, Wikis |
-| GitHub Actions | Workflows, Jobs, Steps, Runner-Typen (hosted/self-hosted), Secrets, Environments |
-| GitHub Copilot | Copilot für Entwickler, Chat, Workspace, CLI, Extensions, Enterprise-Governance |
-| GitHub Advanced Security (GHAS) | Code Scanning (CodeQL), Secret Scanning, Dependency Review, Security Overview |
-| GitHub Packages | Container Registry, npm/Maven/NuGet/PyPI Hosting, Authentifizierung |
-| GitHub Enterprise | Enterprise Server vs. Cloud, SAML/SCIM, Policies, Audit Log, Migration |
-| GitHub Codespaces | Cloud-Dev-Umgebungen, Dev Container, Prebuilds, Limits |
-| GitHub Pages | Statisches Hosting, Jekyll, Custom Domains, Actions-Deployment |
-| GitHub → Azure DevOps Vergleich | Pipelines vs. Actions, Repos vs. GitHub, wann welche Plattform |
+| [[GitHub Grundlagen]] | Repositories, Branches, Pull Requests, Issues, Projects, Wikis |
+| [[GitHub Actions]] | Workflows, Jobs, Steps, Runner-Typen (hosted/self-hosted), Secrets, Environments |
+| [[GitHub Copilot]] | Copilot für Entwickler, Chat, Workspace, CLI, Extensions, Enterprise-Governance |
+| [[GitHub Advanced Security]] | Code Scanning (CodeQL), Secret Scanning, Dependency Review, Security Overview |
+| [[GitHub Packages]] | Container Registry, npm/Maven/NuGet/PyPI Hosting, Authentifizierung |
+| [[GitHub Enterprise]] | Enterprise Server vs. Cloud, SAML/SCIM, Policies, Audit Log, Migration |
+| [[GitHub Codespaces]] | Cloud-Dev-Umgebungen, Dev Container, Prebuilds, Limits |
+| [[GitHub Pages]] | Statisches Hosting, Jekyll, Custom Domains, Actions-Deployment |
+| [[GitHub vs Azure DevOps Vergleich]] | Pipelines vs. Actions, Repos vs. GitHub, wann welche Plattform |
 
 ---
 
