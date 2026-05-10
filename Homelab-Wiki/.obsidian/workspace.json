@@ -1,0 +1,237 @@
+{
+  "main": {
+    "id": "2c0bf2a893586382",
+    "type": "split",
+    "children": [
+      {
+        "id": "285c42e9bc01feab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fbf25cd17ea88f05",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "servers/LXC-BIND9.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LXC-BIND9"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d4678b83c64f98cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "f75eedcff439341d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "295360d35b52eb5d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Dateiexplorer"
+            }
+          },
+          {
+            "id": "543e3d67dc9b2c0a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "76200ac8d16261ce",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ffec74760c2306b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "fca8828be88fb469",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3af80bb89892d40c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Projekt Ideen/Projektideen.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Gliederung von Projektideen"
+            }
+          },
+          {
+            "id": "6f6b6f0780718dba",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AI/LLMs/Wie funktionieren LLMs.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Wie funktionieren LLMs"
+            }
+          },
+          {
+            "id": "721a7f9b6bfabc39",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "AI/LLMs/Wie funktionieren LLMs.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Wie funktionieren LLMs"
+            }
+          },
+          {
+            "id": "50c6f4579f307cdc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "84f2faf3935570de",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 395,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Schnellauswahl öffnen": false,
+      "graph:Graph-Ansicht öffnen": false,
+      "canvas:Neuen Canvas erstellen": false,
+      "daily-notes:Heutige Notiz öffnen": false,
+      "templates:Vorlage einfügen": false,
+      "command-palette:Befehlspalette öffnen": false,
+      "bases:Neue Base erstellen": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false,
+      "card-note:Search Notes": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false,
+      "digitalgarden:Digital Garden Publication Center": false
+    }
+  },
+  "active": "fbf25cd17ea88f05",
+  "lastOpenFiles": [
+    "servers/LXC-SEMAPHORE.md",
+    "servers/LXC-TELEPORT-PROXY.md",
+    "servers/LXC-WIREGUARD.md",
+    "servers/PVE-SRV-01.md",
+    "servers/LXC-SCANOPY.md",
+    "servers/LXC-REMOTELY.md",
+    "servers/LXC-PTERODACTYL-WINGS.md",
+    "servers/LXC-PTERODACTYL-PANEL.md",
+    "servers/LXC-OMADA.md",
+    "servers/LXC-HARBOR.md",
+    "servers/LXC-BIND9.md",
+    "servers/JELLYFIN-HOME-01.md",
+    "servers/GITHUB-RUNNER-TERRAFORM.md",
+    "servers/GITHUB-RUNNER-PACKER.md",
+    "servers/CLOUD-SRV-03.md",
+    "servers/CLOUD-SRV-02.md",
+    "servers/CLOUD-SRV-01.md",
+    "network/topology.md",
+    "README.md",
+    "todo.md",
+    "Microsoft 365/M365 Index.md",
+    "Virtualization/HyperV/Konzepte/SET und NIC Teaming.md",
+    "Virtualization/HyperV/Hyper-V Index.md",
+    "Microsoft 365",
+    "Virtualization/HyperV/Konzepte/VM Generationen und Konfigurationsversionen.md",
+    "Virtualization/HyperV/Konzepte/Hyper-V VM Verwaltung.md",
+    "Virtualization/HyperV/Konzepte/Hyper-V Storage.md",
+    "Virtualization/HyperV/Betrieb",
+    "Virtualization/HyperV/Erweiterte Features",
+    "Virtualization/HyperV/Konzepte",
+    "Virtualization/HyperV/Installation",
+    "Virtualization/HyperV/Grundlagen",
+    "Windows Server/Weitere Rollen",
+    "Windows Server/PKI - AD CS",
+    "Windows Server/Hyper-V",
+    "Windows Server/IIS",
+    "icons8-server-64.png",
+    "Hyper-V_Logo.png",
+    "docker-logo-blue.svg",
+    "ubuntu-icon.svg",
+    "Diagram.svg",
+    "Projekte/IHK Projekt/Untitled Diagram.svg",
+    "Projekte/IHK Projekt/Untitled Diagram.svg",
+    "icons8-server-64_0.png",
+    "Untitled Diagram 1.svg"
+  ]
+}

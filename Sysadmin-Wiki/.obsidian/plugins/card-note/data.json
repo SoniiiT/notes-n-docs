@@ -1,0 +1,15 @@
+{
+  "dragSymbol": "",
+  "dragSymbolSize": 18,
+  "defaultFolder": "",
+  "columnWidth": 250,
+  "rowHeight": 250,
+  "autoLink": false,
+  "arrowTo": "end",
+  "query": "",
+  "useRegex": false,
+  "matchCase": false,
+  "showSearchDetail": false,
+  "include": "",
+  "exclude": ""
+}

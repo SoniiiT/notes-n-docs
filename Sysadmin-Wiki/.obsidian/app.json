@@ -1,0 +1,15 @@
+{
+  "promptDelete": false,
+  "propertiesInDocument": "hidden",
+  "foldHeading": true,
+  "showLineNumber": false,
+  "rightToLeft": false,
+  "spellcheck": true,
+  "autoPairBrackets": true,
+  "autoPairMarkdown": true,
+  "smartIndentList": true,
+  "useTab": true,
+  "defaultViewMode": "preview",
+  "showInlineTitle": true,
+  "readableLineLength": false
+}
