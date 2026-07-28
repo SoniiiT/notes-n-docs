@@ -18,5 +18,5 @@
 
 ## Review-Auslöser
 
-Diesen Kontext aktualisieren, wenn sich Vault-Struktur, Host-/Dienstinventar, Agentenregeln, Obsidian-Plugins oder die Cloud-/Netzwerktopologie wesentlich ändern. Bei Änderungen an `.smart-env`-Daten oder geheimnisnahen Inhalten nur Metadaten und Rollen indexieren, niemals Werte.
+Diesen Kontext aktualisieren, wenn sich Vault-Struktur, Host-/Dienstinventar, Agentenregeln, Obsidian-Plugins oder die Cloud-/Netzwerktopologie wesentlich ändern. Bei Änderungen an vorhandenen `.smart-env`-Daten (falls solche Dateien vorhanden sind) oder geheimnisnahen Inhalten nur Metadaten und Rollen indexieren, niemals Werte.
 
