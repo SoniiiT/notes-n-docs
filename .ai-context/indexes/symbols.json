@@ -1,0 +1,5231 @@
+[
+  {
+    "path": "AGENTS.md",
+    "area": "repository",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Agenten-Kontext"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure RBAC.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure RBAC"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure Überblick.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Überblick"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure Well-Architected Framework.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Well-Architected Framework"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Resource Groups.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Resource Groups"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Subscriptions und Management Groups.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Subscriptions und Management Groups"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Identität und Schlüssel/Azure AD Domain Services.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure AD Domain Services"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Identität und Schlüssel/Azure Key Vault.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Key Vault"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Identität und Schlüssel/Azure Managed Identities.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Managed Identities"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Identität und Schlüssel/Microsoft Entra Workload ID.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Entra Workload ID"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure API Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure API Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure Communication Services.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Communication Services"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure Event Grid.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Event Grid"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure Event Hubs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Event Hubs"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure Logic Apps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Logic Apps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure Service Bus.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Service Bus"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Integration und Messaging/Azure Web PubSub.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Web PubSub"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/IoT/Azure Digital Twins.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Digital Twins"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/IoT/Azure IoT Central.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure IoT Central"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/IoT/Azure IoT Edge.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure IoT Edge"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/IoT/Azure IoT Hub.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure IoT Hub"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/IoT/Azure Sphere.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Sphere"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure AI Document Intelligence.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure AI Document Intelligence"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure AI Foundry.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure AI Foundry"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure Policy.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Policy"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure AI Search.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure AI Search"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure Landing Zones.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Landing Zones"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure Advisor.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Advisor"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Spot VMs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Spot VMs"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Virtual Machines.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Virtual Machines"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure VM Erweiterungen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure VM Erweiterungen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure Cache for Redis.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Cache for Redis"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure Cosmos DB.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Cosmos DB"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure Data Factory.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Data Factory"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure Database for MySQL.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Database for MySQL"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure Database for PostgreSQL.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Database for PostgreSQL"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure SQL Database.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure SQL Database"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure SQL Managed Instance.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure SQL Managed Instance"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/Azure Synapse Analytics.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Synapse Analytics"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Datenbanken/SQL Server auf Azure VMs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SQL Server auf Azure VMs"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Administration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Administration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Copilot.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Copilot"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Data Factory.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Data Factory"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Data Warehouse.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Data Warehouse"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Lakehouse.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Lakehouse"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Notebooks und Spark.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Notebooks und Spark"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Fabric Real-Time Intelligence.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fabric Real-Time Intelligence"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Microsoft Fabric Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Fabric Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Microsoft Purview in Fabric.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Purview in Fabric"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/OneLake.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "OneLake"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Fabric/Power BI in Fabric.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power BI in Fabric"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Grundlagen/Azure Cost Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Cost Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure AI Services.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure AI Services"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure Bot Service.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Bot Service"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure KI Zusammenfassung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure KI Zusammenfassung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Network Security Groups.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Network Security Groups"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Sicherheit/Azure Firewall Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Firewall Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Sicherheit/Azure Security Benchmark.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Security Benchmark (MCSB)"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Sicherheit/Azure Web Application Firewall.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Web Application Firewall"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Sicherheit/Microsoft Defender for Cloud.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender for Cloud"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Sicherheit/Microsoft Defender for Containers.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender for Containers"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure Blob Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Blob Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure Data Lake Storage Gen2.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Data Lake Storage Gen2"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure Files.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Files"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure Managed Disks.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Managed Disks"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure NetApp Files.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure NetApp Files"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure Queue Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Queue Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Storage/Azure Storage Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Storage Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Administration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Administration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Business Central.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Business Central"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Customer Insights.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Customer Insights"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Customer Service.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Customer Service"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Field Service.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Field Service"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Finance.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Finance"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 HR.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 HR"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Sales.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Sales"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Supply Chain Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Supply Chain Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Dynamics 365/Dynamics 365 Überblick.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dynamics 365 Überblick"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure VPN Gateway.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure VPN Gateway"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Virtual WAN.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Virtual WAN"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Virtual Network.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Virtual Network"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Traffic Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Traffic Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure Machine Learning.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Machine Learning"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Azure OpenAI Service.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure OpenAI Service"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/KI und Machine Learning/Microsoft Security Copilot.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Security Copilot"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Application Insights.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Application Insights"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Alerts.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Alerts"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Automation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Automation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Backup.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Backup"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Migrate.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Migrate"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Monitor Agent.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Monitor Agent"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Monitor Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Monitor Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Resource Graph.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Resource Graph"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Kubernetes Service.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Kubernetes Service"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Site Recovery.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Site Recovery"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Log Analytics Workspace.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Log Analytics Workspace"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Application Gateway.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Application Gateway"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Bastion.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Bastion"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure DDoS Protection.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure DDoS Protection"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure DNS.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure DNS"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure ExpressRoute.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure ExpressRoute"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Firewall.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Firewall"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Front Door.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Front Door"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Load Balancer.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Load Balancer"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Network Watcher.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Network Watcher"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Netzwerk/Azure Private Link.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Private Link"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Monitor und Management/Azure Update Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Update Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Functions.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Functions"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Container Registry.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Container Registry"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Container Instances.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Container Instances"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Docker Networking.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Networking"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Docker Registries.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Registries"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Docker Volumes und Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Volumes und Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Dockerfile Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dockerfile Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Dockerfile.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Dockerfile"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Multi-Stage Builds.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Multi-Stage Builds"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/LXC-LXD Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🐧 LXC-LXD Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD CLI Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD CLI Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD Cluster Betrieb.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Cluster Betrieb"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD MicroCloud.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD MicroCloud"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD Monitoring und Logging.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Monitoring und Logging"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD Praktische Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Praktische Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD Sicherheit.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Sicherheit"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Betrieb/LXD Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Grundlagen/LXC vs LXD vs Docker.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC / LXD vs. Docker vs. VMs"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Grundlagen/LXC-LXD Architektur.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-LXD Architektur"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Grundlagen/Was ist LXC-LXD.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist LXC und LXD?"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Installation/LXD Installation und Setup.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Installation und Setup"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Konzepte/Images und Remotes.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Images und Remotes"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Konzepte/LXD Netzwerk.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXD Netzwerk"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Konzepte/Profile und Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Profile und Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Docker Multi-Arch Builds.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Multi-Arch Builds"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Docker Images.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Images"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Docker Container Patterns.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Container Patterns"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Konzepte/Container Lifecycle.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Container Lifecycle"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Labels Selektoren und Annotations.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Labels Selektoren und Annotations"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Namespaces.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Namespaces"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Persistent Volumes und Storage Classes.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Persistent Volumes und Storage Classes"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Pod Security Standards.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Pod Security Standards"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Pods.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Pods"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/RBAC.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RBAC"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Service Mesh.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Service Mesh"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Services.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Services"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Docker Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🐳 Docker Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/LXC-LXD/Konzepte/Storage Pools.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Storage Pools"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker CLI Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker CLI Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker Desktop.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Desktop"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker Monitoring und Logging.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Monitoring und Logging"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker Security und Hardening.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Security und Hardening"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Docker Compose/Docker Compose Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Compose Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Docker Compose/Docker Compose.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Compose"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Grundlagen/Docker Architektur.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Architektur"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Grundlagen/Docker vs Podman und LXC.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker vs Podman und LXC"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Grundlagen/Was ist Docker.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Docker"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Installation/Docker Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Docker/Betrieb/Docker CI-CD Integration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker CI/CD Integration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Benutzer und Gruppen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Benutzer und Gruppen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Azure CLI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure CLI"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Azure DevOps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure DevOps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Azure Lighthouse.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Lighthouse"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Azure PowerShell.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure PowerShell"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Backup-Strategien für M365.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Backup-Strategien für M365"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/GitHub Actions für Azure.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Actions für Azure"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Lizenzmanagement.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Lizenzmanagement"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Microsoft 365 DSC.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft 365 DSC"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Microsoft 365 Reporting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft 365 Reporting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Microsoft Graph API.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Graph API"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/PowerShell für Microsoft 365.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PowerShell für Microsoft 365"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Service Health und Monitoring.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Service Health und Monitoring"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Terraform für Azure.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Terraform für Azure"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Arc-enabled Data Services.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Arc-enabled Data Services"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Arc-fähige Kubernetes.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Arc-fähige Kubernetes"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Arc-fähige Server.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Arc-fähige Server"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Arc-fähige SQL Server.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Arc-fähige SQL Server"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Azure Arc Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Arc Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Azure Stack Edge.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Stack Edge"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Arc/Azure Stack HCI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Stack HCI"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure App Service.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure App Service"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Batch.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Batch"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Compute/Azure Container Apps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Container Apps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Azure/Administration und Automatisierung/Azure Bicep.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Bicep"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft 365 & Azure Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman CI-CD Integration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman CI-CD Integration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman CLI Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman CLI Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Compose.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Compose"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Desktop.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Desktop"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Monitoring und Logging.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Monitoring und Logging"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Praktische Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Praktische Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Sicherheit.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Sicherheit"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Podman Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Betrieb/Systemd Integration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Systemd Integration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Grundlagen/Podman Architektur.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Architektur"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Grundlagen/Podman vs Docker.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman vs Docker"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Podman Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🦭 Podman Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Grundlagen/Was ist Podman.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Podman"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Container Lifecycle.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Container Lifecycle"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Container und Images.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Container und Images"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Containerfile Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Containerfile Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Containerfile.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Containerfile"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Multi-Stage Builds.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Multi-Stage Builds"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Podman Networking.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Networking"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Podman Registries.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Registries"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Pods.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Pods"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Rootless Container.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Rootless Container"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Konzepte/Volumes und Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Volumes und Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Container/Podman/Installation/Podman Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Podman Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Kubernetes Netzwerk.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubernetes Netzwerk"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Conditional Access.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Conditional Access"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Entra ID B2C.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entra ID B2C"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/ESXi Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🖥️ ESXi Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Betrieb/ESXi Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ESXi Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Betrieb/ESXi CLI Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ESXi CLI Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Betrieb/ESXi Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ESXi Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Betrieb/PowerCLI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PowerCLI"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Erweiterte Features/NSX.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "VMware NSX"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Erweiterte Features/Site Recovery Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Site Recovery Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Erweiterte Features/Tanzu.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Tanzu"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Erweiterte Features/vSAN.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "vSAN"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Erweiterte Features/vSphere Lifecycle Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "vSphere Lifecycle Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Erweiterte Features/vSphere Replication.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "vSphere Replication"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Grundlagen/ESXi Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ESXi / VMware vSphere Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Installation/ESXi Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ESXi Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Konzepte/ESXi Netzwerk und Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ESXi Netzwerk und Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Konzepte/vCenter.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "vCenter Server"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/ESXi/Konzepte/VM Verwaltung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "VM Verwaltung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Hyper-V Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Betrieb/Hyper-V Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/MECM Patch Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MECM Patch Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/MECM SCCM Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MECM SCCM Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/MECM Software Deployment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MECM Software Deployment"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/SCOM Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SCOM Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/SCVMM Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SCVMM Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/System Center Azure Migration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "System Center Azure Migration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/System Center Orchestrator.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "System Center Orchestrator"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Governance und Policies.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Governance und Policies"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Meetings und Live Events.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Meetings und Live Events"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams Apps und Bots.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams Apps und Bots"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams Phone Mobile.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams Phone Mobile"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams PowerShell.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams PowerShell"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams Premium.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams Premium"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams Rooms.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams Rooms"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams und Kanäle verwalten.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams und Kanäle verwalten"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Teams/Teams-Telefonie.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teams-Telefonie"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Windows 365 und AVD/AVD Netzwerk und Identität.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AVD Netzwerk und Identität"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Windows 365 und AVD/Azure Virtual Desktop AVD.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Azure Virtual Desktop AVD"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Windows 365 und AVD/FSLogix.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "FSLogix"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Windows 365 und AVD/RDS vs AVD vs W365 Vergleich.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RDS vs AVD vs W365 Vergleich"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Windows 365 und AVD/Windows 365 Boot und Frontline.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows 365 Boot und Frontline"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Windows 365 und AVD/Windows 365 Cloud PC.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows 365 Cloud PC"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Betrieb/Hyper-V PowerShell Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V PowerShell Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Betrieb/Hyper-V Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Erweiterte Features/Hyper-V Replica und Live Migration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Replica und Live Migration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Active Directory/Benutzer und Gruppen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Benutzer und Gruppen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Active Directory/Group Policy.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Group Policy"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/DNS und DHCP/Windows DHCP.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows DHCP"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/DNS und DHCP/Windows DNS.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows DNS"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/File Server/DFS.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "DFS — Distributed File System"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/File Server/NTFS Berechtigungen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "NTFS Berechtigungen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/File Server/SMB Freigaben.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SMB Freigaben"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Grundlagen/Server Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Server Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Grundlagen/Was ist Windows Server.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Windows Server"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Grundlagen/Windows Admin Center.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows Admin Center"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Grundlagen/Windows Server Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows Server Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/IIS/IIS Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "IIS — Internet Information Services"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/IIS/IIS Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "IIS Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/PKI - AD CS/PKI - AD CS.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PKI — AD CS (Public Key Infrastructure)"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/PKI - AD CS/Zertifikatsverwaltung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Zertifikatsverwaltung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/PowerShell/PowerShell Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PowerShell Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/PowerShell/PowerShell für Admins.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PowerShell für Admins"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/PowerShell/PowerShell Remoting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PowerShell Remoting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Remote Desktop Services/RDS Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RDS Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Remote Desktop Services/RDS Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RDS Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Remote Desktop Services/RemoteApp.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RemoteApp"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Weitere Rollen/Failover Clustering.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Failover Clustering"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Weitere Rollen/Print Server.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Print Server"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Active Directory/AD Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AD Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Active Directory/AD Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AD Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Active Directory/AD Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AD Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Windows Server Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🪟 Windows Server Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Grundlagen/Was ist Hyper-V.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Hyper-V"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Installation/Installation Hyper-V (Windows Server 2022).md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Installation Hyper-V – Windows Server 2022"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Konzepte/Hyper-V Netzwerk.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Netzwerk"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Konzepte/Hyper-V Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Konzepte/Hyper-V VM Verwaltung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V VM Verwaltung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Konzepte/SET und NIC Teaming.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SET und NIC Teaming"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/HyperV/Konzepte/VM Generationen und Konfigurationsversionen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "VM Generationen und Konfigurationsversionen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Proxmox Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🖥️ Proxmox VE Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Betrieb/Proxmox Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/MECM Co-Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MECM Co-Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Betrieb/Proxmox CLI Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox CLI Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Betrieb/Proxmox Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Erweiterte Features/Proxmox Backup Server.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Backup Server (PBS)"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Erweiterte Features/Proxmox Cluster und HA.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Cluster und HA"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Erweiterte Features/Proxmox GPU Passthrough.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox GPU Passthrough"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Erweiterte Features/Proxmox Replication.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Replication"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Grundlagen/Was ist Proxmox.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Proxmox VE"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Installation/Proxmox Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox VE Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Konzepte/Proxmox Benutzerverwaltung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Benutzerverwaltung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Konzepte/Proxmox Netzwerk.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Netzwerk"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Konzepte/Proxmox Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Konzepte/Proxmox VM und Container Verwaltung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox VM und Container Verwaltung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Virtualization/Proxmox/Betrieb/Proxmox Monitoring.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Proxmox Monitoring"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/System Center/DPM Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "DPM Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/Websitesammlungen verwalten.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Websitesammlungen verwalten"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint Syntex und Copilot.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint Syntex und Copilot"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Packages.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Packages"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Pages.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Pages"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub vs Azure DevOps Vergleich.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub vs Azure DevOps Vergleich"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Android Enrollment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Android Enrollment"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/App Management MAM.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "App Management MAM"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Compliance Policies.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Compliance Policies"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Endpoint Analytics.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Endpoint Analytics"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Endpoint Security.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Endpoint Security"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Intune Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Intune Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Intune PowerShell und Graph.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Intune PowerShell und Graph"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/iOS und iPadOS Enrollment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "iOS und iPadOS Enrollment"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Konfigurationsprofile.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Konfigurationsprofile"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/macOS Enrollment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "macOS Enrollment"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Software-Deployment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Software-Deployment"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Windows Autopilot.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows Autopilot"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Windows Enrollment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows Enrollment"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune/Windows Update for Business.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windows Update for Business"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Advanced Endpoint Analytics.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Advanced Endpoint Analytics"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Endpoint Privilege Management EPM.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Endpoint Privilege Management EPM"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Microsoft 365 Lighthouse.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft 365 Lighthouse"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Microsoft Autopatch.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Autopatch"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Microsoft Cloud PKI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Cloud PKI"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Microsoft Dev Box.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Dev Box"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Enterprise.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Enterprise"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Copilot.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Copilot"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Codespaces.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Codespaces"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Entra ID Join vs Hybrid Join.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entra ID Join vs Hybrid Join"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Entra Permissions Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entra Permissions Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Entra Private Access und Internet Access.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entra Private Access und Internet Access"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/External Identities B2B.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "External Identities B2B"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Hybrid Identity Entra Connect.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hybrid Identity Entra Connect"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Identity Protection.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Identity Protection"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Microsoft Entra ID Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Entra ID Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Microsoft Entra Verified ID.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Entra Verified ID"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Multi-Factor Authentication.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Multi-Factor Authentication"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Privileged Identity Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Privileged Identity Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Single Sign-On.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Single Sign-On"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Microsoft Intune Suite Überblick.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Intune Suite Überblick"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Anti-Spam und Anti-Phishing.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Anti-Spam und Anti-Phishing"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/E-Mail-Migration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "E-Mail-Migration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Exchange Hybrid.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Exchange Hybrid"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Exchange Online Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Exchange Online Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Exchange Online PowerShell.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Exchange Online PowerShell"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Mail Flow und Transport Rules.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Mail Flow und Transport Rules"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Öffentliche Ordner.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Öffentliche Ordner"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Postfach-Berechtigungen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Postfach-Berechtigungen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Postfächer verwalten.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Postfächer verwalten"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/Verteilergruppen und M365-Gruppen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Verteilergruppen und M365-Gruppen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Actions.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Actions"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/GitHub/GitHub Advanced Security.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Advanced Security"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Exchange Online/E-Mail-Authentifizierung SPF DKIM DMARC.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "E-Mail-Authentifizierung SPF DKIM DMARC"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Entra ID/Entra Connect Cloud Sync.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entra Connect Cloud Sync"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Microsoft Tunnel.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Tunnel"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/M365 Admin Center.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "M365 Admin Center"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Data Loss Prevention DLP.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Data Loss Prevention DLP"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/eDiscovery und Audit.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "eDiscovery und Audit"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Information Barriers.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Information Barriers"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Insider Risk Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Insider Risk Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Defender for Cloud Apps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender for Cloud Apps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Defender for Endpoint.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender for Endpoint"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Defender for Identity.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender for Identity"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Defender for Office 365.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender for Office 365"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Defender XDR.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Defender XDR"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Priva.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Priva"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Purview Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Purview Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Secure Score.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Secure Score"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Microsoft Sentinel.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Sentinel"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Retention Policies und Labels.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Retention Policies und Labels"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Sensitivity Labels.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Sensitivity Labels"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/Berechtigungen und Sharing.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Berechtigungen und Sharing"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/OneDrive for Business.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "OneDrive for Business"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint Governance.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint Governance"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint Online Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint Online Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint PowerShell und PnP.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint PowerShell und PnP"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint Premium.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint Premium"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint Seiten und Webparts.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint Seiten und Webparts"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/SharePoint OneDrive/SharePoint Suche.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "SharePoint Suche"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Security und Compliance/Communication Compliance.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Communication Compliance"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Power Platform Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power Platform Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Power Platform Governance.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power Platform Governance"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Power Pages.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power Pages"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/M365 Lizenzmodelle und Pläne.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "M365 Lizenzmodelle und Pläne"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/M365 Tenant-Verwaltung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "M365 Tenant-Verwaltung"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft 365 Apps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft 365 Apps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Bookings.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Bookings"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Copilot for M365.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Copilot for M365"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Forms.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Forms"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Lists.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Lists"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Loop.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Loop"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Planner und Project.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Planner und Project"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Stream.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Stream"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Amplify.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Amplify"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Intune Suite/Remote Help.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Remote Help"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Connections.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Connections"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Goals.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Goals"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Insights.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Insights"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Learning.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Learning"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Pulse.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Pulse"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Whiteboard.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Whiteboard"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Was ist Microsoft 365.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Microsoft 365"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Copilot Studio.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Copilot Studio"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Microsoft Dataverse.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Dataverse"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Power Apps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power Apps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Power Automate.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power Automate"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/Power Platform/Power BI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Power BI"
+  },
+  {
+    "path": "Sysadmin-Wiki/Microsoft 365/M365 Grundlagen/Microsoft Viva Engage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Microsoft Viva Engage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Weitere Rollen/RADIUS - NPS.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RADIUS — Network Policy Server (NPS)"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Ingress und IngressRoutes.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Ingress und IngressRoutes"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Deployments und ReplicaSets.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Deployments und ReplicaSets"
+  },
+  {
+    "path": "Homelab-Wiki/network/topology.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Netzwerk-Topologie"
+  },
+  {
+    "path": "Homelab-Wiki/network/topology.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/network/topology.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Segmente"
+  },
+  {
+    "path": "Homelab-Wiki/network/topology.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verbindungen"
+  },
+  {
+    "path": "Homelab-Wiki/network/topology.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Topologie"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "CLOUD-SRV-01"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "CLOUD-SRV-02"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-02.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "CLOUD-SRV-03"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/CLOUD-SRV-03.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GITHUB-RUNNER-PACKER"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-PACKER.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GITHUB-RUNNER-TERRAFORM"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/GITHUB-RUNNER-TERRAFORM.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "JELLYFIN-HOME-01"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/JELLYFIN-HOME-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-BIND9"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-BIND9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-HARBOR"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-HARBOR.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-OMADA"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-OMADA.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-PTERODACTYL-PANEL"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-PANEL.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-PTERODACTYL-WINGS"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-PTERODACTYL-WINGS.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-REMOTELY"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-REMOTELY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-SCANOPY"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SCANOPY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-SEMAPHORE"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-SEMAPHORE.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-TELEPORT-PROXY"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-TELEPORT-PROXY.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LXC-WIREGUARD"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/LXC-WIREGUARD.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "PVE-SRV-01"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Rolle"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerk"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/servers/PVE-SRV-01.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": "Homelab-Wiki/services/Authentik.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Authentik"
+  },
+  {
+    "path": "Homelab-Wiki/services/Authentik.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Authentik.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Authentik.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Authentik.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Bind9.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Bind9"
+  },
+  {
+    "path": "Homelab-Wiki/services/Bind9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Bind9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Bind9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Bind9.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Harbor.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Harbor"
+  },
+  {
+    "path": "Homelab-Wiki/services/Harbor.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Harbor.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Harbor.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Harbor.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Omada.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Omada"
+  },
+  {
+    "path": "Homelab-Wiki/services/Omada.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Omada.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Omada.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Omada.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Panel.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Pterodactyl-Panel"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Panel.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Panel.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Panel.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Panel.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Wings.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Pterodactyl-Wings"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Wings.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Wings.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Wings.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Pterodactyl-Wings.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Remotely.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Remotely"
+  },
+  {
+    "path": "Homelab-Wiki/services/Remotely.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Remotely.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Remotely.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Remotely.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Scanopy.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Scanopy"
+  },
+  {
+    "path": "Homelab-Wiki/services/Scanopy.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Scanopy.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Scanopy.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Scanopy.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Semaphore.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Semaphore"
+  },
+  {
+    "path": "Homelab-Wiki/services/Semaphore.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Semaphore.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Semaphore.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Semaphore.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/Teleport.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Teleport"
+  },
+  {
+    "path": "Homelab-Wiki/services/Teleport.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/Teleport.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/Teleport.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/Teleport.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "Homelab-Wiki/services/WireGuard.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "WireGuard"
+  },
+  {
+    "path": "Homelab-Wiki/services/WireGuard.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/services/WireGuard.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": "Homelab-Wiki/services/WireGuard.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Betrieb"
+  },
+  {
+    "path": "Homelab-Wiki/services/WireGuard.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Verknüpfte Systeme"
+  },
+  {
+    "path": "CLAUDE.md",
+    "area": "repository",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Claude-Kontext"
+  },
+  {
+    "path": ".ai-context/architecture.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Architektur und Informationsfluss"
+  },
+  {
+    "path": ".ai-context/conventions.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Beobachtete Konventionen"
+  },
+  {
+    "path": ".ai-context/dependencies.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Abhängigkeiten"
+  },
+  {
+    "path": ".ai-context/project-map.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Projektkarte"
+  },
+  {
+    "path": ".ai-context/knowledge/README.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kuratiertes Projektwissen"
+  },
+  {
+    "path": ".ai-context/knowledge/business-rules/index.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Geschäfts- und Konsistenzregeln"
+  },
+  {
+    "path": ".ai-context/knowledge/decisions/index.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Architekturentscheidungen"
+  },
+  {
+    "path": ".ai-context/knowledge/feature-guides/homelab-inventory.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Feature-Guide: Homelab-Inventar"
+  },
+  {
+    "path": ".ai-context/knowledge/removal-guides/homelab-component.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entfernung: Homelab-Komponente"
+  },
+  {
+    "path": ".ai-context/knowledge/removal-guides/sysadmin-note.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Entfernung: Sysadmin-Notiz"
+  },
+  {
+    "path": ".ai-context/knowledge/risks/current-gaps.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Risiken und offene Punkte"
+  },
+  {
+    "path": ".github/agents/homelab-docs.agent.md",
+    "area": "tooling",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Homelab Documentation Agent"
+  },
+  {
+    "path": ".github/agents/sysadmin-wiki.agent.md",
+    "area": "tooling",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Sysadmin Wiki Agent"
+  },
+  {
+    "path": ".github/instructions/markdown-docs.instructions.md",
+    "area": "tooling",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Gemeinsame Markdown- und Obsidian-Regeln"
+  },
+  {
+    "path": ".github/instructions/project-context.instructions.md",
+    "area": "tooling",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Gemeinsamer Projektkontext"
+  },
+  {
+    "path": "Homelab-Wiki/README.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Homelab Übersicht"
+  },
+  {
+    "path": "Homelab-Wiki/README.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Server"
+  },
+  {
+    "path": "Homelab-Wiki/README.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/README.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Netzwerküberblick"
+  },
+  {
+    "path": "Homelab-Wiki/README.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Architektur"
+  },
+  {
+    "path": "Homelab-Wiki/todo.md",
+    "area": "homelab",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "TODO"
+  },
+  {
+    "path": "Homelab-Wiki/todo.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Offene Dienste"
+  },
+  {
+    "path": "Homelab-Wiki/todo.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Offene Auth- und Zugangsfragen"
+  },
+  {
+    "path": "Homelab-Wiki/todo.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Offene Netzwerk- und Exposure-Details"
+  },
+  {
+    "path": "Homelab-Wiki/todo.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Offene Betriebsdetails"
+  },
+  {
+    "path": "Homelab-Wiki/todo.md",
+    "area": "homelab",
+    "kind": "markdown-heading",
+    "level": 2,
+    "title": "Notizen"
+  },
+  {
+    "path": ".ai-context/knowledge/feature-guides/sysadmin-knowledge-base.md",
+    "area": "context",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Feature-Guide: Sysadmin-Wissensbasis"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/Gateway API.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Gateway API"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Prompting/Prompts für Code-Generierung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Prompts für Code-Generierung"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Prompting/System Prompts schreiben.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "System Prompts schreiben"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/RAG/Embeddings.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Embeddings"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/RAG/LangChain und LlamaIndex.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LangChain und LlamaIndex"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/RAG/RAG Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RAG Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/RAG/Vektordatenbanken.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Vektordatenbanken"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/Agent Frameworks.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Agent Frameworks"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/AI Bildgenerierung.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AI Bildgenerierung"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/AI Observability.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AI Observability"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/AnythingLLM.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AnythingLLM"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/ComfyUI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ComfyUI"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/Guardrails und AI Safety.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Guardrails und AI Safety"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/Memory Systems.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Memory Systems"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/Ollama.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Ollama"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/Open WebUI.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Open WebUI"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Tools/Sandboxing und Code Execution.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Sandboxing und Code Execution"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Training/Datasets vorbereiten.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Datasets vorbereiten"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Training/Fine-Tuning Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Fine-Tuning Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Training/LoRA und QLoRA.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LoRA und QLoRA"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Training/RLHF und Alignment.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "RLHF und Alignment"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Prompting/Prompting Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Prompting Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Training/Unsloth Axolotl LLaMA-Factory.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Unsloth, Axolotl & LLaMA-Factory"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Prompting/Prompt Engineering Techniken.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Prompt Engineering Techniken"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/Konzepte/Was ist ein AI Agent.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist ein AI Agent?"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Context Window und Token Management.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Context Window und Token Management"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Evaluation und Benchmarks.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Evaluation und Benchmarks"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Function Calling und Tool Use.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Function Calling und Tool Use"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/LLM API Provider und Router.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LLM API Provider und Router"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/LLM Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "LLM Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Lokale LLMs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Lokale LLMs"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Modell Übersicht.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Modell Übersicht – Large Language Models"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Modell Vergleiche.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Modell Vergleiche"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Multimodalität.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Multimodalität"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Sampling-Parameter.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Sampling-Parameter"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Structured Output.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Structured Output"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Tokenization.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Tokenization"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/LLMs/Wie funktionieren LLMs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Wie funktionieren LLMs"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/A2A Protocol.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "A2A Protocol (Agent-to-Agent)"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/ACP Agent Communication Protocol.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ACP Agent Communication Protocol"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/MCP Grundlagen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MCP Grundlagen"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/MCP Server erstellen (Python).md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MCP Server erstellen (Python)"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/MCP Server in Claude Code einbinden.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MCP Server in Claude Code einbinden"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/MCP Tools Resources Prompts.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "MCP Tools, Resources und Prompts"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/MCP/Was ist MCP.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist das Model Context Protocol (MCP)?"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Prompting/Output-Formatierung steuern.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Output-Formatierung steuern"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/Cluster Upgrades und Backups.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Cluster Upgrades und Backups"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/GitOps.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitOps"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/kubectl Befehle und Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "kubectl Befehle und Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/Monitoring und Logging.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Monitoring und Logging"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/Praktische Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubernetes Praktische Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Grundlagen/Kubernetes Architektur.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubernetes Architektur"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Grundlagen/Kubernetes Distributionen.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubernetes Distributionen"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Grundlagen/Kubernetes vs Docker und Docker Swarm.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubernetes vs Docker und Docker Swarm"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Grundlagen/Was ist Kubernetes.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Kubernetes"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Helm/Helm Package Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Helm Package Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Installation/K3s Cluster Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "K3s Cluster Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Installation/Kubeadm Multi-Master Cluster.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubeadm Multi-Master Cluster"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Installation/kubectl einrichten.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "kubectl einrichten"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Installation/KubeVIP und High Availability.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "KubeVIP und High Availability"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Komponenten/Cert-Manager.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Cert-Manager"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Komponenten/KubeVIP.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "KubeVIP"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Komponenten/Longhorn.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Longhorn"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Komponenten/Portainer.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Portainer"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Komponenten/Traefik Ingress Controller.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Traefik Ingress Controller"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/ConfigMaps und Secrets.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "ConfigMaps und Secrets"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/CRDs und Operators.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "CRDs und Operators"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Konzepte/DaemonSets StatefulSets und Jobs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "DaemonSets StatefulSets und Jobs"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Betrieb/Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kubernetes Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Kubernetes/Kubernetes Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "☸️ Kubernetes Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/HyperV-Failover-Cluster/Hyper-V Failover Cluster.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Hyper-V Failover Cluster – Windows Server 2022"
+  },
+  {
+    "path": "Sysadmin-Wiki/Applications/Tools/Warp Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Warp Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Docker Swarm Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🐝 Docker Swarm Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm CI-CD Integration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm CI/CD Integration"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm CLI Cheatsheet.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm CLI Cheatsheet"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm Monitoring und Maintenance.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Monitoring und Maintenance"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm Security.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Security"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/Konzepte/Skills.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Skills für AI Coding Agents"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Betrieb/Swarm Upgrades und Backups.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Upgrades und Backups"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Grundlagen/Swarm vs Kubernetes.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm vs Kubernetes"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Grundlagen/Was ist Docker Swarm.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Was ist Docker Swarm"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Installation/Docker Swarm HA Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Swarm HA Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Installation/Docker Swarm Installation.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Swarm Installation"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Konzepte/Swarm Networking.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Networking"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Konzepte/Swarm Secrets und Configs.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Secrets und Configs"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Konzepte/Swarm Services und Tasks.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Services und Tasks"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Konzepte/Swarm Stack Beispiele.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Stack Beispiele"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Konzepte/Swarm Stacks.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Stacks"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Konzepte/Swarm Volumes und Storage.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Swarm Volumes und Storage"
+  },
+  {
+    "path": "Sysadmin-Wiki/Clustering/Docker-Swarm/Grundlagen/Docker Swarm Architektur.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Docker Swarm Architektur"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/Konzepte/Multi-Agent Workflows.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Multi-Agent Workflows"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/Konzepte/Custom Instructions für AI Coding Agents.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Custom Instructions für AI Coding Agents"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/Konzepte/AI Coding Agents Vergleich.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AI Coding Agents Vergleich (2026)"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/AI Index.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "🤖 AI Index"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/AI Troubleshooting.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AI Troubleshooting"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Aider Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Aider Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Amazon Q Developer CLI Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Amazon Q Developer CLI Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Amp Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Amp Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Claude Code Konfiguration und Hooks.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Claude Code Konfiguration und Hooks"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Crush Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Crush Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Gemini CLI Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Gemini CLI — Konfiguration und Nutzung"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/GitHub Copilot CLI Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "GitHub Copilot CLI Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Goose Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Goose — AI Coding Agent von Block"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/Open Interpreter Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Open Interpreter Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/OpenAI Codex CLI Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "OpenAI Codex CLI Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/OpenClaw Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "OpenClaw Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/CLI/OpenCode Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "OpenCode — AI Coding Agent für das Terminal"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Augment Code Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Augment Code Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Cline Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Cline Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Continue Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Continue Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Cursor Agent Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Cursor AI — Agent Konfiguration und Dokumentation"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Kiro Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Kiro Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Tabnine Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Tabnine Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/VSCode Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "VS Code als AI-IDE mit GitHub Copilot"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/Agents/IDE/Windsurf Konfiguration.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "Windsurf Konfiguration"
+  },
+  {
+    "path": "Sysadmin-Wiki/AI/AI Best Practices.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "AI Best Practices"
+  },
+  {
+    "path": "Sysadmin-Wiki/Windows Server/Weitere Rollen/WSUS.md",
+    "area": "sysadmin",
+    "kind": "markdown-title",
+    "level": 1,
+    "title": "WSUS — Windows Server Update Services"
+  }
+]

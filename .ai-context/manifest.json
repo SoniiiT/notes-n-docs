@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "project_root": ".",
+  "analysis_mode": "initialized",
+  "analyzed_at": "2026-07-28T09:56:22.226296Z",
+  "analyzed_areas": [
+    "repository structure",
+    "Homelab-Wiki",
+    "Sysadmin-Wiki",
+    "Obsidian configuration",
+    "provider instructions"
+  ],
+  "source_revision": "dc12d65f1c6a7d0bfd30100a119a6d28ed5bf012",
+  "source_fingerprints": [
+    {
+      "path": "Homelab-Wiki",
+      "file_count": 155,
+      "metadata_sha256": "e88d9c20acb68fec271071b3afaf4aa686f5b353a678841ea32333850ee7b7a8"
+    },
+    {
+      "path": "Sysadmin-Wiki",
+      "file_count": 673,
+      "metadata_sha256": "3bd4294e9534548a950c93d8eacc390465a40001eba188531bb0572afc11429e"
+    },
+    {
+      "path": ".github",
+      "file_count": 4,
+      "metadata_sha256": "8d5551a3ce015d562c195cd83ba44a8192279233a7ebd4e2b5a0acd37684c6be"
+    }
+  ],
+  "tracked_file_count": 857,
+  "context_file_count": 15,
+  "excluded_paths": [
+    ".git/",
+    "node_modules/",
+    "vendor/",
+    "build output/",
+    "coverage/",
+    "secrets and secret values"
+  ],
+  "refresh_status": "initialized; validated JSON, paths, headings and secret-value exclusion",
+  "canonical_files": [
+    ".ai-context/project-map.md",
+    ".ai-context/architecture.md",
+    ".ai-context/conventions.md",
+    ".ai-context/dependencies.md",
+    ".ai-context/indexes/files.json",
+    ".ai-context/indexes/symbols.json",
+    ".ai-context/knowledge/README.md"
+  ]
+}
